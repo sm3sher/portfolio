@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="m-4 mt-auto rounded-lg shadow">
+    <footer className="m-4 mt-auto rounded-lg">
       <div className="mx-auto max-w-screen-xl p-4 sm:flex sm:items-center sm:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
           @ {new Date().getFullYear()} - Roman Jumatov

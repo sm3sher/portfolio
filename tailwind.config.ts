@@ -2,10 +2,10 @@ import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./app/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
     },
