@@ -13,7 +13,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Github
+              GitHub
             </a>
           </li>
           <li>
@@ -23,7 +23,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Stackoverflow
+              Stack Overflow
             </a>
           </li>
           <li>
