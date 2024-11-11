@@ -2,11 +2,21 @@
 
 import { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import { ContractsIcon, GridViewIcon, UserCircleIcon } from 'hugeicons-react';
+import {
+  ContractsIcon,
+  GridViewIcon,
+  Home09Icon,
+  UserCircleIcon,
+} from 'hugeicons-react';
 import Link from 'next/link';
 import ThemeToggle from '@/app/(portfolio)/ThemeToggle';
 
 const navbarItems = [
+  {
+    href: '/',
+    icon: <Home09Icon size={20} />,
+    label: 'Home',
+  },
   {
     href: '/about',
     icon: <UserCircleIcon size={20} />,
