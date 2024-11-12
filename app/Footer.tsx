@@ -1,41 +1,36 @@
+const footerItems = [
+  {
+    href: 'https://github.com/sm3sher',
+    label: 'GitHub',
+  },
+  {
+    href: 'https://stackoverflow.com/users/8845480',
+    label: 'Stack Overflow',
+  },
+  {
+    href: 'mailto:roman.jum99@gmail.com',
+    label: 'Email',
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="m-4 mt-auto rounded-lg text-[--footer]">
+    <footer className="m-4 mt-auto rounded-lg text-sm font-medium text-[--footer]">
       <div className="mx-auto max-w-screen-xl p-4 sm:flex sm:items-center sm:justify-between">
-        <span className="text-sm sm:text-center">
-          @ {new Date().getFullYear()} - Roman Jumatov
+        <span className="sm:text-center">
+          &copy; {new Date().getFullYear()} - Roman Jumatov
         </span>
-        <ul className="mt-3 flex flex-wrap items-center text-sm font-medium sm:mt-0">
-          <li>
-            <a
-              className="me-4 hover:underline hover:underline-offset-4 sm:me-6"
-              href="https://github.com/sm3sher"
-              target="_blank"
-              rel="noopener noreferrer"
+        <ul className="mt-3 flex flex-wrap items-center sm:mt-0">
+          {footerItems.map((item) => (
+            <li
+              key={item.href}
+              className="me-4 last:me-0 hover:underline hover:underline-offset-4 sm:me-6"
             >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              className="me-4 hover:underline hover:underline-offset-4 sm:me-6"
-              href="https://stackoverflow.com/users/8845480/sm3sher"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Stack Overflow
-            </a>
-          </li>
-          <li>
-            <a
-              className="hover:underline hover:underline-offset-4"
-              href="mailto:roman.jum99@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
-          </li>
+              <a href={item.href} target="_blank" rel="noopener noreferrer">
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </footer>
