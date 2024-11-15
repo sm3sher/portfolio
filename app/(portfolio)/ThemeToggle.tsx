@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
