@@ -51,8 +51,8 @@ export default function Layout({
               href={item.href}
               className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
                 pathname === item.href
-                  ? 'border-black/35 bg-neutral-400/30 dark:border-white/20 dark:bg-neutral-600/60'
-                  : 'hover:border-black/15 hover:bg-neutral-400/10 dark:hover:border-white/15 dark:hover:bg-neutral-600/20'
+                  ? 'border-[--background-active] bg-[--background-active]'
+                  : 'hover:border-[--background-hover] hover:bg-[--background-hover]'
               }`}
             >
               <span className="px-3 py-1">{item.icon}</span>
