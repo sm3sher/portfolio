@@ -1,3 +1,11 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact - Roman Jumatov',
+  description:
+    'Get in touch with me for collaborations, inquiries, or networking opportunities.',
+};
+
 export default function Page() {
   return (
     <>
