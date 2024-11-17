@@ -8,13 +8,13 @@ export default function Layout({
   children: ReactNode;
 }>) {
   return (
-    <div>
-      <nav className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-6">
+    <div className="grid grid-rows-[auto,1fr]">
+      <nav className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 py-6">
         <button>EN/DE</button>
         <Navbar />
         <ThemeToggle />
       </nav>
-      <div className="mx-auto max-w-screen-xl p-6">{children}</div>
+      <div className="mx-auto w-full max-w-screen-xl p-6 pt-0">{children}</div>
     </div>
   );
 }
