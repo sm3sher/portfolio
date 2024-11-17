@@ -21,9 +21,9 @@ const navbarItems = [
     label: 'About',
   },
   {
-    href: '/projects',
+    href: '/work',
     icon: <GridViewIcon size={20} />,
-    label: 'Projects',
+    label: 'Work',
   },
   {
     href: '/contact',
