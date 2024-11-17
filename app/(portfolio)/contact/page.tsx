@@ -11,7 +11,7 @@ export default function Page() {
     <>
       <h1 className="text-5xl font-extrabold">👋 Drop me a message!</h1>
       <p className="my-3">
-        <span className="rounded-md border border-gray-500 bg-gray-200 bg-opacity-80 p-0.5 font-[family-name:var(--font-geist-mono)] text-lg font-medium dark:border-gray-500 dark:bg-gray-900">
+        <span className="rounded-md border border-gray-500 bg-gray-200 bg-opacity-80 p-0.5 font-[family-name:--font-geist-mono] text-lg font-medium dark:border-gray-500 dark:bg-gray-900">
           #FeelFreeToUseFirstNames
         </span>
       </p>
