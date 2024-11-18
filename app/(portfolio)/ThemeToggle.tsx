@@ -19,15 +19,15 @@ export default function ThemeToggle() {
   }, []);
 
   return !mounted ? (
-    <button className="rounded-full p-1">
-      <Loading03Icon />
+    <button className="rounded-2xl border border-black/20 p-2 backdrop-blur backdrop-brightness-125 duration-200 dark:border-white/20 dark:backdrop-brightness-90">
+      <Loading03Icon size={22} />
     </button>
   ) : (
     <button
       onClick={toggleTheme}
-      className="rounded-full p-1 duration-300 hover:scale-110 hover:bg-[--background-active]"
+      className="rounded-2xl border border-black/20 p-2 backdrop-blur backdrop-brightness-125 duration-200 hover:bg-[--background-hover] dark:border-white/20 dark:backdrop-brightness-90"
     >
-      {isDark ? <Sun03Icon /> : <Moon02Icon />}
+      {isDark ? <Sun03Icon size={22} /> : <Moon02Icon size={22} />}
     </button>
   );
 }

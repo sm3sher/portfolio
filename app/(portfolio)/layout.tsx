@@ -9,7 +9,7 @@ export default function Layout({
 }>) {
   return (
     <div className="grid grid-rows-[auto,1fr]">
-      <nav className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 py-6">
+      <nav className="sticky top-0 z-10 mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 py-6">
         <button>EN/DE</button>
         <Navbar />
         <ThemeToggle />
