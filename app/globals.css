@@ -25,3 +25,9 @@ body {
   background-color: var(--background-color);
   background-image: var(--background-image);
 }
+
+@layer utilities {
+  .backdrop {
+    @apply backdrop-blur backdrop-brightness-125 dark:backdrop-brightness-90;
+  }
+}
