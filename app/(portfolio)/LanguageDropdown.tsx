@@ -60,14 +60,14 @@ export default function LanguageDropdown() {
         aria-expanded={open}
         onClick={() => setOpen((prevState) => !prevState)}
         onKeyDown={handleKeyDown}
-        className="backdrop rounded-2xl border border-black/20 p-2 duration-200 hover:bg-[--background-hover] dark:border-white/20"
+        className="backdrop base-border rounded-2xl p-2 duration-200 hover:bg-[--background-hover]"
       >
         <LanguageSkillIcon size={22} />
       </button>
       <div
         id="dropdown"
         hidden={!open}
-        className="backdrop absolute z-10 mt-1 w-32 rounded-2xl border border-black/20 font-medium duration-200 dark:border-white/20"
+        className="backdrop base-border absolute z-10 mt-1 w-32 rounded-2xl p-0 font-medium duration-200"
       >
         <ul
           className="py-1.5 text-sm text-gray-700 dark:text-gray-200"

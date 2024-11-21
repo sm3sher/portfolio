@@ -36,7 +36,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="backdrop flex space-x-1 rounded-2xl border border-black/20 p-1 dark:border-white/20">
+    <div className="backdrop base-border flex space-x-1 rounded-2xl p-1">
       {navbarItems.map((item) => (
         <Link
           key={item.href}

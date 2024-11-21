@@ -26,6 +26,18 @@ body {
   background-image: var(--background-image);
 }
 
+@layer base {
+  h1 {
+    @apply text-3xl font-extrabold sm:text-5xl md:text-4xl lg:text-6xl;
+  }
+}
+
+@layer components {
+  .base-border {
+    @apply border border-black/20 p-2 dark:border-white/20;
+  }
+}
+
 @layer utilities {
   .backdrop {
     @apply backdrop-blur backdrop-brightness-125 dark:backdrop-brightness-90;
