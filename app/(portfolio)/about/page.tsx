@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <h1 className="text-5xl font-extrabold">About</h1>;
+  return <h1>About</h1>;
 }

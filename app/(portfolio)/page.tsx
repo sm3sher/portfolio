@@ -22,7 +22,7 @@ export default function Page() {
         />
       </div>
       <div className="space-y-6 md:w-7/12 lg:w-1/2">
-        <h1 className="text-center text-3xl font-extrabold sm:text-5xl md:text-left md:text-4xl lg:text-6xl">
+        <h1 className="text-center md:text-left">
           Crafting digital experiences with precision and creativity.
         </h1>
         <p className="text-center text-lg sm:text-xl md:text-left">
@@ -32,13 +32,13 @@ export default function Page() {
         </p>
         <div className="space-x-2 text-center sm:space-x-3 md:text-left">
           <Link
-            className="rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
+            className="base-border rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
             href="/work"
           >
             View My Work
           </Link>
           <Link
-            className="rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
+            className="base-border rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
             href="/contact"
           >
             Contact
