@@ -1,0 +1,13 @@
+{
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "plugins": ["check-file"],
+  "rules": {
+    "check-file/no-index": "error",
+    "check-file/filename-naming-convention": [
+      "error",
+      {
+        "app/**/*.{ts,tsx}": "KEBAB_CASE"
+      }
+    ]
+  }
+}

@@ -85,7 +85,7 @@ export default function LanguageDropdown() {
             onKeyDown={handleKeyDown}
           >
             <Image
-              src="/flag_us.svg"
+              src="/flag-us.svg"
               alt="American language flag"
               width={30}
               height={20}
@@ -101,7 +101,7 @@ export default function LanguageDropdown() {
             onKeyDown={handleKeyDown}
           >
             <Image
-              src="/flag_de.svg"
+              src="/flag-de.svg"
               alt="German language flag"
               width={30}
               height={20}

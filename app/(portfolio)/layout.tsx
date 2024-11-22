@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import LanguageDropdown from '@/app/(portfolio)/LanguageDropdown';
-import Navbar from '@/app/(portfolio)/Navbar';
-import ThemeToggle from '@/app/(portfolio)/ThemeToggle';
+import LanguageDropdown from '@/app/ui/language-dropdown';
+import Navbar from '@/app/ui/navbar';
+import ThemeToggle from '@/app/ui/theme-toggle';
 
 export default function Layout({
   children,

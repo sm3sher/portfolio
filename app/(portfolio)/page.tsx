@@ -14,7 +14,7 @@ export default function Page() {
       <div className="relative w-full max-w-2xl md:w-5/12 lg:w-1/2">
         <Image
           className="rounded-2xl"
-          src="/side_profile.png"
+          src="/side-profile.png"
           alt="Picture of Roman looking sideways"
           width={2430}
           height={1992}
