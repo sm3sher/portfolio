@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { SentIcon } from 'hugeicons-react';
+import ContactForm from '@/app/ui/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact - Roman Jumatov',
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  // TODO: add form handling
   return (
     <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row md:items-center lg:gap-16">
       <div className="relative max-w-2xl space-y-6 md:w-1/2">
@@ -37,54 +36,7 @@ export default function Page() {
         </div>
       </div>
       <div className="w-full md:w-1/2">
-        <form className="space-y-4">
-          <div>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              className="base-border mt-1 block w-full rounded-lg px-4 py-2"
-              placeholder="Name"
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              className="base-border mt-1 block w-full rounded-lg px-4 py-2"
-              placeholder="Email address"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              className="base-border mt-1 block w-full rounded-lg px-4 py-2"
-              placeholder="Company (optional)"
-            />
-          </div>
-          <div>
-            <textarea
-              id="message"
-              name="message"
-              rows={5}
-              required
-              className="base-border mt-1 block w-full rounded-lg px-4 py-2"
-              placeholder="Message"
-            />
-          </div>
-          <button
-            type="submit"
-            className="base-border flex w-full items-center justify-center gap-2 rounded-lg bg-[--background-hover] px-4 py-2 font-[family-name:--font-geist-mono] hover:bg-[--background-active]"
-          >
-            <SentIcon size={20} />
-            Send Message
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </div>
   );
