@@ -22,10 +22,10 @@ export default function Page() {
         />
       </div>
       <div className="space-y-6 md:w-7/12 lg:w-1/2">
-        <h1 className="text-center md:text-left">
+        <h1 className="text-balance text-center md:text-left">
           Crafting digital experiences with precision and creativity.
         </h1>
-        <p className="text-center text-lg sm:text-xl md:text-left">
+        <p className="text-pretty text-center text-lg sm:text-xl md:text-left">
           I specialize in building innovative and user-friendly web
           applications. Explore my latest work experience and skills, showcasing
           my expertise in web development.

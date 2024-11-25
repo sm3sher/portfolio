@@ -13,7 +13,7 @@ export default function Page() {
     <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row md:items-center lg:gap-16">
       <div className="relative max-w-2xl space-y-6 md:w-1/2">
         <h1 className="text-center md:text-left">Get in touch! </h1>
-        <p className="text-center text-lg sm:text-xl md:text-left">
+        <p className="text-pretty text-center text-lg sm:text-xl md:text-left">
           You can send me a message here. If you’re proposing a collaboration on
           a specific project, please describe the project’s goals and the tasks
           as clearly as possible. The more details you provide, the better I can
