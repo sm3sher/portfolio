@@ -43,7 +43,7 @@ export default function FormInput<T extends FieldValues>({
         <div
           id={`${String(name)}-error`}
           aria-live="polite"
-          className="absolute mt-2 flex items-center space-x-2 rounded-lg border border-[--error-color] bg-[--error-background] px-3 py-2 text-sm opacity-0 transition-opacity duration-200 peer-focus:z-10 peer-focus:opacity-100"
+          className="pointer-events-none absolute z-10 mt-2 flex items-center space-x-2 rounded-lg border border-[--error-color] bg-[--error-background] px-3 py-2 text-sm opacity-0 transition-opacity duration-300 peer-focus:opacity-100"
         >
           <Alert01Icon />
           <span>{errorMessage}</span>
