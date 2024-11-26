@@ -7,6 +7,7 @@ import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import { sendMessage } from '@/app/lib/actions';
 import { useState } from 'react';
 import FormInput from '@/app/ui/form-input';
+import FormGdprCheckbox from '@/app/ui/form-gdpr-checkbox';
 
 export default function ContactForm() {
   const [isPending, setIsPending] = useState(false);
@@ -57,6 +58,7 @@ export default function ContactForm() {
         elementType="textarea"
         rows={5}
       />
+      <FormGdprCheckbox register={register} name="consent" errors={errors} />
       <button
         type="submit"
         disabled={isPending}
