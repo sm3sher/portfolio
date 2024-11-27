@@ -31,7 +31,7 @@
     "eslint-config-next": "15.0.3",
     "eslint-config-prettier": "^9",
     "eslint-plugin-check-file": "^2.8.0",
-    "husky": "^9.1.6",
+    "husky": "^9.1.7",
     "postcss": "^8",
     "prettier": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.6.9",
