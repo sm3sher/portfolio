@@ -17,6 +17,7 @@ export const contactFormSchema = z.object({
     .string()
     .min(1, 'Please enter your message')
     .max(1000, 'Message cannot exceed 1000 characters'),
+  consent: z.literal(true, { message: 'You must agree to proceed' }),
 });
 
 export type ContactFormData = z.infer<typeof contactFormSchema>;
