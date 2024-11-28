@@ -5,6 +5,7 @@ import {
   UseFormRegister,
 } from 'react-hook-form';
 import Link from 'next/link';
+import { Tick02Icon } from 'hugeicons-react';
 
 type Props<T extends FieldValues> = {
   register: UseFormRegister<T>;
@@ -30,24 +31,11 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         <input
           {...register(name)}
           type="checkbox"
-          className="peer h-5 w-5 cursor-pointer appearance-none rounded border border-slate-300 shadow transition-all checked:border-slate-800 checked:bg-slate-800 hover:shadow-md"
+          className="base-border peer h-5 w-5 cursor-pointer appearance-none rounded transition-colors duration-200 checked:bg-[--color]"
           id="check-with-link"
         />
-        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform text-white opacity-0 peer-checked:opacity-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-3.5 w-3.5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="currentColor"
-            stroke-width="1"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            ></path>
-          </svg>
+        <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[--background-color] opacity-0 peer-checked:opacity-100">
+          <Tick02Icon size={16} strokeWidth={3} />
         </span>
       </label>
       <label
