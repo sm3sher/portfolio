@@ -25,12 +25,12 @@ jobs:
         run: npm ci
 
       - name: Lint files
-        run: npm lint
+        run: npm run lint
 
 #      - name: Run tests
-#        run: npm test
+#        run: npm run test
 
       - name: Build with Next.js
-        run: npm next build
+        run: npm run build
 
   # TODO: Upload artifacts and deploy
