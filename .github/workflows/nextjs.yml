@@ -27,8 +27,8 @@ jobs:
       - name: Lint files
         run: npm run lint
 
-      #      - name: Run tests
-      #        run: npm run test
+      - name: Run tests
+        run: npm test
 
       - name: Build with Next.js
         run: npm run build

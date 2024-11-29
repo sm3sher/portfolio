@@ -24,7 +24,7 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsPending(true);
     const response = await sendMessage(data);
-    if (response.errors) {
+    if (response?.errors) {
       // TODO: handle server errors
     }
     setIsPending(false);

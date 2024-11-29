@@ -7,6 +7,9 @@
       "error",
       {
         "app/**/*.{ts,tsx}": "KEBAB_CASE"
+      },
+      {
+        "ignoreMiddleExtensions": true
       }
     ]
   }
