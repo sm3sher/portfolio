@@ -2,7 +2,7 @@ name: Build Next.js app
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ['main']
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: '22'
           cache: npm
 
       - name: Install dependencies
@@ -27,8 +27,8 @@ jobs:
       - name: Lint files
         run: npm run lint
 
-#      - name: Run tests
-#        run: npm run test
+      #      - name: Run tests
+      #        run: npm run test
 
       - name: Build with Next.js
         run: npm run build
