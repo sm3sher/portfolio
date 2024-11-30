@@ -29,7 +29,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         <input
           {...register(name)}
           type="checkbox"
-          className={`backdrop base-border peer h-5 w-5 cursor-pointer appearance-none rounded transition-colors duration-200 checked:bg-[--color] ${
+          className={`backdrop base-border peer h-5 w-5 cursor-pointer appearance-none rounded transition-colors duration-200 checked:bg-[--primary] ${
             errorMessage &&
             'border-[--error-color] bg-[--error-background] outline-[--error-color]'
           }`}
@@ -41,14 +41,14 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         </span>
       </label>
       <label
-        className={`ml-2 cursor-pointer select-none text-sm text-[--footer] ${errorMessage && 'text-[--error-color]'}`}
+        className={`ml-2 cursor-pointer select-none text-sm text-[--secondary] ${errorMessage && 'text-[--error-color]'}`}
         htmlFor="check-with-link"
       >
         <p>
           I have taken note of the{' '}
           <Link
             href="/privacy-policy"
-            className="font-medium underline hover:text-[--color]"
+            className="font-medium underline hover:text-[--primary]"
           >
             information regarding data processing
           </Link>
@@ -59,7 +59,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           <div
             id={`${String(name)}-error`}
             aria-live="polite"
-            className="pointer-events-none absolute z-10 ml-[-1.75rem] mt-2 flex items-center space-x-2 rounded-lg border border-[--error-color] bg-[--error-background] px-3 py-2 text-sm text-[--color]"
+            className="pointer-events-none absolute z-10 ml-[-1.75rem] mt-2 flex items-center space-x-2 rounded-lg border border-[--error-color] bg-[--error-background] px-3 py-2 text-sm text-[--primary]"
           >
             <Alert01Icon />
             <span>{errorMessage}</span>

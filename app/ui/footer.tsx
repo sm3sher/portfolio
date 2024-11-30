@@ -15,7 +15,7 @@ const footerItems = [
 
 export default function Footer() {
   return (
-    <footer className="m-4 rounded-lg text-sm font-medium text-[--footer]">
+    <footer className="m-4 rounded-lg text-sm font-medium text-[--secondary]">
       <div className="mx-auto max-w-screen-xl p-4 sm:flex sm:items-center sm:justify-between">
         <span className="sm:text-center">
           &copy; {new Date().getFullYear()} - Roman Jumatov

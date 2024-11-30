@@ -29,7 +29,7 @@ export default function Page() {
           />
           <div className="font-medium">
             <div>Roman Jumatov</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">
+            <div className="text-sm text-[--secondary]">
               Senior full-stack developer
             </div>
           </div>

@@ -97,13 +97,15 @@ export default function ContactForm() {
       </div>
       {isPending && !isSubmitted && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-lg font-medium">Sending Message...</p>
+          <p className="text-lg font-medium text-[--secondary]">
+            Sending Message...
+          </p>
         </div>
       )}
       {isSubmitted && (
         <div className="absolute inset-0 flex items-center justify-center text-center opacity-100 transition-opacity duration-500">
           <div>
-            <h2 className="text-2xl font-semibold text-emerald-500">
+            <h2 className="text-2xl font-semibold text-[--success-color]">
               Message sent!
             </h2>
             <p className="mt-2">

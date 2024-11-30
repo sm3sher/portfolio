@@ -70,7 +70,7 @@ export default function LanguageDropdown() {
         className="backdrop base-border absolute z-10 mt-1 w-32 rounded-2xl p-0 font-medium duration-200"
       >
         <ul
-          className="py-1.5 text-sm text-gray-700 dark:text-gray-200"
+          className="py-1.5 text-sm"
           aria-labelledby="dropdownLanguageButton"
           role="menu"
           tabIndex={-1}
