@@ -1,18 +1,19 @@
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
-import { FieldErrors } from 'react-hook-form';
+
+export type ServerResponse = {
+  errors?: Partial<Record<keyof ContactFormData, string[] | undefined>>;
+};
 
 export async function sendMessage(
   formData: ContactFormData,
-): Promise<{ errors?: FieldErrors<ContactFormData> }> {
+): Promise<ServerResponse> {
   const validatedFields = contactFormSchema.safeParse(formData);
-
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
   if (!validatedFields.success) {
-    // TODO: return field errors
+    return { errors: validatedFields.error.flatten().fieldErrors };
   }
 
   // TODO: process message
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
   return {};
 }
