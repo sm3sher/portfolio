@@ -6,8 +6,8 @@ import { SentIcon } from 'hugeicons-react';
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import { sendMessage } from '@/app/lib/actions';
 import { useState } from 'react';
-import FormInput from '@/app/ui/form-input';
-import FormGdprCheckbox from '@/app/ui/form-gdpr-checkbox';
+import FormInput from '@/app/ui/form/form-input';
+import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
 import Button from '@/app/ui/button';
 
 export default function ContactForm() {

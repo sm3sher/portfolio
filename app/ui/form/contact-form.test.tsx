@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
 import { sendMessage } from '@/app/lib/actions';
-import ContactForm from '@/app/ui/contact-form';
+import ContactForm from '@/app/ui/form/contact-form';
 
 vi.mock(import('@/app/lib/actions'));
 

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import ContactForm from '@/app/ui/contact-form';
+import ContactForm from '@/app/ui/form/contact-form';
 
 export const metadata: Metadata = {
   title: 'Contact - Roman Jumatov',
