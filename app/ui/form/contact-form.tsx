@@ -8,7 +8,8 @@ import { sendMessage } from '@/app/lib/actions';
 import { useState } from 'react';
 import FormInput from '@/app/ui/form/form-input';
 import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
-import Button from '@/app/ui/button';
+import Button from '@/app/ui/button/button';
+import SubmitButton from '@/app/ui/button/submit-button';
 
 export default function ContactForm() {
   const [isPending, setIsPending] = useState(false);
@@ -86,10 +87,10 @@ export default function ContactForm() {
             name="consent"
             errors={errors}
           />
-          <Button type="submit" fullWidth>
-            <SentIcon size={20} />
+          <SubmitButton>
+            <SentIcon />
             Send Message
-          </Button>
+          </SubmitButton>
         </form>
       </div>
       {isPending && !isSubmitted && (
@@ -110,7 +111,7 @@ export default function ContactForm() {
             </p>
             <div className="mt-4 flex justify-center">
               <Button onClick={() => setIsSubmitted(false)}>
-                Send another message
+                Another message?
               </Button>
             </div>
           </div>

@@ -40,7 +40,7 @@ body {
 
 @layer components {
   .base-border {
-    @apply border border-black/20 p-2 dark:border-white/20;
+    @apply border border-black/35 p-2 dark:border-white/35;
   }
 }
 

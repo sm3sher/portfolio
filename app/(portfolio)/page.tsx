@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/app/ui/button';
+import Button from '@/app/ui/button/button';
 
 export const metadata: Metadata = {
   title: 'Home - Roman Jumatov',
@@ -36,7 +36,7 @@ export default function Page() {
             <Button>View My Work</Button>
           </Link>
           <Link href="/contact" tabIndex={-1}>
-            <Button>Contact</Button>
+            <Button>Contact Me</Button>
           </Link>
         </div>
       </div>
