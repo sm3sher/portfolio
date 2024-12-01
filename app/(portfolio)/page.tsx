@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Button from '@/app/ui/button';
 
 export const metadata: Metadata = {
   title: 'Home - Roman Jumatov',
@@ -30,18 +31,12 @@ export default function Page() {
           applications. Explore my latest work experience and skills, showcasing
           my expertise in web development.
         </p>
-        <div className="space-x-2 text-center sm:space-x-3 md:text-left">
-          <Link
-            className="base-border rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
-            href="/work"
-          >
-            View My Work
+        <div className="flex justify-center space-x-3 md:justify-start">
+          <Link href="/work">
+            <Button>View My Work</Button>
           </Link>
-          <Link
-            className="base-border rounded-2xl bg-[--background-hover] px-6 py-3 font-[family-name:--font-geist-mono] transition-all hover:bg-[--background-active]"
-            href="/contact"
-          >
-            Contact
+          <Link href="/contact">
+            <Button>Contact</Button>
           </Link>
         </div>
       </div>

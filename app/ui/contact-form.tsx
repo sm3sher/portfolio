@@ -8,6 +8,7 @@ import { sendMessage } from '@/app/lib/actions';
 import { useState } from 'react';
 import FormInput from '@/app/ui/form-input';
 import FormGdprCheckbox from '@/app/ui/form-gdpr-checkbox';
+import Button from '@/app/ui/button';
 
 export default function ContactForm() {
   const [isPending, setIsPending] = useState(false);
@@ -85,14 +86,10 @@ export default function ContactForm() {
             name="consent"
             errors={errors}
           />
-          <button
-            type="submit"
-            disabled={isPending}
-            className="base-border flex w-full items-center justify-center gap-2 rounded-lg bg-[--background-hover] px-4 py-2 font-[family-name:--font-geist-mono] enabled:hover:bg-[--background-active]"
-          >
+          <Button type="submit" fullWidth>
             <SentIcon size={20} />
             Send Message
-          </button>
+          </Button>
         </form>
       </div>
       {isPending && !isSubmitted && (
@@ -111,12 +108,11 @@ export default function ContactForm() {
             <p className="mt-2">
               Thank you for reaching out. I&#39;ll get back to you shortly.
             </p>
-            <button
-              onClick={() => setIsSubmitted(false)}
-              className="base-border mt-4 justify-center gap-2 rounded-lg bg-[--background-hover] px-4 py-2 font-[family-name:--font-geist-mono] enabled:hover:bg-[--background-active]"
-            >
-              Send another message
-            </button>
+            <div className="mt-4 flex justify-center">
+              <Button onClick={() => setIsSubmitted(false)}>
+                Send another message
+              </Button>
+            </div>
           </div>
         </div>
       )}
