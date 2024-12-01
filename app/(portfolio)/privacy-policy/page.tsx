@@ -5,5 +5,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <h1>Work</h1>;
+  return <h1>Privacy Policy</h1>;
 }
