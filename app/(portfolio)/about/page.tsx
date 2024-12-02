@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About - Roman Jumatov',
+  title: 'Roman Jumatov - About',
   description:
-    'Learn more about Roman Jumatov, my experience, and my journey in web development.',
+    'Discover Roman Jumatov’s journey and expertise in web development and technology.',
 };
 
 export default function Page() {

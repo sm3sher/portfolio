@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Work - Roman Jumatov',
+  title: 'Roman Jumatov - Work',
   description:
     'Explore my work showcasing my skills in React, Next.js, and other technologies.',
 };

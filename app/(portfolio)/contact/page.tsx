@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ContactForm from '@/app/ui/form/contact-form';
 
 export const metadata: Metadata = {
-  title: 'Contact - Roman Jumatov',
+  title: 'Roman Jumatov - Contact',
   description:
     'Get in touch with me for collaborations, inquiries, or networking opportunities.',
 };
@@ -12,14 +12,14 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row md:items-center lg:gap-16">
       <div className="relative max-w-2xl space-y-6 md:w-1/2">
-        <h1 className="text-center md:text-left">Get in touch! </h1>
+        <h1 className="text-center md:text-left">Get in Touch!</h1>
         <p className="text-pretty text-center text-lg sm:text-xl md:text-left">
           You can send me a message here. If you’re proposing a collaboration on
           a specific project, please describe the project’s goals and the tasks
           as clearly as possible. The more details you provide, the better I can
           assess if the collaboration would be a good fit!
         </p>
-        <div className="flex items-center justify-center gap-4 md:justify-normal">
+        <div className="flex items-center justify-center gap-4 md:justify-start">
           <Image
             src="/avatar.png"
             className="rounded-full"
