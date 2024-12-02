@@ -36,6 +36,10 @@ body {
   h1 {
     @apply text-3xl font-extrabold sm:text-5xl md:text-4xl lg:text-6xl;
   }
+
+  h2 {
+    @apply text-2xl font-semibold sm:text-3xl md:text-2xl lg:text-4xl;
+  }
 }
 
 @layer components {
