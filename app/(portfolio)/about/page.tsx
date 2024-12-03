@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import ExperienceMetric from '@/app/ui/experience-metric';
 import Section from '@/app/ui/section';
+import ExperienceMetric from '@/app/ui/experience-metric';
+import Chip from '@/app/ui/chip';
 
 export const metadata: Metadata = {
   title: 'Roman Jumatov - About',
@@ -53,12 +54,7 @@ export default function Page() {
               'Datadog',
               'Docker',
             ].map((skill) => (
-              <span
-                key={skill}
-                className="base-border rounded-full bg-[--background-color] px-3 py-1 text-sm font-medium"
-              >
-                {skill}
-              </span>
+              <Chip key={skill} label={skill} />
             ))}
           </div>
         </Section>
