@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import ExperienceMetric from '@/app/ui/experience-metric';
 
 export const metadata: Metadata = {
   title: 'Roman Jumatov - About',
@@ -30,14 +31,8 @@ export default function Page() {
           </div>
         </div>
         <div className="flex justify-center space-x-8 text-center lg:space-x-32">
-          <div>
-            <h1>7+</h1>
-            <h3>Years of Coding</h3>
-          </div>
-          <div>
-            <h1>4+</h1>
-            <h3>Years of Work</h3>
-          </div>
+          <ExperienceMetric startYear={2017} label="Years of Coding" />
+          <ExperienceMetric startYear={2020} label="Years of Work" />
         </div>
       </div>
       <div className="w-full md:w-1/2">
