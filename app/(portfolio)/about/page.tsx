@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import ExperienceMetric from '@/app/ui/experience-metric';
+import Section from '@/app/ui/section';
 
 export const metadata: Metadata = {
   title: 'Roman Jumatov - About',
@@ -36,9 +37,7 @@ export default function Page() {
         </div>
       </div>
       <div className="w-full md:w-1/2">
-        <section className="mb-8 text-center md:text-left">
-          <h2>Preferred Toolkit</h2>
-          <div className="mt-4 border border-[--secondary]" />
+        <Section title="Preferred Toolkit">
           <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
             {[
               'Kotlin',
@@ -62,10 +61,8 @@ export default function Page() {
               </span>
             ))}
           </div>
-        </section>
-        <section className="mb-8 text-center md:text-left">
-          <h2>Education</h2>
-          <div className="mt-4 border border-[--secondary]" />
+        </Section>
+        <Section title="Education">
           <h3 className="mt-2 text-lg font-semibold">
             B.Sc. in Computer Science, 2017 - 2020
           </h3>
@@ -75,16 +72,14 @@ export default function Page() {
           <p className="text-lg">
             With a focus on full-stack applications and machine learning.
           </p>
-        </section>
-        <section className="mb-8 text-center md:text-left">
-          <h2>Beyond Coding</h2>
-          <div className="mt-4 border border-[--secondary]" />
+        </Section>
+        <Section title="Beyond Coding">
           <p className="mt-2 text-lg">
             When I’m not immersed in code, I enjoy exploring the great outdoors,
             engaging in strength training to stay fit, or experimenting with new
             tools and frameworks to stay ahead in the ever-evolving tech world.
           </p>
-        </section>
+        </Section>
       </div>
     </div>
   );
