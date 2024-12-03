@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import Section from '@/app/ui/section';
-import ExperienceMetric from '@/app/ui/experience-metric';
-import Chip from '@/app/ui/chip';
 import AboutMe from '@/app/ui/about-me';
+import ExperienceMetric from '@/app/ui/experience-metric';
+import Section from '@/app/ui/section';
+import Chip from '@/app/ui/chip';
+import { skills } from '@/app/lib/skills';
 
 export const metadata: Metadata = {
   title: 'Roman Jumatov - About',
@@ -24,20 +25,7 @@ export default function Page() {
       <div className="w-full md:w-1/2">
         <Section title="Preferred Toolkit">
           <div className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
-            {[
-              'Kotlin',
-              'TypeScript',
-              'React',
-              'Vite',
-              'Next.js',
-              'Spring Boot',
-              'Node.js',
-              'Contentful',
-              'Vitest',
-              'Tailwind CSS',
-              'Datadog',
-              'Docker',
-            ].map((skill) => (
+            {skills.map((skill) => (
               <Chip key={skill} label={skill} />
             ))}
           </div>
