@@ -5,7 +5,7 @@ export default function AboutMe() {
   return (
     <div className="flex flex-col items-center lg:flex-row lg:items-center">
       <Image
-        className="w-1/2 rounded-2xl lg:w-7/12"
+        className="w-1/2 rounded-2xl"
         src="/front-profile.png"
         alt="Picture of Roman Jumatov"
         width={384}

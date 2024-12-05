@@ -31,9 +31,11 @@ export default function Page() {
           </div>
         </Section>
         <Section title="Education">
-          <div className="mt-2 space-y-1">
-            <h3 className="text-lg font-semibold">
-              B.Sc. in Computer Science | 2017 - 2020
+          <div className="space-y-1">
+            <h3 className="flex flex-col flex-wrap justify-center text-lg font-semibold sm:flex-row md:justify-start">
+              <span>B.Sc. in Computer Science</span>
+              <span className="mx-2 hidden sm:inline">|</span>
+              <span>2017 - 2020</span>
             </h3>
             <p className="text-md text-[--secondary]">
               <a
@@ -45,13 +47,11 @@ export default function Page() {
                 @Heinrich-Heine University Düsseldorf
               </a>
             </p>
-            <p className="text-lg">
-              Specialized in full-stack applications and machine learning.
-            </p>
+            <p>Specialized in full-stack applications and machine learning.</p>
           </div>
         </Section>
         <Section title="Beyond Coding">
-          <p className="mt-2 text-lg">
+          <p>
             When I’m not immersed in code, I enjoy exploring the great outdoors,
             engaging in strength training, or capturing moments through
             photography to express my creativity and unwind.
