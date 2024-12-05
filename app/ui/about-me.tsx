@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { calculateAge } from '@/app/lib/date-utils';
 
 export default function AboutMe() {
   return (
@@ -12,10 +13,11 @@ export default function AboutMe() {
       />
       <div className="mt-4 lg:ml-4 lg:mt-0 lg:self-center">
         <p className="text-pretty text-center text-lg sm:text-xl lg:text-left">
-          Hi, I’m Roman Jumatov - a software developer who believes that great
-          code should not only work but feel effortless to the user. I’m driven
-          by curiosity and a passion for creating modern, intuitive web
-          experiences that leave a lasting impression.
+          Hi, I’m Roman Jumatov - a {calculateAge('1999-04-02')}-year-old
+          software developer based in western Germany. I believe that great code
+          should not only work but feel effortless to the user. I’m driven by
+          curiosity and a passion for creating modern, intuitive web experiences
+          that leave a lasting impression.
         </p>
       </div>
     </div>
