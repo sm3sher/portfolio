@@ -31,21 +31,30 @@ export default function Page() {
           </div>
         </Section>
         <Section title="Education">
-          <h3 className="mt-2 text-lg font-semibold">
-            B.Sc. in Computer Science, 2017 - 2020
-          </h3>
-          <p className="text-[--secondary]">
-            @Heinrich-Heine University Duesseldorf
-          </p>
-          <p className="text-lg">
-            With a focus on full-stack applications and machine learning.
-          </p>
+          <div className="mt-2 space-y-1">
+            <h3 className="text-lg font-semibold">
+              B.Sc. in Computer Science | 2017 - 2020
+            </h3>
+            <p className="text-md text-[--secondary]">
+              <a
+                href="https://www.hhu.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[--secondary] hover:text-[--primary] hover:underline hover:underline-offset-4"
+              >
+                @Heinrich-Heine University Düsseldorf
+              </a>
+            </p>
+            <p className="text-lg">
+              Specialized in full-stack applications and machine learning.
+            </p>
+          </div>
         </Section>
         <Section title="Beyond Coding">
           <p className="mt-2 text-lg">
             When I’m not immersed in code, I enjoy exploring the great outdoors,
-            engaging in strength training to stay fit, or experimenting with new
-            tools and frameworks to stay ahead in the ever-evolving tech world.
+            engaging in strength training, or capturing moments through
+            photography to express my creativity and unwind.
           </p>
         </Section>
       </div>
