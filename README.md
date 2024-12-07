@@ -16,6 +16,7 @@ It serves as a personal portfolio to showcase my skills in web development.
 ## 🛠 Commands
 
 Here are the main commands that I use:
+
 - `npm run dev`: Start the development server
 - `npm run build`: Build for production
 - `npm run start`: Start the production server
