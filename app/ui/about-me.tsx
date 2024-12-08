@@ -12,7 +12,7 @@ export default function AboutMe() {
         height={405}
       />
       <div className="mt-4 lg:ml-4 lg:mt-0 lg:self-center">
-        <p className="text-pretty text-center text-lg sm:text-xl lg:text-left">
+        <p className="text-center lg:text-left">
           Hi, I’m Roman Jumatov - a {calculateAge('1999-04-02')}-year-old
           software developer based in western Germany. I believe that great code
           should not only work but feel effortless to the user. I’m driven by

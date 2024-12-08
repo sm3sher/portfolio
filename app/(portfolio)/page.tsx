@@ -26,7 +26,7 @@ export default function Page() {
         <h1 className="text-balance text-center md:text-left">
           Turning Ideas into Seamless Digital Experiences.
         </h1>
-        <p className="text-pretty text-center text-lg sm:text-xl md:text-left">
+        <p className="text-center md:text-left">
           I specialize in developing user-centric web applications that blend
           innovation and functionality. Explore my work experience and skills,
           showcasing my expertise in web development.

@@ -32,7 +32,7 @@ export default function Page() {
         </Section>
         <Section title="Education">
           <div className="space-y-1">
-            <h3 className="flex flex-col flex-wrap justify-center text-lg font-semibold sm:flex-row md:justify-start">
+            <h3 className="flex flex-col flex-wrap justify-center text-xl font-semibold sm:flex-row md:justify-start">
               <span>B.Sc. in Computer Science</span>
               <span className="mx-2 hidden sm:inline">|</span>
               <span>2017 - 2020</span>

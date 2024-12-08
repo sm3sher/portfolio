@@ -44,7 +44,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         className={`ml-2 cursor-pointer select-none text-sm text-[--secondary] ${errorMessage && 'text-[--error-color]'}`}
         htmlFor="check-with-link"
       >
-        <p>
+        <p className="text-sm">
           I have taken note of the{' '}
           <Link
             href="/privacy-policy"
