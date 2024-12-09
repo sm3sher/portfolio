@@ -32,11 +32,11 @@ export default function Page() {
           showcasing my expertise in web development.
         </p>
         <div className="flex justify-center space-x-3 md:justify-start">
+          <Link href="/about" tabIndex={-1}>
+            <Button>About Me</Button>
+          </Link>
           <Link href="/work" tabIndex={-1}>
             <Button>View My Work</Button>
-          </Link>
-          <Link href="/contact" tabIndex={-1}>
-            <Button>Contact Me</Button>
           </Link>
         </div>
       </div>
