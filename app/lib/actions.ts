@@ -1,4 +1,5 @@
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
+import { createClient } from '@/app/supabase/client';
 
 export type ServerResponse = {
   errors?: Partial<Record<keyof ContactFormData, string[] | undefined>>;
@@ -12,8 +13,16 @@ export async function sendMessage(
     return { errors: validatedFields.error.flatten().fieldErrors };
   }
 
-  // TODO: process message
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  const supabase = createClient();
+  const { error } = await supabase
+    .from('contacts')
+    .insert(validatedFields.data);
 
-  return {};
+  if (error) {
+    // TODO: handle error
+    console.log(error);
+    return {};
+  } else {
+    return {};
+  }
 }
