@@ -6,7 +6,8 @@ It serves as a personal portfolio to showcase my skills in web development.
 ## ✨ Features
 
 - **Dark Mode Support**: Powered by [next-themes](https://github.com/pacocoursey/next-themes)
-- **Forms**: Built with [react-hook-form](https://react-hook-form.com) and validated using [zod](https://zod.dev)
+- **Forms**: Built with [react-hook-form](https://react-hook-form.com) and validated using [zod](https://zod.dev) on both client and server-side
+- **Form Handling**: Data is stored in [Supabase](https://supabase.com)
 - **Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for lightweight and scalable icons
 - **Font**: Utilizes Vercel’s new [Geist font](https://vercel.com/font) for modern typography
 - **Styling**: Developed using [Tailwind CSS](https://tailwindcss.com) with a mobile-first approach
