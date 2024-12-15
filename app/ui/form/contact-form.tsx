@@ -137,7 +137,7 @@ export default function ContactForm() {
               Message sent!
             </h2>
             <p className="mt-2">
-              Thank you for reaching out. I&#39;ll get back to you shortly.
+              Thank you for reaching out. I’ll get back to you shortly.
             </p>
             <div className="mt-4 flex justify-center">
               <Button onClick={() => setSubmitted(false)}>
