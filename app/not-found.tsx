@@ -1,10 +1,12 @@
+import Stars from '@/app/ui/stars';
 import Astronaut from '@/app/ui/astronaut';
 import Link from 'next/link';
 import Button from '@/app/ui/button/button';
 
 export default function NotFound() {
   return (
-    <div className="mx-auto w-full max-w-screen-xl overflow-x-hidden p-6 pt-12">
+    <div className="mx-auto w-full max-w-screen-xl overflow-hidden p-6 pt-8">
+      <Stars />
       <div className="flex flex-col-reverse items-center gap-6 md:h-full md:flex-row lg:gap-16">
         <div className="md:w-1/2">
           <Astronaut />
