@@ -1,6 +1,6 @@
 export default function Astronaut() {
   return (
-    <div className="animate-spin-slow relative h-[340px] md:h-auto">
+    <div className="relative h-[340px] animate-spin-slow md:h-auto">
       <div className="absolute left-1/2 top-1/2 h-[300px] w-[250px] -translate-x-1/2 -translate-y-1/2">
         {/* Oxygen tank */}
         <div className="absolute left-1/2 top-1/2 h-[150px] w-[100px] -translate-x-1/2 -translate-y-1/2 rounded-t-full bg-[#94b7ca]" />
