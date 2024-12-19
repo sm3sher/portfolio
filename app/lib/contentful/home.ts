@@ -4,7 +4,7 @@ import {
   ContentImage,
   parseContentfulContentImage,
 } from '@/app/lib/contentful/content-image';
-import contentfulClient from '@/app/lib/contentful/contentful-client';
+import contentfulClient from '@/app/lib/contentful/client';
 
 type Home = {
   image: ContentImage | null;

@@ -1,4 +1,4 @@
-export function calculateAge(birthDateString: string): number {
+export const calculateAge = (birthDateString: string): number => {
   const birthDate = new Date(birthDateString);
   const today = new Date();
   return (
@@ -9,8 +9,8 @@ export function calculateAge(birthDateString: string): number {
       ? 1
       : 0)
   );
-}
+};
 
-export function getYearsSince(startYear: number): number {
+export const getYearsSince = (startYear: number): number => {
   return new Date().getFullYear() - startYear;
-}
+};

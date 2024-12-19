@@ -1,7 +1,7 @@
 'use server';
 
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
-import { createClient } from '@/app/supabase/client';
+import supabaseClient from '@/app/lib/supabase/client';
 
 export type SaveMessageStatus =
   | {
@@ -16,10 +16,10 @@ export type SaveMessageStatus =
     }
   | null;
 
-export async function saveMessage(
+export const saveMessage = async (
   _prevState: SaveMessageStatus,
   formData: FormData,
-): Promise<SaveMessageStatus> {
+): Promise<SaveMessageStatus> => {
   const validatedFields = contactFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
@@ -34,10 +34,8 @@ export async function saveMessage(
     };
   }
 
-  const supabase = createClient();
-  const { error } = await supabase
-    .from('contacts')
-    .insert(validatedFields.data);
+  const client = supabaseClient();
+  const { error } = await client.from('contacts').insert(validatedFields.data);
 
   if (error) {
     return {
@@ -46,4 +44,4 @@ export async function saveMessage(
     };
   }
   return { status: 'success' };
-}
+};
