@@ -12,5 +12,14 @@
         "ignoreMiddleExtensions": true
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["app/lib/contentful/types/**/*"],
+      "rules": {
+        "check-file/no-index": "off",
+        "check-file/filename-naming-convention": "off"
+      }
+    }
+  ]
 }
