@@ -1,6 +1,7 @@
 import { EntryCollection } from 'contentful';
 import { TypeFooterSkeleton } from '@/app/lib/contentful/types';
 import contentfulClient from '@/app/lib/contentful/client';
+import { Locale } from '@/i18n/routing';
 
 export type FooterItem = { href: string; label: string };
 
@@ -19,10 +20,13 @@ const parseFooterResult = (
     }));
 };
 
-export const fetchFooterContent = async (): Promise<FooterItem[] | null> => {
+export const fetchFooterContent = async (
+  locale: Locale,
+): Promise<FooterItem[] | null> => {
   const client = contentfulClient();
 
   const footerResult = await client.getEntries<TypeFooterSkeleton>({
+    locale,
     content_type: 'footer',
   });
 

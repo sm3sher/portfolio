@@ -5,6 +5,7 @@ import {
   parseContentfulContentImage,
 } from '@/app/lib/contentful/content-image';
 import contentfulClient from '@/app/lib/contentful/client';
+import { Locale } from '@/i18n/routing';
 
 type Home = {
   image: ContentImage | null;
@@ -30,10 +31,13 @@ const parseHomeResult = (
   };
 };
 
-export const fetchHomeContent = async (): Promise<Home | null> => {
+export const fetchHomeContent = async (
+  locale: Locale,
+): Promise<Home | null> => {
   const client = contentfulClient();
 
   const homeResult = await client.getEntries<TypeHomeSkeleton>({
+    locale,
     content_type: 'home',
   });
 

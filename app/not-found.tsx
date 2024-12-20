@@ -1,6 +1,6 @@
 import Stars from '@/app/ui/stars';
 import Astronaut from '@/app/ui/astronaut';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 
 export default function NotFound() {

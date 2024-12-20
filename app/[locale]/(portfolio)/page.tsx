@@ -1,17 +1,27 @@
 import type { Metadata } from 'next';
 import { fetchHomeContent } from '@/app/lib/contentful/home';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 
-export const metadata: Metadata = {
-  title: 'Roman Jumatov',
-  description:
-    'Welcome to my portfolio. Discover my skills and expertise in web development.',
+type Props = {
+  params: Promise<{ locale: Locale }>;
 };
 
-export default async function Page() {
-  const home = await fetchHomeContent();
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // TODO: populate with contentful
+  const { locale } = await params;
+  console.log('Generating metadata...', locale);
+  return {
+    title: 'Roman Jumatov',
+    description:
+      'Welcome to my portfolio. Discover my skills and expertise in web development.',
+  };
+}
+
+export default async function Page({ params }: Props) {
+  const { locale } = await params;
+  const home = await fetchHomeContent(locale);
 
   return (
     <div className="flex flex-col-reverse items-center justify-between gap-8 md:h-full md:flex-row md:items-center lg:gap-12">

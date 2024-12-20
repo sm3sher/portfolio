@@ -1,13 +1,12 @@
 'use client';
 
-import Link from 'next/link';
 import {
   ContractsIcon,
   GridViewIcon,
   Home09Icon,
   UserCircleIcon,
 } from 'hugeicons-react';
-import { usePathname } from 'next/navigation';
+import { Link, usePathname } from '@/i18n/routing';
 
 const navbarItems = [
   {

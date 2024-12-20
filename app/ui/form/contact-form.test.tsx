@@ -3,6 +3,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
 import { saveMessage } from '@/app/lib/actions';
 import ContactForm from '@/app/ui/form/contact-form';
+import { NextIntlClientProvider } from 'next-intl';
 
 vi.mock(import('@/app/lib/actions'));
 
@@ -20,7 +21,11 @@ describe('ContactForm', () => {
 
   // TODO: unskip when https://github.com/vercel/next.js/issues/72949 fixed
   it.skip('shows validation errors when fields are empty', async () => {
-    render(<ContactForm />);
+    render(
+      <NextIntlClientProvider locale="en">
+        <ContactForm />
+      </NextIntlClientProvider>,
+    );
 
     await user.click(screen.getByText('Send Message'));
 
@@ -33,7 +38,11 @@ describe('ContactForm', () => {
   });
 
   it('displays error messages when invalid data is entered', async () => {
-    render(<ContactForm />);
+    render(
+      <NextIntlClientProvider locale="en">
+        <ContactForm />
+      </NextIntlClientProvider>,
+    );
 
     await user.type(
       screen.getByPlaceholderText('Email address'),
@@ -47,7 +56,11 @@ describe('ContactForm', () => {
   });
 
   it('calls sendMessage with form data when valid', async () => {
-    render(<ContactForm />);
+    render(
+      <NextIntlClientProvider locale="en">
+        <ContactForm />
+      </NextIntlClientProvider>,
+    );
 
     await user.type(screen.getByPlaceholderText('Name'), 'John Doe');
     await user.type(

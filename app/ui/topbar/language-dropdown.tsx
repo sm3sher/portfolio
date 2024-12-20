@@ -3,22 +3,19 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { LanguageSkillIcon } from 'hugeicons-react';
+import { Locale, usePathname, useRouter } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 
 export default function LanguageDropdown() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const locale = useLocale() as Locale;
+
   const [open, setOpen] = useState(false);
-  // TODO: replace with actual language switch
-  const [isEnglish, setIsEnglish] = useState(true);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleLanguage = (selectedLanguage: 'us' | 'de') => {
-    if (
-      (isEnglish && selectedLanguage === 'us') ||
-      (!isEnglish && selectedLanguage === 'de')
-    ) {
-      setOpen(false);
-      return;
-    }
-    setIsEnglish(selectedLanguage === 'us');
+  const handleLocaleChange = (newLocale: Locale) => {
+    router.replace({ pathname }, { locale: newLocale });
     setOpen(false);
   };
 
@@ -31,7 +28,7 @@ export default function LanguageDropdown() {
     if (e.key === 'Enter') {
       const target = e.target as HTMLElement;
       if (target.dataset.language) {
-        toggleLanguage(target.dataset.language as 'us' | 'de');
+        handleLocaleChange(target.dataset.language as Locale);
       }
     }
   };
@@ -77,11 +74,11 @@ export default function LanguageDropdown() {
           onKeyDown={handleKeyDown}
         >
           <li
-            className={`flex cursor-pointer items-center rounded-t-md pl-3 ${isEnglish ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
+            className={`flex cursor-pointer items-center rounded-t-md pl-3 ${locale === 'en' ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
             role="menuitem"
             tabIndex={0}
-            data-language="us"
-            onClick={() => toggleLanguage('us')}
+            data-language="en"
+            onClick={() => handleLocaleChange('en')}
             onKeyDown={handleKeyDown}
           >
             <Image
@@ -93,11 +90,11 @@ export default function LanguageDropdown() {
             <span className="block px-3 py-2">English</span>
           </li>
           <li
-            className={`flex cursor-pointer items-center rounded-b-md pl-3 ${!isEnglish ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
+            className={`flex cursor-pointer items-center rounded-b-md pl-3 ${locale === 'de' ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
             role="menuitem"
             tabIndex={0}
             data-language="de"
-            onClick={() => toggleLanguage('de')}
+            onClick={() => handleLocaleChange('de')}
             onKeyDown={handleKeyDown}
           >
             <Image

@@ -4,7 +4,7 @@ import {
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { Alert01Icon, Tick02Icon } from 'hugeicons-react';
 
 type Props<T extends FieldValues> = {

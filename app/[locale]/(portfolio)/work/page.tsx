@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Timeline from '@/app/ui/timeline';
 import { timelineData } from '@/app/lib/timeline-data';
 import Section from '@/app/ui/section';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 
 export const metadata: Metadata = {
