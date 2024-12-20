@@ -2,14 +2,17 @@ import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import './ui/globals.css';
+import { fetchFooterContent } from '@/app/lib/contentful/footer';
 import Footer from '@/app/ui/footer';
+import '@/app/ui/globals.css';
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const footerItems = await fetchFooterContent();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -17,7 +20,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class">
           {children}
-          <Footer />
+          <Footer items={footerItems || []} />
         </ThemeProvider>
       </body>
     </html>

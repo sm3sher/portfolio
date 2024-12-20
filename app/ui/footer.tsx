@@ -1,19 +1,10 @@
-const footerItems = [
-  {
-    href: 'https://github.com/sm3sher',
-    label: 'GitHub',
-  },
-  {
-    href: 'https://stackoverflow.com/users/8845480',
-    label: 'Stack Overflow',
-  },
-  {
-    href: 'mailto:roman.jum99@gmail.com',
-    label: 'Email',
-  },
-];
+import { FooterItem } from '@/app/lib/contentful/footer';
 
-export default function Footer() {
+type Props = {
+  items: FooterItem[];
+};
+
+export default function Footer({ items }: Props) {
   return (
     <footer className="m-4 rounded-lg text-sm font-medium text-[--secondary]">
       <div className="mx-auto max-w-screen-xl p-4 sm:flex sm:items-center sm:justify-between">
@@ -21,7 +12,7 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} - Roman Jumatov
         </span>
         <ul className="mt-3 flex flex-wrap items-center sm:mt-0">
-          {footerItems.map((item) => (
+          {items.map((item) => (
             <li
               key={item.href}
               className="me-4 last:me-0 hover:underline hover:underline-offset-4 sm:me-6"
