@@ -9,6 +9,7 @@ It serves as a personal portfolio to showcase my skills in web development.
 - **Forms**: Built with [react-hook-form](https://react-hook-form.com) and validated using [zod](https://zod.dev) on both client and server-side
 - **Form Handling**: Submitted data is stored in [Supabase](https://supabase.com)
 - **Content Management**: Text and images are delivered through [Contentful](https://contentful.com)
+- **Internationalization**: Supports multiple languages with [next-intl](https://next-intl.dev/) and localized content powered by [Contentful](https://contentful.com)
 - **Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for lightweight and scalable icons
 - **Font**: Utilizes Vercel’s new [Geist font](https://vercel.com/font) for modern typography
 - **Styling**: Developed using [Tailwind CSS](https://tailwindcss.com) with a mobile-first approach
