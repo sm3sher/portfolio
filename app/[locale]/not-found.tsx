@@ -1,3 +1,4 @@
+import BaseLayout from '@/app/ui/base-layout';
 import Stars from '@/app/ui/stars';
 import Astronaut from '@/app/ui/astronaut';
 import { Link } from '@/i18n/routing';
@@ -5,7 +6,7 @@ import Button from '@/app/ui/button/button';
 
 export default function NotFound() {
   return (
-    <div className="mx-auto w-full max-w-screen-xl overflow-hidden p-6 pt-8">
+    <BaseLayout>
       <Stars />
       <div className="flex flex-col-reverse items-center gap-6 md:h-full md:flex-row lg:gap-16">
         <div className="md:w-1/2">
@@ -27,6 +28,6 @@ export default function NotFound() {
           </div>
         </div>
       </div>
-    </div>
+    </BaseLayout>
   );
 }
