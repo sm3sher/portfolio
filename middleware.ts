@@ -4,6 +4,13 @@ import { routing } from '@/i18n/routing';
 export default createMiddleware(routing);
 
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ['/', '/(en|de)/:path*'],
+  matcher: [
+    // Enable a redirect to a matching locale at the root
+    '/',
+    // Set a cookie to remember the previous locale for
+    // all requests that have a locale prefix
+    '/(en|de)/:path*',
+    // Enable redirects that add missing locales
+    '/((?!_next|.*\\..*).*)',
+  ],
 };
