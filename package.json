@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "test": "vitest",
     "prepare": "husky",
-    "types:contentful": "export $(cat .env.local | awk '!/^\\s*#/' | awk '!/^\\s*$/'); cf-content-types-generator --spaceId $CONTENTFUL_SPACE_ID --token $CONTENTFUL_MANAGEMENT_TOKEN -o app/lib/contentful/types -X && prettier --write app/lib/contentful/types"
+    "_contentful:generate": "cf-content-types-generator --spaceId $CONTENTFUL_SPACE_ID --token $CONTENTFUL_MANAGEMENT_TOKEN -o app/lib/contentful/types -X && prettier --write app/lib/contentful/types",
+    "contentful:generate": "dotenv -e .env.local -- npm run _contentful:generate"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -38,6 +39,7 @@
     "@types/react-dom": "^19.0.2",
     "@vitejs/plugin-react": "^4.3.4",
     "cf-content-types-generator": "^2.15.5",
+    "dotenv-cli": "^7.4.4",
     "eslint": "^9",
     "eslint-config-next": "^15.1.0",
     "eslint-config-prettier": "^9",
