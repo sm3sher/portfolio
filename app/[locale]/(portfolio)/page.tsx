@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { fetchHomeContent } from '@/app/lib/contentful/home';
+import contentfulClient from '@/app/lib/contentful/client';
 import Image from 'next/image';
 import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
@@ -21,16 +21,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
-  const home = await fetchHomeContent(locale);
+  const homeContentQuery = await contentfulClient.homeContent({ locale });
+  const home = homeContentQuery.homeCollection?.items[0];
 
   return (
     <div className="flex flex-col-reverse items-center justify-between gap-8 md:h-full md:flex-row md:items-center lg:gap-12">
       <div className="flex w-5/6 justify-center md:w-5/12">
-        {home?.image && (
+        {home?.image && home.image.url && home.image.description && (
           <Image
             className="rounded-2xl"
-            src={`https:${home.image.src}`}
-            alt={home.image.alt}
+            src={home.image.url}
+            alt={home.image.description}
             width={500}
             height={410}
             priority

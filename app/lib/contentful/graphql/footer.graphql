@@ -1,0 +1,12 @@
+query footerContent($locale: String) {
+    footerCollection(limit: 1, locale: $locale) {
+        items {
+            footerItemCollection {
+                items {
+                    label
+                    href
+                }
+            }
+        }
+    }
+}

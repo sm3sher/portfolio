@@ -25,13 +25,5 @@
       }
     ]
   },
-  "overrides": [
-    {
-      "files": ["app/lib/contentful/types/**/*"],
-      "rules": {
-        "check-file/no-index": "off",
-        "check-file/filename-naming-convention": "off"
-      }
-    }
-  ]
+  "ignorePatterns": ["app/lib/contentful/generated/sdk.ts"]
 }

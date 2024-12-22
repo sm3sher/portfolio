@@ -8,7 +8,7 @@ It serves as a personal portfolio to showcase my skills in web development.
 - **Dark Mode Support**: Powered by [next-themes](https://github.com/pacocoursey/next-themes)
 - **Forms**: Built with [react-hook-form](https://react-hook-form.com) and validated using [zod](https://zod.dev) on both client and server-side
 - **Form Handling**: Submitted data is stored in [Supabase](https://supabase.com)
-- **Content Management**: Text and images are delivered through [Contentful](https://contentful.com)
+- **Content Management**: Text and images are managed through [Contentful](https://contentful.com) and queried via [GraphQL](https://graphql.org/) 
 - **Internationalization**: Supports multiple languages with [next-intl](https://next-intl.dev/) and localized content powered by [Contentful](https://contentful.com)
 - **Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for lightweight and scalable icons
 - **Font**: Utilizes Vercel’s new [Geist font](https://vercel.com/font) for modern typography
@@ -26,4 +26,4 @@ Here are the main commands that I use:
 - `npm run lint`: Run ESLint to check for issues
 - `npm run format`: Format code with Prettier
 - `npm test`: Run unit tests with Vitest
-- `npm run contentful:generate`: Generate Contentful types
+- `npm run graphql:generate`: Generate GraphQL queries

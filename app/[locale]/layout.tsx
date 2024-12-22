@@ -2,7 +2,8 @@ import { ReactNode } from 'react';
 import { ThemeProvider } from 'next-themes';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { fetchFooterContent } from '@/app/lib/contentful/footer';
+import contentfulClient from '@/app/lib/contentful/client';
+import { FooterItem } from '@/app/lib/contentful/generated/sdk';
 import { Locale, routing } from '@/i18n/routing';
 import Footer from '@/app/ui/footer';
 import '@/app/ui/globals.css';
@@ -20,7 +21,9 @@ export default async function RootLayout({
   if (!routing.locales.includes(locale)) {
     notFound();
   }
-  const footerItems = await fetchFooterContent(locale);
+  const footerContentQuery = await contentfulClient.footerContent({ locale });
+  const footerItems =
+    footerContentQuery.footerCollection?.items[0]?.footerItemCollection?.items;
 
   return (
     <html lang={locale} suppressHydrationWarning>
@@ -29,7 +32,11 @@ export default async function RootLayout({
       >
         <ThemeProvider attribute="class">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          <Footer items={footerItems || []} />
+          <Footer
+            items={(footerItems || []).filter(
+              (item): item is FooterItem => item !== null,
+            )}
+          />
         </ThemeProvider>
       </body>
     </html>

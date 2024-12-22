@@ -1,9 +1,7 @@
-import { createClient } from 'contentful';
+import { GraphQLClient } from 'graphql-request';
+import { getSdk } from '@/app/lib/contentful/generated/sdk';
+import { endpoint, requestConfig } from '@/codegen';
 
-const contentfulClient = () =>
-  createClient({
-    space: process.env.CONTENTFUL_SPACE_ID!,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
-  });
+const contentfulClient = new GraphQLClient(endpoint, requestConfig);
 
-export default contentfulClient;
+export default getSdk(contentfulClient);

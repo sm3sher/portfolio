@@ -1,4 +1,4 @@
-import { FooterItem } from '@/app/lib/contentful/footer';
+import { FooterItem } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
   items: FooterItem[];
@@ -17,7 +17,11 @@ export default function Footer({ items }: Props) {
               key={item.href}
               className="me-4 last:me-0 hover:underline hover:underline-offset-4 sm:me-6"
             >
-              <a href={item.href} target="_blank" rel="noopener noreferrer">
+              <a
+                href={item.href || ''}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {item.label}
               </a>
             </li>
