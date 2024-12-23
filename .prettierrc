@@ -1,4 +1,12 @@
 {
   "plugins": ["prettier-plugin-tailwindcss"],
-  "singleQuote": true
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.graphql",
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
 }
