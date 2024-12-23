@@ -1,3 +1,4 @@
+app/lib/contentful/generated
 node_modules
 coverage
 .next
