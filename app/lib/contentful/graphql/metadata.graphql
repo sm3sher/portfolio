@@ -1,0 +1,8 @@
+query metadataContent($locale: String) {
+    metaDataCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            description
+        }
+    }
+}

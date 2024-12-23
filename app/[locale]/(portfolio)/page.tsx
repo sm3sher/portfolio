@@ -9,13 +9,14 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // TODO: populate with contentful
   const { locale } = await params;
-  console.log('Generating metadata...', locale);
+  const metadataContentQuery = await contentfulClient.metadataContent({
+    locale,
+  });
+  const metadata = metadataContentQuery.metaDataCollection?.items[0];
   return {
-    title: 'Roman Jumatov',
-    description:
-      'Welcome to my portfolio. Discover my skills and expertise in web development.',
+    title: metadata?.title,
+    description: metadata?.description,
   };
 }
 
