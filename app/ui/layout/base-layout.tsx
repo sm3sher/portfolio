@@ -10,7 +10,7 @@ type Props = {
 export default function BaseLayout({ children }: Props) {
   return (
     <div className="grid grid-rows-[auto,1fr]">
-      <nav className="sticky top-0 z-10 mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 py-6">
+      <nav className="fixed left-0 right-0 top-0 z-10 mx-auto flex w-full max-w-screen-xl items-center justify-between px-6 py-6">
         <LanguageDropdown />
         <Navbar />
         <ThemeToggle />
