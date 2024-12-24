@@ -1,16 +1,9 @@
-import { Metadata } from 'next';
 import Image from 'next/image';
 import ContactForm from '@/app/ui/form/contact-form';
 
-export const metadata: Metadata = {
-  title: 'Roman Jumatov - Contact',
-  description:
-    'Get in touch with me for collaborations, inquiries, or networking opportunities.',
-};
-
-export default function Page() {
+export default function Contact() {
   return (
-    <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row md:items-center lg:gap-16">
+    <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row lg:gap-16">
       <div className="relative max-w-2xl space-y-6 md:w-1/2">
         <h1 className="text-center md:text-left">Get in Touch!</h1>
         <p className="text-center md:text-left">

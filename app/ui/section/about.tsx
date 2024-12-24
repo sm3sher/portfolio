@@ -1,19 +1,12 @@
-import type { Metadata } from 'next';
 import AboutMe from '@/app/ui/about-me';
 import ExperienceMetric from '@/app/ui/experience-metric';
 import Section from '@/app/ui/section';
-import Chip from '@/app/ui/chip';
 import { skills } from '@/app/lib/skills';
+import Chip from '@/app/ui/chip';
 
-export const metadata: Metadata = {
-  title: 'Roman Jumatov - About',
-  description:
-    'Discover Roman Jumatov’s journey and expertise in web development and technology.',
-};
-
-export default function Page() {
+export default function About() {
   return (
-    <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row md:items-center lg:gap-16">
+    <div className="flex flex-col items-center justify-between gap-6 md:h-full md:flex-row lg:gap-16">
       <div className="relative max-w-2xl space-y-6 md:w-1/2">
         <h1 className="text-center lg:text-left">About Me.</h1>
         <AboutMe />

@@ -1,19 +1,12 @@
-import type { Metadata } from 'next';
-import Timeline from '@/app/ui/timeline';
-import { timelineData } from '@/app/lib/timeline-data';
 import Section from '@/app/ui/section';
 import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
+import Timeline from '@/app/ui/timeline';
+import { timelineData } from '@/app/lib/timeline-data';
 
-export const metadata: Metadata = {
-  title: 'Roman Jumatov - Work',
-  description:
-    'Explore my work showcasing my skills in React, Next.js, and other technologies.',
-};
-
-export default function Page() {
+export default function Work() {
   return (
-    <div className="flex flex-col items-center justify-between gap-8 md:h-full md:flex-row md:items-center lg:gap-16">
+    <div className="flex flex-col items-center justify-between gap-8 md:h-full md:flex-row lg:gap-16">
       <div className="flex flex-col items-center justify-center space-y-6 md:w-1/2">
         <h1 className="w-full text-center md:text-left">My Work.</h1>
         <p className="text-center md:text-left">
@@ -40,7 +33,7 @@ export default function Page() {
             next big project.
           </p>
         </Section>
-        <Link href="/contact" tabIndex={-1}>
+        <Link href="#contact" tabIndex={-1}>
           <Button>Contact Me</Button>
         </Link>
       </div>

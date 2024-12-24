@@ -10,13 +10,12 @@ import '@/app/ui/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
+type Props = {
   children: ReactNode;
   params: Promise<{ locale: Locale }>;
-}>) {
+};
+
+export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   if (!routing.locales.includes(locale)) {
     notFound();
@@ -26,7 +25,7 @@ export default async function RootLayout({
     footerContentQuery.footerCollection?.items[0]?.footerItemCollection?.items;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning className="scroll-smooth">
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} grid min-h-screen grid-rows-[1fr_auto] font-[family-name:var(--font-geist-sans)] antialiased`}
       >

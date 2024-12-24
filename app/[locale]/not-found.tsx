@@ -19,10 +19,10 @@ export default function NotFound() {
             help you navigate back to Earth.
           </p>
           <div className="flex justify-center space-x-3 md:justify-start">
-            <Link href="/" tabIndex={-1}>
+            <Link href="/#home" tabIndex={-1}>
               <Button>Take Me Home</Button>
             </Link>
-            <Link href="/contact" tabIndex={-1}>
+            <Link href="/#contact" tabIndex={-1}>
               <Button>Contact Human</Button>
             </Link>
           </div>
