@@ -1,6 +1,6 @@
 import AboutMe from '@/app/ui/about-me';
 import ExperienceMetric from '@/app/ui/experience-metric';
-import Section from '@/app/ui/section';
+import Section from '@/app/ui/layout/section';
 import { skills } from '@/app/lib/skills';
 import Chip from '@/app/ui/chip';
 

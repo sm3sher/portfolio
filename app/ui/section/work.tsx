@@ -1,4 +1,4 @@
-import Section from '@/app/ui/section';
+import Section from '@/app/ui/layout/section';
 import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 import Timeline from '@/app/ui/timeline';

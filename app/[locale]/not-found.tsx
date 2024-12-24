@@ -1,6 +1,6 @@
-import BaseLayout from '@/app/ui/base-layout';
-import Stars from '@/app/ui/stars';
-import Astronaut from '@/app/ui/astronaut';
+import BaseLayout from '@/app/ui/layout/base-layout';
+import Stars from '@/app/ui/not-found/stars';
+import Astronaut from '@/app/ui/not-found/astronaut';
 import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 

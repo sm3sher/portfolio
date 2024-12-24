@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import BaseLayout from '@/app/ui/base-layout';
+import BaseLayout from '@/app/ui/layout/base-layout';
 
 export default function Layout({
   children,
