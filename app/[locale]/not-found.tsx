@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <BaseLayout>
       <Stars />
-      <div className="flex flex-col-reverse items-center gap-6 md:h-full md:flex-row lg:gap-16">
+      <div className="flex flex-col-reverse items-center gap-6 pt-20 md:h-screen md:flex-row md:justify-center md:pt-0 lg:gap-16">
         <div className="md:w-1/2">
           <Astronaut />
         </div>
