@@ -29,7 +29,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         <input
           {...register(name)}
           type="checkbox"
-          className={`backdrop base-border peer h-5 w-5 cursor-pointer appearance-none rounded transition-colors duration-200 checked:bg-[--primary] ${
+          className={`base-border peer h-5 w-5 cursor-pointer appearance-none rounded backdrop-blur transition-colors duration-200 checked:bg-[--primary] ${
             errorMessage &&
             'border-[--error-color] bg-[--error-background] outline-[--error-color]'
           }`}

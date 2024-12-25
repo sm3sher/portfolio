@@ -172,19 +172,10 @@ export type AssetFilter = {
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
-  homeCollection?: Maybe<HomeCollection>;
 };
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-
-export type AssetLinkingCollectionsHomeCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -485,55 +476,61 @@ export enum FooterOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type Home = Entry & _Node & {
   __typename?: 'Home';
   _id: Scalars['ID']['output'];
-  aboutButton?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  image?: Maybe<Asset>;
+  ctaButtonLabel?: Maybe<Scalars['String']['output']>;
+  greeting?: Maybe<Scalars['String']['output']>;
+  introDescription?: Maybe<Scalars['String']['output']>;
+  introHeadingHighlight?: Maybe<Scalars['String']['output']>;
+  introHeadingMain?: Maybe<Scalars['String']['output']>;
+  introSubheading?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<HomeLinkingCollections>;
   sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-  workButton?: Maybe<Scalars['String']['output']>;
 };
 
 
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
-export type HomeAboutButtonArgs = {
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeCtaButtonLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
-export type HomeDescriptionArgs = {
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeGreetingArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
-export type HomeImageArgs = {
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeIntroDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeIntroHeadingHighlightArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeIntroHeadingMainArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeIntroSubheadingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
-export type HomeTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** Content for Homepage with Image, Title, Description and Button Labels [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
-export type HomeWorkButtonArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type HomeCollection = {
@@ -547,37 +544,50 @@ export type HomeCollection = {
 export type HomeFilter = {
   AND?: InputMaybe<Array<InputMaybe<HomeFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<HomeFilter>>>;
-  aboutButton?: InputMaybe<Scalars['String']['input']>;
-  aboutButton_contains?: InputMaybe<Scalars['String']['input']>;
-  aboutButton_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  aboutButton_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  aboutButton_not?: InputMaybe<Scalars['String']['input']>;
-  aboutButton_not_contains?: InputMaybe<Scalars['String']['input']>;
-  aboutButton_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  description_contains?: InputMaybe<Scalars['String']['input']>;
-  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_not?: InputMaybe<Scalars['String']['input']>;
-  description_not_contains?: InputMaybe<Scalars['String']['input']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ctaButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ctaButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ctaButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  greeting?: InputMaybe<Scalars['String']['input']>;
+  greeting_contains?: InputMaybe<Scalars['String']['input']>;
+  greeting_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greeting_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  greeting_not?: InputMaybe<Scalars['String']['input']>;
+  greeting_not_contains?: InputMaybe<Scalars['String']['input']>;
+  greeting_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introDescription?: InputMaybe<Scalars['String']['input']>;
+  introDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  introDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  introDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introDescription_not?: InputMaybe<Scalars['String']['input']>;
+  introDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  introDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introHeadingHighlight?: InputMaybe<Scalars['String']['input']>;
+  introHeadingHighlight_contains?: InputMaybe<Scalars['String']['input']>;
+  introHeadingHighlight_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  introHeadingHighlight_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introHeadingHighlight_not?: InputMaybe<Scalars['String']['input']>;
+  introHeadingHighlight_not_contains?: InputMaybe<Scalars['String']['input']>;
+  introHeadingHighlight_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introHeadingMain?: InputMaybe<Scalars['String']['input']>;
+  introHeadingMain_contains?: InputMaybe<Scalars['String']['input']>;
+  introHeadingMain_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  introHeadingMain_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introHeadingMain_not?: InputMaybe<Scalars['String']['input']>;
+  introHeadingMain_not_contains?: InputMaybe<Scalars['String']['input']>;
+  introHeadingMain_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introSubheading?: InputMaybe<Scalars['String']['input']>;
+  introSubheading_contains?: InputMaybe<Scalars['String']['input']>;
+  introSubheading_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  introSubheading_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introSubheading_not?: InputMaybe<Scalars['String']['input']>;
+  introSubheading_not_contains?: InputMaybe<Scalars['String']['input']>;
+  introSubheading_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  workButton?: InputMaybe<Scalars['String']['input']>;
-  workButton_contains?: InputMaybe<Scalars['String']['input']>;
-  workButton_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  workButton_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  workButton_not?: InputMaybe<Scalars['String']['input']>;
-  workButton_not_contains?: InputMaybe<Scalars['String']['input']>;
-  workButton_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type HomeLinkingCollections = {
@@ -594,8 +604,16 @@ export type HomeLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum HomeOrder {
-  AboutButtonAsc = 'aboutButton_ASC',
-  AboutButtonDesc = 'aboutButton_DESC',
+  CtaButtonLabelAsc = 'ctaButtonLabel_ASC',
+  CtaButtonLabelDesc = 'ctaButtonLabel_DESC',
+  GreetingAsc = 'greeting_ASC',
+  GreetingDesc = 'greeting_DESC',
+  IntroHeadingHighlightAsc = 'introHeadingHighlight_ASC',
+  IntroHeadingHighlightDesc = 'introHeadingHighlight_DESC',
+  IntroHeadingMainAsc = 'introHeadingMain_ASC',
+  IntroHeadingMainDesc = 'introHeadingMain_DESC',
+  IntroSubheadingAsc = 'introSubheading_ASC',
+  IntroSubheadingDesc = 'introSubheading_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -603,11 +621,7 @@ export enum HomeOrder {
   SysPublishedAtAsc = 'sys_publishedAt_ASC',
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
-  WorkButtonAsc = 'workButton_ASC',
-  WorkButtonDesc = 'workButton_DESC'
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 export enum ImageFormat {
@@ -1004,7 +1018,7 @@ export type HomeContentQueryVariables = Exact<{
 }>;
 
 
-export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', title?: string | null, description?: string | null, aboutButton?: string | null, workButton?: string | null, image?: { __typename?: 'Asset', url?: string | null, title?: string | null, description?: string | null } | null } | null> } | null };
+export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null } | null> } | null };
 
 export type MetadataContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1032,15 +1046,12 @@ export const HomeContentDocument = gql`
     query homeContent($locale: String) {
   homeCollection(limit: 1, locale: $locale) {
     items {
-      title
-      description
-      aboutButton
-      workButton
-      image {
-        url
-        title
-        description
-      }
+      greeting
+      introHeadingMain
+      introHeadingHighlight
+      introSubheading
+      introDescription
+      ctaButtonLabel
     }
   }
 }

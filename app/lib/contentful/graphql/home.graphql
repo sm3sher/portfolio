@@ -1,15 +1,12 @@
 query homeContent($locale: String) {
     homeCollection(limit: 1, locale: $locale) {
         items {
-            title
-            description
-            aboutButton
-            workButton
-            image {
-                url
-                title
-                description
-            }
+            greeting
+            introHeadingMain
+            introHeadingHighlight
+            introSubheading
+            introDescription
+            ctaButtonLabel
         }
     }
 }

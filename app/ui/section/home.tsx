@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
+import { CircleArrowDown02Icon } from 'hugeicons-react';
 
 type Props = {
   locale: Locale;
@@ -12,29 +13,39 @@ export default async function Home({ locale }: Props) {
   const home = homeContentQuery.homeCollection?.items[0];
 
   return (
-    <div className="flex flex-col-reverse items-center justify-between gap-8 md:h-full md:flex-row lg:gap-12">
-      <div className="flex w-5/6 justify-center md:w-5/12">
-        {home?.image && home.image.url && home.image.description && (
-          <Image
-            className="rounded-2xl"
-            src={home.image.url}
-            alt={home.image.description}
-            width={500}
-            height={410}
-            priority
+    <div className="relative pt-48">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--radial-color)_0%,transparent_50%)] opacity-50" />
+      <div className="mx-auto max-w-screen-xl px-4">
+        <h6 className="mb-5">
+          <div className="flex space-x-2">
+            <Image
+              src="/waving-hand.svg"
+              width={30}
+              height={30}
+              alt="Waving Hand"
+            />
+            <span>{home?.greeting}</span>
+          </div>
+        </h6>
+        <h1 className="mb-3">
+          {home?.introHeadingMain}{' '}
+          <span className="text-[--highlight]">
+            {home?.introHeadingHighlight}
+          </span>
+        </h1>
+        <h3>{home?.introSubheading}</h3>
+        <p className="mt-6 text-[--secondary] lg:w-5/12">
+          {home?.introDescription}
+        </p>
+        <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
+          <Link href="#contact" tabIndex={-1}>
+            <Button>{home?.ctaButtonLabel}</Button>
+          </Link>
+          <CircleArrowDown02Icon
+            size={50}
+            className="opacity-50"
+            strokeWidth={1}
           />
-        )}
-      </div>
-      <div className="space-y-6 md:w-7/12">
-        <h1 className="text-balance text-center md:text-left">{home?.title}</h1>
-        <p className="text-center md:text-left">{home?.description}</p>
-        <div className="flex justify-center space-x-3 md:justify-start">
-          <Link href="#about" tabIndex={-1}>
-            <Button>{home?.aboutButton}</Button>
-          </Link>
-          <Link href="#work" tabIndex={-1}>
-            <Button>{home?.workButton}</Button>
-          </Link>
         </div>
       </div>
     </div>

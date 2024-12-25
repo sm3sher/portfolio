@@ -61,7 +61,7 @@ export default function Navbar() {
   const basePath = pathname === '/' ? '' : '/';
 
   return (
-    <div className="backdrop base-border flex space-x-1 rounded-2xl p-1">
+    <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur">
       {navbarItems.map((item) => (
         <Link
           key={item.id}

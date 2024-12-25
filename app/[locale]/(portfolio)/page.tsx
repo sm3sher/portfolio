@@ -29,28 +29,16 @@ export default async function Page({ params }: Props) {
 
   return (
     <main>
-      <section
-        id="home"
-        className="flex flex-col pt-20 md:min-h-screen md:justify-center md:pt-0"
-      >
+      <section id="home">
         <Home locale={locale} />
       </section>
-      <section
-        id="about"
-        className="flex flex-col pt-20 md:min-h-screen md:justify-center md:pt-0"
-      >
+      <section id="about">
         <About />
       </section>
-      <section
-        id="work"
-        className="flex flex-col pt-20 md:min-h-screen md:justify-center md:pt-0"
-      >
+      <section id="work">
         <Work />
       </section>
-      <section
-        id="contact"
-        className="flex flex-col pt-20 md:min-h-screen md:justify-center md:pt-0"
-      >
+      <section id="contact">
         <Contact />
       </section>
     </main>
