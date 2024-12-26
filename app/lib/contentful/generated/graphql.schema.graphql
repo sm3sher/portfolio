@@ -93,6 +93,7 @@ input AssetFilter {
 
 type AssetLinkingCollections {
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
 }
 
 enum AssetOrder {
@@ -347,6 +348,7 @@ type Home implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   ctaButtonLabel(locale: String): String
   greeting(locale: String): String
+  image(locale: String, preview: Boolean): Asset
   introDescription(locale: String): String
   introHeadingHighlight(locale: String): String
   introHeadingMain(locale: String): String
@@ -380,6 +382,7 @@ input HomeFilter {
   greeting_not: String
   greeting_not_contains: String
   greeting_not_in: [String]
+  image_exists: Boolean
   introDescription: String
   introDescription_contains: String
   introDescription_exists: Boolean

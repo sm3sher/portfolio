@@ -15,6 +15,21 @@ export default async function Home({ locale }: Props) {
   return (
     <div className="relative pt-48">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--radial-color)_0%,transparent_50%)] opacity-50" />
+      <div className="absolute inset-0 xl:mx-auto xl:max-w-screen-xl">
+        {home?.image &&
+          home.image.url &&
+          home.image.width &&
+          home.image.height &&
+          home.image.description && (
+            <Image
+              className="absolute -right-32 bottom-0 -z-20 max-h-[90%] w-auto object-contain sm:-right-20 md:-right-12 lg:right-0"
+              src={home.image.url}
+              width={home.image.width}
+              height={home.image.height}
+              alt={home.image.description}
+            />
+          )}
+      </div>
       <div className="mx-auto max-w-screen-xl px-4">
         <h6 className="mb-5">
           <div className="flex space-x-2">

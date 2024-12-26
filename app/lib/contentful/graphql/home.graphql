@@ -7,6 +7,12 @@ query homeContent($locale: String) {
             introSubheading
             introDescription
             ctaButtonLabel
+            image {
+                url
+                width
+                height
+                description
+            }
         }
     }
 }
