@@ -3,6 +3,7 @@ import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
 import { CircleArrowDown02Icon } from 'hugeicons-react';
+import WithAnimation from '@/app/ui/animation/with-animation';
 
 type Props = {
   locale: Locale;
@@ -32,27 +33,29 @@ export default async function Home({ locale }: Props) {
           )}
       </div>
       <div className="mx-auto max-w-screen-xl px-4">
-        <h6 className="mb-5">
-          <div className="flex space-x-2">
-            <Image
-              src="/waving-hand.svg"
-              width={30}
-              height={30}
-              alt="Waving Hand"
-            />
-            <span>{home?.greeting}</span>
-          </div>
-        </h6>
-        <h1 className="mb-3">
-          {home?.introHeadingMain}{' '}
-          <span className="text-[--highlight]">
-            {home?.introHeadingHighlight}
-          </span>
-        </h1>
-        <h3>{home?.introSubheading}</h3>
-        <p className="mt-6 text-[--secondary] lg:w-5/12">
-          {home?.introDescription}
-        </p>
+        <WithAnimation>
+          <h6 className="mb-5">
+            <div className="flex space-x-2">
+              <Image
+                src="/waving-hand.svg"
+                width={30}
+                height={30}
+                alt="Waving Hand"
+              />
+              <span>{home?.greeting}</span>
+            </div>
+          </h6>
+          <h1 className="mb-3">
+            {home?.introHeadingMain}{' '}
+            <span className="text-[--highlight]">
+              {home?.introHeadingHighlight}
+            </span>
+          </h1>
+          <h3>{home?.introSubheading}</h3>
+          <p className="mt-6 text-[--secondary] lg:w-5/12">
+            {home?.introDescription}
+          </p>
+        </WithAnimation>
         <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
           <Link href="#contact" tabIndex={-1}>
             <Button>{home?.ctaButtonLabel}</Button>
