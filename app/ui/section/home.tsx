@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
-import { CircleArrowDown02Icon } from 'hugeicons-react';
+import { ArrowDown01Icon } from 'hugeicons-react';
 import WithAnimation from '@/app/ui/animation/with-animation';
 
 type Props = {
@@ -62,11 +62,12 @@ export default async function Home({ locale }: Props) {
             <Link href="#contact" tabIndex={-1}>
               <Button>{home?.ctaButtonLabel}</Button>
             </Link>
-            <CircleArrowDown02Icon
-              size={50}
-              className="opacity-50"
-              strokeWidth={1}
-            />
+            <Link href="#about" className="rounded-full bg-[--highlight] p-2">
+              <ArrowDown01Icon
+                className="relative top-1.5 animate-bounce"
+                size={34}
+              />
+            </Link>
           </div>
         </WithAnimation>
       </div>
