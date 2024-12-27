@@ -57,24 +57,24 @@ export default function LanguageDropdown() {
         aria-expanded={open}
         onClick={() => setOpen((prevState) => !prevState)}
         onKeyDown={handleKeyDown}
-        className="base-border rounded-2xl p-2 backdrop-blur duration-200 hover:bg-[--background-hover]"
+        className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
       >
         <LanguageSkillIcon size={22} />
       </button>
       <div
         id="dropdown"
         hidden={!open}
-        className="base-border absolute z-10 mt-1 w-32 rounded-2xl p-0 font-medium backdrop-blur duration-200"
+        className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur"
       >
         <ul
-          className="py-1.5 text-sm"
+          className="p-1 text-sm"
           aria-labelledby="dropdownLanguageButton"
           role="menu"
           tabIndex={-1}
           onKeyDown={handleKeyDown}
         >
           <li
-            className={`flex cursor-pointer items-center rounded-t-md pl-3 ${locale === 'en' ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
+            className={`flex items-center rounded-xl pl-3 ${locale === 'en' ? 'text-[--secondary]' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
             data-language="en"
@@ -82,6 +82,7 @@ export default function LanguageDropdown() {
             onKeyDown={handleKeyDown}
           >
             <Image
+              className="rounded-sm"
               src="/flag-us.svg"
               alt="American language flag"
               width={30}
@@ -90,7 +91,7 @@ export default function LanguageDropdown() {
             <span className="block px-3 py-2">English</span>
           </li>
           <li
-            className={`flex cursor-pointer items-center rounded-b-md pl-3 ${locale === 'de' ? 'bg-[--background-active]' : 'hover:bg-[--background-hover]'}`}
+            className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-[--secondary]' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
             data-language="de"
@@ -98,6 +99,7 @@ export default function LanguageDropdown() {
             onKeyDown={handleKeyDown}
           >
             <Image
+              className="rounded-sm"
               src="/flag-de.svg"
               alt="German language flag"
               width={30}

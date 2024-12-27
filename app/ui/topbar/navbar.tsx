@@ -66,10 +66,10 @@ export default function Navbar() {
         <Link
           key={item.id}
           href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
-          className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
+          className={`flex items-center rounded-xl font-medium transition duration-300 ${
             activeSection === item.id
-              ? 'border-[--background-active] bg-[--background-active]'
-              : 'hover:border-[--background-hover] hover:bg-[--background-hover]'
+              ? 'bg-[--primary] text-[--background-color]'
+              : 'hover-effect'
           }`}
         >
           <span className="px-3 py-1">{item.icon}</span>

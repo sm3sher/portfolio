@@ -13,7 +13,7 @@ export default async function ServiceBanner({ locale }: Props) {
     serviceBannerContentQuery.serviceBannerCollection?.items[0]?.services;
 
   return (
-    <div className="overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
+    <div className="overflow-hidden bg-[--banner-color] py-4 [mask-image:linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
       <div className="flex w-max animate-infinite-scroll gap-12 pl-12">
         {services?.map((service, index) => (
           <h2
