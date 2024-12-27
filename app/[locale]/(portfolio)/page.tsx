@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import contentfulClient from '@/app/lib/contentful/client';
 import { Locale } from '@/i18n/routing';
 import dynamic from 'next/dynamic';
+import Home from '@/app/ui/section/home';
+import ServiceBanner from '@/app/ui/banner/service-banner';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -22,7 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
 
-  const Home = dynamic(() => import('@/app/ui/section/home'));
   const About = dynamic(() => import('@/app/ui/section/about'));
   const Work = dynamic(() => import('@/app/ui/section/work'));
   const Contact = dynamic(() => import('@/app/ui/section/contact'));
@@ -31,6 +32,7 @@ export default async function Page({ params }: Props) {
     <main>
       <section id="home">
         <Home locale={locale} />
+        <ServiceBanner locale={locale} />
       </section>
       <section id="about">
         <About />

@@ -40,6 +40,10 @@ body {
     @apply text-4xl font-bold leading-tight md:text-5xl lg:text-7xl;
   }
 
+  h2 {
+    @apply text-3xl font-bold md:text-4xl lg:text-6xl;
+  }
+
   h3 {
     @apply text-2xl font-semibold md:text-3xl lg:text-4xl;
   }

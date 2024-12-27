@@ -27,6 +27,7 @@ export default async function Home({ locale }: Props) {
               width={home.image.width}
               height={home.image.height}
               alt={home.image.description}
+              priority
             />
           )}
       </div>
