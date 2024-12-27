@@ -14,7 +14,7 @@ export default async function ServiceBanner({ locale }: Props) {
 
   return (
     <div className="overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
-      <div className="animate-infinite-scroll flex w-max gap-12 pl-12">
+      <div className="flex w-max animate-infinite-scroll gap-12 pl-12">
         {services?.map((service, index) => (
           <h2
             key={index}

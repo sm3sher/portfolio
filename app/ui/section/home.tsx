@@ -16,12 +16,15 @@ export default async function Home({ locale }: Props) {
   return (
     <div className="relative pt-48">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--radial-color)_0%,transparent_50%)] opacity-50" />
-      <div className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-screen-xl">
-        {home?.image &&
-          home.image.url &&
-          home.image.width &&
-          home.image.height &&
-          home.image.description && (
+      {home?.image &&
+        home.image.url &&
+        home.image.width &&
+        home.image.height &&
+        home.image.description && (
+          <WithAnimation
+            className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-screen-xl"
+            axis="x"
+          >
             <Image
               className="absolute -right-32 bottom-0 -z-20 max-h-[90%] w-auto object-contain sm:-right-20 md:-right-12 lg:right-0"
               src={home.image.url}
@@ -30,8 +33,8 @@ export default async function Home({ locale }: Props) {
               alt={home.image.description}
               priority
             />
-          )}
-      </div>
+          </WithAnimation>
+        )}
       <div className="mx-auto max-w-screen-xl px-4">
         <WithAnimation>
           <h6 className="mb-5">
@@ -55,17 +58,17 @@ export default async function Home({ locale }: Props) {
           <p className="mt-6 text-[--secondary] lg:w-5/12">
             {home?.introDescription}
           </p>
+          <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
+            <Link href="#contact" tabIndex={-1}>
+              <Button>{home?.ctaButtonLabel}</Button>
+            </Link>
+            <CircleArrowDown02Icon
+              size={50}
+              className="opacity-50"
+              strokeWidth={1}
+            />
+          </div>
         </WithAnimation>
-        <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
-          <Link href="#contact" tabIndex={-1}>
-            <Button>{home?.ctaButtonLabel}</Button>
-          </Link>
-          <CircleArrowDown02Icon
-            size={50}
-            className="opacity-50"
-            strokeWidth={1}
-          />
-        </div>
       </div>
     </div>
   );

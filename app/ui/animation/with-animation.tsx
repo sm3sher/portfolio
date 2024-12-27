@@ -5,14 +5,23 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
+  className?: string;
+  delay?: number;
+  axis?: 'x' | 'y';
 };
 
-export default function WithAnimtation({ children }: Props) {
+export default function WithAnimation({
+  children,
+  className,
+  delay,
+  axis = 'y',
+}: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: 'easeOut' }}
+      className={className}
+      initial={{ opacity: 0, [axis]: 30 }}
+      animate={{ opacity: 1, [axis]: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut', delay }}
     >
       {children}
     </motion.div>
