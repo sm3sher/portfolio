@@ -4,7 +4,6 @@ import { Locale } from '@/i18n/routing';
 import dynamic from 'next/dynamic';
 import Home from '@/app/ui/section/home';
 import ServiceBanner from '@/app/ui/banner/service-banner';
-import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -35,15 +34,15 @@ export default async function Page({ params }: Props) {
         <Home locale={locale} />
         <ServiceBanner locale={locale} />
       </section>
-      <WithScrollAnimation id="about">
+      <section id="about">
         <About />
-      </WithScrollAnimation>
-      <WithScrollAnimation id="work">
+      </section>
+      <section id="work">
         <Work />
-      </WithScrollAnimation>
-      <WithScrollAnimation id="contact">
+      </section>
+      <section id="contact">
         <Contact />
-      </WithScrollAnimation>
+      </section>
     </main>
   );
 }

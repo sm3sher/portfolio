@@ -5,26 +5,26 @@ import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  id: string;
+  className?: string;
   delay?: number;
   axis?: 'x' | 'y';
 };
 
 export default function WithScrollAnimation({
   children,
-  id,
+  className,
   delay,
   axis = 'y',
 }: Props) {
   return (
-    <motion.section
-      id={id}
+    <motion.div
+      className={className}
       initial={{ opacity: 0, [axis]: 50 }}
       whileInView={{ opacity: 1, [axis]: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 1, ease: 'easeOut', delay }}
     >
       {children}
-    </motion.section>
+    </motion.div>
   );
 }

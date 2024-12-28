@@ -1,12 +1,13 @@
 import { calculateAge } from '@/app/lib/date-utils';
 import Image from 'next/image';
 import ExperienceMetric from '@/app/ui/experience-metric';
+import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
 
 export default function About() {
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-24 md:py-48">
       <div className="flex flex-col gap-8 md:flex-row md:gap-0">
-        <div className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
+        <WithScrollAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
           <Image
             className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
             src="/front-profile.png"
@@ -14,8 +15,11 @@ export default function About() {
             width={1395}
             height={1473}
           />
-        </div>
-        <div className="flex w-full items-center md:w-2/3 lg:w-7/12">
+        </WithScrollAnimation>
+        <WithScrollAnimation
+          className="flex w-full items-center md:w-2/3 lg:w-7/12"
+          delay={0.4}
+        >
           <div className="space-y-7">
             <h6 className="uppercase tracking-wider text-[--highlight]">
               About Me
@@ -37,7 +41,7 @@ export default function About() {
               <ExperienceMetric startYear={2020} label="Professional Impact" />
             </div>
           </div>
-        </div>
+        </WithScrollAnimation>
       </div>
     </div>
   );
