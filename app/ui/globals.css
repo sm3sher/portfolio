@@ -26,6 +26,14 @@ html.dark {
   --error-background: theme(colors.rose.950);
 }
 
+* {
+  outline-color: #e59700;
+}
+
+::selection {
+  background-color: #e5970099;
+}
+
 body {
   color: var(--primary);
   background-color: var(--background-color);
