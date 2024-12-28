@@ -2,51 +2,61 @@ import { calculateAge } from '@/app/lib/date-utils';
 import Image from 'next/image';
 import ExperienceMetric from '@/app/ui/experience-metric';
 import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
+import { Locale } from '@/i18n/routing';
+import contentfulClient from '@/app/lib/contentful/client';
 
-export default function About() {
+type Props = {
+  locale: Locale;
+};
+
+export default async function About({ locale }: Props) {
+  const aboutContentQuery = await contentfulClient.aboutContent({ locale });
+  const about = aboutContentQuery.aboutCollection?.items[0];
+
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-24 md:py-48">
       <div className="flex flex-col gap-8 md:flex-row md:gap-0">
-        <WithScrollAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
-          <Image
-            className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
-            src="/front-profile.png"
-            alt="Picture of Roman Jumatov"
-            width={1395}
-            height={1473}
-          />
-        </WithScrollAnimation>
+        {about?.image &&
+          about.image.url &&
+          about.image.width &&
+          about.image.height &&
+          about.image.description && (
+            <WithScrollAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
+              <Image
+                className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
+                src={about.image.url}
+                width={about.image.width}
+                height={about.image.height}
+                alt={about.image.description}
+              />
+            </WithScrollAnimation>
+          )}
         <WithScrollAnimation
           className="flex w-full items-center md:w-2/3 lg:w-7/12"
           delay={0.4}
         >
           <div className="space-y-7">
             <h6 className="uppercase tracking-wider text-[--highlight]">
-              About Me
+              {about?.title}
             </h6>
             <h4>
-              I&#39;m a {calculateAge('1999-04-02')}-year-old{' '}
-              <span className="font-light">freelance software developer</span>{' '}
-              based in western Germany, passionate about building modern,
-              intuitive web experiences.
+              {about?.ageStatementPrefix} {calculateAge(about?.age)}
+              {about?.ageStatementSuffix}{' '}
+              <span className="font-light">{about?.professionalTitle}</span>{' '}
+              {about?.locationStatement} {about?.passionStatement}
             </h4>
-            <p>
-              Driven by curiosity and a commitment to quality, I partner with
-              clients to create engaging digital projects that leave a lasting
-              impression. My goal is to design innovative solutions that
-              resonate and inspire.
-            </p>
+            <p>{about?.description}</p>
             <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
-              <ExperienceMetric
-                startYear={2017}
-                prefixLabel="Years of"
-                suffixLabel="Coding Excellence"
-              />
-              <ExperienceMetric
-                startYear={2020}
-                prefixLabel="Years of"
-                suffixLabel="Professional Impact"
-              />
+              {about?.experienceMetricsCollection?.items
+                .filter((item) => item !== null)
+                .map((item, index) => (
+                  <ExperienceMetric
+                    key={index}
+                    startYear={item.startYear!}
+                    labelPrefix={item.labelPrefix!}
+                    labelSuffix={item.labelSuffix!}
+                  />
+                ))}
             </div>
           </div>
         </WithScrollAnimation>

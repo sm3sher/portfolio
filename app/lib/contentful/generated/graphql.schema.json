@@ -9,6 +9,1769 @@
     "types": [
       {
         "kind": "OBJECT",
+        "name": "About",
+        "description": "About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about)",
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "_id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "ContentfulMetadata",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "experienceMetricsCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "order",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "AboutExperienceMetricsCollectionOrder",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MetricFilter",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AboutExperienceMetricsCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "image",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Asset",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "linkedFrom",
+            "description": null,
+            "args": [
+              {
+                "name": "allowedLocales",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AboutLinkingCollections",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Sys",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Entry",
+            "ofType": null
+          },
+          {
+            "kind": "INTERFACE",
+            "name": "_Node",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AboutCollection",
+        "description": null,
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "items",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "About",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "limit",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "skip",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "total",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AboutExperienceMetricsCollection",
+        "description": null,
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "items",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Metric",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "limit",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "skip",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "total",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "AboutExperienceMetricsCollectionOrder",
+        "description": null,
+        "isOneOf": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "labelPrefix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "AboutFilter",
+        "description": null,
+        "isOneOf": false,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "AboutFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "AboutFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "DateTime",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "DateTime",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ContentfulMetadataFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "description_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "experienceMetrics",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "cfMetricNestedFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "experienceMetricsCollection_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "image_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SysFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AboutLinkingCollections",
+        "description": null,
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "entryCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "EntryCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "AboutOrder",
+        "description": null,
+        "isOneOf": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "ageStatementPrefix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
         "name": "Asset",
         "description": "Represents a binary file in a space. An asset can be any file type.",
         "isOneOf": null,
@@ -1255,6 +3018,67 @@
         "isOneOf": null,
         "fields": [
           {
+            "name": "aboutCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AboutCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "entryCollection",
             "description": null,
             "args": [
@@ -1932,6 +3756,11 @@
         "possibleTypes": [
           {
             "kind": "OBJECT",
+            "name": "About",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
             "name": "Footer",
             "ofType": null
           },
@@ -1948,6 +3777,11 @@
           {
             "kind": "OBJECT",
             "name": "MetaData",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "Metric",
             "ofType": null
           },
           {
@@ -5757,6 +7591,1019 @@
         "possibleTypes": null
       },
       {
+        "kind": "OBJECT",
+        "name": "Metric",
+        "description": "[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric)",
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "_id",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "ID",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "ContentfulMetadata",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "linkedFrom",
+            "description": null,
+            "args": [
+              {
+                "name": "allowedLocales",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MetricLinkingCollections",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear",
+            "description": null,
+            "args": [
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Sys",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "Entry",
+            "ofType": null
+          },
+          {
+            "kind": "INTERFACE",
+            "name": "_Node",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MetricCollection",
+        "description": null,
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "items",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "LIST",
+                "name": null,
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Metric",
+                  "ofType": null
+                }
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "limit",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "skip",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "total",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "MetricFilter",
+        "description": null,
+        "isOneOf": false,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "MetricFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "MetricFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ContentfulMetadataFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SysFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "MetricLinkingCollections",
+        "description": null,
+        "isOneOf": null,
+        "fields": [
+          {
+            "name": "aboutCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "order",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "MetricLinkingCollectionsAboutCollectionOrder",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AboutCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "entryCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "EntryCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "MetricLinkingCollectionsAboutCollectionOrder",
+        "description": null,
+        "isOneOf": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "ageStatementPrefix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementPrefix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "ageStatementSuffix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "age_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "locationStatement_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passionStatement_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "professionalTitle_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "title_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "MetricOrder",
+        "description": null,
+        "isOneOf": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "labelPrefix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_firstPublishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_id_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedAt_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_ASC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys_publishedVersion_DESC",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "possibleTypes": null
+      },
+      {
         "kind": "SCALAR",
         "name": "Quality",
         "description": "The 'Quality' type represents quality as whole numeric values between `1` and `100`.",
@@ -5821,6 +8668,148 @@
             "type": {
               "kind": "INTERFACE",
               "name": "_Node",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "about",
+            "description": null,
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "About",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "aboutCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "order",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "AboutOrder",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "AboutFilter",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AboutCollection",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6620,6 +9609,148 @@
             "type": {
               "kind": "OBJECT",
               "name": "MetaDataCollection",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "metric",
+            "description": null,
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Metric",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "metricCollection",
+            "description": null,
+            "args": [
+              {
+                "name": "limit",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "100",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "locale",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "order",
+                "description": null,
+                "type": {
+                  "kind": "LIST",
+                  "name": null,
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "MetricOrder",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "preview",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "skip",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Int",
+                  "ofType": null
+                },
+                "defaultValue": "0",
+                "isDeprecated": false,
+                "deprecationReason": null
+              },
+              {
+                "name": "where",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "MetricFilter",
+                  "ofType": null
+                },
+                "defaultValue": null,
+                "isDeprecated": false,
+                "deprecationReason": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "MetricCollection",
               "ofType": null
             },
             "isDeprecated": false,
@@ -7867,6 +10998,11 @@
         "possibleTypes": [
           {
             "kind": "OBJECT",
+            "name": "About",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
             "name": "Footer",
             "ofType": null
           },
@@ -7883,6 +11019,11 @@
           {
             "kind": "OBJECT",
             "name": "MetaData",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "Metric",
             "ofType": null
           },
           {
@@ -9047,6 +12188,374 @@
               "ofType": {
                 "kind": "SCALAR",
                 "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "sys",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SysFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "cfMetricNestedFilter",
+        "description": null,
+        "isOneOf": false,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "AND",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "cfMetricNestedFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "OR",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INPUT_OBJECT",
+                "name": "cfMetricNestedFilter",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ContentfulMetadataFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelPrefix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not_contains",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "labelSuffix_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_exists",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_gt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_gte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_lt",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_lte",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_not",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "startYear_not_in",
+            "description": null,
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
                 "ofType": null
               }
             },

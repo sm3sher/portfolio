@@ -1,5 +1,153 @@
 directive @contentSourceMaps on QUERY
 
+"""
+About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about)
+"""
+type About implements Entry & _Node {
+  _id: ID!
+  age(locale: String): DateTime
+  ageStatementPrefix(locale: String): String
+  ageStatementSuffix(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  experienceMetricsCollection(limit: Int = 100, locale: String, order: [AboutExperienceMetricsCollectionOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): AboutExperienceMetricsCollection
+  image(locale: String, preview: Boolean): Asset
+  linkedFrom(allowedLocales: [String]): AboutLinkingCollections
+  locationStatement(locale: String): String
+  passionStatement(locale: String): String
+  professionalTitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type AboutCollection {
+  items: [About]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+type AboutExperienceMetricsCollection {
+  items: [Metric]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum AboutExperienceMetricsCollectionOrder {
+  labelPrefix_ASC
+  labelPrefix_DESC
+  labelSuffix_ASC
+  labelSuffix_DESC
+  startYear_ASC
+  startYear_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+input AboutFilter {
+  AND: [AboutFilter]
+  OR: [AboutFilter]
+  age: DateTime
+  ageStatementPrefix: String
+  ageStatementPrefix_contains: String
+  ageStatementPrefix_exists: Boolean
+  ageStatementPrefix_in: [String]
+  ageStatementPrefix_not: String
+  ageStatementPrefix_not_contains: String
+  ageStatementPrefix_not_in: [String]
+  ageStatementSuffix: String
+  ageStatementSuffix_contains: String
+  ageStatementSuffix_exists: Boolean
+  ageStatementSuffix_in: [String]
+  ageStatementSuffix_not: String
+  ageStatementSuffix_not_contains: String
+  ageStatementSuffix_not_in: [String]
+  age_exists: Boolean
+  age_gt: DateTime
+  age_gte: DateTime
+  age_in: [DateTime]
+  age_lt: DateTime
+  age_lte: DateTime
+  age_not: DateTime
+  age_not_in: [DateTime]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  experienceMetrics: cfMetricNestedFilter
+  experienceMetricsCollection_exists: Boolean
+  image_exists: Boolean
+  locationStatement: String
+  locationStatement_contains: String
+  locationStatement_exists: Boolean
+  locationStatement_in: [String]
+  locationStatement_not: String
+  locationStatement_not_contains: String
+  locationStatement_not_in: [String]
+  passionStatement: String
+  passionStatement_contains: String
+  passionStatement_exists: Boolean
+  passionStatement_in: [String]
+  passionStatement_not: String
+  passionStatement_not_contains: String
+  passionStatement_not_in: [String]
+  professionalTitle: String
+  professionalTitle_contains: String
+  professionalTitle_exists: Boolean
+  professionalTitle_in: [String]
+  professionalTitle_not: String
+  professionalTitle_not_contains: String
+  professionalTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type AboutLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum AboutOrder {
+  ageStatementPrefix_ASC
+  ageStatementPrefix_DESC
+  ageStatementSuffix_ASC
+  ageStatementSuffix_DESC
+  age_ASC
+  age_DESC
+  locationStatement_ASC
+  locationStatement_DESC
+  passionStatement_ASC
+  passionStatement_DESC
+  professionalTitle_ASC
+  professionalTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
 """Represents a binary file in a space. An asset can be any file type."""
 type Asset {
   contentType(locale: String): String
@@ -92,6 +240,7 @@ input AssetFilter {
 }
 
 type AssetLinkingCollections {
+  aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
 }
@@ -627,12 +776,111 @@ enum MetaDataOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric)
+"""
+type Metric implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  labelPrefix(locale: String): String
+  labelSuffix(locale: String): String
+  linkedFrom(allowedLocales: [String]): MetricLinkingCollections
+  startYear(locale: String): Int
+  sys: Sys!
+}
+
+type MetricCollection {
+  items: [Metric]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input MetricFilter {
+  AND: [MetricFilter]
+  OR: [MetricFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  labelPrefix: String
+  labelPrefix_contains: String
+  labelPrefix_exists: Boolean
+  labelPrefix_in: [String]
+  labelPrefix_not: String
+  labelPrefix_not_contains: String
+  labelPrefix_not_in: [String]
+  labelSuffix: String
+  labelSuffix_contains: String
+  labelSuffix_exists: Boolean
+  labelSuffix_in: [String]
+  labelSuffix_not: String
+  labelSuffix_not_contains: String
+  labelSuffix_not_in: [String]
+  startYear: Int
+  startYear_exists: Boolean
+  startYear_gt: Int
+  startYear_gte: Int
+  startYear_in: [Int]
+  startYear_lt: Int
+  startYear_lte: Int
+  startYear_not: Int
+  startYear_not_in: [Int]
+  sys: SysFilter
+}
+
+type MetricLinkingCollections {
+  aboutCollection(limit: Int = 100, locale: String, order: [MetricLinkingCollectionsAboutCollectionOrder], preview: Boolean, skip: Int = 0): AboutCollection
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum MetricLinkingCollectionsAboutCollectionOrder {
+  ageStatementPrefix_ASC
+  ageStatementPrefix_DESC
+  ageStatementSuffix_ASC
+  ageStatementSuffix_DESC
+  age_ASC
+  age_DESC
+  locationStatement_ASC
+  locationStatement_DESC
+  passionStatement_ASC
+  passionStatement_DESC
+  professionalTitle_ASC
+  professionalTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum MetricOrder {
+  labelPrefix_ASC
+  labelPrefix_DESC
+  labelSuffix_ASC
+  labelSuffix_DESC
+  startYear_ASC
+  startYear_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
 The 'Quality' type represents quality as whole numeric values between `1` and `100`.
 """
 scalar Quality
 
 type Query {
   _node(id: ID!, locale: String, preview: Boolean): _Node
+  about(id: String!, locale: String, preview: Boolean): About
+  aboutCollection(limit: Int = 100, locale: String, order: [AboutOrder], preview: Boolean, skip: Int = 0, where: AboutFilter): AboutCollection
   asset(id: String!, locale: String, preview: Boolean): Asset
   assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
@@ -644,6 +892,8 @@ type Query {
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
   metaData(id: String!, locale: String, preview: Boolean): MetaData
   metaDataCollection(limit: Int = 100, locale: String, order: [MetaDataOrder], preview: Boolean, skip: Int = 0, where: MetaDataFilter): MetaDataCollection
+  metric(id: String!, locale: String, preview: Boolean): Metric
+  metricCollection(limit: Int = 100, locale: String, order: [MetricOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): MetricCollection
   serviceBanner(id: String!, locale: String, preview: Boolean): ServiceBanner
   serviceBannerCollection(limit: Int = 100, locale: String, order: [ServiceBannerOrder], preview: Boolean, skip: Int = 0, where: ServiceBannerFilter): ServiceBannerCollection
 }
@@ -771,5 +1021,35 @@ input cfFooterItemNestedFilter {
   label_not: String
   label_not_contains: String
   label_not_in: [String]
+  sys: SysFilter
+}
+
+input cfMetricNestedFilter {
+  AND: [cfMetricNestedFilter]
+  OR: [cfMetricNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  labelPrefix: String
+  labelPrefix_contains: String
+  labelPrefix_exists: Boolean
+  labelPrefix_in: [String]
+  labelPrefix_not: String
+  labelPrefix_not_contains: String
+  labelPrefix_not_in: [String]
+  labelSuffix: String
+  labelSuffix_contains: String
+  labelSuffix_exists: Boolean
+  labelSuffix_in: [String]
+  labelSuffix_not: String
+  labelSuffix_not_contains: String
+  labelSuffix_not_in: [String]
+  startYear: Int
+  startYear_exists: Boolean
+  startYear_gt: Int
+  startYear_gte: Int
+  startYear_in: [Int]
+  startYear_lt: Int
+  startYear_lte: Int
+  startYear_not: Int
+  startYear_not_in: [Int]
   sys: SysFilter
 }

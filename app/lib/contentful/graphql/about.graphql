@@ -1,0 +1,29 @@
+query aboutContent($locale: String) {
+    aboutCollection(limit: 1, locale: $locale) {
+        items {
+            image {
+                url
+                width
+                height
+                description
+            }
+            title
+            ageStatementPrefix
+            age
+            ageStatementSuffix
+            professionalTitle
+            locationStatement
+            passionStatement
+            description
+            experienceMetricsCollection {
+                items {
+                    ... on Metric {
+                        startYear
+                        labelPrefix
+                        labelSuffix
+                    }
+                }
+            }
+        }
+    }
+}

@@ -21,6 +21,236 @@ export type Scalars = {
   Quality: { input: any; output: any; }
 };
 
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type About = Entry & _Node & {
+  __typename?: 'About';
+  _id: Scalars['ID']['output'];
+  age?: Maybe<Scalars['DateTime']['output']>;
+  ageStatementPrefix?: Maybe<Scalars['String']['output']>;
+  ageStatementSuffix?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  experienceMetricsCollection?: Maybe<AboutExperienceMetricsCollection>;
+  image?: Maybe<Asset>;
+  linkedFrom?: Maybe<AboutLinkingCollections>;
+  locationStatement?: Maybe<Scalars['String']['output']>;
+  passionStatement?: Maybe<Scalars['String']['output']>;
+  professionalTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutAgeArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutAgeStatementPrefixArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutAgeStatementSuffixArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutExperienceMetricsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<AboutExperienceMetricsCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MetricFilter>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutLocationStatementArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutPassionStatementArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutProfessionalTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+export type AboutTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type AboutCollection = {
+  __typename?: 'AboutCollection';
+  items: Array<Maybe<About>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type AboutExperienceMetricsCollection = {
+  __typename?: 'AboutExperienceMetricsCollection';
+  items: Array<Maybe<Metric>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export enum AboutExperienceMetricsCollectionOrder {
+  LabelPrefixAsc = 'labelPrefix_ASC',
+  LabelPrefixDesc = 'labelPrefix_DESC',
+  LabelSuffixAsc = 'labelSuffix_ASC',
+  LabelSuffixDesc = 'labelSuffix_DESC',
+  StartYearAsc = 'startYear_ASC',
+  StartYearDesc = 'startYear_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export type AboutFilter = {
+  AND?: InputMaybe<Array<InputMaybe<AboutFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<AboutFilter>>>;
+  age?: InputMaybe<Scalars['DateTime']['input']>;
+  ageStatementPrefix?: InputMaybe<Scalars['String']['input']>;
+  ageStatementPrefix_contains?: InputMaybe<Scalars['String']['input']>;
+  ageStatementPrefix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ageStatementPrefix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ageStatementPrefix_not?: InputMaybe<Scalars['String']['input']>;
+  ageStatementPrefix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ageStatementPrefix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ageStatementSuffix?: InputMaybe<Scalars['String']['input']>;
+  ageStatementSuffix_contains?: InputMaybe<Scalars['String']['input']>;
+  ageStatementSuffix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ageStatementSuffix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ageStatementSuffix_not?: InputMaybe<Scalars['String']['input']>;
+  ageStatementSuffix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ageStatementSuffix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  age_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  age_gt?: InputMaybe<Scalars['DateTime']['input']>;
+  age_gte?: InputMaybe<Scalars['DateTime']['input']>;
+  age_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  age_lt?: InputMaybe<Scalars['DateTime']['input']>;
+  age_lte?: InputMaybe<Scalars['DateTime']['input']>;
+  age_not?: InputMaybe<Scalars['DateTime']['input']>;
+  age_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  experienceMetrics?: InputMaybe<CfMetricNestedFilter>;
+  experienceMetricsCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  image_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  locationStatement?: InputMaybe<Scalars['String']['input']>;
+  locationStatement_contains?: InputMaybe<Scalars['String']['input']>;
+  locationStatement_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  locationStatement_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  locationStatement_not?: InputMaybe<Scalars['String']['input']>;
+  locationStatement_not_contains?: InputMaybe<Scalars['String']['input']>;
+  locationStatement_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  passionStatement?: InputMaybe<Scalars['String']['input']>;
+  passionStatement_contains?: InputMaybe<Scalars['String']['input']>;
+  passionStatement_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  passionStatement_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  passionStatement_not?: InputMaybe<Scalars['String']['input']>;
+  passionStatement_not_contains?: InputMaybe<Scalars['String']['input']>;
+  passionStatement_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  professionalTitle?: InputMaybe<Scalars['String']['input']>;
+  professionalTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  professionalTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  professionalTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  professionalTitle_not?: InputMaybe<Scalars['String']['input']>;
+  professionalTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  professionalTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type AboutLinkingCollections = {
+  __typename?: 'AboutLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type AboutLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum AboutOrder {
+  AgeStatementPrefixAsc = 'ageStatementPrefix_ASC',
+  AgeStatementPrefixDesc = 'ageStatementPrefix_DESC',
+  AgeStatementSuffixAsc = 'ageStatementSuffix_ASC',
+  AgeStatementSuffixDesc = 'ageStatementSuffix_DESC',
+  AgeAsc = 'age_ASC',
+  AgeDesc = 'age_DESC',
+  LocationStatementAsc = 'locationStatement_ASC',
+  LocationStatementDesc = 'locationStatement_DESC',
+  PassionStatementAsc = 'passionStatement_ASC',
+  PassionStatementDesc = 'passionStatement_DESC',
+  ProfessionalTitleAsc = 'professionalTitle_ASC',
+  ProfessionalTitleDesc = 'professionalTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** Represents a binary file in a space. An asset can be any file type. */
 export type Asset = {
   __typename?: 'Asset';
@@ -171,8 +401,17 @@ export type AssetFilter = {
 
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
+  aboutCollection?: Maybe<AboutCollection>;
   entryCollection?: Maybe<EntryCollection>;
   homeCollection?: Maybe<HomeCollection>;
+};
+
+
+export type AssetLinkingCollectionsAboutCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
 
@@ -823,9 +1062,150 @@ export enum MetaDataOrder {
   TitleDesc = 'title_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
+export type Metric = Entry & _Node & {
+  __typename?: 'Metric';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  labelPrefix?: Maybe<Scalars['String']['output']>;
+  labelSuffix?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<MetricLinkingCollections>;
+  startYear?: Maybe<Scalars['Int']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
+export type MetricLabelPrefixArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
+export type MetricLabelSuffixArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
+export type MetricLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
+export type MetricStartYearArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MetricCollection = {
+  __typename?: 'MetricCollection';
+  items: Array<Maybe<Metric>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MetricFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MetricFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MetricFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  labelPrefix?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_contains?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  labelPrefix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelPrefix_not?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelSuffix?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_contains?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  labelSuffix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelSuffix_not?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  startYear?: InputMaybe<Scalars['Int']['input']>;
+  startYear_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  startYear_gt?: InputMaybe<Scalars['Int']['input']>;
+  startYear_gte?: InputMaybe<Scalars['Int']['input']>;
+  startYear_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  startYear_lt?: InputMaybe<Scalars['Int']['input']>;
+  startYear_lte?: InputMaybe<Scalars['Int']['input']>;
+  startYear_not?: InputMaybe<Scalars['Int']['input']>;
+  startYear_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type MetricLinkingCollections = {
+  __typename?: 'MetricLinkingCollections';
+  aboutCollection?: Maybe<AboutCollection>;
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type MetricLinkingCollectionsAboutCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MetricLinkingCollectionsAboutCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type MetricLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum MetricLinkingCollectionsAboutCollectionOrder {
+  AgeStatementPrefixAsc = 'ageStatementPrefix_ASC',
+  AgeStatementPrefixDesc = 'ageStatementPrefix_DESC',
+  AgeStatementSuffixAsc = 'ageStatementSuffix_ASC',
+  AgeStatementSuffixDesc = 'ageStatementSuffix_DESC',
+  AgeAsc = 'age_ASC',
+  AgeDesc = 'age_DESC',
+  LocationStatementAsc = 'locationStatement_ASC',
+  LocationStatementDesc = 'locationStatement_DESC',
+  PassionStatementAsc = 'passionStatement_ASC',
+  PassionStatementDesc = 'passionStatement_DESC',
+  ProfessionalTitleAsc = 'professionalTitle_ASC',
+  ProfessionalTitleDesc = 'professionalTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum MetricOrder {
+  LabelPrefixAsc = 'labelPrefix_ASC',
+  LabelPrefixDesc = 'labelPrefix_DESC',
+  LabelSuffixAsc = 'labelSuffix_ASC',
+  LabelSuffixDesc = 'labelSuffix_DESC',
+  StartYearAsc = 'startYear_ASC',
+  StartYearDesc = 'startYear_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
+  about?: Maybe<About>;
+  aboutCollection?: Maybe<AboutCollection>;
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   entryCollection?: Maybe<EntryCollection>;
@@ -837,6 +1217,8 @@ export type Query = {
   homeCollection?: Maybe<HomeCollection>;
   metaData?: Maybe<MetaData>;
   metaDataCollection?: Maybe<MetaDataCollection>;
+  metric?: Maybe<Metric>;
+  metricCollection?: Maybe<MetricCollection>;
   serviceBanner?: Maybe<ServiceBanner>;
   serviceBannerCollection?: Maybe<ServiceBannerCollection>;
 };
@@ -846,6 +1228,23 @@ export type Query_NodeArgs = {
   id: Scalars['ID']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryAboutArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryAboutCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<AboutOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<AboutFilter>;
 };
 
 
@@ -941,6 +1340,23 @@ export type QueryMetaDataCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<MetaDataFilter>;
+};
+
+
+export type QueryMetricArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMetricCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MetricOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MetricFilter>;
 };
 
 
@@ -1108,6 +1524,43 @@ export type CfFooterItemNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type CfMetricNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  labelPrefix?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_contains?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  labelPrefix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelPrefix_not?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  labelPrefix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelSuffix?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_contains?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  labelSuffix_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  labelSuffix_not?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_not_contains?: InputMaybe<Scalars['String']['input']>;
+  labelSuffix_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  startYear?: InputMaybe<Scalars['Int']['input']>;
+  startYear_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  startYear_gt?: InputMaybe<Scalars['Int']['input']>;
+  startYear_gte?: InputMaybe<Scalars['Int']['input']>;
+  startYear_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  startYear_lt?: InputMaybe<Scalars['Int']['input']>;
+  startYear_lte?: InputMaybe<Scalars['Int']['input']>;
+  startYear_not?: InputMaybe<Scalars['Int']['input']>;
+  startYear_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type AboutContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type AboutContentQuery = { __typename?: 'Query', aboutCollection?: { __typename?: 'AboutCollection', items: Array<{ __typename?: 'About', title?: string | null, ageStatementPrefix?: string | null, age?: any | null, ageStatementSuffix?: string | null, professionalTitle?: string | null, locationStatement?: string | null, passionStatement?: string | null, description?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null, experienceMetricsCollection?: { __typename?: 'AboutExperienceMetricsCollection', items: Array<{ __typename?: 'Metric', startYear?: number | null, labelPrefix?: string | null, labelSuffix?: string | null } | null> } | null } | null> } | null };
+
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -1137,6 +1590,37 @@ export type ServiceBannerContentQueryVariables = Exact<{
 export type ServiceBannerContentQuery = { __typename?: 'Query', serviceBannerCollection?: { __typename?: 'ServiceBannerCollection', items: Array<{ __typename?: 'ServiceBanner', services?: Array<string | null> | null } | null> } | null };
 
 
+export const AboutContentDocument = gql`
+    query aboutContent($locale: String) {
+  aboutCollection(limit: 1, locale: $locale) {
+    items {
+      image {
+        url
+        width
+        height
+        description
+      }
+      title
+      ageStatementPrefix
+      age
+      ageStatementSuffix
+      professionalTitle
+      locationStatement
+      passionStatement
+      description
+      experienceMetricsCollection {
+        items {
+          ... on Metric {
+            startYear
+            labelPrefix
+            labelSuffix
+          }
+        }
+      }
+    }
+  }
+}
+    `;
 export const FooterContentDocument = gql`
     query footerContent($locale: String) {
   footerCollection(limit: 1, locale: $locale) {
@@ -1198,6 +1682,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    aboutContent(variables?: AboutContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<AboutContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<AboutContentQuery>(AboutContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'aboutContent', 'query', variables);
+    },
     footerContent(variables?: FooterContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<FooterContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FooterContentQuery>(FooterContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'footerContent', 'query', variables);
     },
