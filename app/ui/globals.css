@@ -49,7 +49,11 @@ body {
   }
 
   h3 {
-    @apply text-2xl font-semibold md:text-3xl lg:text-4xl;
+    @apply text-2xl font-semibold md:text-3xl lg:text-5xl;
+  }
+
+  h4 {
+    @apply text-xl font-semibold md:text-2xl lg:text-3xl;
   }
 
   h6 {

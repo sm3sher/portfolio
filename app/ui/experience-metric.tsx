@@ -21,9 +21,12 @@ export default function ExperienceMetric({ startYear, label }: Props) {
   }, [count, startYear]);
 
   return (
-    <div>
-      <motion.h1>{rounded}</motion.h1>
-      <h3>{label}</h3>
+    <div className="base-border w-full border-b-0 border-l-0 border-r-0 pl-0.5 pt-7">
+      <motion.h3 className="mb-1 font-light">{rounded}</motion.h3>
+      <h6 className="text-base uppercase tracking-wide text-[--secondary]">
+        <span className="whitespace-nowrap">Years of</span>{' '}
+        <span className="whitespace-nowrap">{label}</span>
+      </h6>
     </div>
   );
 }
