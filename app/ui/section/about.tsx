@@ -37,8 +37,16 @@ export default function About() {
               resonate and inspire.
             </p>
             <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
-              <ExperienceMetric startYear={2017} label="Coding Excellence" />
-              <ExperienceMetric startYear={2020} label="Professional Impact" />
+              <ExperienceMetric
+                startYear={2017}
+                prefixLabel="Years of"
+                suffixLabel="Coding Excellence"
+              />
+              <ExperienceMetric
+                startYear={2020}
+                prefixLabel="Years of"
+                suffixLabel="Professional Impact"
+              />
             </div>
           </div>
         </WithScrollAnimation>

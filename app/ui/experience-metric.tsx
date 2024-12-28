@@ -12,10 +12,15 @@ import { getYearsSince } from '@/app/lib/date-utils';
 
 type Props = {
   startYear: number;
-  label: string;
+  prefixLabel: string;
+  suffixLabel: string;
 };
 
-export default function ExperienceMetric({ startYear, label }: Props) {
+export default function ExperienceMetric({
+  startYear,
+  prefixLabel,
+  suffixLabel,
+}: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -39,8 +44,8 @@ export default function ExperienceMetric({ startYear, label }: Props) {
     >
       <motion.h3 className="mb-1 font-light">{rounded}</motion.h3>
       <h6 className="text-base uppercase tracking-wide text-[--secondary]">
-        <span className="whitespace-nowrap">Years of</span>{' '}
-        <span className="whitespace-nowrap">{label}</span>
+        <span className="whitespace-nowrap">{prefixLabel}</span>{' '}
+        <span className="whitespace-nowrap">{suffixLabel}</span>
       </h6>
     </div>
   );
