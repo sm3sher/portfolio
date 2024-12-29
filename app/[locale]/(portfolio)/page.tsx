@@ -38,7 +38,7 @@ export default async function Page({ params }: Props) {
         <About locale={locale} />
       </section>
       <section id="services">
-        <Services />
+        <Services locale={locale} />
       </section>
       <section id="contact">
         <Contact />

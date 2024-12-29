@@ -894,8 +894,25 @@ type Query {
   metaDataCollection(limit: Int = 100, locale: String, order: [MetaDataOrder], preview: Boolean, skip: Int = 0, where: MetaDataFilter): MetaDataCollection
   metric(id: String!, locale: String, preview: Boolean): Metric
   metricCollection(limit: Int = 100, locale: String, order: [MetricOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): MetricCollection
+  service(id: String!, locale: String, preview: Boolean): Service
   serviceBanner(id: String!, locale: String, preview: Boolean): ServiceBanner
   serviceBannerCollection(limit: Int = 100, locale: String, order: [ServiceBannerOrder], preview: Boolean, skip: Int = 0, where: ServiceBannerFilter): ServiceBannerCollection
+  serviceCollection(limit: Int = 100, locale: String, order: [ServiceOrder], preview: Boolean, skip: Int = 0, where: ServiceFilter): ServiceCollection
+  services(id: String!, locale: String, preview: Boolean): Services
+  servicesCollection(limit: Int = 100, locale: String, order: [ServicesOrder], preview: Boolean, skip: Int = 0, where: ServicesFilter): ServicesCollection
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service)
+"""
+type Service implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): ServiceLinkingCollections
+  sys: Sys!
+  tags(locale: String): [String]
+  title(locale: String): String
 }
 
 """
@@ -940,6 +957,169 @@ enum ServiceBannerOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+type ServiceCollection {
+  items: [Service]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ServiceFilter {
+  AND: [ServiceFilter]
+  OR: [ServiceFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  tags_contains_all: [String]
+  tags_contains_none: [String]
+  tags_contains_some: [String]
+  tags_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ServiceLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  servicesCollection(limit: Int = 100, locale: String, order: [ServiceLinkingCollectionsServicesCollectionOrder], preview: Boolean, skip: Int = 0): ServicesCollection
+}
+
+enum ServiceLinkingCollectionsServicesCollectionOrder {
+  subTitleHighlight_ASC
+  subTitleHighlight_DESC
+  subTitleMain_ASC
+  subTitleMain_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum ServiceOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/services)
+"""
+type Services implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): ServicesLinkingCollections
+  serviceEntriesCollection(limit: Int = 100, locale: String, order: [ServicesServiceEntriesCollectionOrder], preview: Boolean, skip: Int = 0, where: ServiceFilter): ServicesServiceEntriesCollection
+  subTitleHighlight(locale: String): String
+  subTitleMain(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ServicesCollection {
+  items: [Services]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ServicesFilter {
+  AND: [ServicesFilter]
+  OR: [ServicesFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  serviceEntries: cfServiceNestedFilter
+  serviceEntriesCollection_exists: Boolean
+  subTitleHighlight: String
+  subTitleHighlight_contains: String
+  subTitleHighlight_exists: Boolean
+  subTitleHighlight_in: [String]
+  subTitleHighlight_not: String
+  subTitleHighlight_not_contains: String
+  subTitleHighlight_not_in: [String]
+  subTitleMain: String
+  subTitleMain_contains: String
+  subTitleMain_exists: Boolean
+  subTitleMain_in: [String]
+  subTitleMain_not: String
+  subTitleMain_not_contains: String
+  subTitleMain_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ServicesLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum ServicesOrder {
+  subTitleHighlight_ASC
+  subTitleHighlight_DESC
+  subTitleMain_ASC
+  subTitleMain_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type ServicesServiceEntriesCollection {
+  items: [Service]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum ServicesServiceEntriesCollectionOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 type Sys {
@@ -1052,4 +1232,29 @@ input cfMetricNestedFilter {
   startYear_not: Int
   startYear_not_in: [Int]
   sys: SysFilter
+}
+
+input cfServiceNestedFilter {
+  AND: [cfServiceNestedFilter]
+  OR: [cfServiceNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  tags_contains_all: [String]
+  tags_contains_none: [String]
+  tags_contains_some: [String]
+  tags_exists: Boolean
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
 }

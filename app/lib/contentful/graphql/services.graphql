@@ -1,0 +1,18 @@
+query servicesContent($locale: String) {
+    servicesCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            subTitleMain
+            subTitleHighlight
+            serviceEntriesCollection {
+                items {
+                    ... on Service {
+                        title
+                        tags
+                        description
+                    }
+                }
+            }
+        }
+    }
+}
