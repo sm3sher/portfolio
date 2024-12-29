@@ -7,6 +7,7 @@ import {
 } from 'hugeicons-react';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
+import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
 
 type Props = {
   locale: Locale;
@@ -29,7 +30,7 @@ export default async function Services({ locale }: Props) {
     <div className="relative py-24 md:py-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,var(--radial-color)_0%,transparent_66%)] opacity-50" />
       <div className="mx-auto max-w-screen-xl px-4">
-        <div className="mb-10 space-y-7 md:mb-16">
+        <WithScrollAnimation className="mb-10 space-y-7 md:mb-16" delay={0.4}>
           <h6 className="uppercase tracking-wider text-[--highlight]">
             {servives?.title}
           </h6>
@@ -37,18 +38,19 @@ export default async function Services({ locale }: Props) {
             {servives?.subTitleMain}{' '}
             <span className="font-light">{servives?.subTitleHighlight}</span>
           </h3>
-        </div>
+        </WithScrollAnimation>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {servives?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
-              <ServiceCard
-                key={index}
-                icon={icons[index]}
-                title={item.title!}
-                tags={item.tags as string[]}
-                description={item.description!}
-              />
+              <WithScrollAnimation key={index} delay={index * 0.4} axis="x">
+                <ServiceCard
+                  icon={icons[index]}
+                  title={item.title!}
+                  tags={item.tags as string[]}
+                  description={item.description!}
+                />
+              </WithScrollAnimation>
             ))}
         </div>
       </div>
