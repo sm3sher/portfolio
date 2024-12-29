@@ -14,7 +14,7 @@ export default async function Footer({ locale }: Props) {
     <footer className="m-4 rounded-lg text-sm font-medium text-[--secondary]">
       <div className="mx-auto max-w-screen-xl p-4 sm:flex sm:items-center sm:justify-between">
         <span className="sm:text-center">
-          &copy; {new Date().getFullYear()} - Roman Jumatov
+          &copy; {new Date().getFullYear()} Roman Jumatov
         </span>
         <ul className="mt-3 flex flex-wrap items-center sm:mt-0">
           {items?.map((item) => (
