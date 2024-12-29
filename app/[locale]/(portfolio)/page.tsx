@@ -25,7 +25,7 @@ export default async function Page({ params }: Props) {
   const { locale } = await params;
 
   const About = dynamic(() => import('@/app/ui/section/about'));
-  const Work = dynamic(() => import('@/app/ui/section/work'));
+  const Services = dynamic(() => import('@/app/ui/section/services'));
   const Contact = dynamic(() => import('@/app/ui/section/contact'));
 
   return (
@@ -37,8 +37,8 @@ export default async function Page({ params }: Props) {
       <section id="about">
         <About locale={locale} />
       </section>
-      <section id="work">
-        <Work />
+      <section id="services">
+        <Services />
       </section>
       <section id="contact">
         <Contact />

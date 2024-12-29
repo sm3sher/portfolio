@@ -21,9 +21,9 @@ const navbarItems = [
     label: 'About',
   },
   {
-    id: 'work',
+    id: 'services',
     icon: <GridViewIcon size={20} />,
-    label: 'Work',
+    label: 'Services',
   },
   {
     id: 'contact',
@@ -37,7 +37,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string>();
 
   useEffect(() => {
-    const sections = ['home', 'about', 'work', 'contact'];
+    const sections = ['home', 'about', 'services', 'contact'];
 
     const updateActiveSection = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
