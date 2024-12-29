@@ -7,6 +7,7 @@ query servicesContent($locale: String) {
             serviceEntriesCollection {
                 items {
                     ... on Service {
+                        iconName
                         title
                         tags
                         description

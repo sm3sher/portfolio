@@ -909,6 +909,7 @@ type Service implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
+  iconName(locale: String): String
   linkedFrom(allowedLocales: [String]): ServiceLinkingCollections
   sys: Sys!
   tags(locale: String): [String]
@@ -977,6 +978,13 @@ input ServiceFilter {
   description_not: String
   description_not_contains: String
   description_not_in: [String]
+  iconName: String
+  iconName_contains: String
+  iconName_exists: Boolean
+  iconName_in: [String]
+  iconName_not: String
+  iconName_not_contains: String
+  iconName_not_in: [String]
   sys: SysFilter
   tags_contains_all: [String]
   tags_contains_none: [String]
@@ -1016,6 +1024,8 @@ enum ServiceLinkingCollectionsServicesCollectionOrder {
 enum ServiceOrder {
   description_ASC
   description_DESC
+  iconName_ASC
+  iconName_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -1110,6 +1120,8 @@ type ServicesServiceEntriesCollection {
 enum ServicesServiceEntriesCollectionOrder {
   description_ASC
   description_DESC
+  iconName_ASC
+  iconName_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -1245,6 +1257,13 @@ input cfServiceNestedFilter {
   description_not: String
   description_not_contains: String
   description_not_in: [String]
+  iconName: String
+  iconName_contains: String
+  iconName_exists: Boolean
+  iconName_in: [String]
+  iconName_not: String
+  iconName_not_contains: String
+  iconName_not_in: [String]
   sys: SysFilter
   tags_contains_all: [String]
   tags_contains_none: [String]

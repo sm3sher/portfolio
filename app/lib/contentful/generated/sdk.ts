@@ -1420,6 +1420,7 @@ export type Service = Entry & _Node & {
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars['String']['output']>;
+  iconName?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<ServiceLinkingCollections>;
   sys: Sys;
   tags?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
@@ -1429,6 +1430,12 @@ export type Service = Entry & _Node & {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service) */
 export type ServiceDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service) */
+export type ServiceIconNameArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1534,6 +1541,13 @@ export type ServiceFilter = {
   description_not?: InputMaybe<Scalars['String']['input']>;
   description_not_contains?: InputMaybe<Scalars['String']['input']>;
   description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  iconName?: InputMaybe<Scalars['String']['input']>;
+  iconName_contains?: InputMaybe<Scalars['String']['input']>;
+  iconName_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  iconName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  iconName_not?: InputMaybe<Scalars['String']['input']>;
+  iconName_not_contains?: InputMaybe<Scalars['String']['input']>;
+  iconName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
   tags_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   tags_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -1591,6 +1605,8 @@ export enum ServiceLinkingCollectionsServicesCollectionOrder {
 export enum ServiceOrder {
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
+  IconNameAsc = 'iconName_ASC',
+  IconNameDesc = 'iconName_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -1730,6 +1746,8 @@ export type ServicesServiceEntriesCollection = {
 export enum ServicesServiceEntriesCollectionOrder {
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
+  IconNameAsc = 'iconName_ASC',
+  IconNameDesc = 'iconName_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -1866,6 +1884,13 @@ export type CfServiceNestedFilter = {
   description_not?: InputMaybe<Scalars['String']['input']>;
   description_not_contains?: InputMaybe<Scalars['String']['input']>;
   description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  iconName?: InputMaybe<Scalars['String']['input']>;
+  iconName_contains?: InputMaybe<Scalars['String']['input']>;
+  iconName_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  iconName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  iconName_not?: InputMaybe<Scalars['String']['input']>;
+  iconName_not_contains?: InputMaybe<Scalars['String']['input']>;
+  iconName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
   tags_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   tags_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -1920,7 +1945,7 @@ export type ServicesContentQueryVariables = Exact<{
 }>;
 
 
-export type ServicesContentQuery = { __typename?: 'Query', servicesCollection?: { __typename?: 'ServicesCollection', items: Array<{ __typename?: 'Services', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, serviceEntriesCollection?: { __typename?: 'ServicesServiceEntriesCollection', items: Array<{ __typename?: 'Service', title?: string | null, tags?: Array<string | null> | null, description?: string | null } | null> } | null } | null> } | null };
+export type ServicesContentQuery = { __typename?: 'Query', servicesCollection?: { __typename?: 'ServicesCollection', items: Array<{ __typename?: 'Services', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, serviceEntriesCollection?: { __typename?: 'ServicesServiceEntriesCollection', items: Array<{ __typename?: 'Service', iconName?: string | null, title?: string | null, tags?: Array<string | null> | null, description?: string | null } | null> } | null } | null> } | null };
 
 
 export const AboutContentDocument = gql`
@@ -2017,6 +2042,7 @@ export const ServicesContentDocument = gql`
       serviceEntriesCollection {
         items {
           ... on Service {
+            iconName
             title
             tags
             description

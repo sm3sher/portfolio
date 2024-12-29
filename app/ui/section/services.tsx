@@ -13,12 +13,12 @@ type Props = {
   locale: Locale;
 };
 
-const icons = [
-  <WebDesign01Icon key={0} size={36} />,
-  <SoftwareLicenseIcon key={1} size={36} />,
-  <MentoringIcon key={2} size={36} />,
-  <SystemUpdate01Icon key={3} size={36} />,
-];
+const iconMapping = {
+  WebDesign01Icon: <WebDesign01Icon size={36} />,
+  SoftwareLicenseIcon: <SoftwareLicenseIcon size={36} />,
+  MentoringIcon: <MentoringIcon size={36} />,
+  SystemUpdate01Icon: <SystemUpdate01Icon size={36} />,
+};
 
 export default async function Services({ locale }: Props) {
   const servicesContentQuery = await contentfulClient.servicesContent({
@@ -45,7 +45,7 @@ export default async function Services({ locale }: Props) {
             .map((item, index) => (
               <WithScrollAnimation key={index} delay={index * 0.4} axis="x">
                 <ServiceCard
-                  icon={icons[index]}
+                  icon={iconMapping[item.iconName as keyof typeof iconMapping]}
                   title={item.title!}
                   tags={item.tags as string[]}
                   description={item.description!}
