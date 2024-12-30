@@ -268,6 +268,83 @@ enum AssetOrder {
   width_DESC
 }
 
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact)
+"""
+type Contact implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): ContactLinkingCollections
+  subTitleHighlight(locale: String): String
+  subTitleMain(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ContactCollection {
+  items: [Contact]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ContactFilter {
+  AND: [ContactFilter]
+  OR: [ContactFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  subTitleHighlight: String
+  subTitleHighlight_contains: String
+  subTitleHighlight_exists: Boolean
+  subTitleHighlight_in: [String]
+  subTitleHighlight_not: String
+  subTitleHighlight_not_contains: String
+  subTitleHighlight_not_in: [String]
+  subTitleMain: String
+  subTitleMain_contains: String
+  subTitleMain_exists: Boolean
+  subTitleMain_in: [String]
+  subTitleMain_not: String
+  subTitleMain_not_contains: String
+  subTitleMain_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ContactLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum ContactOrder {
+  subTitleHighlight_ASC
+  subTitleHighlight_DESC
+  subTitleMain_ASC
+  subTitleMain_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
 type ContentfulMetadata {
   concepts: [TaxonomyConcept]!
   tags: [ContentfulTag]!
@@ -883,6 +960,8 @@ type Query {
   aboutCollection(limit: Int = 100, locale: String, order: [AboutOrder], preview: Boolean, skip: Int = 0, where: AboutFilter): AboutCollection
   asset(id: String!, locale: String, preview: Boolean): Asset
   assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
+  contact(id: String!, locale: String, preview: Boolean): Contact
+  contactCollection(limit: Int = 100, locale: String, order: [ContactOrder], preview: Boolean, skip: Int = 0, where: ContactFilter): ContactCollection
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
   footer(id: String!, locale: String, preview: Boolean): Footer
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection
@@ -900,6 +979,10 @@ type Query {
   serviceCollection(limit: Int = 100, locale: String, order: [ServiceOrder], preview: Boolean, skip: Int = 0, where: ServiceFilter): ServiceCollection
   services(id: String!, locale: String, preview: Boolean): Services
   servicesCollection(limit: Int = 100, locale: String, order: [ServicesOrder], preview: Boolean, skip: Int = 0, where: ServicesFilter): ServicesCollection
+  testimonial(id: String!, locale: String, preview: Boolean): Testimonial
+  testimonialCollection(limit: Int = 100, locale: String, order: [TestimonialOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialCollection
+  testimonials(id: String!, locale: String, preview: Boolean): Testimonials
+  testimonialsCollection(limit: Int = 100, locale: String, order: [TestimonialsOrder], preview: Boolean, skip: Int = 0, where: TestimonialsFilter): TestimonialsCollection
 }
 
 """
@@ -1191,6 +1274,185 @@ type TaxonomyConcept {
   id: String
 }
 
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial)
+"""
+type Testimonial implements Entry & _Node {
+  _id: ID!
+  author(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  jobTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): TestimonialLinkingCollections
+  quote(locale: String): String
+  sys: Sys!
+}
+
+type TestimonialCollection {
+  items: [Testimonial]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input TestimonialFilter {
+  AND: [TestimonialFilter]
+  OR: [TestimonialFilter]
+  author: String
+  author_contains: String
+  author_exists: Boolean
+  author_in: [String]
+  author_not: String
+  author_not_contains: String
+  author_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  jobTitle: String
+  jobTitle_contains: String
+  jobTitle_exists: Boolean
+  jobTitle_in: [String]
+  jobTitle_not: String
+  jobTitle_not_contains: String
+  jobTitle_not_in: [String]
+  quote: String
+  quote_contains: String
+  quote_exists: Boolean
+  quote_in: [String]
+  quote_not: String
+  quote_not_contains: String
+  quote_not_in: [String]
+  sys: SysFilter
+}
+
+type TestimonialLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  testimonialsCollection(limit: Int = 100, locale: String, order: [TestimonialLinkingCollectionsTestimonialsCollectionOrder], preview: Boolean, skip: Int = 0): TestimonialsCollection
+}
+
+enum TestimonialLinkingCollectionsTestimonialsCollectionOrder {
+  nextSlideLabel_ASC
+  nextSlideLabel_DESC
+  prevSlideLabel_ASC
+  prevSlideLabel_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum TestimonialOrder {
+  author_ASC
+  author_DESC
+  jobTitle_ASC
+  jobTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials)
+"""
+type Testimonials implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): TestimonialsLinkingCollections
+  nextSlideLabel(locale: String): String
+  prevSlideLabel(locale: String): String
+  quotesCollection(limit: Int = 100, locale: String, order: [TestimonialsQuotesCollectionOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialsQuotesCollection
+  sys: Sys!
+  title(locale: String): String
+}
+
+type TestimonialsCollection {
+  items: [Testimonials]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input TestimonialsFilter {
+  AND: [TestimonialsFilter]
+  OR: [TestimonialsFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  nextSlideLabel: String
+  nextSlideLabel_contains: String
+  nextSlideLabel_exists: Boolean
+  nextSlideLabel_in: [String]
+  nextSlideLabel_not: String
+  nextSlideLabel_not_contains: String
+  nextSlideLabel_not_in: [String]
+  prevSlideLabel: String
+  prevSlideLabel_contains: String
+  prevSlideLabel_exists: Boolean
+  prevSlideLabel_in: [String]
+  prevSlideLabel_not: String
+  prevSlideLabel_not_contains: String
+  prevSlideLabel_not_in: [String]
+  quotes: cfTestimonialNestedFilter
+  quotesCollection_exists: Boolean
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type TestimonialsLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum TestimonialsOrder {
+  nextSlideLabel_ASC
+  nextSlideLabel_DESC
+  prevSlideLabel_ASC
+  prevSlideLabel_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type TestimonialsQuotesCollection {
+  items: [Testimonial]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum TestimonialsQuotesCollectionOrder {
+  author_ASC
+  author_DESC
+  jobTitle_ASC
+  jobTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
 interface _Node {
   _id: ID!
 }
@@ -1276,4 +1538,32 @@ input cfServiceNestedFilter {
   title_not: String
   title_not_contains: String
   title_not_in: [String]
+}
+
+input cfTestimonialNestedFilter {
+  AND: [cfTestimonialNestedFilter]
+  OR: [cfTestimonialNestedFilter]
+  author: String
+  author_contains: String
+  author_exists: Boolean
+  author_in: [String]
+  author_not: String
+  author_not_contains: String
+  author_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  jobTitle: String
+  jobTitle_contains: String
+  jobTitle_exists: Boolean
+  jobTitle_in: [String]
+  jobTitle_not: String
+  jobTitle_not_contains: String
+  jobTitle_not_in: [String]
+  quote: String
+  quote_contains: String
+  quote_exists: Boolean
+  quote_in: [String]
+  quote_not: String
+  quote_not_contains: String
+  quote_not_in: [String]
+  sys: SysFilter
 }

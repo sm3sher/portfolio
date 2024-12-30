@@ -1,0 +1,26 @@
+query contactContent($locale: String) {
+    contactCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            subTitleMain
+            subTitleHighlight
+            description
+        }
+    }
+    testimonialsCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            prevSlideLabel
+            nextSlideLabel
+            quotesCollection {
+                items {
+                    ... on Testimonial {
+                        quote
+                        author
+                        jobTitle
+                    }
+                }
+            }
+        }
+    }
+}

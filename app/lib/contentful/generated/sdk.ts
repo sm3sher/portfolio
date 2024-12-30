@@ -453,6 +453,122 @@ export enum AssetOrder {
   WidthDesc = 'width_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type Contact = Entry & _Node & {
+  __typename?: 'Contact';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<ContactLinkingCollections>;
+  subTitleHighlight?: Maybe<Scalars['String']['output']>;
+  subTitleMain?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactSubTitleHighlightArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactSubTitleMainArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ContactCollection = {
+  __typename?: 'ContactCollection';
+  items: Array<Maybe<Contact>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type ContactFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ContactFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ContactFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleHighlight?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleHighlight_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleHighlight_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleMain?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleMain_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleMain_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type ContactLinkingCollections = {
+  __typename?: 'ContactLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type ContactLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum ContactOrder {
+  SubTitleHighlightAsc = 'subTitleHighlight_ASC',
+  SubTitleHighlightDesc = 'subTitleHighlight_DESC',
+  SubTitleMainAsc = 'subTitleMain_ASC',
+  SubTitleMainDesc = 'subTitleMain_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
   concepts: Array<Maybe<TaxonomyConcept>>;
@@ -1208,6 +1324,8 @@ export type Query = {
   aboutCollection?: Maybe<AboutCollection>;
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
+  contact?: Maybe<Contact>;
+  contactCollection?: Maybe<ContactCollection>;
   entryCollection?: Maybe<EntryCollection>;
   footer?: Maybe<Footer>;
   footerCollection?: Maybe<FooterCollection>;
@@ -1225,6 +1343,10 @@ export type Query = {
   serviceCollection?: Maybe<ServiceCollection>;
   services?: Maybe<Services>;
   servicesCollection?: Maybe<ServicesCollection>;
+  testimonial?: Maybe<Testimonial>;
+  testimonialCollection?: Maybe<TestimonialCollection>;
+  testimonials?: Maybe<Testimonials>;
+  testimonialsCollection?: Maybe<TestimonialsCollection>;
 };
 
 
@@ -1266,6 +1388,23 @@ export type QueryAssetCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<AssetFilter>;
+};
+
+
+export type QueryContactArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryContactCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ContactOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ContactFilter>;
 };
 
 
@@ -1412,6 +1551,40 @@ export type QueryServicesCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ServicesFilter>;
+};
+
+
+export type QueryTestimonialArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryTestimonialCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<TestimonialFilter>;
+};
+
+
+export type QueryTestimonialsArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryTestimonialsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialsOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<TestimonialsFilter>;
 };
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service) */
@@ -1818,6 +1991,272 @@ export type TaxonomyConcept = {
   id?: Maybe<Scalars['String']['output']>;
 };
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type Testimonial = Entry & _Node & {
+  __typename?: 'Testimonial';
+  _id: Scalars['ID']['output'];
+  author?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  jobTitle?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<TestimonialLinkingCollections>;
+  quote?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialAuthorArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialJobTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialQuoteArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type TestimonialCollection = {
+  __typename?: 'TestimonialCollection';
+  items: Array<Maybe<Testimonial>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type TestimonialFilter = {
+  AND?: InputMaybe<Array<InputMaybe<TestimonialFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<TestimonialFilter>>>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  author_contains?: InputMaybe<Scalars['String']['input']>;
+  author_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  author_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  author_not?: InputMaybe<Scalars['String']['input']>;
+  author_not_contains?: InputMaybe<Scalars['String']['input']>;
+  author_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  jobTitle?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  jobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  jobTitle_not?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  quote?: InputMaybe<Scalars['String']['input']>;
+  quote_contains?: InputMaybe<Scalars['String']['input']>;
+  quote_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  quote_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  quote_not?: InputMaybe<Scalars['String']['input']>;
+  quote_not_contains?: InputMaybe<Scalars['String']['input']>;
+  quote_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type TestimonialLinkingCollections = {
+  __typename?: 'TestimonialLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  testimonialsCollection?: Maybe<TestimonialsCollection>;
+};
+
+
+export type TestimonialLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type TestimonialLinkingCollectionsTestimonialsCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialLinkingCollectionsTestimonialsCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum TestimonialLinkingCollectionsTestimonialsCollectionOrder {
+  NextSlideLabelAsc = 'nextSlideLabel_ASC',
+  NextSlideLabelDesc = 'nextSlideLabel_DESC',
+  PrevSlideLabelAsc = 'prevSlideLabel_ASC',
+  PrevSlideLabelDesc = 'prevSlideLabel_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum TestimonialOrder {
+  AuthorAsc = 'author_ASC',
+  AuthorDesc = 'author_DESC',
+  JobTitleAsc = 'jobTitle_ASC',
+  JobTitleDesc = 'jobTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type Testimonials = Entry & _Node & {
+  __typename?: 'Testimonials';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  linkedFrom?: Maybe<TestimonialsLinkingCollections>;
+  nextSlideLabel?: Maybe<Scalars['String']['output']>;
+  prevSlideLabel?: Maybe<Scalars['String']['output']>;
+  quotesCollection?: Maybe<TestimonialsQuotesCollection>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type TestimonialsLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type TestimonialsNextSlideLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type TestimonialsPrevSlideLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type TestimonialsQuotesCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialsQuotesCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<TestimonialFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
+export type TestimonialsTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type TestimonialsCollection = {
+  __typename?: 'TestimonialsCollection';
+  items: Array<Maybe<Testimonials>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type TestimonialsFilter = {
+  AND?: InputMaybe<Array<InputMaybe<TestimonialsFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<TestimonialsFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  nextSlideLabel?: InputMaybe<Scalars['String']['input']>;
+  nextSlideLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  nextSlideLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  nextSlideLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nextSlideLabel_not?: InputMaybe<Scalars['String']['input']>;
+  nextSlideLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  nextSlideLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  prevSlideLabel?: InputMaybe<Scalars['String']['input']>;
+  prevSlideLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  prevSlideLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  prevSlideLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  prevSlideLabel_not?: InputMaybe<Scalars['String']['input']>;
+  prevSlideLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  prevSlideLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  quotes?: InputMaybe<CfTestimonialNestedFilter>;
+  quotesCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type TestimonialsLinkingCollections = {
+  __typename?: 'TestimonialsLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type TestimonialsLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum TestimonialsOrder {
+  NextSlideLabelAsc = 'nextSlideLabel_ASC',
+  NextSlideLabelDesc = 'nextSlideLabel_DESC',
+  PrevSlideLabelAsc = 'prevSlideLabel_ASC',
+  PrevSlideLabelDesc = 'prevSlideLabel_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export type TestimonialsQuotesCollection = {
+  __typename?: 'TestimonialsQuotesCollection';
+  items: Array<Maybe<Testimonial>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export enum TestimonialsQuotesCollectionOrder {
+  AuthorAsc = 'author_ASC',
+  AuthorDesc = 'author_DESC',
+  JobTitleAsc = 'jobTitle_ASC',
+  JobTitleDesc = 'jobTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type _Node = {
   _id: Scalars['ID']['output'];
 };
@@ -1905,12 +2344,47 @@ export type CfServiceNestedFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type CfTestimonialNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfTestimonialNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfTestimonialNestedFilter>>>;
+  author?: InputMaybe<Scalars['String']['input']>;
+  author_contains?: InputMaybe<Scalars['String']['input']>;
+  author_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  author_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  author_not?: InputMaybe<Scalars['String']['input']>;
+  author_not_contains?: InputMaybe<Scalars['String']['input']>;
+  author_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  jobTitle?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  jobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  jobTitle_not?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  jobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  quote?: InputMaybe<Scalars['String']['input']>;
+  quote_contains?: InputMaybe<Scalars['String']['input']>;
+  quote_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  quote_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  quote_not?: InputMaybe<Scalars['String']['input']>;
+  quote_not_contains?: InputMaybe<Scalars['String']['input']>;
+  quote_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type AboutContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
 export type AboutContentQuery = { __typename?: 'Query', aboutCollection?: { __typename?: 'AboutCollection', items: Array<{ __typename?: 'About', title?: string | null, ageStatementPrefix?: string | null, age?: any | null, ageStatementSuffix?: string | null, professionalTitle?: string | null, locationStatement?: string | null, passionStatement?: string | null, description?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null, experienceMetricsCollection?: { __typename?: 'AboutExperienceMetricsCollection', items: Array<{ __typename?: 'Metric', startYear?: number | null, labelPrefix?: string | null, labelSuffix?: string | null } | null> } | null } | null> } | null };
+
+export type ContactContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null } | null> } | null } | null> } | null };
 
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -1972,6 +2446,34 @@ export const AboutContentDocument = gql`
             startYear
             labelPrefix
             labelSuffix
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+export const ContactContentDocument = gql`
+    query contactContent($locale: String) {
+  contactCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleMain
+      subTitleHighlight
+      description
+    }
+  }
+  testimonialsCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      prevSlideLabel
+      nextSlideLabel
+      quotesCollection {
+        items {
+          ... on Testimonial {
+            quote
+            author
+            jobTitle
           }
         }
       }
@@ -2063,6 +2565,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     aboutContent(variables?: AboutContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<AboutContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<AboutContentQuery>(AboutContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'aboutContent', 'query', variables);
+    },
+    contactContent(variables?: ContactContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ContactContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<ContactContentQuery>(ContactContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'contactContent', 'query', variables);
     },
     footerContent(variables?: FooterContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<FooterContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FooterContentQuery>(FooterContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'footerContent', 'query', variables);
