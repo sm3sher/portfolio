@@ -37,7 +37,7 @@ export default function TestimonialSlider() {
         </div>
       </div>
       <Swiper
-        className="[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
+        className="sm:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
         loop
         modules={[A11y, Navigation]}
         navigation={{
