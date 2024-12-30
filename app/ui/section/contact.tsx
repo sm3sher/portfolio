@@ -1,12 +1,13 @@
 import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
 import ContactForm from '@/app/ui/form/contact-form';
+import TestimonialSlider from '@/app/ui/testimonial-slider';
 
 export default function Contact() {
   return (
     <div className="py-24 md:py-32">
       <div className="mx-auto max-w-screen-xl px-4">
         <div className="flex flex-col items-center gap-6 md:flex-row lg:gap-16">
-          <WithScrollAnimation className="mb-10 space-y-7 md:mb-16 md:w-1/2">
+          <WithScrollAnimation className="space-y-7 md:mb-20 md:w-1/2">
             <h6 className="uppercase tracking-wider text-[--highlight]">
               Get in Touch!
             </h6>
@@ -25,6 +26,9 @@ export default function Contact() {
             <ContactForm />
           </WithScrollAnimation>
         </div>
+        <WithScrollAnimation className="pt-16" delay={0.6} axis="x">
+          <TestimonialSlider />
+        </WithScrollAnimation>
       </div>
     </div>
   );
