@@ -11,26 +11,26 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 
 ## ✨ Features
 
-- **Dark Mode Support**: Switch between light and dark mode, powered by [next-themes](https://github.com/pacocoursey/next-themes)
-- **Form Validation**: Built using [react-hook-form](https://react-hook-form.com) and validated with [zod](https://zod.dev) for reliability and smooth user experience
-- **Form Integration**: Submissions are stored in [Supabase](https://supabase.com), making form handling and backend management seamless
-- **Content Management**: Easily manage and update content via [Contentful](https://contentful.com), which integrates with the site through [GraphQL](https://graphql.org/) queries
-- **Multi-Language Support**: Fully localized content with [next-intl](https://next-intl.dev/) to cater to a global audience
-- **Lightweight Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for scalable, high-quality icons
-- **Modern Typography**: Uses the [Geist font](https://vercel.com/font) from Vercel for clean, readable text
-- **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a responsive, fluid layout across all devices
-- **Smooth Animations**: Engaging animations and scroll effects powered by [Motion](https://motion.dev/)
-- **Code Quality**: Maintained with [ESLint](https://eslint.org) and [Prettier](https://prettier.io) for consistent and clean code
-- **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for a streamlined version control workflow
+- 🌙 **Dark Mode Support**: Switch between light and dark mode, powered by [next-themes](https://github.com/pacocoursey/next-themes)
+- ✅ **Form Validation**: Built using [react-hook-form](https://react-hook-form.com) and validated with [zod](https://zod.dev) for reliability and smooth user experience
+- 💾 **Form Integration**: Submissions are stored in [Supabase](https://supabase.com), making form handling and backend management seamless
+- 📄 **Content Management**: Easily manage and update content via [Contentful](https://contentful.com), which integrates with the site through [GraphQL](https://graphql.org/) queries
+- 🌍 **Multi-Language Support**: Fully localized content with [next-intl](https://next-intl.dev/) to cater to a global audience
+- 🖼️ **Lightweight Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for scalable, high-quality icons
+- 🖋️ **Modern Typography**: Uses the [Geist font](https://vercel.com/font) from Vercel for clean, readable text
+- 📱 **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a rea sponsive, fluid layout across all devices
+- 🌀 **Smooth Animations**: Engaging animations and scroll effects powered by [Motion](https://motion.dev/)
+- 🧹 **Code Quality**: Maintained with [ESLint](https://eslint.org) and [Prettier](https://prettier.io) for consistent and clean code
+- ⛓️ **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for a streamlined version control workflow
 
 ## 🛠 Commands
 
-Here are the main commands that I use:
+Here are the main commands to interact with the project:
 
-- `npm run dev`: Start the development server locally
-- `npm run build`: Build the project for production
-- `npm run start`: Run the production server
-- `npm run lint`: Check for code issues using *ESLint*
-- `npm run format`: Format code with *Prettier* to maintain consistency
-- `npm test`: Run unit tests with *Vitest*
-- `npm run types:generate`: Generate types for *GraphQL queries* and *Supabase schema*
+- 🖥️ `npm run dev`: Start the development server locally
+- 📦 `npm run build`: Build the project for production
+- 🚀 `npm run start`: Run the production server
+- 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_
+- 🎨 `npm run format`: Format code with _Prettier_ to maintain consistency
+- 🧪 `npm test`: Run unit tests with _Vitest_
+- 🧬 `npm run types:generate`: Generate types for _GraphQL queries_ and _Supabase schema_
