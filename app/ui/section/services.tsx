@@ -30,7 +30,7 @@ export default async function Services({ locale }: Props) {
     <div className="relative py-24 md:py-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,var(--radial-color)_0%,transparent_66%)] opacity-50" />
       <div className="mx-auto max-w-screen-xl px-4">
-        <WithScrollAnimation className="mb-10 space-y-7 md:mb-16" delay={0.4}>
+        <WithScrollAnimation className="mb-10 space-y-7 md:mb-16">
           <h6 className="uppercase tracking-wider text-[--highlight]">
             {servives?.title}
           </h6>
@@ -43,7 +43,7 @@ export default async function Services({ locale }: Props) {
           {servives?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
-              <WithScrollAnimation key={index} delay={index * 0.4} axis="x">
+              <WithScrollAnimation key={index} delay={0.4} axis="x">
                 <ServiceCard
                   icon={iconMapping[item.iconName as keyof typeof iconMapping]}
                   title={item.title!}
