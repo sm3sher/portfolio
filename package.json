@@ -11,8 +11,9 @@
     "format": "prettier --write .",
     "test": "vitest",
     "prepare": "husky",
-    "_graphql:generate": "graphql-codegen --config codegen.ts",
-    "graphql:generate": "dotenv -e .env.local -- npm run _graphql:generate"
+    "_contentful:generate": "graphql-codegen --config codegen.ts",
+    "_supabase:generate": "supabase gen types typescript --project-id $(basename $NEXT_PUBLIC_SUPABASE_URL | cut -d'.' -f1) --schema public > app/lib/supabase/generated/database.types.ts",
+    "types:generate": "dotenv -e .env.local -- sh -c 'npm run _contentful:generate && npm run _supabase:generate'"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -54,6 +55,7 @@
     "postcss": "^8",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
+    "supabase": "^2.1.1",
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",

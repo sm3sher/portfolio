@@ -27,4 +27,4 @@ Here are the main commands that I use:
 - `npm run lint`: Run ESLint to check for issues
 - `npm run format`: Format code with Prettier
 - `npm test`: Run unit tests with Vitest
-- `npm run graphql:generate`: Generate types for GraphQL queries
+- `npm run types:generate`: Generate types for GraphQL queries and Supabase schema

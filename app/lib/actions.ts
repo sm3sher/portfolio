@@ -37,10 +37,7 @@ export const saveMessage = async (
   const { jobTitle, ...data } = validatedFields.data;
   const { error } = await supabaseClient()
     .from('contacts')
-    .insert({
-      ...data,
-      job_title: jobTitle,
-    });
+    .insert({ ...data, job_title: jobTitle });
 
   if (error) {
     return {
