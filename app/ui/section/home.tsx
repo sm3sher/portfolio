@@ -26,7 +26,7 @@ export default async function Home({ locale }: Props) {
             axis="x"
           >
             <Image
-              className="absolute -right-32 bottom-0 -z-20 max-h-[90%] w-auto object-contain sm:-right-20 md:-right-12 lg:right-0"
+              className="absolute -right-32 bottom-0 max-h-[90%] w-auto object-contain brightness-110 hover:scale-105 sm:-right-20 md:-right-12 lg:right-0 dark:brightness-90"
               src={home.image.url}
               width={home.image.width}
               height={home.image.height}
