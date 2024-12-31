@@ -12,16 +12,16 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 ## ✨ Features
 
 - 🌙 **Dark Mode Support**: Switch between light and dark mode, powered by [next-themes](https://github.com/pacocoursey/next-themes)
-- ✅ **Form Validation**: Built using [react-hook-form](https://react-hook-form.com) and validated with [zod](https://zod.dev) for reliability and smooth user experience
-- 💾 **Form Integration**: Submissions are stored in [Supabase](https://supabase.com), making form handling and backend management seamless
-- 📄 **Content Management**: Easily manage and update content via [Contentful](https://contentful.com), which integrates with the site through [GraphQL](https://graphql.org/) queries
+- ✅ **Form Validation**: Built with [react-hook-form](https://react-hook-form.com) and [zod](https://zod.dev) for reliable, smooth user experience
+- 💾 **Form Integration**: Submissions stored in [Supabase](https://supabase.com) for seamless backend management
+- 📄 **Content Management**: Manage content via [Contentful](https://contentful.com), integrated with [GraphQL](https://graphql.org/) queries
 - 🌍 **Multi-Language Support**: Fully localized content with [next-intl](https://next-intl.dev/) to cater to a global audience
 - 🖼️ **Lightweight Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for scalable, high-quality icons
 - 🖋️ **Modern Typography**: Uses the [Geist font](https://vercel.com/font) from Vercel for clean, readable text
 - 📱 **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a rea sponsive, fluid layout across all devices
 - 🌀 **Smooth Animations**: Engaging animations and scroll effects powered by [Motion](https://motion.dev/)
 - 🧹 **Code Quality**: Maintained with [ESLint](https://eslint.org) and [Prettier](https://prettier.io) for consistent and clean code
-- ⛓️ **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for a streamlined version control workflow
+- ⛓️ **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for streamlined version control
 
 ## 🛠 Commands
 
