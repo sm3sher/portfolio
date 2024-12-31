@@ -9,9 +9,9 @@ export const contactFormSchema = z.object({
     .string()
     .email('The email provided is invalid')
     .max(100, 'Email cannot exceed 100 characters'),
-  company: z
+  jobTitle: z
     .string()
-    .max(100, 'Company name cannot exceed 100 characters')
+    .max(100, 'Job title cannot exceed 100 characters')
     .optional(),
   message: z
     .string()
