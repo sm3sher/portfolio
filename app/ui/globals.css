@@ -81,4 +81,13 @@ body {
   .hover-effect {
     @apply cursor-pointer transition-colors duration-300 hover:bg-[--primary] hover:text-[--background-color];
   }
+
+  .text-stroke {
+    color: var(--banner-color);
+    text-shadow:
+      1px 1px 0 var(--primary),
+      -1px -1px 0 var(--primary),
+      1px -1px 0 var(--primary),
+      -1px 1px 0 var(--primary);
+  }
 }

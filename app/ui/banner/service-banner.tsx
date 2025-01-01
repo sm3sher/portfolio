@@ -16,14 +16,7 @@ export default async function ServiceBanner({ locale }: Props) {
     <div className="overflow-hidden bg-[--banner-color] py-4 [mask-image:linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
       <div className="flex w-max animate-infinite-scroll gap-12 pl-12">
         {services?.map((service, index) => (
-          <h2
-            key={index}
-            className={
-              index % 2 === 1
-                ? 'text-transparent [-webkit-text-stroke:1px_var(--primary)]'
-                : ''
-            }
-          >
+          <h2 key={index} className={index % 2 === 1 ? 'text-stroke' : ''}>
             {service}
           </h2>
         ))}
@@ -31,11 +24,7 @@ export default async function ServiceBanner({ locale }: Props) {
           <h2
             key={`hidden-${index}`}
             aria-hidden="true"
-            className={
-              index % 2 === 1
-                ? 'text-transparent [-webkit-text-stroke:1px_var(--primary)]'
-                : ''
-            }
+            className={index % 2 === 1 ? 'text-stroke' : ''}
           >
             {service}
           </h2>
