@@ -41,11 +41,11 @@ export default function ScrollToTop() {
     >
       <button
         onClick={scrollToTop}
-        className="relative aspect-square p-2.5"
+        className="relative aspect-square rounded-full p-2.5"
         aria-label="Scroll to top"
       >
         <div
-          className="absolute inset-0 rounded-full p-[1px]"
+          className="absolute inset-0 rounded-full p-0.5"
           style={progressStyle}
         />
         <ArrowUp01Icon strokeWidth={2} className="pb-0.5 text-[--secondary]" />
