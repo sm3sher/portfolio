@@ -47,7 +47,7 @@ export default function ScrollToTop() {
           className="absolute inset-0 rounded-full p-[1px]"
           style={progressStyle}
         />
-        <ArrowUp01Icon className="pb-0.5 text-[--secondary]" />
+        <ArrowUp01Icon strokeWidth={2} className="pb-0.5 text-[--secondary]" />
       </button>
     </motion.div>
   );
