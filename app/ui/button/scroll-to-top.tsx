@@ -34,8 +34,8 @@ export default function ScrollToTop() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 25 }}
+      animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
       transition={{ duration: 0.5 }}
       className="fixed bottom-4 right-4 z-10 mix-blend-difference xl:bottom-8 xl:right-10"
     >
