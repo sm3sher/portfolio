@@ -3,7 +3,6 @@ import { ThemeProvider } from 'next-themes';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import { Locale, routing } from '@/i18n/routing';
-import Footer from '@/app/ui/footer';
 import '@/app/ui/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
@@ -26,7 +25,6 @@ export default async function RootLayout({ children, params }: Props) {
       >
         <ThemeProvider attribute="class">
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
-          <Footer locale={locale} />
         </ThemeProvider>
       </body>
     </html>

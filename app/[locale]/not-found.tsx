@@ -1,12 +1,14 @@
 import BaseLayout from '@/app/ui/layout/base-layout';
 import Stars from '@/app/ui/not-found/stars';
 import Astronaut from '@/app/ui/not-found/astronaut';
-import { Link } from '@/i18n/routing';
+import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
+import { useLocale } from 'next-intl';
 
 export default function NotFound() {
+  const locale = useLocale() as Locale;
   return (
-    <BaseLayout>
+    <BaseLayout locale={locale}>
       <Stars />
       <div className="flex flex-col-reverse items-center gap-6 pt-20 md:h-screen md:flex-row md:justify-center md:pt-0 lg:gap-16">
         <div className="md:w-1/2">

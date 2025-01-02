@@ -29,7 +29,7 @@ export default async function Page({ params }: Props) {
   const Contact = dynamic(() => import('@/app/ui/section/contact'));
 
   return (
-    <main>
+    <main className="overflow-hidden">
       <section id="home">
         <Home locale={locale} />
         <ServiceBanner locale={locale} />
