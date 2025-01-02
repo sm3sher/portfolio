@@ -55,7 +55,7 @@ export default async function Home({ locale }: Props) {
             </span>
           </h1>
           <h3>{home?.introSubheading}</h3>
-          <p className="mt-6 text-[--secondary] lg:w-5/12">
+          <p className="mt-6 text-[--secondary] mix-blend-multiply lg:w-5/12 dark:mix-blend-normal">
             {home?.introDescription}
           </p>
           <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">

@@ -36,11 +36,11 @@ export default function ScrollToTop() {
       initial={{ opacity: 0, y: 50 }}
       animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
-      className="fixed bottom-4 right-4 z-30 xl:bottom-8 xl:right-10"
+      className="fixed bottom-4 right-4 z-10 mix-blend-difference xl:bottom-8 xl:right-10"
     >
       <button
         onClick={scrollToTop}
-        className="white-grad relative aspect-square p-2"
+        className="relative aspect-square p-2.5"
         aria-label="Scroll to top"
       >
         <div
