@@ -64,7 +64,7 @@ export default async function Home({ locale }: Props) {
             </Link>
             <Link href="#about" className="rounded-full bg-[--highlight] p-2">
               <ArrowDown01Icon
-                className="relative top-1.5 animate-bounce"
+                className="relative top-1.5 animate-bounce text-white"
                 size={34}
               />
             </Link>
