@@ -3,8 +3,11 @@
 import { useEffect, useState } from 'react';
 import { ArrowUp01Icon } from 'hugeicons-react';
 import { motion } from 'motion/react';
+import { useLocale } from 'next-intl';
+import { Locale } from '@/i18n/routing';
 
 export default function ScrollToTop() {
+  const locale = useLocale() as Locale;
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -46,7 +49,7 @@ export default function ScrollToTop() {
       <button
         onClick={scrollToTop}
         className="relative aspect-square rounded-full p-2.5"
-        aria-label="Scroll to top"
+        aria-label={locale === 'en' ? 'Scroll to top' : 'Nach oben scrollen'}
       >
         <div
           className="absolute inset-0 rounded-full p-0.5"
