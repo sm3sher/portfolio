@@ -32,7 +32,7 @@ const navbarItems = [
   },
 ];
 
-export default function Navbar() {
+export default function NavigationMenu() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>();
 
