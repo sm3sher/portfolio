@@ -24,7 +24,7 @@ export default async function NotFoundContent({ locale }: Props) {
       <Link href="/" tabIndex={-1}>
         <Button>
           {content?.ctaButtonLabel}
-          <Rocket01Icon className="group-hover:animate-rocket-lift ml-2" />
+          <Rocket01Icon className="ml-2 group-hover:animate-rocket-lift" />
         </Button>
       </Link>
     </>

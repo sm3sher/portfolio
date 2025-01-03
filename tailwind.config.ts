@@ -8,7 +8,7 @@ export default {
       animation: {
         'spin-slow': 'spin 8s linear infinite',
         'infinite-scroll': 'scroll 50s linear infinite',
-        'rocket-lift': 'rocket-lift-animation 1s forwards',
+        'rocket-lift': 'rocket-lift-frames 1s forwards',
       },
       keyframes: {
         scroll: {
@@ -16,7 +16,7 @@ export default {
             transform: 'translateX(-50%)',
           },
         },
-        'rocket-lift-animation': {
+        'rocket-lift-frames': {
           '0%': {
             transform: 'rotate(0)',
           },
