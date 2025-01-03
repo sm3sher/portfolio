@@ -1,35 +1,28 @@
-import BaseLayout from '@/app/ui/layout/base-layout';
 import Stars from '@/app/ui/not-found/stars';
 import Astronaut from '@/app/ui/not-found/astronaut';
-import { Link, Locale } from '@/i18n/routing';
+import { Link } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
-import { useLocale } from 'next-intl';
+import WithAnimation from '@/app/ui/animation/with-animation';
+import { Rocket01Icon } from 'hugeicons-react';
 
 export default function NotFound() {
-  const locale = useLocale() as Locale;
   return (
-    <BaseLayout locale={locale}>
+    <div className="overflow-hidden py-4 md:py-12">
       <Stars />
-      <div className="flex flex-col-reverse items-center gap-6 pt-20 md:h-screen md:flex-row md:justify-center md:pt-0 lg:gap-16">
-        <div className="md:w-1/2">
-          <Astronaut />
-        </div>
-        <div className="relative max-w-2xl space-y-6 md:w-1/2">
-          <h1 className="text-center md:text-left">Lost in Space?</h1>
-          <p className="text-center md:text-left">
-            Uh oh! It seems like you’ve drifted off course. Don’t worry, we’ll
-            help you navigate back to Earth.
-          </p>
-          <div className="flex justify-center space-x-3 md:justify-start">
-            <Link href="/#home" tabIndex={-1}>
-              <Button>Take Me Home</Button>
-            </Link>
-            <Link href="/#contact" tabIndex={-1}>
-              <Button>Contact Human</Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </BaseLayout>
+      <Astronaut />
+      <WithAnimation className="relative flex flex-col content-center text-center">
+        <h1>Houston,</h1>
+        <h2 className="mb-3">
+          we have a <span className="text-[--highlight]">problem</span>
+        </h2>
+        <p className="mb-10">404: This page is off the map.</p>
+        <Link href="/" tabIndex={-1}>
+          <Button>
+            Take Me Home
+            <Rocket01Icon className="group-hover:animate-rocket-lift ml-2" />
+          </Button>
+        </Link>
+      </WithAnimation>
+    </div>
   );
 }
