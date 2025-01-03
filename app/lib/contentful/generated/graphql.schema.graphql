@@ -800,6 +800,7 @@ type MetaData implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
+  keywords(locale: String): [String]
   linkedFrom(allowedLocales: [String]): MetaDataLinkingCollections
   sys: Sys!
   title(locale: String): String
@@ -823,6 +824,10 @@ input MetaDataFilter {
   description_not: String
   description_not_contains: String
   description_not_in: [String]
+  keywords_contains_all: [String]
+  keywords_contains_none: [String]
+  keywords_contains_some: [String]
+  keywords_exists: Boolean
   sys: SysFilter
   title: String
   title_contains: String

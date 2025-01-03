@@ -3,6 +3,7 @@ query metadataContent($locale: String) {
         items {
             title
             description
+            keywords
         }
     }
 }

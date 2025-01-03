@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: metadata?.title,
     description: metadata?.description,
+    keywords: metadata?.keywords?.filter((keyword) => keyword !== null),
   };
 }
 

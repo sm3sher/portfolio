@@ -1098,6 +1098,7 @@ export type MetaData = Entry & _Node & {
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars['String']['output']>;
+  keywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   linkedFrom?: Maybe<MetaDataLinkingCollections>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
@@ -1106,6 +1107,12 @@ export type MetaData = Entry & _Node & {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
 export type MetaDataDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
+export type MetaDataKeywordsArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1140,6 +1147,10 @@ export type MetaDataFilter = {
   description_not?: InputMaybe<Scalars['String']['input']>;
   description_not_contains?: InputMaybe<Scalars['String']['input']>;
   description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  keywords_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
@@ -2405,7 +2416,7 @@ export type MetadataContentQueryVariables = Exact<{
 }>;
 
 
-export type MetadataContentQuery = { __typename?: 'Query', metaDataCollection?: { __typename?: 'MetaDataCollection', items: Array<{ __typename?: 'MetaData', title?: string | null, description?: string | null } | null> } | null };
+export type MetadataContentQuery = { __typename?: 'Query', metaDataCollection?: { __typename?: 'MetaDataCollection', items: Array<{ __typename?: 'MetaData', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
 
 export type ServiceBannerContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2521,6 +2532,7 @@ export const MetadataContentDocument = gql`
     items {
       title
       description
+      keywords
     }
   }
 }
