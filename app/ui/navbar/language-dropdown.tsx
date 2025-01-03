@@ -6,7 +6,15 @@ import { LanguageSkillIcon } from 'hugeicons-react';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 
-export default function LanguageDropdown() {
+type Props = {
+  usFlagDescription?: string | null;
+  deFlagDescription?: string | null;
+};
+
+export default function LanguageDropdown({
+  usFlagDescription,
+  deFlagDescription,
+}: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale() as Locale;
@@ -53,11 +61,12 @@ export default function LanguageDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         id="dropdownLanguageButton"
-        aria-haspopup="true"
-        aria-expanded={open}
         onClick={() => setOpen((prevState) => !prevState)}
         onKeyDown={handleKeyDown}
         className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
+        aria-haspopup
+        aria-expanded={open}
+        aria-controls="dropdown"
       >
         <LanguageSkillIcon size={22} />
       </button>
@@ -68,10 +77,10 @@ export default function LanguageDropdown() {
       >
         <ul
           className="space-y-1 p-1 text-sm"
-          aria-labelledby="dropdownLanguageButton"
           role="menu"
           tabIndex={-1}
           onKeyDown={handleKeyDown}
+          aria-labelledby="dropdownLanguageButton"
         >
           <li
             className={`flex items-center rounded-xl pl-3 ${locale === 'en' ? 'text-[--secondary]' : 'hover-effect'}`}
@@ -80,11 +89,12 @@ export default function LanguageDropdown() {
             data-language="en"
             onClick={() => handleLocaleChange('en')}
             onKeyDown={handleKeyDown}
+            aria-current={locale === 'en'}
           >
             <Image
               className="rounded-sm"
               src="/flag-us.svg"
-              alt="American language flag"
+              alt={usFlagDescription || ''}
               width={30}
               height={20}
             />
@@ -97,11 +107,12 @@ export default function LanguageDropdown() {
             data-language="de"
             onClick={() => handleLocaleChange('de')}
             onKeyDown={handleKeyDown}
+            aria-current={locale === 'de'}
           >
             <Image
               className="rounded-sm"
               src="/flag-de.svg"
-              alt="German language flag"
+              alt={deFlagDescription || ''}
               width={30}
               height={20}
             />

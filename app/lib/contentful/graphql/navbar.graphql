@@ -1,0 +1,13 @@
+query navbarContent($locale: String) {
+    navbarCollection(limit: 1, locale: $locale) {
+        items {
+            usFlagDescription
+            deFlagDescription
+            homeLabel
+            aboutLabel
+            servicesLabel
+            contactLabel
+            switchThemeLabel
+        }
+    }
+}

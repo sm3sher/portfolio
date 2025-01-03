@@ -9,30 +9,19 @@ import {
 import { Link, usePathname } from '@/i18n/routing';
 import { useEffect, useState } from 'react';
 
-const navbarItems = [
-  {
-    id: 'home',
-    icon: <Home09Icon size={20} />,
-    label: 'Home',
-  },
-  {
-    id: 'about',
-    icon: <UserCircleIcon size={20} />,
-    label: 'About',
-  },
-  {
-    id: 'services',
-    icon: <GridViewIcon size={20} />,
-    label: 'Services',
-  },
-  {
-    id: 'contact',
-    icon: <ContractsIcon size={20} />,
-    label: 'Contact',
-  },
-];
+type Props = {
+  homeLabel?: string | null;
+  aboutLabel?: string | null;
+  servicesLabel?: string | null;
+  contactLabel?: string | null;
+};
 
-export default function NavigationMenu() {
+export default function NavigationMenu({
+  homeLabel,
+  aboutLabel,
+  servicesLabel,
+  contactLabel,
+}: Props) {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>();
 
@@ -58,6 +47,29 @@ export default function NavigationMenu() {
     return () => window.removeEventListener('scroll', updateActiveSection);
   }, []);
 
+  const navbarItems = [
+    {
+      id: 'home',
+      icon: <Home09Icon size={20} />,
+      label: homeLabel,
+    },
+    {
+      id: 'about',
+      icon: <UserCircleIcon size={20} />,
+      label: aboutLabel,
+    },
+    {
+      id: 'services',
+      icon: <GridViewIcon size={20} />,
+      label: servicesLabel,
+    },
+    {
+      id: 'contact',
+      icon: <ContractsIcon size={20} />,
+      label: contactLabel,
+    },
+  ];
+
   const basePath = pathname === '/' ? '' : '/';
 
   return (
@@ -71,6 +83,8 @@ export default function NavigationMenu() {
               ? '!border-[--border-color] bg-neutral-700/10 dark:bg-neutral-200/20'
               : 'hover-effect'
           }`}
+          aria-current={activeSection === item.id ? 'page' : undefined}
+          aria-label={item.label || undefined}
         >
           <span className="px-3 py-1">{item.icon}</span>
           <span className="hidden pr-3 leading-7 sm:block">{item.label}</span>

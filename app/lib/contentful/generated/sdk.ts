@@ -1328,6 +1328,172 @@ export enum MetricOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type Navbar = Entry & _Node & {
+  __typename?: 'Navbar';
+  _id: Scalars['ID']['output'];
+  aboutLabel?: Maybe<Scalars['String']['output']>;
+  contactLabel?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  deFlagDescription?: Maybe<Scalars['String']['output']>;
+  homeLabel?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<NavbarLinkingCollections>;
+  servicesLabel?: Maybe<Scalars['String']['output']>;
+  switchThemeLabel?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  usFlagDescription?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarAboutLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarContactLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarDeFlagDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarHomeLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarServicesLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarSwitchThemeLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarUsFlagDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type NavbarCollection = {
+  __typename?: 'NavbarCollection';
+  items: Array<Maybe<Navbar>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type NavbarFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NavbarFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NavbarFilter>>>;
+  aboutLabel?: InputMaybe<Scalars['String']['input']>;
+  aboutLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  aboutLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  aboutLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  aboutLabel_not?: InputMaybe<Scalars['String']['input']>;
+  aboutLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  aboutLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactLabel?: InputMaybe<Scalars['String']['input']>;
+  contactLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  contactLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactLabel_not?: InputMaybe<Scalars['String']['input']>;
+  contactLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  deFlagDescription?: InputMaybe<Scalars['String']['input']>;
+  deFlagDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  deFlagDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  deFlagDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  deFlagDescription_not?: InputMaybe<Scalars['String']['input']>;
+  deFlagDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  deFlagDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  homeLabel?: InputMaybe<Scalars['String']['input']>;
+  homeLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  homeLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  homeLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  homeLabel_not?: InputMaybe<Scalars['String']['input']>;
+  homeLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  homeLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  servicesLabel?: InputMaybe<Scalars['String']['input']>;
+  servicesLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  servicesLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  servicesLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  servicesLabel_not?: InputMaybe<Scalars['String']['input']>;
+  servicesLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  servicesLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  switchThemeLabel?: InputMaybe<Scalars['String']['input']>;
+  switchThemeLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  switchThemeLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  switchThemeLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  switchThemeLabel_not?: InputMaybe<Scalars['String']['input']>;
+  switchThemeLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  switchThemeLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  usFlagDescription?: InputMaybe<Scalars['String']['input']>;
+  usFlagDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  usFlagDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  usFlagDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  usFlagDescription_not?: InputMaybe<Scalars['String']['input']>;
+  usFlagDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  usFlagDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type NavbarLinkingCollections = {
+  __typename?: 'NavbarLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type NavbarLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum NavbarOrder {
+  AboutLabelAsc = 'aboutLabel_ASC',
+  AboutLabelDesc = 'aboutLabel_DESC',
+  ContactLabelAsc = 'contactLabel_ASC',
+  ContactLabelDesc = 'contactLabel_DESC',
+  DeFlagDescriptionAsc = 'deFlagDescription_ASC',
+  DeFlagDescriptionDesc = 'deFlagDescription_DESC',
+  HomeLabelAsc = 'homeLabel_ASC',
+  HomeLabelDesc = 'homeLabel_DESC',
+  ServicesLabelAsc = 'servicesLabel_ASC',
+  ServicesLabelDesc = 'servicesLabel_DESC',
+  SwitchThemeLabelAsc = 'switchThemeLabel_ASC',
+  SwitchThemeLabelDesc = 'switchThemeLabel_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  UsFlagDescriptionAsc = 'usFlagDescription_ASC',
+  UsFlagDescriptionDesc = 'usFlagDescription_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
 export type NotFound = Entry & _Node & {
   __typename?: 'NotFound';
@@ -1482,6 +1648,8 @@ export type Query = {
   metaDataCollection?: Maybe<MetaDataCollection>;
   metric?: Maybe<Metric>;
   metricCollection?: Maybe<MetricCollection>;
+  navbar?: Maybe<Navbar>;
+  navbarCollection?: Maybe<NavbarCollection>;
   notFound?: Maybe<NotFound>;
   notFoundCollection?: Maybe<NotFoundCollection>;
   service?: Maybe<Service>;
@@ -1647,6 +1815,23 @@ export type QueryMetricCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<MetricFilter>;
+};
+
+
+export type QueryNavbarArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryNavbarCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<NavbarOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<NavbarFilter>;
 };
 
 
@@ -2571,6 +2756,13 @@ export type MetadataContentQueryVariables = Exact<{
 
 export type MetadataContentQuery = { __typename?: 'Query', metaDataCollection?: { __typename?: 'MetaDataCollection', items: Array<{ __typename?: 'MetaData', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
 
+export type NavbarContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type NavbarContentQuery = { __typename?: 'Query', navbarCollection?: { __typename?: 'NavbarCollection', items: Array<{ __typename?: 'Navbar', usFlagDescription?: string | null, deFlagDescription?: string | null, homeLabel?: string | null, aboutLabel?: string | null, servicesLabel?: string | null, contactLabel?: string | null, switchThemeLabel?: string | null } | null> } | null };
+
 export type NotFoundContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -2697,6 +2889,21 @@ export const MetadataContentDocument = gql`
   }
 }
     `;
+export const NavbarContentDocument = gql`
+    query navbarContent($locale: String) {
+  navbarCollection(limit: 1, locale: $locale) {
+    items {
+      usFlagDescription
+      deFlagDescription
+      homeLabel
+      aboutLabel
+      servicesLabel
+      contactLabel
+      switchThemeLabel
+    }
+  }
+}
+    `;
 export const NotFoundContentDocument = gql`
     query notFoundContent($locale: String) {
   notFoundCollection(limit: 1, locale: $locale) {
@@ -2762,6 +2969,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     metadataContent(variables?: MetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<MetadataContentQuery>(MetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataContent', 'query', variables);
+    },
+    navbarContent(variables?: NavbarContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NavbarContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<NavbarContentQuery>(NavbarContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'navbarContent', 'query', variables);
     },
     notFoundContent(variables?: NotFoundContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NotFoundContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NotFoundContentQuery>(NotFoundContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'notFoundContent', 'query', variables);

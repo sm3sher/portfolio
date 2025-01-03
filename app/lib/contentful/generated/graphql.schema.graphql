@@ -955,6 +955,115 @@ enum MetricOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar)
+"""
+type Navbar implements Entry & _Node {
+  _id: ID!
+  aboutLabel(locale: String): String
+  contactLabel(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  deFlagDescription(locale: String): String
+  homeLabel(locale: String): String
+  linkedFrom(allowedLocales: [String]): NavbarLinkingCollections
+  servicesLabel(locale: String): String
+  switchThemeLabel(locale: String): String
+  sys: Sys!
+  usFlagDescription(locale: String): String
+}
+
+type NavbarCollection {
+  items: [Navbar]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input NavbarFilter {
+  AND: [NavbarFilter]
+  OR: [NavbarFilter]
+  aboutLabel: String
+  aboutLabel_contains: String
+  aboutLabel_exists: Boolean
+  aboutLabel_in: [String]
+  aboutLabel_not: String
+  aboutLabel_not_contains: String
+  aboutLabel_not_in: [String]
+  contactLabel: String
+  contactLabel_contains: String
+  contactLabel_exists: Boolean
+  contactLabel_in: [String]
+  contactLabel_not: String
+  contactLabel_not_contains: String
+  contactLabel_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  deFlagDescription: String
+  deFlagDescription_contains: String
+  deFlagDescription_exists: Boolean
+  deFlagDescription_in: [String]
+  deFlagDescription_not: String
+  deFlagDescription_not_contains: String
+  deFlagDescription_not_in: [String]
+  homeLabel: String
+  homeLabel_contains: String
+  homeLabel_exists: Boolean
+  homeLabel_in: [String]
+  homeLabel_not: String
+  homeLabel_not_contains: String
+  homeLabel_not_in: [String]
+  servicesLabel: String
+  servicesLabel_contains: String
+  servicesLabel_exists: Boolean
+  servicesLabel_in: [String]
+  servicesLabel_not: String
+  servicesLabel_not_contains: String
+  servicesLabel_not_in: [String]
+  switchThemeLabel: String
+  switchThemeLabel_contains: String
+  switchThemeLabel_exists: Boolean
+  switchThemeLabel_in: [String]
+  switchThemeLabel_not: String
+  switchThemeLabel_not_contains: String
+  switchThemeLabel_not_in: [String]
+  sys: SysFilter
+  usFlagDescription: String
+  usFlagDescription_contains: String
+  usFlagDescription_exists: Boolean
+  usFlagDescription_in: [String]
+  usFlagDescription_not: String
+  usFlagDescription_not_contains: String
+  usFlagDescription_not_in: [String]
+}
+
+type NavbarLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum NavbarOrder {
+  aboutLabel_ASC
+  aboutLabel_DESC
+  contactLabel_ASC
+  contactLabel_DESC
+  deFlagDescription_ASC
+  deFlagDescription_DESC
+  homeLabel_ASC
+  homeLabel_DESC
+  servicesLabel_ASC
+  servicesLabel_DESC
+  switchThemeLabel_ASC
+  switchThemeLabel_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  usFlagDescription_ASC
+  usFlagDescription_DESC
+}
+
+"""
 [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound)
 """
 type NotFound implements Entry & _Node {
@@ -1067,6 +1176,8 @@ type Query {
   metaDataCollection(limit: Int = 100, locale: String, order: [MetaDataOrder], preview: Boolean, skip: Int = 0, where: MetaDataFilter): MetaDataCollection
   metric(id: String!, locale: String, preview: Boolean): Metric
   metricCollection(limit: Int = 100, locale: String, order: [MetricOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): MetricCollection
+  navbar(id: String!, locale: String, preview: Boolean): Navbar
+  navbarCollection(limit: Int = 100, locale: String, order: [NavbarOrder], preview: Boolean, skip: Int = 0, where: NavbarFilter): NavbarCollection
   notFound(id: String!, locale: String, preview: Boolean): NotFound
   notFoundCollection(limit: Int = 100, locale: String, order: [NotFoundOrder], preview: Boolean, skip: Int = 0, where: NotFoundFilter): NotFoundCollection
   service(id: String!, locale: String, preview: Boolean): Service

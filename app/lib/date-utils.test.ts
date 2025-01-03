@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it, vi } from 'vitest';
-import { calculateAge, getYearsSince } from './date-utils';
+import { calculateAge, getYearsSince } from '@/app/lib/date-utils';
 
 describe('date utils', () => {
   const currentDate = new Date('2024-12-05');

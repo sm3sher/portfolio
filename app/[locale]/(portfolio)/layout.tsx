@@ -13,7 +13,7 @@ export default async function Layout({ children, params }: Props) {
   const { locale } = await params;
   return (
     <>
-      <Navbar />
+      <Navbar locale={locale} />
       {children}
       <Footer locale={locale} />
       <ScrollToTop />

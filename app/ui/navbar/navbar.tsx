@@ -1,13 +1,30 @@
 import LanguageDropdown from '@/app/ui/navbar/language-dropdown';
 import NavigationMenu from '@/app/ui/navbar/navigation-menu';
 import ThemeToggle from '@/app/ui/navbar/theme-toggle';
+import { Locale } from '@/i18n/routing';
+import contentfulClient from '@/app/lib/contentful/client';
 
-export default function Navbar() {
+type Props = {
+  locale: Locale;
+};
+
+export default async function Navbar({ locale }: Props) {
+  const navbarContentQuery = await contentfulClient.navbarContent({ locale });
+  const navbar = navbarContentQuery.navbarCollection?.items[0];
+
   return (
     <nav className="fixed left-0 right-0 top-0 z-10 mx-auto flex w-full max-w-screen-xl items-center justify-between px-3 py-6">
-      <LanguageDropdown />
-      <NavigationMenu />
-      <ThemeToggle />
+      <LanguageDropdown
+        usFlagDescription={navbar?.usFlagDescription}
+        deFlagDescription={navbar?.deFlagDescription}
+      />
+      <NavigationMenu
+        homeLabel={navbar?.homeLabel}
+        aboutLabel={navbar?.aboutLabel}
+        servicesLabel={navbar?.servicesLabel}
+        contactLabel={navbar?.contactLabel}
+      />
+      <ThemeToggle switchThemeLabel={navbar?.switchThemeLabel} />
     </nav>
   );
 }
