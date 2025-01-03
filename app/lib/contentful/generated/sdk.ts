@@ -1328,6 +1328,140 @@ export enum MetricOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFound = Entry & _Node & {
+  __typename?: 'NotFound';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  ctaButtonLabel?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<NotFoundLinkingCollections>;
+  subTitleHighlight?: Maybe<Scalars['String']['output']>;
+  subTitleMain?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundCtaButtonLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundSubTitleHighlightArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundSubTitleMainArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type NotFoundCollection = {
+  __typename?: 'NotFoundCollection';
+  items: Array<Maybe<NotFound>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type NotFoundFilter = {
+  AND?: InputMaybe<Array<InputMaybe<NotFoundFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<NotFoundFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  ctaButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ctaButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ctaButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ctaButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleHighlight?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleHighlight_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleHighlight_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleHighlight_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleMain?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleMain_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleMain_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleMain_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type NotFoundLinkingCollections = {
+  __typename?: 'NotFoundLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type NotFoundLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum NotFoundOrder {
+  CtaButtonLabelAsc = 'ctaButtonLabel_ASC',
+  CtaButtonLabelDesc = 'ctaButtonLabel_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SubTitleHighlightAsc = 'subTitleHighlight_ASC',
+  SubTitleHighlightDesc = 'subTitleHighlight_DESC',
+  SubTitleMainAsc = 'subTitleMain_ASC',
+  SubTitleMainDesc = 'subTitleMain_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
@@ -1348,6 +1482,8 @@ export type Query = {
   metaDataCollection?: Maybe<MetaDataCollection>;
   metric?: Maybe<Metric>;
   metricCollection?: Maybe<MetricCollection>;
+  notFound?: Maybe<NotFound>;
+  notFoundCollection?: Maybe<NotFoundCollection>;
   service?: Maybe<Service>;
   serviceBanner?: Maybe<ServiceBanner>;
   serviceBannerCollection?: Maybe<ServiceBannerCollection>;
@@ -1511,6 +1647,23 @@ export type QueryMetricCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<MetricFilter>;
+};
+
+
+export type QueryNotFoundArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryNotFoundCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<NotFoundOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<NotFoundFilter>;
 };
 
 
@@ -2418,6 +2571,13 @@ export type MetadataContentQueryVariables = Exact<{
 
 export type MetadataContentQuery = { __typename?: 'Query', metaDataCollection?: { __typename?: 'MetaDataCollection', items: Array<{ __typename?: 'MetaData', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
 
+export type NotFoundContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, ctaButtonLabel?: string | null } | null> } | null };
+
 export type ServiceBannerContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -2537,6 +2697,19 @@ export const MetadataContentDocument = gql`
   }
 }
     `;
+export const NotFoundContentDocument = gql`
+    query notFoundContent($locale: String) {
+  notFoundCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleMain
+      subTitleHighlight
+      description
+      ctaButtonLabel
+    }
+  }
+}
+    `;
 export const ServiceBannerContentDocument = gql`
     query serviceBannerContent($locale: String) {
   serviceBannerCollection(limit: 1, locale: $locale) {
@@ -2589,6 +2762,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     metadataContent(variables?: MetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<MetadataContentQuery>(MetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataContent', 'query', variables);
+    },
+    notFoundContent(variables?: NotFoundContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NotFoundContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<NotFoundContentQuery>(NotFoundContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'notFoundContent', 'query', variables);
     },
     serviceBannerContent(variables?: ServiceBannerContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ServiceBannerContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ServiceBannerContentQuery>(ServiceBannerContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'serviceBannerContent', 'query', variables);
