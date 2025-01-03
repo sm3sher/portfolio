@@ -1,5 +1,5 @@
 import LanguageDropdown from '@/app/ui/navbar/language-dropdown';
-import NavigationMenu from '@/app/ui/navbar/navigation-menu';
+import NavMenu from '@/app/ui/navbar/nav-menu';
 import ThemeToggle from '@/app/ui/navbar/theme-toggle';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
@@ -18,7 +18,7 @@ export default async function Navbar({ locale }: Props) {
         usFlagDescription={navbar?.usFlagDescription}
         deFlagDescription={navbar?.deFlagDescription}
       />
-      <NavigationMenu
+      <NavMenu
         homeLabel={navbar?.homeLabel}
         aboutLabel={navbar?.aboutLabel}
         servicesLabel={navbar?.servicesLabel}

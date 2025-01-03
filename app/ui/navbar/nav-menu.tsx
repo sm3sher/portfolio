@@ -16,7 +16,7 @@ type Props = {
   contactLabel?: string | null;
 };
 
-export default function NavigationMenu({
+export default function NavMenu({
   homeLabel,
   aboutLabel,
   servicesLabel,
