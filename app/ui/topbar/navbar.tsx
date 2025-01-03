@@ -66,9 +66,9 @@ export default function Navbar() {
         <Link
           key={item.id}
           href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
-          className={`flex items-center rounded-xl font-medium transition duration-300 ${
+          className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
             activeSection === item.id
-              ? 'bg-[--primary] text-[--background-color]'
+              ? '!border-[--border-color] bg-neutral-700/10 dark:bg-neutral-200/20'
               : 'hover-effect'
           }`}
         >

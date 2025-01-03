@@ -67,7 +67,7 @@ export default function LanguageDropdown() {
         className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur"
       >
         <ul
-          className="p-1 text-sm"
+          className="space-y-1 p-1 text-sm"
           aria-labelledby="dropdownLanguageButton"
           role="menu"
           tabIndex={-1}
