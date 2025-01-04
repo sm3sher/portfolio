@@ -75,20 +75,24 @@ export default function NavMenu({
   return (
     <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur">
       {navbarItems.map((item) => (
-        <Link
-          key={item.id}
-          href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
-          className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
-            activeSection === item.id
-              ? '!border-[--border-color] bg-neutral-700/10 dark:bg-neutral-200/20'
-              : 'hover-effect'
-          }`}
-          aria-current={activeSection === item.id ? 'page' : undefined}
-          aria-label={item.label || undefined}
-        >
-          <span className="px-3 py-1">{item.icon}</span>
-          <span className="hidden pr-3 leading-7 sm:block">{item.label}</span>
-        </Link>
+        <div key={item.id} className="group relative">
+          <Link
+            href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
+            className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
+              activeSection === item.id
+                ? '!border-[--border-color] bg-neutral-700/10 dark:bg-neutral-200/20'
+                : 'hover-effect'
+            }`}
+            aria-current={activeSection === item.id ? 'page' : undefined}
+            aria-label={item.label || undefined}
+          >
+            <span className="px-3 py-1">{item.icon}</span>
+            <span className="hidden pr-3 leading-7 sm:block">{item.label}</span>
+          </Link>
+          <span className="absolute left-1/2 mt-2 -translate-x-1/2 transform rounded-xl bg-[--banner-color] px-2 py-0.5 text-xs opacity-0 transition-opacity duration-200 group-hover:opacity-80 sm:hidden">
+            {item.label}
+          </span>
+        </div>
       ))}
     </div>
   );
