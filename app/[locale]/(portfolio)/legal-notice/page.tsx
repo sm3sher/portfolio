@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Roman Jumatov',
+  title: 'Legal Notice - Roman Jumatov',
 };
 
 export default function Page() {
-  return <h1>Privacy Policy</h1>;
+  return <h1>Legal Notice</h1>;
 }
