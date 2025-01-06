@@ -838,28 +838,237 @@ input ImageTransformOptions {
 }
 
 """
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData)
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice)
 """
-type MetaData implements Entry & _Node {
+type LegalNotice implements Entry & _Node {
   _id: ID!
+  addressCity(locale: String): String
+  addressJobTitle(locale: String): String
+  addressName(locale: String): String
+  addressPostalCode(locale: String): String
+  addressStreet(locale: String): String
+  contactEmail(locale: String): String
+  contactEmailLabel(locale: String): String
+  contactFormLabel(locale: String): String
   contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
-  keywords(locale: String): [String]
-  linkedFrom(allowedLocales: [String]): MetaDataLinkingCollections
+  disputeLabel(locale: String): String
+  disputeStatement(locale: String): String
+  linkedFrom(allowedLocales: [String]): LegalNoticeLinkingCollections
+  subTitleContact(locale: String): String
+  subTitleDispute(locale: String): String
+  subTitleInformation(locale: String): String
+  subTitleVat(locale: String): String
   sys: Sys!
   title(locale: String): String
+  vatId(locale: String): String
+  vatLabel(locale: String): String
 }
 
-type MetaDataCollection {
-  items: [MetaData]!
+type LegalNoticeCollection {
+  items: [LegalNotice]!
   limit: Int!
   skip: Int!
   total: Int!
 }
 
-input MetaDataFilter {
-  AND: [MetaDataFilter]
-  OR: [MetaDataFilter]
+input LegalNoticeFilter {
+  AND: [LegalNoticeFilter]
+  OR: [LegalNoticeFilter]
+  addressCity: String
+  addressCity_contains: String
+  addressCity_exists: Boolean
+  addressCity_in: [String]
+  addressCity_not: String
+  addressCity_not_contains: String
+  addressCity_not_in: [String]
+  addressJobTitle: String
+  addressJobTitle_contains: String
+  addressJobTitle_exists: Boolean
+  addressJobTitle_in: [String]
+  addressJobTitle_not: String
+  addressJobTitle_not_contains: String
+  addressJobTitle_not_in: [String]
+  addressName: String
+  addressName_contains: String
+  addressName_exists: Boolean
+  addressName_in: [String]
+  addressName_not: String
+  addressName_not_contains: String
+  addressName_not_in: [String]
+  addressPostalCode: String
+  addressPostalCode_contains: String
+  addressPostalCode_exists: Boolean
+  addressPostalCode_in: [String]
+  addressPostalCode_not: String
+  addressPostalCode_not_contains: String
+  addressPostalCode_not_in: [String]
+  addressStreet: String
+  addressStreet_contains: String
+  addressStreet_exists: Boolean
+  addressStreet_in: [String]
+  addressStreet_not: String
+  addressStreet_not_contains: String
+  addressStreet_not_in: [String]
+  contactEmail: String
+  contactEmailLabel: String
+  contactEmailLabel_contains: String
+  contactEmailLabel_exists: Boolean
+  contactEmailLabel_in: [String]
+  contactEmailLabel_not: String
+  contactEmailLabel_not_contains: String
+  contactEmailLabel_not_in: [String]
+  contactEmail_contains: String
+  contactEmail_exists: Boolean
+  contactEmail_in: [String]
+  contactEmail_not: String
+  contactEmail_not_contains: String
+  contactEmail_not_in: [String]
+  contactFormLabel: String
+  contactFormLabel_contains: String
+  contactFormLabel_exists: Boolean
+  contactFormLabel_in: [String]
+  contactFormLabel_not: String
+  contactFormLabel_not_contains: String
+  contactFormLabel_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  disputeLabel: String
+  disputeLabel_contains: String
+  disputeLabel_exists: Boolean
+  disputeLabel_in: [String]
+  disputeLabel_not: String
+  disputeLabel_not_contains: String
+  disputeLabel_not_in: [String]
+  disputeStatement: String
+  disputeStatement_contains: String
+  disputeStatement_exists: Boolean
+  disputeStatement_in: [String]
+  disputeStatement_not: String
+  disputeStatement_not_contains: String
+  disputeStatement_not_in: [String]
+  subTitleContact: String
+  subTitleContact_contains: String
+  subTitleContact_exists: Boolean
+  subTitleContact_in: [String]
+  subTitleContact_not: String
+  subTitleContact_not_contains: String
+  subTitleContact_not_in: [String]
+  subTitleDispute: String
+  subTitleDispute_contains: String
+  subTitleDispute_exists: Boolean
+  subTitleDispute_in: [String]
+  subTitleDispute_not: String
+  subTitleDispute_not_contains: String
+  subTitleDispute_not_in: [String]
+  subTitleInformation: String
+  subTitleInformation_contains: String
+  subTitleInformation_exists: Boolean
+  subTitleInformation_in: [String]
+  subTitleInformation_not: String
+  subTitleInformation_not_contains: String
+  subTitleInformation_not_in: [String]
+  subTitleVat: String
+  subTitleVat_contains: String
+  subTitleVat_exists: Boolean
+  subTitleVat_in: [String]
+  subTitleVat_not: String
+  subTitleVat_not_contains: String
+  subTitleVat_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  vatId: String
+  vatId_contains: String
+  vatId_exists: Boolean
+  vatId_in: [String]
+  vatId_not: String
+  vatId_not_contains: String
+  vatId_not_in: [String]
+  vatLabel: String
+  vatLabel_contains: String
+  vatLabel_exists: Boolean
+  vatLabel_in: [String]
+  vatLabel_not: String
+  vatLabel_not_contains: String
+  vatLabel_not_in: [String]
+}
+
+type LegalNoticeLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum LegalNoticeOrder {
+  addressCity_ASC
+  addressCity_DESC
+  addressJobTitle_ASC
+  addressJobTitle_DESC
+  addressName_ASC
+  addressName_DESC
+  addressPostalCode_ASC
+  addressPostalCode_DESC
+  addressStreet_ASC
+  addressStreet_DESC
+  contactEmailLabel_ASC
+  contactEmailLabel_DESC
+  contactEmail_ASC
+  contactEmail_DESC
+  contactFormLabel_ASC
+  contactFormLabel_DESC
+  disputeLabel_ASC
+  disputeLabel_DESC
+  disputeStatement_ASC
+  disputeStatement_DESC
+  subTitleContact_ASC
+  subTitleContact_DESC
+  subTitleDispute_ASC
+  subTitleDispute_DESC
+  subTitleInformation_ASC
+  subTitleInformation_DESC
+  subTitleVat_ASC
+  subTitleVat_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+  vatId_ASC
+  vatId_DESC
+  vatLabel_ASC
+  vatLabel_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome)
+"""
+type MetaDataHome implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  keywords(locale: String): [String]
+  linkedFrom(allowedLocales: [String]): MetaDataHomeLinkingCollections
+  sys: Sys!
+  title(locale: String): String
+}
+
+type MetaDataHomeCollection {
+  items: [MetaDataHome]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input MetaDataHomeFilter {
+  AND: [MetaDataHomeFilter]
+  OR: [MetaDataHomeFilter]
   contentfulMetadata: ContentfulMetadataFilter
   description: String
   description_contains: String
@@ -882,11 +1091,70 @@ input MetaDataFilter {
   title_not_in: [String]
 }
 
-type MetaDataLinkingCollections {
+type MetaDataHomeLinkingCollections {
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
 }
 
-enum MetaDataOrder {
+enum MetaDataHomeOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal)
+"""
+type MetaDataLegal implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): MetaDataLegalLinkingCollections
+  sys: Sys!
+  title(locale: String): String
+}
+
+type MetaDataLegalCollection {
+  items: [MetaDataLegal]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input MetaDataLegalFilter {
+  AND: [MetaDataLegalFilter]
+  OR: [MetaDataLegalFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type MetaDataLegalLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum MetaDataLegalOrder {
   description_ASC
   description_DESC
   sys_firstPublishedAt_ASC
@@ -1214,8 +1482,12 @@ type Query {
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection
   home(id: String!, locale: String, preview: Boolean): Home
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
-  metaData(id: String!, locale: String, preview: Boolean): MetaData
-  metaDataCollection(limit: Int = 100, locale: String, order: [MetaDataOrder], preview: Boolean, skip: Int = 0, where: MetaDataFilter): MetaDataCollection
+  legalNotice(id: String!, locale: String, preview: Boolean): LegalNotice
+  legalNoticeCollection(limit: Int = 100, locale: String, order: [LegalNoticeOrder], preview: Boolean, skip: Int = 0, where: LegalNoticeFilter): LegalNoticeCollection
+  metaDataHome(id: String!, locale: String, preview: Boolean): MetaDataHome
+  metaDataHomeCollection(limit: Int = 100, locale: String, order: [MetaDataHomeOrder], preview: Boolean, skip: Int = 0, where: MetaDataHomeFilter): MetaDataHomeCollection
+  metaDataLegal(id: String!, locale: String, preview: Boolean): MetaDataLegal
+  metaDataLegalCollection(limit: Int = 100, locale: String, order: [MetaDataLegalOrder], preview: Boolean, skip: Int = 0, where: MetaDataLegalFilter): MetaDataLegalCollection
   metric(id: String!, locale: String, preview: Boolean): Metric
   metricCollection(limit: Int = 100, locale: String, order: [MetricOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): MetricCollection
   navbar(id: String!, locale: String, preview: Boolean): Navbar

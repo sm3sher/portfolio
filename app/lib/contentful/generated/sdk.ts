@@ -1172,53 +1172,379 @@ export type ImageTransformOptions = {
   width?: InputMaybe<Scalars['Dimension']['input']>;
 };
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
-export type MetaData = Entry & _Node & {
-  __typename?: 'MetaData';
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNotice = Entry & _Node & {
+  __typename?: 'LegalNotice';
   _id: Scalars['ID']['output'];
+  addressCity?: Maybe<Scalars['String']['output']>;
+  addressJobTitle?: Maybe<Scalars['String']['output']>;
+  addressName?: Maybe<Scalars['String']['output']>;
+  addressPostalCode?: Maybe<Scalars['String']['output']>;
+  addressStreet?: Maybe<Scalars['String']['output']>;
+  contactEmail?: Maybe<Scalars['String']['output']>;
+  contactEmailLabel?: Maybe<Scalars['String']['output']>;
+  contactFormLabel?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  keywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  linkedFrom?: Maybe<MetaDataLinkingCollections>;
+  disputeLabel?: Maybe<Scalars['String']['output']>;
+  disputeStatement?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<LegalNoticeLinkingCollections>;
+  subTitleContact?: Maybe<Scalars['String']['output']>;
+  subTitleDispute?: Maybe<Scalars['String']['output']>;
+  subTitleInformation?: Maybe<Scalars['String']['output']>;
+  subTitleVat?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
+  vatId?: Maybe<Scalars['String']['output']>;
+  vatLabel?: Maybe<Scalars['String']['output']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
-export type MetaDataDescriptionArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeAddressCityArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
-export type MetaDataKeywordsArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeAddressJobTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
-export type MetaDataLinkedFromArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeAddressNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeAddressPostalCodeArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeAddressStreetArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeContactEmailArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeContactEmailLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeContactFormLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeDisputeLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeDisputeStatementArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaData) */
-export type MetaDataTitleArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeSubTitleContactArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MetaDataCollection = {
-  __typename?: 'MetaDataCollection';
-  items: Array<Maybe<MetaData>>;
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeSubTitleDisputeArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeSubTitleInformationArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeSubTitleVatArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeVatIdArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
+export type LegalNoticeVatLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LegalNoticeCollection = {
+  __typename?: 'LegalNoticeCollection';
+  items: Array<Maybe<LegalNotice>>;
   limit: Scalars['Int']['output'];
   skip: Scalars['Int']['output'];
   total: Scalars['Int']['output'];
 };
 
-export type MetaDataFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MetaDataFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MetaDataFilter>>>;
+export type LegalNoticeFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LegalNoticeFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<LegalNoticeFilter>>>;
+  addressCity?: InputMaybe<Scalars['String']['input']>;
+  addressCity_contains?: InputMaybe<Scalars['String']['input']>;
+  addressCity_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  addressCity_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressCity_not?: InputMaybe<Scalars['String']['input']>;
+  addressCity_not_contains?: InputMaybe<Scalars['String']['input']>;
+  addressCity_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressJobTitle?: InputMaybe<Scalars['String']['input']>;
+  addressJobTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  addressJobTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  addressJobTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressJobTitle_not?: InputMaybe<Scalars['String']['input']>;
+  addressJobTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  addressJobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressName?: InputMaybe<Scalars['String']['input']>;
+  addressName_contains?: InputMaybe<Scalars['String']['input']>;
+  addressName_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  addressName_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressName_not?: InputMaybe<Scalars['String']['input']>;
+  addressName_not_contains?: InputMaybe<Scalars['String']['input']>;
+  addressName_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressPostalCode?: InputMaybe<Scalars['String']['input']>;
+  addressPostalCode_contains?: InputMaybe<Scalars['String']['input']>;
+  addressPostalCode_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  addressPostalCode_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressPostalCode_not?: InputMaybe<Scalars['String']['input']>;
+  addressPostalCode_not_contains?: InputMaybe<Scalars['String']['input']>;
+  addressPostalCode_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressStreet?: InputMaybe<Scalars['String']['input']>;
+  addressStreet_contains?: InputMaybe<Scalars['String']['input']>;
+  addressStreet_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  addressStreet_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  addressStreet_not?: InputMaybe<Scalars['String']['input']>;
+  addressStreet_not_contains?: InputMaybe<Scalars['String']['input']>;
+  addressStreet_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactEmail?: InputMaybe<Scalars['String']['input']>;
+  contactEmailLabel?: InputMaybe<Scalars['String']['input']>;
+  contactEmailLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  contactEmailLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactEmailLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactEmailLabel_not?: InputMaybe<Scalars['String']['input']>;
+  contactEmailLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactEmailLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactEmail_contains?: InputMaybe<Scalars['String']['input']>;
+  contactEmail_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactEmail_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactEmail_not?: InputMaybe<Scalars['String']['input']>;
+  contactEmail_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactEmail_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormLabel?: InputMaybe<Scalars['String']['input']>;
+  contactFormLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormLabel_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  disputeLabel?: InputMaybe<Scalars['String']['input']>;
+  disputeLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  disputeLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  disputeLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  disputeLabel_not?: InputMaybe<Scalars['String']['input']>;
+  disputeLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  disputeLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  disputeStatement?: InputMaybe<Scalars['String']['input']>;
+  disputeStatement_contains?: InputMaybe<Scalars['String']['input']>;
+  disputeStatement_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  disputeStatement_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  disputeStatement_not?: InputMaybe<Scalars['String']['input']>;
+  disputeStatement_not_contains?: InputMaybe<Scalars['String']['input']>;
+  disputeStatement_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleContact?: InputMaybe<Scalars['String']['input']>;
+  subTitleContact_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleContact_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleContact_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleContact_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleContact_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleContact_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleDispute?: InputMaybe<Scalars['String']['input']>;
+  subTitleDispute_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleDispute_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleDispute_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleDispute_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleDispute_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleDispute_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleInformation?: InputMaybe<Scalars['String']['input']>;
+  subTitleInformation_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleInformation_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleInformation_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleInformation_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleInformation_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleInformation_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleVat?: InputMaybe<Scalars['String']['input']>;
+  subTitleVat_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleVat_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  subTitleVat_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  subTitleVat_not?: InputMaybe<Scalars['String']['input']>;
+  subTitleVat_not_contains?: InputMaybe<Scalars['String']['input']>;
+  subTitleVat_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  vatId?: InputMaybe<Scalars['String']['input']>;
+  vatId_contains?: InputMaybe<Scalars['String']['input']>;
+  vatId_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  vatId_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  vatId_not?: InputMaybe<Scalars['String']['input']>;
+  vatId_not_contains?: InputMaybe<Scalars['String']['input']>;
+  vatId_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  vatLabel?: InputMaybe<Scalars['String']['input']>;
+  vatLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  vatLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  vatLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  vatLabel_not?: InputMaybe<Scalars['String']['input']>;
+  vatLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  vatLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type LegalNoticeLinkingCollections = {
+  __typename?: 'LegalNoticeLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type LegalNoticeLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum LegalNoticeOrder {
+  AddressCityAsc = 'addressCity_ASC',
+  AddressCityDesc = 'addressCity_DESC',
+  AddressJobTitleAsc = 'addressJobTitle_ASC',
+  AddressJobTitleDesc = 'addressJobTitle_DESC',
+  AddressNameAsc = 'addressName_ASC',
+  AddressNameDesc = 'addressName_DESC',
+  AddressPostalCodeAsc = 'addressPostalCode_ASC',
+  AddressPostalCodeDesc = 'addressPostalCode_DESC',
+  AddressStreetAsc = 'addressStreet_ASC',
+  AddressStreetDesc = 'addressStreet_DESC',
+  ContactEmailLabelAsc = 'contactEmailLabel_ASC',
+  ContactEmailLabelDesc = 'contactEmailLabel_DESC',
+  ContactEmailAsc = 'contactEmail_ASC',
+  ContactEmailDesc = 'contactEmail_DESC',
+  ContactFormLabelAsc = 'contactFormLabel_ASC',
+  ContactFormLabelDesc = 'contactFormLabel_DESC',
+  DisputeLabelAsc = 'disputeLabel_ASC',
+  DisputeLabelDesc = 'disputeLabel_DESC',
+  DisputeStatementAsc = 'disputeStatement_ASC',
+  DisputeStatementDesc = 'disputeStatement_DESC',
+  SubTitleContactAsc = 'subTitleContact_ASC',
+  SubTitleContactDesc = 'subTitleContact_DESC',
+  SubTitleDisputeAsc = 'subTitleDispute_ASC',
+  SubTitleDisputeDesc = 'subTitleDispute_DESC',
+  SubTitleInformationAsc = 'subTitleInformation_ASC',
+  SubTitleInformationDesc = 'subTitleInformation_DESC',
+  SubTitleVatAsc = 'subTitleVat_ASC',
+  SubTitleVatDesc = 'subTitleVat_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  VatIdAsc = 'vatId_ASC',
+  VatIdDesc = 'vatId_DESC',
+  VatLabelAsc = 'vatLabel_ASC',
+  VatLabelDesc = 'vatLabel_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
+export type MetaDataHome = Entry & _Node & {
+  __typename?: 'MetaDataHome';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  keywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  linkedFrom?: Maybe<MetaDataHomeLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
+export type MetaDataHomeDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
+export type MetaDataHomeKeywordsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
+export type MetaDataHomeLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
+export type MetaDataHomeTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MetaDataHomeCollection = {
+  __typename?: 'MetaDataHomeCollection';
+  items: Array<Maybe<MetaDataHome>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MetaDataHomeFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MetaDataHomeFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MetaDataHomeFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   description?: InputMaybe<Scalars['String']['input']>;
   description_contains?: InputMaybe<Scalars['String']['input']>;
@@ -1241,20 +1567,106 @@ export type MetaDataFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type MetaDataLinkingCollections = {
-  __typename?: 'MetaDataLinkingCollections';
+export type MetaDataHomeLinkingCollections = {
+  __typename?: 'MetaDataHomeLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
 };
 
 
-export type MetaDataLinkingCollectionsEntryCollectionArgs = {
+export type MetaDataHomeLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export enum MetaDataOrder {
+export enum MetaDataHomeOrder {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
+export type MetaDataLegal = Entry & _Node & {
+  __typename?: 'MetaDataLegal';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<MetaDataLegalLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
+export type MetaDataLegalDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
+export type MetaDataLegalLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
+export type MetaDataLegalTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MetaDataLegalCollection = {
+  __typename?: 'MetaDataLegalCollection';
+  items: Array<Maybe<MetaDataLegal>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MetaDataLegalFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MetaDataLegalFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MetaDataLegalFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type MetaDataLegalLinkingCollections = {
+  __typename?: 'MetaDataLegalLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type MetaDataLegalLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum MetaDataLegalOrder {
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -1722,8 +2134,12 @@ export type Query = {
   footerCollection?: Maybe<FooterCollection>;
   home?: Maybe<Home>;
   homeCollection?: Maybe<HomeCollection>;
-  metaData?: Maybe<MetaData>;
-  metaDataCollection?: Maybe<MetaDataCollection>;
+  legalNotice?: Maybe<LegalNotice>;
+  legalNoticeCollection?: Maybe<LegalNoticeCollection>;
+  metaDataHome?: Maybe<MetaDataHome>;
+  metaDataHomeCollection?: Maybe<MetaDataHomeCollection>;
+  metaDataLegal?: Maybe<MetaDataLegal>;
+  metaDataLegalCollection?: Maybe<MetaDataLegalCollection>;
   metric?: Maybe<Metric>;
   metricCollection?: Maybe<MetricCollection>;
   navbar?: Maybe<Navbar>;
@@ -1845,20 +2261,54 @@ export type QueryHomeCollectionArgs = {
 };
 
 
-export type QueryMetaDataArgs = {
+export type QueryLegalNoticeArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-export type QueryMetaDataCollectionArgs = {
+export type QueryLegalNoticeCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<MetaDataOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<LegalNoticeOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<MetaDataFilter>;
+  where?: InputMaybe<LegalNoticeFilter>;
+};
+
+
+export type QueryMetaDataHomeArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMetaDataHomeCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MetaDataHomeOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MetaDataHomeFilter>;
+};
+
+
+export type QueryMetaDataLegalArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMetaDataLegalCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MetaDataLegalOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MetaDataLegalFilter>;
 };
 
 
@@ -2789,12 +3239,26 @@ export type HomeContentQueryVariables = Exact<{
 
 export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null };
 
-export type MetadataContentQueryVariables = Exact<{
+export type LegalNoticeContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataContentQuery = { __typename?: 'Query', metaDataCollection?: { __typename?: 'MetaDataCollection', items: Array<{ __typename?: 'MetaData', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
+export type LegalNoticeContentQuery = { __typename?: 'Query', legalNoticeCollection?: { __typename?: 'LegalNoticeCollection', items: Array<{ __typename?: 'LegalNotice', title?: string | null, subTitleInformation?: string | null, addressName?: string | null, addressJobTitle?: string | null, addressStreet?: string | null, addressPostalCode?: string | null, addressCity?: string | null, subTitleContact?: string | null, contactEmailLabel?: string | null, contactEmail?: string | null, contactFormLabel?: string | null, subTitleVat?: string | null, vatLabel?: string | null, vatId?: string | null, subTitleDispute?: string | null, disputeLabel?: string | null, disputeStatement?: string | null } | null> } | null };
+
+export type MetadataHomeContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type MetadataHomeContentQuery = { __typename?: 'Query', metaDataHomeCollection?: { __typename?: 'MetaDataHomeCollection', items: Array<{ __typename?: 'MetaDataHome', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
+
+export type MetadataLegalContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type MetadataLegalContentQuery = { __typename?: 'Query', metaDataLegalCollection?: { __typename?: 'MetaDataLegalCollection', items: Array<{ __typename?: 'MetaDataLegal', title?: string | null, description?: string | null } | null> } | null };
 
 export type NavbarContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2926,13 +3390,48 @@ export const HomeContentDocument = gql`
   }
 }
     `;
-export const MetadataContentDocument = gql`
-    query metadataContent($locale: String) {
-  metaDataCollection(limit: 1, locale: $locale) {
+export const LegalNoticeContentDocument = gql`
+    query legalNoticeContent($locale: String) {
+  legalNoticeCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleInformation
+      addressName
+      addressJobTitle
+      addressStreet
+      addressPostalCode
+      addressCity
+      subTitleContact
+      contactEmailLabel
+      contactEmail
+      contactFormLabel
+      subTitleVat
+      vatLabel
+      vatId
+      subTitleDispute
+      disputeLabel
+      disputeStatement
+    }
+  }
+}
+    `;
+export const MetadataHomeContentDocument = gql`
+    query metadataHomeContent($locale: String) {
+  metaDataHomeCollection(limit: 1, locale: $locale) {
     items {
       title
       description
       keywords
+    }
+  }
+}
+    `;
+export const MetadataLegalContentDocument = gql`
+    query metadataLegalContent($locale: String) {
+  metaDataLegalCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      description
     }
   }
 }
@@ -3015,8 +3514,14 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     homeContent(variables?: HomeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<HomeContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<HomeContentQuery>(HomeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'homeContent', 'query', variables);
     },
-    metadataContent(variables?: MetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MetadataContentQuery>(MetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataContent', 'query', variables);
+    legalNoticeContent(variables?: LegalNoticeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<LegalNoticeContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LegalNoticeContentQuery>(LegalNoticeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'legalNoticeContent', 'query', variables);
+    },
+    metadataHomeContent(variables?: MetadataHomeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataHomeContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MetadataHomeContentQuery>(MetadataHomeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataHomeContent', 'query', variables);
+    },
+    metadataLegalContent(variables?: MetadataLegalContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataLegalContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MetadataLegalContentQuery>(MetadataLegalContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataLegalContent', 'query', variables);
     },
     navbarContent(variables?: NavbarContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NavbarContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NavbarContentQuery>(NavbarContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'navbarContent', 'query', variables);

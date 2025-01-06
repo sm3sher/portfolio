@@ -1,9 +1,18 @@
-query metadataContent($locale: String) {
-    metaDataCollection(limit: 1, locale: $locale) {
+query metadataHomeContent($locale: String) {
+    metaDataHomeCollection(limit: 1, locale: $locale) {
         items {
             title
             description
             keywords
+        }
+    }
+}
+
+query metadataLegalContent($locale: String) {
+    metaDataLegalCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            description
         }
     }
 }
