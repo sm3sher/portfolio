@@ -12,6 +12,7 @@ type Props = {
 export default async function Footer({ locale }: Props) {
   const footerContentQuery = await contentfulClient.footerContent({ locale });
   const content = footerContentQuery.footerCollection?.items[0];
+  const year = new Date().getFullYear();
 
   return (
     <footer className="bg-[--banner-color]">
@@ -81,7 +82,7 @@ export default async function Footer({ locale }: Props) {
         <hr className="my-6 border-[--border-color] sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-[--secondary]">
-            &copy; {new Date().getFullYear()} {content?.title}
+            &copy; {year} {content?.title}
           </span>
           <div className="mt-4 flex gap-5 sm:mt-0 sm:justify-center">
             <a
