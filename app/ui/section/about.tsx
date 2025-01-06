@@ -14,7 +14,7 @@ export default async function About({ locale }: Props) {
   const about = aboutContentQuery.aboutCollection?.items[0];
 
   return (
-    <div className="mx-auto max-w-screen-xl px-4 py-24 md:py-48">
+    <div className="mx-auto max-w-screen-xl px-6 py-24 md:py-48">
       <div className="flex flex-col gap-8 md:flex-row md:gap-0">
         {about?.image &&
           about.image.url &&

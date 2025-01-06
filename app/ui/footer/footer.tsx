@@ -16,7 +16,7 @@ export default async function Footer({ locale }: Props) {
 
   return (
     <footer className="bg-[--banner-color]">
-      <div className="mx-auto max-w-screen-xl p-4 py-8 sm:pb-16 sm:pt-12">
+      <div className="mx-auto max-w-screen-xl px-6 py-8 sm:pb-16 sm:pt-12">
         <div className="md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
             <h5 className="flex items-center gap-2 font-semibold">

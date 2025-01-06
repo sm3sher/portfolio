@@ -35,7 +35,7 @@ export default async function Home({ locale }: Props) {
             />
           </WithAnimation>
         )}
-      <div className="mx-auto max-w-screen-xl px-4">
+      <div className="mx-auto max-w-screen-xl px-6">
         <WithAnimation>
           <h6 className="mb-5">
             <div className="flex space-x-2">

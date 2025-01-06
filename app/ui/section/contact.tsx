@@ -15,7 +15,7 @@ export default async function Contact({ locale }: Props) {
 
   return (
     <div className="py-24 md:py-32">
-      <div className="mx-auto max-w-screen-xl px-4">
+      <div className="mx-auto max-w-screen-xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row lg:gap-16">
           <WithScrollAnimation className="space-y-7 md:mb-20 md:w-1/2">
             <h6 className="uppercase tracking-wider text-[--highlight]">
