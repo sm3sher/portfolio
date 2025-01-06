@@ -647,26 +647,112 @@ export type Footer = Entry & _Node & {
   __typename?: 'Footer';
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
-  footerItemCollection?: Maybe<FooterFooterItemCollection>;
+  description?: Maybe<Scalars['String']['output']>;
+  followGithub?: Maybe<Scalars['String']['output']>;
+  followSection?: Maybe<Scalars['String']['output']>;
+  followStackOverflow?: Maybe<Scalars['String']['output']>;
+  gitHubHref?: Maybe<Scalars['String']['output']>;
+  gitHubHrefLabel?: Maybe<Scalars['String']['output']>;
+  kofiHref?: Maybe<Scalars['String']['output']>;
+  kofiHrefLabel?: Maybe<Scalars['String']['output']>;
+  legalNotice?: Maybe<Scalars['String']['output']>;
+  legalPrivacyPolicy?: Maybe<Scalars['String']['output']>;
+  legalSection?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<FooterLinkingCollections>;
+  stackOverflowHref?: Maybe<Scalars['String']['output']>;
+  stackOverflowHrefLabel?: Maybe<Scalars['String']['output']>;
   sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
-export type FooterFooterItemCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
+export type FooterDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<FooterFooterItemCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<FooterItemFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterFollowGithubArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterFollowSectionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterFollowStackOverflowArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterGitHubHrefArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterGitHubHrefLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterKofiHrefArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterKofiHrefLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterLegalNoticeArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterLegalPrivacyPolicyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterLegalSectionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
 export type FooterLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterStackOverflowHrefArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterStackOverflowHrefLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footer) */
+export type FooterTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type FooterCollection = {
@@ -681,140 +767,106 @@ export type FooterFilter = {
   AND?: InputMaybe<Array<InputMaybe<FooterFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<FooterFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  footerItem?: InputMaybe<CfFooterItemNestedFilter>;
-  footerItemCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followGithub?: InputMaybe<Scalars['String']['input']>;
+  followGithub_contains?: InputMaybe<Scalars['String']['input']>;
+  followGithub_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  followGithub_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followGithub_not?: InputMaybe<Scalars['String']['input']>;
+  followGithub_not_contains?: InputMaybe<Scalars['String']['input']>;
+  followGithub_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followSection?: InputMaybe<Scalars['String']['input']>;
+  followSection_contains?: InputMaybe<Scalars['String']['input']>;
+  followSection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  followSection_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followSection_not?: InputMaybe<Scalars['String']['input']>;
+  followSection_not_contains?: InputMaybe<Scalars['String']['input']>;
+  followSection_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followStackOverflow?: InputMaybe<Scalars['String']['input']>;
+  followStackOverflow_contains?: InputMaybe<Scalars['String']['input']>;
+  followStackOverflow_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  followStackOverflow_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  followStackOverflow_not?: InputMaybe<Scalars['String']['input']>;
+  followStackOverflow_not_contains?: InputMaybe<Scalars['String']['input']>;
+  followStackOverflow_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gitHubHref?: InputMaybe<Scalars['String']['input']>;
+  gitHubHrefLabel?: InputMaybe<Scalars['String']['input']>;
+  gitHubHrefLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  gitHubHrefLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  gitHubHrefLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gitHubHrefLabel_not?: InputMaybe<Scalars['String']['input']>;
+  gitHubHrefLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  gitHubHrefLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gitHubHref_contains?: InputMaybe<Scalars['String']['input']>;
+  gitHubHref_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  gitHubHref_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gitHubHref_not?: InputMaybe<Scalars['String']['input']>;
+  gitHubHref_not_contains?: InputMaybe<Scalars['String']['input']>;
+  gitHubHref_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  kofiHref?: InputMaybe<Scalars['String']['input']>;
+  kofiHrefLabel?: InputMaybe<Scalars['String']['input']>;
+  kofiHrefLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  kofiHrefLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  kofiHrefLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  kofiHrefLabel_not?: InputMaybe<Scalars['String']['input']>;
+  kofiHrefLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  kofiHrefLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  kofiHref_contains?: InputMaybe<Scalars['String']['input']>;
+  kofiHref_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  kofiHref_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  kofiHref_not?: InputMaybe<Scalars['String']['input']>;
+  kofiHref_not_contains?: InputMaybe<Scalars['String']['input']>;
+  kofiHref_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalNotice?: InputMaybe<Scalars['String']['input']>;
+  legalNotice_contains?: InputMaybe<Scalars['String']['input']>;
+  legalNotice_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalNotice_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalNotice_not?: InputMaybe<Scalars['String']['input']>;
+  legalNotice_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalNotice_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalPrivacyPolicy?: InputMaybe<Scalars['String']['input']>;
+  legalPrivacyPolicy_contains?: InputMaybe<Scalars['String']['input']>;
+  legalPrivacyPolicy_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalPrivacyPolicy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalPrivacyPolicy_not?: InputMaybe<Scalars['String']['input']>;
+  legalPrivacyPolicy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalPrivacyPolicy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalSection?: InputMaybe<Scalars['String']['input']>;
+  legalSection_contains?: InputMaybe<Scalars['String']['input']>;
+  legalSection_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalSection_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalSection_not?: InputMaybe<Scalars['String']['input']>;
+  legalSection_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalSection_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  stackOverflowHref?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHrefLabel?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHrefLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHrefLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  stackOverflowHrefLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  stackOverflowHrefLabel_not?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHrefLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHrefLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  stackOverflowHref_contains?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHref_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  stackOverflowHref_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  stackOverflowHref_not?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHref_not_contains?: InputMaybe<Scalars['String']['input']>;
+  stackOverflowHref_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
-export type FooterFooterItemCollection = {
-  __typename?: 'FooterFooterItemCollection';
-  items: Array<Maybe<FooterItem>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export enum FooterFooterItemCollectionOrder {
-  HrefAsc = 'href_ASC',
-  HrefDesc = 'href_DESC',
-  LabelAsc = 'label_ASC',
-  LabelDesc = 'label_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footerItem) */
-export type FooterItem = Entry & _Node & {
-  __typename?: 'FooterItem';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  href?: Maybe<Scalars['String']['output']>;
-  label?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<FooterItemLinkingCollections>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footerItem) */
-export type FooterItemHrefArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footerItem) */
-export type FooterItemLabelArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footerItem) */
-export type FooterItemLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type FooterItemCollection = {
-  __typename?: 'FooterItemCollection';
-  items: Array<Maybe<FooterItem>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type FooterItemFilter = {
-  AND?: InputMaybe<Array<InputMaybe<FooterItemFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<FooterItemFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  href?: InputMaybe<Scalars['String']['input']>;
-  href_contains?: InputMaybe<Scalars['String']['input']>;
-  href_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  href_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  href_not?: InputMaybe<Scalars['String']['input']>;
-  href_not_contains?: InputMaybe<Scalars['String']['input']>;
-  href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  label?: InputMaybe<Scalars['String']['input']>;
-  label_contains?: InputMaybe<Scalars['String']['input']>;
-  label_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  label_not?: InputMaybe<Scalars['String']['input']>;
-  label_not_contains?: InputMaybe<Scalars['String']['input']>;
-  label_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type FooterItemLinkingCollections = {
-  __typename?: 'FooterItemLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  footerCollection?: Maybe<FooterCollection>;
-};
-
-
-export type FooterItemLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-
-export type FooterItemLinkingCollectionsFooterCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<FooterItemLinkingCollectionsFooterCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum FooterItemLinkingCollectionsFooterCollectionOrder {
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
-export enum FooterItemOrder {
-  HrefAsc = 'href_ASC',
-  HrefDesc = 'href_DESC',
-  LabelAsc = 'label_ASC',
-  LabelDesc = 'label_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
 
 export type FooterLinkingCollections = {
   __typename?: 'FooterLinkingCollections';
@@ -830,6 +882,32 @@ export type FooterLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum FooterOrder {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  FollowGithubAsc = 'followGithub_ASC',
+  FollowGithubDesc = 'followGithub_DESC',
+  FollowSectionAsc = 'followSection_ASC',
+  FollowSectionDesc = 'followSection_DESC',
+  FollowStackOverflowAsc = 'followStackOverflow_ASC',
+  FollowStackOverflowDesc = 'followStackOverflow_DESC',
+  GitHubHrefLabelAsc = 'gitHubHrefLabel_ASC',
+  GitHubHrefLabelDesc = 'gitHubHrefLabel_DESC',
+  GitHubHrefAsc = 'gitHubHref_ASC',
+  GitHubHrefDesc = 'gitHubHref_DESC',
+  KofiHrefLabelAsc = 'kofiHrefLabel_ASC',
+  KofiHrefLabelDesc = 'kofiHrefLabel_DESC',
+  KofiHrefAsc = 'kofiHref_ASC',
+  KofiHrefDesc = 'kofiHref_DESC',
+  LegalNoticeAsc = 'legalNotice_ASC',
+  LegalNoticeDesc = 'legalNotice_DESC',
+  LegalPrivacyPolicyAsc = 'legalPrivacyPolicy_ASC',
+  LegalPrivacyPolicyDesc = 'legalPrivacyPolicy_DESC',
+  LegalSectionAsc = 'legalSection_ASC',
+  LegalSectionDesc = 'legalSection_DESC',
+  StackOverflowHrefLabelAsc = 'stackOverflowHrefLabel_ASC',
+  StackOverflowHrefLabelDesc = 'stackOverflowHrefLabel_DESC',
+  StackOverflowHrefAsc = 'stackOverflowHref_ASC',
+  StackOverflowHrefDesc = 'stackOverflowHref_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -837,7 +915,9 @@ export enum FooterOrder {
   SysPublishedAtAsc = 'sys_publishedAt_ASC',
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
 }
 
 /** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
@@ -1640,8 +1720,6 @@ export type Query = {
   entryCollection?: Maybe<EntryCollection>;
   footer?: Maybe<Footer>;
   footerCollection?: Maybe<FooterCollection>;
-  footerItem?: Maybe<FooterItem>;
-  footerItemCollection?: Maybe<FooterItemCollection>;
   home?: Maybe<Home>;
   homeCollection?: Maybe<HomeCollection>;
   metaData?: Maybe<MetaData>;
@@ -1747,23 +1825,6 @@ export type QueryFooterCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<FooterFilter>;
-};
-
-
-export type QueryFooterItemArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryFooterItemCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<FooterItemOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<FooterItemFilter>;
 };
 
 
@@ -2610,27 +2671,6 @@ export type _Node = {
   _id: Scalars['ID']['output'];
 };
 
-export type CfFooterItemNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfFooterItemNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfFooterItemNestedFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  href?: InputMaybe<Scalars['String']['input']>;
-  href_contains?: InputMaybe<Scalars['String']['input']>;
-  href_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  href_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  href_not?: InputMaybe<Scalars['String']['input']>;
-  href_not_contains?: InputMaybe<Scalars['String']['input']>;
-  href_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  label?: InputMaybe<Scalars['String']['input']>;
-  label_contains?: InputMaybe<Scalars['String']['input']>;
-  label_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  label_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  label_not?: InputMaybe<Scalars['String']['input']>;
-  label_not_contains?: InputMaybe<Scalars['String']['input']>;
-  label_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-};
-
 export type CfMetricNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
@@ -2740,7 +2780,7 @@ export type FooterContentQueryVariables = Exact<{
 }>;
 
 
-export type FooterContentQuery = { __typename?: 'Query', footerCollection?: { __typename?: 'FooterCollection', items: Array<{ __typename?: 'Footer', footerItemCollection?: { __typename?: 'FooterFooterItemCollection', items: Array<{ __typename?: 'FooterItem', label?: string | null, href?: string | null } | null> } | null } | null> } | null };
+export type FooterContentQuery = { __typename?: 'Query', footerCollection?: { __typename?: 'FooterCollection', items: Array<{ __typename?: 'Footer', title?: string | null, description?: string | null, followSection?: string | null, followGithub?: string | null, followStackOverflow?: string | null, legalSection?: string | null, legalNotice?: string | null, legalPrivacyPolicy?: string | null, gitHubHref?: string | null, gitHubHrefLabel?: string | null, stackOverflowHref?: string | null, stackOverflowHrefLabel?: string | null, kofiHref?: string | null, kofiHrefLabel?: string | null } | null> } | null };
 
 export type HomeContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2848,12 +2888,20 @@ export const FooterContentDocument = gql`
     query footerContent($locale: String) {
   footerCollection(limit: 1, locale: $locale) {
     items {
-      footerItemCollection {
-        items {
-          label
-          href
-        }
-      }
+      title
+      description
+      followSection
+      followGithub
+      followStackOverflow
+      legalSection
+      legalNotice
+      legalPrivacyPolicy
+      gitHubHref
+      gitHubHrefLabel
+      stackOverflowHref
+      stackOverflowHrefLabel
+      kofiHref
+      kofiHrefLabel
     }
   }
 }

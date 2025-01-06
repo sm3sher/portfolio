@@ -434,9 +434,22 @@ enum EntryOrder {
 type Footer implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
-  footerItemCollection(limit: Int = 100, locale: String, order: [FooterFooterItemCollectionOrder], preview: Boolean, skip: Int = 0, where: FooterItemFilter): FooterFooterItemCollection
+  description(locale: String): String
+  followGithub(locale: String): String
+  followSection(locale: String): String
+  followStackOverflow(locale: String): String
+  gitHubHref(locale: String): String
+  gitHubHrefLabel(locale: String): String
+  kofiHref(locale: String): String
+  kofiHrefLabel(locale: String): String
+  legalNotice(locale: String): String
+  legalPrivacyPolicy(locale: String): String
+  legalSection(locale: String): String
   linkedFrom(allowedLocales: [String]): FooterLinkingCollections
+  stackOverflowHref(locale: String): String
+  stackOverflowHrefLabel(locale: String): String
   sys: Sys!
+  title(locale: String): String
 }
 
 type FooterCollection {
@@ -450,102 +463,105 @@ input FooterFilter {
   AND: [FooterFilter]
   OR: [FooterFilter]
   contentfulMetadata: ContentfulMetadataFilter
-  footerItem: cfFooterItemNestedFilter
-  footerItemCollection_exists: Boolean
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  followGithub: String
+  followGithub_contains: String
+  followGithub_exists: Boolean
+  followGithub_in: [String]
+  followGithub_not: String
+  followGithub_not_contains: String
+  followGithub_not_in: [String]
+  followSection: String
+  followSection_contains: String
+  followSection_exists: Boolean
+  followSection_in: [String]
+  followSection_not: String
+  followSection_not_contains: String
+  followSection_not_in: [String]
+  followStackOverflow: String
+  followStackOverflow_contains: String
+  followStackOverflow_exists: Boolean
+  followStackOverflow_in: [String]
+  followStackOverflow_not: String
+  followStackOverflow_not_contains: String
+  followStackOverflow_not_in: [String]
+  gitHubHref: String
+  gitHubHrefLabel: String
+  gitHubHrefLabel_contains: String
+  gitHubHrefLabel_exists: Boolean
+  gitHubHrefLabel_in: [String]
+  gitHubHrefLabel_not: String
+  gitHubHrefLabel_not_contains: String
+  gitHubHrefLabel_not_in: [String]
+  gitHubHref_contains: String
+  gitHubHref_exists: Boolean
+  gitHubHref_in: [String]
+  gitHubHref_not: String
+  gitHubHref_not_contains: String
+  gitHubHref_not_in: [String]
+  kofiHref: String
+  kofiHrefLabel: String
+  kofiHrefLabel_contains: String
+  kofiHrefLabel_exists: Boolean
+  kofiHrefLabel_in: [String]
+  kofiHrefLabel_not: String
+  kofiHrefLabel_not_contains: String
+  kofiHrefLabel_not_in: [String]
+  kofiHref_contains: String
+  kofiHref_exists: Boolean
+  kofiHref_in: [String]
+  kofiHref_not: String
+  kofiHref_not_contains: String
+  kofiHref_not_in: [String]
+  legalNotice: String
+  legalNotice_contains: String
+  legalNotice_exists: Boolean
+  legalNotice_in: [String]
+  legalNotice_not: String
+  legalNotice_not_contains: String
+  legalNotice_not_in: [String]
+  legalPrivacyPolicy: String
+  legalPrivacyPolicy_contains: String
+  legalPrivacyPolicy_exists: Boolean
+  legalPrivacyPolicy_in: [String]
+  legalPrivacyPolicy_not: String
+  legalPrivacyPolicy_not_contains: String
+  legalPrivacyPolicy_not_in: [String]
+  legalSection: String
+  legalSection_contains: String
+  legalSection_exists: Boolean
+  legalSection_in: [String]
+  legalSection_not: String
+  legalSection_not_contains: String
+  legalSection_not_in: [String]
+  stackOverflowHref: String
+  stackOverflowHrefLabel: String
+  stackOverflowHrefLabel_contains: String
+  stackOverflowHrefLabel_exists: Boolean
+  stackOverflowHrefLabel_in: [String]
+  stackOverflowHrefLabel_not: String
+  stackOverflowHrefLabel_not_contains: String
+  stackOverflowHrefLabel_not_in: [String]
+  stackOverflowHref_contains: String
+  stackOverflowHref_exists: Boolean
+  stackOverflowHref_in: [String]
+  stackOverflowHref_not: String
+  stackOverflowHref_not_contains: String
+  stackOverflowHref_not_in: [String]
   sys: SysFilter
-}
-
-type FooterFooterItemCollection {
-  items: [FooterItem]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-enum FooterFooterItemCollectionOrder {
-  href_ASC
-  href_DESC
-  label_ASC
-  label_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-}
-
-"""
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/footerItem)
-"""
-type FooterItem implements Entry & _Node {
-  _id: ID!
-  contentfulMetadata: ContentfulMetadata!
-  href(locale: String): String
-  label(locale: String): String
-  linkedFrom(allowedLocales: [String]): FooterItemLinkingCollections
-  sys: Sys!
-}
-
-type FooterItemCollection {
-  items: [FooterItem]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input FooterItemFilter {
-  AND: [FooterItemFilter]
-  OR: [FooterItemFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  href: String
-  href_contains: String
-  href_exists: Boolean
-  href_in: [String]
-  href_not: String
-  href_not_contains: String
-  href_not_in: [String]
-  label: String
-  label_contains: String
-  label_exists: Boolean
-  label_in: [String]
-  label_not: String
-  label_not_contains: String
-  label_not_in: [String]
-  sys: SysFilter
-}
-
-type FooterItemLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  footerCollection(limit: Int = 100, locale: String, order: [FooterItemLinkingCollectionsFooterCollectionOrder], preview: Boolean, skip: Int = 0): FooterCollection
-}
-
-enum FooterItemLinkingCollectionsFooterCollectionOrder {
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-}
-
-enum FooterItemOrder {
-  href_ASC
-  href_DESC
-  label_ASC
-  label_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
 }
 
 type FooterLinkingCollections {
@@ -553,6 +569,32 @@ type FooterLinkingCollections {
 }
 
 enum FooterOrder {
+  description_ASC
+  description_DESC
+  followGithub_ASC
+  followGithub_DESC
+  followSection_ASC
+  followSection_DESC
+  followStackOverflow_ASC
+  followStackOverflow_DESC
+  gitHubHrefLabel_ASC
+  gitHubHrefLabel_DESC
+  gitHubHref_ASC
+  gitHubHref_DESC
+  kofiHrefLabel_ASC
+  kofiHrefLabel_DESC
+  kofiHref_ASC
+  kofiHref_DESC
+  legalNotice_ASC
+  legalNotice_DESC
+  legalPrivacyPolicy_ASC
+  legalPrivacyPolicy_DESC
+  legalSection_ASC
+  legalSection_DESC
+  stackOverflowHrefLabel_ASC
+  stackOverflowHrefLabel_DESC
+  stackOverflowHref_ASC
+  stackOverflowHref_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -561,6 +603,8 @@ enum FooterOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 """The 'HexColor' type represents color in `rgb:ffffff` string format."""
@@ -1168,8 +1212,6 @@ type Query {
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
   footer(id: String!, locale: String, preview: Boolean): Footer
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection
-  footerItem(id: String!, locale: String, preview: Boolean): FooterItem
-  footerItemCollection(limit: Int = 100, locale: String, order: [FooterItemOrder], preview: Boolean, skip: Int = 0, where: FooterItemFilter): FooterItemCollection
   home(id: String!, locale: String, preview: Boolean): Home
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
   metaData(id: String!, locale: String, preview: Boolean): MetaData
@@ -1662,27 +1704,6 @@ enum TestimonialsQuotesCollectionOrder {
 
 interface _Node {
   _id: ID!
-}
-
-input cfFooterItemNestedFilter {
-  AND: [cfFooterItemNestedFilter]
-  OR: [cfFooterItemNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  href: String
-  href_contains: String
-  href_exists: Boolean
-  href_in: [String]
-  href_not: String
-  href_not_contains: String
-  href_not_in: [String]
-  label: String
-  label_contains: String
-  label_exists: Boolean
-  label_in: [String]
-  label_not: String
-  label_not_contains: String
-  label_not_in: [String]
-  sys: SysFilter
 }
 
 input cfMetricNestedFilter {
