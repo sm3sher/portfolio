@@ -3,7 +3,7 @@ import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
 import { ArrowDown01Icon } from 'hugeicons-react';
-import WithAnimation from '@/app/ui/animation/with-animation';
+import ViewAnimation from '@/app/ui/animation/view-animation';
 
 type Props = {
   locale: Locale;
@@ -21,9 +21,10 @@ export default async function Home({ locale }: Props) {
         home.image.width &&
         home.image.height &&
         home.image.description && (
-          <WithAnimation
+          <ViewAnimation
             className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-screen-xl"
             axis="x"
+            duration={0.5}
           >
             <Image
               className="absolute -right-32 bottom-0 max-h-[90%] w-auto object-contain brightness-110 hover:scale-105 sm:-right-20 md:-right-12 lg:right-0 dark:brightness-90"
@@ -33,10 +34,10 @@ export default async function Home({ locale }: Props) {
               alt={home.image.description}
               priority
             />
-          </WithAnimation>
+          </ViewAnimation>
         )}
       <div className="mx-auto max-w-screen-xl px-6">
-        <WithAnimation>
+        <ViewAnimation duration={0.5}>
           <h6 className="mb-5">
             <div className="flex space-x-2">
               <Image
@@ -69,7 +70,7 @@ export default async function Home({ locale }: Props) {
               />
             </Link>
           </div>
-        </WithAnimation>
+        </ViewAnimation>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import Stars from '@/app/ui/not-found/stars';
 import Astronaut from '@/app/ui/not-found/astronaut';
-import WithAnimation from '@/app/ui/animation/with-animation';
 import NotFoundContent from '@/app/ui/not-found/not-found-content';
 import { useLocale } from 'next-intl';
 import { Locale } from '@/i18n/routing';
+import ViewAnimation from '@/app/ui/animation/view-animation';
 
 export default function NotFound() {
   const locale = useLocale() as Locale;
@@ -12,9 +12,12 @@ export default function NotFound() {
     <div className="overflow-hidden py-4 md:py-12">
       <Stars />
       <Astronaut />
-      <WithAnimation className="relative flex flex-col content-center text-center">
+      <ViewAnimation
+        className="relative flex flex-col content-center text-center"
+        duration={0.5}
+      >
         <NotFoundContent locale={locale} />
-      </WithAnimation>
+      </ViewAnimation>
     </div>
   );
 }

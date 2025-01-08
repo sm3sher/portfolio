@@ -10,7 +10,7 @@ type Props = {
   withTranslation?: boolean;
 };
 
-export default function WithPresenceAnimation({
+export default function PresenceAnimation({
   children,
   show,
   className,

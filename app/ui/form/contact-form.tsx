@@ -15,7 +15,7 @@ import FormInput from '@/app/ui/form/form-input';
 import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
 import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
-import WithPresenceAnimation from '@/app/ui/animation/with-presence-animation';
+import PresenceAnimation from '@/app/ui/animation/presence-animation';
 
 // TODO: check if form input reset with server actions fixed https://github.com/vercel/next.js/issues/72949
 export default function ContactForm() {
@@ -117,9 +117,9 @@ export default function ContactForm() {
           </SubmitButton>
         </form>
       </div>
-      <WithPresenceAnimation
-        className="absolute inset-0 flex items-center justify-center"
+      <PresenceAnimation
         show={state?.status === 'error' && !!state.dbError}
+        className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
         <StatusCard
@@ -139,16 +139,16 @@ export default function ContactForm() {
             .
           </p>
         </StatusCard>
-      </WithPresenceAnimation>
-      <WithPresenceAnimation
-        className="absolute inset-0 flex items-center justify-center"
+      </PresenceAnimation>
+      <PresenceAnimation
         show={pending}
+        className="absolute inset-0 flex items-center justify-center"
       >
         <Loading02Icon className="animate-spin" size={52} />
-      </WithPresenceAnimation>
-      <WithPresenceAnimation
-        className="absolute inset-0 flex items-center justify-center"
+      </PresenceAnimation>
+      <PresenceAnimation
         show={submitted}
+        className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
         <StatusCard
@@ -163,7 +163,7 @@ export default function ContactForm() {
             Thank you for reaching out. I’ll get back to you shortly.
           </p>
         </StatusCard>
-      </WithPresenceAnimation>
+      </PresenceAnimation>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { calculateAge } from '@/app/lib/date-utils';
 import Image from 'next/image';
 import ExperienceMetric from '@/app/ui/experience-metric';
-import WithScrollAnimation from '@/app/ui/animation/with-scroll-animation';
+import ViewAnimation from '@/app/ui/animation/view-animation';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 
@@ -21,7 +21,7 @@ export default async function About({ locale }: Props) {
           about.image.width &&
           about.image.height &&
           about.image.description && (
-            <WithScrollAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
+            <ViewAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
               <Image
                 className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
                 src={about.image.url}
@@ -29,9 +29,9 @@ export default async function About({ locale }: Props) {
                 height={about.image.height}
                 alt={about.image.description}
               />
-            </WithScrollAnimation>
+            </ViewAnimation>
           )}
-        <WithScrollAnimation
+        <ViewAnimation
           className="flex w-full items-center md:w-2/3 lg:w-7/12"
           delay={0.4}
         >
@@ -59,7 +59,7 @@ export default async function About({ locale }: Props) {
                 ))}
             </div>
           </div>
-        </WithScrollAnimation>
+        </ViewAnimation>
       </div>
     </div>
   );
