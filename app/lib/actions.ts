@@ -23,7 +23,7 @@ export const saveMessage = async (
   const validatedFields = contactFormSchema.safeParse({
     name: formData.get('name'),
     email: formData.get('email'),
-    jobTitle: formData.get('jobTitle'),
+    role: formData.get('role'),
     message: formData.get('message'),
     consent: !!formData.get('consent'),
   });
@@ -34,10 +34,9 @@ export const saveMessage = async (
     };
   }
 
-  const { jobTitle, ...data } = validatedFields.data;
   const { error } = await supabaseClient()
     .from('contacts')
-    .insert({ ...data, job_title: jobTitle });
+    .insert(validatedFields.data);
 
   if (error) {
     return {

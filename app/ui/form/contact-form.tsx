@@ -75,8 +75,8 @@ export default function ContactForm() {
           />
           <FormInput
             register={register}
-            name="jobTitle"
-            placeholder="Job title (optional)"
+            name="role"
+            placeholder="Job title and company (optional)"
             errors={errors}
           />
           <FormInput
@@ -106,17 +106,14 @@ export default function ContactForm() {
               <Alert01Icon />
               <span>Oops! Something went wrong.</span>
             </div>
-            <p className="mt-2 text-base">
+            <p className="mt-2">
               Looks like I couldn’t process your message this time. Please try
-              again soon.
-            </p>
-            <p className="mt-2 text-base">
-              In the meantime, feel free to email me directly at{' '}
+              again soon. In the meantime, feel free to email me directly at{' '}
               <a
-                href="mailto:roman.jum99@gmail.com"
+                href="mailto:contact@jumatov.com"
                 className="font-semibold text-[--link-color] hover:underline"
               >
-                roman.jum99@gmail.com
+                contact@jumatov.com
               </a>
               .
             </p>

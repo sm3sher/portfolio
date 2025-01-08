@@ -15,27 +15,27 @@ export type Database = {
           created_at: string;
           email: string;
           id: number;
-          job_title: string | null;
           message: string;
           name: string;
+          role: string | null;
         };
         Insert: {
           consent: boolean;
           created_at?: string;
           email: string;
           id?: number;
-          job_title?: string | null;
           message: string;
           name: string;
+          role?: string | null;
         };
         Update: {
           consent?: boolean;
           created_at?: string;
           email?: string;
           id?: number;
-          job_title?: string | null;
           message?: string;
           name?: string;
+          role?: string | null;
         };
         Relationships: [];
       };
