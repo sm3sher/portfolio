@@ -16,7 +16,7 @@ type Props = {
   labelSuffix: string;
 };
 
-export default function ExperienceMetric({
+export default function ExperienceCounter({
   startYear,
   labelPrefix,
   labelSuffix,

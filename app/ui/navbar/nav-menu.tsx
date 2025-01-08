@@ -8,7 +8,7 @@ import {
 } from 'hugeicons-react';
 import { Link, usePathname } from '@/i18n/routing';
 import { useEffect, useState } from 'react';
-import WithTooltip from '@/app/ui/tooltip/with-tooltip';
+import Tooltip from '@/app/ui/tooltip/tooltip';
 
 type Props = {
   homeLabel?: string | null;
@@ -76,7 +76,7 @@ export default function NavMenu({
   return (
     <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur">
       {navbarItems.map((item) => (
-        <WithTooltip key={item.id} tooltip={item.label} hideAtSm>
+        <Tooltip key={item.id} tooltip={item.label} hideAtSm>
           <Link
             href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
             className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
@@ -90,7 +90,7 @@ export default function NavMenu({
             <span className="px-3 py-1">{item.icon}</span>
             <span className="hidden pr-3 leading-7 sm:block">{item.label}</span>
           </Link>
-        </WithTooltip>
+        </Tooltip>
       ))}
     </div>
   );

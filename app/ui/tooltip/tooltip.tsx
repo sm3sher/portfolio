@@ -6,7 +6,7 @@ type Props = {
   hideAtSm?: boolean;
 };
 
-export default function WithTooltip({ children, tooltip, hideAtSm }: Props) {
+export default function Tooltip({ children, tooltip, hideAtSm }: Props) {
   return (
     <div className="group relative">
       {children}

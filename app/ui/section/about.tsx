@@ -1,6 +1,6 @@
 import { calculateAge } from '@/app/lib/date-utils';
 import Image from 'next/image';
-import ExperienceMetric from '@/app/ui/experience-metric';
+import ExperienceCounter from '@/app/ui/counter/experience-counter';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
@@ -50,7 +50,7 @@ export default async function About({ locale }: Props) {
               {about?.experienceMetricsCollection?.items
                 .filter((item) => item !== null)
                 .map((item, index) => (
-                  <ExperienceMetric
+                  <ExperienceCounter
                     key={index}
                     startYear={item.startYear!}
                     labelPrefix={item.labelPrefix!}

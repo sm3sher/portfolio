@@ -1,6 +1,6 @@
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ContactForm from '@/app/ui/form/contact-form';
-import TestimonialSlider from '@/app/ui/testimonial-slider';
+import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import { Testimonials } from '@/app/lib/contentful/generated/sdk';
