@@ -15,7 +15,7 @@ import FormInput from '@/app/ui/form/form-input';
 import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
 import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
-import { AnimatePresence, motion } from 'motion/react';
+import WithPresenceAnimation from '@/app/ui/animation/with-presence-animation';
 
 // TODO: check if form input reset with server actions fixed https://github.com/vercel/next.js/issues/72949
 export default function ContactForm() {
@@ -117,70 +117,53 @@ export default function ContactForm() {
           </SubmitButton>
         </form>
       </div>
-      <AnimatePresence>
-        {state?.status === 'error' && state.dbError && (
-          <motion.div
-            aria-live="polite"
-            className="absolute inset-0 flex items-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, y: 30 }}
-          >
-            <StatusCard
-              icon={<CancelCircleIcon size={52} />}
-              title="Something went wrong."
-              button={{ label: 'Try again', onClick: handleRetry }}
+      <WithPresenceAnimation
+        className="absolute inset-0 flex items-center justify-center"
+        show={state?.status === 'error' && !!state.dbError}
+        withTranslation
+      >
+        <StatusCard
+          icon={<CancelCircleIcon size={52} />}
+          title="Something went wrong."
+          button={{ label: 'Try again', onClick: handleRetry }}
+        >
+          <p className="text-center">
+            Looks like I couldn’t process your message this time. Please try
+            again soon. In the meantime, feel free to email me directly at{' '}
+            <a
+              href="mailto:contact@jumatov.com"
+              className="text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              <p className="text-center">
-                Looks like I couldn’t process your message this time. Please try
-                again soon. In the meantime, feel free to email me directly at{' '}
-                <a
-                  href="mailto:contact@jumatov.com"
-                  className="text-[--highlight] hover:underline hover:underline-offset-4"
-                >
-                  contact@jumatov.com
-                </a>
-                .
-              </p>
-            </StatusCard>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {pending && (
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <Loading02Icon className="animate-spin" size={52} />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {submitted && (
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, y: 30 }}
-          >
-            <StatusCard
-              icon={<CheckmarkCircle01Icon size={52} />}
-              title="Message sent!"
-              button={{
-                label: 'Another message?',
-                onClick: () => setSubmitted(false),
-              }}
-            >
-              <p className="text-center">
-                Thank you for reaching out. I’ll get back to you shortly.
-              </p>
-            </StatusCard>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              contact@jumatov.com
+            </a>
+            .
+          </p>
+        </StatusCard>
+      </WithPresenceAnimation>
+      <WithPresenceAnimation
+        className="absolute inset-0 flex items-center justify-center"
+        show={pending}
+      >
+        <Loading02Icon className="animate-spin" size={52} />
+      </WithPresenceAnimation>
+      <WithPresenceAnimation
+        className="absolute inset-0 flex items-center justify-center"
+        show={submitted}
+        withTranslation
+      >
+        <StatusCard
+          icon={<CheckmarkCircle01Icon size={52} />}
+          title="Message sent!"
+          button={{
+            label: 'Another message?',
+            onClick: () => setSubmitted(false),
+          }}
+        >
+          <p className="text-center">
+            Thank you for reaching out. I’ll get back to you shortly.
+          </p>
+        </StatusCard>
+      </WithPresenceAnimation>
     </div>
   );
 }
