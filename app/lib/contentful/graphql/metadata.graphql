@@ -16,3 +16,12 @@ query metadataLegalContent($locale: String) {
         }
     }
 }
+
+query metadataPrivacyContent($locale: String) {
+    metaDataPrivacyCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            description
+        }
+    }
+}

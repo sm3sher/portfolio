@@ -1681,6 +1681,92 @@ export enum MetaDataLegalOrder {
   TitleDesc = 'title_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
+export type MetaDataPrivacy = Entry & _Node & {
+  __typename?: 'MetaDataPrivacy';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<MetaDataPrivacyLinkingCollections>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
+export type MetaDataPrivacyDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
+export type MetaDataPrivacyLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
+export type MetaDataPrivacyTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MetaDataPrivacyCollection = {
+  __typename?: 'MetaDataPrivacyCollection';
+  items: Array<Maybe<MetaDataPrivacy>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type MetaDataPrivacyFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MetaDataPrivacyFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MetaDataPrivacyFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type MetaDataPrivacyLinkingCollections = {
+  __typename?: 'MetaDataPrivacyLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type MetaDataPrivacyLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum MetaDataPrivacyOrder {
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
 export type Metric = Entry & _Node & {
   __typename?: 'Metric';
@@ -2140,6 +2226,8 @@ export type Query = {
   metaDataHomeCollection?: Maybe<MetaDataHomeCollection>;
   metaDataLegal?: Maybe<MetaDataLegal>;
   metaDataLegalCollection?: Maybe<MetaDataLegalCollection>;
+  metaDataPrivacy?: Maybe<MetaDataPrivacy>;
+  metaDataPrivacyCollection?: Maybe<MetaDataPrivacyCollection>;
   metric?: Maybe<Metric>;
   metricCollection?: Maybe<MetricCollection>;
   navbar?: Maybe<Navbar>;
@@ -2309,6 +2397,23 @@ export type QueryMetaDataLegalCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<MetaDataLegalFilter>;
+};
+
+
+export type QueryMetaDataPrivacyArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryMetaDataPrivacyCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<MetaDataPrivacyOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<MetaDataPrivacyFilter>;
 };
 
 
@@ -3260,6 +3365,13 @@ export type MetadataLegalContentQueryVariables = Exact<{
 
 export type MetadataLegalContentQuery = { __typename?: 'Query', metaDataLegalCollection?: { __typename?: 'MetaDataLegalCollection', items: Array<{ __typename?: 'MetaDataLegal', title?: string | null, description?: string | null } | null> } | null };
 
+export type MetadataPrivacyContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type MetadataPrivacyContentQuery = { __typename?: 'Query', metaDataPrivacyCollection?: { __typename?: 'MetaDataPrivacyCollection', items: Array<{ __typename?: 'MetaDataPrivacy', title?: string | null, description?: string | null } | null> } | null };
+
 export type NavbarContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -3436,6 +3548,16 @@ export const MetadataLegalContentDocument = gql`
   }
 }
     `;
+export const MetadataPrivacyContentDocument = gql`
+    query metadataPrivacyContent($locale: String) {
+  metaDataPrivacyCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      description
+    }
+  }
+}
+    `;
 export const NavbarContentDocument = gql`
     query navbarContent($locale: String) {
   navbarCollection(limit: 1, locale: $locale) {
@@ -3522,6 +3644,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     metadataLegalContent(variables?: MetadataLegalContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataLegalContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<MetadataLegalContentQuery>(MetadataLegalContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataLegalContent', 'query', variables);
+    },
+    metadataPrivacyContent(variables?: MetadataPrivacyContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataPrivacyContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MetadataPrivacyContentQuery>(MetadataPrivacyContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataPrivacyContent', 'query', variables);
     },
     navbarContent(variables?: NavbarContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NavbarContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NavbarContentQuery>(NavbarContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'navbarContent', 'query', variables);
