@@ -13,7 +13,7 @@ import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import { saveMessage, SaveMessageStatus } from '@/app/lib/actions';
 import FormInput from '@/app/ui/form/form-input';
 import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
-import Button from '@/app/ui/button/button';
+import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
 import { AnimatePresence, motion } from 'motion/react';
 
@@ -121,16 +121,16 @@ export default function ContactForm() {
         {state?.status === 'error' && state.dbError && (
           <motion.div
             aria-live="polite"
-            className="absolute top-12 flex items-center md:inset-0"
+            className="absolute inset-0 flex items-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, y: 30 }}
           >
-            <div className="rounded-2xl bg-[--banner-color] px-8 py-6 sm:px-10 sm:py-8">
-              <div className="flex flex-col items-center text-[--highlight]">
-                <CancelCircleIcon size={52} />
-                <h5 className="mb-2 mt-4">Something went wrong.</h5>
-              </div>
+            <StatusCard
+              icon={<CancelCircleIcon size={52} />}
+              title="Something went wrong."
+              button={{ label: 'Try again', onClick: handleRetry }}
+            >
               <p className="text-center">
                 Looks like I couldn’t process your message this time. Please try
                 again soon. In the meantime, feel free to email me directly at{' '}
@@ -142,10 +142,7 @@ export default function ContactForm() {
                 </a>
                 .
               </p>
-              <div className="mt-4 flex justify-center">
-                <Button onClick={handleRetry}>Try again</Button>
-              </div>
-            </div>
+            </StatusCard>
           </motion.div>
         )}
       </AnimatePresence>
@@ -169,20 +166,18 @@ export default function ContactForm() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, y: 30 }}
           >
-            <div className="rounded-2xl bg-[--banner-color] px-8 py-6 sm:px-10 sm:py-8">
-              <div className="flex flex-col items-center text-[--highlight]">
-                <CheckmarkCircle01Icon size={52} />
-                <h5 className="mb-2 mt-4">Message sent!</h5>
-              </div>
+            <StatusCard
+              icon={<CheckmarkCircle01Icon size={52} />}
+              title="Message sent!"
+              button={{
+                label: 'Another message?',
+                onClick: () => setSubmitted(false),
+              }}
+            >
               <p className="text-center">
                 Thank you for reaching out. I’ll get back to you shortly.
               </p>
-              <div className="mt-4 flex justify-center">
-                <Button onClick={() => setSubmitted(false)}>
-                  Another message?
-                </Button>
-              </div>
-            </div>
+            </StatusCard>
           </motion.div>
         )}
       </AnimatePresence>
