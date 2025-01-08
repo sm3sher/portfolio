@@ -490,7 +490,7 @@ export default function Page() {
             #07-04, Singapur. Dabei können Daten nach Singapur übertragen
             werden, die Datenübertragung in ein Drittland (Singapur) erfolgt auf
             Grundlage der Standardvertragsklauseln der EU gemäß Art. 46 Abs. 2
-            lit. c DSGVO.“
+            lit. c DSGVO.
           </p>
           <p className="mb-2 text-[--secondary]">
             Mehr Informationen:{' '}
