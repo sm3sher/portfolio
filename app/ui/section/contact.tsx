@@ -14,7 +14,8 @@ export default async function Contact({ locale }: Props) {
   const contact = contactContentQuery.contactCollection?.items[0];
 
   return (
-    <div className="py-24 md:py-32">
+    <div className="relative py-24 md:py-32">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,var(--radial-color)_0%,transparent_50%)] opacity-50" />
       <div className="mx-auto max-w-screen-xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row lg:gap-16">
           <WithScrollAnimation className="space-y-7 md:mb-20 md:w-1/2">
@@ -31,7 +32,7 @@ export default async function Contact({ locale }: Props) {
             <ContactForm />
           </WithScrollAnimation>
         </div>
-        <WithScrollAnimation className="pt-16" delay={0.6} axis="x">
+        <WithScrollAnimation className="pt-32" delay={0.6} axis="x">
           <TestimonialSlider
             content={
               contactContentQuery.testimonialsCollection

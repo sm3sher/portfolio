@@ -8,7 +8,7 @@ type Props = {
 
 export default function QuoteCard({ quote, author, jobTitle }: Props) {
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl bg-[--banner-color] px-10 py-8">
+    <div className="flex h-full flex-col justify-between rounded-2xl bg-[--banner-color] px-8 py-6 sm:px-10 sm:py-8">
       <div>
         <QuoteDownIcon size={32} />
         <blockquote className="my-6">
