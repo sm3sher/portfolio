@@ -32,7 +32,7 @@ export default function ContactForm() {
     setError,
     reset,
   } = useForm<ContactFormData>({
-    mode: 'onTouched',
+    mode: 'onChange',
     resolver: zodResolver(contactFormSchema),
   });
 
