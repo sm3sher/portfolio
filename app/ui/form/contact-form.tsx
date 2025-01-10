@@ -95,7 +95,7 @@ export default function ContactForm() {
           <FormInput
             register={register}
             name="role"
-            placeholder="Job title and company (optional)"
+            placeholder="Job title, company name (optional)"
             errors={errors}
           />
           <FormInput

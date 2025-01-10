@@ -37,6 +37,7 @@ export default function FormInput<T extends FieldValues>({
           'border-l-8 border-[--error-color] bg-[--error-background] outline-[--error-color]'
         }`}
         placeholder={placeholder}
+        aria-label={placeholder}
         aria-describedby={`${String(name)}-error`}
       />
       {errorMessage && (
