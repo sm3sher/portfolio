@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { useTheme } from 'next-themes';
 
 type Star = {
   x: number;
@@ -24,6 +25,9 @@ type ShootingStar = {
 
 export default function Stars() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const { systemTheme, theme } = useTheme();
+  const isDark =
+    theme === 'dark' || (theme === 'system' && systemTheme === 'dark');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -88,14 +92,21 @@ export default function Stars() {
         canvas.height / 2,
         canvas.width,
       );
-      gradient.addColorStop(0, '#171717');
-      gradient.addColorStop(1, '#000');
+      if (isDark) {
+        gradient.addColorStop(0, '#171717');
+        gradient.addColorStop(1, '#000');
+      } else {
+        gradient.addColorStop(0, '#f5f5f5');
+        gradient.addColorStop(1, '#fff');
+      }
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw stars with parallax effect
       stars.forEach((star) => {
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fillStyle = isDark
+          ? `rgba(255, 255, 255, ${star.opacity})`
+          : `rgba(0, 0, 0, ${star.opacity * 0.7})`;
         ctx.fillRect(star.x, star.y, star.size, star.size);
       });
     };
@@ -148,9 +159,19 @@ export default function Stars() {
         shootingStar.x - shootingStar.dx * shootingStar.length,
         shootingStar.y - shootingStar.dy * shootingStar.length,
       );
-      gradient.addColorStop(0, `rgba(255, 255, 255, ${shootingStar.opacity})`);
-      gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
-
+      if (isDark) {
+        gradient.addColorStop(
+          0,
+          `rgba(255, 255, 255, ${shootingStar.opacity})`,
+        );
+        gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+      } else {
+        gradient.addColorStop(
+          0,
+          `rgba(0, 0, 0, ${shootingStar.opacity * 0.7})`,
+        );
+        gradient.addColorStop(1, `rgba(0, 0, 0, 0)`);
+      }
       ctx.beginPath();
       ctx.strokeStyle = gradient;
       ctx.lineWidth = 2;
@@ -181,7 +202,7 @@ export default function Stars() {
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
-  }, []);
+  }, [isDark]);
 
   return (
     <div className="absolute inset-0 overflow-hidden">
