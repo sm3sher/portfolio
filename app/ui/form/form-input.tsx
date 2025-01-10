@@ -31,7 +31,7 @@ export default function FormInput<T extends FieldValues>({
       <Component
         {...register(name)}
         {...(elementType === 'textarea' && { rows })}
-        className={`base-border mt-1 block w-full rounded-lg px-4 py-2 duration-300 ${
+        className={`base-border mt-1 block w-full rounded-lg px-4 py-2 duration-300 placeholder:text-[--secondary] placeholder:opacity-80 ${
           errorMessage
             ? 'border-l-8 border-[--error-color] bg-[--error-background] outline-[--error-color]'
             : ''
