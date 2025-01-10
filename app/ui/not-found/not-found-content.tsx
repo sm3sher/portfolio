@@ -1,6 +1,6 @@
 import { Link, Locale } from '@/i18n/routing';
 import Button from '@/app/ui/button/button';
-import { Rocket01Icon } from 'hugeicons-react';
+import { StartUp01Icon } from 'hugeicons-react';
 import contentfulClient from '@/app/lib/contentful/client';
 
 type Props = {
@@ -23,8 +23,10 @@ export default async function NotFoundContent({ locale }: Props) {
       <p className="mb-10">{content?.description}</p>
       <Link href="/" tabIndex={-1}>
         <Button>
-          {content?.ctaButtonLabel}
-          <Rocket01Icon className="ml-2 group-hover:animate-rocket-lift" />
+          <span className="transition-transform duration-1000 group-hover:translate-x-4">
+            {content?.ctaButtonLabel}
+          </span>
+          <StartUp01Icon className="ml-2 transition-transform duration-1000 group-hover:-translate-y-9" />
         </Button>
       </Link>
     </>
