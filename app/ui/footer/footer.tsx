@@ -17,7 +17,7 @@ export default async function Footer({ locale }: Props) {
   return (
     <footer className="bg-[--banner-color]">
       <div className="mx-auto max-w-screen-xl px-6 py-8 sm:pb-16 sm:pt-12">
-        <div className="md:flex md:justify-between">
+        <div className="gap-2 md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
             <h5 className="flex items-center gap-2 font-semibold">
               <SourceCodeIcon /> {content?.title}
@@ -26,7 +26,7 @@ export default async function Footer({ locale }: Props) {
               {content?.description}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-16">
+          <div className="grid grid-cols-2 gap-8 whitespace-nowrap sm:gap-16">
             <div>
               <h6 className="mb-6 text-sm uppercase">
                 {content?.followSection}
