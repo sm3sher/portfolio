@@ -160,7 +160,8 @@ export default function ContactForm() {
           }}
         >
           <p className="text-center">
-            Thank you for reaching out. I’ll get back to you shortly.
+            Thank you for reaching out. I’ll get back to you within 24 hours to
+            discuss the next steps.
           </p>
         </StatusCard>
       </PresenceAnimation>
