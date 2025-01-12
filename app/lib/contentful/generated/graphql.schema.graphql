@@ -14,7 +14,6 @@ type About implements Entry & _Node {
   image(locale: String, preview: Boolean): Asset
   linkedFrom(allowedLocales: [String]): AboutLinkingCollections
   locationStatement(locale: String): String
-  passionStatement(locale: String): String
   professionalTitle(locale: String): String
   sys: Sys!
   title(locale: String): String
@@ -95,13 +94,6 @@ input AboutFilter {
   locationStatement_not: String
   locationStatement_not_contains: String
   locationStatement_not_in: [String]
-  passionStatement: String
-  passionStatement_contains: String
-  passionStatement_exists: Boolean
-  passionStatement_in: [String]
-  passionStatement_not: String
-  passionStatement_not_contains: String
-  passionStatement_not_in: [String]
   professionalTitle: String
   professionalTitle_contains: String
   professionalTitle_exists: Boolean
@@ -132,8 +124,6 @@ enum AboutOrder {
   age_DESC
   locationStatement_ASC
   locationStatement_DESC
-  passionStatement_ASC
-  passionStatement_DESC
   professionalTitle_ASC
   professionalTitle_DESC
   sys_firstPublishedAt_ASC
@@ -1292,8 +1282,6 @@ enum MetricLinkingCollectionsAboutCollectionOrder {
   age_DESC
   locationStatement_ASC
   locationStatement_DESC
-  passionStatement_ASC
-  passionStatement_DESC
   professionalTitle_ASC
   professionalTitle_DESC
   sys_firstPublishedAt_ASC

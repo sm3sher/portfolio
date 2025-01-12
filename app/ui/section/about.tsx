@@ -43,7 +43,7 @@ export default async function About({ locale }: Props) {
               {about?.ageStatementPrefix} {calculateAge(about?.age)}
               {about?.ageStatementSuffix}{' '}
               <span className="font-light">{about?.professionalTitle}</span>{' '}
-              {about?.locationStatement} {about?.passionStatement}
+              {about?.locationStatement}
             </h4>
             <p>{about?.description}</p>
             <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">

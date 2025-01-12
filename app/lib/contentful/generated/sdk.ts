@@ -34,7 +34,6 @@ export type About = Entry & _Node & {
   image?: Maybe<Asset>;
   linkedFrom?: Maybe<AboutLinkingCollections>;
   locationStatement?: Maybe<Scalars['String']['output']>;
-  passionStatement?: Maybe<Scalars['String']['output']>;
   professionalTitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
@@ -91,12 +90,6 @@ export type AboutLinkedFromArgs = {
 
 /** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutLocationStatementArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
-export type AboutPassionStatementArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -189,13 +182,6 @@ export type AboutFilter = {
   locationStatement_not?: InputMaybe<Scalars['String']['input']>;
   locationStatement_not_contains?: InputMaybe<Scalars['String']['input']>;
   locationStatement_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  passionStatement?: InputMaybe<Scalars['String']['input']>;
-  passionStatement_contains?: InputMaybe<Scalars['String']['input']>;
-  passionStatement_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  passionStatement_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  passionStatement_not?: InputMaybe<Scalars['String']['input']>;
-  passionStatement_not_contains?: InputMaybe<Scalars['String']['input']>;
-  passionStatement_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   professionalTitle?: InputMaybe<Scalars['String']['input']>;
   professionalTitle_contains?: InputMaybe<Scalars['String']['input']>;
   professionalTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -235,8 +221,6 @@ export enum AboutOrder {
   AgeDesc = 'age_DESC',
   LocationStatementAsc = 'locationStatement_ASC',
   LocationStatementDesc = 'locationStatement_DESC',
-  PassionStatementAsc = 'passionStatement_ASC',
-  PassionStatementDesc = 'passionStatement_DESC',
   ProfessionalTitleAsc = 'professionalTitle_ASC',
   ProfessionalTitleDesc = 'professionalTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -1873,8 +1857,6 @@ export enum MetricLinkingCollectionsAboutCollectionOrder {
   AgeDesc = 'age_DESC',
   LocationStatementAsc = 'locationStatement_ASC',
   LocationStatementDesc = 'locationStatement_DESC',
-  PassionStatementAsc = 'passionStatement_ASC',
-  PassionStatementDesc = 'passionStatement_DESC',
   ProfessionalTitleAsc = 'professionalTitle_ASC',
   ProfessionalTitleDesc = 'professionalTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -3321,7 +3303,7 @@ export type AboutContentQueryVariables = Exact<{
 }>;
 
 
-export type AboutContentQuery = { __typename?: 'Query', aboutCollection?: { __typename?: 'AboutCollection', items: Array<{ __typename?: 'About', title?: string | null, ageStatementPrefix?: string | null, age?: any | null, ageStatementSuffix?: string | null, professionalTitle?: string | null, locationStatement?: string | null, passionStatement?: string | null, description?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null, experienceMetricsCollection?: { __typename?: 'AboutExperienceMetricsCollection', items: Array<{ __typename?: 'Metric', startYear?: number | null, labelPrefix?: string | null, labelSuffix?: string | null } | null> } | null } | null> } | null };
+export type AboutContentQuery = { __typename?: 'Query', aboutCollection?: { __typename?: 'AboutCollection', items: Array<{ __typename?: 'About', title?: string | null, ageStatementPrefix?: string | null, age?: any | null, ageStatementSuffix?: string | null, professionalTitle?: string | null, locationStatement?: string | null, description?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null, experienceMetricsCollection?: { __typename?: 'AboutExperienceMetricsCollection', items: Array<{ __typename?: 'Metric', startYear?: number | null, labelPrefix?: string | null, labelSuffix?: string | null } | null> } | null } | null> } | null };
 
 export type ContactContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -3417,7 +3399,6 @@ export const AboutContentDocument = gql`
       ageStatementSuffix
       professionalTitle
       locationStatement
-      passionStatement
       description
       experienceMetricsCollection {
         items {

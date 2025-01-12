@@ -13,7 +13,6 @@ query aboutContent($locale: String) {
             ageStatementSuffix
             professionalTitle
             locationStatement
-            passionStatement
             description
             experienceMetricsCollection {
                 items {
