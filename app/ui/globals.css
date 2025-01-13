@@ -10,7 +10,7 @@
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b3855;
   --radial-color: #ff3700;
-  --banner-color: theme(colors.neutral.100);
+  --banner-color: theme(colors.neutral.50);
   --error-color: theme(colors.rose.600);
   --error-background: theme(colors.rose.100);
 }
