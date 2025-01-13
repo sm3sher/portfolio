@@ -21,7 +21,7 @@ export default function QuoteCard({
     <div className="relative flex h-full flex-col justify-between rounded-2xl bg-[--banner-color] px-8 py-6 sm:px-10 sm:py-8">
       {logo && logo.url && logo.width && logo.height && logo.description && (
         <Image
-          className={`absolute right-4 top-2 h-16 w-auto sm:h-20 dark:brightness-125 ${invert ? 'dark:invert' : ''}`}
+          className={`absolute right-6 top-2 h-16 w-auto sm:h-20 dark:brightness-125 ${invert ? 'dark:invert' : ''}`}
           src={logo.url}
           alt={logo.description}
           width={logo.width}
