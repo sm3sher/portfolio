@@ -59,7 +59,7 @@ export default function TestimonialSlider({ content }: Props) {
         {content?.quotesCollection?.items
           .filter((item) => item !== null)
           .map((item, index) => (
-            <SwiperSlide key={index} className="!h-auto">
+            <SwiperSlide key={index} className="my-1 !h-auto">
               <QuoteCard
                 quote={item.quote!}
                 author={item.author!}

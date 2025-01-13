@@ -125,11 +125,12 @@ export default function ContactForm() {
         <StatusCard
           icon={<CancelCircleIcon size={52} />}
           title="Something went wrong."
-          button={{ label: 'Try again', onClick: handleRetry }}
+          button={{ label: 'Try Again', onClick: handleRetry }}
         >
           <p className="text-center">
-            Looks like I couldn’t process your message this time. Please try
-            again soon. In the meantime, feel free to email me directly at{' '}
+            It seems there was an issue processing your message. Please try
+            again later. In the meantime, feel free to reach out to me directly
+            at{' '}
             <a
               href="mailto:contact@jumatov.com"
               className="text-[--highlight] hover:underline hover:underline-offset-4"
@@ -144,7 +145,7 @@ export default function ContactForm() {
         show={pending}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Loading02Icon className="animate-spin" size={52} />
+        <Loading02Icon className="animate-spin text-[--secondary]" size={52} />
       </PresenceAnimation>
       <PresenceAnimation
         show={submitted}
@@ -153,15 +154,15 @@ export default function ContactForm() {
       >
         <StatusCard
           icon={<CheckmarkCircle01Icon size={52} />}
-          title="Message sent!"
+          title="Message Sent!"
           button={{
-            label: 'Another message?',
+            label: 'Write another',
             onClick: () => setSubmitted(false),
           }}
         >
           <p className="text-center">
-            Thank you for reaching out. I’ll get back to you within 24 hours to
-            discuss the next steps.
+            Thank you for reaching out. I’ll respond within 24 hours to discuss
+            the next steps.
           </p>
         </StatusCard>
       </PresenceAnimation>

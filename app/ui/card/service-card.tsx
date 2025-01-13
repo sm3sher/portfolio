@@ -9,9 +9,9 @@ type Props = {
 
 export default function ServiceCard({ icon, title, tags, description }: Props) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-2xl bg-[--banner-color] px-4 py-5">
+    <div className="group relative h-full overflow-hidden rounded-2xl px-4 py-5 drop-shadow">
       <div className="absolute -left-1/4 top-1/4 h-36 w-[150%] animate-spin-slow bg-[--highlight] opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-80" />
-      <div className="absolute inset-1 rounded-xl bg-[--banner-color]" />
+      <div className="absolute inset-1 rounded-xl bg-[--background-color] dark:bg-[--banner-color]" />
       <div className="relative">
         <div className="transition-colors duration-300 ease-in-out group-hover:text-[--highlight]">
           {icon}
