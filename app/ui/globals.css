@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --primary: theme(colors.neutral.800);
-  --secondary: theme(colors.neutral.600);
-  --background-color: theme(colors.neutral.50);
-  --border-color: theme(colors.black/35%);
-  --highlight: #ff6700;
-  --highlight-subtle: #ff6700cf;
-  --radial-color: theme(colors.red.400);
+  --primary: theme(colors.black);
+  --secondary: theme(colors.neutral.700);
+  --background-color: theme(colors.white);
+  --border-color: theme(colors.black/15%);
+  --highlight: #fd5b38;
+  --highlight-subtle: #fd5b3855;
+  --radial-color: #ff3700;
   --banner-color: theme(colors.neutral.100);
-  --error-color: theme(colors.rose.500);
-  --error-background: theme(colors.rose.50);
+  --error-color: theme(colors.rose.600);
+  --error-background: theme(colors.rose.100);
 }
 
 html.dark {
