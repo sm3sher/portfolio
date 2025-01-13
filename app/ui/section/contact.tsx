@@ -15,7 +15,7 @@ export default async function Contact({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,var(--radial-color)_0%,transparent_50%)] opacity-50" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,var(--radial-color)_0%,transparent_50%)] opacity-30 dark:opacity-50" />
       <div className="mx-auto max-w-screen-xl px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
           <ViewAnimation className="space-y-7 md:mb-16 md:w-1/2">
