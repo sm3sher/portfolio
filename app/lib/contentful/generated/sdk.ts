@@ -388,6 +388,7 @@ export type AssetLinkingCollections = {
   aboutCollection?: Maybe<AboutCollection>;
   entryCollection?: Maybe<EntryCollection>;
   homeCollection?: Maybe<HomeCollection>;
+  testimonialCollection?: Maybe<TestimonialCollection>;
 };
 
 
@@ -408,6 +409,14 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
 
 
 export type AssetLinkingCollectionsHomeCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsTestimonialCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2946,6 +2955,8 @@ export type Testimonial = Entry & _Node & {
   contentfulMetadata: ContentfulMetadata;
   jobTitle?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<TestimonialLinkingCollections>;
+  logo?: Maybe<Asset>;
+  logoInvert?: Maybe<Scalars['Boolean']['output']>;
   quote?: Maybe<Scalars['String']['output']>;
   sys: Sys;
 };
@@ -2966,6 +2977,19 @@ export type TestimonialJobTitleArgs = {
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
 export type TestimonialLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialLogoArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonial) */
+export type TestimonialLogoInvertArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -3000,6 +3024,10 @@ export type TestimonialFilter = {
   jobTitle_not?: InputMaybe<Scalars['String']['input']>;
   jobTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
   jobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  logoInvert?: InputMaybe<Scalars['Boolean']['input']>;
+  logoInvert_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  logoInvert_not?: InputMaybe<Scalars['Boolean']['input']>;
+  logo_exists?: InputMaybe<Scalars['Boolean']['input']>;
   quote?: InputMaybe<Scalars['String']['input']>;
   quote_contains?: InputMaybe<Scalars['String']['input']>;
   quote_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3055,6 +3083,8 @@ export enum TestimonialOrder {
   AuthorDesc = 'author_DESC',
   JobTitleAsc = 'jobTitle_ASC',
   JobTitleDesc = 'jobTitle_DESC',
+  LogoInvertAsc = 'logoInvert_ASC',
+  LogoInvertDesc = 'logoInvert_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -3194,6 +3224,8 @@ export enum TestimonialsQuotesCollectionOrder {
   AuthorDesc = 'author_DESC',
   JobTitleAsc = 'jobTitle_ASC',
   JobTitleDesc = 'jobTitle_DESC',
+  LogoInvertAsc = 'logoInvert_ASC',
+  LogoInvertDesc = 'logoInvert_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -3288,6 +3320,10 @@ export type CfTestimonialNestedFilter = {
   jobTitle_not?: InputMaybe<Scalars['String']['input']>;
   jobTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
   jobTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  logoInvert?: InputMaybe<Scalars['Boolean']['input']>;
+  logoInvert_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  logoInvert_not?: InputMaybe<Scalars['Boolean']['input']>;
+  logo_exists?: InputMaybe<Scalars['Boolean']['input']>;
   quote?: InputMaybe<Scalars['String']['input']>;
   quote_contains?: InputMaybe<Scalars['String']['input']>;
   quote_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3310,7 +3346,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -3434,6 +3470,13 @@ export const ContactContentDocument = gql`
             quote
             author
             jobTitle
+            logo {
+              url
+              width
+              height
+              description
+            }
+            logoInvert
           }
         }
       }

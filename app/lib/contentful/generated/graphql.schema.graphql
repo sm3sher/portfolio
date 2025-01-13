@@ -233,6 +233,7 @@ type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
+  testimonialCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TestimonialCollection
 }
 
 enum AssetOrder {
@@ -1853,6 +1854,8 @@ type Testimonial implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   jobTitle(locale: String): String
   linkedFrom(allowedLocales: [String]): TestimonialLinkingCollections
+  logo(locale: String, preview: Boolean): Asset
+  logoInvert(locale: String): Boolean
   quote(locale: String): String
   sys: Sys!
 }
@@ -1882,6 +1885,10 @@ input TestimonialFilter {
   jobTitle_not: String
   jobTitle_not_contains: String
   jobTitle_not_in: [String]
+  logoInvert: Boolean
+  logoInvert_exists: Boolean
+  logoInvert_not: Boolean
+  logo_exists: Boolean
   quote: String
   quote_contains: String
   quote_exists: Boolean
@@ -1919,6 +1926,8 @@ enum TestimonialOrder {
   author_DESC
   jobTitle_ASC
   jobTitle_DESC
+  logoInvert_ASC
+  logoInvert_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -2013,6 +2022,8 @@ enum TestimonialsQuotesCollectionOrder {
   author_DESC
   jobTitle_ASC
   jobTitle_DESC
+  logoInvert_ASC
+  logoInvert_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -2107,6 +2118,10 @@ input cfTestimonialNestedFilter {
   jobTitle_not: String
   jobTitle_not_contains: String
   jobTitle_not_in: [String]
+  logoInvert: Boolean
+  logoInvert_exists: Boolean
+  logoInvert_not: Boolean
+  logo_exists: Boolean
   quote: String
   quote_contains: String
   quote_exists: Boolean

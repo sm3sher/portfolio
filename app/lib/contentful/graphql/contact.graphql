@@ -18,6 +18,13 @@ query contactContent($locale: String) {
                         quote
                         author
                         jobTitle
+                        logo {
+                            url
+                            width
+                            height
+                            description
+                        }
+                        logoInvert
                     }
                 }
             }

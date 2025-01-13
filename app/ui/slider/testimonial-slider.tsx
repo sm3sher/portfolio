@@ -64,6 +64,8 @@ export default function TestimonialSlider({ content }: Props) {
                 quote={item.quote!}
                 author={item.author!}
                 jobTitle={item.jobTitle!}
+                logo={item.logo}
+                invert={item.logoInvert || false}
               />
             </SwiperSlide>
           ))}
