@@ -1,5 +1,6 @@
 import ServiceCard from '@/app/ui/card/service-card';
 import {
+  IdeaIcon,
   MentoringIcon,
   SoftwareLicenseIcon,
   SystemUpdate01Icon,
@@ -15,8 +16,9 @@ type Props = {
 
 const iconMapping = {
   WebDesign01Icon: <WebDesign01Icon size={36} />,
-  SoftwareLicenseIcon: <SoftwareLicenseIcon size={36} />,
+  IdeaIcon: <IdeaIcon size={36} />,
   MentoringIcon: <MentoringIcon size={36} />,
+  SoftwareLicenseIcon: <SoftwareLicenseIcon size={36} />,
   SystemUpdate01Icon: <SystemUpdate01Icon size={36} />,
 };
 
