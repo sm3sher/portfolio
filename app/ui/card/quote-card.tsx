@@ -18,25 +18,27 @@ export default function QuoteCard({
   invert,
 }: Props) {
   return (
-    <div className="relative flex h-full flex-col justify-between rounded-2xl bg-[--background-color] px-8 py-6 drop-shadow sm:px-10 sm:py-8 dark:bg-[--banner-color]">
+    <div className="relative flex h-full flex-col justify-between rounded-3xl bg-[--background-color] p-8 drop-shadow sm:p-10 dark:bg-[--banner-color]">
       {logo && logo.url && logo.width && logo.height && logo.description && (
-        <Image
-          className={`absolute right-6 top-2 h-16 w-auto sm:h-20 dark:brightness-125 ${invert ? 'dark:invert' : ''}`}
-          src={logo.url}
-          alt={logo.description}
-          width={logo.width}
-          height={logo.height}
-        />
+        <div className="absolute right-6 top-4">
+          <Image
+            className={`h-16 w-auto sm:h-20 dark:brightness-125 ${invert ? 'dark:invert' : ''}`}
+            src={logo.url}
+            alt={logo.description}
+            width={logo.width}
+            height={logo.height}
+          />
+        </div>
       )}
       <div>
-        <QuoteDownIcon size={32} />
-        <blockquote className="my-6">
-          <p className="tracking-wider text-[--secondary]">{quote}</p>
+        <QuoteDownIcon className="mb-6 text-[--highlight]" size={40} />
+        <blockquote className="italic leading-relaxed text-[--secondary]">
+          {quote}
         </blockquote>
       </div>
-      <div className="base-border border-b-0 border-l-0 border-r-0 pt-4">
-        <p className="text-lg">{author}</p>
-        <p className="mt-2 h-10 text-sm text-[--secondary]">{jobTitle}</p>
+      <div className="mt-4 border-t border-[--border-color] pt-6">
+        <p className="text-lg font-semibold text-[--primary]">{author}</p>
+        <p className="mt-2 text-sm text-[--secondary]">{jobTitle}</p>
       </div>
     </div>
   );
