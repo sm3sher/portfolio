@@ -132,10 +132,10 @@ export default function ContactForm() {
             again later. In the meantime, feel free to reach out to me directly
             at{' '}
             <a
-              href="mailto:contact@jumatov.com"
+              href="mailto:roman@jumatov.com"
               className="text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              contact@jumatov.com
+              roman@jumatov.com
             </a>
             .
           </p>
