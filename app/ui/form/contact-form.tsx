@@ -112,8 +112,10 @@ export default function ContactForm() {
             errors={errors}
           />
           <SubmitButton>
-            <SentIcon />
-            Send Message
+            <span className="transition-transform duration-300 group-hover:translate-x-4">
+              Send Message
+            </span>
+            <SentIcon className="ml-2 rotate-45 transition-transform duration-1000 group-hover:translate-x-60" />
           </SubmitButton>
         </form>
       </div>

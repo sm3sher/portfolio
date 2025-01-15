@@ -7,6 +7,7 @@
   --secondary: theme(colors.neutral.700);
   --background-color: theme(colors.white);
   --border-color: theme(colors.black/15%);
+  --hover-color: theme(colors.neutral.700/10%);
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b3855;
   --radial-color: #ff3700;
@@ -20,6 +21,7 @@ html.dark {
   --secondary: theme(colors.neutral.300);
   --background-color: #0f0f0f;
   --border-color: theme(colors.white/35%);
+  --hover-color: theme(colors.neutral.200/20%);
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b38cf;
   --radial-color: #ff3700;
@@ -79,7 +81,7 @@ body {
 
 @layer utilities {
   .hover-effect {
-    @apply cursor-pointer transition-colors duration-300 hover:bg-neutral-700/10 dark:hover:bg-neutral-200/20;
+    @apply cursor-pointer transition-colors duration-300 hover:bg-[--hover-color];
   }
 
   .text-stroke {

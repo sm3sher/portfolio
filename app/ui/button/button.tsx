@@ -10,9 +10,9 @@ export default function Button({ children, onClick }: Props) {
     <button
       type="button"
       onClick={onClick}
-      className="base-border hover-effect rounded-full px-6 py-3 font-[family-name:--font-geist-mono] font-bold"
+      className="base-border hover-effect group overflow-hidden rounded-full px-6 py-3 font-[family-name:--font-geist-mono] font-bold"
     >
-      {children}
+      <span className="flex">{children}</span>
     </button>
   );
 }

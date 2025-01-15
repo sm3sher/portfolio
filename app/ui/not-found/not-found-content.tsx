@@ -23,10 +23,10 @@ export default async function NotFoundContent({ locale }: Props) {
       <p className="mb-10">{content?.description}</p>
       <Link href="/" tabIndex={-1}>
         <Button>
-          <span className="transition-transform duration-1000 group-hover:translate-x-4">
+          <span className="transition-transform duration-500 group-hover:translate-x-4">
             {content?.ctaButtonLabel}
           </span>
-          <StartUp01Icon className="ml-2 transition-transform duration-1000 group-hover:-translate-y-9" />
+          <StartUp01Icon className="ml-2 transition-transform duration-500 group-hover:-translate-y-9" />
         </Button>
       </Link>
     </>
