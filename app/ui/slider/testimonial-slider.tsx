@@ -22,20 +22,20 @@ export default function TestimonialSlider({ content }: Props) {
         </h6>
         <div className="flex space-x-2">
           <button
-            className="slide-prev rounded-full border border-[--highlight-subtle] p-1.5"
+            className="slide-prev hover-effect base-border rounded-full p-1.5"
             aria-label={content?.prevSlideLabel || undefined}
           >
             <ArrowLeft01Icon
-              className="relative right-0.5 text-[--highlight]"
+              className="relative right-0.5 text-[--secondary]"
               size={34}
             />
           </button>
           <button
-            className="slide-next rounded-full border border-[--highlight-subtle] p-1.5"
+            className="slide-next hover-effect base-border rounded-full p-1.5"
             aria-label={content?.nextSlideLabel || undefined}
           >
             <ArrowRight01Icon
-              className="relative left-0.5 text-[--highlight]"
+              className="relative left-0.5 text-[--secondary]"
               size={34}
             />
           </button>
