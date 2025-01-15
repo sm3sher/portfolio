@@ -18,7 +18,7 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 - 🌍 **Multi-Language Support**: Fully localized content with [next-intl](https://next-intl.dev/) to cater to a global audience
 - 🖼️ **Lightweight Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for scalable, high-quality icons
 - 🖋️ **Modern Typography**: Uses the [Geist font](https://vercel.com/font) from Vercel for clean, readable text
-- 📱 **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a rea sponsive, fluid layout across all devices
+- 📱 **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a responsive, fluid layout across all devices
 - 🌀 **Smooth Animations**: Engaging animations and scroll effects powered by [Motion](https://motion.dev/)
 - 🧹 **Code Quality**: Maintained with [ESLint](https://eslint.org) and [Prettier](https://prettier.io) for consistent and clean code
 - ⛓️ **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for streamlined version control
