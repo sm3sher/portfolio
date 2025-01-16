@@ -3,33 +3,30 @@
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import supabaseClient from '@/app/lib/supabase/client';
 
-export type SaveMessageStatus =
-  | {
-      status: 'success';
-    }
-  | {
-      status: 'error';
-      fieldErrors?: Partial<
-        Record<keyof ContactFormData, string[] | undefined>
-      >;
-      dbError?: boolean;
-    }
-  | null;
+export type SaveMessageStatus = {
+  success: boolean;
+  rawData?: ContactFormData;
+  fieldErrors?: Partial<Record<keyof ContactFormData, string[] | undefined>>;
+  dbError?: boolean;
+} | null;
 
 export const saveMessage = async (
   _prevState: SaveMessageStatus,
   formData: FormData,
 ): Promise<SaveMessageStatus> => {
-  const validatedFields = contactFormSchema.safeParse({
+  const rawData = {
     name: formData.get('name'),
     email: formData.get('email'),
     role: formData.get('role'),
     message: formData.get('message'),
     consent: !!formData.get('consent'),
-  });
+  } as ContactFormData;
+
+  const validatedFields = contactFormSchema.safeParse(rawData);
   if (!validatedFields.success) {
     return {
-      status: 'error',
+      success: false,
+      rawData,
       fieldErrors: validatedFields.error.flatten().fieldErrors,
     };
   }
@@ -40,9 +37,10 @@ export const saveMessage = async (
 
   if (error) {
     return {
-      status: 'error',
+      success: false,
+      rawData,
       dbError: true,
     };
   }
-  return { status: 'success' };
+  return { success: true };
 };

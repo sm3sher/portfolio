@@ -10,12 +10,14 @@ import { Tick02Icon } from 'hugeicons-react';
 type Props<T extends FieldValues> = {
   register: UseFormRegister<T>;
   name: Path<T>;
+  defaultChecked?: boolean;
   errors: FieldErrors<T>;
 };
 
 export default function FormGdprCheckbox<T extends FieldValues>({
   register,
   name,
+  defaultChecked,
   errors,
 }: Props<T>) {
   const errorMessage = errors[name]?.message && String(errors[name]?.message);
@@ -34,6 +36,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
               errorMessage &&
               'border-[--error-color] bg-[--error-background] outline-[--error-color]'
             }`}
+            defaultChecked={defaultChecked}
             id="check-with-link"
             aria-describedby={`${String(name)}-error`}
           />

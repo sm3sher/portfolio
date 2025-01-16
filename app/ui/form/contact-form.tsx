@@ -17,7 +17,6 @@ import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 
-// TODO: check if form input reset with server actions fixed https://github.com/vercel/next.js/issues/72949
 export default function ContactForm() {
   const [pending, startTransaction] = useTransition();
   const [submitted, setSubmitted] = useState(false);
@@ -40,7 +39,7 @@ export default function ContactForm() {
     if (!state) {
       return;
     }
-    if (state.status === 'error' && state.fieldErrors) {
+    if (!state.success && state.fieldErrors) {
       Object.entries(state.fieldErrors).forEach(([key, errorMessages]) => {
         if (errorMessages) {
           setError(key as keyof ContactFormData, {
@@ -50,20 +49,19 @@ export default function ContactForm() {
         }
       });
     }
-    if (state.status === 'success') {
+    if (state.success) {
       setSubmitted(true);
       reset();
     }
   }, [state, setError, reset]);
 
   const handleRetry = () => {
-    // TODO: use actual formData when github issue is resolved or workaround is implemented
     const formData = new FormData();
-    formData.set('name', 'John Doe');
-    formData.set('email', 'test@gmail.com');
-    formData.set('role', '');
-    formData.set('message', 'Hey there');
-    formData.set('consent', 'true');
+    if (state?.rawData) {
+      Object.entries(state.rawData).forEach(([key, value]) => {
+        formData.set(key, String(value));
+      });
+    }
     startTransaction(() => formAction(formData));
   };
 
@@ -71,7 +69,7 @@ export default function ContactForm() {
     <div className="relative">
       <div
         className={`transition-opacity duration-500 ${
-          pending || submitted || (state?.status === 'error' && state.dbError)
+          pending || submitted || state?.dbError
             ? 'pointer-events-none opacity-0'
             : 'opacity-100'
         }`}
@@ -84,24 +82,28 @@ export default function ContactForm() {
             register={register}
             name="name"
             placeholder="Name"
+            defaultValue={state?.rawData?.name}
             errors={errors}
           />
           <FormInput
             register={register}
             name="email"
             placeholder="Email address"
+            defaultValue={state?.rawData?.email}
             errors={errors}
           />
           <FormInput
             register={register}
             name="role"
             placeholder="Job title, company name (optional)"
+            defaultValue={state?.rawData?.role}
             errors={errors}
           />
           <FormInput
             register={register}
             name="message"
             placeholder="Message"
+            defaultValue={state?.rawData?.message}
             errors={errors}
             elementType="textarea"
             rows={5}
@@ -109,6 +111,7 @@ export default function ContactForm() {
           <FormGdprCheckbox
             register={register}
             name="consent"
+            defaultChecked={state?.rawData?.consent}
             errors={errors}
           />
           <SubmitButton>
@@ -120,7 +123,7 @@ export default function ContactForm() {
         </form>
       </div>
       <PresenceAnimation
-        show={state?.status === 'error' && !!state.dbError}
+        show={!!state?.dbError && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
@@ -131,8 +134,8 @@ export default function ContactForm() {
         >
           <p className="text-center">
             It seems there was an issue processing your message. Please try
-            again later. In the meantime, feel free to reach out to me directly
-            at{' '}
+            again using the button below. If the problem persists, feel free to
+            reach out to me directly at{' '}
             <a
               href="mailto:roman@jumatov.com"
               className="text-[--highlight] hover:underline hover:underline-offset-4"
@@ -158,7 +161,7 @@ export default function ContactForm() {
           icon={<CheckmarkCircle01Icon size={52} />}
           title="Message Sent!"
           button={{
-            label: 'Write another',
+            label: 'Send Another Message',
             onClick: () => setSubmitted(false),
           }}
         >

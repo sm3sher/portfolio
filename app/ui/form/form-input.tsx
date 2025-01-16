@@ -10,6 +10,7 @@ type Props<T extends FieldValues> = {
   register: UseFormRegister<T>;
   name: Path<T>;
   placeholder: string;
+  defaultValue?: string;
   errors: FieldErrors<T>;
   elementType?: 'input' | 'textarea';
   rows?: number;
@@ -19,6 +20,7 @@ export default function FormInput<T extends FieldValues>({
   register,
   name,
   placeholder,
+  defaultValue,
   errors,
   elementType = 'input',
   rows = 5,
@@ -37,6 +39,7 @@ export default function FormInput<T extends FieldValues>({
             : ''
         }`}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         aria-label={placeholder}
         aria-describedby={`${String(name)}-error`}
       />
