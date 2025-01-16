@@ -621,6 +621,161 @@ enum FooterOrder {
   title_DESC
 }
 
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form)
+"""
+type Form implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  errorButtonLabel(locale: String): String
+  errorContactEmail(locale: String): String
+  errorDescription(locale: String): String
+  errorTitle(locale: String): String
+  gdprNoticeDetails(locale: String): String
+  gdprNoticeIntro(locale: String): String
+  gdprNoticeLinkText(locale: String): String
+  linkedFrom(allowedLocales: [String]): FormLinkingCollections
+  placeholder(locale: String, preview: Boolean, where: PlaceholderFilter): Placeholder
+  sendMessageLabel(locale: String): String
+  successButtonLabel(locale: String): String
+  successDescription(locale: String): String
+  successTitle(locale: String): String
+  sys: Sys!
+  validationMessages(locale: String, preview: Boolean, where: ValidationMessagesFilter): ValidationMessages
+}
+
+type FormCollection {
+  items: [Form]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input FormFilter {
+  AND: [FormFilter]
+  OR: [FormFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  errorButtonLabel: String
+  errorButtonLabel_contains: String
+  errorButtonLabel_exists: Boolean
+  errorButtonLabel_in: [String]
+  errorButtonLabel_not: String
+  errorButtonLabel_not_contains: String
+  errorButtonLabel_not_in: [String]
+  errorContactEmail: String
+  errorContactEmail_contains: String
+  errorContactEmail_exists: Boolean
+  errorContactEmail_in: [String]
+  errorContactEmail_not: String
+  errorContactEmail_not_contains: String
+  errorContactEmail_not_in: [String]
+  errorDescription: String
+  errorDescription_contains: String
+  errorDescription_exists: Boolean
+  errorDescription_in: [String]
+  errorDescription_not: String
+  errorDescription_not_contains: String
+  errorDescription_not_in: [String]
+  errorTitle: String
+  errorTitle_contains: String
+  errorTitle_exists: Boolean
+  errorTitle_in: [String]
+  errorTitle_not: String
+  errorTitle_not_contains: String
+  errorTitle_not_in: [String]
+  gdprNoticeDetails: String
+  gdprNoticeDetails_contains: String
+  gdprNoticeDetails_exists: Boolean
+  gdprNoticeDetails_in: [String]
+  gdprNoticeDetails_not: String
+  gdprNoticeDetails_not_contains: String
+  gdprNoticeDetails_not_in: [String]
+  gdprNoticeIntro: String
+  gdprNoticeIntro_contains: String
+  gdprNoticeIntro_exists: Boolean
+  gdprNoticeIntro_in: [String]
+  gdprNoticeIntro_not: String
+  gdprNoticeIntro_not_contains: String
+  gdprNoticeIntro_not_in: [String]
+  gdprNoticeLinkText: String
+  gdprNoticeLinkText_contains: String
+  gdprNoticeLinkText_exists: Boolean
+  gdprNoticeLinkText_in: [String]
+  gdprNoticeLinkText_not: String
+  gdprNoticeLinkText_not_contains: String
+  gdprNoticeLinkText_not_in: [String]
+  placeholder: cfPlaceholderNestedFilter
+  placeholder_exists: Boolean
+  sendMessageLabel: String
+  sendMessageLabel_contains: String
+  sendMessageLabel_exists: Boolean
+  sendMessageLabel_in: [String]
+  sendMessageLabel_not: String
+  sendMessageLabel_not_contains: String
+  sendMessageLabel_not_in: [String]
+  successButtonLabel: String
+  successButtonLabel_contains: String
+  successButtonLabel_exists: Boolean
+  successButtonLabel_in: [String]
+  successButtonLabel_not: String
+  successButtonLabel_not_contains: String
+  successButtonLabel_not_in: [String]
+  successDescription: String
+  successDescription_contains: String
+  successDescription_exists: Boolean
+  successDescription_in: [String]
+  successDescription_not: String
+  successDescription_not_contains: String
+  successDescription_not_in: [String]
+  successTitle: String
+  successTitle_contains: String
+  successTitle_exists: Boolean
+  successTitle_in: [String]
+  successTitle_not: String
+  successTitle_not_contains: String
+  successTitle_not_in: [String]
+  sys: SysFilter
+  validationMessages: cfValidationMessagesNestedFilter
+  validationMessages_exists: Boolean
+}
+
+type FormLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum FormOrder {
+  errorButtonLabel_ASC
+  errorButtonLabel_DESC
+  errorContactEmail_ASC
+  errorContactEmail_DESC
+  errorDescription_ASC
+  errorDescription_DESC
+  errorTitle_ASC
+  errorTitle_DESC
+  gdprNoticeDetails_ASC
+  gdprNoticeDetails_DESC
+  gdprNoticeIntro_ASC
+  gdprNoticeIntro_DESC
+  gdprNoticeLinkText_ASC
+  gdprNoticeLinkText_DESC
+  sendMessageLabel_ASC
+  sendMessageLabel_DESC
+  successButtonLabel_ASC
+  successButtonLabel_DESC
+  successDescription_ASC
+  successDescription_DESC
+  successTitle_ASC
+  successTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
 """The 'HexColor' type represents color in `rgb:ffffff` string format."""
 scalar HexColor
 
@@ -1536,6 +1691,119 @@ enum NotFoundOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder)
+"""
+type Placeholder implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  email(locale: String): String
+  linkedFrom(allowedLocales: [String]): PlaceholderLinkingCollections
+  message(locale: String): String
+  name(locale: String): String
+  role(locale: String): String
+  sys: Sys!
+}
+
+type PlaceholderCollection {
+  items: [Placeholder]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input PlaceholderFilter {
+  AND: [PlaceholderFilter]
+  OR: [PlaceholderFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  email: String
+  email_contains: String
+  email_exists: Boolean
+  email_in: [String]
+  email_not: String
+  email_not_contains: String
+  email_not_in: [String]
+  message: String
+  message_contains: String
+  message_exists: Boolean
+  message_in: [String]
+  message_not: String
+  message_not_contains: String
+  message_not_in: [String]
+  name: String
+  name_contains: String
+  name_exists: Boolean
+  name_in: [String]
+  name_not: String
+  name_not_contains: String
+  name_not_in: [String]
+  role: String
+  role_contains: String
+  role_exists: Boolean
+  role_in: [String]
+  role_not: String
+  role_not_contains: String
+  role_not_in: [String]
+  sys: SysFilter
+}
+
+type PlaceholderLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  formCollection(limit: Int = 100, locale: String, order: [PlaceholderLinkingCollectionsFormCollectionOrder], preview: Boolean, skip: Int = 0): FormCollection
+}
+
+enum PlaceholderLinkingCollectionsFormCollectionOrder {
+  errorButtonLabel_ASC
+  errorButtonLabel_DESC
+  errorContactEmail_ASC
+  errorContactEmail_DESC
+  errorDescription_ASC
+  errorDescription_DESC
+  errorTitle_ASC
+  errorTitle_DESC
+  gdprNoticeDetails_ASC
+  gdprNoticeDetails_DESC
+  gdprNoticeIntro_ASC
+  gdprNoticeIntro_DESC
+  gdprNoticeLinkText_ASC
+  gdprNoticeLinkText_DESC
+  sendMessageLabel_ASC
+  sendMessageLabel_DESC
+  successButtonLabel_ASC
+  successButtonLabel_DESC
+  successDescription_ASC
+  successDescription_DESC
+  successTitle_ASC
+  successTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum PlaceholderOrder {
+  email_ASC
+  email_DESC
+  message_ASC
+  message_DESC
+  name_ASC
+  name_DESC
+  role_ASC
+  role_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
 The 'Quality' type represents quality as whole numeric values between `1` and `100`.
 """
 scalar Quality
@@ -1551,6 +1819,8 @@ type Query {
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
   footer(id: String!, locale: String, preview: Boolean): Footer
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection
+  form(id: String!, locale: String, preview: Boolean): Form
+  formCollection(limit: Int = 100, locale: String, order: [FormOrder], preview: Boolean, skip: Int = 0, where: FormFilter): FormCollection
   home(id: String!, locale: String, preview: Boolean): Home
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
   legalNotice(id: String!, locale: String, preview: Boolean): LegalNotice
@@ -1567,6 +1837,8 @@ type Query {
   navbarCollection(limit: Int = 100, locale: String, order: [NavbarOrder], preview: Boolean, skip: Int = 0, where: NavbarFilter): NavbarCollection
   notFound(id: String!, locale: String, preview: Boolean): NotFound
   notFoundCollection(limit: Int = 100, locale: String, order: [NotFoundOrder], preview: Boolean, skip: Int = 0, where: NotFoundFilter): NotFoundCollection
+  placeholder(id: String!, locale: String, preview: Boolean): Placeholder
+  placeholderCollection(limit: Int = 100, locale: String, order: [PlaceholderOrder], preview: Boolean, skip: Int = 0, where: PlaceholderFilter): PlaceholderCollection
   service(id: String!, locale: String, preview: Boolean): Service
   serviceBanner(id: String!, locale: String, preview: Boolean): ServiceBanner
   serviceBannerCollection(limit: Int = 100, locale: String, order: [ServiceBannerOrder], preview: Boolean, skip: Int = 0, where: ServiceBannerFilter): ServiceBannerCollection
@@ -1577,6 +1849,8 @@ type Query {
   testimonialCollection(limit: Int = 100, locale: String, order: [TestimonialOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialCollection
   testimonials(id: String!, locale: String, preview: Boolean): Testimonials
   testimonialsCollection(limit: Int = 100, locale: String, order: [TestimonialsOrder], preview: Boolean, skip: Int = 0, where: TestimonialsFilter): TestimonialsCollection
+  validationMessages(id: String!, locale: String, preview: Boolean): ValidationMessages
+  validationMessagesCollection(limit: Int = 100, locale: String, order: [ValidationMessagesOrder], preview: Boolean, skip: Int = 0, where: ValidationMessagesFilter): ValidationMessagesCollection
 }
 
 """
@@ -2057,6 +2331,159 @@ enum TestimonialsQuotesCollectionOrder {
   sys_publishedVersion_DESC
 }
 
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages)
+"""
+type ValidationMessages implements Entry & _Node {
+  _id: ID!
+  consentRequired(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  emailInvalid(locale: String): String
+  emailMaxLength(locale: String): String
+  linkedFrom(allowedLocales: [String]): ValidationMessagesLinkingCollections
+  messageMaxLength(locale: String): String
+  messageRequired(locale: String): String
+  nameMaxLength(locale: String): String
+  nameRequired(locale: String): String
+  roleMaxLength(locale: String): String
+  sys: Sys!
+}
+
+type ValidationMessagesCollection {
+  items: [ValidationMessages]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ValidationMessagesFilter {
+  AND: [ValidationMessagesFilter]
+  OR: [ValidationMessagesFilter]
+  consentRequired: String
+  consentRequired_contains: String
+  consentRequired_exists: Boolean
+  consentRequired_in: [String]
+  consentRequired_not: String
+  consentRequired_not_contains: String
+  consentRequired_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  emailInvalid: String
+  emailInvalid_contains: String
+  emailInvalid_exists: Boolean
+  emailInvalid_in: [String]
+  emailInvalid_not: String
+  emailInvalid_not_contains: String
+  emailInvalid_not_in: [String]
+  emailMaxLength: String
+  emailMaxLength_contains: String
+  emailMaxLength_exists: Boolean
+  emailMaxLength_in: [String]
+  emailMaxLength_not: String
+  emailMaxLength_not_contains: String
+  emailMaxLength_not_in: [String]
+  messageMaxLength: String
+  messageMaxLength_contains: String
+  messageMaxLength_exists: Boolean
+  messageMaxLength_in: [String]
+  messageMaxLength_not: String
+  messageMaxLength_not_contains: String
+  messageMaxLength_not_in: [String]
+  messageRequired: String
+  messageRequired_contains: String
+  messageRequired_exists: Boolean
+  messageRequired_in: [String]
+  messageRequired_not: String
+  messageRequired_not_contains: String
+  messageRequired_not_in: [String]
+  nameMaxLength: String
+  nameMaxLength_contains: String
+  nameMaxLength_exists: Boolean
+  nameMaxLength_in: [String]
+  nameMaxLength_not: String
+  nameMaxLength_not_contains: String
+  nameMaxLength_not_in: [String]
+  nameRequired: String
+  nameRequired_contains: String
+  nameRequired_exists: Boolean
+  nameRequired_in: [String]
+  nameRequired_not: String
+  nameRequired_not_contains: String
+  nameRequired_not_in: [String]
+  roleMaxLength: String
+  roleMaxLength_contains: String
+  roleMaxLength_exists: Boolean
+  roleMaxLength_in: [String]
+  roleMaxLength_not: String
+  roleMaxLength_not_contains: String
+  roleMaxLength_not_in: [String]
+  sys: SysFilter
+}
+
+type ValidationMessagesLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  formCollection(limit: Int = 100, locale: String, order: [ValidationMessagesLinkingCollectionsFormCollectionOrder], preview: Boolean, skip: Int = 0): FormCollection
+}
+
+enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
+  errorButtonLabel_ASC
+  errorButtonLabel_DESC
+  errorContactEmail_ASC
+  errorContactEmail_DESC
+  errorDescription_ASC
+  errorDescription_DESC
+  errorTitle_ASC
+  errorTitle_DESC
+  gdprNoticeDetails_ASC
+  gdprNoticeDetails_DESC
+  gdprNoticeIntro_ASC
+  gdprNoticeIntro_DESC
+  gdprNoticeLinkText_ASC
+  gdprNoticeLinkText_DESC
+  sendMessageLabel_ASC
+  sendMessageLabel_DESC
+  successButtonLabel_ASC
+  successButtonLabel_DESC
+  successDescription_ASC
+  successDescription_DESC
+  successTitle_ASC
+  successTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum ValidationMessagesOrder {
+  consentRequired_ASC
+  consentRequired_DESC
+  emailInvalid_ASC
+  emailInvalid_DESC
+  emailMaxLength_ASC
+  emailMaxLength_DESC
+  messageMaxLength_ASC
+  messageMaxLength_DESC
+  messageRequired_ASC
+  messageRequired_DESC
+  nameMaxLength_ASC
+  nameMaxLength_DESC
+  nameRequired_ASC
+  nameRequired_DESC
+  roleMaxLength_ASC
+  roleMaxLength_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
 interface _Node {
   _id: ID!
 }
@@ -2088,6 +2515,41 @@ input cfMetricNestedFilter {
   startYear_lte: Int
   startYear_not: Int
   startYear_not_in: [Int]
+  sys: SysFilter
+}
+
+input cfPlaceholderNestedFilter {
+  AND: [cfPlaceholderNestedFilter]
+  OR: [cfPlaceholderNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  email: String
+  email_contains: String
+  email_exists: Boolean
+  email_in: [String]
+  email_not: String
+  email_not_contains: String
+  email_not_in: [String]
+  message: String
+  message_contains: String
+  message_exists: Boolean
+  message_in: [String]
+  message_not: String
+  message_not_contains: String
+  message_not_in: [String]
+  name: String
+  name_contains: String
+  name_exists: Boolean
+  name_in: [String]
+  name_not: String
+  name_not_contains: String
+  name_not_in: [String]
+  role: String
+  role_contains: String
+  role_exists: Boolean
+  role_in: [String]
+  role_not: String
+  role_not_contains: String
+  role_not_in: [String]
   sys: SysFilter
 }
 
@@ -2152,5 +2614,68 @@ input cfTestimonialNestedFilter {
   quote_not: String
   quote_not_contains: String
   quote_not_in: [String]
+  sys: SysFilter
+}
+
+input cfValidationMessagesNestedFilter {
+  AND: [cfValidationMessagesNestedFilter]
+  OR: [cfValidationMessagesNestedFilter]
+  consentRequired: String
+  consentRequired_contains: String
+  consentRequired_exists: Boolean
+  consentRequired_in: [String]
+  consentRequired_not: String
+  consentRequired_not_contains: String
+  consentRequired_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  emailInvalid: String
+  emailInvalid_contains: String
+  emailInvalid_exists: Boolean
+  emailInvalid_in: [String]
+  emailInvalid_not: String
+  emailInvalid_not_contains: String
+  emailInvalid_not_in: [String]
+  emailMaxLength: String
+  emailMaxLength_contains: String
+  emailMaxLength_exists: Boolean
+  emailMaxLength_in: [String]
+  emailMaxLength_not: String
+  emailMaxLength_not_contains: String
+  emailMaxLength_not_in: [String]
+  messageMaxLength: String
+  messageMaxLength_contains: String
+  messageMaxLength_exists: Boolean
+  messageMaxLength_in: [String]
+  messageMaxLength_not: String
+  messageMaxLength_not_contains: String
+  messageMaxLength_not_in: [String]
+  messageRequired: String
+  messageRequired_contains: String
+  messageRequired_exists: Boolean
+  messageRequired_in: [String]
+  messageRequired_not: String
+  messageRequired_not_contains: String
+  messageRequired_not_in: [String]
+  nameMaxLength: String
+  nameMaxLength_contains: String
+  nameMaxLength_exists: Boolean
+  nameMaxLength_in: [String]
+  nameMaxLength_not: String
+  nameMaxLength_not_contains: String
+  nameMaxLength_not_in: [String]
+  nameRequired: String
+  nameRequired_contains: String
+  nameRequired_exists: Boolean
+  nameRequired_in: [String]
+  nameRequired_not: String
+  nameRequired_not_contains: String
+  nameRequired_not_in: [String]
+  roleMaxLength: String
+  roleMaxLength_contains: String
+  roleMaxLength_exists: Boolean
+  roleMaxLength_in: [String]
+  roleMaxLength_not: String
+  roleMaxLength_not_contains: String
+  roleMaxLength_not_in: [String]
   sys: SysFilter
 }

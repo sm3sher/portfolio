@@ -963,6 +963,258 @@ export enum FooterOrder {
   TitleDesc = 'title_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type Form = Entry & _Node & {
+  __typename?: 'Form';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  errorButtonLabel?: Maybe<Scalars['String']['output']>;
+  errorContactEmail?: Maybe<Scalars['String']['output']>;
+  errorDescription?: Maybe<Scalars['String']['output']>;
+  errorTitle?: Maybe<Scalars['String']['output']>;
+  gdprNoticeDetails?: Maybe<Scalars['String']['output']>;
+  gdprNoticeIntro?: Maybe<Scalars['String']['output']>;
+  gdprNoticeLinkText?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<FormLinkingCollections>;
+  placeholder?: Maybe<Placeholder>;
+  sendMessageLabel?: Maybe<Scalars['String']['output']>;
+  successButtonLabel?: Maybe<Scalars['String']['output']>;
+  successDescription?: Maybe<Scalars['String']['output']>;
+  successTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  validationMessages?: Maybe<ValidationMessages>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorButtonLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorContactEmailArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormGdprNoticeDetailsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormGdprNoticeIntroArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormGdprNoticeLinkTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormPlaceholderArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<PlaceholderFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormSendMessageLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormSuccessButtonLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormSuccessDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormSuccessTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormValidationMessagesArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<ValidationMessagesFilter>;
+};
+
+export type FormCollection = {
+  __typename?: 'FormCollection';
+  items: Array<Maybe<Form>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type FormFilter = {
+  AND?: InputMaybe<Array<InputMaybe<FormFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<FormFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  errorButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  errorButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  errorButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  errorButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorContactEmail?: InputMaybe<Scalars['String']['input']>;
+  errorContactEmail_contains?: InputMaybe<Scalars['String']['input']>;
+  errorContactEmail_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorContactEmail_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorContactEmail_not?: InputMaybe<Scalars['String']['input']>;
+  errorContactEmail_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorContactEmail_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorDescription?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorDescription_not?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorTitle?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorTitle_not?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeDetails?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeDetails_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeDetails_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  gdprNoticeDetails_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeDetails_not?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeDetails_not_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeDetails_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeIntro?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  gdprNoticeIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeIntro_not?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeLinkText?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeLinkText_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeLinkText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  gdprNoticeLinkText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  gdprNoticeLinkText_not?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeLinkText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  gdprNoticeLinkText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  placeholder?: InputMaybe<CfPlaceholderNestedFilter>;
+  placeholder_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sendMessageLabel?: InputMaybe<Scalars['String']['input']>;
+  sendMessageLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  sendMessageLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sendMessageLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sendMessageLabel_not?: InputMaybe<Scalars['String']['input']>;
+  sendMessageLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  sendMessageLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  successButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  successButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  successButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  successButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  successButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successDescription?: InputMaybe<Scalars['String']['input']>;
+  successDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  successDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  successDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successDescription_not?: InputMaybe<Scalars['String']['input']>;
+  successDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  successDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successTitle?: InputMaybe<Scalars['String']['input']>;
+  successTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  successTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  successTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successTitle_not?: InputMaybe<Scalars['String']['input']>;
+  successTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  successTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  validationMessages?: InputMaybe<CfValidationMessagesNestedFilter>;
+  validationMessages_exists?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type FormLinkingCollections = {
+  __typename?: 'FormLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type FormLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum FormOrder {
+  ErrorButtonLabelAsc = 'errorButtonLabel_ASC',
+  ErrorButtonLabelDesc = 'errorButtonLabel_DESC',
+  ErrorContactEmailAsc = 'errorContactEmail_ASC',
+  ErrorContactEmailDesc = 'errorContactEmail_DESC',
+  ErrorDescriptionAsc = 'errorDescription_ASC',
+  ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorTitleAsc = 'errorTitle_ASC',
+  ErrorTitleDesc = 'errorTitle_DESC',
+  GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
+  GdprNoticeDetailsDesc = 'gdprNoticeDetails_DESC',
+  GdprNoticeIntroAsc = 'gdprNoticeIntro_ASC',
+  GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
+  GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
+  GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
+  SendMessageLabelAsc = 'sendMessageLabel_ASC',
+  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SuccessButtonLabelAsc = 'successButtonLabel_ASC',
+  SuccessButtonLabelDesc = 'successButtonLabel_DESC',
+  SuccessDescriptionAsc = 'successDescription_ASC',
+  SuccessDescriptionDesc = 'successDescription_DESC',
+  SuccessTitleAsc = 'successTitle_ASC',
+  SuccessTitleDesc = 'successTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 /** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type Home = Entry & _Node & {
   __typename?: 'Home';
@@ -2247,6 +2499,167 @@ export enum NotFoundOrder {
   TitleDesc = 'title_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type Placeholder = Entry & _Node & {
+  __typename?: 'Placeholder';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  email?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<PlaceholderLinkingCollections>;
+  message?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  role?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type PlaceholderEmailArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type PlaceholderLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type PlaceholderMessageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type PlaceholderNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
+export type PlaceholderRoleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PlaceholderCollection = {
+  __typename?: 'PlaceholderCollection';
+  items: Array<Maybe<Placeholder>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type PlaceholderFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PlaceholderFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PlaceholderFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  email_not?: InputMaybe<Scalars['String']['input']>;
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message?: InputMaybe<Scalars['String']['input']>;
+  message_contains?: InputMaybe<Scalars['String']['input']>;
+  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message_not?: InputMaybe<Scalars['String']['input']>;
+  message_not_contains?: InputMaybe<Scalars['String']['input']>;
+  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  role_contains?: InputMaybe<Scalars['String']['input']>;
+  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role_not?: InputMaybe<Scalars['String']['input']>;
+  role_not_contains?: InputMaybe<Scalars['String']['input']>;
+  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type PlaceholderLinkingCollections = {
+  __typename?: 'PlaceholderLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  formCollection?: Maybe<FormCollection>;
+};
+
+
+export type PlaceholderLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type PlaceholderLinkingCollectionsFormCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PlaceholderLinkingCollectionsFormCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum PlaceholderLinkingCollectionsFormCollectionOrder {
+  ErrorButtonLabelAsc = 'errorButtonLabel_ASC',
+  ErrorButtonLabelDesc = 'errorButtonLabel_DESC',
+  ErrorContactEmailAsc = 'errorContactEmail_ASC',
+  ErrorContactEmailDesc = 'errorContactEmail_DESC',
+  ErrorDescriptionAsc = 'errorDescription_ASC',
+  ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorTitleAsc = 'errorTitle_ASC',
+  ErrorTitleDesc = 'errorTitle_DESC',
+  GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
+  GdprNoticeDetailsDesc = 'gdprNoticeDetails_DESC',
+  GdprNoticeIntroAsc = 'gdprNoticeIntro_ASC',
+  GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
+  GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
+  GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
+  SendMessageLabelAsc = 'sendMessageLabel_ASC',
+  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SuccessButtonLabelAsc = 'successButtonLabel_ASC',
+  SuccessButtonLabelDesc = 'successButtonLabel_DESC',
+  SuccessDescriptionAsc = 'successDescription_ASC',
+  SuccessDescriptionDesc = 'successDescription_DESC',
+  SuccessTitleAsc = 'successTitle_ASC',
+  SuccessTitleDesc = 'successTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum PlaceholderOrder {
+  EmailAsc = 'email_ASC',
+  EmailDesc = 'email_DESC',
+  MessageAsc = 'message_ASC',
+  MessageDesc = 'message_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  RoleAsc = 'role_ASC',
+  RoleDesc = 'role_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
@@ -2259,6 +2672,8 @@ export type Query = {
   entryCollection?: Maybe<EntryCollection>;
   footer?: Maybe<Footer>;
   footerCollection?: Maybe<FooterCollection>;
+  form?: Maybe<Form>;
+  formCollection?: Maybe<FormCollection>;
   home?: Maybe<Home>;
   homeCollection?: Maybe<HomeCollection>;
   legalNotice?: Maybe<LegalNotice>;
@@ -2275,6 +2690,8 @@ export type Query = {
   navbarCollection?: Maybe<NavbarCollection>;
   notFound?: Maybe<NotFound>;
   notFoundCollection?: Maybe<NotFoundCollection>;
+  placeholder?: Maybe<Placeholder>;
+  placeholderCollection?: Maybe<PlaceholderCollection>;
   service?: Maybe<Service>;
   serviceBanner?: Maybe<ServiceBanner>;
   serviceBannerCollection?: Maybe<ServiceBannerCollection>;
@@ -2285,6 +2702,8 @@ export type Query = {
   testimonialCollection?: Maybe<TestimonialCollection>;
   testimonials?: Maybe<Testimonials>;
   testimonialsCollection?: Maybe<TestimonialsCollection>;
+  validationMessages?: Maybe<ValidationMessages>;
+  validationMessagesCollection?: Maybe<ValidationMessagesCollection>;
 };
 
 
@@ -2370,6 +2789,23 @@ export type QueryFooterCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<FooterFilter>;
+};
+
+
+export type QueryFormArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryFormCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<FormOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<FormFilter>;
 };
 
 
@@ -2509,6 +2945,23 @@ export type QueryNotFoundCollectionArgs = {
 };
 
 
+export type QueryPlaceholderArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryPlaceholderCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PlaceholderOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PlaceholderFilter>;
+};
+
+
 export type QueryServiceArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -2591,6 +3044,23 @@ export type QueryTestimonialsCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<TestimonialsFilter>;
+};
+
+
+export type QueryValidationMessagesArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryValidationMessagesCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ValidationMessagesOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ValidationMessagesFilter>;
 };
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service) */
@@ -3286,6 +3756,231 @@ export enum TestimonialsQuotesCollectionOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessages = Entry & _Node & {
+  __typename?: 'ValidationMessages';
+  _id: Scalars['ID']['output'];
+  consentRequired?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  emailInvalid?: Maybe<Scalars['String']['output']>;
+  emailMaxLength?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<ValidationMessagesLinkingCollections>;
+  messageMaxLength?: Maybe<Scalars['String']['output']>;
+  messageRequired?: Maybe<Scalars['String']['output']>;
+  nameMaxLength?: Maybe<Scalars['String']['output']>;
+  nameRequired?: Maybe<Scalars['String']['output']>;
+  roleMaxLength?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesConsentRequiredArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesEmailInvalidArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesEmailMaxLengthArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesMessageMaxLengthArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesMessageRequiredArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesNameMaxLengthArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesNameRequiredArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
+export type ValidationMessagesRoleMaxLengthArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type ValidationMessagesCollection = {
+  __typename?: 'ValidationMessagesCollection';
+  items: Array<Maybe<ValidationMessages>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type ValidationMessagesFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ValidationMessagesFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ValidationMessagesFilter>>>;
+  consentRequired?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  consentRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  consentRequired_not?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  emailInvalid?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_contains?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailInvalid_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailInvalid_not?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailMaxLength?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageMaxLength?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  messageMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageRequired?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  messageRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageRequired_not?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameMaxLength?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  nameMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameRequired?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  nameRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameRequired_not?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  roleMaxLength?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  roleMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  roleMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type ValidationMessagesLinkingCollections = {
+  __typename?: 'ValidationMessagesLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  formCollection?: Maybe<FormCollection>;
+};
+
+
+export type ValidationMessagesLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type ValidationMessagesLinkingCollectionsFormCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<ValidationMessagesLinkingCollectionsFormCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
+  ErrorButtonLabelAsc = 'errorButtonLabel_ASC',
+  ErrorButtonLabelDesc = 'errorButtonLabel_DESC',
+  ErrorContactEmailAsc = 'errorContactEmail_ASC',
+  ErrorContactEmailDesc = 'errorContactEmail_DESC',
+  ErrorDescriptionAsc = 'errorDescription_ASC',
+  ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorTitleAsc = 'errorTitle_ASC',
+  ErrorTitleDesc = 'errorTitle_DESC',
+  GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
+  GdprNoticeDetailsDesc = 'gdprNoticeDetails_DESC',
+  GdprNoticeIntroAsc = 'gdprNoticeIntro_ASC',
+  GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
+  GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
+  GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
+  SendMessageLabelAsc = 'sendMessageLabel_ASC',
+  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SuccessButtonLabelAsc = 'successButtonLabel_ASC',
+  SuccessButtonLabelDesc = 'successButtonLabel_DESC',
+  SuccessDescriptionAsc = 'successDescription_ASC',
+  SuccessDescriptionDesc = 'successDescription_DESC',
+  SuccessTitleAsc = 'successTitle_ASC',
+  SuccessTitleDesc = 'successTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum ValidationMessagesOrder {
+  ConsentRequiredAsc = 'consentRequired_ASC',
+  ConsentRequiredDesc = 'consentRequired_DESC',
+  EmailInvalidAsc = 'emailInvalid_ASC',
+  EmailInvalidDesc = 'emailInvalid_DESC',
+  EmailMaxLengthAsc = 'emailMaxLength_ASC',
+  EmailMaxLengthDesc = 'emailMaxLength_DESC',
+  MessageMaxLengthAsc = 'messageMaxLength_ASC',
+  MessageMaxLengthDesc = 'messageMaxLength_DESC',
+  MessageRequiredAsc = 'messageRequired_ASC',
+  MessageRequiredDesc = 'messageRequired_DESC',
+  NameMaxLengthAsc = 'nameMaxLength_ASC',
+  NameMaxLengthDesc = 'nameMaxLength_DESC',
+  NameRequiredAsc = 'nameRequired_ASC',
+  NameRequiredDesc = 'nameRequired_DESC',
+  RoleMaxLengthAsc = 'roleMaxLength_ASC',
+  RoleMaxLengthDesc = 'roleMaxLength_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
 export type _Node = {
   _id: Scalars['ID']['output'];
 };
@@ -3317,6 +4012,41 @@ export type CfMetricNestedFilter = {
   startYear_lte?: InputMaybe<Scalars['Int']['input']>;
   startYear_not?: InputMaybe<Scalars['Int']['input']>;
   startYear_not_in?: InputMaybe<Array<InputMaybe<Scalars['Int']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type CfPlaceholderNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfPlaceholderNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfPlaceholderNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  email_not?: InputMaybe<Scalars['String']['input']>;
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message?: InputMaybe<Scalars['String']['input']>;
+  message_contains?: InputMaybe<Scalars['String']['input']>;
+  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message_not?: InputMaybe<Scalars['String']['input']>;
+  message_not_contains?: InputMaybe<Scalars['String']['input']>;
+  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  role_contains?: InputMaybe<Scalars['String']['input']>;
+  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role_not?: InputMaybe<Scalars['String']['input']>;
+  role_not_contains?: InputMaybe<Scalars['String']['input']>;
+  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
 };
 
@@ -3384,6 +4114,69 @@ export type CfTestimonialNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type CfValidationMessagesNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfValidationMessagesNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfValidationMessagesNestedFilter>>>;
+  consentRequired?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  consentRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  consentRequired_not?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  consentRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  emailInvalid?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_contains?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailInvalid_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailInvalid_not?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailInvalid_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailMaxLength?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageMaxLength?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  messageMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  messageMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageRequired?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  messageRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  messageRequired_not?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  messageRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameMaxLength?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  nameMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  nameMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameRequired?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_contains?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  nameRequired_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  nameRequired_not?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_not_contains?: InputMaybe<Scalars['String']['input']>;
+  nameRequired_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  roleMaxLength?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_contains?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  roleMaxLength_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  roleMaxLength_not?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_not_contains?: InputMaybe<Scalars['String']['input']>;
+  roleMaxLength_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type AboutContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -3396,7 +4189,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorButtonLabel?: string | null, successTitle?: string | null, successButtonLabel?: string | null, successDescription?: string | null, placeholder?: { __typename?: 'Placeholder', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -3515,6 +4308,36 @@ export const ContactContentDocument = gql`
       }
       avatarTitle
       avatarDescription
+    }
+  }
+  formCollection(limit: 1, locale: $locale) {
+    items {
+      placeholder {
+        name
+        email
+        role
+        message
+      }
+      validationMessages {
+        nameRequired
+        nameMaxLength
+        emailInvalid
+        emailMaxLength
+        roleMaxLength
+        messageRequired
+        messageMaxLength
+        consentRequired
+      }
+      gdprNoticeIntro
+      gdprNoticeLinkText
+      gdprNoticeDetails
+      sendMessageLabel
+      errorTitle
+      errorDescription
+      errorButtonLabel
+      successTitle
+      successButtonLabel
+      successDescription
     }
   }
   testimonialsCollection(limit: 1, locale: $locale) {

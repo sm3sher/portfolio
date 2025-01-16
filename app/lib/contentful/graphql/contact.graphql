@@ -15,6 +15,36 @@ query contactContent($locale: String) {
             avatarDescription
         }
     }
+    formCollection(limit: 1, locale: $locale) {
+        items {
+            placeholder {
+                name
+                email
+                role
+                message
+            }
+            validationMessages {
+                nameRequired
+                nameMaxLength
+                emailInvalid
+                emailMaxLength
+                roleMaxLength
+                messageRequired
+                messageMaxLength
+                consentRequired
+            }
+            gdprNoticeIntro
+            gdprNoticeLinkText
+            gdprNoticeDetails
+            sendMessageLabel
+            errorTitle
+            errorDescription
+            errorButtonLabel
+            successTitle
+            successButtonLabel
+            successDescription
+        }
+    }
     testimonialsCollection(limit: 1, locale: $locale) {
         items {
             title

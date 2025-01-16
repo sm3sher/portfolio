@@ -3,7 +3,7 @@ import ContactForm from '@/app/ui/form/contact-form';
 import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
-import { Testimonials } from '@/app/lib/contentful/generated/sdk';
+import { Form, Testimonials } from '@/app/lib/contentful/generated/sdk';
 import Image from 'next/image';
 
 type Props = {
@@ -51,7 +51,7 @@ export default async function Contact({ locale }: Props) {
               )}
           </ViewAnimation>
           <ViewAnimation className="w-full md:w-1/2" delay={0.4}>
-            <ContactForm />
+            <ContactForm content={query.formCollection?.items[0] as Form} />
           </ViewAnimation>
         </div>
         <ViewAnimation className="pt-32" delay={0.6} axis="x">

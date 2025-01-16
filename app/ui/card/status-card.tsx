@@ -4,9 +4,9 @@ import { MouseEventHandler, ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   icon: ReactNode;
-  title: string;
+  title?: string | null;
   button: {
-    label: string;
+    label?: string | null;
     onClick: MouseEventHandler<HTMLButtonElement>;
   };
 };

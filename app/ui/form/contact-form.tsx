@@ -16,8 +16,13 @@ import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
 import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
+import { Form } from '@/app/lib/contentful/generated/sdk';
 
-export default function ContactForm() {
+type Props = {
+  content?: Form;
+};
+
+export default function ContactForm({ content }: Props) {
   const [pending, startTransaction] = useTransition();
   const [submitted, setSubmitted] = useState(false);
   const [state, formAction] = useActionState<SaveMessageStatus, FormData>(
@@ -81,42 +86,51 @@ export default function ContactForm() {
           <FormInput
             register={register}
             name="name"
-            placeholder="Name"
+            placeholder={content?.placeholder?.name || ''}
             defaultValue={state?.rawData?.name}
             errors={errors}
+            validationMessages={content?.validationMessages}
           />
           <FormInput
             register={register}
             name="email"
-            placeholder="Email address"
+            placeholder={content?.placeholder?.email || ''}
             defaultValue={state?.rawData?.email}
             errors={errors}
+            validationMessages={content?.validationMessages}
           />
           <FormInput
             register={register}
             name="role"
-            placeholder="Job title, company name (optional)"
+            placeholder={content?.placeholder?.role || ''}
             defaultValue={state?.rawData?.role}
             errors={errors}
+            validationMessages={content?.validationMessages}
           />
           <FormInput
             register={register}
             name="message"
-            placeholder="Message"
+            placeholder={content?.placeholder?.message || ''}
             defaultValue={state?.rawData?.message}
             errors={errors}
+            validationMessages={content?.validationMessages}
             elementType="textarea"
-            rows={5}
           />
           <FormGdprCheckbox
+            content={{
+              intro: content?.gdprNoticeIntro,
+              linkText: content?.gdprNoticeLinkText,
+              details: content?.gdprNoticeDetails,
+            }}
             register={register}
             name="consent"
             defaultChecked={state?.rawData?.consent}
             errors={errors}
+            validationMessages={content?.validationMessages}
           />
           <SubmitButton>
             <span className="transition-transform duration-300 group-hover:translate-x-4">
-              Send Message
+              {content?.sendMessageLabel}
             </span>
             <SentIcon className="ml-2 rotate-45 transition-transform duration-1000 group-hover:translate-x-60" />
           </SubmitButton>
@@ -129,18 +143,16 @@ export default function ContactForm() {
       >
         <StatusCard
           icon={<CancelCircleIcon size={52} />}
-          title="Something went wrong."
-          button={{ label: 'Try Again', onClick: handleRetry }}
+          title={content?.errorTitle}
+          button={{ label: content?.errorButtonLabel, onClick: handleRetry }}
         >
           <p className="text-center">
-            It seems there was an issue processing your message. Please try
-            again using the button below. If the problem persists, feel free to
-            reach out to me directly at{' '}
+            {content?.errorDescription}{' '}
             <a
-              href="mailto:roman@jumatov.com"
+              href={`mailto:${content?.errorContactEmail}`}
               className="text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              roman@jumatov.com
+              {content?.errorContactEmail}
             </a>
             .
           </p>
@@ -159,16 +171,13 @@ export default function ContactForm() {
       >
         <StatusCard
           icon={<CheckmarkCircle01Icon size={52} />}
-          title="Message Sent!"
+          title={content?.successTitle}
           button={{
-            label: 'Send Another Message',
+            label: content?.successButtonLabel,
             onClick: () => setSubmitted(false),
           }}
         >
-          <p className="text-center">
-            Thank you for reaching out. I’ll respond within 24 hours to discuss
-            the next steps.
-          </p>
+          <p className="text-center">{content?.successDescription}</p>
         </StatusCard>
       </PresenceAnimation>
     </div>

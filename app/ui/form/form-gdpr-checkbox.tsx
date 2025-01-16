@@ -6,21 +6,37 @@ import {
 } from 'react-hook-form';
 import { Link } from '@/i18n/routing';
 import { Tick02Icon } from 'hugeicons-react';
+import { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
+import { ValidationMessageKey } from '@/app/lib/schemas';
 
 type Props<T extends FieldValues> = {
+  content: {
+    intro?: string | null;
+    linkText?: string | null;
+    details?: string | null;
+  };
   register: UseFormRegister<T>;
   name: Path<T>;
   defaultChecked?: boolean;
   errors: FieldErrors<T>;
+  validationMessages?: ValidationMessages | null;
 };
 
 export default function FormGdprCheckbox<T extends FieldValues>({
+  content,
   register,
   name,
   defaultChecked,
   errors,
+  validationMessages,
 }: Props<T>) {
-  const errorMessage = errors[name]?.message && String(errors[name]?.message);
+  const errorMessage = errors[name]?.message
+    ? (String(errors[name]?.message) as ValidationMessageKey)
+    : undefined;
+  const message =
+    errorMessage && validationMessages
+      ? validationMessages[errorMessage]
+      : errorMessage;
 
   return (
     <div>
@@ -49,15 +65,14 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           htmlFor="check-with-link"
         >
           <p className="text-sm">
-            I have taken note of the{' '}
+            {content.intro}{' '}
             <Link
               href="/privacy-policy"
               className="font-medium underline hover:text-[--primary]"
             >
-              information regarding data processing
+              {content.linkText}
             </Link>
-            . My provided data will be stored for the purpose of creating and
-            processing my request.
+            {content.details}
           </p>
         </label>
       </div>
@@ -66,7 +81,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
         aria-live="polite"
         className={`ml-7 text-sm text-[--error-color] opacity-0 transition-all duration-500 ${errorMessage ? 'h-4 opacity-100' : 'h-0'}`}
       >
-        {errorMessage}
+        {message}
       </p>
     </div>
   );
