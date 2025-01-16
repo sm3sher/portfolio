@@ -10,24 +10,24 @@ type Props = {
 };
 
 export default async function About({ locale }: Props) {
-  const aboutContentQuery = await contentfulClient.aboutContent({ locale });
-  const about = aboutContentQuery.aboutCollection?.items[0];
+  const query = await contentfulClient.aboutContent({ locale });
+  const content = query.aboutCollection?.items[0];
 
   return (
     <div className="mx-auto max-w-screen-xl px-6 py-24 md:py-48">
       <div className="flex flex-col gap-8 md:flex-row md:gap-0">
-        {about?.image &&
-          about.image.url &&
-          about.image.width &&
-          about.image.height &&
-          about.image.description && (
+        {content?.image &&
+          content.image.url &&
+          content.image.width &&
+          content.image.height &&
+          content.image.description && (
             <ViewAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
               <Image
                 className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
-                src={about.image.url}
-                width={about.image.width}
-                height={about.image.height}
-                alt={about.image.description}
+                src={content.image.url}
+                width={content.image.width}
+                height={content.image.height}
+                alt={content.image.description}
               />
             </ViewAnimation>
           )}
@@ -37,17 +37,17 @@ export default async function About({ locale }: Props) {
         >
           <div className="space-y-7">
             <h6 className="uppercase tracking-wider text-[--highlight]">
-              {about?.title}
+              {content?.title}
             </h6>
             <h4>
-              {about?.ageStatementPrefix} {calculateAge(about?.age)}
-              {about?.ageStatementSuffix}{' '}
-              <span className="font-light">{about?.professionalTitle}</span>{' '}
-              {about?.locationStatement}
+              {content?.ageStatementPrefix} {calculateAge(content?.age)}
+              {content?.ageStatementSuffix}{' '}
+              <span className="font-light">{content?.professionalTitle}</span>{' '}
+              {content?.locationStatement}
             </h4>
-            <p>{about?.description}</p>
+            <p>{content?.description}</p>
             <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
-              {about?.experienceMetricsCollection?.items
+              {content?.experienceMetricsCollection?.items
                 .filter((item) => item !== null)
                 .map((item, index) => (
                   <ExperienceCounter

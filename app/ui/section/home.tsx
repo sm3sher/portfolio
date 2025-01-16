@@ -10,17 +10,17 @@ type Props = {
 };
 
 export default async function Home({ locale }: Props) {
-  const homeContentQuery = await contentfulClient.homeContent({ locale });
-  const home = homeContentQuery.homeCollection?.items[0];
+  const query = await contentfulClient.homeContent({ locale });
+  const content = query.homeCollection?.items[0];
 
   return (
     <div className="relative pt-48">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--radial-color)_0%,transparent_50%)] opacity-30 dark:opacity-50" />
-      {home?.image &&
-        home.image.url &&
-        home.image.width &&
-        home.image.height &&
-        home.image.description && (
+      {content?.image &&
+        content.image.url &&
+        content.image.width &&
+        content.image.height &&
+        content.image.description && (
           <ViewAnimation
             className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-screen-xl"
             axis="x"
@@ -28,10 +28,10 @@ export default async function Home({ locale }: Props) {
           >
             <Image
               className="absolute -right-32 bottom-0 max-h-[90%] w-auto object-contain brightness-110 drop-shadow-[0_0_10px_rgba(0,0,0,0.5)] hover:scale-105 sm:-right-20 md:-right-12 lg:right-0 dark:brightness-95 dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.4)]"
-              src={home.image.url}
-              width={home.image.width}
-              height={home.image.height}
-              alt={home.image.description}
+              src={content.image.url}
+              width={content.image.width}
+              height={content.image.height}
+              alt={content.image.description}
               priority
             />
           </ViewAnimation>
@@ -46,22 +46,22 @@ export default async function Home({ locale }: Props) {
                 height={30}
                 alt="Waving Hand"
               />
-              <span>{home?.greeting}</span>
+              <span>{content?.greeting}</span>
             </div>
           </h6>
           <h1 className="mb-3">
-            {home?.introHeadingMain}{' '}
+            {content?.introHeadingMain}{' '}
             <span className="text-[--highlight]">
-              {home?.introHeadingHighlight}
+              {content?.introHeadingHighlight}
             </span>
           </h1>
-          <h3>{home?.introSubheading}</h3>
+          <h3>{content?.introSubheading}</h3>
           <p className="mt-6 text-[--secondary] mix-blend-multiply lg:w-5/12 dark:mix-blend-normal">
-            {home?.introDescription}
+            {content?.introDescription}
           </p>
           <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
             <Link href="#contact" tabIndex={-1}>
-              <Button>{home?.ctaButtonLabel}</Button>
+              <Button>{content?.ctaButtonLabel}</Button>
             </Link>
             <Link href="#about" className="rounded-full bg-[--highlight] p-2">
               <ArrowDown01Icon

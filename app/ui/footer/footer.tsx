@@ -10,8 +10,8 @@ type Props = {
 };
 
 export default async function Footer({ locale }: Props) {
-  const footerContentQuery = await contentfulClient.footerContent({ locale });
-  const content = footerContentQuery.footerCollection?.items[0];
+  const query = await contentfulClient.footerContent({ locale });
+  const content = query.footerCollection?.items[0];
   const year = new Date().getFullYear();
 
   return (

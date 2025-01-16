@@ -8,10 +8,8 @@ type Props = {
 };
 
 export default async function NotFoundContent({ locale }: Props) {
-  const notFoundContentQuery = await contentfulClient.notFoundContent({
-    locale,
-  });
-  const content = notFoundContentQuery.notFoundCollection?.items[0];
+  const query = await contentfulClient.notFoundContent({ locale });
+  const content = query.notFoundCollection?.items[0];
 
   return (
     <>

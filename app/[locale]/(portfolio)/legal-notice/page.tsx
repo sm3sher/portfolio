@@ -8,10 +8,8 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const metadataContentQuery = await contentfulClient.metadataLegalContent({
-    locale,
-  });
-  const metadata = metadataContentQuery.metaDataLegalCollection?.items[0];
+  const query = await contentfulClient.metadataLegalContent({ locale });
+  const metadata = query.metaDataLegalCollection?.items[0];
   return {
     title: metadata?.title,
     description: metadata?.description,
@@ -21,10 +19,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const { locale } = await params;
 
-  const metadataContentQuery = await contentfulClient.legalNoticeContent({
-    locale,
-  });
-  const content = metadataContentQuery.legalNoticeCollection?.items[0];
+  const query = await contentfulClient.legalNoticeContent({ locale });
+  const content = query.legalNoticeCollection?.items[0];
 
   return (
     <div className="mx-auto max-w-screen-xl px-6 py-24 md:py-32">

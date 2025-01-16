@@ -9,22 +9,22 @@ type Props = {
 };
 
 export default async function Navbar({ locale }: Props) {
-  const navbarContentQuery = await contentfulClient.navbarContent({ locale });
-  const navbar = navbarContentQuery.navbarCollection?.items[0];
+  const query = await contentfulClient.navbarContent({ locale });
+  const content = query.navbarCollection?.items[0];
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-10 mx-auto mt-6 flex w-full max-w-screen-xl items-center justify-between px-4">
       <LanguageDropdown
-        usFlagDescription={navbar?.usFlagDescription}
-        deFlagDescription={navbar?.deFlagDescription}
+        usFlagDescription={content?.usFlagDescription}
+        deFlagDescription={content?.deFlagDescription}
       />
       <NavMenu
-        homeLabel={navbar?.homeLabel}
-        aboutLabel={navbar?.aboutLabel}
-        servicesLabel={navbar?.servicesLabel}
-        contactLabel={navbar?.contactLabel}
+        homeLabel={content?.homeLabel}
+        aboutLabel={content?.aboutLabel}
+        servicesLabel={content?.servicesLabel}
+        contactLabel={content?.contactLabel}
       />
-      <ThemeToggle switchThemeLabel={navbar?.switchThemeLabel} />
+      <ThemeToggle switchThemeLabel={content?.switchThemeLabel} />
     </nav>
   );
 }

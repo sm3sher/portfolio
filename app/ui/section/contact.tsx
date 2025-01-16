@@ -11,8 +11,8 @@ type Props = {
 };
 
 export default async function Contact({ locale }: Props) {
-  const contactContentQuery = await contentfulClient.contactContent({ locale });
-  const contact = contactContentQuery.contactCollection?.items[0];
+  const query = await contentfulClient.contactContent({ locale });
+  const content = query.contactCollection?.items[0];
 
   return (
     <div className="relative py-24 md:py-32">
@@ -21,30 +21,30 @@ export default async function Contact({ locale }: Props) {
         <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
           <ViewAnimation className="space-y-7 md:w-1/2">
             <h6 className="uppercase tracking-wider text-[--highlight]">
-              {contact?.title}
+              {content?.title}
             </h6>
             <h3 className="uppercase">
-              {contact?.subTitleMain}{' '}
-              <span className="font-light">{contact?.subTitleHighlight}</span>
+              {content?.subTitleMain}{' '}
+              <span className="font-light">{content?.subTitleHighlight}</span>
             </h3>
-            <p>{contact?.description}</p>
-            {contact?.avatarImage &&
-              contact.avatarImage.url &&
-              contact.avatarImage.width &&
-              contact.avatarImage.height &&
-              contact.avatarImage.description && (
+            <p>{content?.description}</p>
+            {content?.avatarImage &&
+              content.avatarImage.url &&
+              content.avatarImage.width &&
+              content.avatarImage.height &&
+              content.avatarImage.description && (
                 <div className="flex items-center gap-6 py-2">
                   <Image
                     className="h-24 w-24 rounded-full object-cover brightness-110 drop-shadow-lg dark:brightness-100"
-                    src={contact.avatarImage.url}
-                    width={contact.avatarImage.width}
-                    height={contact.avatarImage.height}
-                    alt={contact.avatarImage.description}
+                    src={content.avatarImage.url}
+                    width={content.avatarImage.width}
+                    height={content.avatarImage.height}
+                    alt={content.avatarImage.description}
                   />
                   <div className="space-y-1">
-                    <p className="text-lg font-bold">{contact?.avatarTitle}</p>
+                    <p className="text-lg font-bold">{content?.avatarTitle}</p>
                     <p className="text-sm text-[--secondary]">
-                      {contact?.avatarDescription}
+                      {content?.avatarDescription}
                     </p>
                   </div>
                 </div>
@@ -56,10 +56,7 @@ export default async function Contact({ locale }: Props) {
         </div>
         <ViewAnimation className="pt-32" delay={0.6} axis="x">
           <TestimonialSlider
-            content={
-              contactContentQuery.testimonialsCollection
-                ?.items[0] as Testimonials
-            }
+            content={query.testimonialsCollection?.items[0] as Testimonials}
           />
         </ViewAnimation>
       </div>
