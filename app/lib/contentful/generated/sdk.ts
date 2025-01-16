@@ -386,6 +386,7 @@ export type AssetFilter = {
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   aboutCollection?: Maybe<AboutCollection>;
+  contactCollection?: Maybe<ContactCollection>;
   entryCollection?: Maybe<EntryCollection>;
   homeCollection?: Maybe<HomeCollection>;
   testimonialCollection?: Maybe<TestimonialCollection>;
@@ -393,6 +394,14 @@ export type AssetLinkingCollections = {
 
 
 export type AssetLinkingCollectionsAboutCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsContactCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -450,6 +459,9 @@ export enum AssetOrder {
 export type Contact = Entry & _Node & {
   __typename?: 'Contact';
   _id: Scalars['ID']['output'];
+  avatarDescription?: Maybe<Scalars['String']['output']>;
+  avatarImage?: Maybe<Asset>;
+  avatarTitle?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<ContactLinkingCollections>;
@@ -457,6 +469,25 @@ export type Contact = Entry & _Node & {
   subTitleMain?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactAvatarDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactAvatarImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/contact) */
+export type ContactAvatarTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -500,6 +531,21 @@ export type ContactCollection = {
 export type ContactFilter = {
   AND?: InputMaybe<Array<InputMaybe<ContactFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<ContactFilter>>>;
+  avatarDescription?: InputMaybe<Scalars['String']['input']>;
+  avatarDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  avatarDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  avatarDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  avatarDescription_not?: InputMaybe<Scalars['String']['input']>;
+  avatarDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  avatarDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  avatarImage_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  avatarTitle?: InputMaybe<Scalars['String']['input']>;
+  avatarTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  avatarTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  avatarTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  avatarTitle_not?: InputMaybe<Scalars['String']['input']>;
+  avatarTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  avatarTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   description?: InputMaybe<Scalars['String']['input']>;
   description_contains?: InputMaybe<Scalars['String']['input']>;
@@ -546,6 +592,10 @@ export type ContactLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum ContactOrder {
+  AvatarDescriptionAsc = 'avatarDescription_ASC',
+  AvatarDescriptionDesc = 'avatarDescription_DESC',
+  AvatarTitleAsc = 'avatarTitle_ASC',
+  AvatarTitleDesc = 'avatarTitle_DESC',
   SubTitleHighlightAsc = 'subTitleHighlight_ASC',
   SubTitleHighlightDesc = 'subTitleHighlight_DESC',
   SubTitleMainAsc = 'subTitleMain_ASC',
@@ -3346,7 +3396,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -3457,6 +3507,14 @@ export const ContactContentDocument = gql`
       subTitleMain
       subTitleHighlight
       description
+      avatarImage {
+        url
+        width
+        height
+        description
+      }
+      avatarTitle
+      avatarDescription
     }
   }
   testimonialsCollection(limit: 1, locale: $locale) {

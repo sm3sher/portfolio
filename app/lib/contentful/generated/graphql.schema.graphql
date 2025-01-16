@@ -231,6 +231,7 @@ input AssetFilter {
 
 type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
+  contactCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ContactCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
   testimonialCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TestimonialCollection
@@ -264,6 +265,9 @@ enum AssetOrder {
 """
 type Contact implements Entry & _Node {
   _id: ID!
+  avatarDescription(locale: String): String
+  avatarImage(locale: String, preview: Boolean): Asset
+  avatarTitle(locale: String): String
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
   linkedFrom(allowedLocales: [String]): ContactLinkingCollections
@@ -283,6 +287,21 @@ type ContactCollection {
 input ContactFilter {
   AND: [ContactFilter]
   OR: [ContactFilter]
+  avatarDescription: String
+  avatarDescription_contains: String
+  avatarDescription_exists: Boolean
+  avatarDescription_in: [String]
+  avatarDescription_not: String
+  avatarDescription_not_contains: String
+  avatarDescription_not_in: [String]
+  avatarImage_exists: Boolean
+  avatarTitle: String
+  avatarTitle_contains: String
+  avatarTitle_exists: Boolean
+  avatarTitle_in: [String]
+  avatarTitle_not: String
+  avatarTitle_not_contains: String
+  avatarTitle_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
   description: String
   description_contains: String
@@ -320,6 +339,10 @@ type ContactLinkingCollections {
 }
 
 enum ContactOrder {
+  avatarDescription_ASC
+  avatarDescription_DESC
+  avatarTitle_ASC
+  avatarTitle_DESC
   subTitleHighlight_ASC
   subTitleHighlight_DESC
   subTitleMain_ASC

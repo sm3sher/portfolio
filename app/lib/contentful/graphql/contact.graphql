@@ -5,6 +5,14 @@ query contactContent($locale: String) {
             subTitleMain
             subTitleHighlight
             description
+            avatarImage {
+                url
+                width
+                height
+                description
+            }
+            avatarTitle
+            avatarDescription
         }
     }
     testimonialsCollection(limit: 1, locale: $locale) {

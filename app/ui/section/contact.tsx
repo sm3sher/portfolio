@@ -4,6 +4,7 @@ import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import { Testimonials } from '@/app/lib/contentful/generated/sdk';
+import Image from 'next/image';
 
 type Props = {
   locale: Locale;
@@ -17,8 +18,8 @@ export default async function Contact({ locale }: Props) {
     <div className="relative py-24 md:py-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,var(--radial-color)_0%,transparent_50%)] opacity-30 dark:opacity-50" />
       <div className="mx-auto max-w-screen-xl px-6">
-        <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
-          <ViewAnimation className="space-y-7 md:mb-16 md:w-1/2">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
+          <ViewAnimation className="space-y-7 md:w-1/2">
             <h6 className="uppercase tracking-wider text-[--highlight]">
               {contact?.title}
             </h6>
@@ -27,6 +28,27 @@ export default async function Contact({ locale }: Props) {
               <span className="font-light">{contact?.subTitleHighlight}</span>
             </h3>
             <p>{contact?.description}</p>
+            {contact?.avatarImage &&
+              contact.avatarImage.url &&
+              contact.avatarImage.width &&
+              contact.avatarImage.height &&
+              contact.avatarImage.description && (
+                <div className="flex items-center gap-6 py-2">
+                  <Image
+                    className="h-24 w-24 rounded-full object-cover brightness-110 drop-shadow-lg dark:brightness-100"
+                    src={contact.avatarImage.url}
+                    width={contact.avatarImage.width}
+                    height={contact.avatarImage.height}
+                    alt={contact.avatarImage.description}
+                  />
+                  <div className="space-y-1">
+                    <p className="text-lg font-bold">{contact?.avatarTitle}</p>
+                    <p className="text-sm text-[--secondary]">
+                      {contact?.avatarDescription}
+                    </p>
+                  </div>
+                </div>
+              )}
           </ViewAnimation>
           <ViewAnimation className="w-full md:w-1/2" delay={0.4}>
             <ContactForm />
