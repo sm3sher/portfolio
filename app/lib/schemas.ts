@@ -17,10 +17,8 @@ export const contactFormSchema = z.object({
     .string()
     .min(1, 'Please enter your message')
     .max(1000, 'Message cannot exceed 1000 characters'),
-  consent: z.literal(true, {
-    errorMap: () => ({
-      message: 'You must agree to proceed',
-    }),
+  consent: z.boolean().refine((val) => val, {
+    message: 'You must agree to proceed',
   }),
 });
 
