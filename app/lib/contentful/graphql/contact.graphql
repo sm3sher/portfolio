@@ -39,10 +39,11 @@ query contactContent($locale: String) {
             sendMessageLabel
             errorTitle
             errorDescription
+            errorContactEmail
             errorButtonLabel
             successTitle
-            successButtonLabel
             successDescription
+            successButtonLabel
         }
     }
     testimonialsCollection(limit: 1, locale: $locale) {
