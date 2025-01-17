@@ -1,75 +1,115 @@
-import { afterEach, beforeEach, describe, expect, it, Mock, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent, { UserEvent } from '@testing-library/user-event';
-import { saveMessage } from '@/app/lib/actions';
-import ContactForm from '@/app/ui/form/contact-form';
+import { ContactFormData, ValidationMessages } from '@/app/lib/schemas';
+import supabaseClient from '@/app/lib/supabase/client';
 import { NextIntlClientProvider } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import ContactForm from '@/app/ui/form/contact-form';
+import { Form } from '@/app/lib/contentful/generated/sdk';
 
-vi.mock(import('@/app/lib/actions'));
+vi.mock('@/app/lib/supabase/client', () => {
+  const mockInsert = vi.fn(() => Promise.resolve({ error: null }));
+  return {
+    default: vi.fn(() => ({
+      from: vi.fn(() => ({
+        insert: mockInsert,
+      })),
+    })),
+  };
+});
+
+const content = {
+  placeholder: {
+    name: 'Name',
+    email: 'Email',
+    role: 'Job title, company name (optional)',
+    message: 'Message',
+  },
+};
 
 describe('ContactForm', () => {
   let user: UserEvent;
-  const saveMessageMock = (saveMessage as Mock).mockImplementation(vi.fn());
 
   beforeEach(() => {
     user = userEvent.setup();
+    render(
+      <NextIntlClientProvider locale={routing.defaultLocale}>
+        <ContactForm content={content as Form} />
+      </NextIntlClientProvider>,
+    );
   });
 
   afterEach(() => {
     cleanup();
+    vi.clearAllMocks();
   });
 
-  it.skip('shows validation errors when fields are empty', async () => {
-    render(
-      <NextIntlClientProvider locale="en">
-        <ContactForm />
-      </NextIntlClientProvider>,
-    );
+  it('shows validation errors when fields are empty', async () => {
+    await user.click(screen.getByRole('button'));
 
-    await user.click(screen.getByText('Send Message'));
-
-    expect(screen.getByText('Please enter your name')).toBeInTheDocument();
-    expect(
-      screen.getByText('The email provided is invalid'),
-    ).toBeInTheDocument();
-    expect(screen.getByText('Please enter your message')).toBeInTheDocument();
-    expect(screen.getByText('You must agree to proceed')).toBeInTheDocument();
+    screen.getByText(ValidationMessages.nameRequired);
+    screen.getByText(ValidationMessages.emailInvalid);
+    screen.getByText(ValidationMessages.messageRequired);
+    screen.getByText(ValidationMessages.consentRequired);
   });
 
-  it.skip('displays error messages when invalid data is entered', async () => {
-    render(
-      <NextIntlClientProvider locale="en">
-        <ContactForm />
-      </NextIntlClientProvider>,
-    );
+  it('displays error messages when too much data is entered', async () => {
+    const formData = {
+      name: 'a'.repeat(101),
+      email: 'a'.repeat(92).concat('@test.com'),
+      role: 'A'.repeat(151),
+      message: 'A'.repeat(1001),
+      consent: false,
+    };
 
+    await fillForm(formData);
+
+    screen.getByText(ValidationMessages.nameMaxLength);
+    screen.getByText(ValidationMessages.emailMaxLength);
+    screen.getByText(ValidationMessages.roleMaxLength);
+    screen.getByText(ValidationMessages.messageMaxLength);
+  });
+
+  it('calls supabase client insert with form data when valid', async () => {
+    const formData = {
+      name: 'Roman Jumatov',
+      email: 'roman@jumatov.com',
+      role: 'Freelance Software Developer',
+      message: 'Hey there, I have something in mind.',
+      consent: true,
+    };
+
+    await fillForm(formData);
+
+    await user.click(screen.getByRole('button'));
+
+    const mockClient = supabaseClient();
+    const mockInsert = mockClient.from('contacts').insert;
+    expect(mockInsert).toHaveBeenCalledWith(formData);
+  });
+
+  const fillForm = async (formData: ContactFormData) => {
     await user.type(
-      screen.getByPlaceholderText('Email address'),
-      'invalid-email',
+      screen.getByRole('textbox', { name: content.placeholder.name }),
+      formData.name,
     );
-    await user.tab();
-
-    expect(
-      screen.getByText('The email provided is invalid'),
-    ).toBeInTheDocument();
-  });
-
-  it.skip('calls sendMessage with form data when valid', async () => {
-    render(
-      <NextIntlClientProvider locale="en">
-        <ContactForm />
-      </NextIntlClientProvider>,
-    );
-
-    await user.type(screen.getByPlaceholderText('Name'), 'John Doe');
     await user.type(
-      screen.getByPlaceholderText('Email address'),
-      'john@example.com',
+      screen.getByRole('textbox', { name: content.placeholder.email }),
+      formData.email,
     );
-    await user.type(screen.getByPlaceholderText('Message'), 'Hello there!');
-    await user.click(screen.getByLabelText(/I have taken note/i));
-    await user.click(screen.getByText('Send Message'));
-
-    expect(saveMessageMock).toHaveBeenCalledOnce();
-  });
+    if (formData.role) {
+      await user.type(
+        screen.getByRole('textbox', { name: content.placeholder.role }),
+        formData.role,
+      );
+    }
+    await user.type(
+      screen.getByRole('textbox', { name: content.placeholder.message }),
+      formData.message,
+    );
+    if (formData.consent) {
+      await user.click(screen.getByRole('checkbox'));
+    }
+  };
 });

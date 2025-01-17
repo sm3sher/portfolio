@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-enum ValidationMessages {
+export enum ValidationMessages {
   nameRequired = 'nameRequired',
   nameMaxLength = 'nameMaxLength',
   emailInvalid = 'emailInvalid',
