@@ -8,6 +8,7 @@ type Props = {
   button: {
     label?: string | null;
     onClick: MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
   };
 };
 
@@ -20,7 +21,9 @@ export default function StatusCard({ children, icon, title, button }: Props) {
       </div>
       {children}
       <div className="mt-4 flex justify-center">
-        <Button onClick={button.onClick}>{button.label}</Button>
+        <Button onClick={button.onClick} disabled={button.disabled}>
+          {button.label}
+        </Button>
       </div>
     </div>
   );

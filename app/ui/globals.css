@@ -81,7 +81,7 @@ body {
 
 @layer utilities {
   .hover-effect {
-    @apply cursor-pointer transition-colors duration-300 hover:bg-[--hover-color];
+    @apply cursor-pointer transition-colors duration-300 hover:bg-[--hover-color] disabled:cursor-default disabled:bg-[--transparent] disabled:opacity-60;
   }
 
   .text-stroke {

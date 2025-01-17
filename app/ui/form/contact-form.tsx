@@ -29,6 +29,7 @@ export default function ContactForm({ content }: Props) {
     saveMessage,
     null,
   );
+  const [maxRetries, setMaxRetries] = useState(3);
 
   const {
     register,
@@ -61,6 +62,7 @@ export default function ContactForm({ content }: Props) {
   }, [state, setError, reset]);
 
   const handleRetry = () => {
+    setMaxRetries((curr) => --curr);
     const formData = new FormData();
     if (state?.rawData) {
       Object.entries(state.rawData).forEach(([key, value]) => {
@@ -144,7 +146,11 @@ export default function ContactForm({ content }: Props) {
         <StatusCard
           icon={<CancelCircleIcon size={52} />}
           title={content?.errorTitle}
-          button={{ label: content?.errorButtonLabel, onClick: handleRetry }}
+          button={{
+            label: content?.errorButtonLabel,
+            onClick: handleRetry,
+            disabled: maxRetries <= 0,
+          }}
         >
           <p className="text-center">
             {content?.errorDescription}{' '}
