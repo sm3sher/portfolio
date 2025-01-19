@@ -436,15 +436,14 @@ export default function Page() {
               </thead>
               <tbody className="text-[--secondary]">
                 <tr>
-                  <td className="px-6 py-4">Sprache</td>
+                  <td className="px-6 py-4">TODO: add if necessary</td>
                   <td className="whitespace-nowrap px-6 py-4">
-                    Präferenz-Cookie
+                    Technisch notwendiges Cookie
                   </td>
                   <td className="px-6 py-4">Beim Initialaufruf der Website</td>
-                  <td className="px-6 py-4">1 Jahr</td>
+                  <td className="px-6 py-4">X Tage</td>
                   <td className="px-6 py-4">
-                    Speichert die Sprachpräferenz (“de” oder “en”), um Inhalte
-                    in der gewählten Sprache anzuzeigen.
+                    Speichert X, um YZ zu bewerkstelligen.
                   </td>
                   <td className="px-6 py-4"></td>
                 </tr>
