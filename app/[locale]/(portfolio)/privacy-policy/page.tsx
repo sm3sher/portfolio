@@ -347,127 +347,34 @@ export default function Page() {
         <h4 className="mb-8">4. Datenerfassung auf dieser Website</h4>
 
         <section className="mb-8">
-          <h4 className="mb-4">Cookies</h4>
+          <h4 className="mb-4">Cloudflare Web Analytics</h4>
           <p className="mb-2 text-[--secondary]">
-            Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert
-            werden, um Websites ordnungsgemäß oder effizienter funktionieren zu
-            lassen. Sie enthalten keinen ausführbaren Code und beeinträchtigen
-            Ihr Gerät nicht.
+            Wir nutzen für unsere Website das Analyse-Tool Cloudflare Web
+            Analytics. Dienstanbieter ist Cloudflare Inc., 101 Townsend St., San
+            Francisco, CA 94107, USA.
           </p>
 
-          <h5 className="mb-2 mt-4 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Arten von Cookies
-          </h5>
-          <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>
-              <span className="font-bold">Session-Cookies:</span> Temporär,
-              werden gelöscht, sobald Sie die Website schließen.
-            </li>
-            <li>
-              <span className="font-bold">Persistente Cookies:</span> Bleiben
-              auf Ihrem Gerät gespeichert und ermöglichen z. B. die
-              Wiedererkennung bei zukünftigen Besuchen oder den Zugriff auf
-              zuvor personalisierte Inhalte.
-            </li>
-            <li>
-              <span className="font-bold">First-Party-Cookies:</span> Von der
-              besuchten Website selbst gesetzt.
-            </li>
-            <li>
-              <span className="font-bold">Third-Party-Cookies:</span> Von
-              Drittanbietern gesetzt, z. B. für Werbung oder eingebundene
-              Dienste.
-            </li>
-          </ul>
-
-          <h5 className="mb-2 mt-4 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Funktionen von Cookies
-          </h5>
-          <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>
-              <span className="font-bold">Technisch notwendige Cookies:</span>{' '}
-              Ermöglichen grundlegende Funktionen, wie die Navigation,
-              Sitzungsverwaltung oder Zugriff auf geschützte Inhalte.
-            </li>
-            <li>
-              <span className="font-bold">Präferenz-Cookies:</span> Speichern
-              Einstellungen wie Sprache, Design oder regionale Konfiguration.
-            </li>
-            <li>
-              <span className="font-bold">Marketing-Cookies:</span>{' '}
-              Personalisieren Werbeinhalte, um relevante Anzeigen zu zeigen.
-            </li>
-            <li>
-              <span className="font-bold">Statistik-Cookies:</span> Analysieren
-              das Nutzerverhalten, um Website und Angebote zu optimieren.
-            </li>
-          </ul>
-
-          <h5 className="mb-4 mt-4 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Verwendete Cookies auf dieser Website
-          </h5>
-
-          <div className="base-border relative mb-6 overflow-x-auto rounded-2xl">
-            <table className="w-full text-left text-sm">
-              <thead className="bg-[--banner-color] text-xs">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    Cookie
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Cookie-Typ
-                  </th>
-                  <th scope="col" className="min-w-36 px-6 py-3">
-                    Wann wird der Cookie gesetzt?
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Wie lang ist die Speicherdauer?
-                  </th>
-                  <th scope="col" className="min-w-64 px-6 py-3">
-                    Nutzen des Cookies
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Link zur Datenschutzerklärung (falls Drittanbieter)
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="text-[--secondary]">
-                <tr>
-                  <td className="px-6 py-4">TODO: add if necessary</td>
-                  <td className="whitespace-nowrap px-6 py-4">
-                    Technisch notwendiges Cookie
-                  </td>
-                  <td className="px-6 py-4">Beim Initialaufruf der Website</td>
-                  <td className="px-6 py-4">X Tage</td>
-                  <td className="px-6 py-4">
-                    Speichert X, um YZ zu bewerkstelligen.
-                  </td>
-                  <td className="px-6 py-4"></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h5 className="mb-2 mt-4 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Einstellungen und Einschränkungen
-          </h5>
           <p className="mb-2 text-[--secondary]">
-            Sie können Ihren Browser so konfigurieren, dass:
+            Cloudflare verarbeitet Daten unter anderem in den USA und ist
+            Teilnehmer des EU-US Data Privacy Frameworks, welches den sicheren
+            und datenschutzkonformen Datentransfer personenbezogener Daten
+            regelt. Darüber hinaus werden Standardvertragsklauseln gemäß Art. 46
+            DSGVO verwendet, um europäische Datenschutzstandards bei der
+            Datenverarbeitung in Drittländern sicherzustellen.
           </p>
-          <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>Sie über das Setzen von Cookies informiert werden.</li>
-            <li>Cookies individuell zugelassen oder abgelehnt werden.</li>
-            <li>
-              Cookies beim Schließen des Browsers automatisch gelöscht werden.
-            </li>
-          </ul>
+
           <p className="mb-2 text-[--secondary]">
-            Hinweis: Bei deaktivierten Cookies kann die Funktionalität der
-            Website eingeschränkt sein.
+            Weitere Informationen finden Sie in der Datenschutzerklärung von
+            Cloudflare:{' '}
+            <a
+              href="https://www.cloudflare.com/de-de/privacypolicy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
+            >
+              https://www.cloudflare.com/de-de/privacypolicy/
+            </a>
+            .
           </p>
         </section>
 
