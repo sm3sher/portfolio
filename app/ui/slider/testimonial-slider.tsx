@@ -1,11 +1,8 @@
 'use client';
 
-import 'swiper/css';
-import 'swiper/css/a11y';
-import 'swiper/css/navigation';
+import { useCallback } from 'react';
 import QuoteCard from '@/app/ui/card/quote-card';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Navigation } from 'swiper/modules';
+import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react';
 import { Testimonials } from '@/app/lib/contentful/generated/sdk';
 
@@ -14,6 +11,20 @@ type Props = {
 };
 
 export default function TestimonialSlider({ content }: Props) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: 'start',
+    loop: true,
+    skipSnaps: true,
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <>
       <div className="mb-7 flex items-center justify-between space-x-2">
@@ -22,7 +33,8 @@ export default function TestimonialSlider({ content }: Props) {
         </h6>
         <div className="flex space-x-2">
           <button
-            className="slide-prev hover-effect base-border rounded-full p-1.5"
+            onClick={scrollPrev}
+            className="hover-effect base-border rounded-full p-1.5"
             aria-label={content?.prevSlideLabel || undefined}
           >
             <ArrowLeft01Icon
@@ -31,7 +43,8 @@ export default function TestimonialSlider({ content }: Props) {
             />
           </button>
           <button
-            className="slide-next hover-effect base-border rounded-full p-1.5"
+            onClick={scrollNext}
+            className="hover-effect base-border rounded-full p-1.5"
             aria-label={content?.nextSlideLabel || undefined}
           >
             <ArrowRight01Icon
@@ -41,35 +54,31 @@ export default function TestimonialSlider({ content }: Props) {
           </button>
         </div>
       </div>
-      <Swiper
-        className="md:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
-        loop
-        modules={[A11y, Navigation]}
-        navigation={{
-          prevEl: '.slide-prev',
-          nextEl: '.slide-next',
-        }}
-        spaceBetween={24}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 1.5 },
-          1024: { slidesPerView: 2.5 },
-        }}
+      <div
+        className="overflow-hidden md:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
+        ref={emblaRef}
       >
-        {content?.quotesCollection?.items
-          .filter((item) => item !== null)
-          .map((item, index) => (
-            <SwiperSlide key={index} className="my-1 !h-auto">
-              <QuoteCard
-                quote={item.quote!}
-                author={item.author!}
-                jobTitle={item.jobTitle!}
-                logo={item.logo}
-                invert={item.logoInvert || false}
-              />
-            </SwiperSlide>
-          ))}
-      </Swiper>
+        <div className="flex" aria-live="polite">
+          {content?.quotesCollection?.items
+            .filter((item) => item !== null)
+            .map((item, index) => (
+              <div
+                key={index}
+                className="my-1 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+                role="group"
+                aria-label={`${index + 1} / ${content?.quotesCollection?.items.length}`}
+              >
+                <QuoteCard
+                  quote={item.quote!}
+                  author={item.author!}
+                  jobTitle={item.jobTitle!}
+                  logo={item.logo}
+                  invert={item.logoInvert || false}
+                />
+              </div>
+            ))}
+        </div>
+      </div>
     </>
   );
 }
