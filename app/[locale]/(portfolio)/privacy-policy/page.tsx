@@ -99,70 +99,58 @@ export default async function Page({ params }: Props) {
       </article>
 
       <article className="mb-12">
-        <h4 className="mb-8">2. Hosting</h4>
+        <h4 className="mb-8">{content?.hosting?.title}</h4>
 
         <section className="mb-8">
-          <h4 className="mb-4">Netlify</h4>
+          <h4 className="mb-4">{content?.hosting?.netlifyTitle}</h4>
           <p className="mb-2 text-[--secondary]">
-            Unsere Website wird bei Netlify gehostet. Anbieter ist die Netlify
-            Inc., 2325 3rd Street, Suite 29, San Francisco, CA 94104, USA.
+            {content?.hosting?.netlifyHostingInfo}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Netlify verarbeitet personenbezogene Daten auch in den USA. Das
-            Unternehmen ist Teilnehmer des EU-US Data Privacy Frameworks. Dieses
-            Rahmenwerk regelt den sicheren und datenschutzkonformen Transfer von
-            Daten aus der EU in die USA. Weitere Informationen dazu finden Sie
-            unter{' '}
+            {content?.hosting?.netlifyDataProcessing}{' '}
             <a
-              href="https://commission.europa.eu/document/fa09cbad-dd7d-4684-ae60-be03fcb0fddf_en"
+              href={content?.hosting?.netlifyDataProcessingLink || ''}
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://commission.europa.eu/document/fa09cbad-dd7d-4684-ae60-be03fcb0fddf_en
+              {content?.hosting?.netlifyDataProcessingLink}
             </a>
             .
           </p>
           <p className="mb-2 text-[--secondary]">
-            Darüber hinaus verwendet Netlify Standardvertragsklauseln gemäß Art.
-            46 Abs. 2 und 3 DSGVO. Diese von der EU-Kommission bereitgestellten
-            Musterverträge stellen sicher, dass Ihre Daten auch in Drittländern
-            wie den USA europäische Datenschutzstandards erfüllen. Den
-            entsprechenden Beschluss der EU-Kommission finden Sie hier:{' '}
+            {content?.hosting?.netlifyContractualClauses}{' '}
             <a
-              href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de"
+              href={content?.hosting?.netlifyContractualClausesLink || ''}
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?locale=de
+              {content?.hosting?.netlifyContractualClausesLink}
             </a>
             .
           </p>
           <p className="mb-2 text-[--secondary]">
-            Netlify bietet einen Vertrag zur Auftragsverarbeitung gemäß Art. 28
-            DSGVO an, der auf den EU-Standardvertragsklauseln basiert. Weitere
-            Informationen dazu finden Sie unter{' '}
+            {content?.hosting?.netlifyDataProcessingAgreement}{' '}
             <a
-              href="https://www.netlify.com/pdf/netlify-dpa.pdf"
+              href={content?.hosting?.netlifyDataProcessingAgreementLink || ''}
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://www.netlify.com/pdf/netlify-dpa.pdf
+              {content?.hosting?.netlifyDataProcessingAgreementLink}
             </a>
             .
           </p>
           <p className="mb-2 text-[--secondary]">
-            Details zur Verarbeitung Ihrer Daten durch Netlify finden Sie in der
-            Datenschutzerklärung von Netlify auf{' '}
+            {content?.hosting?.netlifyPrivacyPolicy}{' '}
             <a
-              href="https://www.netlify.com/privacy"
+              href={content?.hosting?.netlifyPrivacyPolicyLink || ''}
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://www.netlify.com/privacy
+              {content?.hosting?.netlifyPrivacyPolicyLink}
             </a>
             .
           </p>
@@ -170,152 +158,123 @@ export default async function Page({ params }: Props) {
       </article>
 
       <article className="mb-12">
-        <h4 className="mb-8">
-          3. Allgemeine Hinweise und Pflichtinformationen
-        </h4>
+        <h4 className="mb-8">{content?.notesAndLegalInformation?.title}</h4>
 
         <section className="mb-8">
-          <h4 className="mb-4">Datenschutz</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.dataProtectionTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen.
-            Wir behandeln Ihre personenbezogenen Daten vertraulich und
-            entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser
-            Datenschutzerklärung.
+            {content?.notesAndLegalInformation?.dataProtectionIntro}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Beim Besuch dieser Website werden verschiedene personenbezogene
-            Daten erhoben. Personenbezogene Daten sind Informationen, mit denen
-            Sie identifiziert werden können. Diese Datenschutzerklärung
-            erläutert, welche Daten wir erheben, wie wir sie verwenden und zu
-            welchem Zweck.
+            {content?.notesAndLegalInformation?.dataProtectionDetails}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Bitte beachten Sie, dass die Datenübertragung im Internet (z. B. bei
-            der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein
-            vollständiger Schutz der Daten vor dem Zugriff Dritter ist nicht
-            möglich.
+            {content?.notesAndLegalInformation?.dataProtectionNotice}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Hinweis zur verantwortlichen Stelle</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.responsiblePartyTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Verantwortlich für die Datenverarbeitung auf dieser Website ist:
+            {content?.notesAndLegalInformation?.responsiblePartyIntro}
           </p>
           <address className="mb-2 not-italic text-[--secondary]">
-            <p className="font-extrabold">Roman Jumatov</p>
-            <p>Freiberuflicher Softwareentwickler</p>
-            <p>Musterstraße 225</p>
-            <p>40225 Düsseldorf</p>
+            <p className="font-extrabold">
+              {content?.notesAndLegalInformation?.responsiblePartyName}
+            </p>
+            <p>{content?.notesAndLegalInformation?.responsiblePartyRole}</p>
+            <p>{content?.notesAndLegalInformation?.responsiblePartyStreet}</p>
+            <p>
+              {content?.notesAndLegalInformation?.responsiblePartyPostalCode}{' '}
+              {content?.notesAndLegalInformation?.responsiblePartyCity}
+            </p>
           </address>
           <p className="mb-2 text-[--secondary]">
-            Email:{' '}
+            {content?.notesAndLegalInformation?.responsiblePartyEmailLabel}{' '}
             <a
-              href={`mailto:${'privacy@mustermann.com'}`}
+              href={`mailto:${content?.notesAndLegalInformation?.responsiblePartyEmail}`}
               className="text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              privacy@mustermann.com
+              {content?.notesAndLegalInformation?.responsiblePartyEmail}
             </a>
           </p>
           <p className="mb-2 text-[--secondary]">
-            Verantwortliche Stelle ist die Person, die allein oder gemeinsam mit
-            anderen über die Zwecke und Mittel der Verarbeitung
-            personenbezogener Daten entscheidet.
+            {content?.notesAndLegalInformation?.responsiblePartyInfo}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Speicherdauer</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.dataStorageDurationTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Sofern in dieser Datenschutzerklärung nicht anders angegeben,
-            speichern wir Ihre personenbezogenen Daten nur so lange, wie der
-            Zweck ihrer Verarbeitung besteht. Werden Daten nicht mehr benötigt
-            oder widerrufen Sie Ihre Einwilligung, löschen wir diese, sofern
-            keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+            {content?.notesAndLegalInformation?.dataStorageDurationDetails}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Rechtsgrundlagen der Datenverarbeitung</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.legalBasisTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Die Verarbeitung Ihrer personenbezogenen Daten erfolgt je nach
-            Kontext auf Grundlage folgender Artikel der DSGVO:
+            {content?.notesAndLegalInformation?.legalBasisIntro}
           </p>
           <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. a DSGVO:</span>{' '}
-              Einwilligung (z. B. für Cookies).
-            </li>
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. b DSGVO:</span>{' '}
-              Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen.
-            </li>
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. c DSGVO:</span>{' '}
-              Erfüllung einer rechtlichen Verpflichtung.
-            </li>
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. f DSGVO:</span>{' '}
-              Wahrung berechtigter Interessen.
-            </li>
+            {content?.notesAndLegalInformation?.legalBasisList
+              ?.filter((item) => item !== null)
+              .map((item, index) => {
+                const [boldText, normalText] = item.split(':', 2); // Split into two parts
+                return (
+                  <li key={index}>
+                    <span className="font-bold">{boldText}:</span> {normalText}
+                  </li>
+                );
+              })}
           </ul>
           <p className="mb-2 text-[--secondary]">
-            Details zu den Rechtsgrundlagen finden Sie in den entsprechenden
-            Abschnitten dieser Datenschutzerklärung.
+            {content?.notesAndLegalInformation?.legalBasisDetails}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Ihre Rechte</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.userRightsTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Sie haben jederzeit folgende Rechte:
+            {content?.notesAndLegalInformation?.userRightsIntro}
           </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Recht auf Auskunft (Art. 15 DSGVO)
-          </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Recht auf Berichtigung (Art. 16 DSGVO)
-          </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Recht auf Löschung (Art. 17 DSGVO)
-          </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
-          </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Recht auf Datenübertragbarkeit (Art. 20 DSGVO)
-          </p>
-          <p className="mb-2 flex items-center gap-2">
-            <CircleArrowRight02Icon className="text-[--highlight]" />
-            Widerspruchsrecht (Art. 21 DSGVO)
+          {content?.notesAndLegalInformation?.userRightsList?.map(
+            (item, index) => (
+              <p key={index} className="mb-2 flex items-center gap-2">
+                <CircleArrowRight02Icon className="text-[--highlight]" />
+                {item}
+              </p>
+            ),
+          )}
+        </section>
+
+        <section className="mb-8">
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.complaintRightTitle}
+          </h4>
+          <p className="mb-2 text-[--secondary]">
+            {content?.notesAndLegalInformation?.complaintRightDetails}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Beschwerderecht</h4>
+          <h4 className="mb-4">
+            {content?.notesAndLegalInformation?.sslTlsEncryptionTitle}
+          </h4>
           <p className="mb-2 text-[--secondary]">
-            Bei Datenschutzverstößen haben Sie das Recht, sich bei einer
-            Datenschutzbehörde zu beschweren. Zuständig ist in der Regel die
-            Behörde Ihres Wohnorts oder Arbeitsplatzes.
-          </p>
-        </section>
-
-        <section className="mb-8">
-          <h4 className="mb-4">SSL-/TLS-Verschlüsselung</h4>
-          <p className="mb-2 text-[--secondary]">
-            Diese Website nutzt eine SSL-/TLS-Verschlüsselung, um Ihre Daten bei
-            der Übertragung zu schützen. Eine verschlüsselte Verbindung erkennen
-            Sie an „https://“ in der Browserzeile und einem Schloss-Symbol.{' '}
+            {content?.notesAndLegalInformation?.sslTlsEncryptionIntro}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die
-            Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen
-            werden.
+            {content?.notesAndLegalInformation?.sslTlsEncryptionDetails}
           </p>
         </section>
       </article>

@@ -24,6 +24,50 @@ query privacyPolicyContent($locale: String) {
                 analysisToolsIntroText
                 analysisToolsDetailsText
             }
+            hosting {
+                title
+                netlifyTitle
+                netlifyHostingInfo
+                netlifyDataProcessing
+                netlifyDataProcessingLink
+                netlifyContractualClauses
+                netlifyContractualClausesLink
+                netlifyDataProcessingAgreement
+                netlifyDataProcessingAgreementLink
+                netlifyPrivacyPolicy
+                netlifyPrivacyPolicyLink
+            }
+            notesAndLegalInformation {
+                title
+                dataProtectionTitle
+                dataProtectionIntro
+                dataProtectionDetails
+                dataProtectionNotice
+                responsiblePartyTitle
+                responsiblePartyIntro
+                responsiblePartyName
+                responsiblePartyRole
+                responsiblePartyStreet
+                responsiblePartyPostalCode
+                responsiblePartyCity
+                responsiblePartyEmailLabel
+                responsiblePartyEmail
+                responsiblePartyInfo
+                dataStorageDurationTitle
+                dataStorageDurationDetails
+                legalBasisTitle
+                legalBasisIntro
+                legalBasisList
+                legalBasisDetails
+                userRightsTitle
+                userRightsIntro
+                userRightsList
+                complaintRightTitle
+                complaintRightDetails
+                sslTlsEncryptionTitle
+                sslTlsEncryptionIntro
+                sslTlsEncryptionDetails
+            }
         }
     }
 }

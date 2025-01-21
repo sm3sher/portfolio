@@ -878,6 +878,169 @@ enum HomeOrder {
   sys_publishedVersion_DESC
 }
 
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/hosting)
+"""
+type Hosting implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  linkedFrom(allowedLocales: [String]): HostingLinkingCollections
+  netlifyContractualClauses(locale: String): String
+  netlifyContractualClausesLink(locale: String): String
+  netlifyDataProcessing(locale: String): String
+  netlifyDataProcessingAgreement(locale: String): String
+  netlifyDataProcessingAgreementLink(locale: String): String
+  netlifyDataProcessingLink(locale: String): String
+  netlifyHostingInfo(locale: String): String
+  netlifyPrivacyPolicy(locale: String): String
+  netlifyPrivacyPolicyLink(locale: String): String
+  netlifyTitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type HostingCollection {
+  items: [Hosting]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input HostingFilter {
+  AND: [HostingFilter]
+  OR: [HostingFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  netlifyContractualClauses: String
+  netlifyContractualClausesLink: String
+  netlifyContractualClausesLink_contains: String
+  netlifyContractualClausesLink_exists: Boolean
+  netlifyContractualClausesLink_in: [String]
+  netlifyContractualClausesLink_not: String
+  netlifyContractualClausesLink_not_contains: String
+  netlifyContractualClausesLink_not_in: [String]
+  netlifyContractualClauses_contains: String
+  netlifyContractualClauses_exists: Boolean
+  netlifyContractualClauses_in: [String]
+  netlifyContractualClauses_not: String
+  netlifyContractualClauses_not_contains: String
+  netlifyContractualClauses_not_in: [String]
+  netlifyDataProcessing: String
+  netlifyDataProcessingAgreement: String
+  netlifyDataProcessingAgreementLink: String
+  netlifyDataProcessingAgreementLink_contains: String
+  netlifyDataProcessingAgreementLink_exists: Boolean
+  netlifyDataProcessingAgreementLink_in: [String]
+  netlifyDataProcessingAgreementLink_not: String
+  netlifyDataProcessingAgreementLink_not_contains: String
+  netlifyDataProcessingAgreementLink_not_in: [String]
+  netlifyDataProcessingAgreement_contains: String
+  netlifyDataProcessingAgreement_exists: Boolean
+  netlifyDataProcessingAgreement_in: [String]
+  netlifyDataProcessingAgreement_not: String
+  netlifyDataProcessingAgreement_not_contains: String
+  netlifyDataProcessingAgreement_not_in: [String]
+  netlifyDataProcessingLink: String
+  netlifyDataProcessingLink_contains: String
+  netlifyDataProcessingLink_exists: Boolean
+  netlifyDataProcessingLink_in: [String]
+  netlifyDataProcessingLink_not: String
+  netlifyDataProcessingLink_not_contains: String
+  netlifyDataProcessingLink_not_in: [String]
+  netlifyDataProcessing_contains: String
+  netlifyDataProcessing_exists: Boolean
+  netlifyDataProcessing_in: [String]
+  netlifyDataProcessing_not: String
+  netlifyDataProcessing_not_contains: String
+  netlifyDataProcessing_not_in: [String]
+  netlifyHostingInfo: String
+  netlifyHostingInfo_contains: String
+  netlifyHostingInfo_exists: Boolean
+  netlifyHostingInfo_in: [String]
+  netlifyHostingInfo_not: String
+  netlifyHostingInfo_not_contains: String
+  netlifyHostingInfo_not_in: [String]
+  netlifyPrivacyPolicy: String
+  netlifyPrivacyPolicyLink: String
+  netlifyPrivacyPolicyLink_contains: String
+  netlifyPrivacyPolicyLink_exists: Boolean
+  netlifyPrivacyPolicyLink_in: [String]
+  netlifyPrivacyPolicyLink_not: String
+  netlifyPrivacyPolicyLink_not_contains: String
+  netlifyPrivacyPolicyLink_not_in: [String]
+  netlifyPrivacyPolicy_contains: String
+  netlifyPrivacyPolicy_exists: Boolean
+  netlifyPrivacyPolicy_in: [String]
+  netlifyPrivacyPolicy_not: String
+  netlifyPrivacyPolicy_not_contains: String
+  netlifyPrivacyPolicy_not_in: [String]
+  netlifyTitle: String
+  netlifyTitle_contains: String
+  netlifyTitle_exists: Boolean
+  netlifyTitle_in: [String]
+  netlifyTitle_not: String
+  netlifyTitle_not_contains: String
+  netlifyTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type HostingLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  privacyPolicyCollection(limit: Int = 100, locale: String, order: [HostingLinkingCollectionsPrivacyPolicyCollectionOrder], preview: Boolean, skip: Int = 0): PrivacyPolicyCollection
+}
+
+enum HostingLinkingCollectionsPrivacyPolicyCollectionOrder {
+  introDescription_ASC
+  introDescription_DESC
+  lastModified_ASC
+  lastModified_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum HostingOrder {
+  netlifyContractualClausesLink_ASC
+  netlifyContractualClausesLink_DESC
+  netlifyDataProcessingAgreementLink_ASC
+  netlifyDataProcessingAgreementLink_DESC
+  netlifyDataProcessingAgreement_ASC
+  netlifyDataProcessingAgreement_DESC
+  netlifyDataProcessingLink_ASC
+  netlifyDataProcessingLink_DESC
+  netlifyHostingInfo_ASC
+  netlifyHostingInfo_DESC
+  netlifyPrivacyPolicyLink_ASC
+  netlifyPrivacyPolicyLink_DESC
+  netlifyPrivacyPolicy_ASC
+  netlifyPrivacyPolicy_DESC
+  netlifyTitle_ASC
+  netlifyTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
 enum ImageFormat {
   AVIF
 
@@ -1691,6 +1854,335 @@ enum NotFoundOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notesAndLegalInformation)
+"""
+type NotesAndLegalInformation implements Entry & _Node {
+  _id: ID!
+  complaintRightDetails(locale: String): String
+  complaintRightTitle(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  dataProtectionDetails(locale: String): String
+  dataProtectionIntro(locale: String): String
+  dataProtectionNotice(locale: String): String
+  dataProtectionTitle(locale: String): String
+  dataStorageDurationDetails(locale: String): String
+  dataStorageDurationTitle(locale: String): String
+  legalBasisDetails(locale: String): String
+  legalBasisIntro(locale: String): String
+  legalBasisList(locale: String): [String]
+  legalBasisTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): NotesAndLegalInformationLinkingCollections
+  responsiblePartyCity(locale: String): String
+  responsiblePartyEmail(locale: String): String
+  responsiblePartyEmailLabel(locale: String): String
+  responsiblePartyInfo(locale: String): String
+  responsiblePartyIntro(locale: String): String
+  responsiblePartyName(locale: String): String
+  responsiblePartyPostalCode(locale: String): String
+  responsiblePartyRole(locale: String): String
+  responsiblePartyStreet(locale: String): String
+  responsiblePartyTitle(locale: String): String
+  sslTlsEncryptionDetails(locale: String): String
+  sslTlsEncryptionIntro(locale: String): String
+  sslTlsEncryptionTitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+  userRightsIntro(locale: String): String
+  userRightsList(locale: String): [String]
+  userRightsTitle(locale: String): String
+}
+
+type NotesAndLegalInformationCollection {
+  items: [NotesAndLegalInformation]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input NotesAndLegalInformationFilter {
+  AND: [NotesAndLegalInformationFilter]
+  OR: [NotesAndLegalInformationFilter]
+  complaintRightDetails: String
+  complaintRightDetails_contains: String
+  complaintRightDetails_exists: Boolean
+  complaintRightDetails_in: [String]
+  complaintRightDetails_not: String
+  complaintRightDetails_not_contains: String
+  complaintRightDetails_not_in: [String]
+  complaintRightTitle: String
+  complaintRightTitle_contains: String
+  complaintRightTitle_exists: Boolean
+  complaintRightTitle_in: [String]
+  complaintRightTitle_not: String
+  complaintRightTitle_not_contains: String
+  complaintRightTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  dataProtectionDetails: String
+  dataProtectionDetails_contains: String
+  dataProtectionDetails_exists: Boolean
+  dataProtectionDetails_in: [String]
+  dataProtectionDetails_not: String
+  dataProtectionDetails_not_contains: String
+  dataProtectionDetails_not_in: [String]
+  dataProtectionIntro: String
+  dataProtectionIntro_contains: String
+  dataProtectionIntro_exists: Boolean
+  dataProtectionIntro_in: [String]
+  dataProtectionIntro_not: String
+  dataProtectionIntro_not_contains: String
+  dataProtectionIntro_not_in: [String]
+  dataProtectionNotice: String
+  dataProtectionNotice_contains: String
+  dataProtectionNotice_exists: Boolean
+  dataProtectionNotice_in: [String]
+  dataProtectionNotice_not: String
+  dataProtectionNotice_not_contains: String
+  dataProtectionNotice_not_in: [String]
+  dataProtectionTitle: String
+  dataProtectionTitle_contains: String
+  dataProtectionTitle_exists: Boolean
+  dataProtectionTitle_in: [String]
+  dataProtectionTitle_not: String
+  dataProtectionTitle_not_contains: String
+  dataProtectionTitle_not_in: [String]
+  dataStorageDurationDetails: String
+  dataStorageDurationDetails_contains: String
+  dataStorageDurationDetails_exists: Boolean
+  dataStorageDurationDetails_in: [String]
+  dataStorageDurationDetails_not: String
+  dataStorageDurationDetails_not_contains: String
+  dataStorageDurationDetails_not_in: [String]
+  dataStorageDurationTitle: String
+  dataStorageDurationTitle_contains: String
+  dataStorageDurationTitle_exists: Boolean
+  dataStorageDurationTitle_in: [String]
+  dataStorageDurationTitle_not: String
+  dataStorageDurationTitle_not_contains: String
+  dataStorageDurationTitle_not_in: [String]
+  legalBasisDetails: String
+  legalBasisDetails_contains: String
+  legalBasisDetails_exists: Boolean
+  legalBasisDetails_in: [String]
+  legalBasisDetails_not: String
+  legalBasisDetails_not_contains: String
+  legalBasisDetails_not_in: [String]
+  legalBasisIntro: String
+  legalBasisIntro_contains: String
+  legalBasisIntro_exists: Boolean
+  legalBasisIntro_in: [String]
+  legalBasisIntro_not: String
+  legalBasisIntro_not_contains: String
+  legalBasisIntro_not_in: [String]
+  legalBasisList_contains_all: [String]
+  legalBasisList_contains_none: [String]
+  legalBasisList_contains_some: [String]
+  legalBasisList_exists: Boolean
+  legalBasisTitle: String
+  legalBasisTitle_contains: String
+  legalBasisTitle_exists: Boolean
+  legalBasisTitle_in: [String]
+  legalBasisTitle_not: String
+  legalBasisTitle_not_contains: String
+  legalBasisTitle_not_in: [String]
+  responsiblePartyCity: String
+  responsiblePartyCity_contains: String
+  responsiblePartyCity_exists: Boolean
+  responsiblePartyCity_in: [String]
+  responsiblePartyCity_not: String
+  responsiblePartyCity_not_contains: String
+  responsiblePartyCity_not_in: [String]
+  responsiblePartyEmail: String
+  responsiblePartyEmailLabel: String
+  responsiblePartyEmailLabel_contains: String
+  responsiblePartyEmailLabel_exists: Boolean
+  responsiblePartyEmailLabel_in: [String]
+  responsiblePartyEmailLabel_not: String
+  responsiblePartyEmailLabel_not_contains: String
+  responsiblePartyEmailLabel_not_in: [String]
+  responsiblePartyEmail_contains: String
+  responsiblePartyEmail_exists: Boolean
+  responsiblePartyEmail_in: [String]
+  responsiblePartyEmail_not: String
+  responsiblePartyEmail_not_contains: String
+  responsiblePartyEmail_not_in: [String]
+  responsiblePartyInfo: String
+  responsiblePartyInfo_contains: String
+  responsiblePartyInfo_exists: Boolean
+  responsiblePartyInfo_in: [String]
+  responsiblePartyInfo_not: String
+  responsiblePartyInfo_not_contains: String
+  responsiblePartyInfo_not_in: [String]
+  responsiblePartyIntro: String
+  responsiblePartyIntro_contains: String
+  responsiblePartyIntro_exists: Boolean
+  responsiblePartyIntro_in: [String]
+  responsiblePartyIntro_not: String
+  responsiblePartyIntro_not_contains: String
+  responsiblePartyIntro_not_in: [String]
+  responsiblePartyName: String
+  responsiblePartyName_contains: String
+  responsiblePartyName_exists: Boolean
+  responsiblePartyName_in: [String]
+  responsiblePartyName_not: String
+  responsiblePartyName_not_contains: String
+  responsiblePartyName_not_in: [String]
+  responsiblePartyPostalCode: String
+  responsiblePartyPostalCode_contains: String
+  responsiblePartyPostalCode_exists: Boolean
+  responsiblePartyPostalCode_in: [String]
+  responsiblePartyPostalCode_not: String
+  responsiblePartyPostalCode_not_contains: String
+  responsiblePartyPostalCode_not_in: [String]
+  responsiblePartyRole: String
+  responsiblePartyRole_contains: String
+  responsiblePartyRole_exists: Boolean
+  responsiblePartyRole_in: [String]
+  responsiblePartyRole_not: String
+  responsiblePartyRole_not_contains: String
+  responsiblePartyRole_not_in: [String]
+  responsiblePartyStreet: String
+  responsiblePartyStreet_contains: String
+  responsiblePartyStreet_exists: Boolean
+  responsiblePartyStreet_in: [String]
+  responsiblePartyStreet_not: String
+  responsiblePartyStreet_not_contains: String
+  responsiblePartyStreet_not_in: [String]
+  responsiblePartyTitle: String
+  responsiblePartyTitle_contains: String
+  responsiblePartyTitle_exists: Boolean
+  responsiblePartyTitle_in: [String]
+  responsiblePartyTitle_not: String
+  responsiblePartyTitle_not_contains: String
+  responsiblePartyTitle_not_in: [String]
+  sslTlsEncryptionDetails: String
+  sslTlsEncryptionDetails_contains: String
+  sslTlsEncryptionDetails_exists: Boolean
+  sslTlsEncryptionDetails_in: [String]
+  sslTlsEncryptionDetails_not: String
+  sslTlsEncryptionDetails_not_contains: String
+  sslTlsEncryptionDetails_not_in: [String]
+  sslTlsEncryptionIntro: String
+  sslTlsEncryptionIntro_contains: String
+  sslTlsEncryptionIntro_exists: Boolean
+  sslTlsEncryptionIntro_in: [String]
+  sslTlsEncryptionIntro_not: String
+  sslTlsEncryptionIntro_not_contains: String
+  sslTlsEncryptionIntro_not_in: [String]
+  sslTlsEncryptionTitle: String
+  sslTlsEncryptionTitle_contains: String
+  sslTlsEncryptionTitle_exists: Boolean
+  sslTlsEncryptionTitle_in: [String]
+  sslTlsEncryptionTitle_not: String
+  sslTlsEncryptionTitle_not_contains: String
+  sslTlsEncryptionTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  userRightsIntro: String
+  userRightsIntro_contains: String
+  userRightsIntro_exists: Boolean
+  userRightsIntro_in: [String]
+  userRightsIntro_not: String
+  userRightsIntro_not_contains: String
+  userRightsIntro_not_in: [String]
+  userRightsList_contains_all: [String]
+  userRightsList_contains_none: [String]
+  userRightsList_contains_some: [String]
+  userRightsList_exists: Boolean
+  userRightsTitle: String
+  userRightsTitle_contains: String
+  userRightsTitle_exists: Boolean
+  userRightsTitle_in: [String]
+  userRightsTitle_not: String
+  userRightsTitle_not_contains: String
+  userRightsTitle_not_in: [String]
+}
+
+type NotesAndLegalInformationLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  privacyPolicyCollection(limit: Int = 100, locale: String, order: [NotesAndLegalInformationLinkingCollectionsPrivacyPolicyCollectionOrder], preview: Boolean, skip: Int = 0): PrivacyPolicyCollection
+}
+
+enum NotesAndLegalInformationLinkingCollectionsPrivacyPolicyCollectionOrder {
+  introDescription_ASC
+  introDescription_DESC
+  lastModified_ASC
+  lastModified_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum NotesAndLegalInformationOrder {
+  complaintRightDetails_ASC
+  complaintRightDetails_DESC
+  complaintRightTitle_ASC
+  complaintRightTitle_DESC
+  dataProtectionTitle_ASC
+  dataProtectionTitle_DESC
+  dataStorageDurationTitle_ASC
+  dataStorageDurationTitle_DESC
+  legalBasisDetails_ASC
+  legalBasisDetails_DESC
+  legalBasisIntro_ASC
+  legalBasisIntro_DESC
+  legalBasisTitle_ASC
+  legalBasisTitle_DESC
+  responsiblePartyCity_ASC
+  responsiblePartyCity_DESC
+  responsiblePartyEmailLabel_ASC
+  responsiblePartyEmailLabel_DESC
+  responsiblePartyEmail_ASC
+  responsiblePartyEmail_DESC
+  responsiblePartyInfo_ASC
+  responsiblePartyInfo_DESC
+  responsiblePartyIntro_ASC
+  responsiblePartyIntro_DESC
+  responsiblePartyName_ASC
+  responsiblePartyName_DESC
+  responsiblePartyPostalCode_ASC
+  responsiblePartyPostalCode_DESC
+  responsiblePartyRole_ASC
+  responsiblePartyRole_DESC
+  responsiblePartyStreet_ASC
+  responsiblePartyStreet_DESC
+  responsiblePartyTitle_ASC
+  responsiblePartyTitle_DESC
+  sslTlsEncryptionDetails_ASC
+  sslTlsEncryptionDetails_DESC
+  sslTlsEncryptionIntro_ASC
+  sslTlsEncryptionIntro_DESC
+  sslTlsEncryptionTitle_ASC
+  sslTlsEncryptionTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+  userRightsIntro_ASC
+  userRightsIntro_DESC
+  userRightsTitle_ASC
+  userRightsTitle_DESC
+}
+
+"""
 [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder)
 """
 type Placeholder implements Entry & _Node {
@@ -2037,9 +2529,11 @@ enum PrivacyOverviewOrder {
 type PrivacyPolicy implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
+  hosting(locale: String, preview: Boolean, where: HostingFilter): Hosting
   introDescription(locale: String): String
   lastModified(locale: String): String
   linkedFrom(allowedLocales: [String]): PrivacyPolicyLinkingCollections
+  notesAndLegalInformation(locale: String, preview: Boolean, where: NotesAndLegalInformationFilter): NotesAndLegalInformation
   privacyOverview(locale: String, preview: Boolean, where: PrivacyOverviewFilter): PrivacyOverview
   sys: Sys!
   title(locale: String): String
@@ -2056,6 +2550,8 @@ input PrivacyPolicyFilter {
   AND: [PrivacyPolicyFilter]
   OR: [PrivacyPolicyFilter]
   contentfulMetadata: ContentfulMetadataFilter
+  hosting: cfHostingNestedFilter
+  hosting_exists: Boolean
   introDescription: String
   introDescription_contains: String
   introDescription_exists: Boolean
@@ -2070,6 +2566,8 @@ input PrivacyPolicyFilter {
   lastModified_not: String
   lastModified_not_contains: String
   lastModified_not_in: [String]
+  notesAndLegalInformation: cfNotesAndLegalInformationNestedFilter
+  notesAndLegalInformation_exists: Boolean
   privacyOverview: cfPrivacyOverviewNestedFilter
   privacyOverview_exists: Boolean
   sys: SysFilter
@@ -2123,6 +2621,8 @@ type Query {
   formCollection(limit: Int = 100, locale: String, order: [FormOrder], preview: Boolean, skip: Int = 0, where: FormFilter): FormCollection
   home(id: String!, locale: String, preview: Boolean): Home
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
+  hosting(id: String!, locale: String, preview: Boolean): Hosting
+  hostingCollection(limit: Int = 100, locale: String, order: [HostingOrder], preview: Boolean, skip: Int = 0, where: HostingFilter): HostingCollection
   legalNotice(id: String!, locale: String, preview: Boolean): LegalNotice
   legalNoticeCollection(limit: Int = 100, locale: String, order: [LegalNoticeOrder], preview: Boolean, skip: Int = 0, where: LegalNoticeFilter): LegalNoticeCollection
   metaDataHome(id: String!, locale: String, preview: Boolean): MetaDataHome
@@ -2137,6 +2637,8 @@ type Query {
   navbarCollection(limit: Int = 100, locale: String, order: [NavbarOrder], preview: Boolean, skip: Int = 0, where: NavbarFilter): NavbarCollection
   notFound(id: String!, locale: String, preview: Boolean): NotFound
   notFoundCollection(limit: Int = 100, locale: String, order: [NotFoundOrder], preview: Boolean, skip: Int = 0, where: NotFoundFilter): NotFoundCollection
+  notesAndLegalInformation(id: String!, locale: String, preview: Boolean): NotesAndLegalInformation
+  notesAndLegalInformationCollection(limit: Int = 100, locale: String, order: [NotesAndLegalInformationOrder], preview: Boolean, skip: Int = 0, where: NotesAndLegalInformationFilter): NotesAndLegalInformationCollection
   placeholder(id: String!, locale: String, preview: Boolean): Placeholder
   placeholderCollection(limit: Int = 100, locale: String, order: [PlaceholderOrder], preview: Boolean, skip: Int = 0, where: PlaceholderFilter): PlaceholderCollection
   privacyOverview(id: String!, locale: String, preview: Boolean): PrivacyOverview
@@ -2792,6 +3294,90 @@ interface _Node {
   _id: ID!
 }
 
+input cfHostingNestedFilter {
+  AND: [cfHostingNestedFilter]
+  OR: [cfHostingNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  netlifyContractualClauses: String
+  netlifyContractualClausesLink: String
+  netlifyContractualClausesLink_contains: String
+  netlifyContractualClausesLink_exists: Boolean
+  netlifyContractualClausesLink_in: [String]
+  netlifyContractualClausesLink_not: String
+  netlifyContractualClausesLink_not_contains: String
+  netlifyContractualClausesLink_not_in: [String]
+  netlifyContractualClauses_contains: String
+  netlifyContractualClauses_exists: Boolean
+  netlifyContractualClauses_in: [String]
+  netlifyContractualClauses_not: String
+  netlifyContractualClauses_not_contains: String
+  netlifyContractualClauses_not_in: [String]
+  netlifyDataProcessing: String
+  netlifyDataProcessingAgreement: String
+  netlifyDataProcessingAgreementLink: String
+  netlifyDataProcessingAgreementLink_contains: String
+  netlifyDataProcessingAgreementLink_exists: Boolean
+  netlifyDataProcessingAgreementLink_in: [String]
+  netlifyDataProcessingAgreementLink_not: String
+  netlifyDataProcessingAgreementLink_not_contains: String
+  netlifyDataProcessingAgreementLink_not_in: [String]
+  netlifyDataProcessingAgreement_contains: String
+  netlifyDataProcessingAgreement_exists: Boolean
+  netlifyDataProcessingAgreement_in: [String]
+  netlifyDataProcessingAgreement_not: String
+  netlifyDataProcessingAgreement_not_contains: String
+  netlifyDataProcessingAgreement_not_in: [String]
+  netlifyDataProcessingLink: String
+  netlifyDataProcessingLink_contains: String
+  netlifyDataProcessingLink_exists: Boolean
+  netlifyDataProcessingLink_in: [String]
+  netlifyDataProcessingLink_not: String
+  netlifyDataProcessingLink_not_contains: String
+  netlifyDataProcessingLink_not_in: [String]
+  netlifyDataProcessing_contains: String
+  netlifyDataProcessing_exists: Boolean
+  netlifyDataProcessing_in: [String]
+  netlifyDataProcessing_not: String
+  netlifyDataProcessing_not_contains: String
+  netlifyDataProcessing_not_in: [String]
+  netlifyHostingInfo: String
+  netlifyHostingInfo_contains: String
+  netlifyHostingInfo_exists: Boolean
+  netlifyHostingInfo_in: [String]
+  netlifyHostingInfo_not: String
+  netlifyHostingInfo_not_contains: String
+  netlifyHostingInfo_not_in: [String]
+  netlifyPrivacyPolicy: String
+  netlifyPrivacyPolicyLink: String
+  netlifyPrivacyPolicyLink_contains: String
+  netlifyPrivacyPolicyLink_exists: Boolean
+  netlifyPrivacyPolicyLink_in: [String]
+  netlifyPrivacyPolicyLink_not: String
+  netlifyPrivacyPolicyLink_not_contains: String
+  netlifyPrivacyPolicyLink_not_in: [String]
+  netlifyPrivacyPolicy_contains: String
+  netlifyPrivacyPolicy_exists: Boolean
+  netlifyPrivacyPolicy_in: [String]
+  netlifyPrivacyPolicy_not: String
+  netlifyPrivacyPolicy_not_contains: String
+  netlifyPrivacyPolicy_not_in: [String]
+  netlifyTitle: String
+  netlifyTitle_contains: String
+  netlifyTitle_exists: Boolean
+  netlifyTitle_in: [String]
+  netlifyTitle_not: String
+  netlifyTitle_not_contains: String
+  netlifyTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
 input cfMetricNestedFilter {
   AND: [cfMetricNestedFilter]
   OR: [cfMetricNestedFilter]
@@ -2820,6 +3406,210 @@ input cfMetricNestedFilter {
   startYear_not: Int
   startYear_not_in: [Int]
   sys: SysFilter
+}
+
+input cfNotesAndLegalInformationNestedFilter {
+  AND: [cfNotesAndLegalInformationNestedFilter]
+  OR: [cfNotesAndLegalInformationNestedFilter]
+  complaintRightDetails: String
+  complaintRightDetails_contains: String
+  complaintRightDetails_exists: Boolean
+  complaintRightDetails_in: [String]
+  complaintRightDetails_not: String
+  complaintRightDetails_not_contains: String
+  complaintRightDetails_not_in: [String]
+  complaintRightTitle: String
+  complaintRightTitle_contains: String
+  complaintRightTitle_exists: Boolean
+  complaintRightTitle_in: [String]
+  complaintRightTitle_not: String
+  complaintRightTitle_not_contains: String
+  complaintRightTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  dataProtectionDetails: String
+  dataProtectionDetails_contains: String
+  dataProtectionDetails_exists: Boolean
+  dataProtectionDetails_in: [String]
+  dataProtectionDetails_not: String
+  dataProtectionDetails_not_contains: String
+  dataProtectionDetails_not_in: [String]
+  dataProtectionIntro: String
+  dataProtectionIntro_contains: String
+  dataProtectionIntro_exists: Boolean
+  dataProtectionIntro_in: [String]
+  dataProtectionIntro_not: String
+  dataProtectionIntro_not_contains: String
+  dataProtectionIntro_not_in: [String]
+  dataProtectionNotice: String
+  dataProtectionNotice_contains: String
+  dataProtectionNotice_exists: Boolean
+  dataProtectionNotice_in: [String]
+  dataProtectionNotice_not: String
+  dataProtectionNotice_not_contains: String
+  dataProtectionNotice_not_in: [String]
+  dataProtectionTitle: String
+  dataProtectionTitle_contains: String
+  dataProtectionTitle_exists: Boolean
+  dataProtectionTitle_in: [String]
+  dataProtectionTitle_not: String
+  dataProtectionTitle_not_contains: String
+  dataProtectionTitle_not_in: [String]
+  dataStorageDurationDetails: String
+  dataStorageDurationDetails_contains: String
+  dataStorageDurationDetails_exists: Boolean
+  dataStorageDurationDetails_in: [String]
+  dataStorageDurationDetails_not: String
+  dataStorageDurationDetails_not_contains: String
+  dataStorageDurationDetails_not_in: [String]
+  dataStorageDurationTitle: String
+  dataStorageDurationTitle_contains: String
+  dataStorageDurationTitle_exists: Boolean
+  dataStorageDurationTitle_in: [String]
+  dataStorageDurationTitle_not: String
+  dataStorageDurationTitle_not_contains: String
+  dataStorageDurationTitle_not_in: [String]
+  legalBasisDetails: String
+  legalBasisDetails_contains: String
+  legalBasisDetails_exists: Boolean
+  legalBasisDetails_in: [String]
+  legalBasisDetails_not: String
+  legalBasisDetails_not_contains: String
+  legalBasisDetails_not_in: [String]
+  legalBasisIntro: String
+  legalBasisIntro_contains: String
+  legalBasisIntro_exists: Boolean
+  legalBasisIntro_in: [String]
+  legalBasisIntro_not: String
+  legalBasisIntro_not_contains: String
+  legalBasisIntro_not_in: [String]
+  legalBasisList_contains_all: [String]
+  legalBasisList_contains_none: [String]
+  legalBasisList_contains_some: [String]
+  legalBasisList_exists: Boolean
+  legalBasisTitle: String
+  legalBasisTitle_contains: String
+  legalBasisTitle_exists: Boolean
+  legalBasisTitle_in: [String]
+  legalBasisTitle_not: String
+  legalBasisTitle_not_contains: String
+  legalBasisTitle_not_in: [String]
+  responsiblePartyCity: String
+  responsiblePartyCity_contains: String
+  responsiblePartyCity_exists: Boolean
+  responsiblePartyCity_in: [String]
+  responsiblePartyCity_not: String
+  responsiblePartyCity_not_contains: String
+  responsiblePartyCity_not_in: [String]
+  responsiblePartyEmail: String
+  responsiblePartyEmailLabel: String
+  responsiblePartyEmailLabel_contains: String
+  responsiblePartyEmailLabel_exists: Boolean
+  responsiblePartyEmailLabel_in: [String]
+  responsiblePartyEmailLabel_not: String
+  responsiblePartyEmailLabel_not_contains: String
+  responsiblePartyEmailLabel_not_in: [String]
+  responsiblePartyEmail_contains: String
+  responsiblePartyEmail_exists: Boolean
+  responsiblePartyEmail_in: [String]
+  responsiblePartyEmail_not: String
+  responsiblePartyEmail_not_contains: String
+  responsiblePartyEmail_not_in: [String]
+  responsiblePartyInfo: String
+  responsiblePartyInfo_contains: String
+  responsiblePartyInfo_exists: Boolean
+  responsiblePartyInfo_in: [String]
+  responsiblePartyInfo_not: String
+  responsiblePartyInfo_not_contains: String
+  responsiblePartyInfo_not_in: [String]
+  responsiblePartyIntro: String
+  responsiblePartyIntro_contains: String
+  responsiblePartyIntro_exists: Boolean
+  responsiblePartyIntro_in: [String]
+  responsiblePartyIntro_not: String
+  responsiblePartyIntro_not_contains: String
+  responsiblePartyIntro_not_in: [String]
+  responsiblePartyName: String
+  responsiblePartyName_contains: String
+  responsiblePartyName_exists: Boolean
+  responsiblePartyName_in: [String]
+  responsiblePartyName_not: String
+  responsiblePartyName_not_contains: String
+  responsiblePartyName_not_in: [String]
+  responsiblePartyPostalCode: String
+  responsiblePartyPostalCode_contains: String
+  responsiblePartyPostalCode_exists: Boolean
+  responsiblePartyPostalCode_in: [String]
+  responsiblePartyPostalCode_not: String
+  responsiblePartyPostalCode_not_contains: String
+  responsiblePartyPostalCode_not_in: [String]
+  responsiblePartyRole: String
+  responsiblePartyRole_contains: String
+  responsiblePartyRole_exists: Boolean
+  responsiblePartyRole_in: [String]
+  responsiblePartyRole_not: String
+  responsiblePartyRole_not_contains: String
+  responsiblePartyRole_not_in: [String]
+  responsiblePartyStreet: String
+  responsiblePartyStreet_contains: String
+  responsiblePartyStreet_exists: Boolean
+  responsiblePartyStreet_in: [String]
+  responsiblePartyStreet_not: String
+  responsiblePartyStreet_not_contains: String
+  responsiblePartyStreet_not_in: [String]
+  responsiblePartyTitle: String
+  responsiblePartyTitle_contains: String
+  responsiblePartyTitle_exists: Boolean
+  responsiblePartyTitle_in: [String]
+  responsiblePartyTitle_not: String
+  responsiblePartyTitle_not_contains: String
+  responsiblePartyTitle_not_in: [String]
+  sslTlsEncryptionDetails: String
+  sslTlsEncryptionDetails_contains: String
+  sslTlsEncryptionDetails_exists: Boolean
+  sslTlsEncryptionDetails_in: [String]
+  sslTlsEncryptionDetails_not: String
+  sslTlsEncryptionDetails_not_contains: String
+  sslTlsEncryptionDetails_not_in: [String]
+  sslTlsEncryptionIntro: String
+  sslTlsEncryptionIntro_contains: String
+  sslTlsEncryptionIntro_exists: Boolean
+  sslTlsEncryptionIntro_in: [String]
+  sslTlsEncryptionIntro_not: String
+  sslTlsEncryptionIntro_not_contains: String
+  sslTlsEncryptionIntro_not_in: [String]
+  sslTlsEncryptionTitle: String
+  sslTlsEncryptionTitle_contains: String
+  sslTlsEncryptionTitle_exists: Boolean
+  sslTlsEncryptionTitle_in: [String]
+  sslTlsEncryptionTitle_not: String
+  sslTlsEncryptionTitle_not_contains: String
+  sslTlsEncryptionTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  userRightsIntro: String
+  userRightsIntro_contains: String
+  userRightsIntro_exists: Boolean
+  userRightsIntro_in: [String]
+  userRightsIntro_not: String
+  userRightsIntro_not_contains: String
+  userRightsIntro_not_in: [String]
+  userRightsList_contains_all: [String]
+  userRightsList_contains_none: [String]
+  userRightsList_contains_some: [String]
+  userRightsList_exists: Boolean
+  userRightsTitle: String
+  userRightsTitle_contains: String
+  userRightsTitle_exists: Boolean
+  userRightsTitle_in: [String]
+  userRightsTitle_not: String
+  userRightsTitle_not_contains: String
+  userRightsTitle_not_in: [String]
 }
 
 input cfPlaceholderNestedFilter {
