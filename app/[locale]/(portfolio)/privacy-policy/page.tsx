@@ -17,106 +17,83 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function Page() {
+export default async function Page({ params }: Props) {
+  const { locale } = await params;
+
+  const query = await contentfulClient.privacyPolicyContent({ locale });
+  const content = query.privacyPolicyCollection?.items[0];
+
   return (
     <div className="mx-auto max-w-screen-xl px-6 py-24 md:py-32">
-      <h3>Datenschutzerklärung</h3>
-      <p className="mb-8 italic text-[--secondary]">Stand: Januar 2025</p>
-      <p className="mb-8 text-[--secondary]">
-        In dieser Datenschutzerklärung steht „wir“ für Roman Jumatov, den
-        Betreiber dieser Website.
-      </p>
+      <h3>{content?.title}</h3>
+      <p className="mb-8 italic text-[--secondary]">{content?.lastModified}</p>
+      <p className="mb-8 text-[--secondary]">{content?.introDescription}</p>
       <article className="mb-12">
-        <h4 className="mb-8">1. Datenschutz auf einen Blick</h4>
+        <h4 className="mb-8">{content?.privacyOverview?.title}</h4>
 
         <section className="mb-8">
-          <h4 className="mb-4">Allgemeine Hinweise</h4>
+          <h4 className="mb-4">{content?.privacyOverview?.generalInfoTitle}</h4>
           <p className="text-[--secondary]">
-            Hier erhalten Sie einen Überblick darüber, was mit Ihren
-            personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.
-            Personenbezogene Daten sind Informationen, mit denen Sie persönlich
-            identifiziert werden können. Ausführliche Informationen dazu finden
-            Sie in dieser Datenschutzerklärung.
+            {content?.privacyOverview?.generalInfoDescription}
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Datenerfassung auf dieser Website</h4>
+          <h4 className="mb-4">
+            {content?.privacyOverview?.dataCollectionTitle}
+          </h4>
           <h5 className="mb-2 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Wer ist verantwortlich?
+            {content?.privacyOverview?.responsiblePartyTitle}
           </h5>
           <p className="mb-2 text-[--secondary]">
-            Die Datenverarbeitung auf dieser Website erfolgt durch den Betreiber
-            Roman Jumatov. Seine Kontaktdaten finden Sie im Abschnitt „Hinweis
-            zur Verantwortlichen Stelle“.
+            {content?.privacyOverview?.responsiblePartyDescription}
           </p>
 
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Wie erfassen wir Ihre Daten?
+            {content?.privacyOverview?.dataCaptureTitle}
           </h5>
           <p className="mb-2 text-[--secondary]">
-            Ein Teil der Daten wird erfasst, wenn Sie sie uns direkt mitteilen,
-            z. B. durch Eingabe in ein Kontaktformular.
+            {content?.privacyOverview?.dataDirectCaptureText}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
-            Besuch der Website durch unsere IT-Systeme erfasst, z. B. technische
-            Daten wie Ihr Browser, Betriebssystem oder die Uhrzeit des
-            Seitenaufrufs.
+            {content?.privacyOverview?.dataAutomaticCaptureText}
           </p>
 
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Wofür nutzen wir Ihre Daten?
+            {content?.privacyOverview?.dataPurposeTitle}
           </h5>
           <p className="mb-2 text-[--secondary]">
-            Ein Teil der Daten dient der fehlerfreien Bereitstellung der
-            Website. Andere Daten können zur Analyse des Nutzerverhaltens
-            verwendet werden. Wenn Sie über die Website Anfragen stellen oder
-            Verträge anbahnen, nutzen wir die übermittelten Daten zur
-            Bearbeitung.
+            {content?.privacyOverview?.dataPurposeDescription}
           </p>
 
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Ihre Rechte
+            {content?.privacyOverview?.userRightsTitle}
           </h5>
-          <p className="mb-2 text-[--secondary]">Sie haben das Recht:</p>
+          <p className="mb-2 text-[--secondary]">
+            {content?.privacyOverview?.userRightsIntroText}
+          </p>
           <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>
-              Auskunft über die gespeicherten Daten und deren Verwendung zu
-              erhalten.
-            </li>
-            <li>Die Berichtigung oder Löschung Ihrer Daten zu verlangen.</li>
-            <li>
-              Eine erteilte Einwilligung zur Datenverarbeitung jederzeit zu
-              widerrufen.
-            </li>
-            <li>
-              Unter bestimmten Umständen die Einschränkung der Datenverarbeitung
-              zu fordern.
-            </li>
-            <li>Sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</li>
+            {content?.privacyOverview?.userRightsList?.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
           <p className="mb-2 text-[--secondary]">
-            Für Fragen oder Anliegen zum Datenschutz können Sie sich jederzeit
-            an uns wenden.
+            {content?.privacyOverview?.userRightsContactText}
           </p>
 
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Analyse-Tools und Drittanbieter-Tools
+            {content?.privacyOverview?.analysisToolsTitle}
           </h5>
           <p className="mb-2 text-[--secondary]">
-            Beim Besuch dieser Website wird Ihr Surf-Verhalten möglicherweise
-            statistisch ausgewertet. Dies geschieht hauptsächlich mit
-            Analyseprogrammen.
+            {content?.privacyOverview?.analysisToolsIntroText}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Detaillierte Informationen dazu finden Sie weiter unten in dieser
-            Datenschutzerklärung.
+            {content?.privacyOverview?.analysisToolsDetailsText}
           </p>
         </section>
       </article>

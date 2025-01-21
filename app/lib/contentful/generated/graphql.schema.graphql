@@ -1804,6 +1804,306 @@ enum PlaceholderOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview)
+"""
+type PrivacyOverview implements Entry & _Node {
+  _id: ID!
+  analysisToolsDetailsText(locale: String): String
+  analysisToolsIntroText(locale: String): String
+  analysisToolsTitle(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  dataAutomaticCaptureText(locale: String): String
+  dataCaptureTitle(locale: String): String
+  dataCollectionTitle(locale: String): String
+  dataDirectCaptureText(locale: String): String
+  dataPurposeDescription(locale: String): String
+  dataPurposeTitle(locale: String): String
+  generalInfoDescription(locale: String): String
+  generalInfoTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): PrivacyOverviewLinkingCollections
+  responsiblePartyDescription(locale: String): String
+  responsiblePartyTitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+  userRightsContactText(locale: String): String
+  userRightsIntroText(locale: String): String
+  userRightsList(locale: String): [String]
+  userRightsTitle(locale: String): String
+}
+
+type PrivacyOverviewCollection {
+  items: [PrivacyOverview]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input PrivacyOverviewFilter {
+  AND: [PrivacyOverviewFilter]
+  OR: [PrivacyOverviewFilter]
+  analysisToolsDetailsText: String
+  analysisToolsDetailsText_contains: String
+  analysisToolsDetailsText_exists: Boolean
+  analysisToolsDetailsText_in: [String]
+  analysisToolsDetailsText_not: String
+  analysisToolsDetailsText_not_contains: String
+  analysisToolsDetailsText_not_in: [String]
+  analysisToolsIntroText: String
+  analysisToolsIntroText_contains: String
+  analysisToolsIntroText_exists: Boolean
+  analysisToolsIntroText_in: [String]
+  analysisToolsIntroText_not: String
+  analysisToolsIntroText_not_contains: String
+  analysisToolsIntroText_not_in: [String]
+  analysisToolsTitle: String
+  analysisToolsTitle_contains: String
+  analysisToolsTitle_exists: Boolean
+  analysisToolsTitle_in: [String]
+  analysisToolsTitle_not: String
+  analysisToolsTitle_not_contains: String
+  analysisToolsTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  dataAutomaticCaptureText: String
+  dataAutomaticCaptureText_contains: String
+  dataAutomaticCaptureText_exists: Boolean
+  dataAutomaticCaptureText_in: [String]
+  dataAutomaticCaptureText_not: String
+  dataAutomaticCaptureText_not_contains: String
+  dataAutomaticCaptureText_not_in: [String]
+  dataCaptureTitle: String
+  dataCaptureTitle_contains: String
+  dataCaptureTitle_exists: Boolean
+  dataCaptureTitle_in: [String]
+  dataCaptureTitle_not: String
+  dataCaptureTitle_not_contains: String
+  dataCaptureTitle_not_in: [String]
+  dataCollectionTitle: String
+  dataCollectionTitle_contains: String
+  dataCollectionTitle_exists: Boolean
+  dataCollectionTitle_in: [String]
+  dataCollectionTitle_not: String
+  dataCollectionTitle_not_contains: String
+  dataCollectionTitle_not_in: [String]
+  dataDirectCaptureText: String
+  dataDirectCaptureText_contains: String
+  dataDirectCaptureText_exists: Boolean
+  dataDirectCaptureText_in: [String]
+  dataDirectCaptureText_not: String
+  dataDirectCaptureText_not_contains: String
+  dataDirectCaptureText_not_in: [String]
+  dataPurposeDescription: String
+  dataPurposeDescription_contains: String
+  dataPurposeDescription_exists: Boolean
+  dataPurposeDescription_in: [String]
+  dataPurposeDescription_not: String
+  dataPurposeDescription_not_contains: String
+  dataPurposeDescription_not_in: [String]
+  dataPurposeTitle: String
+  dataPurposeTitle_contains: String
+  dataPurposeTitle_exists: Boolean
+  dataPurposeTitle_in: [String]
+  dataPurposeTitle_not: String
+  dataPurposeTitle_not_contains: String
+  dataPurposeTitle_not_in: [String]
+  generalInfoDescription: String
+  generalInfoDescription_contains: String
+  generalInfoDescription_exists: Boolean
+  generalInfoDescription_in: [String]
+  generalInfoDescription_not: String
+  generalInfoDescription_not_contains: String
+  generalInfoDescription_not_in: [String]
+  generalInfoTitle: String
+  generalInfoTitle_contains: String
+  generalInfoTitle_exists: Boolean
+  generalInfoTitle_in: [String]
+  generalInfoTitle_not: String
+  generalInfoTitle_not_contains: String
+  generalInfoTitle_not_in: [String]
+  responsiblePartyDescription: String
+  responsiblePartyDescription_contains: String
+  responsiblePartyDescription_exists: Boolean
+  responsiblePartyDescription_in: [String]
+  responsiblePartyDescription_not: String
+  responsiblePartyDescription_not_contains: String
+  responsiblePartyDescription_not_in: [String]
+  responsiblePartyTitle: String
+  responsiblePartyTitle_contains: String
+  responsiblePartyTitle_exists: Boolean
+  responsiblePartyTitle_in: [String]
+  responsiblePartyTitle_not: String
+  responsiblePartyTitle_not_contains: String
+  responsiblePartyTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  userRightsContactText: String
+  userRightsContactText_contains: String
+  userRightsContactText_exists: Boolean
+  userRightsContactText_in: [String]
+  userRightsContactText_not: String
+  userRightsContactText_not_contains: String
+  userRightsContactText_not_in: [String]
+  userRightsIntroText: String
+  userRightsIntroText_contains: String
+  userRightsIntroText_exists: Boolean
+  userRightsIntroText_in: [String]
+  userRightsIntroText_not: String
+  userRightsIntroText_not_contains: String
+  userRightsIntroText_not_in: [String]
+  userRightsList_contains_all: [String]
+  userRightsList_contains_none: [String]
+  userRightsList_contains_some: [String]
+  userRightsList_exists: Boolean
+  userRightsTitle: String
+  userRightsTitle_contains: String
+  userRightsTitle_exists: Boolean
+  userRightsTitle_in: [String]
+  userRightsTitle_not: String
+  userRightsTitle_not_contains: String
+  userRightsTitle_not_in: [String]
+}
+
+type PrivacyOverviewLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  privacyPolicyCollection(limit: Int = 100, locale: String, order: [PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder], preview: Boolean, skip: Int = 0): PrivacyPolicyCollection
+}
+
+enum PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder {
+  introDescription_ASC
+  introDescription_DESC
+  lastModified_ASC
+  lastModified_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum PrivacyOverviewOrder {
+  analysisToolsDetailsText_ASC
+  analysisToolsDetailsText_DESC
+  analysisToolsIntroText_ASC
+  analysisToolsIntroText_DESC
+  analysisToolsTitle_ASC
+  analysisToolsTitle_DESC
+  dataAutomaticCaptureText_ASC
+  dataAutomaticCaptureText_DESC
+  dataCaptureTitle_ASC
+  dataCaptureTitle_DESC
+  dataCollectionTitle_ASC
+  dataCollectionTitle_DESC
+  dataDirectCaptureText_ASC
+  dataDirectCaptureText_DESC
+  dataPurposeTitle_ASC
+  dataPurposeTitle_DESC
+  generalInfoTitle_ASC
+  generalInfoTitle_DESC
+  responsiblePartyDescription_ASC
+  responsiblePartyDescription_DESC
+  responsiblePartyTitle_ASC
+  responsiblePartyTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+  userRightsContactText_ASC
+  userRightsContactText_DESC
+  userRightsIntroText_ASC
+  userRightsIntroText_DESC
+  userRightsTitle_ASC
+  userRightsTitle_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy)
+"""
+type PrivacyPolicy implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  introDescription(locale: String): String
+  lastModified(locale: String): String
+  linkedFrom(allowedLocales: [String]): PrivacyPolicyLinkingCollections
+  privacyOverview(locale: String, preview: Boolean, where: PrivacyOverviewFilter): PrivacyOverview
+  sys: Sys!
+  title(locale: String): String
+}
+
+type PrivacyPolicyCollection {
+  items: [PrivacyPolicy]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input PrivacyPolicyFilter {
+  AND: [PrivacyPolicyFilter]
+  OR: [PrivacyPolicyFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  introDescription: String
+  introDescription_contains: String
+  introDescription_exists: Boolean
+  introDescription_in: [String]
+  introDescription_not: String
+  introDescription_not_contains: String
+  introDescription_not_in: [String]
+  lastModified: String
+  lastModified_contains: String
+  lastModified_exists: Boolean
+  lastModified_in: [String]
+  lastModified_not: String
+  lastModified_not_contains: String
+  lastModified_not_in: [String]
+  privacyOverview: cfPrivacyOverviewNestedFilter
+  privacyOverview_exists: Boolean
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type PrivacyPolicyLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum PrivacyPolicyOrder {
+  introDescription_ASC
+  introDescription_DESC
+  lastModified_ASC
+  lastModified_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
 The 'Quality' type represents quality as whole numeric values between `1` and `100`.
 """
 scalar Quality
@@ -1839,6 +2139,10 @@ type Query {
   notFoundCollection(limit: Int = 100, locale: String, order: [NotFoundOrder], preview: Boolean, skip: Int = 0, where: NotFoundFilter): NotFoundCollection
   placeholder(id: String!, locale: String, preview: Boolean): Placeholder
   placeholderCollection(limit: Int = 100, locale: String, order: [PlaceholderOrder], preview: Boolean, skip: Int = 0, where: PlaceholderFilter): PlaceholderCollection
+  privacyOverview(id: String!, locale: String, preview: Boolean): PrivacyOverview
+  privacyOverviewCollection(limit: Int = 100, locale: String, order: [PrivacyOverviewOrder], preview: Boolean, skip: Int = 0, where: PrivacyOverviewFilter): PrivacyOverviewCollection
+  privacyPolicy(id: String!, locale: String, preview: Boolean): PrivacyPolicy
+  privacyPolicyCollection(limit: Int = 100, locale: String, order: [PrivacyPolicyOrder], preview: Boolean, skip: Int = 0, where: PrivacyPolicyFilter): PrivacyPolicyCollection
   service(id: String!, locale: String, preview: Boolean): Service
   serviceBanner(id: String!, locale: String, preview: Boolean): ServiceBanner
   serviceBannerCollection(limit: Int = 100, locale: String, order: [ServiceBannerOrder], preview: Boolean, skip: Int = 0, where: ServiceBannerFilter): ServiceBannerCollection
@@ -2135,7 +2439,7 @@ input SysFilter {
 }
 
 """
-Represents a tag entity for finding and organizing content easily.
+Represents a taxonomy concept entity for finding and organizing content easily.
         Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-concepts
 """
 type TaxonomyConcept {
@@ -2551,6 +2855,136 @@ input cfPlaceholderNestedFilter {
   role_not_contains: String
   role_not_in: [String]
   sys: SysFilter
+}
+
+input cfPrivacyOverviewNestedFilter {
+  AND: [cfPrivacyOverviewNestedFilter]
+  OR: [cfPrivacyOverviewNestedFilter]
+  analysisToolsDetailsText: String
+  analysisToolsDetailsText_contains: String
+  analysisToolsDetailsText_exists: Boolean
+  analysisToolsDetailsText_in: [String]
+  analysisToolsDetailsText_not: String
+  analysisToolsDetailsText_not_contains: String
+  analysisToolsDetailsText_not_in: [String]
+  analysisToolsIntroText: String
+  analysisToolsIntroText_contains: String
+  analysisToolsIntroText_exists: Boolean
+  analysisToolsIntroText_in: [String]
+  analysisToolsIntroText_not: String
+  analysisToolsIntroText_not_contains: String
+  analysisToolsIntroText_not_in: [String]
+  analysisToolsTitle: String
+  analysisToolsTitle_contains: String
+  analysisToolsTitle_exists: Boolean
+  analysisToolsTitle_in: [String]
+  analysisToolsTitle_not: String
+  analysisToolsTitle_not_contains: String
+  analysisToolsTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  dataAutomaticCaptureText: String
+  dataAutomaticCaptureText_contains: String
+  dataAutomaticCaptureText_exists: Boolean
+  dataAutomaticCaptureText_in: [String]
+  dataAutomaticCaptureText_not: String
+  dataAutomaticCaptureText_not_contains: String
+  dataAutomaticCaptureText_not_in: [String]
+  dataCaptureTitle: String
+  dataCaptureTitle_contains: String
+  dataCaptureTitle_exists: Boolean
+  dataCaptureTitle_in: [String]
+  dataCaptureTitle_not: String
+  dataCaptureTitle_not_contains: String
+  dataCaptureTitle_not_in: [String]
+  dataCollectionTitle: String
+  dataCollectionTitle_contains: String
+  dataCollectionTitle_exists: Boolean
+  dataCollectionTitle_in: [String]
+  dataCollectionTitle_not: String
+  dataCollectionTitle_not_contains: String
+  dataCollectionTitle_not_in: [String]
+  dataDirectCaptureText: String
+  dataDirectCaptureText_contains: String
+  dataDirectCaptureText_exists: Boolean
+  dataDirectCaptureText_in: [String]
+  dataDirectCaptureText_not: String
+  dataDirectCaptureText_not_contains: String
+  dataDirectCaptureText_not_in: [String]
+  dataPurposeDescription: String
+  dataPurposeDescription_contains: String
+  dataPurposeDescription_exists: Boolean
+  dataPurposeDescription_in: [String]
+  dataPurposeDescription_not: String
+  dataPurposeDescription_not_contains: String
+  dataPurposeDescription_not_in: [String]
+  dataPurposeTitle: String
+  dataPurposeTitle_contains: String
+  dataPurposeTitle_exists: Boolean
+  dataPurposeTitle_in: [String]
+  dataPurposeTitle_not: String
+  dataPurposeTitle_not_contains: String
+  dataPurposeTitle_not_in: [String]
+  generalInfoDescription: String
+  generalInfoDescription_contains: String
+  generalInfoDescription_exists: Boolean
+  generalInfoDescription_in: [String]
+  generalInfoDescription_not: String
+  generalInfoDescription_not_contains: String
+  generalInfoDescription_not_in: [String]
+  generalInfoTitle: String
+  generalInfoTitle_contains: String
+  generalInfoTitle_exists: Boolean
+  generalInfoTitle_in: [String]
+  generalInfoTitle_not: String
+  generalInfoTitle_not_contains: String
+  generalInfoTitle_not_in: [String]
+  responsiblePartyDescription: String
+  responsiblePartyDescription_contains: String
+  responsiblePartyDescription_exists: Boolean
+  responsiblePartyDescription_in: [String]
+  responsiblePartyDescription_not: String
+  responsiblePartyDescription_not_contains: String
+  responsiblePartyDescription_not_in: [String]
+  responsiblePartyTitle: String
+  responsiblePartyTitle_contains: String
+  responsiblePartyTitle_exists: Boolean
+  responsiblePartyTitle_in: [String]
+  responsiblePartyTitle_not: String
+  responsiblePartyTitle_not_contains: String
+  responsiblePartyTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+  userRightsContactText: String
+  userRightsContactText_contains: String
+  userRightsContactText_exists: Boolean
+  userRightsContactText_in: [String]
+  userRightsContactText_not: String
+  userRightsContactText_not_contains: String
+  userRightsContactText_not_in: [String]
+  userRightsIntroText: String
+  userRightsIntroText_contains: String
+  userRightsIntroText_exists: Boolean
+  userRightsIntroText_in: [String]
+  userRightsIntroText_not: String
+  userRightsIntroText_not_contains: String
+  userRightsIntroText_not_in: [String]
+  userRightsList_contains_all: [String]
+  userRightsList_contains_none: [String]
+  userRightsList_contains_some: [String]
+  userRightsList_exists: Boolean
+  userRightsTitle: String
+  userRightsTitle_contains: String
+  userRightsTitle_exists: Boolean
+  userRightsTitle_in: [String]
+  userRightsTitle_not: String
+  userRightsTitle_not_contains: String
+  userRightsTitle_not_in: [String]
 }
 
 input cfServiceNestedFilter {

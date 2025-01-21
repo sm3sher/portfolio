@@ -1,0 +1,29 @@
+query privacyPolicyContent($locale: String) {
+    privacyPolicyCollection(limit: 1, locale: $locale) {
+        items {
+            title
+            lastModified
+            introDescription
+            privacyOverview {
+                title
+                generalInfoTitle
+                generalInfoDescription
+                dataCollectionTitle
+                responsiblePartyTitle
+                responsiblePartyDescription
+                dataCaptureTitle
+                dataDirectCaptureText
+                dataAutomaticCaptureText
+                dataPurposeTitle
+                dataPurposeDescription
+                userRightsTitle
+                userRightsIntroText
+                userRightsList
+                userRightsContactText
+                analysisToolsTitle
+                analysisToolsIntroText
+                analysisToolsDetailsText
+            }
+        }
+    }
+}

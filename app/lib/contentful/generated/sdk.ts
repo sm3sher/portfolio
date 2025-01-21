@@ -2660,6 +2660,479 @@ export enum PlaceholderOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverview = Entry & _Node & {
+  __typename?: 'PrivacyOverview';
+  _id: Scalars['ID']['output'];
+  analysisToolsDetailsText?: Maybe<Scalars['String']['output']>;
+  analysisToolsIntroText?: Maybe<Scalars['String']['output']>;
+  analysisToolsTitle?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  dataAutomaticCaptureText?: Maybe<Scalars['String']['output']>;
+  dataCaptureTitle?: Maybe<Scalars['String']['output']>;
+  dataCollectionTitle?: Maybe<Scalars['String']['output']>;
+  dataDirectCaptureText?: Maybe<Scalars['String']['output']>;
+  dataPurposeDescription?: Maybe<Scalars['String']['output']>;
+  dataPurposeTitle?: Maybe<Scalars['String']['output']>;
+  generalInfoDescription?: Maybe<Scalars['String']['output']>;
+  generalInfoTitle?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<PrivacyOverviewLinkingCollections>;
+  responsiblePartyDescription?: Maybe<Scalars['String']['output']>;
+  responsiblePartyTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+  userRightsContactText?: Maybe<Scalars['String']['output']>;
+  userRightsIntroText?: Maybe<Scalars['String']['output']>;
+  userRightsList?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  userRightsTitle?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewAnalysisToolsDetailsTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewAnalysisToolsIntroTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewAnalysisToolsTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataAutomaticCaptureTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataCaptureTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataCollectionTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataDirectCaptureTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataPurposeDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewDataPurposeTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewGeneralInfoDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewGeneralInfoTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewResponsiblePartyDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewResponsiblePartyTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewUserRightsContactTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewUserRightsIntroTextArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewUserRightsListArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
+export type PrivacyOverviewUserRightsTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PrivacyOverviewCollection = {
+  __typename?: 'PrivacyOverviewCollection';
+  items: Array<Maybe<PrivacyOverview>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type PrivacyOverviewFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PrivacyOverviewFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PrivacyOverviewFilter>>>;
+  analysisToolsDetailsText?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsDetailsText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsDetailsText_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsIntroText?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsIntroText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsIntroText_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsTitle?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsTitle_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  dataAutomaticCaptureText?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_contains?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataAutomaticCaptureText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataAutomaticCaptureText_not?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCaptureTitle?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataCaptureTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCaptureTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCollectionTitle?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataCollectionTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCollectionTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataDirectCaptureText?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_contains?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataDirectCaptureText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataDirectCaptureText_not?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeDescription?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataPurposeDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeDescription_not?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeTitle?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataPurposeTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoDescription?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  generalInfoDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoDescription_not?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoTitle?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  generalInfoTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoTitle_not?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyDescription?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  responsiblePartyDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyDescription_not?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyTitle?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  responsiblePartyTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyTitle_not?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsContactText?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsContactText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsContactText_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsIntroText?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsIntroText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsIntroText_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsTitle?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsTitle_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PrivacyOverviewLinkingCollections = {
+  __typename?: 'PrivacyOverviewLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  privacyPolicyCollection?: Maybe<PrivacyPolicyCollection>;
+};
+
+
+export type PrivacyOverviewLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder {
+  IntroDescriptionAsc = 'introDescription_ASC',
+  IntroDescriptionDesc = 'introDescription_DESC',
+  LastModifiedAsc = 'lastModified_ASC',
+  LastModifiedDesc = 'lastModified_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum PrivacyOverviewOrder {
+  AnalysisToolsDetailsTextAsc = 'analysisToolsDetailsText_ASC',
+  AnalysisToolsDetailsTextDesc = 'analysisToolsDetailsText_DESC',
+  AnalysisToolsIntroTextAsc = 'analysisToolsIntroText_ASC',
+  AnalysisToolsIntroTextDesc = 'analysisToolsIntroText_DESC',
+  AnalysisToolsTitleAsc = 'analysisToolsTitle_ASC',
+  AnalysisToolsTitleDesc = 'analysisToolsTitle_DESC',
+  DataAutomaticCaptureTextAsc = 'dataAutomaticCaptureText_ASC',
+  DataAutomaticCaptureTextDesc = 'dataAutomaticCaptureText_DESC',
+  DataCaptureTitleAsc = 'dataCaptureTitle_ASC',
+  DataCaptureTitleDesc = 'dataCaptureTitle_DESC',
+  DataCollectionTitleAsc = 'dataCollectionTitle_ASC',
+  DataCollectionTitleDesc = 'dataCollectionTitle_DESC',
+  DataDirectCaptureTextAsc = 'dataDirectCaptureText_ASC',
+  DataDirectCaptureTextDesc = 'dataDirectCaptureText_DESC',
+  DataPurposeTitleAsc = 'dataPurposeTitle_ASC',
+  DataPurposeTitleDesc = 'dataPurposeTitle_DESC',
+  GeneralInfoTitleAsc = 'generalInfoTitle_ASC',
+  GeneralInfoTitleDesc = 'generalInfoTitle_DESC',
+  ResponsiblePartyDescriptionAsc = 'responsiblePartyDescription_ASC',
+  ResponsiblePartyDescriptionDesc = 'responsiblePartyDescription_DESC',
+  ResponsiblePartyTitleAsc = 'responsiblePartyTitle_ASC',
+  ResponsiblePartyTitleDesc = 'responsiblePartyTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UserRightsContactTextAsc = 'userRightsContactText_ASC',
+  UserRightsContactTextDesc = 'userRightsContactText_DESC',
+  UserRightsIntroTextAsc = 'userRightsIntroText_ASC',
+  UserRightsIntroTextDesc = 'userRightsIntroText_DESC',
+  UserRightsTitleAsc = 'userRightsTitle_ASC',
+  UserRightsTitleDesc = 'userRightsTitle_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicy = Entry & _Node & {
+  __typename?: 'PrivacyPolicy';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  introDescription?: Maybe<Scalars['String']['output']>;
+  lastModified?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<PrivacyPolicyLinkingCollections>;
+  privacyOverview?: Maybe<PrivacyOverview>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyIntroDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyLastModifiedArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyPrivacyOverviewArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<PrivacyOverviewFilter>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PrivacyPolicyCollection = {
+  __typename?: 'PrivacyPolicyCollection';
+  items: Array<Maybe<PrivacyPolicy>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type PrivacyPolicyFilter = {
+  AND?: InputMaybe<Array<InputMaybe<PrivacyPolicyFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<PrivacyPolicyFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  introDescription?: InputMaybe<Scalars['String']['input']>;
+  introDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  introDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  introDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  introDescription_not?: InputMaybe<Scalars['String']['input']>;
+  introDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  introDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastModified?: InputMaybe<Scalars['String']['input']>;
+  lastModified_contains?: InputMaybe<Scalars['String']['input']>;
+  lastModified_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  lastModified_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  lastModified_not?: InputMaybe<Scalars['String']['input']>;
+  lastModified_not_contains?: InputMaybe<Scalars['String']['input']>;
+  lastModified_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  privacyOverview?: InputMaybe<CfPrivacyOverviewNestedFilter>;
+  privacyOverview_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type PrivacyPolicyLinkingCollections = {
+  __typename?: 'PrivacyPolicyLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type PrivacyPolicyLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum PrivacyPolicyOrder {
+  IntroDescriptionAsc = 'introDescription_ASC',
+  IntroDescriptionDesc = 'introDescription_DESC',
+  LastModifiedAsc = 'lastModified_ASC',
+  LastModifiedDesc = 'lastModified_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type Query = {
   __typename?: 'Query';
   _node?: Maybe<_Node>;
@@ -2692,6 +3165,10 @@ export type Query = {
   notFoundCollection?: Maybe<NotFoundCollection>;
   placeholder?: Maybe<Placeholder>;
   placeholderCollection?: Maybe<PlaceholderCollection>;
+  privacyOverview?: Maybe<PrivacyOverview>;
+  privacyOverviewCollection?: Maybe<PrivacyOverviewCollection>;
+  privacyPolicy?: Maybe<PrivacyPolicy>;
+  privacyPolicyCollection?: Maybe<PrivacyPolicyCollection>;
   service?: Maybe<Service>;
   serviceBanner?: Maybe<ServiceBanner>;
   serviceBannerCollection?: Maybe<ServiceBannerCollection>;
@@ -2959,6 +3436,40 @@ export type QueryPlaceholderCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<PlaceholderFilter>;
+};
+
+
+export type QueryPrivacyOverviewArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryPrivacyOverviewCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PrivacyOverviewOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PrivacyOverviewFilter>;
+};
+
+
+export type QueryPrivacyPolicyArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryPrivacyPolicyCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<PrivacyPolicyOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<PrivacyPolicyFilter>;
 };
 
 
@@ -3459,7 +3970,7 @@ export type SysFilter = {
 };
 
 /**
- * Represents a tag entity for finding and organizing content easily.
+ * Represents a taxonomy concept entity for finding and organizing content easily.
  *         Find out more here: https://www.contentful.com/developers/docs/references/content-delivery-api/#/reference/content-concepts
  */
 export type TaxonomyConcept = {
@@ -4050,6 +4561,136 @@ export type CfPlaceholderNestedFilter = {
   sys?: InputMaybe<SysFilter>;
 };
 
+export type CfPrivacyOverviewNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfPrivacyOverviewNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfPrivacyOverviewNestedFilter>>>;
+  analysisToolsDetailsText?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsDetailsText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsDetailsText_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsDetailsText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsIntroText?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsIntroText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsIntroText_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsIntroText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsTitle?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  analysisToolsTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  analysisToolsTitle_not?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  analysisToolsTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  dataAutomaticCaptureText?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_contains?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataAutomaticCaptureText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataAutomaticCaptureText_not?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataAutomaticCaptureText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCaptureTitle?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataCaptureTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCaptureTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCaptureTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCollectionTitle?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataCollectionTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataCollectionTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataCollectionTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataDirectCaptureText?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_contains?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataDirectCaptureText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataDirectCaptureText_not?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataDirectCaptureText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeDescription?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataPurposeDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeDescription_not?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeTitle?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  dataPurposeTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  dataPurposeTitle_not?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  dataPurposeTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoDescription?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  generalInfoDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoDescription_not?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoTitle?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  generalInfoTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  generalInfoTitle_not?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  generalInfoTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyDescription?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  responsiblePartyDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyDescription_not?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyTitle?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  responsiblePartyTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  responsiblePartyTitle_not?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  responsiblePartyTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsContactText?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsContactText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsContactText_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsContactText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsIntroText?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsIntroText_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsIntroText_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsIntroText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsList_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsTitle?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  userRightsTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  userRightsTitle_not?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  userRightsTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type CfServiceNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfServiceNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfServiceNestedFilter>>>;
@@ -4246,6 +4887,13 @@ export type NotFoundContentQueryVariables = Exact<{
 
 
 export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, ctaButtonLabel?: string | null } | null> } | null };
+
+export type PrivacyPolicyContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, introDescription?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null } | null> } | null };
 
 export type ServiceBannerContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -4492,6 +5140,37 @@ export const NotFoundContentDocument = gql`
   }
 }
     `;
+export const PrivacyPolicyContentDocument = gql`
+    query privacyPolicyContent($locale: String) {
+  privacyPolicyCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      lastModified
+      introDescription
+      privacyOverview {
+        title
+        generalInfoTitle
+        generalInfoDescription
+        dataCollectionTitle
+        responsiblePartyTitle
+        responsiblePartyDescription
+        dataCaptureTitle
+        dataDirectCaptureText
+        dataAutomaticCaptureText
+        dataPurposeTitle
+        dataPurposeDescription
+        userRightsTitle
+        userRightsIntroText
+        userRightsList
+        userRightsContactText
+        analysisToolsTitle
+        analysisToolsIntroText
+        analysisToolsDetailsText
+      }
+    }
+  }
+}
+    `;
 export const ServiceBannerContentDocument = gql`
     query serviceBannerContent($locale: String) {
   serviceBannerCollection(limit: 1, locale: $locale) {
@@ -4559,6 +5238,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     notFoundContent(variables?: NotFoundContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NotFoundContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NotFoundContentQuery>(NotFoundContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'notFoundContent', 'query', variables);
+    },
+    privacyPolicyContent(variables?: PrivacyPolicyContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PrivacyPolicyContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PrivacyPolicyContentQuery>(PrivacyPolicyContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'privacyPolicyContent', 'query', variables);
     },
     serviceBannerContent(variables?: ServiceBannerContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ServiceBannerContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ServiceBannerContentQuery>(ServiceBannerContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'serviceBannerContent', 'query', variables);
