@@ -400,6 +400,202 @@ type ContentfulTag {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection)
+"""
+type DataCollection implements Entry & _Node {
+  _id: ID!
+  cloudflareDetails(locale: String): String
+  cloudflareIntro(locale: String): String
+  cloudflarePrivacyPolicy(locale: String): String
+  cloudflarePrivacyPolicyLink(locale: String): String
+  cloudflareTitle(locale: String): String
+  contactFormIntro(locale: String): String
+  contactFormSupabase(locale: String): String
+  contactFormSupabasePrivacyPolicy(locale: String): String
+  contactFormSupabasePrivacyPolicyLink(locale: String): String
+  contactFormTitle(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  legalBasisList(locale: String): [String]
+  legalBasisTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): DataCollectionLinkingCollections
+  storageDurationDetails(locale: String): String
+  storageDurationTitle(locale: String): String
+  sys: Sys!
+  title(locale: String): String
+}
+
+type DataCollectionCollection {
+  items: [DataCollection]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input DataCollectionFilter {
+  AND: [DataCollectionFilter]
+  OR: [DataCollectionFilter]
+  cloudflareDetails: String
+  cloudflareDetails_contains: String
+  cloudflareDetails_exists: Boolean
+  cloudflareDetails_in: [String]
+  cloudflareDetails_not: String
+  cloudflareDetails_not_contains: String
+  cloudflareDetails_not_in: [String]
+  cloudflareIntro: String
+  cloudflareIntro_contains: String
+  cloudflareIntro_exists: Boolean
+  cloudflareIntro_in: [String]
+  cloudflareIntro_not: String
+  cloudflareIntro_not_contains: String
+  cloudflareIntro_not_in: [String]
+  cloudflarePrivacyPolicy: String
+  cloudflarePrivacyPolicyLink: String
+  cloudflarePrivacyPolicyLink_contains: String
+  cloudflarePrivacyPolicyLink_exists: Boolean
+  cloudflarePrivacyPolicyLink_in: [String]
+  cloudflarePrivacyPolicyLink_not: String
+  cloudflarePrivacyPolicyLink_not_contains: String
+  cloudflarePrivacyPolicyLink_not_in: [String]
+  cloudflarePrivacyPolicy_contains: String
+  cloudflarePrivacyPolicy_exists: Boolean
+  cloudflarePrivacyPolicy_in: [String]
+  cloudflarePrivacyPolicy_not: String
+  cloudflarePrivacyPolicy_not_contains: String
+  cloudflarePrivacyPolicy_not_in: [String]
+  cloudflareTitle: String
+  cloudflareTitle_contains: String
+  cloudflareTitle_exists: Boolean
+  cloudflareTitle_in: [String]
+  cloudflareTitle_not: String
+  cloudflareTitle_not_contains: String
+  cloudflareTitle_not_in: [String]
+  contactFormIntro: String
+  contactFormIntro_contains: String
+  contactFormIntro_exists: Boolean
+  contactFormIntro_in: [String]
+  contactFormIntro_not: String
+  contactFormIntro_not_contains: String
+  contactFormIntro_not_in: [String]
+  contactFormSupabase: String
+  contactFormSupabasePrivacyPolicy: String
+  contactFormSupabasePrivacyPolicyLink: String
+  contactFormSupabasePrivacyPolicyLink_contains: String
+  contactFormSupabasePrivacyPolicyLink_exists: Boolean
+  contactFormSupabasePrivacyPolicyLink_in: [String]
+  contactFormSupabasePrivacyPolicyLink_not: String
+  contactFormSupabasePrivacyPolicyLink_not_contains: String
+  contactFormSupabasePrivacyPolicyLink_not_in: [String]
+  contactFormSupabasePrivacyPolicy_contains: String
+  contactFormSupabasePrivacyPolicy_exists: Boolean
+  contactFormSupabasePrivacyPolicy_in: [String]
+  contactFormSupabasePrivacyPolicy_not: String
+  contactFormSupabasePrivacyPolicy_not_contains: String
+  contactFormSupabasePrivacyPolicy_not_in: [String]
+  contactFormSupabase_contains: String
+  contactFormSupabase_exists: Boolean
+  contactFormSupabase_in: [String]
+  contactFormSupabase_not: String
+  contactFormSupabase_not_contains: String
+  contactFormSupabase_not_in: [String]
+  contactFormTitle: String
+  contactFormTitle_contains: String
+  contactFormTitle_exists: Boolean
+  contactFormTitle_in: [String]
+  contactFormTitle_not: String
+  contactFormTitle_not_contains: String
+  contactFormTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  legalBasisList_contains_all: [String]
+  legalBasisList_contains_none: [String]
+  legalBasisList_contains_some: [String]
+  legalBasisList_exists: Boolean
+  legalBasisTitle: String
+  legalBasisTitle_contains: String
+  legalBasisTitle_exists: Boolean
+  legalBasisTitle_in: [String]
+  legalBasisTitle_not: String
+  legalBasisTitle_not_contains: String
+  legalBasisTitle_not_in: [String]
+  storageDurationDetails: String
+  storageDurationDetails_contains: String
+  storageDurationDetails_exists: Boolean
+  storageDurationDetails_in: [String]
+  storageDurationDetails_not: String
+  storageDurationDetails_not_contains: String
+  storageDurationDetails_not_in: [String]
+  storageDurationTitle: String
+  storageDurationTitle_contains: String
+  storageDurationTitle_exists: Boolean
+  storageDurationTitle_in: [String]
+  storageDurationTitle_not: String
+  storageDurationTitle_not_contains: String
+  storageDurationTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type DataCollectionLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  privacyPolicyCollection(limit: Int = 100, locale: String, order: [DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder], preview: Boolean, skip: Int = 0): PrivacyPolicyCollection
+}
+
+enum DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder {
+  introDescription_ASC
+  introDescription_DESC
+  lastModified_ASC
+  lastModified_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum DataCollectionOrder {
+  cloudflareIntro_ASC
+  cloudflareIntro_DESC
+  cloudflarePrivacyPolicyLink_ASC
+  cloudflarePrivacyPolicyLink_DESC
+  cloudflarePrivacyPolicy_ASC
+  cloudflarePrivacyPolicy_DESC
+  cloudflareTitle_ASC
+  cloudflareTitle_DESC
+  contactFormSupabasePrivacyPolicyLink_ASC
+  contactFormSupabasePrivacyPolicyLink_DESC
+  contactFormSupabasePrivacyPolicy_ASC
+  contactFormSupabasePrivacyPolicy_DESC
+  contactFormTitle_ASC
+  contactFormTitle_DESC
+  legalBasisTitle_ASC
+  legalBasisTitle_DESC
+  storageDurationDetails_ASC
+  storageDurationDetails_DESC
+  storageDurationTitle_ASC
+  storageDurationTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
 A date-time string at UTC, such as 2007-12-03T10:15:30Z,
     compliant with the 'date-time' format outlined in section 5.6 of
     the RFC 3339 profile of the ISO 8601 standard for representation
@@ -2529,6 +2725,7 @@ enum PrivacyOverviewOrder {
 type PrivacyPolicy implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
+  dataCollection(locale: String, preview: Boolean, where: DataCollectionFilter): DataCollection
   hosting(locale: String, preview: Boolean, where: HostingFilter): Hosting
   introDescription(locale: String): String
   lastModified(locale: String): String
@@ -2550,6 +2747,8 @@ input PrivacyPolicyFilter {
   AND: [PrivacyPolicyFilter]
   OR: [PrivacyPolicyFilter]
   contentfulMetadata: ContentfulMetadataFilter
+  dataCollection: cfDataCollectionNestedFilter
+  dataCollection_exists: Boolean
   hosting: cfHostingNestedFilter
   hosting_exists: Boolean
   introDescription: String
@@ -2614,6 +2813,8 @@ type Query {
   assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
   contact(id: String!, locale: String, preview: Boolean): Contact
   contactCollection(limit: Int = 100, locale: String, order: [ContactOrder], preview: Boolean, skip: Int = 0, where: ContactFilter): ContactCollection
+  dataCollection(id: String!, locale: String, preview: Boolean): DataCollection
+  dataCollectionCollection(limit: Int = 100, locale: String, order: [DataCollectionOrder], preview: Boolean, skip: Int = 0, where: DataCollectionFilter): DataCollectionCollection
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
   footer(id: String!, locale: String, preview: Boolean): Footer
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection
@@ -3292,6 +3493,115 @@ enum ValidationMessagesOrder {
 
 interface _Node {
   _id: ID!
+}
+
+input cfDataCollectionNestedFilter {
+  AND: [cfDataCollectionNestedFilter]
+  OR: [cfDataCollectionNestedFilter]
+  cloudflareDetails: String
+  cloudflareDetails_contains: String
+  cloudflareDetails_exists: Boolean
+  cloudflareDetails_in: [String]
+  cloudflareDetails_not: String
+  cloudflareDetails_not_contains: String
+  cloudflareDetails_not_in: [String]
+  cloudflareIntro: String
+  cloudflareIntro_contains: String
+  cloudflareIntro_exists: Boolean
+  cloudflareIntro_in: [String]
+  cloudflareIntro_not: String
+  cloudflareIntro_not_contains: String
+  cloudflareIntro_not_in: [String]
+  cloudflarePrivacyPolicy: String
+  cloudflarePrivacyPolicyLink: String
+  cloudflarePrivacyPolicyLink_contains: String
+  cloudflarePrivacyPolicyLink_exists: Boolean
+  cloudflarePrivacyPolicyLink_in: [String]
+  cloudflarePrivacyPolicyLink_not: String
+  cloudflarePrivacyPolicyLink_not_contains: String
+  cloudflarePrivacyPolicyLink_not_in: [String]
+  cloudflarePrivacyPolicy_contains: String
+  cloudflarePrivacyPolicy_exists: Boolean
+  cloudflarePrivacyPolicy_in: [String]
+  cloudflarePrivacyPolicy_not: String
+  cloudflarePrivacyPolicy_not_contains: String
+  cloudflarePrivacyPolicy_not_in: [String]
+  cloudflareTitle: String
+  cloudflareTitle_contains: String
+  cloudflareTitle_exists: Boolean
+  cloudflareTitle_in: [String]
+  cloudflareTitle_not: String
+  cloudflareTitle_not_contains: String
+  cloudflareTitle_not_in: [String]
+  contactFormIntro: String
+  contactFormIntro_contains: String
+  contactFormIntro_exists: Boolean
+  contactFormIntro_in: [String]
+  contactFormIntro_not: String
+  contactFormIntro_not_contains: String
+  contactFormIntro_not_in: [String]
+  contactFormSupabase: String
+  contactFormSupabasePrivacyPolicy: String
+  contactFormSupabasePrivacyPolicyLink: String
+  contactFormSupabasePrivacyPolicyLink_contains: String
+  contactFormSupabasePrivacyPolicyLink_exists: Boolean
+  contactFormSupabasePrivacyPolicyLink_in: [String]
+  contactFormSupabasePrivacyPolicyLink_not: String
+  contactFormSupabasePrivacyPolicyLink_not_contains: String
+  contactFormSupabasePrivacyPolicyLink_not_in: [String]
+  contactFormSupabasePrivacyPolicy_contains: String
+  contactFormSupabasePrivacyPolicy_exists: Boolean
+  contactFormSupabasePrivacyPolicy_in: [String]
+  contactFormSupabasePrivacyPolicy_not: String
+  contactFormSupabasePrivacyPolicy_not_contains: String
+  contactFormSupabasePrivacyPolicy_not_in: [String]
+  contactFormSupabase_contains: String
+  contactFormSupabase_exists: Boolean
+  contactFormSupabase_in: [String]
+  contactFormSupabase_not: String
+  contactFormSupabase_not_contains: String
+  contactFormSupabase_not_in: [String]
+  contactFormTitle: String
+  contactFormTitle_contains: String
+  contactFormTitle_exists: Boolean
+  contactFormTitle_in: [String]
+  contactFormTitle_not: String
+  contactFormTitle_not_contains: String
+  contactFormTitle_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  legalBasisList_contains_all: [String]
+  legalBasisList_contains_none: [String]
+  legalBasisList_contains_some: [String]
+  legalBasisList_exists: Boolean
+  legalBasisTitle: String
+  legalBasisTitle_contains: String
+  legalBasisTitle_exists: Boolean
+  legalBasisTitle_in: [String]
+  legalBasisTitle_not: String
+  legalBasisTitle_not_contains: String
+  legalBasisTitle_not_in: [String]
+  storageDurationDetails: String
+  storageDurationDetails_contains: String
+  storageDurationDetails_exists: Boolean
+  storageDurationDetails_in: [String]
+  storageDurationDetails_not: String
+  storageDurationDetails_not_contains: String
+  storageDurationDetails_not_in: [String]
+  storageDurationTitle: String
+  storageDurationTitle_contains: String
+  storageDurationTitle_exists: Boolean
+  storageDurationTitle_in: [String]
+  storageDurationTitle_not: String
+  storageDurationTitle_not_contains: String
+  storageDurationTitle_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
 }
 
 input cfHostingNestedFilter {

@@ -654,6 +654,316 @@ export type ContentfulTag = {
   name?: Maybe<Scalars['String']['output']>;
 };
 
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollection = Entry & _Node & {
+  __typename?: 'DataCollection';
+  _id: Scalars['ID']['output'];
+  cloudflareDetails?: Maybe<Scalars['String']['output']>;
+  cloudflareIntro?: Maybe<Scalars['String']['output']>;
+  cloudflarePrivacyPolicy?: Maybe<Scalars['String']['output']>;
+  cloudflarePrivacyPolicyLink?: Maybe<Scalars['String']['output']>;
+  cloudflareTitle?: Maybe<Scalars['String']['output']>;
+  contactFormIntro?: Maybe<Scalars['String']['output']>;
+  contactFormSupabase?: Maybe<Scalars['String']['output']>;
+  contactFormSupabasePrivacyPolicy?: Maybe<Scalars['String']['output']>;
+  contactFormSupabasePrivacyPolicyLink?: Maybe<Scalars['String']['output']>;
+  contactFormTitle?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  legalBasisList?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  legalBasisTitle?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<DataCollectionLinkingCollections>;
+  storageDurationDetails?: Maybe<Scalars['String']['output']>;
+  storageDurationTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionCloudflareDetailsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionCloudflareIntroArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionCloudflarePrivacyPolicyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionCloudflarePrivacyPolicyLinkArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionCloudflareTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionContactFormIntroArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionContactFormSupabaseArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionContactFormSupabasePrivacyPolicyArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionContactFormSupabasePrivacyPolicyLinkArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionContactFormTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionLegalBasisListArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionLegalBasisTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionStorageDurationDetailsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionStorageDurationTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/dataCollection) */
+export type DataCollectionTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type DataCollectionCollection = {
+  __typename?: 'DataCollectionCollection';
+  items: Array<Maybe<DataCollection>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type DataCollectionFilter = {
+  AND?: InputMaybe<Array<InputMaybe<DataCollectionFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<DataCollectionFilter>>>;
+  cloudflareDetails?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareDetails_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareDetails_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareIntro?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareIntro_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflarePrivacyPolicyLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicyLink_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflarePrivacyPolicy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareTitle?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareTitle_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormIntro?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormIntro_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabasePrivacyPolicyLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicyLink_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicy_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabasePrivacyPolicy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicy_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabase_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormTitle?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormTitle_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  legalBasisList_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalBasisTitle?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalBasisTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisTitle_not?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationDetails?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  storageDurationDetails_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationDetails_not?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_not_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationTitle?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  storageDurationTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationTitle_not?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type DataCollectionLinkingCollections = {
+  __typename?: 'DataCollectionLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  privacyPolicyCollection?: Maybe<PrivacyPolicyCollection>;
+};
+
+
+export type DataCollectionLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type DataCollectionLinkingCollectionsPrivacyPolicyCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder {
+  IntroDescriptionAsc = 'introDescription_ASC',
+  IntroDescriptionDesc = 'introDescription_DESC',
+  LastModifiedAsc = 'lastModified_ASC',
+  LastModifiedDesc = 'lastModified_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
+export enum DataCollectionOrder {
+  CloudflareIntroAsc = 'cloudflareIntro_ASC',
+  CloudflareIntroDesc = 'cloudflareIntro_DESC',
+  CloudflarePrivacyPolicyLinkAsc = 'cloudflarePrivacyPolicyLink_ASC',
+  CloudflarePrivacyPolicyLinkDesc = 'cloudflarePrivacyPolicyLink_DESC',
+  CloudflarePrivacyPolicyAsc = 'cloudflarePrivacyPolicy_ASC',
+  CloudflarePrivacyPolicyDesc = 'cloudflarePrivacyPolicy_DESC',
+  CloudflareTitleAsc = 'cloudflareTitle_ASC',
+  CloudflareTitleDesc = 'cloudflareTitle_DESC',
+  ContactFormSupabasePrivacyPolicyLinkAsc = 'contactFormSupabasePrivacyPolicyLink_ASC',
+  ContactFormSupabasePrivacyPolicyLinkDesc = 'contactFormSupabasePrivacyPolicyLink_DESC',
+  ContactFormSupabasePrivacyPolicyAsc = 'contactFormSupabasePrivacyPolicy_ASC',
+  ContactFormSupabasePrivacyPolicyDesc = 'contactFormSupabasePrivacyPolicy_DESC',
+  ContactFormTitleAsc = 'contactFormTitle_ASC',
+  ContactFormTitleDesc = 'contactFormTitle_DESC',
+  LegalBasisTitleAsc = 'legalBasisTitle_ASC',
+  LegalBasisTitleDesc = 'legalBasisTitle_DESC',
+  StorageDurationDetailsAsc = 'storageDurationDetails_ASC',
+  StorageDurationDetailsDesc = 'storageDurationDetails_DESC',
+  StorageDurationTitleAsc = 'storageDurationTitle_ASC',
+  StorageDurationTitleDesc = 'storageDurationTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type Entry = {
   contentfulMetadata: ContentfulMetadata;
   sys: Sys;
@@ -3805,6 +4115,7 @@ export type PrivacyPolicy = Entry & _Node & {
   __typename?: 'PrivacyPolicy';
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
+  dataCollection?: Maybe<DataCollection>;
   hosting?: Maybe<Hosting>;
   introDescription?: Maybe<Scalars['String']['output']>;
   lastModified?: Maybe<Scalars['String']['output']>;
@@ -3813,6 +4124,14 @@ export type PrivacyPolicy = Entry & _Node & {
   privacyOverview?: Maybe<PrivacyOverview>;
   sys: Sys;
   title?: Maybe<Scalars['String']['output']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
+export type PrivacyPolicyDataCollectionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<DataCollectionFilter>;
 };
 
 
@@ -3875,6 +4194,8 @@ export type PrivacyPolicyFilter = {
   AND?: InputMaybe<Array<InputMaybe<PrivacyPolicyFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<PrivacyPolicyFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  dataCollection?: InputMaybe<CfDataCollectionNestedFilter>;
+  dataCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   hosting?: InputMaybe<CfHostingNestedFilter>;
   hosting_exists?: InputMaybe<Scalars['Boolean']['input']>;
   introDescription?: InputMaybe<Scalars['String']['input']>;
@@ -3944,6 +4265,8 @@ export type Query = {
   assetCollection?: Maybe<AssetCollection>;
   contact?: Maybe<Contact>;
   contactCollection?: Maybe<ContactCollection>;
+  dataCollection?: Maybe<DataCollection>;
+  dataCollectionCollection?: Maybe<DataCollectionCollection>;
   entryCollection?: Maybe<EntryCollection>;
   footer?: Maybe<Footer>;
   footerCollection?: Maybe<FooterCollection>;
@@ -4045,6 +4368,23 @@ export type QueryContactCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ContactFilter>;
+};
+
+
+export type QueryDataCollectionArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryDataCollectionCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<DataCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<DataCollectionFilter>;
 };
 
 
@@ -5336,6 +5676,115 @@ export type _Node = {
   _id: Scalars['ID']['output'];
 };
 
+export type CfDataCollectionNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfDataCollectionNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfDataCollectionNestedFilter>>>;
+  cloudflareDetails?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareDetails_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareDetails_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareDetails_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareIntro?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareIntro_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflarePrivacyPolicyLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicyLink_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicyLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflarePrivacyPolicy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflarePrivacyPolicy_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflarePrivacyPolicy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareTitle?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  cloudflareTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  cloudflareTitle_not?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  cloudflareTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormIntro?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormIntro_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabasePrivacyPolicyLink_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicyLink_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicyLink_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicy_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabasePrivacyPolicy_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabasePrivacyPolicy_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabasePrivacyPolicy_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormSupabase_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormSupabase_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormSupabase_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormTitle?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  contactFormTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contactFormTitle_not?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  contactFormTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  legalBasisList_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisList_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalBasisTitle?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalBasisTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalBasisTitle_not?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalBasisTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationDetails?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  storageDurationDetails_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationDetails_not?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_not_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationDetails_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationTitle?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  storageDurationTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  storageDurationTitle_not?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  storageDurationTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  title_contains?: InputMaybe<Scalars['String']['input']>;
+  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  title_not?: InputMaybe<Scalars['String']['input']>;
+  title_not_contains?: InputMaybe<Scalars['String']['input']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type CfHostingNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfHostingNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfHostingNestedFilter>>>;
@@ -6021,7 +6470,7 @@ export type PrivacyPolicyContentQueryVariables = Exact<{
 }>;
 
 
-export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, introDescription?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null, hosting?: { __typename?: 'Hosting', title?: string | null, netlifyTitle?: string | null, netlifyHostingInfo?: string | null, netlifyDataProcessing?: string | null, netlifyDataProcessingLink?: string | null, netlifyContractualClauses?: string | null, netlifyContractualClausesLink?: string | null, netlifyDataProcessingAgreement?: string | null, netlifyDataProcessingAgreementLink?: string | null, netlifyPrivacyPolicy?: string | null, netlifyPrivacyPolicyLink?: string | null } | null, notesAndLegalInformation?: { __typename?: 'NotesAndLegalInformation', title?: string | null, dataProtectionTitle?: string | null, dataProtectionIntro?: string | null, dataProtectionDetails?: string | null, dataProtectionNotice?: string | null, responsiblePartyTitle?: string | null, responsiblePartyIntro?: string | null, responsiblePartyName?: string | null, responsiblePartyRole?: string | null, responsiblePartyStreet?: string | null, responsiblePartyPostalCode?: string | null, responsiblePartyCity?: string | null, responsiblePartyEmailLabel?: string | null, responsiblePartyEmail?: string | null, responsiblePartyInfo?: string | null, dataStorageDurationTitle?: string | null, dataStorageDurationDetails?: string | null, legalBasisTitle?: string | null, legalBasisIntro?: string | null, legalBasisList?: Array<string | null> | null, legalBasisDetails?: string | null, userRightsTitle?: string | null, userRightsIntro?: string | null, userRightsList?: Array<string | null> | null, complaintRightTitle?: string | null, complaintRightDetails?: string | null, sslTlsEncryptionTitle?: string | null, sslTlsEncryptionIntro?: string | null, sslTlsEncryptionDetails?: string | null } | null } | null> } | null };
+export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, introDescription?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null, hosting?: { __typename?: 'Hosting', title?: string | null, netlifyTitle?: string | null, netlifyHostingInfo?: string | null, netlifyDataProcessing?: string | null, netlifyDataProcessingLink?: string | null, netlifyContractualClauses?: string | null, netlifyContractualClausesLink?: string | null, netlifyDataProcessingAgreement?: string | null, netlifyDataProcessingAgreementLink?: string | null, netlifyPrivacyPolicy?: string | null, netlifyPrivacyPolicyLink?: string | null } | null, notesAndLegalInformation?: { __typename?: 'NotesAndLegalInformation', title?: string | null, dataProtectionTitle?: string | null, dataProtectionIntro?: string | null, dataProtectionDetails?: string | null, dataProtectionNotice?: string | null, responsiblePartyTitle?: string | null, responsiblePartyIntro?: string | null, responsiblePartyName?: string | null, responsiblePartyRole?: string | null, responsiblePartyStreet?: string | null, responsiblePartyPostalCode?: string | null, responsiblePartyCity?: string | null, responsiblePartyEmailLabel?: string | null, responsiblePartyEmail?: string | null, responsiblePartyInfo?: string | null, dataStorageDurationTitle?: string | null, dataStorageDurationDetails?: string | null, legalBasisTitle?: string | null, legalBasisIntro?: string | null, legalBasisList?: Array<string | null> | null, legalBasisDetails?: string | null, userRightsTitle?: string | null, userRightsIntro?: string | null, userRightsList?: Array<string | null> | null, complaintRightTitle?: string | null, complaintRightDetails?: string | null, sslTlsEncryptionTitle?: string | null, sslTlsEncryptionIntro?: string | null, sslTlsEncryptionDetails?: string | null } | null, dataCollection?: { __typename?: 'DataCollection', title?: string | null, cloudflareTitle?: string | null, cloudflareIntro?: string | null, cloudflareDetails?: string | null, cloudflarePrivacyPolicy?: string | null, cloudflarePrivacyPolicyLink?: string | null, contactFormTitle?: string | null, contactFormIntro?: string | null, contactFormSupabase?: string | null, contactFormSupabasePrivacyPolicy?: string | null, contactFormSupabasePrivacyPolicyLink?: string | null, legalBasisTitle?: string | null, legalBasisList?: Array<string | null> | null, storageDurationTitle?: string | null, storageDurationDetails?: string | null } | null } | null> } | null };
 
 export type ServiceBannerContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6338,6 +6787,23 @@ export const PrivacyPolicyContentDocument = gql`
         sslTlsEncryptionTitle
         sslTlsEncryptionIntro
         sslTlsEncryptionDetails
+      }
+      dataCollection {
+        title
+        cloudflareTitle
+        cloudflareIntro
+        cloudflareDetails
+        cloudflarePrivacyPolicy
+        cloudflarePrivacyPolicyLink
+        contactFormTitle
+        contactFormIntro
+        contactFormSupabase
+        contactFormSupabasePrivacyPolicy
+        contactFormSupabasePrivacyPolicyLink
+        legalBasisTitle
+        legalBasisList
+        storageDurationTitle
+        storageDurationDetails
       }
     }
   }

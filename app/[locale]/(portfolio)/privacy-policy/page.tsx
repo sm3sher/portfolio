@@ -227,7 +227,7 @@ export default async function Page({ params }: Props) {
             {content?.notesAndLegalInformation?.legalBasisList
               ?.filter((item) => item !== null)
               .map((item, index) => {
-                const [boldText, normalText] = item.split(':', 2); // Split into two parts
+                const [boldText, normalText] = item.split(':', 2);
                 return (
                   <li key={index}>
                     <span className="font-bold">{boldText}:</span> {normalText}
@@ -280,97 +280,76 @@ export default async function Page({ params }: Props) {
       </article>
 
       <article className="mb-12">
-        <h4 className="mb-8">4. Datenerfassung auf dieser Website</h4>
+        <h4 className="mb-8">{content?.dataCollection?.title}</h4>
 
         <section className="mb-8">
-          <h4 className="mb-4">Cloudflare Web Analytics</h4>
+          <h4 className="mb-4">{content?.dataCollection?.cloudflareTitle}</h4>
           <p className="mb-2 text-[--secondary]">
-            Wir nutzen für unsere Website das Analyse-Tool Cloudflare Web
-            Analytics. Dienstanbieter ist Cloudflare Inc., 101 Townsend St., San
-            Francisco, CA 94107, USA.
+            {content?.dataCollection?.cloudflareIntro}
           </p>
-
           <p className="mb-2 text-[--secondary]">
-            Cloudflare verarbeitet Daten unter anderem in den USA und ist
-            Teilnehmer des EU-US Data Privacy Frameworks, welches den sicheren
-            und datenschutzkonformen Datentransfer personenbezogener Daten
-            regelt. Darüber hinaus werden Standardvertragsklauseln gemäß Art. 46
-            DSGVO verwendet, um europäische Datenschutzstandards bei der
-            Datenverarbeitung in Drittländern sicherzustellen.
+            {content?.dataCollection?.cloudflareDetails}
           </p>
-
           <p className="mb-2 text-[--secondary]">
-            Weitere Informationen finden Sie in der Datenschutzerklärung von
-            Cloudflare:{' '}
+            {content?.dataCollection?.cloudflarePrivacyPolicy}{' '}
             <a
-              href="https://www.cloudflare.com/de-de/privacypolicy/"
+              href={content?.dataCollection?.cloudflarePrivacyPolicyLink || ''}
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://www.cloudflare.com/de-de/privacypolicy/
+              {content?.dataCollection?.cloudflarePrivacyPolicyLink}
             </a>
             .
           </p>
         </section>
 
         <section className="mb-8">
-          <h4 className="mb-4">Kontaktformular und Anfragen per E-Mail</h4>
+          <h4 className="mb-4">{content?.dataCollection?.contactFormTitle}</h4>
           <p className="mb-2 text-[--secondary]">
-            Die Nutzung des Kontaktformulars sowie das Senden von E-Mails
-            erfordert die Angabe personenbezogener Daten (z. B. Name,
-            E-Mail-Adresse, Nachricht). Diese Daten werden ausschließlich zur
-            Bearbeitung Ihrer Anfrage gespeichert und nicht ohne Ihre
-            Einwilligung weitergegeben.
-          </p>
-
-          <p className="mb-2 text-[--secondary]">
-            Zur Verarbeitung von Kontaktanfragen mittels Kontaktformular nutzen
-            wir die Datenbank-Infrastruktur von Supabase Inc., 970 Toa Payoh N,
-            #07-04, Singapur. Dabei können Daten nach Singapur übertragen
-            werden, die Datenübertragung in ein Drittland (Singapur) erfolgt auf
-            Grundlage der Standardvertragsklauseln der EU gemäß Art. 46 Abs. 2
-            lit. c DSGVO.
+            {content?.dataCollection?.contactFormIntro}
           </p>
           <p className="mb-2 text-[--secondary]">
-            Mehr Informationen:{' '}
+            {content?.dataCollection?.contactFormSupabase}
+          </p>
+          <p className="mb-2 text-[--secondary]">
+            {content?.dataCollection?.contactFormSupabasePrivacyPolicy}{' '}
             <a
-              href="https://supabase.com/privacy"
+              href={
+                content?.dataCollection?.contactFormSupabasePrivacyPolicyLink ||
+                ''
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="break-words text-[--highlight] hover:underline hover:underline-offset-4"
             >
-              https://supabase.com/privacy
+              {content?.dataCollection?.contactFormSupabasePrivacyPolicyLink}
             </a>
             .
           </p>
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Rechtsgrundlagen
+            {content?.dataCollection?.legalBasisTitle}
           </h5>
           <ul className="mb-2 ml-4 list-disc space-y-1 text-[--secondary]">
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. b DSGVO:</span> Zur
-              Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen.
-            </li>
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. f DSGVO:</span>{' '}
-              Berechtigtes Interesse an der effektiven Bearbeitung.
-            </li>
-            <li>
-              <span className="font-bold">Art. 6 Abs. 1 lit. a DSGVO:</span> Auf
-              Basis Ihrer Einwilligung (widerrufbar).
-            </li>
+            {content?.dataCollection?.legalBasisList
+              ?.filter((item) => item !== null)
+              .map((item, index) => {
+                const [boldText, normalText] = item.split(':', 2);
+                return (
+                  <li key={index}>
+                    <span className="font-bold">{boldText}:</span> {normalText}
+                  </li>
+                );
+              })}
           </ul>
 
           <h5 className="mb-2 mt-4 flex items-center gap-2">
             <CircleArrowRight02Icon className="text-[--highlight]" />
-            Speicherdauer
+            {content?.dataCollection?.storageDurationTitle}
           </h5>
           <p className="mb-2 text-[--secondary]">
-            Die Daten werden gespeichert, bis der Zweck entfällt oder Sie die
-            Löschung verlangen. Gesetzliche Aufbewahrungsfristen bleiben
-            unberührt.
+            {content?.dataCollection?.storageDurationDetails}
           </p>
         </section>
       </article>

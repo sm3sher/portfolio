@@ -68,6 +68,23 @@ query privacyPolicyContent($locale: String) {
                 sslTlsEncryptionIntro
                 sslTlsEncryptionDetails
             }
+            dataCollection {
+                title
+                cloudflareTitle
+                cloudflareIntro
+                cloudflareDetails
+                cloudflarePrivacyPolicy
+                cloudflarePrivacyPolicyLink
+                contactFormTitle
+                contactFormIntro
+                contactFormSupabase
+                contactFormSupabasePrivacyPolicy
+                contactFormSupabasePrivacyPolicyLink
+                legalBasisTitle
+                legalBasisList
+                storageDurationTitle
+                storageDurationDetails
+            }
         }
     }
 }
