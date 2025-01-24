@@ -12,7 +12,7 @@
     "test": "vitest",
     "prepare": "husky",
     "_contentful:generate": "graphql-codegen --config codegen.ts",
-    "_supabase:generate": "supabase gen types typescript --project-id $(basename $NEXT_PUBLIC_SUPABASE_URL | cut -d'.' -f1) --schema public > app/lib/supabase/generated/database.types.ts",
+    "_supabase:generate": "supabase gen types typescript --project-id $(basename $SUPABASE_URL | cut -d'.' -f1) --schema public > app/lib/supabase/generated/database.types.ts",
     "types:generate": "dotenv -e .env.local -- sh -c 'npm run _contentful:generate && npm run _supabase:generate'"
   },
   "dependencies": {
