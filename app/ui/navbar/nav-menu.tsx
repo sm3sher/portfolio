@@ -76,7 +76,7 @@ export default function NavMenu({
   return (
     <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur">
       {navbarItems.map((item) => (
-        <Tooltip key={item.id} tooltip={item.label} hideAtSm>
+        <Tooltip key={item.id} content={item.label} marginTop="mt-2.5" hideAtSm>
           <Link
             href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
             className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
