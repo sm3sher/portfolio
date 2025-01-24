@@ -1863,6 +1863,7 @@ type Navbar implements Entry & _Node {
   homeLabel(locale: String): String
   linkedFrom(allowedLocales: [String]): NavbarLinkingCollections
   servicesLabel(locale: String): String
+  switchLanguageLabel(locale: String): String
   switchThemeLabel(locale: String): String
   sys: Sys!
   usFlagDescription(locale: String): String
@@ -1914,6 +1915,13 @@ input NavbarFilter {
   servicesLabel_not: String
   servicesLabel_not_contains: String
   servicesLabel_not_in: [String]
+  switchLanguageLabel: String
+  switchLanguageLabel_contains: String
+  switchLanguageLabel_exists: Boolean
+  switchLanguageLabel_in: [String]
+  switchLanguageLabel_not: String
+  switchLanguageLabel_not_contains: String
+  switchLanguageLabel_not_in: [String]
   switchThemeLabel: String
   switchThemeLabel_contains: String
   switchThemeLabel_exists: Boolean
@@ -1946,6 +1954,8 @@ enum NavbarOrder {
   homeLabel_DESC
   servicesLabel_ASC
   servicesLabel_DESC
+  switchLanguageLabel_ASC
+  switchLanguageLabel_DESC
   switchThemeLabel_ASC
   switchThemeLabel_DESC
   sys_firstPublishedAt_ASC

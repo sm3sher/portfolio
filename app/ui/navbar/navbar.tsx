@@ -17,6 +17,7 @@ export default async function Navbar({ locale }: Props) {
       <LanguageDropdown
         usFlagDescription={content?.usFlagDescription}
         deFlagDescription={content?.deFlagDescription}
+        switchLanguageLabel={content?.switchLanguageLabel}
       />
       <NavMenu
         homeLabel={content?.homeLabel}

@@ -5,15 +5,18 @@ import Image from 'next/image';
 import { LanguageSkillIcon } from 'hugeicons-react';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import Tooltip from '@/app/ui/tooltip/tooltip';
 
 type Props = {
   usFlagDescription?: string | null;
   deFlagDescription?: string | null;
+  switchLanguageLabel?: string | null;
 };
 
 export default function LanguageDropdown({
   usFlagDescription,
   deFlagDescription,
+  switchLanguageLabel,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -59,17 +62,19 @@ export default function LanguageDropdown({
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <button
-        id="dropdownLanguageButton"
-        onClick={() => setOpen((prevState) => !prevState)}
-        onKeyDown={handleKeyDown}
-        className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
-        aria-haspopup
-        aria-expanded={open}
-        aria-controls="dropdown"
-      >
-        <LanguageSkillIcon size={22} />
-      </button>
+      <Tooltip content={switchLanguageLabel}>
+        <button
+          id="dropdownLanguageButton"
+          onClick={() => setOpen((prevState) => !prevState)}
+          onKeyDown={handleKeyDown}
+          className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
+          aria-haspopup
+          aria-expanded={open}
+          aria-controls="dropdown"
+        >
+          <LanguageSkillIcon size={22} />
+        </button>
+      </Tooltip>
       <div
         id="dropdown"
         hidden={!open}

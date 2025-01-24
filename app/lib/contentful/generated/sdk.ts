@@ -2773,6 +2773,7 @@ export type Navbar = Entry & _Node & {
   homeLabel?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<NavbarLinkingCollections>;
   servicesLabel?: Maybe<Scalars['String']['output']>;
+  switchLanguageLabel?: Maybe<Scalars['String']['output']>;
   switchThemeLabel?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   usFlagDescription?: Maybe<Scalars['String']['output']>;
@@ -2811,6 +2812,12 @@ export type NavbarLinkedFromArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
 export type NavbarServicesLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarSwitchLanguageLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -2873,6 +2880,13 @@ export type NavbarFilter = {
   servicesLabel_not?: InputMaybe<Scalars['String']['input']>;
   servicesLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
   servicesLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  switchLanguageLabel?: InputMaybe<Scalars['String']['input']>;
+  switchLanguageLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  switchLanguageLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  switchLanguageLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  switchLanguageLabel_not?: InputMaybe<Scalars['String']['input']>;
+  switchLanguageLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  switchLanguageLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   switchThemeLabel?: InputMaybe<Scalars['String']['input']>;
   switchThemeLabel_contains?: InputMaybe<Scalars['String']['input']>;
   switchThemeLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2914,6 +2928,8 @@ export enum NavbarOrder {
   HomeLabelDesc = 'homeLabel_DESC',
   ServicesLabelAsc = 'servicesLabel_ASC',
   ServicesLabelDesc = 'servicesLabel_DESC',
+  SwitchLanguageLabelAsc = 'switchLanguageLabel_ASC',
+  SwitchLanguageLabelDesc = 'switchLanguageLabel_DESC',
   SwitchThemeLabelAsc = 'switchThemeLabel_ASC',
   SwitchThemeLabelDesc = 'switchThemeLabel_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -6456,7 +6472,7 @@ export type NavbarContentQueryVariables = Exact<{
 }>;
 
 
-export type NavbarContentQuery = { __typename?: 'Query', navbarCollection?: { __typename?: 'NavbarCollection', items: Array<{ __typename?: 'Navbar', usFlagDescription?: string | null, deFlagDescription?: string | null, homeLabel?: string | null, aboutLabel?: string | null, servicesLabel?: string | null, contactLabel?: string | null, switchThemeLabel?: string | null } | null> } | null };
+export type NavbarContentQuery = { __typename?: 'Query', navbarCollection?: { __typename?: 'NavbarCollection', items: Array<{ __typename?: 'Navbar', usFlagDescription?: string | null, deFlagDescription?: string | null, switchLanguageLabel?: string | null, homeLabel?: string | null, aboutLabel?: string | null, servicesLabel?: string | null, contactLabel?: string | null, switchThemeLabel?: string | null } | null> } | null };
 
 export type NotFoundContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6695,6 +6711,7 @@ export const NavbarContentDocument = gql`
     items {
       usFlagDescription
       deFlagDescription
+      switchLanguageLabel
       homeLabel
       aboutLabel
       servicesLabel
