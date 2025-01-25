@@ -14,7 +14,7 @@ export default async function About({ locale }: Props) {
   const content = query.aboutCollection?.items[0];
 
   return (
-    <div className="mx-auto max-w-screen-xl px-6 py-24 md:py-48">
+    <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-24 md:py-48">
       <div className="flex flex-col gap-8 md:flex-row md:gap-0">
         {content?.image &&
           content.image.url &&
@@ -36,7 +36,7 @@ export default async function About({ locale }: Props) {
           delay={0.4}
         >
           <div className="space-y-7">
-            <h6 className="uppercase tracking-wider text-[--highlight]">
+            <h6 className="tracking-wider text-(--highlight) uppercase">
               {content?.title}
             </h6>
             <h4>
@@ -46,7 +46,7 @@ export default async function About({ locale }: Props) {
               {content?.locationStatement}
             </h4>
             <p>{content?.description}</p>
-            <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
+            <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-y-0 sm:space-x-16 lg:space-x-32">
               {content?.experienceMetricsCollection?.items
                 .filter((item) => item !== null)
                 .map((item, index) => (

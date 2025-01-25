@@ -16,11 +16,11 @@ export default async function Contact({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_bottom_left,var(--radial-color)_0%,transparent_50%)] opacity-30 dark:opacity-50" />
-      <div className="mx-auto max-w-screen-xl px-6">
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-transparent to-50% opacity-30 dark:opacity-50" />
+      <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
           <ViewAnimation className="space-y-7 md:w-1/2">
-            <h6 className="uppercase tracking-wider text-[--highlight]">
+            <h6 className="tracking-wider text-(--highlight) uppercase">
               {content?.title}
             </h6>
             <h3 className="uppercase">
@@ -43,7 +43,7 @@ export default async function Contact({ locale }: Props) {
                   />
                   <div className="space-y-1">
                     <p className="text-lg font-bold">{content?.avatarTitle}</p>
-                    <p className="text-sm text-[--secondary]">
+                    <p className="text-sm text-(--secondary)">
                       {content?.avatarDescription}
                     </p>
                   </div>

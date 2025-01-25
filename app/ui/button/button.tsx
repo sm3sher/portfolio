@@ -12,7 +12,7 @@ export default function Button({ children, onClick, disabled }: Props) {
       type="button"
       onClick={onClick}
       disabled={disabled}
-      className="base-border hover-effect group overflow-hidden rounded-full px-6 py-3 font-[family-name:--font-geist-mono] font-bold"
+      className="base-border hover-effect group overflow-hidden rounded-full px-6 py-3 font-(family-name:--font-geist-mono) font-bold"
     >
       <span className="flex">{children}</span>
     </button>

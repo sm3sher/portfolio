@@ -28,7 +28,7 @@ export default function TestimonialSlider({ content }: Props) {
   return (
     <>
       <div className="mb-7 flex items-center justify-between space-x-2">
-        <h6 className="uppercase tracking-wider text-[--highlight]">
+        <h6 className="tracking-wider text-(--highlight) uppercase">
           {content?.title}
         </h6>
         <div className="flex space-x-2">
@@ -38,7 +38,7 @@ export default function TestimonialSlider({ content }: Props) {
             aria-label={content?.prevSlideLabel || undefined}
           >
             <ArrowLeft01Icon
-              className="relative right-0.5 text-[--secondary]"
+              className="relative right-0.5 text-(--secondary)"
               size={34}
             />
           </button>
@@ -48,7 +48,7 @@ export default function TestimonialSlider({ content }: Props) {
             aria-label={content?.nextSlideLabel || undefined}
           >
             <ArrowRight01Icon
-              className="relative left-0.5 text-[--secondary]"
+              className="relative left-0.5 text-(--secondary)"
               size={34}
             />
           </button>
@@ -64,7 +64,7 @@ export default function TestimonialSlider({ content }: Props) {
             .map((item, index) => (
               <div
                 key={index}
-                className="my-1 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+                className="my-1 mr-4 min-w-0 flex-none basis-full cursor-grab px-1 select-none active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
                 role="group"
                 aria-label={`${index + 1} / ${content?.quotesCollection?.items.length}`}
               >

@@ -18,9 +18,9 @@ export default function QuoteCard({
   invert,
 }: Props) {
   return (
-    <div className="relative flex h-full flex-col justify-between rounded-3xl bg-[--background-color] p-8 drop-shadow sm:p-10 dark:bg-[--banner-color]">
+    <div className="relative flex h-full flex-col justify-between rounded-3xl bg-(--background-color) p-8 drop-shadow-sm sm:p-10 dark:bg-(--banner-color)">
       {logo && logo.url && logo.width && logo.height && logo.description && (
-        <div className="absolute right-6 top-4">
+        <div className="absolute top-4 right-6">
           <Image
             className={`h-16 w-auto sm:h-20 dark:brightness-125 ${invert ? 'dark:invert' : ''}`}
             src={logo.url}
@@ -31,14 +31,14 @@ export default function QuoteCard({
         </div>
       )}
       <div>
-        <QuoteDownIcon className="mb-6 text-[--highlight]" size={40} />
-        <blockquote className="italic leading-relaxed text-[--secondary]">
+        <QuoteDownIcon className="mb-6 text-(--highlight)" size={40} />
+        <blockquote className="leading-relaxed text-(--secondary) italic">
           {quote}
         </blockquote>
       </div>
-      <div className="mt-4 border-t border-[--border-color] pt-6">
-        <p className="text-lg font-semibold text-[--primary]">{author}</p>
-        <p className="mt-2 text-sm text-[--secondary]">{jobTitle}</p>
+      <div className="mt-4 border-t border-(--border-color) pt-6">
+        <p className="text-lg font-semibold text-(--primary)">{author}</p>
+        <p className="mt-2 text-sm text-(--secondary)">{jobTitle}</p>
       </div>
     </div>
   );

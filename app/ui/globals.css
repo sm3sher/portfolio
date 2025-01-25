@@ -1,33 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Workaround with tailwind v4 https://github.com/tailwindlabs/tailwindcss/issues/15814 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-spin-slow: spin 8s linear infinite;
+  --animate-infinite-scroll: scroll 50s linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
 
 :root {
-  --primary: theme(colors.black);
-  --secondary: theme(colors.neutral.700);
-  --background-color: theme(colors.white);
-  --border-color: theme(colors.black/15%);
-  --hover-color: theme(colors.neutral.700/10%);
+  --primary: var(--color-black);
+  --secondary: var(--color-neutral-700);
+  --background-color: var(--color-white);
+  --border-color: --alpha(var(--color-black) / 15%);
+  --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b3855;
   --radial-color: #ff3700;
-  --banner-color: theme(colors.neutral.50);
-  --error-color: theme(colors.rose.600);
-  --error-background: theme(colors.rose.100);
+  --banner-color: var(--color-neutral-50);
+  --error-color: var(--color-rose-600);
+  --error-background: var(--color-rose-100);
 }
 
 html.dark {
-  --primary: theme(colors.white);
-  --secondary: theme(colors.neutral.300);
+  --primary: var(--color-white);
+  --secondary: var(--color-neutral-300);
   --background-color: #0f0f0f;
-  --border-color: theme(colors.white/35%);
-  --hover-color: theme(colors.neutral.200/20%);
+  --border-color: --alpha(var(--color-white) / 35%);
+  --hover-color: --alpha(var(--color-neutral-200) / 20%);
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b38cf;
   --radial-color: #ff3700;
-  --banner-color: theme(colors.neutral.900);
-  --error-color: theme(colors.rose.600);
-  --error-background: theme(colors.rose.950);
+  --banner-color: var(--color-neutral-900);
+  --error-color: var(--color-rose-600);
+  --error-background: var(--color-rose-950);
 }
 
 * {
@@ -45,7 +57,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-4xl font-bold leading-tight md:text-5xl lg:text-7xl;
+    @apply text-4xl leading-tight font-bold md:text-5xl lg:text-7xl;
   }
 
   h2 {
@@ -73,23 +85,19 @@ body {
   }
 }
 
-@layer components {
-  .base-border {
-    @apply border border-[--border-color];
-  }
+@utility base-border {
+  @apply border border-(--border-color);
 }
 
-@layer utilities {
-  .hover-effect {
-    @apply cursor-pointer transition-colors duration-300 hover:bg-[--hover-color] disabled:cursor-default disabled:bg-[--transparent] disabled:opacity-60;
-  }
+@utility hover-effect {
+  @apply cursor-pointer transition-colors duration-300 hover:bg-(--hover-color) disabled:cursor-default disabled:bg-(--transparent) disabled:opacity-60;
+}
 
-  .text-stroke {
-    color: var(--banner-color);
-    text-shadow:
-      1px 1px 0 var(--primary),
-      -1px -1px 0 var(--primary),
-      1px -1px 0 var(--primary),
-      -1px 1px 0 var(--primary);
-  }
+@utility text-stroke {
+  color: var(--banner-color);
+  text-shadow:
+    1px 1px 0 var(--primary),
+    -1px -1px 0 var(--primary),
+    1px -1px 0 var(--primary),
+    -1px 1px 0 var(--primary);
 }

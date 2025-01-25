@@ -15,14 +15,14 @@ export default async function Footer({ locale }: Props) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[--banner-color]">
-      <div className="mx-auto max-w-screen-xl px-6 py-8 sm:pb-16 sm:pt-12">
+    <footer className="bg-(--banner-color)">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-8 sm:pt-12 sm:pb-16">
         <div className="gap-2 md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
             <h5 className="flex items-center gap-2 font-semibold">
               <SourceCodeIcon /> {content?.title}
             </h5>
-            <p className="tracking-wide text-[--secondary]">
+            <p className="tracking-wide text-(--secondary)">
               {content?.description}
             </p>
           </div>
@@ -31,7 +31,7 @@ export default async function Footer({ locale }: Props) {
               <h6 className="mb-6 text-sm uppercase">
                 {content?.followSection}
               </h6>
-              <ul className="font-medium text-[--secondary]">
+              <ul className="font-medium text-(--secondary)">
                 <li className="mb-4">
                   <a
                     href={content?.gitHubHref || ''}
@@ -58,7 +58,7 @@ export default async function Footer({ locale }: Props) {
               <h6 className="mb-6 text-sm uppercase">
                 {content?.legalSection}
               </h6>
-              <ul className="font-medium text-[--secondary]">
+              <ul className="font-medium text-(--secondary)">
                 <li className="mb-4">
                   <Link
                     href="/legal-notice"
@@ -79,9 +79,9 @@ export default async function Footer({ locale }: Props) {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-[--border-color] sm:mx-auto lg:my-8" />
+        <hr className="my-6 border-(--border-color) sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-[--secondary]">
+          <span className="text-sm text-(--secondary)">
             &copy; {year} {content?.title}
           </span>
           <div className="mt-4 flex gap-5 sm:mt-0 sm:justify-center">
@@ -89,7 +89,7 @@ export default async function Footer({ locale }: Props) {
               href={content?.gitHubHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[--secondary] hover:text-[--primary]"
+              className="text-(--secondary) hover:text-(--primary)"
               aria-label={content?.gitHubHrefLabel || ''}
             >
               <LogoGithub className="h-4 w-4" />
@@ -98,7 +98,7 @@ export default async function Footer({ locale }: Props) {
               href={content?.stackOverflowHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[--secondary] hover:text-[--primary]"
+              className="text-(--secondary) hover:text-(--primary)"
               aria-label={content?.stackOverflowHrefLabel || ''}
             >
               <LogoStackOverflow className="h-4 w-4" />
@@ -107,7 +107,7 @@ export default async function Footer({ locale }: Props) {
               href={content?.kofiHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[--secondary] hover:text-[--primary]"
+              className="text-(--secondary) hover:text-(--primary)"
               aria-label={content?.kofiHrefLabel || ''}
             >
               <LogoKofi

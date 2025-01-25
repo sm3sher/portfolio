@@ -16,7 +16,7 @@ export default async function NotFoundContent({ locale }: Props) {
       <h1>{content?.title}</h1>
       <h2 className="mb-3">
         {content?.subTitleMain}{' '}
-        <span className="text-[--highlight]">{content?.subTitleHighlight}</span>
+        <span className="text-(--highlight)">{content?.subTitleHighlight}</span>
       </h2>
       <p className="mb-10">{content?.description}</p>
       <Link href="/" tabIndex={-1}>

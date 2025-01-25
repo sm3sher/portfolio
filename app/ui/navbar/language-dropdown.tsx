@@ -67,7 +67,7 @@ export default function LanguageDropdown({
           id="dropdownLanguageButton"
           onClick={() => setOpen((prevState) => !prevState)}
           onKeyDown={handleKeyDown}
-          className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
+          className="base-border hover-effect rounded-2xl p-2 backdrop-blur-sm"
           aria-haspopup
           aria-expanded={open}
           aria-controls="dropdown"
@@ -78,7 +78,7 @@ export default function LanguageDropdown({
       <div
         id="dropdown"
         hidden={!open}
-        className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur"
+        className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur-sm"
       >
         <ul
           className="space-y-1 p-1 text-sm"
@@ -88,7 +88,7 @@ export default function LanguageDropdown({
           aria-labelledby="dropdownLanguageButton"
         >
           <li
-            className={`flex items-center rounded-xl pl-3 ${locale === 'en' ? 'text-[--secondary]' : 'hover-effect'}`}
+            className={`flex items-center rounded-xl pl-3 ${locale === 'en' ? 'text-(--secondary)' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
             data-language="en"
@@ -97,7 +97,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'en'}
           >
             <Image
-              className="rounded-sm"
+              className="rounded-xs"
               src="/flag-us.svg"
               alt={usFlagDescription || ''}
               width={30}
@@ -106,7 +106,7 @@ export default function LanguageDropdown({
             <span className="block px-3 py-2">English</span>
           </li>
           <li
-            className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-[--secondary]' : 'hover-effect'}`}
+            className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-(--secondary)' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
             data-language="de"
@@ -115,7 +115,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'de'}
           >
             <Image
-              className="rounded-sm"
+              className="rounded-xs"
               src="/flag-de.svg"
               alt={deFlagDescription || ''}
               width={30}

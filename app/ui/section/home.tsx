@@ -15,14 +15,14 @@ export default async function Home({ locale }: Props) {
 
   return (
     <div className="relative pt-40 sm:pt-48">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--radial-color)_0%,transparent_50%)] opacity-30 dark:opacity-50" />
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top_left] from-(--radial-color) to-transparent to-50% opacity-30 dark:opacity-50" />
       {content?.image &&
         content.image.url &&
         content.image.width &&
         content.image.height &&
         content.image.description && (
           <ViewAnimation
-            className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-screen-xl"
+            className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-(--breakpoint-xl)"
             axis="x"
             duration={0.5}
           >
@@ -36,7 +36,7 @@ export default async function Home({ locale }: Props) {
             />
           </ViewAnimation>
         )}
-      <div className="mx-auto max-w-screen-xl px-6">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation duration={0.5}>
           <h6 className="mb-5">
             <div className="flex space-x-2">
@@ -51,7 +51,7 @@ export default async function Home({ locale }: Props) {
           </h6>
           <h1 className="mb-3">
             {content?.introHeadingMain}{' '}
-            <span className="text-[--highlight]">
+            <span className="text-(--highlight)">
               {content?.introHeadingHighlight}
             </span>
           </h1>
@@ -59,11 +59,11 @@ export default async function Home({ locale }: Props) {
           <p className="mt-6 drop-shadow-[0_0_6px_white] md:w-2/3 lg:w-5/12 dark:drop-shadow-[0_0_6px_black]">
             {content?.introDescription}
           </p>
-          <div className="flex items-center space-x-4 pb-16 pt-16 lg:pb-56">
+          <div className="flex items-center space-x-4 pt-16 pb-16 lg:pb-56">
             <Link href="#contact" tabIndex={-1}>
               <Button>{content?.ctaButtonLabel}</Button>
             </Link>
-            <Link href="#about" className="rounded-full bg-[--highlight] p-2">
+            <Link href="#about" className="rounded-full bg-(--highlight) p-2">
               <ArrowDown01Icon
                 className="relative top-1.5 animate-bounce text-white"
                 size={34}

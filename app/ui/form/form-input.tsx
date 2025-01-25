@@ -42,9 +42,9 @@ export default function FormInput<T extends FieldValues>({
       <Component
         {...register(name)}
         {...(elementType === 'textarea' && { rows: 5 })}
-        className={`base-border mt-1 block w-full rounded-lg px-4 py-2 duration-300 placeholder:text-[--secondary] placeholder:opacity-80 ${
+        className={`base-border mt-1 block w-full rounded-lg px-4 py-2 duration-300 placeholder:text-(--secondary) placeholder:opacity-80 ${
           errorMessage
-            ? 'border-l-8 border-[--error-color] bg-[--error-background] outline-[--error-color]'
+            ? 'border-l-8 border-(--error-color) bg-(--error-background) outline-(--error-color)'
             : ''
         }`}
         placeholder={placeholder}
@@ -55,7 +55,7 @@ export default function FormInput<T extends FieldValues>({
       <p
         id={`${String(name)}-error`}
         aria-live="polite"
-        className={`ml-2 pt-1 text-sm text-[--error-color] opacity-0 transition-all duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0'}`}
+        className={`ml-2 pt-1 text-sm text-(--error-color) opacity-0 transition-all duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0'}`}
       >
         {message}
       </p>

@@ -24,14 +24,14 @@ export default function ThemeToggle({ switchThemeLabel }: Props) {
   }, []);
 
   return !mounted ? (
-    <button className="base-border rounded-2xl p-2 backdrop-blur">
+    <button className="base-border rounded-2xl p-2 backdrop-blur-sm">
       <Loading03Icon size={22} />
     </button>
   ) : (
     <Tooltip content={switchThemeLabel}>
       <button
         onClick={toggleTheme}
-        className="base-border hover-effect rounded-2xl p-2 backdrop-blur"
+        className="base-border hover-effect rounded-2xl p-2 backdrop-blur-sm"
         aria-label={switchThemeLabel || undefined}
       >
         {isDark ? <Sun03Icon size={22} /> : <Moon02Icon size={22} />}

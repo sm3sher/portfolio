@@ -74,14 +74,14 @@ export default function NavMenu({
   const basePath = pathname === '/' ? '' : '/';
 
   return (
-    <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur">
+    <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur-sm">
       {navbarItems.map((item) => (
         <Tooltip key={item.id} content={item.label} marginTop="mt-2.5" hideAtSm>
           <Link
             href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
             className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
               activeSection === item.id
-                ? '!border-[--border-color] bg-neutral-700/10 dark:bg-neutral-200/20'
+                ? 'border-(--border-color)! bg-(--hover-color)'
                 : 'hover-effect'
             }`}
             aria-current={activeSection === item.id ? 'page' : undefined}

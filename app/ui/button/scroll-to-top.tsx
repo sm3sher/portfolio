@@ -40,7 +40,7 @@ export default function ScrollToTop() {
       initial={{ opacity: 0, y: 25 }}
       animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
       transition={{ duration: 0.5 }}
-      className={`fixed bottom-4 right-4 xl:bottom-8 xl:right-10 ${
+      className={`fixed right-4 bottom-4 xl:right-10 xl:bottom-8 ${
         showScrollButton
           ? 'pointer-events-auto z-10'
           : 'pointer-events-none -z-10'
@@ -52,10 +52,10 @@ export default function ScrollToTop() {
         aria-label={locale === 'en' ? 'Scroll to top' : 'Nach oben scrollen'}
       >
         <div
-          className="absolute inset-0 rounded-full p-0.5"
+          className="absolute inset-0 cursor-pointer rounded-full p-0.5"
           style={progressStyle}
         />
-        <ArrowUp01Icon strokeWidth={2} className="pb-0.5 text-[--secondary]" />
+        <ArrowUp01Icon strokeWidth={2} className="pb-0.5 text-(--secondary)" />
       </button>
     </motion.div>
   );

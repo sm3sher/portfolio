@@ -19,7 +19,7 @@ export default function Tooltip({
       <span
         id={content || undefined}
         role="tooltip"
-        className={`${marginTop} pointer-events-none absolute left-1/2 top-full -translate-x-1/2 transform rounded-xl bg-[--primary] px-2 py-1 text-center text-xs font-medium text-[--background-color] opacity-0 transition-opacity duration-300 group-hover:block group-hover:opacity-75 ${
+        className={`${marginTop} pointer-events-none absolute top-full left-1/2 -translate-x-1/2 transform rounded-xl bg-(--primary) px-2 py-1 text-center text-xs font-medium text-(--background-color) opacity-0 transition-opacity duration-300 group-hover:block group-hover:opacity-75 ${
           hideAtSm ? 'sm:group-hover:opacity-0' : ''
         }`}
       >

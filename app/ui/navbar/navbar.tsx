@@ -13,7 +13,7 @@ export default async function Navbar({ locale }: Props) {
   const content = query.navbarCollection?.items[0];
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-10 mx-auto mt-6 flex w-full max-w-screen-xl items-center justify-between px-4">
+    <nav className="fixed top-0 right-0 left-0 z-10 mx-auto mt-6 flex w-full max-w-(--breakpoint-xl) items-center justify-between px-4">
       <LanguageDropdown
         usFlagDescription={content?.usFlagDescription}
         deFlagDescription={content?.deFlagDescription}

@@ -156,7 +156,7 @@ export default function ContactForm({ content }: Props) {
             {content?.errorDescription}{' '}
             <a
               href={`mailto:${content?.errorContactEmail}`}
-              className="text-[--highlight] hover:underline hover:underline-offset-4"
+              className="text-(--highlight) hover:underline hover:underline-offset-4"
             >
               {content?.errorContactEmail}
             </a>
@@ -168,7 +168,7 @@ export default function ContactForm({ content }: Props) {
         show={pending}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <Loading02Icon className="animate-spin text-[--secondary]" size={52} />
+        <Loading02Icon className="animate-spin text-(--secondary)" size={52} />
       </PresenceAnimation>
       <PresenceAnimation
         show={submitted}

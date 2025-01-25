@@ -40,10 +40,10 @@ export default function ExperienceCounter({
   return (
     <div
       ref={ref}
-      className="base-border w-full border-b-0 border-l-0 border-r-0 pl-0.5 pt-7"
+      className="base-border w-full border-r-0 border-b-0 border-l-0 pt-7 pl-0.5"
     >
       <motion.h3 className="mb-1 font-light">{rounded}</motion.h3>
-      <h6 className="text-base uppercase tracking-wide text-[--secondary]">
+      <h6 className="text-base tracking-wide text-(--secondary) uppercase">
         <span className="whitespace-nowrap">{labelPrefix}</span>{' '}
         <span className="whitespace-nowrap">{labelSuffix}</span>
       </h6>

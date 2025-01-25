@@ -13,7 +13,7 @@ type Props = {
   params: Promise<{ locale: Locale }>;
 };
 
-// TODO: replace with invalidate post request from CMS on publish
+// caching content for 24 hours
 export const revalidate = 86400;
 
 export function generateStaticParams() {
@@ -34,7 +34,7 @@ export default async function RootLayout({ children, params }: Props) {
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
       >
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" disableTransitionOnChange>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </ThemeProvider>
       </body>
