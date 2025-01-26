@@ -1,9 +1,10 @@
-import { Link, Locale } from '@/i18n/routing';
+import { Locale } from '@/i18n/routing';
 import LogoGithub from './logo-github';
 import LogoKofi from '@/app/ui/footer/logo-kofi';
 import LogoStackOverflow from '@/app/ui/footer/logo-stack-overflow';
 import contentfulClient from '@/app/lib/contentful/client';
 import { SourceCodeIcon } from 'hugeicons-react';
+import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
 
 type Props = {
   locale: Locale;
@@ -60,20 +61,14 @@ export default async function Footer({ locale }: Props) {
               </h6>
               <ul className="font-medium text-(--secondary)">
                 <li className="mb-4">
-                  <Link
-                    href="/legal-notice"
-                    className="hover:underline hover:underline-offset-4"
-                  >
+                  <ActiveStyledLink href="/legal-notice">
                     {content?.legalNotice}
-                  </Link>
+                  </ActiveStyledLink>
                 </li>
                 <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="hover:underline hover:underline-offset-4"
-                  >
+                  <ActiveStyledLink href="/privacy-policy">
                     {content?.legalPrivacyPolicy}
-                  </Link>
+                  </ActiveStyledLink>
                 </li>
               </ul>
             </div>
