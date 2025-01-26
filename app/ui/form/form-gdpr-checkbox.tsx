@@ -48,7 +48,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           <input
             {...register(name)}
             type="checkbox"
-            className={`base-border peer h-5 w-5 cursor-pointer appearance-none rounded backdrop-blur transition-colors duration-200 checked:bg-(--primary) ${
+            className={`base-border peer h-5 w-5 cursor-pointer appearance-none rounded backdrop-blur transition-colors duration-200 checked:bg-(--hover-color) ${
               errorMessage &&
               'border-(--error-color) bg-(--error-background) outline-(--error-color)'
             }`}
@@ -56,7 +56,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
             id="check-with-link"
             aria-describedby={`${String(name)}-error`}
           />
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-(--background-color) opacity-0 peer-checked:opacity-100">
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 peer-checked:opacity-100">
             <Tick02Icon size={16} strokeWidth={3} />
           </span>
         </label>
