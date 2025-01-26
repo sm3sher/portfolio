@@ -4,6 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
+  --highlight: #fd5b38;
+  --radial-color: #ff3700;
   --animate-spin-slow: spin 8s linear infinite;
   --animate-infinite-scroll: scroll 50s linear infinite;
 
@@ -21,8 +23,6 @@
   --surface-color: var(--color-white);
   --border-color: --alpha(var(--color-black) / 20%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
-  --highlight: #fd5b38;
-  --radial-color: #ff3700;
   --error-color: var(--color-rose-600);
   --error-background: var(--color-rose-100);
 }
@@ -34,8 +34,6 @@ html.dark {
   --surface-color: var(--color-neutral-900);
   --border-color: --alpha(var(--color-white) / 35%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
-  --highlight: #fd5b38;
-  --radial-color: #ff3700;
   --error-color: var(--color-rose-600);
   --error-background: var(--color-rose-950);
 }
