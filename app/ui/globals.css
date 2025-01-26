@@ -4,8 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --highlight: #fd5b38;
-  --radial-color: #ff3700;
+  --highlight: oklch(69% 0.204 34);
+  --radial-color: oklch(63% 0.24 31);
   --animate-spin-slow: spin 8s linear infinite;
   --animate-infinite-scroll: scroll 50s linear infinite;
 
@@ -30,7 +30,7 @@
 html.dark {
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
-  --background-color: #0f0f0f;
+  --background-color: oklch(16.84% 0 0);
   --surface-color: var(--color-neutral-900);
   --border-color: --alpha(var(--color-white) / 35%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
@@ -39,11 +39,11 @@ html.dark {
 }
 
 * {
-  outline-color: #e59700;
+  outline-color: oklch(70% 0.18 50);
 }
 
 ::selection {
-  background-color: #e5970099;
+  background-color: oklch(70% 0.18 50 / 50%);
 }
 
 body {
