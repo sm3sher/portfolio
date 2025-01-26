@@ -17,13 +17,13 @@
 :root {
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
-  --background-color: var(--color-white);
-  --border-color: --alpha(var(--color-black) / 15%);
+  --background-color: var(--color-neutral-50);
+  --border-color: --alpha(var(--color-black) / 20%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --highlight: #fd5b38;
   --highlight-subtle: #fd5b3855;
   --radial-color: #ff3700;
-  --banner-color: var(--color-neutral-50);
+  --banner-color: var(--color-white);
   --error-color: var(--color-rose-600);
   --error-background: var(--color-rose-100);
 }
