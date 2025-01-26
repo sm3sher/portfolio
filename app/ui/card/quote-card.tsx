@@ -18,7 +18,7 @@ export default function QuoteCard({
   invert,
 }: Props) {
   return (
-    <div className="relative flex h-full flex-col justify-between rounded-3xl bg-(--banner-color) p-8 drop-shadow-sm sm:p-10">
+    <div className="relative flex h-full flex-col justify-between rounded-3xl bg-(--surface-color) p-8 drop-shadow-sm sm:p-10">
       {logo && logo.url && logo.width && logo.height && logo.description && (
         <div className="absolute top-4 right-6">
           <Image

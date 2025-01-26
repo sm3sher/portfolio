@@ -9,10 +9,10 @@ type Props = {
 
 export default function ServiceCard({ icon, title, tags, description }: Props) {
   return (
-    <div className="group relative h-full overflow-hidden rounded-3xl bg-(--banner-color) px-4 py-6 shadow-lg transition-shadow duration-300 hover:shadow-xl md:px-6 md:py-8">
+    <div className="group relative h-full overflow-hidden rounded-3xl bg-(--surface-color) px-4 py-6 shadow-lg transition-shadow duration-300 hover:shadow-xl md:px-6 md:py-8">
       <div className="animate-spin-slow absolute top-1/4 -left-1/2 h-36 w-[200%] bg-(--highlight) opacity-0 transition-opacity duration-500 group-hover:opacity-80" />
-      <div className="absolute inset-1 rounded-3xl bg-(--banner-color)" />
-      <div className="absolute inset-0 rounded-3xl bg-linear-to-tr/oklch from-(--highlight-subtle) to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-30" />
+      <div className="absolute inset-1 rounded-3xl bg-(--surface-color)" />
+      <div className="absolute inset-0 rounded-3xl bg-linear-to-tr/oklch from-(--highlight) to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-15 dark:group-hover:opacity-20" />
       <div className="relative flex flex-col items-center text-center">
         <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-(--highlight) text-white shadow-md sm:h-16 sm:w-16">
           {icon}

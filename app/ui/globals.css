@@ -18,12 +18,11 @@
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
+  --surface-color: var(--color-white);
   --border-color: --alpha(var(--color-black) / 20%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --highlight: #fd5b38;
-  --highlight-subtle: #fd5b3855;
   --radial-color: #ff3700;
-  --banner-color: var(--color-white);
   --error-color: var(--color-rose-600);
   --error-background: var(--color-rose-100);
 }
@@ -32,12 +31,11 @@ html.dark {
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
   --background-color: #0f0f0f;
+  --surface-color: var(--color-neutral-900);
   --border-color: --alpha(var(--color-white) / 35%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
   --highlight: #fd5b38;
-  --highlight-subtle: #fd5b38cf;
   --radial-color: #ff3700;
-  --banner-color: var(--color-neutral-900);
   --error-color: var(--color-rose-600);
   --error-background: var(--color-rose-950);
 }
@@ -94,7 +92,7 @@ body {
 }
 
 @utility text-stroke {
-  color: var(--banner-color);
+  color: var(--surface-color);
   text-shadow:
     1px 1px 0 var(--primary),
     -1px -1px 0 var(--primary),
