@@ -15,8 +15,8 @@
 }
 
 :root {
-  --highlight: oklch(69% 0.204 40);
-  --radial-color: oklch(63% 0.24 31 / 30%);
+  --highlight: oklch(70% 0.22 38);
+  --radial-color: oklch(75% 0.4 33 / 10%);
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
@@ -28,8 +28,8 @@
 }
 
 html.dark {
-  --highlight: oklch(69% 0.204 40);
-  --radial-color: oklch(63% 0.24 31 / 50%);
+  --highlight: oklch(67% 0.22 38);
+  --radial-color: oklch(36% 0.25 33 / 50%);
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
   --background-color: oklch(16.84% 0 0);
