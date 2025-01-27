@@ -28,7 +28,7 @@ export default async function Services({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top] from-(--radial-color) to-transparent to-65% opacity-30 dark:opacity-50" />
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top] from-(--radial-color) to-transparent to-65%" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation className="mb-10 space-y-7 md:mb-16">
           <h6 className="tracking-wider text-(--highlight) uppercase">

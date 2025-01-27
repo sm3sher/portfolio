@@ -15,7 +15,7 @@ export default async function Home({ locale }: Props) {
 
   return (
     <div className="relative pt-40 sm:pt-48">
-      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top_left] from-(--radial-color) to-transparent to-50% opacity-30 dark:opacity-50" />
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top_left] from-(--radial-color) to-transparent to-50%" />
       {content?.image &&
         content.image.url &&
         content.image.width &&

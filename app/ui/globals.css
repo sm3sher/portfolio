@@ -4,8 +4,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --highlight: oklch(69% 0.204 40);
-  --radial-color: oklch(63% 0.24 31);
   --animate-spin-slow: spin 8s linear infinite;
   --animate-infinite-scroll: scroll 50s linear infinite;
 
@@ -17,6 +15,8 @@
 }
 
 :root {
+  --highlight: oklch(69% 0.204 40);
+  --radial-color: oklch(63% 0.24 31 / 30%);
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
@@ -28,6 +28,8 @@
 }
 
 html.dark {
+  --highlight: oklch(69% 0.204 40);
+  --radial-color: oklch(63% 0.24 31 / 50%);
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
   --background-color: oklch(16.84% 0 0);
