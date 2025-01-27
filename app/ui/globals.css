@@ -4,7 +4,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --highlight: oklch(69% 0.204 34);
+  --highlight: oklch(69% 0.204 40);
   --radial-color: oklch(63% 0.24 31);
   --animate-spin-slow: spin 8s linear infinite;
   --animate-infinite-scroll: scroll 50s linear infinite;
