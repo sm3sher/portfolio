@@ -17,6 +17,8 @@
 :root {
   --highlight: oklch(70% 0.22 38);
   --radial-color: oklch(75% 0.4 33 / 10%);
+  --grid-color: --alpha(var(--color-neutral-600) / 10%);
+  --dot-color: --alpha(var(--color-neutral-500) / 25%);
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
@@ -30,6 +32,8 @@
 html.dark {
   --highlight: oklch(67% 0.22 38);
   --radial-color: oklch(36% 0.25 33 / 50%);
+  --grid-color: --alpha(var(--color-neutral-600) / 15%);
+  --dot-color: --alpha(var(--color-neutral-500) / 30%);
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
   --background-color: oklch(16.84% 0 0);

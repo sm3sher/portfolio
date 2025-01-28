@@ -5,6 +5,7 @@ import contentfulClient from '@/app/lib/contentful/client';
 import { ArrowDown01Icon } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import RadialBackground from '@/app/ui/background/radial-background';
+import GridBackground from '@/app/ui/background/grid-background';
 
 type Props = {
   locale: Locale;
@@ -17,6 +18,7 @@ export default async function Home({ locale }: Props) {
   return (
     <div className="relative pt-40 sm:pt-48">
       <RadialBackground position="circle_at_top_left" />
+      <GridBackground />
       {content?.image &&
         content.image.url &&
         content.image.width &&
