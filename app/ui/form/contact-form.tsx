@@ -84,7 +84,7 @@ export default function ContactForm({ content }: Props) {
       >
         <form
           action={(formData) => startTransaction(() => formAction(formData))}
-          className="space-y-3"
+          className="space-y-4"
         >
           <FormInput
             register={register}
