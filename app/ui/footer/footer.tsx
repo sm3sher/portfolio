@@ -16,7 +16,7 @@ export default async function Footer({ locale }: Props) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-(--surface-color)">
+    <footer className="rounded-t-3xl bg-(--surface-color) drop-shadow-sm">
       <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-8 sm:pt-12 sm:pb-16">
         <div className="gap-2 md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
