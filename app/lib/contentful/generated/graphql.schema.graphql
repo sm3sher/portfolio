@@ -830,8 +830,8 @@ type Form implements Entry & _Node {
   gdprNoticeDetails(locale: String): String
   gdprNoticeIntro(locale: String): String
   gdprNoticeLinkText(locale: String): String
+  labels(locale: String, preview: Boolean, where: LabelFilter): Label
   linkedFrom(allowedLocales: [String]): FormLinkingCollections
-  placeholder(locale: String, preview: Boolean, where: PlaceholderFilter): Placeholder
   sendMessageLabel(locale: String): String
   successButtonLabel(locale: String): String
   successDescription(locale: String): String
@@ -900,8 +900,8 @@ input FormFilter {
   gdprNoticeLinkText_not: String
   gdprNoticeLinkText_not_contains: String
   gdprNoticeLinkText_not_in: [String]
-  placeholder: cfPlaceholderNestedFilter
-  placeholder_exists: Boolean
+  labels: cfLabelNestedFilter
+  labels_exists: Boolean
   sendMessageLabel: String
   sendMessageLabel_contains: String
   sendMessageLabel_exists: Boolean
@@ -1363,6 +1363,119 @@ input ImageTransformOptions {
 
   """Desired width in pixels. Defaults to the original image width."""
   width: Dimension
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label)
+"""
+type Label implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  email(locale: String): String
+  linkedFrom(allowedLocales: [String]): LabelLinkingCollections
+  message(locale: String): String
+  name(locale: String): String
+  role(locale: String): String
+  sys: Sys!
+}
+
+type LabelCollection {
+  items: [Label]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input LabelFilter {
+  AND: [LabelFilter]
+  OR: [LabelFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  email: String
+  email_contains: String
+  email_exists: Boolean
+  email_in: [String]
+  email_not: String
+  email_not_contains: String
+  email_not_in: [String]
+  message: String
+  message_contains: String
+  message_exists: Boolean
+  message_in: [String]
+  message_not: String
+  message_not_contains: String
+  message_not_in: [String]
+  name: String
+  name_contains: String
+  name_exists: Boolean
+  name_in: [String]
+  name_not: String
+  name_not_contains: String
+  name_not_in: [String]
+  role: String
+  role_contains: String
+  role_exists: Boolean
+  role_in: [String]
+  role_not: String
+  role_not_contains: String
+  role_not_in: [String]
+  sys: SysFilter
+}
+
+type LabelLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  formCollection(limit: Int = 100, locale: String, order: [LabelLinkingCollectionsFormCollectionOrder], preview: Boolean, skip: Int = 0): FormCollection
+}
+
+enum LabelLinkingCollectionsFormCollectionOrder {
+  errorButtonLabel_ASC
+  errorButtonLabel_DESC
+  errorContactEmail_ASC
+  errorContactEmail_DESC
+  errorDescription_ASC
+  errorDescription_DESC
+  errorTitle_ASC
+  errorTitle_DESC
+  gdprNoticeDetails_ASC
+  gdprNoticeDetails_DESC
+  gdprNoticeIntro_ASC
+  gdprNoticeIntro_DESC
+  gdprNoticeLinkText_ASC
+  gdprNoticeLinkText_DESC
+  sendMessageLabel_ASC
+  sendMessageLabel_DESC
+  successButtonLabel_ASC
+  successButtonLabel_DESC
+  successDescription_ASC
+  successDescription_DESC
+  successTitle_ASC
+  successTitle_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+enum LabelOrder {
+  email_ASC
+  email_DESC
+  message_ASC
+  message_DESC
+  name_ASC
+  name_DESC
+  role_ASC
+  role_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
 }
 
 """
@@ -2389,119 +2502,6 @@ enum NotesAndLegalInformationOrder {
 }
 
 """
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder)
-"""
-type Placeholder implements Entry & _Node {
-  _id: ID!
-  contentfulMetadata: ContentfulMetadata!
-  email(locale: String): String
-  linkedFrom(allowedLocales: [String]): PlaceholderLinkingCollections
-  message(locale: String): String
-  name(locale: String): String
-  role(locale: String): String
-  sys: Sys!
-}
-
-type PlaceholderCollection {
-  items: [Placeholder]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input PlaceholderFilter {
-  AND: [PlaceholderFilter]
-  OR: [PlaceholderFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  email: String
-  email_contains: String
-  email_exists: Boolean
-  email_in: [String]
-  email_not: String
-  email_not_contains: String
-  email_not_in: [String]
-  message: String
-  message_contains: String
-  message_exists: Boolean
-  message_in: [String]
-  message_not: String
-  message_not_contains: String
-  message_not_in: [String]
-  name: String
-  name_contains: String
-  name_exists: Boolean
-  name_in: [String]
-  name_not: String
-  name_not_contains: String
-  name_not_in: [String]
-  role: String
-  role_contains: String
-  role_exists: Boolean
-  role_in: [String]
-  role_not: String
-  role_not_contains: String
-  role_not_in: [String]
-  sys: SysFilter
-}
-
-type PlaceholderLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  formCollection(limit: Int = 100, locale: String, order: [PlaceholderLinkingCollectionsFormCollectionOrder], preview: Boolean, skip: Int = 0): FormCollection
-}
-
-enum PlaceholderLinkingCollectionsFormCollectionOrder {
-  errorButtonLabel_ASC
-  errorButtonLabel_DESC
-  errorContactEmail_ASC
-  errorContactEmail_DESC
-  errorDescription_ASC
-  errorDescription_DESC
-  errorTitle_ASC
-  errorTitle_DESC
-  gdprNoticeDetails_ASC
-  gdprNoticeDetails_DESC
-  gdprNoticeIntro_ASC
-  gdprNoticeIntro_DESC
-  gdprNoticeLinkText_ASC
-  gdprNoticeLinkText_DESC
-  sendMessageLabel_ASC
-  sendMessageLabel_DESC
-  successButtonLabel_ASC
-  successButtonLabel_DESC
-  successDescription_ASC
-  successDescription_DESC
-  successTitle_ASC
-  successTitle_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-}
-
-enum PlaceholderOrder {
-  email_ASC
-  email_DESC
-  message_ASC
-  message_DESC
-  name_ASC
-  name_DESC
-  role_ASC
-  role_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-}
-
-"""
 [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview)
 """
 type PrivacyOverview implements Entry & _Node {
@@ -2834,6 +2834,8 @@ type Query {
   homeCollection(limit: Int = 100, locale: String, order: [HomeOrder], preview: Boolean, skip: Int = 0, where: HomeFilter): HomeCollection
   hosting(id: String!, locale: String, preview: Boolean): Hosting
   hostingCollection(limit: Int = 100, locale: String, order: [HostingOrder], preview: Boolean, skip: Int = 0, where: HostingFilter): HostingCollection
+  label(id: String!, locale: String, preview: Boolean): Label
+  labelCollection(limit: Int = 100, locale: String, order: [LabelOrder], preview: Boolean, skip: Int = 0, where: LabelFilter): LabelCollection
   legalNotice(id: String!, locale: String, preview: Boolean): LegalNotice
   legalNoticeCollection(limit: Int = 100, locale: String, order: [LegalNoticeOrder], preview: Boolean, skip: Int = 0, where: LegalNoticeFilter): LegalNoticeCollection
   metaDataHome(id: String!, locale: String, preview: Boolean): MetaDataHome
@@ -2850,8 +2852,6 @@ type Query {
   notFoundCollection(limit: Int = 100, locale: String, order: [NotFoundOrder], preview: Boolean, skip: Int = 0, where: NotFoundFilter): NotFoundCollection
   notesAndLegalInformation(id: String!, locale: String, preview: Boolean): NotesAndLegalInformation
   notesAndLegalInformationCollection(limit: Int = 100, locale: String, order: [NotesAndLegalInformationOrder], preview: Boolean, skip: Int = 0, where: NotesAndLegalInformationFilter): NotesAndLegalInformationCollection
-  placeholder(id: String!, locale: String, preview: Boolean): Placeholder
-  placeholderCollection(limit: Int = 100, locale: String, order: [PlaceholderOrder], preview: Boolean, skip: Int = 0, where: PlaceholderFilter): PlaceholderCollection
   privacyOverview(id: String!, locale: String, preview: Boolean): PrivacyOverview
   privacyOverviewCollection(limit: Int = 100, locale: String, order: [PrivacyOverviewOrder], preview: Boolean, skip: Int = 0, where: PrivacyOverviewFilter): PrivacyOverviewCollection
   privacyPolicy(id: String!, locale: String, preview: Boolean): PrivacyPolicy
@@ -3698,6 +3698,41 @@ input cfHostingNestedFilter {
   title_not_in: [String]
 }
 
+input cfLabelNestedFilter {
+  AND: [cfLabelNestedFilter]
+  OR: [cfLabelNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  email: String
+  email_contains: String
+  email_exists: Boolean
+  email_in: [String]
+  email_not: String
+  email_not_contains: String
+  email_not_in: [String]
+  message: String
+  message_contains: String
+  message_exists: Boolean
+  message_in: [String]
+  message_not: String
+  message_not_contains: String
+  message_not_in: [String]
+  name: String
+  name_contains: String
+  name_exists: Boolean
+  name_in: [String]
+  name_not: String
+  name_not_contains: String
+  name_not_in: [String]
+  role: String
+  role_contains: String
+  role_exists: Boolean
+  role_in: [String]
+  role_not: String
+  role_not_contains: String
+  role_not_in: [String]
+  sys: SysFilter
+}
+
 input cfMetricNestedFilter {
   AND: [cfMetricNestedFilter]
   OR: [cfMetricNestedFilter]
@@ -3930,41 +3965,6 @@ input cfNotesAndLegalInformationNestedFilter {
   userRightsTitle_not: String
   userRightsTitle_not_contains: String
   userRightsTitle_not_in: [String]
-}
-
-input cfPlaceholderNestedFilter {
-  AND: [cfPlaceholderNestedFilter]
-  OR: [cfPlaceholderNestedFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  email: String
-  email_contains: String
-  email_exists: Boolean
-  email_in: [String]
-  email_not: String
-  email_not_contains: String
-  email_not_in: [String]
-  message: String
-  message_contains: String
-  message_exists: Boolean
-  message_in: [String]
-  message_not: String
-  message_not_contains: String
-  message_not_in: [String]
-  name: String
-  name_contains: String
-  name_exists: Boolean
-  name_in: [String]
-  name_not: String
-  name_not_contains: String
-  name_not_in: [String]
-  role: String
-  role_contains: String
-  role_exists: Boolean
-  role_in: [String]
-  role_not: String
-  role_not_contains: String
-  role_not_in: [String]
-  sys: SysFilter
 }
 
 input cfPrivacyOverviewNestedFilter {

@@ -17,7 +17,7 @@ query contactContent($locale: String) {
     }
     formCollection(limit: 1, locale: $locale) {
         items {
-            placeholder {
+            labels {
                 name
                 email
                 role

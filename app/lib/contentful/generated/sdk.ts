@@ -1285,8 +1285,8 @@ export type Form = Entry & _Node & {
   gdprNoticeDetails?: Maybe<Scalars['String']['output']>;
   gdprNoticeIntro?: Maybe<Scalars['String']['output']>;
   gdprNoticeLinkText?: Maybe<Scalars['String']['output']>;
+  labels?: Maybe<Label>;
   linkedFrom?: Maybe<FormLinkingCollections>;
-  placeholder?: Maybe<Placeholder>;
   sendMessageLabel?: Maybe<Scalars['String']['output']>;
   successButtonLabel?: Maybe<Scalars['String']['output']>;
   successDescription?: Maybe<Scalars['String']['output']>;
@@ -1339,16 +1339,16 @@ export type FormGdprNoticeLinkTextArgs = {
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
-export type FormLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+export type FormLabelsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  where?: InputMaybe<LabelFilter>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
-export type FormPlaceholderArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  where?: InputMaybe<PlaceholderFilter>;
+export type FormLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
@@ -1444,8 +1444,8 @@ export type FormFilter = {
   gdprNoticeLinkText_not?: InputMaybe<Scalars['String']['input']>;
   gdprNoticeLinkText_not_contains?: InputMaybe<Scalars['String']['input']>;
   gdprNoticeLinkText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  placeholder?: InputMaybe<CfPlaceholderNestedFilter>;
-  placeholder_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  labels?: InputMaybe<CfLabelNestedFilter>;
+  labels_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sendMessageLabel?: InputMaybe<Scalars['String']['input']>;
   sendMessageLabel_contains?: InputMaybe<Scalars['String']['input']>;
   sendMessageLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2029,6 +2029,167 @@ export type ImageTransformOptions = {
   /** Desired width in pixels. Defaults to the original image width. */
   width?: InputMaybe<Scalars['Dimension']['input']>;
 };
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type Label = Entry & _Node & {
+  __typename?: 'Label';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  email?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<LabelLinkingCollections>;
+  message?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  role?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type LabelEmailArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type LabelLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type LabelMessageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type LabelNameArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/label) */
+export type LabelRoleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type LabelCollection = {
+  __typename?: 'LabelCollection';
+  items: Array<Maybe<Label>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type LabelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<LabelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<LabelFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  email_not?: InputMaybe<Scalars['String']['input']>;
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message?: InputMaybe<Scalars['String']['input']>;
+  message_contains?: InputMaybe<Scalars['String']['input']>;
+  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message_not?: InputMaybe<Scalars['String']['input']>;
+  message_not_contains?: InputMaybe<Scalars['String']['input']>;
+  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  role_contains?: InputMaybe<Scalars['String']['input']>;
+  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role_not?: InputMaybe<Scalars['String']['input']>;
+  role_not_contains?: InputMaybe<Scalars['String']['input']>;
+  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type LabelLinkingCollections = {
+  __typename?: 'LabelLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+  formCollection?: Maybe<FormCollection>;
+};
+
+
+export type LabelLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type LabelLinkingCollectionsFormCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<LabelLinkingCollectionsFormCollectionOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum LabelLinkingCollectionsFormCollectionOrder {
+  ErrorButtonLabelAsc = 'errorButtonLabel_ASC',
+  ErrorButtonLabelDesc = 'errorButtonLabel_DESC',
+  ErrorContactEmailAsc = 'errorContactEmail_ASC',
+  ErrorContactEmailDesc = 'errorContactEmail_DESC',
+  ErrorDescriptionAsc = 'errorDescription_ASC',
+  ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorTitleAsc = 'errorTitle_ASC',
+  ErrorTitleDesc = 'errorTitle_DESC',
+  GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
+  GdprNoticeDetailsDesc = 'gdprNoticeDetails_DESC',
+  GdprNoticeIntroAsc = 'gdprNoticeIntro_ASC',
+  GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
+  GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
+  GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
+  SendMessageLabelAsc = 'sendMessageLabel_ASC',
+  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SuccessButtonLabelAsc = 'successButtonLabel_ASC',
+  SuccessButtonLabelDesc = 'successButtonLabel_DESC',
+  SuccessDescriptionAsc = 'successDescription_ASC',
+  SuccessDescriptionDesc = 'successDescription_DESC',
+  SuccessTitleAsc = 'successTitle_ASC',
+  SuccessTitleDesc = 'successTitle_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+export enum LabelOrder {
+  EmailAsc = 'email_ASC',
+  EmailDesc = 'email_DESC',
+  MessageAsc = 'message_ASC',
+  MessageDesc = 'message_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  RoleAsc = 'role_ASC',
+  RoleDesc = 'role_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/legalNotice) */
 export type LegalNotice = Entry & _Node & {
@@ -3605,167 +3766,6 @@ export enum NotesAndLegalInformationOrder {
   UserRightsTitleDesc = 'userRightsTitle_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type Placeholder = Entry & _Node & {
-  __typename?: 'Placeholder';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  email?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<PlaceholderLinkingCollections>;
-  message?: Maybe<Scalars['String']['output']>;
-  name?: Maybe<Scalars['String']['output']>;
-  role?: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type PlaceholderEmailArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type PlaceholderLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type PlaceholderMessageArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type PlaceholderNameArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/placeholder) */
-export type PlaceholderRoleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type PlaceholderCollection = {
-  __typename?: 'PlaceholderCollection';
-  items: Array<Maybe<Placeholder>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type PlaceholderFilter = {
-  AND?: InputMaybe<Array<InputMaybe<PlaceholderFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<PlaceholderFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  email_contains?: InputMaybe<Scalars['String']['input']>;
-  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  email_not?: InputMaybe<Scalars['String']['input']>;
-  email_not_contains?: InputMaybe<Scalars['String']['input']>;
-  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  message?: InputMaybe<Scalars['String']['input']>;
-  message_contains?: InputMaybe<Scalars['String']['input']>;
-  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  message_not?: InputMaybe<Scalars['String']['input']>;
-  message_not_contains?: InputMaybe<Scalars['String']['input']>;
-  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  role?: InputMaybe<Scalars['String']['input']>;
-  role_contains?: InputMaybe<Scalars['String']['input']>;
-  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  role_not?: InputMaybe<Scalars['String']['input']>;
-  role_not_contains?: InputMaybe<Scalars['String']['input']>;
-  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type PlaceholderLinkingCollections = {
-  __typename?: 'PlaceholderLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-  formCollection?: Maybe<FormCollection>;
-};
-
-
-export type PlaceholderLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-
-export type PlaceholderLinkingCollectionsFormCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<PlaceholderLinkingCollectionsFormCollectionOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum PlaceholderLinkingCollectionsFormCollectionOrder {
-  ErrorButtonLabelAsc = 'errorButtonLabel_ASC',
-  ErrorButtonLabelDesc = 'errorButtonLabel_DESC',
-  ErrorContactEmailAsc = 'errorContactEmail_ASC',
-  ErrorContactEmailDesc = 'errorContactEmail_DESC',
-  ErrorDescriptionAsc = 'errorDescription_ASC',
-  ErrorDescriptionDesc = 'errorDescription_DESC',
-  ErrorTitleAsc = 'errorTitle_ASC',
-  ErrorTitleDesc = 'errorTitle_DESC',
-  GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
-  GdprNoticeDetailsDesc = 'gdprNoticeDetails_DESC',
-  GdprNoticeIntroAsc = 'gdprNoticeIntro_ASC',
-  GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
-  GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
-  GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
-  SendMessageLabelAsc = 'sendMessageLabel_ASC',
-  SendMessageLabelDesc = 'sendMessageLabel_DESC',
-  SuccessButtonLabelAsc = 'successButtonLabel_ASC',
-  SuccessButtonLabelDesc = 'successButtonLabel_DESC',
-  SuccessDescriptionAsc = 'successDescription_ASC',
-  SuccessDescriptionDesc = 'successDescription_DESC',
-  SuccessTitleAsc = 'successTitle_ASC',
-  SuccessTitleDesc = 'successTitle_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
-export enum PlaceholderOrder {
-  EmailAsc = 'email_ASC',
-  EmailDesc = 'email_DESC',
-  MessageAsc = 'message_ASC',
-  MessageDesc = 'message_DESC',
-  NameAsc = 'name_ASC',
-  NameDesc = 'name_DESC',
-  RoleAsc = 'role_ASC',
-  RoleDesc = 'role_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
-
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyOverview) */
 export type PrivacyOverview = Entry & _Node & {
   __typename?: 'PrivacyOverview';
@@ -4292,6 +4292,8 @@ export type Query = {
   homeCollection?: Maybe<HomeCollection>;
   hosting?: Maybe<Hosting>;
   hostingCollection?: Maybe<HostingCollection>;
+  label?: Maybe<Label>;
+  labelCollection?: Maybe<LabelCollection>;
   legalNotice?: Maybe<LegalNotice>;
   legalNoticeCollection?: Maybe<LegalNoticeCollection>;
   metaDataHome?: Maybe<MetaDataHome>;
@@ -4308,8 +4310,6 @@ export type Query = {
   notFoundCollection?: Maybe<NotFoundCollection>;
   notesAndLegalInformation?: Maybe<NotesAndLegalInformation>;
   notesAndLegalInformationCollection?: Maybe<NotesAndLegalInformationCollection>;
-  placeholder?: Maybe<Placeholder>;
-  placeholderCollection?: Maybe<PlaceholderCollection>;
   privacyOverview?: Maybe<PrivacyOverview>;
   privacyOverviewCollection?: Maybe<PrivacyOverviewCollection>;
   privacyPolicy?: Maybe<PrivacyPolicy>;
@@ -4482,6 +4482,23 @@ export type QueryHostingCollectionArgs = {
 };
 
 
+export type QueryLabelArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryLabelCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<LabelOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<LabelFilter>;
+};
+
+
 export type QueryLegalNoticeArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -4615,23 +4632,6 @@ export type QueryNotesAndLegalInformationCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<NotesAndLegalInformationFilter>;
-};
-
-
-export type QueryPlaceholderArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryPlaceholderCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<PlaceholderOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<PlaceholderFilter>;
 };
 
 
@@ -5885,6 +5885,41 @@ export type CfHostingNestedFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type CfLabelNestedFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CfLabelNestedFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CfLabelNestedFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  email_contains?: InputMaybe<Scalars['String']['input']>;
+  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  email_not?: InputMaybe<Scalars['String']['input']>;
+  email_not_contains?: InputMaybe<Scalars['String']['input']>;
+  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message?: InputMaybe<Scalars['String']['input']>;
+  message_contains?: InputMaybe<Scalars['String']['input']>;
+  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  message_not?: InputMaybe<Scalars['String']['input']>;
+  message_not_contains?: InputMaybe<Scalars['String']['input']>;
+  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_contains?: InputMaybe<Scalars['String']['input']>;
+  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not?: InputMaybe<Scalars['String']['input']>;
+  name_not_contains?: InputMaybe<Scalars['String']['input']>;
+  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role?: InputMaybe<Scalars['String']['input']>;
+  role_contains?: InputMaybe<Scalars['String']['input']>;
+  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  role_not?: InputMaybe<Scalars['String']['input']>;
+  role_not_contains?: InputMaybe<Scalars['String']['input']>;
+  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
 export type CfMetricNestedFilter = {
   AND?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<CfMetricNestedFilter>>>;
@@ -6117,41 +6152,6 @@ export type CfNotesAndLegalInformationNestedFilter = {
   userRightsTitle_not?: InputMaybe<Scalars['String']['input']>;
   userRightsTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
   userRightsTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type CfPlaceholderNestedFilter = {
-  AND?: InputMaybe<Array<InputMaybe<CfPlaceholderNestedFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<CfPlaceholderNestedFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  email_contains?: InputMaybe<Scalars['String']['input']>;
-  email_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  email_not?: InputMaybe<Scalars['String']['input']>;
-  email_not_contains?: InputMaybe<Scalars['String']['input']>;
-  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  message?: InputMaybe<Scalars['String']['input']>;
-  message_contains?: InputMaybe<Scalars['String']['input']>;
-  message_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  message_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  message_not?: InputMaybe<Scalars['String']['input']>;
-  message_not_contains?: InputMaybe<Scalars['String']['input']>;
-  message_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  name_contains?: InputMaybe<Scalars['String']['input']>;
-  name_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  name_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  name_not?: InputMaybe<Scalars['String']['input']>;
-  name_not_contains?: InputMaybe<Scalars['String']['input']>;
-  name_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  role?: InputMaybe<Scalars['String']['input']>;
-  role_contains?: InputMaybe<Scalars['String']['input']>;
-  role_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  role_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  role_not?: InputMaybe<Scalars['String']['input']>;
-  role_not_contains?: InputMaybe<Scalars['String']['input']>;
-  role_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
 };
 
 export type CfPrivacyOverviewNestedFilter = {
@@ -6423,7 +6423,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, successTitle?: string | null, successDescription?: string | null, successButtonLabel?: string | null, placeholder?: { __typename?: 'Placeholder', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, successTitle?: string | null, successDescription?: string | null, successButtonLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6553,7 +6553,7 @@ export const ContactContentDocument = gql`
   }
   formCollection(limit: 1, locale: $locale) {
     items {
-      placeholder {
+      labels {
         name
         email
         role

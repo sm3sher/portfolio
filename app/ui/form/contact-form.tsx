@@ -89,7 +89,7 @@ export default function ContactForm({ content }: Props) {
           <FormInput
             register={register}
             name="name"
-            label={content?.placeholder?.name || ''}
+            label={content?.labels?.name || ''}
             defaultValue={state?.rawData?.name}
             errors={errors}
             validationMessages={content?.validationMessages}
@@ -97,7 +97,7 @@ export default function ContactForm({ content }: Props) {
           <FormInput
             register={register}
             name="email"
-            label={content?.placeholder?.email || ''}
+            label={content?.labels?.email || ''}
             defaultValue={state?.rawData?.email}
             errors={errors}
             validationMessages={content?.validationMessages}
@@ -105,7 +105,7 @@ export default function ContactForm({ content }: Props) {
           <FormInput
             register={register}
             name="role"
-            label={content?.placeholder?.role || ''}
+            label={content?.labels?.role || ''}
             defaultValue={state?.rawData?.role}
             errors={errors}
             validationMessages={content?.validationMessages}
@@ -113,7 +113,7 @@ export default function ContactForm({ content }: Props) {
           <FormTextarea
             register={register}
             name="message"
-            label={content?.placeholder?.message || ''}
+            label={content?.labels?.message || ''}
             defaultValue={state?.rawData?.message}
             errors={errors}
             validationMessages={content?.validationMessages}

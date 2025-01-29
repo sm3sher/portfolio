@@ -26,7 +26,7 @@ vi.mock('@/app/lib/supabase/client', () => {
 });
 
 const content = {
-  placeholder: {
+  labels: {
     name: 'Name',
     email: 'Email',
     role: 'Job title, company name (optional)',
@@ -121,16 +121,16 @@ describe('ContactForm', () => {
     await user.click(screen.getByText(content.successButtonLabel));
 
     expect(
-      screen.getByRole('textbox', { name: content.placeholder.name }),
+      screen.getByRole('textbox', { name: content.labels.name }),
     ).toBeEmptyDOMElement();
     expect(
-      screen.getByRole('textbox', { name: content.placeholder.email }),
+      screen.getByRole('textbox', { name: content.labels.email }),
     ).toBeEmptyDOMElement();
     expect(
-      screen.getByRole('textbox', { name: content.placeholder.role }),
+      screen.getByRole('textbox', { name: content.labels.role }),
     ).toBeEmptyDOMElement();
     expect(
-      screen.getByRole('textbox', { name: content.placeholder.message }),
+      screen.getByRole('textbox', { name: content.labels.message }),
     ).toBeEmptyDOMElement();
     expect(screen.getByRole('checkbox')).not.toBeChecked();
   });
@@ -155,34 +155,23 @@ describe('ContactForm', () => {
   });
 
   const fillForm = async (formData: ContactFormData) => {
-    await user.type(
-      screen.getByLabelText(content.placeholder.name),
-      formData.name,
-    );
-    await user.type(
-      screen.getByLabelText(content.placeholder.email),
-      formData.email,
-    );
-    if (formData.role) {
-      await user.type(
-        screen.getByLabelText(content.placeholder.role),
-        formData.role,
-      );
+    const { name, email, role, message, consent } = formData;
+    await user.type(screen.getByLabelText(content.labels.name), name);
+    await user.type(screen.getByLabelText(content.labels.email), email);
+    if (role) {
+      await user.type(screen.getByLabelText(content.labels.role), role);
     }
-    await user.type(
-      screen.getByLabelText(content.placeholder.message),
-      formData.message,
-    );
-    if (formData.consent) {
+    await user.type(screen.getByLabelText(content.labels.message), message);
+    if (consent) {
       await user.click(screen.getByRole('checkbox'));
     }
   };
 
   const clearForm = async () => {
-    await user.clear(screen.getByLabelText(content.placeholder.name));
-    await user.clear(screen.getByLabelText(content.placeholder.email));
-    await user.clear(screen.getByLabelText(content.placeholder.role));
-    await user.clear(screen.getByLabelText(content.placeholder.message));
+    await user.clear(screen.getByLabelText(content.labels.name));
+    await user.clear(screen.getByLabelText(content.labels.email));
+    await user.clear(screen.getByLabelText(content.labels.role));
+    await user.clear(screen.getByLabelText(content.labels.message));
     await user.click(screen.getByRole('checkbox', { checked: true }));
   };
 });
