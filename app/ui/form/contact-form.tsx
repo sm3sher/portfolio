@@ -17,6 +17,7 @@ import StatusCard from '@/app/ui/card/status-card';
 import SubmitButton from '@/app/ui/button/submit-button';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { Form } from '@/app/lib/contentful/generated/sdk';
+import FormTextarea from '@/app/ui/form/form-textarea';
 
 type Props = {
   content?: Form;
@@ -83,12 +84,12 @@ export default function ContactForm({ content }: Props) {
       >
         <form
           action={(formData) => startTransaction(() => formAction(formData))}
-          className="space-y-4"
+          className="space-y-3"
         >
           <FormInput
             register={register}
             name="name"
-            placeholder={content?.placeholder?.name || ''}
+            label={content?.placeholder?.name || ''}
             defaultValue={state?.rawData?.name}
             errors={errors}
             validationMessages={content?.validationMessages}
@@ -96,7 +97,7 @@ export default function ContactForm({ content }: Props) {
           <FormInput
             register={register}
             name="email"
-            placeholder={content?.placeholder?.email || ''}
+            label={content?.placeholder?.email || ''}
             defaultValue={state?.rawData?.email}
             errors={errors}
             validationMessages={content?.validationMessages}
@@ -104,19 +105,18 @@ export default function ContactForm({ content }: Props) {
           <FormInput
             register={register}
             name="role"
-            placeholder={content?.placeholder?.role || ''}
+            label={content?.placeholder?.role || ''}
             defaultValue={state?.rawData?.role}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
-          <FormInput
+          <FormTextarea
             register={register}
             name="message"
-            placeholder={content?.placeholder?.message || ''}
+            label={content?.placeholder?.message || ''}
             defaultValue={state?.rawData?.message}
             errors={errors}
             validationMessages={content?.validationMessages}
-            elementType="textarea"
           />
           <FormGdprCheckbox
             content={{

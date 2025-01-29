@@ -16,7 +16,7 @@ type Props<T extends FieldValues> = {
   validationMessages?: ValidationMessages | null;
 };
 
-export default function FormInput<T extends FieldValues>({
+export default function FormTextarea<T extends FieldValues>({
   register,
   name,
   label,
@@ -34,11 +34,12 @@ export default function FormInput<T extends FieldValues>({
 
   return (
     <div>
-      <div className="relative">
-        <input
+      <div className="relative max-h-36">
+        <textarea
           {...register(name)}
           id={name}
-          className="peer w-full rounded-xl px-4 pt-5 pb-1 duration-300 outline-none hover:bg-(--hover-color)"
+          rows={5}
+          className="peer w-full resize-none rounded-xl px-4 pt-5 pb-1 duration-300 outline-none hover:bg-(--hover-color)"
           defaultValue={defaultValue}
           placeholder=" "
           aria-describedby={`${String(name)}-error`}

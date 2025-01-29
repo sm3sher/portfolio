@@ -156,21 +156,21 @@ describe('ContactForm', () => {
 
   const fillForm = async (formData: ContactFormData) => {
     await user.type(
-      screen.getByRole('textbox', { name: content.placeholder.name }),
+      screen.getByLabelText(content.placeholder.name),
       formData.name,
     );
     await user.type(
-      screen.getByRole('textbox', { name: content.placeholder.email }),
+      screen.getByLabelText(content.placeholder.email),
       formData.email,
     );
     if (formData.role) {
       await user.type(
-        screen.getByRole('textbox', { name: content.placeholder.role }),
+        screen.getByLabelText(content.placeholder.role),
         formData.role,
       );
     }
     await user.type(
-      screen.getByRole('textbox', { name: content.placeholder.message }),
+      screen.getByLabelText(content.placeholder.message),
       formData.message,
     );
     if (formData.consent) {
@@ -179,18 +179,10 @@ describe('ContactForm', () => {
   };
 
   const clearForm = async () => {
-    await user.clear(
-      screen.getByRole('textbox', { name: content.placeholder.name }),
-    );
-    await user.clear(
-      screen.getByRole('textbox', { name: content.placeholder.email }),
-    );
-    await user.clear(
-      screen.getByRole('textbox', { name: content.placeholder.role }),
-    );
-    await user.clear(
-      screen.getByRole('textbox', { name: content.placeholder.message }),
-    );
+    await user.clear(screen.getByLabelText(content.placeholder.name));
+    await user.clear(screen.getByLabelText(content.placeholder.email));
+    await user.clear(screen.getByLabelText(content.placeholder.role));
+    await user.clear(screen.getByLabelText(content.placeholder.message));
     await user.click(screen.getByRole('checkbox', { checked: true }));
   };
 });
