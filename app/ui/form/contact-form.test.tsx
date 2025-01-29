@@ -91,6 +91,7 @@ describe('ContactForm', () => {
       consent: false,
     };
     await fillForm(formData);
+    await user.tab();
 
     screen.getByText(ValidationMessages.nameMaxLength);
     screen.getByText(ValidationMessages.emailMaxLength);

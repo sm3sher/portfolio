@@ -38,7 +38,7 @@ export default function ContactForm({ content }: Props) {
     setError,
     reset,
   } = useForm<ContactFormData>({
-    mode: 'onChange',
+    mode: 'onTouched',
     resolver: zodResolver(contactFormSchema),
   });
 

@@ -48,9 +48,8 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           <input
             {...register(name)}
             type="checkbox"
-            className={`base-border peer h-5 w-5 cursor-pointer appearance-none rounded backdrop-blur transition-colors duration-200 checked:bg-(--hover-color) ${
-              errorMessage &&
-              'border-(--error-color) bg-(--error-background) outline-(--error-color)'
+            className={`base-border peer h-6 w-6 appearance-none rounded-md bg-(--surface-color) transition-colors duration-200 checked:bg-(--hover-color) ${
+              errorMessage && 'border-(--error-color) outline-(--error-color)'
             }`}
             defaultChecked={defaultChecked}
             id="check-with-link"
@@ -61,7 +60,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           </span>
         </label>
         <label
-          className={`ml-2 cursor-pointer text-sm text-(--secondary) select-none ${errorMessage && 'text-(--error-color)'}`}
+          className={`ml-3 cursor-pointer text-sm text-(--secondary) select-none ${errorMessage && 'text-(--error-color)'}`}
           htmlFor="check-with-link"
         >
           <p className="text-sm">
@@ -79,7 +78,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
       <p
         id={`${String(name)}-error`}
         aria-live="polite"
-        className={`ml-7 text-sm text-(--error-color) opacity-0 transition-all duration-500 ${errorMessage ? 'h-4 opacity-100' : 'h-0'}`}
+        className={`ml-0.5 text-sm text-(--error-color) opacity-0 transition-all duration-500 ${errorMessage ? 'h-4 opacity-100' : 'h-0'}`}
       >
         {message}
       </p>

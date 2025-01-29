@@ -57,7 +57,7 @@ export default function FormInput<T extends FieldValues>({
       <p
         id={`${String(name)}-error`}
         aria-live="polite"
-        className={`ml-2 pt-1 text-sm text-(--error-color) opacity-0 duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0 p-0!'}`}
+        className={`ml-0.5 pt-1 text-sm text-(--error-color) opacity-0 duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0 p-0!'}`}
       >
         {message}
       </p>

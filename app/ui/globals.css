@@ -26,7 +26,6 @@
   --border-color: --alpha(var(--color-black) / 20%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --error-color: var(--color-rose-600);
-  --error-background: var(--color-rose-100);
 }
 
 html.dark {
@@ -41,7 +40,6 @@ html.dark {
   --border-color: --alpha(var(--color-white) / 35%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
   --error-color: var(--color-rose-600);
-  --error-background: var(--color-rose-950);
 }
 
 * {
