@@ -40,7 +40,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
 
   return (
     <div>
-      <div className="flex">
+      <div className="group flex">
         <label
           className="relative flex cursor-pointer items-center"
           htmlFor="check-with-link"
@@ -48,9 +48,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           <input
             {...register(name)}
             type="checkbox"
-            className={`base-border peer h-6 w-6 appearance-none rounded-md bg-(--surface-color) transition-colors duration-200 checked:bg-(--hover-color) ${
-              errorMessage && 'border-(--error-color) outline-(--error-color)'
-            }`}
+            className="base-border peer relative h-6 w-6 appearance-none rounded-md bg-(--surface-color) before:absolute before:-inset-[1px] before:rounded-md before:bg-(--hover-color) before:opacity-0 before:duration-200 after:absolute after:top-1/2 after:left-1/2 after:h-10 after:w-10 after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:cursor-pointer after:rounded-full after:bg-(--hover-color) after:duration-300 group-hover:after:scale-100 checked:before:opacity-100 checked:after:scale-0"
             defaultChecked={defaultChecked}
             id="check-with-link"
             aria-describedby={`${String(name)}-error`}
