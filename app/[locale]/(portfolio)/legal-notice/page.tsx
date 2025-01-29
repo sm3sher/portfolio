@@ -24,9 +24,9 @@ export default async function Page({ params }: Props) {
   const content = query.legalNoticeCollection?.items[0];
 
   return (
-    <div className="relative px-6 py-24 md:py-32">
+    <div className="relative py-24 md:py-32">
       <DotBackground />
-      <div className="mx-auto max-w-(--breakpoint-xl)">
+      <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3 className="mb-8 font-bold">{content?.title}</h3>
 
         <section className="mb-12">
