@@ -18,15 +18,19 @@ export type Database = {
           message: string
           name: string
           role: string | null
+          verification_token: string
+          verified: boolean
         }
         Insert: {
-          consent: boolean
+          consent?: boolean
           created_at?: string
           email: string
           id?: number
           message: string
           name: string
           role?: string | null
+          verification_token?: string
+          verified?: boolean
         }
         Update: {
           consent?: boolean
@@ -36,6 +40,8 @@ export type Database = {
           message?: string
           name?: string
           role?: string | null
+          verification_token?: string
+          verified?: boolean
         }
         Relationships: []
       }

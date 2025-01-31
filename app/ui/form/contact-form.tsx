@@ -18,12 +18,14 @@ import SubmitButton from '@/app/ui/button/submit-button';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { Form } from '@/app/lib/contentful/generated/sdk';
 import FormTextarea from '@/app/ui/form/form-textarea';
+import { useLocale } from 'next-intl';
 
 type Props = {
   content?: Form;
 };
 
 export default function ContactForm({ content }: Props) {
+  const locale = useLocale();
   const [pending, startTransaction] = useTransition();
   const [submitted, setSubmitted] = useState(false);
   const [state, formAction] = useActionState<SaveMessageStatus, FormData>(
@@ -62,9 +64,15 @@ export default function ContactForm({ content }: Props) {
     }
   }, [state, setError, reset]);
 
+  const handleFormAction = (formData: FormData) => {
+    formData.set('baseUrl', `${window.origin}/${locale}`);
+    startTransaction(() => formAction(formData));
+  };
+
   const handleRetry = () => {
     setMaxRetries((curr) => --curr);
     const formData = new FormData();
+    formData.set('baseUrl', `${window.origin}/${locale}`);
     if (state?.rawData) {
       Object.entries(state.rawData).forEach(([key, value]) => {
         formData.set(key, String(value));
@@ -77,15 +85,12 @@ export default function ContactForm({ content }: Props) {
     <div className="relative">
       <div
         className={`transition-opacity duration-500 ${
-          pending || submitted || state?.dbError
+          pending || submitted || state?.serverError
             ? 'pointer-events-none opacity-0'
             : 'opacity-100'
         }`}
       >
-        <form
-          action={(formData) => startTransaction(() => formAction(formData))}
-          className="space-y-4"
-        >
+        <form action={handleFormAction} className="space-y-4">
           <FormInput
             register={register}
             name="name"
@@ -139,7 +144,7 @@ export default function ContactForm({ content }: Props) {
         </form>
       </div>
       <PresenceAnimation
-        show={!!state?.dbError && !pending}
+        show={!!state?.serverError && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >

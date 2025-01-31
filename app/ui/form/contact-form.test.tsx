@@ -10,20 +10,43 @@ import { Form } from '@/app/lib/contentful/generated/sdk';
 
 const FAIL_EMAIL = 'fail@test.com';
 
-vi.mock('@/app/lib/supabase/client', () => {
-  const mockInsert = vi.fn((data) =>
-    Promise.resolve(
-      data.email === FAIL_EMAIL ? { error: 'Insert failed' } : { error: null },
-    ),
-  );
-  return {
-    default: vi.fn(() => ({
-      from: vi.fn(() => ({
-        insert: mockInsert,
-      })),
+const mocks = vi.hoisted(() => {
+  const insert = vi.fn((data) => ({
+    select: vi.fn(() => ({
+      single: vi.fn(() =>
+        Promise.resolve({
+          data: { verification_token: 'mock-token' },
+          error: data.email === FAIL_EMAIL ? 'Insert failed' : null,
+        }),
+      ),
     })),
+  }));
+
+  const from = vi.fn(() => ({
+    insert,
+  }));
+
+  const supabaseClient = vi.fn(() => ({
+    from,
+  }));
+
+  const sendMail = vi.fn();
+
+  const nodemailerClient = vi.fn(() => ({ sendMail }));
+
+  return {
+    supabaseClient,
+    nodemailerClient,
   };
 });
+
+vi.mock('@/app/lib/supabase/client', () => ({
+  default: mocks.supabaseClient,
+}));
+
+vi.mock('@/app/lib/nodemailer/client', () => ({
+  default: mocks.nodemailerClient,
+}));
 
 const content = {
   labels: {
