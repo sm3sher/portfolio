@@ -14,6 +14,7 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 - 🌙 **Dark Mode Support**: Switch between light and dark mode, powered by [next-themes](https://github.com/pacocoursey/next-themes)
 - ✅ **Form Validation**: Built with [react-hook-form](https://react-hook-form.com) and [zod](https://zod.dev) for reliable, smooth user experience
 - 💾 **Form Integration**: Submissions stored in [Supabase](https://supabase.com) for seamless backend management
+- 📧 **Email Verification**: Implements a secure email verification process on form submissions using [Nodemailer](https://nodemailer.com)
 - 📄 **Content Management**: Manage content via [Contentful](https://contentful.com), integrated with [GraphQL](https://graphql.org/) queries
 - 🌍 **Multi-Language Support**: Fully localized content with [next-intl](https://next-intl.dev/) to cater to a global audience
 - 🖼️ **Lightweight Icons**: Integrated with [hugeicons-react](https://hugeicons.com) for scalable, high-quality icons
