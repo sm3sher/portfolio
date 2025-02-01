@@ -3,7 +3,7 @@ import LogoGithub from './logo-github';
 import LogoKofi from '@/app/ui/footer/logo-kofi';
 import LogoStackOverflow from '@/app/ui/footer/logo-stack-overflow';
 import contentfulClient from '@/app/lib/contentful/client';
-import { SourceCodeIcon } from 'hugeicons-react';
+import Logo from '@/app/ui/footer/logo';
 import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
 
 type Props = {
@@ -20,12 +20,7 @@ export default async function Footer({ locale }: Props) {
       <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-8 sm:pt-12 sm:pb-16">
         <div className="gap-2 md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
-            <h5 className="flex items-center gap-2 font-semibold">
-              <SourceCodeIcon /> {content?.title}
-            </h5>
-            <p className="tracking-wide text-(--secondary)">
-              {content?.description}
-            </p>
+            <Logo title={content?.title} description={content?.description} />
           </div>
           <div className="grid grid-cols-2 gap-8 whitespace-nowrap sm:gap-16">
             <div>
