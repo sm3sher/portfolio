@@ -4,7 +4,6 @@ import ExperienceCounter from '@/app/ui/counter/experience-counter';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
-import DotBackground from '@/app/ui/background/dot-background';
 
 type Props = {
   locale: Locale;
@@ -16,7 +15,6 @@ export default async function About({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-48">
-      <DotBackground />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col gap-8 md:flex-row md:gap-0">
           {content?.image &&

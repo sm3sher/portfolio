@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Link, Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
-import DotBackground from '@/app/ui/background/dot-background';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -25,7 +24,6 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <DotBackground />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3 className="mb-8 font-bold">{content?.title}</h3>
 

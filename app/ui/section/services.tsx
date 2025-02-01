@@ -10,7 +10,6 @@ import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import RadialBackground from '@/app/ui/background/radial-background';
-import GridBackground from '@/app/ui/background/grid-background';
 
 type Props = {
   locale: Locale;
@@ -31,7 +30,6 @@ export default async function Services({ locale }: Props) {
   return (
     <div className="relative py-24 md:py-32">
       <RadialBackground position="circle_at_top" gradientStop={65} />
-      <GridBackground />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation className="mb-10 space-y-7 md:mb-16">
           <h6 className="tracking-wider text-(--highlight) uppercase">

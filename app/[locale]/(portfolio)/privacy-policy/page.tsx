@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import contentfulClient from '@/app/lib/contentful/client';
 import { Locale } from '@/i18n/routing';
 import { CircleArrowRight02Icon } from 'hugeicons-react';
-import DotBackground from '@/app/ui/background/dot-background';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -26,7 +25,6 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <DotBackground />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3>{content?.title}</h3>
         <p className="mb-8 text-(--secondary) italic">
