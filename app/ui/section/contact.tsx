@@ -5,7 +5,6 @@ import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import { Form, Testimonials } from '@/app/lib/contentful/generated/sdk';
 import Image from 'next/image';
-import RadialBackground from '@/app/ui/background/radial-background';
 
 type Props = {
   locale: Locale;
@@ -17,7 +16,7 @@ export default async function Contact({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <RadialBackground position="circle_at_bottom_left" />
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-transparent to-50%" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
           <ViewAnimation className="space-y-7 md:w-1/2">

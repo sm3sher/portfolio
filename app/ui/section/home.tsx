@@ -4,7 +4,6 @@ import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
 import { ArrowDown01Icon } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
-import RadialBackground from '@/app/ui/background/radial-background';
 
 type Props = {
   locale: Locale;
@@ -16,7 +15,7 @@ export default async function Home({ locale }: Props) {
 
   return (
     <div className="relative pt-40 sm:pt-48">
-      <RadialBackground position="circle_at_top_left" />
+      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top_left] from-(--radial-color) to-transparent to-50%" />
       {content?.image &&
         content.image.url &&
         content.image.width &&
