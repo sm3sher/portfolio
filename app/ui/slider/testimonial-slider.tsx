@@ -34,7 +34,7 @@ export default function TestimonialSlider({ content }: Props) {
         <div className="flex space-x-2">
           <button
             onClick={scrollPrev}
-            className="hover-effect base-border rounded-full p-1.5"
+            className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
             aria-label={content?.prevSlideLabel || undefined}
           >
             <ArrowLeft01Icon
@@ -44,7 +44,7 @@ export default function TestimonialSlider({ content }: Props) {
           </button>
           <button
             onClick={scrollNext}
-            className="hover-effect base-border rounded-full p-1.5"
+            className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
             aria-label={content?.nextSlideLabel || undefined}
           >
             <ArrowRight01Icon

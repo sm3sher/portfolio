@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import { ArrowUp01Icon } from 'hugeicons-react';
 import { motion } from 'motion/react';
 import { useLocale } from 'next-intl';
@@ -30,7 +30,7 @@ export default function ScrollToTop() {
     window.scrollTo({ top: 0 });
   };
 
-  const progressStyle = {
+  const progressStyle: CSSProperties = {
     background: `conic-gradient(var(--border-color) ${scrollProgress}%, transparent ${scrollProgress}%)`,
     mask: 'linear-gradient(#000 0 0) exclude, linear-gradient(#000 0 0) content-box',
   };
@@ -40,7 +40,7 @@ export default function ScrollToTop() {
       initial={{ opacity: 0, y: 25 }}
       animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
       transition={{ duration: 0.5 }}
-      className={`fixed right-4 bottom-4 xl:right-10 xl:bottom-8 ${
+      className={`fixed right-4 bottom-4 rounded-full backdrop-blur-xs xl:right-10 xl:bottom-8 ${
         showScrollButton
           ? 'pointer-events-auto z-10'
           : 'pointer-events-none -z-10'
@@ -52,7 +52,7 @@ export default function ScrollToTop() {
         aria-label={locale === 'en' ? 'Scroll to top' : 'Nach oben scrollen'}
       >
         <div
-          className="absolute inset-0 cursor-pointer rounded-full p-0.5"
+          className="absolute inset-0 cursor-pointer rounded-full p-[1.5px]"
           style={progressStyle}
         />
         <ArrowUp01Icon strokeWidth={2} className="pb-0.5 text-(--secondary)" />
