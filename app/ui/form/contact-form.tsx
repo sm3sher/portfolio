@@ -5,8 +5,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   CancelCircleIcon,
-  CheckmarkCircle01Icon,
   Loading02Icon,
+  MailOpenIcon,
   SentIcon,
 } from 'hugeicons-react';
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
@@ -181,14 +181,14 @@ export default function ContactForm({ content }: Props) {
         withTranslation
       >
         <StatusCard
-          icon={<CheckmarkCircle01Icon size={52} />}
-          title={content?.successTitle}
+          icon={<MailOpenIcon size={52} />}
+          title={content?.emailVerificationTitle}
           button={{
-            label: content?.successButtonLabel,
+            label: content?.emailResendButtonLabel,
             onClick: () => setSubmitted(false),
           }}
         >
-          <p className="text-center">{content?.successDescription}</p>
+          <p className="text-center">{content?.emailVerificationDescription}</p>
         </StatusCard>
       </PresenceAnimation>
     </div>

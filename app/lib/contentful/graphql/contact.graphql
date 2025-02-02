@@ -41,9 +41,9 @@ query contactContent($locale: String) {
             errorDescription
             errorContactEmail
             errorButtonLabel
-            successTitle
-            successDescription
-            successButtonLabel
+            emailVerificationTitle
+            emailVerificationDescription
+            emailResendButtonLabel
         }
     }
     testimonialsCollection(limit: 1, locale: $locale) {

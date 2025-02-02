@@ -823,6 +823,9 @@ enum FooterOrder {
 type Form implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
+  emailResendButtonLabel(locale: String): String
+  emailVerificationDescription(locale: String): String
+  emailVerificationTitle(locale: String): String
   errorButtonLabel(locale: String): String
   errorContactEmail(locale: String): String
   errorDescription(locale: String): String
@@ -833,9 +836,6 @@ type Form implements Entry & _Node {
   labels(locale: String, preview: Boolean, where: LabelFilter): Label
   linkedFrom(allowedLocales: [String]): FormLinkingCollections
   sendMessageLabel(locale: String): String
-  successButtonLabel(locale: String): String
-  successDescription(locale: String): String
-  successTitle(locale: String): String
   sys: Sys!
   validationMessages(locale: String, preview: Boolean, where: ValidationMessagesFilter): ValidationMessages
 }
@@ -851,6 +851,27 @@ input FormFilter {
   AND: [FormFilter]
   OR: [FormFilter]
   contentfulMetadata: ContentfulMetadataFilter
+  emailResendButtonLabel: String
+  emailResendButtonLabel_contains: String
+  emailResendButtonLabel_exists: Boolean
+  emailResendButtonLabel_in: [String]
+  emailResendButtonLabel_not: String
+  emailResendButtonLabel_not_contains: String
+  emailResendButtonLabel_not_in: [String]
+  emailVerificationDescription: String
+  emailVerificationDescription_contains: String
+  emailVerificationDescription_exists: Boolean
+  emailVerificationDescription_in: [String]
+  emailVerificationDescription_not: String
+  emailVerificationDescription_not_contains: String
+  emailVerificationDescription_not_in: [String]
+  emailVerificationTitle: String
+  emailVerificationTitle_contains: String
+  emailVerificationTitle_exists: Boolean
+  emailVerificationTitle_in: [String]
+  emailVerificationTitle_not: String
+  emailVerificationTitle_not_contains: String
+  emailVerificationTitle_not_in: [String]
   errorButtonLabel: String
   errorButtonLabel_contains: String
   errorButtonLabel_exists: Boolean
@@ -909,27 +930,6 @@ input FormFilter {
   sendMessageLabel_not: String
   sendMessageLabel_not_contains: String
   sendMessageLabel_not_in: [String]
-  successButtonLabel: String
-  successButtonLabel_contains: String
-  successButtonLabel_exists: Boolean
-  successButtonLabel_in: [String]
-  successButtonLabel_not: String
-  successButtonLabel_not_contains: String
-  successButtonLabel_not_in: [String]
-  successDescription: String
-  successDescription_contains: String
-  successDescription_exists: Boolean
-  successDescription_in: [String]
-  successDescription_not: String
-  successDescription_not_contains: String
-  successDescription_not_in: [String]
-  successTitle: String
-  successTitle_contains: String
-  successTitle_exists: Boolean
-  successTitle_in: [String]
-  successTitle_not: String
-  successTitle_not_contains: String
-  successTitle_not_in: [String]
   sys: SysFilter
   validationMessages: cfValidationMessagesNestedFilter
   validationMessages_exists: Boolean
@@ -940,6 +940,12 @@ type FormLinkingCollections {
 }
 
 enum FormOrder {
+  emailResendButtonLabel_ASC
+  emailResendButtonLabel_DESC
+  emailVerificationDescription_ASC
+  emailVerificationDescription_DESC
+  emailVerificationTitle_ASC
+  emailVerificationTitle_DESC
   errorButtonLabel_ASC
   errorButtonLabel_DESC
   errorContactEmail_ASC
@@ -956,12 +962,6 @@ enum FormOrder {
   gdprNoticeLinkText_DESC
   sendMessageLabel_ASC
   sendMessageLabel_DESC
-  successButtonLabel_ASC
-  successButtonLabel_DESC
-  successDescription_ASC
-  successDescription_DESC
-  successTitle_ASC
-  successTitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -1427,6 +1427,12 @@ type LabelLinkingCollections {
 }
 
 enum LabelLinkingCollectionsFormCollectionOrder {
+  emailResendButtonLabel_ASC
+  emailResendButtonLabel_DESC
+  emailVerificationDescription_ASC
+  emailVerificationDescription_DESC
+  emailVerificationTitle_ASC
+  emailVerificationTitle_DESC
   errorButtonLabel_ASC
   errorButtonLabel_DESC
   errorContactEmail_ASC
@@ -1443,12 +1449,6 @@ enum LabelLinkingCollectionsFormCollectionOrder {
   gdprNoticeLinkText_DESC
   sendMessageLabel_ASC
   sendMessageLabel_DESC
-  successButtonLabel_ASC
-  successButtonLabel_DESC
-  successDescription_ASC
-  successDescription_DESC
-  successTitle_ASC
-  successTitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -3442,6 +3442,12 @@ type ValidationMessagesLinkingCollections {
 }
 
 enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
+  emailResendButtonLabel_ASC
+  emailResendButtonLabel_DESC
+  emailVerificationDescription_ASC
+  emailVerificationDescription_DESC
+  emailVerificationTitle_ASC
+  emailVerificationTitle_DESC
   errorButtonLabel_ASC
   errorButtonLabel_DESC
   errorContactEmail_ASC
@@ -3458,12 +3464,6 @@ enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   gdprNoticeLinkText_DESC
   sendMessageLabel_ASC
   sendMessageLabel_DESC
-  successButtonLabel_ASC
-  successButtonLabel_DESC
-  successDescription_ASC
-  successDescription_DESC
-  successTitle_ASC
-  successTitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
