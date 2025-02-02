@@ -6,23 +6,30 @@ import { ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   className?: string;
+  direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
   duration?: number;
   delay?: number;
-  axis?: 'x' | 'y';
 };
 
 export default function ViewAnimation({
   children,
   className,
-  duration = 1,
+  direction,
+  duration = 0.8,
   delay,
-  axis = 'y',
 }: Props) {
+  const initialValues = {
+    fromRight: { opacity: 0, x: 50 },
+    fromLeft: { opacity: 0, x: -50 },
+    fromTop: { opacity: 0, y: -50 },
+    fromBottom: { opacity: 0, y: 50 },
+  };
+
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, [axis]: 50 }}
-      whileInView={{ opacity: 1, [axis]: 0 }}
+      initial={initialValues[direction]}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration, ease: 'easeOut', delay }}
     >

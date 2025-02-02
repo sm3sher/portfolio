@@ -22,7 +22,10 @@ export default async function About({ locale }: Props) {
             content.image.width &&
             content.image.height &&
             content.image.description && (
-              <ViewAnimation className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
+              <ViewAnimation
+                className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12"
+                direction="fromLeft"
+              >
                 <Image
                   className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
                   src={content.image.url}
@@ -34,6 +37,7 @@ export default async function About({ locale }: Props) {
             )}
           <ViewAnimation
             className="flex w-full items-center md:w-2/3 lg:w-7/12"
+            direction="fromBottom"
             delay={0.4}
           >
             <div className="space-y-7">

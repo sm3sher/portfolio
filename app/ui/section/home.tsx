@@ -23,7 +23,7 @@ export default async function Home({ locale }: Props) {
         content.image.description && (
           <ViewAnimation
             className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-(--breakpoint-xl)"
-            axis="x"
+            direction="fromRight"
             duration={0.5}
           >
             <Image
@@ -37,7 +37,7 @@ export default async function Home({ locale }: Props) {
           </ViewAnimation>
         )}
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <ViewAnimation duration={0.5}>
+        <ViewAnimation direction="fromLeft" duration={0.5}>
           <h6 className="mb-5">
             <div className="flex space-x-2">
               <Image

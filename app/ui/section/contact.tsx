@@ -19,7 +19,7 @@ export default async function Contact({ locale }: Props) {
       <div className="absolute inset-0 -z-10 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-transparent to-50%" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
-          <ViewAnimation className="space-y-7 md:w-1/2">
+          <ViewAnimation className="space-y-7 md:w-1/2" direction="fromBottom">
             <h6 className="tracking-wider text-(--highlight) uppercase">
               {content?.title}
             </h6>
@@ -50,11 +50,11 @@ export default async function Contact({ locale }: Props) {
                 </div>
               )}
           </ViewAnimation>
-          <ViewAnimation className="w-full md:w-1/2" delay={0.4}>
+          <ViewAnimation className="w-full md:w-1/2" direction="fromRight">
             <ContactForm content={query.formCollection?.items[0] as Form} />
           </ViewAnimation>
         </div>
-        <ViewAnimation className="pt-32" delay={0.6} axis="x">
+        <ViewAnimation className="pt-32" direction="fromRight" delay={0.6}>
           <TestimonialSlider
             content={query.testimonialsCollection?.items[0] as Testimonials}
           />
