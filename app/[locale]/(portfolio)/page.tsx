@@ -28,7 +28,7 @@ export default async function Page({ params }: Props) {
   const Contact = dynamic(() => import('@/app/ui/section/contact'));
 
   return (
-    <main className="overflow-hidden">
+    <div className="overflow-hidden">
       <section id="home">
         <Home locale={locale} />
         <ServiceBanner locale={locale} />
@@ -42,6 +42,6 @@ export default async function Page({ params }: Props) {
       <section id="contact">
         <Contact locale={locale} />
       </section>
-    </main>
+    </div>
   );
 }

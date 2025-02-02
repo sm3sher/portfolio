@@ -12,11 +12,11 @@ type Props = {
 export default async function Layout({ children, params }: Props) {
   const { locale } = await params;
   return (
-    <>
+    <div className="flex min-h-screen flex-col">
       <Navbar locale={locale} />
-      {children}
+      <main className="flex flex-1 flex-col">{children}</main>
       <Footer locale={locale} />
       <ScrollToTop />
-    </>
+    </div>
   );
 }

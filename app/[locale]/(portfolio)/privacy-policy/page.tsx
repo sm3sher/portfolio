@@ -24,7 +24,7 @@ export default async function Page({ params }: Props) {
   const content = query.privacyPolicyCollection?.items[0];
 
   return (
-    <div className="relative py-24 md:py-32">
+    <div className="py-24 md:py-32">
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3>{content?.title}</h3>
         <p className="mb-8 text-(--secondary) italic">
