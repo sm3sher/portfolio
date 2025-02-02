@@ -8,7 +8,7 @@ type Props = {
 export default function Logo({ title, description }: Props) {
   return (
     <div className="flex items-center gap-3 sm:gap-4">
-      <div className="rounded-[1.15rem] bg-(--primary) text-(--surface-color) md:rounded-[1.25rem] lg:rounded-[1.45rem]">
+      <div className="rounded-[1.15rem] bg-radial-[circle_at_top_left] from-(--highlight) to-black text-white md:rounded-[1.25rem] lg:rounded-[1.45rem]">
         <SourceCodeIcon className="size-11 stroke-2 p-0.5 md:size-12 lg:size-14" />
       </div>
       <div className="flex flex-col">
