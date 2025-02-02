@@ -4,12 +4,21 @@ import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import supabaseClient from '@/app/lib/supabase/client';
 import nodemailerClient from '@/app/lib/nodemailer/client';
 
-export type SaveMessageStatus = {
-  success: boolean;
-  rawData?: ContactFormData;
-  fieldErrors?: Partial<Record<keyof ContactFormData, string[] | undefined>>;
-  serverError?: boolean;
-} | null;
+export type SaveMessageStatus =
+  | {
+      success: true;
+      token: string;
+      email: string;
+    }
+  | {
+      success: false;
+      rawData: ContactFormData;
+      fieldErrors?: Partial<
+        Record<keyof ContactFormData, string[] | undefined>
+      >;
+      serverError?: boolean;
+    }
+  | null;
 
 export const saveMessage = async (
   _prevState: SaveMessageStatus,
@@ -38,8 +47,7 @@ export const saveMessage = async (
     .select('verification_token')
     .single();
 
-  const baseUrl = formData.get('baseUrl') as string;
-  if (error || !baseUrl) {
+  if (error) {
     return {
       success: false,
       rawData,
@@ -49,7 +57,7 @@ export const saveMessage = async (
 
   try {
     await sendVerificationEmail(
-      baseUrl,
+      formData.get('baseUrl') as string,
       data.verification_token,
       validatedFields.data.email,
     );
@@ -61,10 +69,14 @@ export const saveMessage = async (
     };
   }
 
-  return { success: true };
+  return {
+    success: true,
+    token: data.verification_token,
+    email: validatedFields.data.email,
+  };
 };
 
-const sendVerificationEmail = async (
+export const sendVerificationEmail = async (
   baseUrl: string,
   token: string,
   email: string,

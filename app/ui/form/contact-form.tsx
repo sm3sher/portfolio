@@ -10,7 +10,11 @@ import {
   SentIcon,
 } from 'hugeicons-react';
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
-import { saveMessage, SaveMessageStatus } from '@/app/lib/actions';
+import {
+  saveMessage,
+  SaveMessageStatus,
+  sendVerificationEmail,
+} from '@/app/lib/actions';
 import FormInput from '@/app/ui/form/form-input';
 import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
 import StatusCard from '@/app/ui/card/status-card';
@@ -32,7 +36,8 @@ export default function ContactForm({ content }: Props) {
     saveMessage,
     null,
   );
-  const [maxRetries, setMaxRetries] = useState(3);
+  const [retryAttempts, setRetryAttempts] = useState(0);
+  const [resendAttempts, setResendAttempts] = useState(0);
 
   const {
     register,
@@ -70,7 +75,8 @@ export default function ContactForm({ content }: Props) {
   };
 
   const handleRetry = () => {
-    setMaxRetries((curr) => --curr);
+    if (state?.success || retryAttempts >= 3) return;
+    setRetryAttempts((prev) => ++prev);
     const formData = new FormData();
     formData.set('baseUrl', `${window.origin}/${locale}`);
     if (state?.rawData) {
@@ -81,11 +87,23 @@ export default function ContactForm({ content }: Props) {
     startTransaction(() => formAction(formData));
   };
 
+  const handleResend = () => {
+    if (!state?.success || resendAttempts >= 3) return;
+    setResendAttempts((prev) => ++prev);
+    startTransaction(() =>
+      sendVerificationEmail(
+        `${window.origin}/${locale}`,
+        state.token,
+        state.email,
+      ),
+    );
+  };
+
   return (
     <div className="relative">
       <div
         className={`transition-opacity duration-500 ${
-          pending || submitted || state?.serverError
+          pending || submitted || (!state?.success && state?.serverError)
             ? 'pointer-events-none opacity-0'
             : 'opacity-100'
         }`}
@@ -95,7 +113,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="name"
             label={content?.labels?.name || ''}
-            defaultValue={state?.rawData?.name}
+            defaultValue={(!state?.success && state?.rawData?.name) || ''}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -103,7 +121,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="email"
             label={content?.labels?.email || ''}
-            defaultValue={state?.rawData?.email}
+            defaultValue={(!state?.success && state?.rawData?.email) || ''}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -111,7 +129,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="role"
             label={content?.labels?.role || ''}
-            defaultValue={state?.rawData?.role}
+            defaultValue={(!state?.success && state?.rawData?.role) || ''}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -119,7 +137,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="message"
             label={content?.labels?.message || ''}
-            defaultValue={state?.rawData?.message}
+            defaultValue={(!state?.success && state?.rawData?.message) || ''}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -131,7 +149,7 @@ export default function ContactForm({ content }: Props) {
             }}
             register={register}
             name="consent"
-            defaultChecked={state?.rawData?.consent}
+            defaultChecked={!state?.success && state?.rawData?.consent}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -144,7 +162,7 @@ export default function ContactForm({ content }: Props) {
         </form>
       </div>
       <PresenceAnimation
-        show={!!state?.serverError && !pending}
+        show={!state?.success && !!state?.serverError && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
@@ -154,7 +172,7 @@ export default function ContactForm({ content }: Props) {
           button={{
             label: content?.errorButtonLabel,
             onClick: handleRetry,
-            disabled: maxRetries <= 0,
+            disabled: retryAttempts >= 3,
           }}
         >
           <p className="text-center">
@@ -176,7 +194,7 @@ export default function ContactForm({ content }: Props) {
         <Loading02Icon className="animate-spin text-(--secondary)" size={52} />
       </PresenceAnimation>
       <PresenceAnimation
-        show={submitted}
+        show={submitted && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
@@ -185,7 +203,8 @@ export default function ContactForm({ content }: Props) {
           title={content?.emailVerificationTitle}
           button={{
             label: content?.emailResendButtonLabel,
-            onClick: () => setSubmitted(false),
+            onClick: handleResend,
+            disabled: resendAttempts >= 3,
           }}
         >
           <p className="text-center">{content?.emailVerificationDescription}</p>

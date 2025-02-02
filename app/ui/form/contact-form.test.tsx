@@ -7,6 +7,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import ContactForm from '@/app/ui/form/contact-form';
 import { Form } from '@/app/lib/contentful/generated/sdk';
+import nodemailerClient from '@/app/lib/nodemailer/client';
 
 const FAIL_EMAIL = 'fail@test.com';
 
@@ -138,25 +139,16 @@ describe('ContactForm', () => {
     screen.getByText(content.emailVerificationTitle);
   });
 
-  it.skip('clears form on sending another message', async () => {
+  it('sends another email on email resend', async () => {
     await fillForm(validFormData);
     await user.click(screen.getByRole('button'));
 
-    await user.click(screen.getByText(content.emailResendButtonLabel));
+    const mockClient = nodemailerClient();
+    const mockSend = mockClient.sendMail;
+    expect(mockSend).toHaveBeenCalledOnce();
 
-    expect(
-      screen.getByRole('textbox', { name: content.labels.name }),
-    ).toBeEmptyDOMElement();
-    expect(
-      screen.getByRole('textbox', { name: content.labels.email }),
-    ).toBeEmptyDOMElement();
-    expect(
-      screen.getByRole('textbox', { name: content.labels.role }),
-    ).toBeEmptyDOMElement();
-    expect(
-      screen.getByRole('textbox', { name: content.labels.message }),
-    ).toBeEmptyDOMElement();
-    expect(screen.getByRole('checkbox')).not.toBeChecked();
+    await user.click(screen.getByText(content.emailResendButtonLabel));
+    expect(mockSend).toHaveBeenCalledTimes(2);
   });
 
   it('shows error status card on database error', async () => {
