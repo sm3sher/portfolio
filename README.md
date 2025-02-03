@@ -29,9 +29,9 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 Here are the main commands to interact with the project:
 
 - 🖥️ `npm run dev`: Start the development server locally
-- 📦 `npm run build`: Build the project for production
+- 📦 `npm run build`: Build the project for production, fetch initial _Contentful queries_
 - 🚀 `npm run start`: Run the production server
-- 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_
+- 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_ and _TypeScript_
 - 🎨 `npm run format`: Format code with _Prettier_ to maintain consistency
 - 🧪 `npm test`: Run unit tests with _Vitest_
 - 🧬 `npm run types:generate`: Generate types for _GraphQL queries_ and _Supabase schema_
