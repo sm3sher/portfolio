@@ -18,7 +18,7 @@ export type Database = {
           message: string
           name: string
           role: string | null
-          verification_token: string
+          verification_token: string | null
           verified: boolean
         }
         Insert: {
@@ -29,7 +29,7 @@ export type Database = {
           message: string
           name: string
           role?: string | null
-          verification_token?: string
+          verification_token?: string | null
           verified?: boolean
         }
         Update: {
@@ -40,7 +40,7 @@ export type Database = {
           message?: string
           name?: string
           role?: string | null
-          verification_token?: string
+          verification_token?: string | null
           verified?: boolean
         }
         Relationships: []

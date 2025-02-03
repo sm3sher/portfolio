@@ -8,7 +8,6 @@ import {
   Loading02Icon,
 } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
-import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { useSearchParams } from 'next/navigation';
 import { Verify } from '@/app/lib/contentful/generated/sdk';
 
@@ -43,16 +42,16 @@ export default function VerifyContent({ content }: Props) {
   return (
     <div className="flex flex-1 items-center text-center">
       <div className="mx-auto max-w-(--breakpoint-xl) overflow-hidden px-6 py-24 text-center">
-        <PresenceAnimation show={status === 'loading'} noExit>
+        {status === 'loading' && (
           <Loading02Icon
             className="animate-spin text-(--secondary)"
             size={52}
           />
-        </PresenceAnimation>
+        )}
         {status === 'success' && (
           <div className="space-y-4">
             <SpringAnimation>
-              <CheckmarkCircle01Icon className="mx-auto h-16 w-16 text-(--highlight)" />
+              <CheckmarkCircle01Icon className="mx-auto h-14 w-14 text-(--highlight) sm:h-16 sm:w-16" />
             </SpringAnimation>
             <ViewAnimation direction="fromRight" duration={0.5} delay={0.2}>
               <h1 className="text-3xl font-bold">{content?.successTitle}</h1>
@@ -65,7 +64,7 @@ export default function VerifyContent({ content }: Props) {
         {status === 'error' && (
           <div className="space-y-4">
             <SpringAnimation>
-              <CancelCircleIcon className="mx-auto h-16 w-16 text-(--highlight)" />
+              <CancelCircleIcon className="mx-auto h-14 w-14 text-(--highlight) sm:h-16 sm:w-16" />
             </SpringAnimation>
             <ViewAnimation direction="fromRight" duration={0.5} delay={0.2}>
               <h1 className="text-3xl font-bold">{content?.errorTitle}</h1>

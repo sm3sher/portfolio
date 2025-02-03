@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
 
   const { data, error } = await supabaseClient()
     .from('contacts')
-    .update({ verified: true })
+    .update({ verified: true, verification_token: null })
     .match({ verification_token: token })
     .select()
     .single();
@@ -22,7 +22,7 @@ export async function GET(request: NextRequest) {
   if (error || !data) {
     return NextResponse.json(
       { success: false, error: 'Verification failed' },
-      { status: 500 },
+      { status: 400 },
     );
   }
 

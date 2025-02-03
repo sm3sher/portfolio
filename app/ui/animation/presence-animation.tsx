@@ -8,7 +8,6 @@ type Props = {
   show: boolean;
   className?: string;
   withTranslation?: boolean;
-  noExit?: boolean;
 };
 
 export default function PresenceAnimation({
@@ -16,7 +15,6 @@ export default function PresenceAnimation({
   show,
   className,
   withTranslation,
-  noExit,
 }: Props) {
   return (
     <AnimatePresence>
@@ -25,9 +23,7 @@ export default function PresenceAnimation({
           className={className}
           initial={{ opacity: 0, x: withTranslation ? 50 : 0 }}
           animate={{ opacity: 1, x: 0 }}
-          exit={
-            noExit ? undefined : { opacity: 0, y: withTranslation ? 30 : 0 }
-          }
+          exit={{ opacity: 0, y: withTranslation ? 30 : 0 }}
         >
           {children}
         </motion.div>

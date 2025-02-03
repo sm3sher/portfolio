@@ -58,7 +58,7 @@ export const saveMessage = async (
   try {
     await sendVerificationEmail(
       formData.get('baseUrl') as string,
-      data.verification_token,
+      data.verification_token!,
       validatedFields.data.email,
     );
   } catch {
@@ -71,7 +71,7 @@ export const saveMessage = async (
 
   return {
     success: true,
-    token: data.verification_token,
+    token: data.verification_token!,
     email: validatedFields.data.email,
   };
 };
