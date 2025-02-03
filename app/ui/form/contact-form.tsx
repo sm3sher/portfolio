@@ -75,7 +75,7 @@ export default function ContactForm({ content }: Props) {
   };
 
   const handleRetry = () => {
-    if (state?.success || retryAttempts >= 3) return;
+    if (state?.success) return;
     setRetryAttempts((prev) => ++prev);
     const formData = new FormData();
     formData.set('baseUrl', `${window.origin}/${locale}`);
@@ -88,7 +88,7 @@ export default function ContactForm({ content }: Props) {
   };
 
   const handleResend = () => {
-    if (!state?.success || resendAttempts >= 3) return;
+    if (!state?.success) return;
     setResendAttempts((prev) => ++prev);
     startTransaction(() =>
       sendVerificationEmail(
@@ -172,7 +172,7 @@ export default function ContactForm({ content }: Props) {
           button={{
             label: content?.errorButtonLabel,
             onClick: handleRetry,
-            disabled: retryAttempts >= 3,
+            disabled: retryAttempts >= 2,
           }}
         >
           <p className="text-center">
@@ -204,7 +204,7 @@ export default function ContactForm({ content }: Props) {
           button={{
             label: content?.emailResendButtonLabel,
             onClick: handleResend,
-            disabled: resendAttempts >= 3,
+            disabled: resendAttempts >= 2,
           }}
         >
           <p className="text-center">{content?.emailVerificationDescription}</p>
