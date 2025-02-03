@@ -2866,10 +2866,10 @@ type Query {
   testimonialCollection(limit: Int = 100, locale: String, order: [TestimonialOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialCollection
   testimonials(id: String!, locale: String, preview: Boolean): Testimonials
   testimonialsCollection(limit: Int = 100, locale: String, order: [TestimonialsOrder], preview: Boolean, skip: Int = 0, where: TestimonialsFilter): TestimonialsCollection
-  thankYou(id: String!, locale: String, preview: Boolean): ThankYou
-  thankYouCollection(limit: Int = 100, locale: String, order: [ThankYouOrder], preview: Boolean, skip: Int = 0, where: ThankYouFilter): ThankYouCollection
   validationMessages(id: String!, locale: String, preview: Boolean): ValidationMessages
   validationMessagesCollection(limit: Int = 100, locale: String, order: [ValidationMessagesOrder], preview: Boolean, skip: Int = 0, where: ValidationMessagesFilter): ValidationMessagesCollection
+  verify(id: String!, locale: String, preview: Boolean): Verify
+  verifyCollection(limit: Int = 100, locale: String, order: [VerifyOrder], preview: Boolean, skip: Int = 0, where: VerifyFilter): VerifyCollection
 }
 
 """
@@ -3351,65 +3351,6 @@ enum TestimonialsQuotesCollectionOrder {
 }
 
 """
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou)
-"""
-type ThankYou implements Entry & _Node {
-  _id: ID!
-  contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
-  linkedFrom(allowedLocales: [String]): ThankYouLinkingCollections
-  sys: Sys!
-  title(locale: String): String
-}
-
-type ThankYouCollection {
-  items: [ThankYou]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input ThankYouFilter {
-  AND: [ThankYouFilter]
-  OR: [ThankYouFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  description: String
-  description_contains: String
-  description_exists: Boolean
-  description_in: [String]
-  description_not: String
-  description_not_contains: String
-  description_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
-type ThankYouLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-}
-
-enum ThankYouOrder {
-  description_ASC
-  description_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-  title_ASC
-  title_DESC
-}
-
-"""
 [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages)
 """
 type ValidationMessages implements Entry & _Node {
@@ -3552,6 +3493,85 @@ enum ValidationMessagesOrder {
   nameRequired_DESC
   roleMaxLength_ASC
   roleMaxLength_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify)
+"""
+type Verify implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  errorDescription(locale: String): String
+  errorTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): VerifyLinkingCollections
+  successDescription(locale: String): String
+  successTitle(locale: String): String
+  sys: Sys!
+}
+
+type VerifyCollection {
+  items: [Verify]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input VerifyFilter {
+  AND: [VerifyFilter]
+  OR: [VerifyFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  errorDescription: String
+  errorDescription_contains: String
+  errorDescription_exists: Boolean
+  errorDescription_in: [String]
+  errorDescription_not: String
+  errorDescription_not_contains: String
+  errorDescription_not_in: [String]
+  errorTitle: String
+  errorTitle_contains: String
+  errorTitle_exists: Boolean
+  errorTitle_in: [String]
+  errorTitle_not: String
+  errorTitle_not_contains: String
+  errorTitle_not_in: [String]
+  successDescription: String
+  successDescription_contains: String
+  successDescription_exists: Boolean
+  successDescription_in: [String]
+  successDescription_not: String
+  successDescription_not_contains: String
+  successDescription_not_in: [String]
+  successTitle: String
+  successTitle_contains: String
+  successTitle_exists: Boolean
+  successTitle_in: [String]
+  successTitle_not: String
+  successTitle_not_contains: String
+  successTitle_not_in: [String]
+  sys: SysFilter
+}
+
+type VerifyLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum VerifyOrder {
+  errorDescription_ASC
+  errorDescription_DESC
+  errorTitle_ASC
+  errorTitle_DESC
+  successDescription_ASC
+  successDescription_DESC
+  successTitle_ASC
+  successTitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC

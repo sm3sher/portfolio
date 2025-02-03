@@ -1,8 +1,0 @@
-query thankYouContent($locale: String) {
-    thankYouCollection(limit: 1, locale: $locale) {
-        items {
-            title
-            description
-        }
-    }
-}

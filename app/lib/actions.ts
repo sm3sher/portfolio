@@ -81,7 +81,7 @@ export const sendVerificationEmail = async (
   token: string,
   email: string,
 ) => {
-  const verifyUrl = `${baseUrl}/api/verify?token=${token}`;
+  const verifyUrl = `${baseUrl}/verify?token=${token}`;
   await nodemailerClient().sendMail({
     from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
     to: email,

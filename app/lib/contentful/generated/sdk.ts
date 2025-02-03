@@ -4324,10 +4324,10 @@ export type Query = {
   testimonialCollection?: Maybe<TestimonialCollection>;
   testimonials?: Maybe<Testimonials>;
   testimonialsCollection?: Maybe<TestimonialsCollection>;
-  thankYou?: Maybe<ThankYou>;
-  thankYouCollection?: Maybe<ThankYouCollection>;
   validationMessages?: Maybe<ValidationMessages>;
   validationMessagesCollection?: Maybe<ValidationMessagesCollection>;
+  verify?: Maybe<Verify>;
+  verifyCollection?: Maybe<VerifyCollection>;
 };
 
 
@@ -4756,23 +4756,6 @@ export type QueryTestimonialsCollectionArgs = {
 };
 
 
-export type QueryThankYouArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryThankYouCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<ThankYouOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ThankYouFilter>;
-};
-
-
 export type QueryValidationMessagesArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -4787,6 +4770,23 @@ export type QueryValidationMessagesCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ValidationMessagesFilter>;
+};
+
+
+export type QueryVerifyArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryVerifyCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<VerifyOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<VerifyFilter>;
 };
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/service) */
@@ -5482,92 +5482,6 @@ export enum TestimonialsQuotesCollectionOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou) */
-export type ThankYou = Entry & _Node & {
-  __typename?: 'ThankYou';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<ThankYouLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou) */
-export type ThankYouDescriptionArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou) */
-export type ThankYouLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou) */
-export type ThankYouTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ThankYouCollection = {
-  __typename?: 'ThankYouCollection';
-  items: Array<Maybe<ThankYou>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type ThankYouFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ThankYouFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ThankYouFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  description_contains?: InputMaybe<Scalars['String']['input']>;
-  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_not?: InputMaybe<Scalars['String']['input']>;
-  description_not_contains?: InputMaybe<Scalars['String']['input']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type ThankYouLinkingCollections = {
-  __typename?: 'ThankYouLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type ThankYouLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum ThankYouOrder {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/validationMessages) */
 export type ValidationMessages = Entry & _Node & {
   __typename?: 'ValidationMessages';
@@ -5783,6 +5697,124 @@ export enum ValidationMessagesOrder {
   NameRequiredDesc = 'nameRequired_DESC',
   RoleMaxLengthAsc = 'roleMaxLength_ASC',
   RoleMaxLengthDesc = 'roleMaxLength_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type Verify = Entry & _Node & {
+  __typename?: 'Verify';
+  _id: Scalars['ID']['output'];
+  contentfulMetadata: ContentfulMetadata;
+  errorDescription?: Maybe<Scalars['String']['output']>;
+  errorTitle?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<VerifyLinkingCollections>;
+  successDescription?: Maybe<Scalars['String']['output']>;
+  successTitle?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifyErrorDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifyErrorTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifyLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifySuccessDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifySuccessTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type VerifyCollection = {
+  __typename?: 'VerifyCollection';
+  items: Array<Maybe<Verify>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type VerifyFilter = {
+  AND?: InputMaybe<Array<InputMaybe<VerifyFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<VerifyFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  errorDescription?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorDescription_not?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorTitle?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorTitle_not?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successDescription?: InputMaybe<Scalars['String']['input']>;
+  successDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  successDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  successDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successDescription_not?: InputMaybe<Scalars['String']['input']>;
+  successDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  successDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successTitle?: InputMaybe<Scalars['String']['input']>;
+  successTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  successTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  successTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  successTitle_not?: InputMaybe<Scalars['String']['input']>;
+  successTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  successTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type VerifyLinkingCollections = {
+  __typename?: 'VerifyLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type VerifyLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum VerifyOrder {
+  ErrorDescriptionAsc = 'errorDescription_ASC',
+  ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorTitleAsc = 'errorTitle_ASC',
+  ErrorTitleDesc = 'errorTitle_DESC',
+  SuccessDescriptionAsc = 'successDescription_ASC',
+  SuccessDescriptionDesc = 'successDescription_DESC',
+  SuccessTitleAsc = 'successTitle_ASC',
+  SuccessTitleDesc = 'successTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -6607,12 +6639,12 @@ export type ServicesContentQueryVariables = Exact<{
 
 export type ServicesContentQuery = { __typename?: 'Query', servicesCollection?: { __typename?: 'ServicesCollection', items: Array<{ __typename?: 'Services', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, serviceEntriesCollection?: { __typename?: 'ServicesServiceEntriesCollection', items: Array<{ __typename?: 'Service', iconName?: string | null, title?: string | null, tags?: Array<string | null> | null, description?: string | null } | null> } | null } | null> } | null };
 
-export type ThankYouContentQueryVariables = Exact<{
+export type VerifyContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type ThankYouContentQuery = { __typename?: 'Query', thankYouCollection?: { __typename?: 'ThankYouCollection', items: Array<{ __typename?: 'ThankYou', title?: string | null, description?: string | null } | null> } | null };
+export type VerifyContentQuery = { __typename?: 'Query', verifyCollection?: { __typename?: 'VerifyCollection', items: Array<{ __typename?: 'Verify', successTitle?: string | null, successDescription?: string | null, errorTitle?: string | null, errorDescription?: string | null } | null> } | null };
 
 
 export const AboutContentDocument = gql`
@@ -6968,12 +7000,14 @@ export const ServicesContentDocument = gql`
   }
 }
     `;
-export const ThankYouContentDocument = gql`
-    query thankYouContent($locale: String) {
-  thankYouCollection(limit: 1, locale: $locale) {
+export const VerifyContentDocument = gql`
+    query verifyContent($locale: String) {
+  verifyCollection(limit: 1, locale: $locale) {
     items {
-      title
-      description
+      successTitle
+      successDescription
+      errorTitle
+      errorDescription
     }
   }
 }
@@ -7025,8 +7059,8 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     servicesContent(variables?: ServicesContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ServicesContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ServicesContentQuery>(ServicesContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'servicesContent', 'query', variables);
     },
-    thankYouContent(variables?: ThankYouContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ThankYouContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<ThankYouContentQuery>(ThankYouContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'thankYouContent', 'query', variables);
+    verifyContent(variables?: VerifyContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<VerifyContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<VerifyContentQuery>(VerifyContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'verifyContent', 'query', variables);
     }
   };
 }

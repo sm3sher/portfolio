@@ -1,0 +1,10 @@
+query verifyContent($locale: String) {
+    verifyCollection(limit: 1, locale: $locale) {
+        items {
+            successTitle
+            successDescription
+            errorTitle
+            errorDescription
+        }
+    }
+}

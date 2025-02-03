@@ -1,13 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { redirect } from '@/i18n/routing';
 import supabaseClient from '@/app/lib/supabase/client';
 
-type Params = {
-  params: Promise<{ locale: string }>;
-};
-
-export async function GET(request: NextRequest, { params }: Params) {
-  const { locale } = await params;
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const token = searchParams.get('token');
 
@@ -32,5 +26,5 @@ export async function GET(request: NextRequest, { params }: Params) {
     );
   }
 
-  return redirect({ href: '/thank-you', locale });
+  return NextResponse.json({ success: true });
 }

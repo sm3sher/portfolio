@@ -14,6 +14,7 @@ export default function NotFound() {
       <Astronaut />
       <ViewAnimation
         className="relative flex flex-col content-center text-center"
+        direction="fromBottom"
         duration={0.5}
       >
         <NotFoundContent locale={locale} />
