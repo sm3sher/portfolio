@@ -2866,6 +2866,8 @@ type Query {
   testimonialCollection(limit: Int = 100, locale: String, order: [TestimonialOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialCollection
   testimonials(id: String!, locale: String, preview: Boolean): Testimonials
   testimonialsCollection(limit: Int = 100, locale: String, order: [TestimonialsOrder], preview: Boolean, skip: Int = 0, where: TestimonialsFilter): TestimonialsCollection
+  thankYou(id: String!, locale: String, preview: Boolean): ThankYou
+  thankYouCollection(limit: Int = 100, locale: String, order: [ThankYouOrder], preview: Boolean, skip: Int = 0, where: ThankYouFilter): ThankYouCollection
   validationMessages(id: String!, locale: String, preview: Boolean): ValidationMessages
   validationMessagesCollection(limit: Int = 100, locale: String, order: [ValidationMessagesOrder], preview: Boolean, skip: Int = 0, where: ValidationMessagesFilter): ValidationMessagesCollection
 }
@@ -3346,6 +3348,65 @@ enum TestimonialsQuotesCollectionOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
+}
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/thankYou)
+"""
+type ThankYou implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): ThankYouLinkingCollections
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ThankYouCollection {
+  items: [ThankYou]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ThankYouFilter {
+  AND: [ThankYouFilter]
+  OR: [ThankYouFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ThankYouLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum ThankYouOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
 }
 
 """
