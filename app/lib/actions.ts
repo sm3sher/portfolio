@@ -3,6 +3,8 @@
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import supabaseClient from '@/app/lib/supabase/client';
 import nodemailerClient from '@/app/lib/nodemailer/client';
+import { EmailTemplate } from '@/app/lib/nodemailer/template/email-template';
+import { render } from '@react-email/components';
 
 export type SaveMessageStatus =
   | {
@@ -82,10 +84,12 @@ export const sendVerificationEmail = async (
   email: string,
 ) => {
   const verifyUrl = `${baseUrl}/verify?token=${token}`;
+  const emailHtml = await render(EmailTemplate({ verifyUrl }));
+
   await nodemailerClient().sendMail({
     from: `"${process.env.EMAIL_FROM_NAME}" <${process.env.EMAIL_FROM}>`,
     to: email,
     subject: 'Verify your email',
-    html: `<p>Click the link to verify: <a href="${verifyUrl}">Verify Email</a></p>`,
+    html: emailHtml,
   });
 };
