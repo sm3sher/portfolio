@@ -23,17 +23,20 @@ export default function VerifyContent({ content }: Props) {
 
   useEffect(() => {
     const verifyToken = async () => {
-      const token = searchParams.get('token');
+      try {
+        const token = searchParams.get('token');
+        if (!token) {
+          setStatus('error');
+          return;
+        }
 
-      if (!token) {
+        const response = await fetch(`/api/verify?token=${token}`);
+        const data = await response.json();
+
+        setStatus(data.success ? 'success' : 'error');
+      } catch {
         setStatus('error');
-        return;
       }
-
-      const response = await fetch(`/api/verify?token=${token}`);
-      const data = await response.json();
-
-      setStatus(data.success ? 'success' : 'error');
     };
 
     void verifyToken();
