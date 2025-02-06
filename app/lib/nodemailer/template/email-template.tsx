@@ -68,7 +68,7 @@ export default async function EmailTemplate({
             </Section>
             <Section className="text-neutral-300">
               <Text>{content?.linkDescription}</Text>
-              <Link>{verifyUrl}</Link>
+              <Link href={verifyUrl}>{verifyUrl}</Link>
             </Section>
             <Section className="text-neutral-300">
               <Text className="mb-0">{content?.ignoreDisclaimer}</Text>
