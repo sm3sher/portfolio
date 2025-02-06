@@ -11,12 +11,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const query = await contentfulClient.metadataHomeContent({ locale });
-  const metadata = query.metaDataHomeCollection?.items[0];
+  const query = await contentfulClient.metadataMainContent({ locale });
+  const metadata = query.metadataCollection?.items[0];
   return {
-    title: metadata?.title,
-    description: metadata?.description,
-    keywords: metadata?.keywords?.filter((keyword) => keyword !== null),
+    title: metadata?.mainTitle,
+    description: metadata?.mainDescription,
+    keywords: metadata?.mainKeywords?.filter((keyword) => keyword !== null),
   };
 }
 

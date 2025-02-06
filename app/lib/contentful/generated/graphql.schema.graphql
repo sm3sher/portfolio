@@ -1688,57 +1688,99 @@ enum LegalNoticeOrder {
 }
 
 """
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome)
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata)
 """
-type MetaDataHome implements Entry & _Node {
+type Metadata implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
-  keywords(locale: String): [String]
-  linkedFrom(allowedLocales: [String]): MetaDataHomeLinkingCollections
+  legalDescription(locale: String): String
+  legalTitle(locale: String): String
+  linkedFrom(allowedLocales: [String]): MetadataLinkingCollections
+  mainDescription(locale: String): String
+  mainKeywords(locale: String): [String]
+  mainTitle(locale: String): String
+  privacyDescription(locale: String): String
+  privacyTitle(locale: String): String
   sys: Sys!
-  title(locale: String): String
 }
 
-type MetaDataHomeCollection {
-  items: [MetaDataHome]!
+type MetadataCollection {
+  items: [Metadata]!
   limit: Int!
   skip: Int!
   total: Int!
 }
 
-input MetaDataHomeFilter {
-  AND: [MetaDataHomeFilter]
-  OR: [MetaDataHomeFilter]
+input MetadataFilter {
+  AND: [MetadataFilter]
+  OR: [MetadataFilter]
   contentfulMetadata: ContentfulMetadataFilter
-  description: String
-  description_contains: String
-  description_exists: Boolean
-  description_in: [String]
-  description_not: String
-  description_not_contains: String
-  description_not_in: [String]
-  keywords_contains_all: [String]
-  keywords_contains_none: [String]
-  keywords_contains_some: [String]
-  keywords_exists: Boolean
+  legalDescription: String
+  legalDescription_contains: String
+  legalDescription_exists: Boolean
+  legalDescription_in: [String]
+  legalDescription_not: String
+  legalDescription_not_contains: String
+  legalDescription_not_in: [String]
+  legalTitle: String
+  legalTitle_contains: String
+  legalTitle_exists: Boolean
+  legalTitle_in: [String]
+  legalTitle_not: String
+  legalTitle_not_contains: String
+  legalTitle_not_in: [String]
+  mainDescription: String
+  mainDescription_contains: String
+  mainDescription_exists: Boolean
+  mainDescription_in: [String]
+  mainDescription_not: String
+  mainDescription_not_contains: String
+  mainDescription_not_in: [String]
+  mainKeywords_contains_all: [String]
+  mainKeywords_contains_none: [String]
+  mainKeywords_contains_some: [String]
+  mainKeywords_exists: Boolean
+  mainTitle: String
+  mainTitle_contains: String
+  mainTitle_exists: Boolean
+  mainTitle_in: [String]
+  mainTitle_not: String
+  mainTitle_not_contains: String
+  mainTitle_not_in: [String]
+  privacyDescription: String
+  privacyDescription_contains: String
+  privacyDescription_exists: Boolean
+  privacyDescription_in: [String]
+  privacyDescription_not: String
+  privacyDescription_not_contains: String
+  privacyDescription_not_in: [String]
+  privacyTitle: String
+  privacyTitle_contains: String
+  privacyTitle_exists: Boolean
+  privacyTitle_in: [String]
+  privacyTitle_not: String
+  privacyTitle_not_contains: String
+  privacyTitle_not_in: [String]
   sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
 }
 
-type MetaDataHomeLinkingCollections {
+type MetadataLinkingCollections {
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
 }
 
-enum MetaDataHomeOrder {
-  description_ASC
-  description_DESC
+enum MetadataOrder {
+  legalDescription_ASC
+  legalDescription_DESC
+  legalTitle_ASC
+  legalTitle_DESC
+  mainDescription_ASC
+  mainDescription_DESC
+  mainTitle_ASC
+  mainTitle_DESC
+  privacyDescription_ASC
+  privacyDescription_DESC
+  privacyTitle_ASC
+  privacyTitle_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -1747,126 +1789,6 @@ enum MetaDataHomeOrder {
   sys_publishedAt_DESC
   sys_publishedVersion_ASC
   sys_publishedVersion_DESC
-  title_ASC
-  title_DESC
-}
-
-"""
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal)
-"""
-type MetaDataLegal implements Entry & _Node {
-  _id: ID!
-  contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
-  linkedFrom(allowedLocales: [String]): MetaDataLegalLinkingCollections
-  sys: Sys!
-  title(locale: String): String
-}
-
-type MetaDataLegalCollection {
-  items: [MetaDataLegal]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input MetaDataLegalFilter {
-  AND: [MetaDataLegalFilter]
-  OR: [MetaDataLegalFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  description: String
-  description_contains: String
-  description_exists: Boolean
-  description_in: [String]
-  description_not: String
-  description_not_contains: String
-  description_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
-type MetaDataLegalLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-}
-
-enum MetaDataLegalOrder {
-  description_ASC
-  description_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-  title_ASC
-  title_DESC
-}
-
-"""
-[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy)
-"""
-type MetaDataPrivacy implements Entry & _Node {
-  _id: ID!
-  contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
-  linkedFrom(allowedLocales: [String]): MetaDataPrivacyLinkingCollections
-  sys: Sys!
-  title(locale: String): String
-}
-
-type MetaDataPrivacyCollection {
-  items: [MetaDataPrivacy]!
-  limit: Int!
-  skip: Int!
-  total: Int!
-}
-
-input MetaDataPrivacyFilter {
-  AND: [MetaDataPrivacyFilter]
-  OR: [MetaDataPrivacyFilter]
-  contentfulMetadata: ContentfulMetadataFilter
-  description: String
-  description_contains: String
-  description_exists: Boolean
-  description_in: [String]
-  description_not: String
-  description_not_contains: String
-  description_not_in: [String]
-  sys: SysFilter
-  title: String
-  title_contains: String
-  title_exists: Boolean
-  title_in: [String]
-  title_not: String
-  title_not_contains: String
-  title_not_in: [String]
-}
-
-type MetaDataPrivacyLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-}
-
-enum MetaDataPrivacyOrder {
-  description_ASC
-  description_DESC
-  sys_firstPublishedAt_ASC
-  sys_firstPublishedAt_DESC
-  sys_id_ASC
-  sys_id_DESC
-  sys_publishedAt_ASC
-  sys_publishedAt_DESC
-  sys_publishedVersion_ASC
-  sys_publishedVersion_DESC
-  title_ASC
-  title_DESC
 }
 
 """
@@ -2838,12 +2760,8 @@ type Query {
   labelCollection(limit: Int = 100, locale: String, order: [LabelOrder], preview: Boolean, skip: Int = 0, where: LabelFilter): LabelCollection
   legalNotice(id: String!, locale: String, preview: Boolean): LegalNotice
   legalNoticeCollection(limit: Int = 100, locale: String, order: [LegalNoticeOrder], preview: Boolean, skip: Int = 0, where: LegalNoticeFilter): LegalNoticeCollection
-  metaDataHome(id: String!, locale: String, preview: Boolean): MetaDataHome
-  metaDataHomeCollection(limit: Int = 100, locale: String, order: [MetaDataHomeOrder], preview: Boolean, skip: Int = 0, where: MetaDataHomeFilter): MetaDataHomeCollection
-  metaDataLegal(id: String!, locale: String, preview: Boolean): MetaDataLegal
-  metaDataLegalCollection(limit: Int = 100, locale: String, order: [MetaDataLegalOrder], preview: Boolean, skip: Int = 0, where: MetaDataLegalFilter): MetaDataLegalCollection
-  metaDataPrivacy(id: String!, locale: String, preview: Boolean): MetaDataPrivacy
-  metaDataPrivacyCollection(limit: Int = 100, locale: String, order: [MetaDataPrivacyOrder], preview: Boolean, skip: Int = 0, where: MetaDataPrivacyFilter): MetaDataPrivacyCollection
+  metadata(id: String!, locale: String, preview: Boolean): Metadata
+  metadataCollection(limit: Int = 100, locale: String, order: [MetadataOrder], preview: Boolean, skip: Int = 0, where: MetadataFilter): MetadataCollection
   metric(id: String!, locale: String, preview: Boolean): Metric
   metricCollection(limit: Int = 100, locale: String, order: [MetricOrder], preview: Boolean, skip: Int = 0, where: MetricFilter): MetricCollection
   navbar(id: String!, locale: String, preview: Boolean): Navbar

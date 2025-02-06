@@ -10,10 +10,10 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const query = await contentfulClient.metadataPrivacyContent({ locale });
-  const metadata = query.metaDataPrivacyCollection?.items[0];
+  const metadata = query.metadataCollection?.items[0];
   return {
-    title: metadata?.title,
-    description: metadata?.description,
+    title: metadata?.privacyTitle,
+    description: metadata?.privacyDescription,
   };
 }
 

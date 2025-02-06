@@ -2517,91 +2517,157 @@ export enum LegalNoticeOrder {
   VatLabelDesc = 'vatLabel_DESC'
 }
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
-export type MetaDataHome = Entry & _Node & {
-  __typename?: 'MetaDataHome';
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type Metadata = Entry & _Node & {
+  __typename?: 'Metadata';
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  keywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  linkedFrom?: Maybe<MetaDataHomeLinkingCollections>;
+  legalDescription?: Maybe<Scalars['String']['output']>;
+  legalTitle?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<MetadataLinkingCollections>;
+  mainDescription?: Maybe<Scalars['String']['output']>;
+  mainKeywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  mainTitle?: Maybe<Scalars['String']['output']>;
+  privacyDescription?: Maybe<Scalars['String']['output']>;
+  privacyTitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
-export type MetaDataHomeDescriptionArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataLegalDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
-export type MetaDataHomeKeywordsArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataLegalTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
-export type MetaDataHomeLinkedFromArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataHome) */
-export type MetaDataHomeTitleArgs = {
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataMainDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type MetaDataHomeCollection = {
-  __typename?: 'MetaDataHomeCollection';
-  items: Array<Maybe<MetaDataHome>>;
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataMainKeywordsArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataMainTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataPrivacyDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataPrivacyTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type MetadataCollection = {
+  __typename?: 'MetadataCollection';
+  items: Array<Maybe<Metadata>>;
   limit: Scalars['Int']['output'];
   skip: Scalars['Int']['output'];
   total: Scalars['Int']['output'];
 };
 
-export type MetaDataHomeFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MetaDataHomeFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MetaDataHomeFilter>>>;
+export type MetadataFilter = {
+  AND?: InputMaybe<Array<InputMaybe<MetadataFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<MetadataFilter>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  description_contains?: InputMaybe<Scalars['String']['input']>;
-  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_not?: InputMaybe<Scalars['String']['input']>;
-  description_not_contains?: InputMaybe<Scalars['String']['input']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  keywords_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  keywords_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  keywords_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  keywords_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalDescription?: InputMaybe<Scalars['String']['input']>;
+  legalDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  legalDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalDescription_not?: InputMaybe<Scalars['String']['input']>;
+  legalDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalTitle?: InputMaybe<Scalars['String']['input']>;
+  legalTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  legalTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  legalTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  legalTitle_not?: InputMaybe<Scalars['String']['input']>;
+  legalTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  legalTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainDescription?: InputMaybe<Scalars['String']['input']>;
+  mainDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  mainDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  mainDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainDescription_not?: InputMaybe<Scalars['String']['input']>;
+  mainDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  mainDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainKeywords_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainKeywords_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainKeywords_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainKeywords_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  mainTitle?: InputMaybe<Scalars['String']['input']>;
+  mainTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  mainTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  mainTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  mainTitle_not?: InputMaybe<Scalars['String']['input']>;
+  mainTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  mainTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  privacyDescription?: InputMaybe<Scalars['String']['input']>;
+  privacyDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  privacyDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  privacyDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  privacyDescription_not?: InputMaybe<Scalars['String']['input']>;
+  privacyDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  privacyDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  privacyTitle?: InputMaybe<Scalars['String']['input']>;
+  privacyTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  privacyTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  privacyTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  privacyTitle_not?: InputMaybe<Scalars['String']['input']>;
+  privacyTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  privacyTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type MetaDataHomeLinkingCollections = {
-  __typename?: 'MetaDataHomeLinkingCollections';
+export type MetadataLinkingCollections = {
+  __typename?: 'MetadataLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
 };
 
 
-export type MetaDataHomeLinkingCollectionsEntryCollectionArgs = {
+export type MetadataLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
 };
 
-export enum MetaDataHomeOrder {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
+export enum MetadataOrder {
+  LegalDescriptionAsc = 'legalDescription_ASC',
+  LegalDescriptionDesc = 'legalDescription_DESC',
+  LegalTitleAsc = 'legalTitle_ASC',
+  LegalTitleDesc = 'legalTitle_DESC',
+  MainDescriptionAsc = 'mainDescription_ASC',
+  MainDescriptionDesc = 'mainDescription_DESC',
+  MainTitleAsc = 'mainTitle_ASC',
+  MainTitleDesc = 'mainTitle_DESC',
+  PrivacyDescriptionAsc = 'privacyDescription_ASC',
+  PrivacyDescriptionDesc = 'privacyDescription_DESC',
+  PrivacyTitleAsc = 'privacyTitle_ASC',
+  PrivacyTitleDesc = 'privacyTitle_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -2609,181 +2675,7 @@ export enum MetaDataHomeOrder {
   SysPublishedAtAsc = 'sys_publishedAt_ASC',
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
-export type MetaDataLegal = Entry & _Node & {
-  __typename?: 'MetaDataLegal';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<MetaDataLegalLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
-export type MetaDataLegalDescriptionArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
-export type MetaDataLegalLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataLegal) */
-export type MetaDataLegalTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MetaDataLegalCollection = {
-  __typename?: 'MetaDataLegalCollection';
-  items: Array<Maybe<MetaDataLegal>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type MetaDataLegalFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MetaDataLegalFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MetaDataLegalFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  description_contains?: InputMaybe<Scalars['String']['input']>;
-  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_not?: InputMaybe<Scalars['String']['input']>;
-  description_not_contains?: InputMaybe<Scalars['String']['input']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type MetaDataLegalLinkingCollections = {
-  __typename?: 'MetaDataLegalLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type MetaDataLegalLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum MetaDataLegalOrder {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
-export type MetaDataPrivacy = Entry & _Node & {
-  __typename?: 'MetaDataPrivacy';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  description?: Maybe<Scalars['String']['output']>;
-  linkedFrom?: Maybe<MetaDataPrivacyLinkingCollections>;
-  sys: Sys;
-  title?: Maybe<Scalars['String']['output']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
-export type MetaDataPrivacyDescriptionArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
-export type MetaDataPrivacyLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metaDataPrivacy) */
-export type MetaDataPrivacyTitleArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MetaDataPrivacyCollection = {
-  __typename?: 'MetaDataPrivacyCollection';
-  items: Array<Maybe<MetaDataPrivacy>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type MetaDataPrivacyFilter = {
-  AND?: InputMaybe<Array<InputMaybe<MetaDataPrivacyFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<MetaDataPrivacyFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  description?: InputMaybe<Scalars['String']['input']>;
-  description_contains?: InputMaybe<Scalars['String']['input']>;
-  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  description_not?: InputMaybe<Scalars['String']['input']>;
-  description_not_contains?: InputMaybe<Scalars['String']['input']>;
-  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sys?: InputMaybe<SysFilter>;
-  title?: InputMaybe<Scalars['String']['input']>;
-  title_contains?: InputMaybe<Scalars['String']['input']>;
-  title_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  title_not?: InputMaybe<Scalars['String']['input']>;
-  title_not_contains?: InputMaybe<Scalars['String']['input']>;
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type MetaDataPrivacyLinkingCollections = {
-  __typename?: 'MetaDataPrivacyLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type MetaDataPrivacyLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum MetaDataPrivacyOrder {
-  DescriptionAsc = 'description_ASC',
-  DescriptionDesc = 'description_DESC',
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metric) */
@@ -4296,12 +4188,8 @@ export type Query = {
   labelCollection?: Maybe<LabelCollection>;
   legalNotice?: Maybe<LegalNotice>;
   legalNoticeCollection?: Maybe<LegalNoticeCollection>;
-  metaDataHome?: Maybe<MetaDataHome>;
-  metaDataHomeCollection?: Maybe<MetaDataHomeCollection>;
-  metaDataLegal?: Maybe<MetaDataLegal>;
-  metaDataLegalCollection?: Maybe<MetaDataLegalCollection>;
-  metaDataPrivacy?: Maybe<MetaDataPrivacy>;
-  metaDataPrivacyCollection?: Maybe<MetaDataPrivacyCollection>;
+  metadata?: Maybe<Metadata>;
+  metadataCollection?: Maybe<MetadataCollection>;
   metric?: Maybe<Metric>;
   metricCollection?: Maybe<MetricCollection>;
   navbar?: Maybe<Navbar>;
@@ -4518,54 +4406,20 @@ export type QueryLegalNoticeCollectionArgs = {
 };
 
 
-export type QueryMetaDataHomeArgs = {
+export type QueryMetadataArgs = {
   id: Scalars['String']['input'];
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-export type QueryMetaDataHomeCollectionArgs = {
+export type QueryMetadataCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<MetaDataHomeOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<MetadataOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<MetaDataHomeFilter>;
-};
-
-
-export type QueryMetaDataLegalArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryMetaDataLegalCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<MetaDataLegalOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<MetaDataLegalFilter>;
-};
-
-
-export type QueryMetaDataPrivacyArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryMetaDataPrivacyCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<MetaDataPrivacyOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<MetaDataPrivacyFilter>;
+  where?: InputMaybe<MetadataFilter>;
 };
 
 
@@ -6583,26 +6437,26 @@ export type LegalNoticeContentQueryVariables = Exact<{
 
 export type LegalNoticeContentQuery = { __typename?: 'Query', legalNoticeCollection?: { __typename?: 'LegalNoticeCollection', items: Array<{ __typename?: 'LegalNotice', title?: string | null, subTitleInformation?: string | null, addressName?: string | null, addressJobTitle?: string | null, addressStreet?: string | null, addressPostalCode?: string | null, addressCity?: string | null, subTitleContact?: string | null, contactEmailLabel?: string | null, contactEmail?: string | null, contactFormLabel?: string | null, subTitleVat?: string | null, vatLabel?: string | null, vatId?: string | null, subTitleDispute?: string | null, disputeLabel?: string | null, disputeStatement?: string | null } | null> } | null };
 
-export type MetadataHomeContentQueryVariables = Exact<{
+export type MetadataMainContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataHomeContentQuery = { __typename?: 'Query', metaDataHomeCollection?: { __typename?: 'MetaDataHomeCollection', items: Array<{ __typename?: 'MetaDataHome', title?: string | null, description?: string | null, keywords?: Array<string | null> | null } | null> } | null };
+export type MetadataMainContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', mainTitle?: string | null, mainDescription?: string | null, mainKeywords?: Array<string | null> | null } | null> } | null };
 
 export type MetadataLegalContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataLegalContentQuery = { __typename?: 'Query', metaDataLegalCollection?: { __typename?: 'MetaDataLegalCollection', items: Array<{ __typename?: 'MetaDataLegal', title?: string | null, description?: string | null } | null> } | null };
+export type MetadataLegalContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', legalTitle?: string | null, legalDescription?: string | null } | null> } | null };
 
 export type MetadataPrivacyContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataPrivacyContentQuery = { __typename?: 'Query', metaDataPrivacyCollection?: { __typename?: 'MetaDataPrivacyCollection', items: Array<{ __typename?: 'MetaDataPrivacy', title?: string | null, description?: string | null } | null> } | null };
+export type MetadataPrivacyContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', privacyTitle?: string | null, privacyDescription?: string | null } | null> } | null };
 
 export type NavbarContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6818,33 +6672,33 @@ export const LegalNoticeContentDocument = gql`
   }
 }
     `;
-export const MetadataHomeContentDocument = gql`
-    query metadataHomeContent($locale: String) {
-  metaDataHomeCollection(limit: 1, locale: $locale) {
+export const MetadataMainContentDocument = gql`
+    query metadataMainContent($locale: String) {
+  metadataCollection(limit: 1, locale: $locale) {
     items {
-      title
-      description
-      keywords
+      mainTitle
+      mainDescription
+      mainKeywords
     }
   }
 }
     `;
 export const MetadataLegalContentDocument = gql`
     query metadataLegalContent($locale: String) {
-  metaDataLegalCollection(limit: 1, locale: $locale) {
+  metadataCollection(limit: 1, locale: $locale) {
     items {
-      title
-      description
+      legalTitle
+      legalDescription
     }
   }
 }
     `;
 export const MetadataPrivacyContentDocument = gql`
     query metadataPrivacyContent($locale: String) {
-  metaDataPrivacyCollection(limit: 1, locale: $locale) {
+  metadataCollection(limit: 1, locale: $locale) {
     items {
-      title
-      description
+      privacyTitle
+      privacyDescription
     }
   }
 }
@@ -7035,8 +6889,8 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     legalNoticeContent(variables?: LegalNoticeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<LegalNoticeContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<LegalNoticeContentQuery>(LegalNoticeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'legalNoticeContent', 'query', variables);
     },
-    metadataHomeContent(variables?: MetadataHomeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataHomeContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MetadataHomeContentQuery>(MetadataHomeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataHomeContent', 'query', variables);
+    metadataMainContent(variables?: MetadataMainContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataMainContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MetadataMainContentQuery>(MetadataMainContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataMainContent', 'query', variables);
     },
     metadataLegalContent(variables?: MetadataLegalContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataLegalContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<MetadataLegalContentQuery>(MetadataLegalContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataLegalContent', 'query', variables);

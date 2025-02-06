@@ -1,27 +1,27 @@
-query metadataHomeContent($locale: String) {
-    metaDataHomeCollection(limit: 1, locale: $locale) {
+query metadataMainContent($locale: String) {
+    metadataCollection(limit: 1, locale: $locale) {
         items {
-            title
-            description
-            keywords
+            mainTitle
+            mainDescription
+            mainKeywords
         }
     }
 }
 
 query metadataLegalContent($locale: String) {
-    metaDataLegalCollection(limit: 1, locale: $locale) {
+    metadataCollection(limit: 1, locale: $locale) {
         items {
-            title
-            description
+            legalTitle
+            legalDescription
         }
     }
 }
 
 query metadataPrivacyContent($locale: String) {
-    metaDataPrivacyCollection(limit: 1, locale: $locale) {
+    metadataCollection(limit: 1, locale: $locale) {
         items {
-            title
-            description
+            privacyTitle
+            privacyDescription
         }
     }
 }
