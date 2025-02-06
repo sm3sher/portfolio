@@ -232,6 +232,7 @@ input AssetFilter {
 type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
   contactCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ContactCollection
+  emailCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EmailCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
   testimonialCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TestimonialCollection
@@ -607,6 +608,117 @@ scalar DateTime
 The 'Dimension' type represents dimensions as whole numeric values between `1` and `4000`.
 """
 scalar Dimension
+
+"""
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email)
+"""
+type Email implements Entry & _Node {
+  _id: ID!
+  buttonLabel(locale: String): String
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  greeting(locale: String): String
+  heading(locale: String): String
+  ignoreDisclaimer(locale: String): String
+  linkDescription(locale: String): String
+  linkedFrom(allowedLocales: [String]): EmailLinkingCollections
+  logo(locale: String, preview: Boolean): Asset
+  preview(locale: String): String
+  sys: Sys!
+}
+
+type EmailCollection {
+  items: [Email]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input EmailFilter {
+  AND: [EmailFilter]
+  OR: [EmailFilter]
+  buttonLabel: String
+  buttonLabel_contains: String
+  buttonLabel_exists: Boolean
+  buttonLabel_in: [String]
+  buttonLabel_not: String
+  buttonLabel_not_contains: String
+  buttonLabel_not_in: [String]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  greeting: String
+  greeting_contains: String
+  greeting_exists: Boolean
+  greeting_in: [String]
+  greeting_not: String
+  greeting_not_contains: String
+  greeting_not_in: [String]
+  heading: String
+  heading_contains: String
+  heading_exists: Boolean
+  heading_in: [String]
+  heading_not: String
+  heading_not_contains: String
+  heading_not_in: [String]
+  ignoreDisclaimer: String
+  ignoreDisclaimer_contains: String
+  ignoreDisclaimer_exists: Boolean
+  ignoreDisclaimer_in: [String]
+  ignoreDisclaimer_not: String
+  ignoreDisclaimer_not_contains: String
+  ignoreDisclaimer_not_in: [String]
+  linkDescription: String
+  linkDescription_contains: String
+  linkDescription_exists: Boolean
+  linkDescription_in: [String]
+  linkDescription_not: String
+  linkDescription_not_contains: String
+  linkDescription_not_in: [String]
+  logo_exists: Boolean
+  preview: String
+  preview_contains: String
+  preview_exists: Boolean
+  preview_in: [String]
+  preview_not: String
+  preview_not_contains: String
+  preview_not_in: [String]
+  sys: SysFilter
+}
+
+type EmailLinkingCollections {
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum EmailOrder {
+  buttonLabel_ASC
+  buttonLabel_DESC
+  description_ASC
+  description_DESC
+  greeting_ASC
+  greeting_DESC
+  heading_ASC
+  heading_DESC
+  ignoreDisclaimer_ASC
+  ignoreDisclaimer_DESC
+  linkDescription_ASC
+  linkDescription_DESC
+  preview_ASC
+  preview_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+}
 
 interface Entry {
   contentfulMetadata: ContentfulMetadata!
@@ -2747,6 +2859,8 @@ type Query {
   contactCollection(limit: Int = 100, locale: String, order: [ContactOrder], preview: Boolean, skip: Int = 0, where: ContactFilter): ContactCollection
   dataCollection(id: String!, locale: String, preview: Boolean): DataCollection
   dataCollectionCollection(limit: Int = 100, locale: String, order: [DataCollectionOrder], preview: Boolean, skip: Int = 0, where: DataCollectionFilter): DataCollectionCollection
+  email(id: String!, locale: String, preview: Boolean): Email
+  emailCollection(limit: Int = 100, locale: String, order: [EmailOrder], preview: Boolean, skip: Int = 0, where: EmailFilter): EmailCollection
   entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
   footer(id: String!, locale: String, preview: Boolean): Footer
   footerCollection(limit: Int = 100, locale: String, order: [FooterOrder], preview: Boolean, skip: Int = 0, where: FooterFilter): FooterCollection

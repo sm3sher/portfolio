@@ -23,13 +23,14 @@ import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { Form } from '@/app/lib/contentful/generated/sdk';
 import FormTextarea from '@/app/ui/form/form-textarea';
 import { useLocale } from 'next-intl';
+import { Locale } from '@/i18n/routing';
 
 type Props = {
   content?: Form;
 };
 
 export default function ContactForm({ content }: Props) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const [pending, startTransaction] = useTransition();
   const [submitted, setSubmitted] = useState(false);
   const [state, formAction] = useActionState<SaveMessageStatus, FormData>(
@@ -70,15 +71,16 @@ export default function ContactForm({ content }: Props) {
   }, [state, setError, reset]);
 
   const handleFormAction = (formData: FormData) => {
-    formData.set('baseUrl', `${window.origin}/${locale}`);
+    formData.set('baseUrl', window.origin);
+    formData.set('locale', locale);
     startTransaction(() => formAction(formData));
   };
 
   const handleRetry = () => {
-    if (state?.success) return;
     setRetryAttempts((prev) => ++prev);
     const formData = new FormData();
-    formData.set('baseUrl', `${window.origin}/${locale}`);
+    formData.set('baseUrl', window.origin);
+    formData.set('locale', locale);
     if (state?.rawData) {
       Object.entries(state.rawData).forEach(([key, value]) => {
         formData.set(key, String(value));
@@ -92,8 +94,10 @@ export default function ContactForm({ content }: Props) {
     setResendAttempts((prev) => ++prev);
     startTransaction(() =>
       sendVerificationEmail(
-        `${window.origin}/${locale}`,
+        window.origin,
+        locale,
         state.token,
+        state.rawData.name,
         state.email,
       ),
     );
@@ -113,7 +117,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="name"
             label={content?.labels?.name || ''}
-            defaultValue={(!state?.success && state?.rawData?.name) || ''}
+            defaultValue={state?.rawData?.name || ''}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -121,7 +125,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="email"
             label={content?.labels?.email || ''}
-            defaultValue={(!state?.success && state?.rawData?.email) || ''}
+            defaultValue={state?.rawData?.email}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -129,7 +133,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="role"
             label={content?.labels?.role || ''}
-            defaultValue={(!state?.success && state?.rawData?.role) || ''}
+            defaultValue={state?.rawData?.role}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -137,7 +141,7 @@ export default function ContactForm({ content }: Props) {
             register={register}
             name="message"
             label={content?.labels?.message || ''}
-            defaultValue={(!state?.success && state?.rawData?.message) || ''}
+            defaultValue={state?.rawData?.message}
             errors={errors}
             validationMessages={content?.validationMessages}
           />
@@ -149,7 +153,7 @@ export default function ContactForm({ content }: Props) {
             }}
             register={register}
             name="consent"
-            defaultChecked={!state?.success && state?.rawData?.consent}
+            defaultChecked={state?.rawData?.consent}
             errors={errors}
             validationMessages={content?.validationMessages}
           />

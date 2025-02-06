@@ -387,6 +387,7 @@ export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   aboutCollection?: Maybe<AboutCollection>;
   contactCollection?: Maybe<ContactCollection>;
+  emailCollection?: Maybe<EmailCollection>;
   entryCollection?: Maybe<EntryCollection>;
   homeCollection?: Maybe<HomeCollection>;
   testimonialCollection?: Maybe<TestimonialCollection>;
@@ -402,6 +403,14 @@ export type AssetLinkingCollectionsAboutCollectionArgs = {
 
 
 export type AssetLinkingCollectionsContactCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsEmailCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -962,6 +971,181 @@ export enum DataCollectionOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TitleAsc = 'title_ASC',
   TitleDesc = 'title_DESC'
+}
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type Email = Entry & _Node & {
+  __typename?: 'Email';
+  _id: Scalars['ID']['output'];
+  buttonLabel?: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  description?: Maybe<Scalars['String']['output']>;
+  greeting?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  ignoreDisclaimer?: Maybe<Scalars['String']['output']>;
+  linkDescription?: Maybe<Scalars['String']['output']>;
+  linkedFrom?: Maybe<EmailLinkingCollections>;
+  logo?: Maybe<Asset>;
+  preview?: Maybe<Scalars['String']['output']>;
+  sys: Sys;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailButtonLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailGreetingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailHeadingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailIgnoreDisclaimerArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailLinkDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailLogoArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/email) */
+export type EmailPreviewArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EmailCollection = {
+  __typename?: 'EmailCollection';
+  items: Array<Maybe<Email>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type EmailFilter = {
+  AND?: InputMaybe<Array<InputMaybe<EmailFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<EmailFilter>>>;
+  buttonLabel?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  buttonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  buttonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  description_contains?: InputMaybe<Scalars['String']['input']>;
+  description_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  description_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not?: InputMaybe<Scalars['String']['input']>;
+  description_not_contains?: InputMaybe<Scalars['String']['input']>;
+  description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  greeting?: InputMaybe<Scalars['String']['input']>;
+  greeting_contains?: InputMaybe<Scalars['String']['input']>;
+  greeting_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greeting_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  greeting_not?: InputMaybe<Scalars['String']['input']>;
+  greeting_not_contains?: InputMaybe<Scalars['String']['input']>;
+  greeting_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  heading?: InputMaybe<Scalars['String']['input']>;
+  heading_contains?: InputMaybe<Scalars['String']['input']>;
+  heading_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  heading_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  heading_not?: InputMaybe<Scalars['String']['input']>;
+  heading_not_contains?: InputMaybe<Scalars['String']['input']>;
+  heading_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ignoreDisclaimer?: InputMaybe<Scalars['String']['input']>;
+  ignoreDisclaimer_contains?: InputMaybe<Scalars['String']['input']>;
+  ignoreDisclaimer_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  ignoreDisclaimer_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  ignoreDisclaimer_not?: InputMaybe<Scalars['String']['input']>;
+  ignoreDisclaimer_not_contains?: InputMaybe<Scalars['String']['input']>;
+  ignoreDisclaimer_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  linkDescription?: InputMaybe<Scalars['String']['input']>;
+  linkDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  linkDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  linkDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  linkDescription_not?: InputMaybe<Scalars['String']['input']>;
+  linkDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  linkDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  logo_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  preview?: InputMaybe<Scalars['String']['input']>;
+  preview_contains?: InputMaybe<Scalars['String']['input']>;
+  preview_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  preview_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  preview_not?: InputMaybe<Scalars['String']['input']>;
+  preview_not_contains?: InputMaybe<Scalars['String']['input']>;
+  preview_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sys?: InputMaybe<SysFilter>;
+};
+
+export type EmailLinkingCollections = {
+  __typename?: 'EmailLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type EmailLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export enum EmailOrder {
+  ButtonLabelAsc = 'buttonLabel_ASC',
+  ButtonLabelDesc = 'buttonLabel_DESC',
+  DescriptionAsc = 'description_ASC',
+  DescriptionDesc = 'description_DESC',
+  GreetingAsc = 'greeting_ASC',
+  GreetingDesc = 'greeting_DESC',
+  HeadingAsc = 'heading_ASC',
+  HeadingDesc = 'heading_DESC',
+  IgnoreDisclaimerAsc = 'ignoreDisclaimer_ASC',
+  IgnoreDisclaimerDesc = 'ignoreDisclaimer_DESC',
+  LinkDescriptionAsc = 'linkDescription_ASC',
+  LinkDescriptionDesc = 'linkDescription_DESC',
+  PreviewAsc = 'preview_ASC',
+  PreviewDesc = 'preview_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
 export type Entry = {
@@ -4175,6 +4359,8 @@ export type Query = {
   contactCollection?: Maybe<ContactCollection>;
   dataCollection?: Maybe<DataCollection>;
   dataCollectionCollection?: Maybe<DataCollectionCollection>;
+  email?: Maybe<Email>;
+  emailCollection?: Maybe<EmailCollection>;
   entryCollection?: Maybe<EntryCollection>;
   footer?: Maybe<Footer>;
   footerCollection?: Maybe<FooterCollection>;
@@ -4291,6 +4477,23 @@ export type QueryDataCollectionCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<DataCollectionFilter>;
+};
+
+
+export type QueryEmailArgs = {
+  id: Scalars['String']['input'];
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryEmailCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  order?: InputMaybe<Array<InputMaybe<EmailOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<EmailFilter>;
 };
 
 
@@ -6416,6 +6619,13 @@ export type ContactContentQueryVariables = Exact<{
 
 export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
+export type EmailContentQueryVariables = Exact<{
+  locale?: InputMaybe<Scalars['String']['input']>;
+}>;
+
+
+export type EmailContentQuery = { __typename?: 'Query', emailCollection?: { __typename?: 'EmailCollection', items: Array<{ __typename?: 'Email', preview?: string | null, heading?: string | null, greeting?: string | null, description?: string | null, buttonLabel?: string | null, linkDescription?: string | null, ignoreDisclaimer?: string | null, logo?: { __typename?: 'Asset', url?: string | null, description?: string | null } | null } | null> } | null };
+
 export type FooterContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -6601,6 +6811,25 @@ export const ContactContentDocument = gql`
           }
         }
       }
+    }
+  }
+}
+    `;
+export const EmailContentDocument = gql`
+    query emailContent($locale: String) {
+  emailCollection(limit: 1, locale: $locale) {
+    items {
+      preview
+      logo {
+        url
+        description
+      }
+      heading
+      greeting
+      description
+      buttonLabel
+      linkDescription
+      ignoreDisclaimer
     }
   }
 }
@@ -6879,6 +7108,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     contactContent(variables?: ContactContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ContactContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ContactContentQuery>(ContactContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'contactContent', 'query', variables);
+    },
+    emailContent(variables?: EmailContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<EmailContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<EmailContentQuery>(EmailContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'emailContent', 'query', variables);
     },
     footerContent(variables?: FooterContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<FooterContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<FooterContentQuery>(FooterContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'footerContent', 'query', variables);

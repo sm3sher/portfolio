@@ -5,18 +5,30 @@ import {
   Head,
   Heading,
   Html,
+  Img,
   Link,
   Preview,
   Section,
   Tailwind,
   Text,
 } from '@react-email/components';
+import contentfulClient from '@/app/lib/contentful/client';
+import { Locale } from '@/i18n/routing';
 
 type Props = {
+  locale: Locale;
+  name: string;
   verifyUrl: string;
 };
 
-export function EmailTemplate({ verifyUrl }: Props) {
+export default async function EmailTemplate({
+  locale,
+  name,
+  verifyUrl,
+}: Props) {
+  const query = await contentfulClient.emailContent({ locale });
+  const content = query.emailCollection?.items[0];
+
   return (
     <Tailwind
       config={{
@@ -29,30 +41,37 @@ export function EmailTemplate({ verifyUrl }: Props) {
         },
       }}
     >
-      <Html lang="en">
-        <Head />
-        <Preview>Verify your email address</Preview>
+      <Html lang={locale}>
+        <Head>
+          <meta name="color-scheme" content="dark light" />
+        </Head>
+        <Preview>{content?.preview || ''}</Preview>
         <Body>
-          <Container>
-            <Heading>Verify your email address</Heading>
-            <Section>
+          <Container className="rounded bg-neutral-900 px-8 pt-8 pb-2">
+            <Img
+              className="mb-[24px] h-12 w-auto"
+              src={content?.logo?.url || undefined}
+              alt={content?.logo?.description || undefined}
+            />
+            <Heading className="text-white">{content?.heading}</Heading>
+            <Section className="text-neutral-300">
               <Text>
-                Thank you for reaching out! To confirm your email address and
-                complete your request, please verify your email by clicking the
-                button below:
+                {content?.greeting} {name}!
               </Text>
+              <Text>{content?.description}</Text>
               <Button
                 href={verifyUrl}
                 className="bg-highlight rounded-full px-6 py-3 leading-4 font-medium text-white"
               >
-                Verify email
+                {content?.buttonLabel}
               </Button>
             </Section>
-            <Section>
-              <Text>
-                If the button doesn’t work, you can use the following link:
-              </Text>
+            <Section className="text-neutral-300">
+              <Text>{content?.linkDescription}</Text>
               <Link>{verifyUrl}</Link>
+            </Section>
+            <Section className="text-neutral-300">
+              <Text className="mb-0">{content?.ignoreDisclaimer}</Text>
             </Section>
           </Container>
         </Body>

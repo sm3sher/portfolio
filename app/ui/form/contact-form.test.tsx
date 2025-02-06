@@ -49,6 +49,10 @@ vi.mock('@/app/lib/nodemailer/client', () => ({
   default: mocks.nodemailerClient,
 }));
 
+vi.mock('@/app/lib/nodemailer/template/email-template', () => ({
+  default: vi.fn(),
+}));
+
 const content = {
   labels: {
     name: 'Name',
