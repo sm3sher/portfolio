@@ -34,7 +34,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.6.1",
+    "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@graphql-codegen/cli": "^5.0.4",
     "@graphql-codegen/client-preset": "^4.6.1",
