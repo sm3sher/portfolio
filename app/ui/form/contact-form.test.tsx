@@ -49,7 +49,7 @@ vi.mock('@/app/lib/nodemailer/client', () => ({
   default: mocks.nodemailerClient,
 }));
 
-vi.mock('@/app/lib/nodemailer/template/email-template', () => ({
+vi.mock('@/app/lib/nodemailer/template/verify-template', () => ({
   default: vi.fn(),
 }));
 

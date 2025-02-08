@@ -3,7 +3,7 @@
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import supabaseClient from '@/app/lib/supabase/client';
 import nodemailerClient from '@/app/lib/nodemailer/client';
-import EmailTemplate from '@/app/lib/nodemailer/template/email-template';
+import VerifyTemplate from '@/app/lib/nodemailer/template/verify-template';
 import { render } from '@react-email/components';
 import { Locale } from '@/i18n/routing';
 
@@ -92,7 +92,7 @@ export const sendVerificationEmail = async (
 ) => {
   const verifyUrl = `${baseUrl}/${locale}/verify?token=${token}`;
   const emailHtml = await render(
-    await EmailTemplate({ locale, name, verifyUrl }),
+    await VerifyTemplate({ locale, name, verifyUrl }),
   );
 
   await nodemailerClient().sendMail({

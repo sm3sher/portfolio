@@ -21,7 +21,7 @@ type Props = {
   verifyUrl: string;
 };
 
-export default async function EmailTemplate({
+export default async function VerifyTemplate({
   locale,
   name,
   verifyUrl,
