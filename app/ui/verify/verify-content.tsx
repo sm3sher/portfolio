@@ -2,11 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import SpringAnimation from '@/app/ui/animation/spring-animation';
-import {
-  CancelCircleIcon,
-  CheckmarkCircle01Icon,
-  Loading02Icon,
-} from 'hugeicons-react';
+import LoadingSpinner from '@/app/ui/loading/loading-spinner';
+import { CancelCircleIcon, CheckmarkCircle01Icon } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import { useSearchParams } from 'next/navigation';
 import { Verify } from '@/app/lib/contentful/generated/sdk';
@@ -45,12 +42,7 @@ export default function VerifyContent({ content }: Props) {
   return (
     <div className="flex flex-1 items-center text-center">
       <div className="mx-auto max-w-(--breakpoint-xl) overflow-hidden px-6 py-24 text-center">
-        {status === 'loading' && (
-          <Loading02Icon
-            className="animate-spin text-(--secondary)"
-            size={52}
-          />
-        )}
+        {status === 'loading' && <LoadingSpinner />}
         {status === 'success' && (
           <div className="space-y-4">
             <SpringAnimation>

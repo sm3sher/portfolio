@@ -16,7 +16,7 @@ type Props<T extends FieldValues> = {
   validationMessages?: ValidationMessages | null;
 };
 
-export default function FormInput<T extends FieldValues>({
+export default function FormText<T extends FieldValues>({
   register,
   name,
   label,

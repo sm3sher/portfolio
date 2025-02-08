@@ -3,25 +3,18 @@
 import { useActionState, useEffect, useState, useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  CancelCircleIcon,
-  Loading02Icon,
-  MailOpenIcon,
-  SentIcon,
-} from 'hugeicons-react';
+import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import {
   saveMessage,
   SaveMessageStatus,
   sendVerificationEmail,
 } from '@/app/lib/actions';
-import FormInput from '@/app/ui/form/form-input';
-import FormGdprCheckbox from '@/app/ui/form/form-gdpr-checkbox';
-import StatusCard from '@/app/ui/card/status-card';
-import SubmitButton from '@/app/ui/button/submit-button';
+import ContactFormFields from '@/app/ui/form/contact-form-fields';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { Form } from '@/app/lib/contentful/generated/sdk';
-import FormTextarea from '@/app/ui/form/form-textarea';
+import FormErrorCard from '@/app/ui/form/card/form-error-card';
+import SubmittedStatusCard from '@/app/ui/form/card/form-success-card';
 import { useLocale } from 'next-intl';
 import { Locale } from '@/i18n/routing';
 
@@ -112,107 +105,41 @@ export default function ContactForm({ content }: Props) {
             : 'opacity-100'
         }`}
       >
-        <form action={handleFormAction} className="space-y-4">
-          <FormInput
-            register={register}
-            name="name"
-            label={content?.labels?.name || ''}
-            defaultValue={state?.rawData?.name || ''}
-            errors={errors}
-            validationMessages={content?.validationMessages}
-          />
-          <FormInput
-            register={register}
-            name="email"
-            label={content?.labels?.email || ''}
-            defaultValue={state?.rawData?.email}
-            errors={errors}
-            validationMessages={content?.validationMessages}
-          />
-          <FormInput
-            register={register}
-            name="role"
-            label={content?.labels?.role || ''}
-            defaultValue={state?.rawData?.role}
-            errors={errors}
-            validationMessages={content?.validationMessages}
-          />
-          <FormTextarea
-            register={register}
-            name="message"
-            label={content?.labels?.message || ''}
-            defaultValue={state?.rawData?.message}
-            errors={errors}
-            validationMessages={content?.validationMessages}
-          />
-          <FormGdprCheckbox
-            content={{
-              intro: content?.gdprNoticeIntro,
-              linkText: content?.gdprNoticeLinkText,
-              details: content?.gdprNoticeDetails,
-            }}
-            register={register}
-            name="consent"
-            defaultChecked={state?.rawData?.consent}
-            errors={errors}
-            validationMessages={content?.validationMessages}
-          />
-          <SubmitButton>
-            <span className="transition-transform duration-300 group-hover:translate-x-4">
-              {content?.sendMessageLabel}
-            </span>
-            <SentIcon className="ml-2 rotate-45 transition-transform duration-1000 group-hover:translate-x-60" />
-          </SubmitButton>
-        </form>
+        <ContactFormFields
+          content={content}
+          state={state}
+          handleFormAction={handleFormAction}
+          errors={errors}
+          register={register}
+        />
       </div>
+      <PresenceAnimation
+        show={pending}
+        className="absolute inset-0 flex items-center justify-center"
+      >
+        <LoadingSpinner />
+      </PresenceAnimation>
       <PresenceAnimation
         show={!state?.success && !!state?.serverError && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
-        <StatusCard
-          icon={<CancelCircleIcon size={52} />}
-          title={content?.errorTitle}
-          button={{
-            label: content?.errorButtonLabel,
-            onClick: handleRetry,
-            disabled: retryAttempts >= 2,
-          }}
-        >
-          <p className="text-center">
-            {content?.errorDescription}{' '}
-            <a
-              href={`mailto:${content?.errorContactEmail}`}
-              className="text-(--highlight) hover:underline hover:underline-offset-4"
-            >
-              {content?.errorContactEmail}
-            </a>
-            .
-          </p>
-        </StatusCard>
-      </PresenceAnimation>
-      <PresenceAnimation
-        show={pending}
-        className="absolute inset-0 flex items-center justify-center"
-      >
-        <Loading02Icon className="animate-spin text-(--secondary)" size={52} />
+        <FormErrorCard
+          content={content}
+          handleRetry={handleRetry}
+          retryAttempts={retryAttempts}
+        />
       </PresenceAnimation>
       <PresenceAnimation
         show={submitted && !pending}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
-        <StatusCard
-          icon={<MailOpenIcon size={52} />}
-          title={content?.emailVerificationTitle}
-          button={{
-            label: content?.emailResendButtonLabel,
-            onClick: handleResend,
-            disabled: resendAttempts >= 2,
-          }}
-        >
-          <p className="text-center">{content?.emailVerificationDescription}</p>
-        </StatusCard>
+        <SubmittedStatusCard
+          content={content}
+          handleResend={handleResend}
+          resendAttempts={resendAttempts}
+        />
       </PresenceAnimation>
     </div>
   );
