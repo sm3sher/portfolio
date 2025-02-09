@@ -1,7 +1,11 @@
 import { Loading02Icon } from 'hugeicons-react';
 
-export default function LoadingSpinner() {
+type Props = {
+  size?: number;
+};
+
+export default function LoadingSpinner({ size = 52 }: Props) {
   return (
-    <Loading02Icon className="animate-spin text-(--secondary)" size={52} />
+    <Loading02Icon className="animate-spin text-(--secondary)" size={size} />
   );
 }
