@@ -38,12 +38,17 @@ query contactContent($locale: String) {
             gdprNoticeDetails
             sendMessageLabel
             errorTitle
+            errorIntro
+            errorEditPrompt
+            errorEditAriaLabel
             errorDescription
             errorContactEmail
             errorButtonLabel
             emailVerificationTitle
             emailVerificationDescription
             emailResendButtonLabel
+            emailEditPrompt
+            emailEditAriaLabel
             attemptsLabel
             attemptLabel
         }

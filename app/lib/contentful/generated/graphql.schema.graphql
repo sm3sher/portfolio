@@ -937,12 +937,17 @@ type Form implements Entry & _Node {
   attemptLabel(locale: String): String
   attemptsLabel(locale: String): String
   contentfulMetadata: ContentfulMetadata!
+  emailEditAriaLabel(locale: String): String
+  emailEditPrompt(locale: String): String
   emailResendButtonLabel(locale: String): String
   emailVerificationDescription(locale: String): String
   emailVerificationTitle(locale: String): String
   errorButtonLabel(locale: String): String
   errorContactEmail(locale: String): String
   errorDescription(locale: String): String
+  errorEditAriaLabel(locale: String): String
+  errorEditPrompt(locale: String): String
+  errorIntro(locale: String): String
   errorTitle(locale: String): String
   gdprNoticeDetails(locale: String): String
   gdprNoticeIntro(locale: String): String
@@ -979,6 +984,20 @@ input FormFilter {
   attemptsLabel_not_contains: String
   attemptsLabel_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
+  emailEditAriaLabel: String
+  emailEditAriaLabel_contains: String
+  emailEditAriaLabel_exists: Boolean
+  emailEditAriaLabel_in: [String]
+  emailEditAriaLabel_not: String
+  emailEditAriaLabel_not_contains: String
+  emailEditAriaLabel_not_in: [String]
+  emailEditPrompt: String
+  emailEditPrompt_contains: String
+  emailEditPrompt_exists: Boolean
+  emailEditPrompt_in: [String]
+  emailEditPrompt_not: String
+  emailEditPrompt_not_contains: String
+  emailEditPrompt_not_in: [String]
   emailResendButtonLabel: String
   emailResendButtonLabel_contains: String
   emailResendButtonLabel_exists: Boolean
@@ -1021,6 +1040,27 @@ input FormFilter {
   errorDescription_not: String
   errorDescription_not_contains: String
   errorDescription_not_in: [String]
+  errorEditAriaLabel: String
+  errorEditAriaLabel_contains: String
+  errorEditAriaLabel_exists: Boolean
+  errorEditAriaLabel_in: [String]
+  errorEditAriaLabel_not: String
+  errorEditAriaLabel_not_contains: String
+  errorEditAriaLabel_not_in: [String]
+  errorEditPrompt: String
+  errorEditPrompt_contains: String
+  errorEditPrompt_exists: Boolean
+  errorEditPrompt_in: [String]
+  errorEditPrompt_not: String
+  errorEditPrompt_not_contains: String
+  errorEditPrompt_not_in: [String]
+  errorIntro: String
+  errorIntro_contains: String
+  errorIntro_exists: Boolean
+  errorIntro_in: [String]
+  errorIntro_not: String
+  errorIntro_not_contains: String
+  errorIntro_not_in: [String]
   errorTitle: String
   errorTitle_contains: String
   errorTitle_exists: Boolean
@@ -1072,6 +1112,10 @@ enum FormOrder {
   attemptLabel_DESC
   attemptsLabel_ASC
   attemptsLabel_DESC
+  emailEditAriaLabel_ASC
+  emailEditAriaLabel_DESC
+  emailEditPrompt_ASC
+  emailEditPrompt_DESC
   emailResendButtonLabel_ASC
   emailResendButtonLabel_DESC
   emailVerificationDescription_ASC
@@ -1084,6 +1128,12 @@ enum FormOrder {
   errorContactEmail_DESC
   errorDescription_ASC
   errorDescription_DESC
+  errorEditAriaLabel_ASC
+  errorEditAriaLabel_DESC
+  errorEditPrompt_ASC
+  errorEditPrompt_DESC
+  errorIntro_ASC
+  errorIntro_DESC
   errorTitle_ASC
   errorTitle_DESC
   gdprNoticeDetails_ASC
@@ -1563,6 +1613,10 @@ enum LabelLinkingCollectionsFormCollectionOrder {
   attemptLabel_DESC
   attemptsLabel_ASC
   attemptsLabel_DESC
+  emailEditAriaLabel_ASC
+  emailEditAriaLabel_DESC
+  emailEditPrompt_ASC
+  emailEditPrompt_DESC
   emailResendButtonLabel_ASC
   emailResendButtonLabel_DESC
   emailVerificationDescription_ASC
@@ -1575,6 +1629,12 @@ enum LabelLinkingCollectionsFormCollectionOrder {
   errorContactEmail_DESC
   errorDescription_ASC
   errorDescription_DESC
+  errorEditAriaLabel_ASC
+  errorEditAriaLabel_DESC
+  errorEditPrompt_ASC
+  errorEditPrompt_DESC
+  errorIntro_ASC
+  errorIntro_DESC
   errorTitle_ASC
   errorTitle_DESC
   gdprNoticeDetails_ASC
@@ -3504,6 +3564,10 @@ enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   attemptLabel_DESC
   attemptsLabel_ASC
   attemptsLabel_DESC
+  emailEditAriaLabel_ASC
+  emailEditAriaLabel_DESC
+  emailEditPrompt_ASC
+  emailEditPrompt_DESC
   emailResendButtonLabel_ASC
   emailResendButtonLabel_DESC
   emailVerificationDescription_ASC
@@ -3516,6 +3580,12 @@ enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   errorContactEmail_DESC
   errorDescription_ASC
   errorDescription_DESC
+  errorEditAriaLabel_ASC
+  errorEditAriaLabel_DESC
+  errorEditPrompt_ASC
+  errorEditPrompt_DESC
+  errorIntro_ASC
+  errorIntro_DESC
   errorTitle_ASC
   errorTitle_DESC
   gdprNoticeDetails_ASC

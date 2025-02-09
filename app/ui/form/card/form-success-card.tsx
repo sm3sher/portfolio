@@ -5,6 +5,8 @@ import { Form } from '@/app/lib/contentful/generated/sdk';
 type Props = {
   content?: Form;
   pending: boolean;
+  email?: string;
+  handleReturn: () => void;
   handleResend: () => void;
   resendAttempts: number;
 };
@@ -12,6 +14,8 @@ type Props = {
 export default function SubmittedStatusCard({
   content,
   pending,
+  email,
+  handleReturn,
   handleResend,
   resendAttempts,
 }: Props) {
@@ -30,6 +34,15 @@ export default function SubmittedStatusCard({
       attemptLabel={content?.attemptLabel}
     >
       <p className="text-center">{content?.emailVerificationDescription}</p>
+      {email && (
+        <button
+          onClick={handleReturn}
+          className="flex w-full cursor-pointer justify-center font-medium text-(--secondary) underline hover:text-(--primary)"
+          aria-label={content?.emailEditAriaLabel || ''}
+        >
+          {email} {content?.emailEditPrompt}
+        </button>
+      )}
     </StatusCard>
   );
 }

@@ -1464,12 +1464,17 @@ export type Form = Entry & _Node & {
   attemptLabel?: Maybe<Scalars['String']['output']>;
   attemptsLabel?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
+  emailEditAriaLabel?: Maybe<Scalars['String']['output']>;
+  emailEditPrompt?: Maybe<Scalars['String']['output']>;
   emailResendButtonLabel?: Maybe<Scalars['String']['output']>;
   emailVerificationDescription?: Maybe<Scalars['String']['output']>;
   emailVerificationTitle?: Maybe<Scalars['String']['output']>;
   errorButtonLabel?: Maybe<Scalars['String']['output']>;
   errorContactEmail?: Maybe<Scalars['String']['output']>;
   errorDescription?: Maybe<Scalars['String']['output']>;
+  errorEditAriaLabel?: Maybe<Scalars['String']['output']>;
+  errorEditPrompt?: Maybe<Scalars['String']['output']>;
+  errorIntro?: Maybe<Scalars['String']['output']>;
   errorTitle?: Maybe<Scalars['String']['output']>;
   gdprNoticeDetails?: Maybe<Scalars['String']['output']>;
   gdprNoticeIntro?: Maybe<Scalars['String']['output']>;
@@ -1490,6 +1495,18 @@ export type FormAttemptLabelArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
 export type FormAttemptsLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormEmailEditAriaLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormEmailEditPromptArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1526,6 +1543,24 @@ export type FormErrorContactEmailArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
 export type FormErrorDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorEditAriaLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorEditPromptArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormErrorIntroArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1607,6 +1642,20 @@ export type FormFilter = {
   attemptsLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
   attemptsLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  emailEditAriaLabel?: InputMaybe<Scalars['String']['input']>;
+  emailEditAriaLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  emailEditAriaLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailEditAriaLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailEditAriaLabel_not?: InputMaybe<Scalars['String']['input']>;
+  emailEditAriaLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailEditAriaLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailEditPrompt?: InputMaybe<Scalars['String']['input']>;
+  emailEditPrompt_contains?: InputMaybe<Scalars['String']['input']>;
+  emailEditPrompt_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  emailEditPrompt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  emailEditPrompt_not?: InputMaybe<Scalars['String']['input']>;
+  emailEditPrompt_not_contains?: InputMaybe<Scalars['String']['input']>;
+  emailEditPrompt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   emailResendButtonLabel?: InputMaybe<Scalars['String']['input']>;
   emailResendButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
   emailResendButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1649,6 +1698,27 @@ export type FormFilter = {
   errorDescription_not?: InputMaybe<Scalars['String']['input']>;
   errorDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
   errorDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEditAriaLabel?: InputMaybe<Scalars['String']['input']>;
+  errorEditAriaLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEditAriaLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorEditAriaLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEditAriaLabel_not?: InputMaybe<Scalars['String']['input']>;
+  errorEditAriaLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEditAriaLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEditPrompt?: InputMaybe<Scalars['String']['input']>;
+  errorEditPrompt_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEditPrompt_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorEditPrompt_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEditPrompt_not?: InputMaybe<Scalars['String']['input']>;
+  errorEditPrompt_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEditPrompt_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorIntro?: InputMaybe<Scalars['String']['input']>;
+  errorIntro_contains?: InputMaybe<Scalars['String']['input']>;
+  errorIntro_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorIntro_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorIntro_not?: InputMaybe<Scalars['String']['input']>;
+  errorIntro_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorIntro_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   errorTitle?: InputMaybe<Scalars['String']['input']>;
   errorTitle_contains?: InputMaybe<Scalars['String']['input']>;
   errorTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1709,6 +1779,10 @@ export enum FormOrder {
   AttemptLabelDesc = 'attemptLabel_DESC',
   AttemptsLabelAsc = 'attemptsLabel_ASC',
   AttemptsLabelDesc = 'attemptsLabel_DESC',
+  EmailEditAriaLabelAsc = 'emailEditAriaLabel_ASC',
+  EmailEditAriaLabelDesc = 'emailEditAriaLabel_DESC',
+  EmailEditPromptAsc = 'emailEditPrompt_ASC',
+  EmailEditPromptDesc = 'emailEditPrompt_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -1721,6 +1795,12 @@ export enum FormOrder {
   ErrorContactEmailDesc = 'errorContactEmail_DESC',
   ErrorDescriptionAsc = 'errorDescription_ASC',
   ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorEditAriaLabelAsc = 'errorEditAriaLabel_ASC',
+  ErrorEditAriaLabelDesc = 'errorEditAriaLabel_DESC',
+  ErrorEditPromptAsc = 'errorEditPrompt_ASC',
+  ErrorEditPromptDesc = 'errorEditPrompt_DESC',
+  ErrorIntroAsc = 'errorIntro_ASC',
+  ErrorIntroDesc = 'errorIntro_DESC',
   ErrorTitleAsc = 'errorTitle_ASC',
   ErrorTitleDesc = 'errorTitle_DESC',
   GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
@@ -2360,6 +2440,10 @@ export enum LabelLinkingCollectionsFormCollectionOrder {
   AttemptLabelDesc = 'attemptLabel_DESC',
   AttemptsLabelAsc = 'attemptsLabel_ASC',
   AttemptsLabelDesc = 'attemptsLabel_DESC',
+  EmailEditAriaLabelAsc = 'emailEditAriaLabel_ASC',
+  EmailEditAriaLabelDesc = 'emailEditAriaLabel_DESC',
+  EmailEditPromptAsc = 'emailEditPrompt_ASC',
+  EmailEditPromptDesc = 'emailEditPrompt_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -2372,6 +2456,12 @@ export enum LabelLinkingCollectionsFormCollectionOrder {
   ErrorContactEmailDesc = 'errorContactEmail_DESC',
   ErrorDescriptionAsc = 'errorDescription_ASC',
   ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorEditAriaLabelAsc = 'errorEditAriaLabel_ASC',
+  ErrorEditAriaLabelDesc = 'errorEditAriaLabel_DESC',
+  ErrorEditPromptAsc = 'errorEditPrompt_ASC',
+  ErrorEditPromptDesc = 'errorEditPrompt_DESC',
+  ErrorIntroAsc = 'errorIntro_ASC',
+  ErrorIntroDesc = 'errorIntro_DESC',
   ErrorTitleAsc = 'errorTitle_ASC',
   ErrorTitleDesc = 'errorTitle_DESC',
   GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
@@ -5745,6 +5835,10 @@ export enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   AttemptLabelDesc = 'attemptLabel_DESC',
   AttemptsLabelAsc = 'attemptsLabel_ASC',
   AttemptsLabelDesc = 'attemptsLabel_DESC',
+  EmailEditAriaLabelAsc = 'emailEditAriaLabel_ASC',
+  EmailEditAriaLabelDesc = 'emailEditAriaLabel_DESC',
+  EmailEditPromptAsc = 'emailEditPrompt_ASC',
+  EmailEditPromptDesc = 'emailEditPrompt_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -5757,6 +5851,12 @@ export enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   ErrorContactEmailDesc = 'errorContactEmail_DESC',
   ErrorDescriptionAsc = 'errorDescription_ASC',
   ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorEditAriaLabelAsc = 'errorEditAriaLabel_ASC',
+  ErrorEditAriaLabelDesc = 'errorEditAriaLabel_DESC',
+  ErrorEditPromptAsc = 'errorEditPrompt_ASC',
+  ErrorEditPromptDesc = 'errorEditPrompt_DESC',
+  ErrorIntroAsc = 'errorIntro_ASC',
+  ErrorIntroDesc = 'errorIntro_DESC',
   ErrorTitleAsc = 'errorTitle_ASC',
   ErrorTitleDesc = 'errorTitle_DESC',
   GdprNoticeDetailsAsc = 'gdprNoticeDetails_ASC',
@@ -6657,7 +6757,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, attemptsLabel?: string | null, attemptLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorIntro?: string | null, errorEditPrompt?: string | null, errorEditAriaLabel?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, emailEditPrompt?: string | null, emailEditAriaLabel?: string | null, attemptsLabel?: string | null, attemptLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type EmailContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6822,12 +6922,17 @@ export const ContactContentDocument = gql`
       gdprNoticeDetails
       sendMessageLabel
       errorTitle
+      errorIntro
+      errorEditPrompt
+      errorEditAriaLabel
       errorDescription
       errorContactEmail
       errorButtonLabel
       emailVerificationTitle
       emailVerificationDescription
       emailResendButtonLabel
+      emailEditPrompt
+      emailEditAriaLabel
       attemptsLabel
       attemptLabel
     }

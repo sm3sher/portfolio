@@ -37,7 +37,6 @@ export default function ContactForm({ content }: Props) {
     register,
     formState: { errors },
     setError,
-    reset,
   } = useForm<ContactFormData>({
     mode: 'onTouched',
     resolver: zodResolver(contactFormSchema),
@@ -59,9 +58,8 @@ export default function ContactForm({ content }: Props) {
     }
     if (state.success) {
       setSubmitted(true);
-      reset();
     }
-  }, [state, setError, reset]);
+  }, [state, setError]);
 
   const handleFormAction = (formData: FormData) => {
     formData.set('baseUrl', window.origin);
@@ -96,6 +94,15 @@ export default function ContactForm({ content }: Props) {
     );
   };
 
+  const handleReturn = () => {
+    setSubmitted(false);
+    setRetryAttempts(2);
+    setResendAttempts(2);
+    if (!state?.success && state?.serverError) {
+      state.serverError = false;
+    }
+  };
+
   return (
     <div className="relative">
       <div
@@ -126,6 +133,7 @@ export default function ContactForm({ content }: Props) {
       >
         <FormErrorCard
           content={content}
+          handleReturn={handleReturn}
           handleRetry={handleRetry}
           retryAttempts={retryAttempts}
         />
@@ -138,6 +146,8 @@ export default function ContactForm({ content }: Props) {
         <SubmittedStatusCard
           content={content}
           pending={pending}
+          email={state?.rawData.email}
+          handleReturn={handleReturn}
           handleResend={handleResend}
           resendAttempts={resendAttempts}
         />

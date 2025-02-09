@@ -4,12 +4,14 @@ import { Form } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
   content?: Form;
+  handleReturn: () => void;
   handleRetry: () => void;
   retryAttempts: number;
 };
 
 export default function FormErrorCard({
   content,
+  handleReturn,
   handleRetry,
   retryAttempts,
 }: Props) {
@@ -27,6 +29,14 @@ export default function FormErrorCard({
       attemptLabel={content?.attemptLabel}
     >
       <p className="text-center">
+        {content?.errorIntro}{' '}
+        <button
+          onClick={handleReturn}
+          className="cursor-pointer font-medium text-(--secondary) underline hover:text-(--primary)"
+          aria-label={content?.errorEditAriaLabel || ''}
+        >
+          {content?.errorEditPrompt}
+        </button>{' '}
         {content?.errorDescription}{' '}
         <a
           href={`mailto:${content?.errorContactEmail}`}
