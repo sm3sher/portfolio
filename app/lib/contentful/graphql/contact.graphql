@@ -44,6 +44,8 @@ query contactContent($locale: String) {
             emailVerificationTitle
             emailVerificationDescription
             emailResendButtonLabel
+            attemptsLabel
+            attemptLabel
         }
     }
     testimonialsCollection(limit: 1, locale: $locale) {

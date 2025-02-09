@@ -25,6 +25,9 @@ export default function SubmittedStatusCard({
         disabled: resendAttempts <= 0,
         isLoading: pending,
       }}
+      attemptsLeft={resendAttempts}
+      attemptsLabel={content?.attemptsLabel}
+      attemptLabel={content?.attemptLabel}
     >
       <p className="text-center">{content?.emailVerificationDescription}</p>
     </StatusCard>

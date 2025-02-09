@@ -11,11 +11,22 @@ type Props = {
     disabled?: boolean;
     isLoading?: boolean;
   };
+  attemptsLeft: number;
+  attemptsLabel?: string | null;
+  attemptLabel?: string | null;
 };
 
-export default function StatusCard({ children, icon, title, button }: Props) {
+export default function StatusCard({
+  children,
+  icon,
+  title,
+  button,
+  attemptsLeft,
+  attemptsLabel,
+  attemptLabel,
+}: Props) {
   return (
-    <div className="rounded-3xl bg-(--surface-color) px-8 py-6 drop-shadow-sm sm:px-10 sm:py-8">
+    <div className="rounded-3xl bg-(--surface-color) px-8 pt-6 pb-4 drop-shadow-sm sm:px-10 sm:pt-8 sm:pb-6">
       <div className="flex flex-col items-center text-(--highlight)">
         {icon}
         <h5 className="mt-4 mb-2">{title}</h5>
@@ -23,6 +34,7 @@ export default function StatusCard({ children, icon, title, button }: Props) {
       {children}
       <div className="mt-4 flex justify-center">
         <Button
+          fullWidth
           onClick={button.onClick}
           disabled={button.disabled}
           isLoading={button.isLoading}
@@ -30,6 +42,9 @@ export default function StatusCard({ children, icon, title, button }: Props) {
           {button.label}
         </Button>
       </div>
+      <span className="mt-2 flex justify-center text-sm text-(--text-secondary)">
+        {attemptsLeft} {attemptsLeft === 1 ? attemptLabel : attemptsLabel}
+      </span>
     </div>
   );
 }

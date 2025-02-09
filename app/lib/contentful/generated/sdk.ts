@@ -1461,6 +1461,8 @@ export enum FooterOrder {
 export type Form = Entry & _Node & {
   __typename?: 'Form';
   _id: Scalars['ID']['output'];
+  attemptLabel?: Maybe<Scalars['String']['output']>;
+  attemptsLabel?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
   emailResendButtonLabel?: Maybe<Scalars['String']['output']>;
   emailVerificationDescription?: Maybe<Scalars['String']['output']>;
@@ -1477,6 +1479,18 @@ export type Form = Entry & _Node & {
   sendMessageLabel?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   validationMessages?: Maybe<ValidationMessages>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormAttemptLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
+export type FormAttemptsLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -1578,6 +1592,20 @@ export type FormCollection = {
 export type FormFilter = {
   AND?: InputMaybe<Array<InputMaybe<FormFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<FormFilter>>>;
+  attemptLabel?: InputMaybe<Scalars['String']['input']>;
+  attemptLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  attemptLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  attemptLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  attemptLabel_not?: InputMaybe<Scalars['String']['input']>;
+  attemptLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  attemptLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  attemptsLabel?: InputMaybe<Scalars['String']['input']>;
+  attemptsLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  attemptsLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  attemptsLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  attemptsLabel_not?: InputMaybe<Scalars['String']['input']>;
+  attemptsLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  attemptsLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
   emailResendButtonLabel?: InputMaybe<Scalars['String']['input']>;
   emailResendButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
@@ -1677,6 +1705,10 @@ export type FormLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum FormOrder {
+  AttemptLabelAsc = 'attemptLabel_ASC',
+  AttemptLabelDesc = 'attemptLabel_DESC',
+  AttemptsLabelAsc = 'attemptsLabel_ASC',
+  AttemptsLabelDesc = 'attemptsLabel_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -2324,6 +2356,10 @@ export type LabelLinkingCollectionsFormCollectionArgs = {
 };
 
 export enum LabelLinkingCollectionsFormCollectionOrder {
+  AttemptLabelAsc = 'attemptLabel_ASC',
+  AttemptLabelDesc = 'attemptLabel_DESC',
+  AttemptsLabelAsc = 'attemptsLabel_ASC',
+  AttemptsLabelDesc = 'attemptsLabel_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -5705,6 +5741,10 @@ export type ValidationMessagesLinkingCollectionsFormCollectionArgs = {
 };
 
 export enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
+  AttemptLabelAsc = 'attemptLabel_ASC',
+  AttemptLabelDesc = 'attemptLabel_DESC',
+  AttemptsLabelAsc = 'attemptsLabel_ASC',
+  AttemptsLabelDesc = 'attemptsLabel_DESC',
   EmailResendButtonLabelAsc = 'emailResendButtonLabel_ASC',
   EmailResendButtonLabelDesc = 'emailResendButtonLabel_DESC',
   EmailVerificationDescriptionAsc = 'emailVerificationDescription_ASC',
@@ -6617,7 +6657,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, attemptsLabel?: string | null, attemptLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type EmailContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6788,6 +6828,8 @@ export const ContactContentDocument = gql`
       emailVerificationTitle
       emailVerificationDescription
       emailResendButtonLabel
+      attemptsLabel
+      attemptLabel
     }
   }
   testimonialsCollection(limit: 1, locale: $locale) {

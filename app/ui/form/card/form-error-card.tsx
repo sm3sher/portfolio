@@ -22,6 +22,9 @@ export default function FormErrorCard({
         onClick: handleRetry,
         disabled: retryAttempts <= 0,
       }}
+      attemptsLeft={retryAttempts}
+      attemptsLabel={content?.attemptsLabel}
+      attemptLabel={content?.attemptLabel}
     >
       <p className="text-center">
         {content?.errorDescription}{' '}
