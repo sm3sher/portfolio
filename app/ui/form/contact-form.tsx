@@ -30,8 +30,8 @@ export default function ContactForm({ content }: Props) {
     saveMessage,
     null,
   );
-  const [retryAttempts, setRetryAttempts] = useState(0);
-  const [resendAttempts, setResendAttempts] = useState(0);
+  const [retryAttempts, setRetryAttempts] = useState(2);
+  const [resendAttempts, setResendAttempts] = useState(2);
 
   const {
     register,
@@ -70,7 +70,7 @@ export default function ContactForm({ content }: Props) {
   };
 
   const handleRetry = () => {
-    setRetryAttempts((prev) => ++prev);
+    setRetryAttempts((prev) => --prev);
     const formData = new FormData();
     formData.set('baseUrl', window.origin);
     formData.set('locale', locale);
@@ -84,7 +84,7 @@ export default function ContactForm({ content }: Props) {
 
   const handleResend = () => {
     if (!state?.success) return;
-    setResendAttempts((prev) => ++prev);
+    setResendAttempts((prev) => --prev);
     startTransaction(() =>
       sendVerificationEmail(
         window.origin,
@@ -131,12 +131,13 @@ export default function ContactForm({ content }: Props) {
         />
       </PresenceAnimation>
       <PresenceAnimation
-        show={submitted && !pending}
+        show={submitted}
         className="absolute inset-0 flex items-center justify-center"
         withTranslation
       >
         <SubmittedStatusCard
           content={content}
+          pending={pending}
           handleResend={handleResend}
           resendAttempts={resendAttempts}
         />

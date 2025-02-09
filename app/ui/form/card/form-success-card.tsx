@@ -4,12 +4,14 @@ import { Form } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
   content?: Form;
+  pending: boolean;
   handleResend: () => void;
   resendAttempts: number;
 };
 
 export default function SubmittedStatusCard({
   content,
+  pending,
   handleResend,
   resendAttempts,
 }: Props) {
@@ -20,7 +22,8 @@ export default function SubmittedStatusCard({
       button={{
         label: content?.emailResendButtonLabel,
         onClick: handleResend,
-        disabled: resendAttempts >= 2,
+        disabled: resendAttempts <= 0,
+        isLoading: pending,
       }}
     >
       <p className="text-center">{content?.emailVerificationDescription}</p>

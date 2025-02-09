@@ -20,7 +20,7 @@ export default function FormErrorCard({
       button={{
         label: content?.errorButtonLabel,
         onClick: handleRetry,
-        disabled: retryAttempts >= 2,
+        disabled: retryAttempts <= 0,
       }}
     >
       <p className="text-center">
