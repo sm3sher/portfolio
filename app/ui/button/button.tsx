@@ -4,6 +4,7 @@ import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 type Props = {
   children: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  fullWidth?: boolean;
   disabled?: boolean;
   isLoading?: boolean;
 };
@@ -11,6 +12,7 @@ type Props = {
 export default function Button({
   children,
   onClick,
+  fullWidth,
   disabled,
   isLoading,
 }: Props) {
@@ -19,9 +21,11 @@ export default function Button({
       type="button"
       onClick={onClick}
       disabled={disabled || isLoading}
-      className="base-border hover-effect group overflow-hidden rounded-full px-6 py-3 font-(family-name:--font-geist-mono) font-bold backdrop-blur-sm transition-all duration-300"
+      className={`base-border hover-effect group overflow-hidden rounded-full px-6 py-3 font-(family-name:--font-geist-mono) font-bold backdrop-blur-sm transition-all duration-300 ${fullWidth && 'w-full'}`}
     >
-      <span className={`flex duration-500 ${isLoading && 'text-transparent'}`}>
+      <span
+        className={`flex justify-center duration-500 ${isLoading && 'text-transparent'}`}
+      >
         {children}
       </span>
       <span
