@@ -3,7 +3,6 @@ import FormText from '@/app/ui/form/input/form-text';
 import FormTextarea from '@/app/ui/form/input/form-textarea';
 import FormGdprCheckbox from '@/app/ui/form/input/form-gdpr-checkbox';
 import SubmitButton from '@/app/ui/button/submit-button';
-import { SentIcon } from 'hugeicons-react';
 import { Form } from '@/app/lib/contentful/generated/sdk';
 import { SaveMessageStatus } from '@/app/lib/actions';
 import { ContactFormData } from '@/app/lib/schemas';
@@ -69,12 +68,7 @@ export default function ContactFormFields({
         errors={errors}
         validationMessages={content?.validationMessages}
       />
-      <SubmitButton>
-        <span className="transition-transform duration-300 group-hover:translate-x-4">
-          {content?.sendMessageLabel}
-        </span>
-        <SentIcon className="ml-2 rotate-45 transition-transform duration-1000 group-hover:translate-x-60" />
-      </SubmitButton>
+      <SubmitButton>{content?.sendMessageLabel}</SubmitButton>
     </form>
   );
 }
