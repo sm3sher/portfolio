@@ -1,13 +1,11 @@
 ## Portfolio Project
 
-### Welcome to my portfolio!
+### About this Project
 
-I’m a freelance software developer based in Germany, passionate about building **modern** and **intuitive** web experiences.
-This site is a showcase of my **skills** and **expertise** in **web development**.
+This is the source code for my **personal portfolio website**, built to showcase my **skills, experience, and services** as a freelance software developer.  
+It serves as a **technical demonstration** of my expertise in **Next.js, TypeScript, and full-stack web development**.
 
-Whether you’re looking for a **custom web solution**, **collaboration**, or simply want to **connect**, you’ve come to the right place.
-Here, you’ll find a glimpse of my technical skills and the services I offer.
-Feel free to reach out through the **contact form**, and I’ll be happy to discuss how I can help bring your ideas to life! 🚀
+While the primary audience of the website is clients, this repository is meant for **developers** who are interested in the tech stack, best practices, and implementation details.
 
 ## ✨ Features
 
@@ -21,17 +19,15 @@ Feel free to reach out through the **contact form**, and I’ll be happy to disc
 - 🖋️ **Modern Typography**: Uses the [Geist font](https://vercel.com/font) from Vercel for clean, readable text
 - 📱 **Mobile-First Styling**: Developed with [Tailwind CSS](https://tailwindcss.com) to ensure a responsive, fluid layout across all devices
 - 🌀 **Smooth Animations**: Engaging animations and scroll effects powered by [Motion](https://motion.dev/)
-- 🧹 **Code Quality**: Maintained with [ESLint](https://eslint.org) and [Prettier](https://prettier.io) for consistent and clean code
-- ⛓️ **Git Hooks**: Enforces commit standards using [Husky](https://typicode.github.io/husky) and [CommitLint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) for streamlined version control
 
 ## 🛠 Commands
 
-Here are the main commands to interact with the project:
+Run these commands to interact with the project:
 
-- 🖥️ `npm run dev`: Start the development server locally
+- 🖥️ `npm run dev`: Start the local development server
 - 📦 `npm run build`: Build the project for production, fetch initial _Contentful queries_
 - 🚀 `npm run start`: Run the production server
 - 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_ and _TypeScript_
-- 🎨 `npm run format`: Format code with _Prettier_ to maintain consistency
+- 🎨 `npm run format`: Format code with _Prettier_
 - 🧪 `npm test`: Run unit tests with _Vitest_
 - 🧬 `npm run types:generate`: Generate types for _GraphQL queries_ and _Supabase schema_
