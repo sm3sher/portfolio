@@ -5,17 +5,20 @@ import Image from 'next/image';
 import { LanguageSkillIcon } from 'hugeicons-react';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
-import Tooltip from '@/app/ui/tooltip/tooltip';
 
 type Props = {
   usFlagDescription?: string | null;
   deFlagDescription?: string | null;
+  englishLabel?: string | null;
+  germanLabel?: string | null;
   switchLanguageLabel?: string | null;
 };
 
 export default function LanguageDropdown({
   usFlagDescription,
   deFlagDescription,
+  englishLabel,
+  germanLabel,
   switchLanguageLabel,
 }: Props) {
   const router = useRouter();
@@ -24,6 +27,7 @@ export default function LanguageDropdown({
 
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<NodeJS.Timeout>(null);
 
   const handleLocaleChange = (newLocale: Locale) => {
     router.replace({ pathname }, { locale: newLocale });
@@ -31,7 +35,7 @@ export default function LanguageDropdown({
   };
 
   const handleKeyDown = (
-    e: KeyboardEvent<HTMLButtonElement | HTMLUListElement | HTMLLIElement>,
+    e: KeyboardEvent<HTMLButtonElement | HTMLLIElement>,
   ) => {
     if (e.key === 'Escape') {
       setOpen(false);
@@ -42,6 +46,19 @@ export default function LanguageDropdown({
         handleLocaleChange(target.dataset.language as Locale);
       }
     }
+  };
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setOpen(false);
+    }, 200);
   };
 
   useEffect(() => {
@@ -61,20 +78,24 @@ export default function LanguageDropdown({
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
-      <Tooltip content={switchLanguageLabel}>
-        <button
-          id="dropdownLanguageButton"
-          onClick={() => setOpen((prevState) => !prevState)}
-          onKeyDown={handleKeyDown}
-          className="base-border hover-effect rounded-2xl p-2 backdrop-blur-sm"
-          aria-haspopup
-          aria-expanded={open}
-          aria-controls="dropdown"
-        >
-          <LanguageSkillIcon size={22} />
-        </button>
-      </Tooltip>
+    <div
+      className="relative"
+      ref={dropdownRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        id="dropdownLanguageButton"
+        onClick={() => setOpen((prevState) => !prevState)}
+        onKeyDown={handleKeyDown}
+        className="base-border hover-effect rounded-2xl p-2 backdrop-blur-sm"
+        aria-haspopup
+        aria-expanded={open}
+        aria-controls="dropdown"
+        aria-label={switchLanguageLabel || ''}
+      >
+        <LanguageSkillIcon size={22} />
+      </button>
       <div
         id="dropdown"
         hidden={!open}
@@ -84,7 +105,6 @@ export default function LanguageDropdown({
           className="space-y-1 p-1 text-sm"
           role="menu"
           tabIndex={-1}
-          onKeyDown={handleKeyDown}
           aria-labelledby="dropdownLanguageButton"
         >
           <li
@@ -103,7 +123,7 @@ export default function LanguageDropdown({
               width={30}
               height={20}
             />
-            <span className="block px-3 py-2">English</span>
+            <span className="block px-3 py-2">{englishLabel}</span>
           </li>
           <li
             className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-(--secondary)' : 'hover-effect'}`}
@@ -121,7 +141,7 @@ export default function LanguageDropdown({
               width={30}
               height={20}
             />
-            <span className="block px-3 py-2">Deutsch</span>
+            <span className="block px-3 py-2">{germanLabel}</span>
           </li>
         </ul>
       </div>

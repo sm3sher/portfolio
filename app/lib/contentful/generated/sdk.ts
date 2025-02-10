@@ -3133,6 +3133,8 @@ export type Navbar = Entry & _Node & {
   contactLabel?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
   deFlagDescription?: Maybe<Scalars['String']['output']>;
+  englishLabel?: Maybe<Scalars['String']['output']>;
+  germanLabel?: Maybe<Scalars['String']['output']>;
   homeLabel?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<NavbarLinkingCollections>;
   servicesLabel?: Maybe<Scalars['String']['output']>;
@@ -3157,6 +3159,18 @@ export type NavbarContactLabelArgs = {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
 export type NavbarDeFlagDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarEnglishLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/navbar) */
+export type NavbarGermanLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -3229,6 +3243,20 @@ export type NavbarFilter = {
   deFlagDescription_not?: InputMaybe<Scalars['String']['input']>;
   deFlagDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
   deFlagDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  englishLabel?: InputMaybe<Scalars['String']['input']>;
+  englishLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  englishLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  englishLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  englishLabel_not?: InputMaybe<Scalars['String']['input']>;
+  englishLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  englishLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  germanLabel?: InputMaybe<Scalars['String']['input']>;
+  germanLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  germanLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  germanLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  germanLabel_not?: InputMaybe<Scalars['String']['input']>;
+  germanLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  germanLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   homeLabel?: InputMaybe<Scalars['String']['input']>;
   homeLabel_contains?: InputMaybe<Scalars['String']['input']>;
   homeLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3287,6 +3315,10 @@ export enum NavbarOrder {
   ContactLabelDesc = 'contactLabel_DESC',
   DeFlagDescriptionAsc = 'deFlagDescription_ASC',
   DeFlagDescriptionDesc = 'deFlagDescription_DESC',
+  EnglishLabelAsc = 'englishLabel_ASC',
+  EnglishLabelDesc = 'englishLabel_DESC',
+  GermanLabelAsc = 'germanLabel_ASC',
+  GermanLabelDesc = 'germanLabel_DESC',
   HomeLabelAsc = 'homeLabel_ASC',
   HomeLabelDesc = 'homeLabel_DESC',
   ServicesLabelAsc = 'servicesLabel_ASC',
@@ -6813,7 +6845,7 @@ export type NavbarContentQueryVariables = Exact<{
 }>;
 
 
-export type NavbarContentQuery = { __typename?: 'Query', navbarCollection?: { __typename?: 'NavbarCollection', items: Array<{ __typename?: 'Navbar', usFlagDescription?: string | null, deFlagDescription?: string | null, switchLanguageLabel?: string | null, homeLabel?: string | null, aboutLabel?: string | null, servicesLabel?: string | null, contactLabel?: string | null, switchThemeLabel?: string | null } | null> } | null };
+export type NavbarContentQuery = { __typename?: 'Query', navbarCollection?: { __typename?: 'NavbarCollection', items: Array<{ __typename?: 'Navbar', usFlagDescription?: string | null, deFlagDescription?: string | null, englishLabel?: string | null, germanLabel?: string | null, switchLanguageLabel?: string | null, homeLabel?: string | null, aboutLabel?: string | null, servicesLabel?: string | null, contactLabel?: string | null, switchThemeLabel?: string | null } | null> } | null };
 
 export type NotFoundContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7085,6 +7117,8 @@ export const NavbarContentDocument = gql`
     items {
       usFlagDescription
       deFlagDescription
+      englishLabel
+      germanLabel
       switchLanguageLabel
       homeLabel
       aboutLabel

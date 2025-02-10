@@ -3,6 +3,8 @@ query navbarContent($locale: String) {
         items {
             usFlagDescription
             deFlagDescription
+            englishLabel
+            germanLabel
             switchLanguageLabel
             homeLabel
             aboutLabel

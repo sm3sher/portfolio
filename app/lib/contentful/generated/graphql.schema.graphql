@@ -2091,6 +2091,8 @@ type Navbar implements Entry & _Node {
   contactLabel(locale: String): String
   contentfulMetadata: ContentfulMetadata!
   deFlagDescription(locale: String): String
+  englishLabel(locale: String): String
+  germanLabel(locale: String): String
   homeLabel(locale: String): String
   linkedFrom(allowedLocales: [String]): NavbarLinkingCollections
   servicesLabel(locale: String): String
@@ -2132,6 +2134,20 @@ input NavbarFilter {
   deFlagDescription_not: String
   deFlagDescription_not_contains: String
   deFlagDescription_not_in: [String]
+  englishLabel: String
+  englishLabel_contains: String
+  englishLabel_exists: Boolean
+  englishLabel_in: [String]
+  englishLabel_not: String
+  englishLabel_not_contains: String
+  englishLabel_not_in: [String]
+  germanLabel: String
+  germanLabel_contains: String
+  germanLabel_exists: Boolean
+  germanLabel_in: [String]
+  germanLabel_not: String
+  germanLabel_not_contains: String
+  germanLabel_not_in: [String]
   homeLabel: String
   homeLabel_contains: String
   homeLabel_exists: Boolean
@@ -2181,6 +2197,10 @@ enum NavbarOrder {
   contactLabel_DESC
   deFlagDescription_ASC
   deFlagDescription_DESC
+  englishLabel_ASC
+  englishLabel_DESC
+  germanLabel_ASC
+  germanLabel_DESC
   homeLabel_ASC
   homeLabel_DESC
   servicesLabel_ASC
