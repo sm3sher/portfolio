@@ -31,7 +31,7 @@ export default function LanguageDropdown({
   const timeoutRef = useRef<NodeJS.Timeout>(null);
 
   const handleLocaleChange = (newLocale: Locale) => {
-    router.replace({ pathname }, { locale: newLocale });
+    router.replace({ pathname }, { locale: newLocale, scroll: false });
     setOpen(false);
   };
 
