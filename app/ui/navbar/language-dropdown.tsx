@@ -127,6 +127,7 @@ export default function LanguageDropdown({
             />
             <span className="block px-3 py-2">{englishLabel}</span>
           </li>
+          <hr className="mx-2 border-(--border-color)" />
           <li
             className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-(--secondary)' : 'hover-effect'}`}
             role="menuitem"
