@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { LanguageSkillIcon } from 'hugeicons-react';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
+import PresenceAnimation from '@/app/ui/animation/presence-animation';
 
 type Props = {
   usFlagDescription?: string | null;
@@ -96,10 +97,11 @@ export default function LanguageDropdown({
       >
         <LanguageSkillIcon size={22} />
       </button>
-      <div
+      <PresenceAnimation
         id="dropdown"
-        hidden={!open}
+        show={open}
         className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur-sm"
+        duration={0.2}
       >
         <ul
           className="space-y-1 p-1 text-sm"
@@ -144,7 +146,7 @@ export default function LanguageDropdown({
             <span className="block px-3 py-2">{germanLabel}</span>
           </li>
         </ul>
-      </div>
+      </PresenceAnimation>
     </div>
   );
 }
