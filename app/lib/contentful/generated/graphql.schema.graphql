@@ -757,9 +757,6 @@ type Footer implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
-  followGithub(locale: String): String
-  followSection(locale: String): String
-  followStackOverflow(locale: String): String
   gitHubHref(locale: String): String
   gitHubHrefLabel(locale: String): String
   kofiHref(locale: String): String
@@ -768,8 +765,11 @@ type Footer implements Entry & _Node {
   legalPrivacyPolicy(locale: String): String
   legalSection(locale: String): String
   linkedFrom(allowedLocales: [String]): FooterLinkingCollections
-  stackOverflowHref(locale: String): String
-  stackOverflowHrefLabel(locale: String): String
+  profileGitHub(locale: String): String
+  profileGitHubHref(locale: String): String
+  profileSection(locale: String): String
+  profileStackOverflow(locale: String): String
+  profileStackOverflowHref(locale: String): String
   sys: Sys!
   title(locale: String): String
 }
@@ -792,27 +792,6 @@ input FooterFilter {
   description_not: String
   description_not_contains: String
   description_not_in: [String]
-  followGithub: String
-  followGithub_contains: String
-  followGithub_exists: Boolean
-  followGithub_in: [String]
-  followGithub_not: String
-  followGithub_not_contains: String
-  followGithub_not_in: [String]
-  followSection: String
-  followSection_contains: String
-  followSection_exists: Boolean
-  followSection_in: [String]
-  followSection_not: String
-  followSection_not_contains: String
-  followSection_not_in: [String]
-  followStackOverflow: String
-  followStackOverflow_contains: String
-  followStackOverflow_exists: Boolean
-  followStackOverflow_in: [String]
-  followStackOverflow_not: String
-  followStackOverflow_not_contains: String
-  followStackOverflow_not_in: [String]
   gitHubHref: String
   gitHubHrefLabel: String
   gitHubHrefLabel_contains: String
@@ -862,20 +841,41 @@ input FooterFilter {
   legalSection_not: String
   legalSection_not_contains: String
   legalSection_not_in: [String]
-  stackOverflowHref: String
-  stackOverflowHrefLabel: String
-  stackOverflowHrefLabel_contains: String
-  stackOverflowHrefLabel_exists: Boolean
-  stackOverflowHrefLabel_in: [String]
-  stackOverflowHrefLabel_not: String
-  stackOverflowHrefLabel_not_contains: String
-  stackOverflowHrefLabel_not_in: [String]
-  stackOverflowHref_contains: String
-  stackOverflowHref_exists: Boolean
-  stackOverflowHref_in: [String]
-  stackOverflowHref_not: String
-  stackOverflowHref_not_contains: String
-  stackOverflowHref_not_in: [String]
+  profileGitHub: String
+  profileGitHubHref: String
+  profileGitHubHref_contains: String
+  profileGitHubHref_exists: Boolean
+  profileGitHubHref_in: [String]
+  profileGitHubHref_not: String
+  profileGitHubHref_not_contains: String
+  profileGitHubHref_not_in: [String]
+  profileGitHub_contains: String
+  profileGitHub_exists: Boolean
+  profileGitHub_in: [String]
+  profileGitHub_not: String
+  profileGitHub_not_contains: String
+  profileGitHub_not_in: [String]
+  profileSection: String
+  profileSection_contains: String
+  profileSection_exists: Boolean
+  profileSection_in: [String]
+  profileSection_not: String
+  profileSection_not_contains: String
+  profileSection_not_in: [String]
+  profileStackOverflow: String
+  profileStackOverflowHref: String
+  profileStackOverflowHref_contains: String
+  profileStackOverflowHref_exists: Boolean
+  profileStackOverflowHref_in: [String]
+  profileStackOverflowHref_not: String
+  profileStackOverflowHref_not_contains: String
+  profileStackOverflowHref_not_in: [String]
+  profileStackOverflow_contains: String
+  profileStackOverflow_exists: Boolean
+  profileStackOverflow_in: [String]
+  profileStackOverflow_not: String
+  profileStackOverflow_not_contains: String
+  profileStackOverflow_not_in: [String]
   sys: SysFilter
   title: String
   title_contains: String
@@ -893,12 +893,6 @@ type FooterLinkingCollections {
 enum FooterOrder {
   description_ASC
   description_DESC
-  followGithub_ASC
-  followGithub_DESC
-  followSection_ASC
-  followSection_DESC
-  followStackOverflow_ASC
-  followStackOverflow_DESC
   gitHubHrefLabel_ASC
   gitHubHrefLabel_DESC
   gitHubHref_ASC
@@ -913,10 +907,16 @@ enum FooterOrder {
   legalPrivacyPolicy_DESC
   legalSection_ASC
   legalSection_DESC
-  stackOverflowHrefLabel_ASC
-  stackOverflowHrefLabel_DESC
-  stackOverflowHref_ASC
-  stackOverflowHref_DESC
+  profileGitHubHref_ASC
+  profileGitHubHref_DESC
+  profileGitHub_ASC
+  profileGitHub_DESC
+  profileSection_ASC
+  profileSection_DESC
+  profileStackOverflowHref_ASC
+  profileStackOverflowHref_DESC
+  profileStackOverflow_ASC
+  profileStackOverflow_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC

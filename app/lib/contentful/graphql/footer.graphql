@@ -3,16 +3,16 @@ query footerContent($locale: String) {
         items {
             title
             description
-            followSection
-            followGithub
-            followStackOverflow
+            profileSection
+            profileGitHub
+            profileGitHubHref
+            profileStackOverflow
+            profileStackOverflowHref
             legalSection
             legalNotice
             legalPrivacyPolicy
             gitHubHref
             gitHubHrefLabel
-            stackOverflowHref
-            stackOverflowHrefLabel
             kofiHref
             kofiHrefLabel
         }
