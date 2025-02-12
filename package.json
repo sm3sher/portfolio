@@ -16,7 +16,7 @@
     "types:generate": "dotenv -e .env.local -- sh -c 'npm run _contentful:generate && npm run _supabase:generate'"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.10.0",
+    "@hookform/resolvers": "^4.0.0",
     "@react-email/components": "^0.0.32",
     "@supabase/ssr": "^0.5.2",
     "embla-carousel-react": "^8.5.2",
