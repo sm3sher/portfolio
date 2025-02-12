@@ -64,7 +64,7 @@ export default function TestimonialSlider({ content }: Props) {
             .map((item, index) => (
               <div
                 key={index}
-                className="my-1 mr-4 min-w-0 flex-none basis-full cursor-grab px-1 select-none active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+                className="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab px-1 select-none active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
                 role="group"
                 aria-label={`${index + 1} / ${content?.quotesCollection?.items.length}`}
               >
