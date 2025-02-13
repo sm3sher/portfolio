@@ -32,7 +32,7 @@ export default async function Footer({ locale }: Props) {
                     href={content?.profileGitHubHref || ''}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline hover:underline-offset-4"
+                    className="underline-effect"
                   >
                     {content?.profileGitHub}
                   </a>
@@ -42,7 +42,7 @@ export default async function Footer({ locale }: Props) {
                     href={content?.profileStackOverflowHref || ''}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline hover:underline-offset-4"
+                    className="underline-effect"
                   >
                     {content?.profileStackOverflow}
                   </a>

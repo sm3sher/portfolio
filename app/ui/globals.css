@@ -94,6 +94,10 @@ body {
   @apply cursor-pointer transition-colors duration-300 hover:bg-(--hover-color) disabled:cursor-default disabled:bg-(--transparent) disabled:opacity-60;
 }
 
+@utility underline-effect {
+  @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:bg-current after:duration-300 hover:after:w-full;
+}
+
 @utility text-stroke {
   color: var(--surface-color);
   text-shadow:

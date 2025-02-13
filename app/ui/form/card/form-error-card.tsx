@@ -40,7 +40,7 @@ export default function FormErrorCard({
         {content?.errorDescription}{' '}
         <a
           href={`mailto:${content?.errorContactEmail}`}
-          className="text-(--highlight) hover:underline hover:underline-offset-4"
+          className="underline-effect text-(--highlight)"
         >
           {content?.errorContactEmail}
         </a>

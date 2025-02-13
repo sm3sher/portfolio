@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
               {content?.contactEmailLabel}{' '}
               <a
                 href={`mailto:${content?.contactEmail}`}
-                className="text-(--highlight) hover:underline hover:underline-offset-4"
+                className="underline-effect text-(--highlight)"
               >
                 {content?.contactEmail}
               </a>
@@ -54,7 +54,7 @@ export default async function Page({ params }: Props) {
             <p>
               <Link
                 href="/#contact"
-                className="text-(--highlight) hover:underline hover:underline-offset-4"
+                className="underline-effect text-(--highlight)"
               >
                 {content?.contactFormLabel}
               </Link>

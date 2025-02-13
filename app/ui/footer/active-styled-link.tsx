@@ -14,7 +14,7 @@ export default function ActiveStyledLink({ children, href }: Props) {
   return (
     <Link
       href={href}
-      className={`hover:underline hover:underline-offset-4 ${pathname === href ? 'pointer-events-none text-(--highlight)' : ''}`}
+      className={`underline-effect ${pathname === href ? 'pointer-events-none text-(--highlight)' : ''}`}
       aria-current={pathname === href ? 'page' : undefined}
     >
       {children}
