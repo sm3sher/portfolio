@@ -59,14 +59,14 @@ export default function TestimonialSlider({ content }: Props) {
         ref={emblaRef}
       >
         <div className="flex" aria-live="polite">
-          {content?.quotesCollection?.items
+          {content?.testimonialEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
               <div
                 key={index}
                 className="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab px-1 select-none active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
                 role="group"
-                aria-label={`${index + 1} / ${content?.quotesCollection?.items.length}`}
+                aria-label={`${index + 1} / ${content?.testimonialEntriesCollection?.items.length}`}
               >
                 <QuoteCard
                   quote={item.quote!}

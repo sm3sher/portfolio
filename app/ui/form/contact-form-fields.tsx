@@ -68,7 +68,7 @@ export default function ContactFormFields({
         errors={errors}
         validationMessages={content?.validationMessages}
       />
-      <SubmitButton>{content?.sendMessageLabel}</SubmitButton>
+      <SubmitButton>{content?.sendButtonLabel}</SubmitButton>
     </form>
   );
 }

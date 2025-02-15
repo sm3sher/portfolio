@@ -954,7 +954,7 @@ type Form implements Entry & _Node {
   gdprNoticeLinkText(locale: String): String
   labels(locale: String, preview: Boolean, where: LabelFilter): Label
   linkedFrom(allowedLocales: [String]): FormLinkingCollections
-  sendMessageLabel(locale: String): String
+  sendButtonLabel(locale: String): String
   sys: Sys!
   validationMessages(locale: String, preview: Boolean, where: ValidationMessagesFilter): ValidationMessages
 }
@@ -1091,13 +1091,13 @@ input FormFilter {
   gdprNoticeLinkText_not_in: [String]
   labels: cfLabelNestedFilter
   labels_exists: Boolean
-  sendMessageLabel: String
-  sendMessageLabel_contains: String
-  sendMessageLabel_exists: Boolean
-  sendMessageLabel_in: [String]
-  sendMessageLabel_not: String
-  sendMessageLabel_not_contains: String
-  sendMessageLabel_not_in: [String]
+  sendButtonLabel: String
+  sendButtonLabel_contains: String
+  sendButtonLabel_exists: Boolean
+  sendButtonLabel_in: [String]
+  sendButtonLabel_not: String
+  sendButtonLabel_not_contains: String
+  sendButtonLabel_not_in: [String]
   sys: SysFilter
   validationMessages: cfValidationMessagesNestedFilter
   validationMessages_exists: Boolean
@@ -1142,8 +1142,8 @@ enum FormOrder {
   gdprNoticeIntro_DESC
   gdprNoticeLinkText_ASC
   gdprNoticeLinkText_DESC
-  sendMessageLabel_ASC
-  sendMessageLabel_DESC
+  sendButtonLabel_ASC
+  sendButtonLabel_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -1643,8 +1643,8 @@ enum LabelLinkingCollectionsFormCollectionOrder {
   gdprNoticeIntro_DESC
   gdprNoticeLinkText_ASC
   gdprNoticeLinkText_DESC
-  sendMessageLabel_ASC
-  sendMessageLabel_DESC
+  sendButtonLabel_ASC
+  sendButtonLabel_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -2226,8 +2226,8 @@ enum NavbarOrder {
 """
 type NotFound implements Entry & _Node {
   _id: ID!
+  buttonLabel(locale: String): String
   contentfulMetadata: ContentfulMetadata!
-  ctaButtonLabel(locale: String): String
   description(locale: String): String
   linkedFrom(allowedLocales: [String]): NotFoundLinkingCollections
   subTitleHighlight(locale: String): String
@@ -2246,14 +2246,14 @@ type NotFoundCollection {
 input NotFoundFilter {
   AND: [NotFoundFilter]
   OR: [NotFoundFilter]
+  buttonLabel: String
+  buttonLabel_contains: String
+  buttonLabel_exists: Boolean
+  buttonLabel_in: [String]
+  buttonLabel_not: String
+  buttonLabel_not_contains: String
+  buttonLabel_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
-  ctaButtonLabel: String
-  ctaButtonLabel_contains: String
-  ctaButtonLabel_exists: Boolean
-  ctaButtonLabel_in: [String]
-  ctaButtonLabel_not: String
-  ctaButtonLabel_not_contains: String
-  ctaButtonLabel_not_in: [String]
   description: String
   description_contains: String
   description_exists: Boolean
@@ -2290,8 +2290,8 @@ type NotFoundLinkingCollections {
 }
 
 enum NotFoundOrder {
-  ctaButtonLabel_ASC
-  ctaButtonLabel_DESC
+  buttonLabel_ASC
+  buttonLabel_DESC
   description_ASC
   description_DESC
   subTitleHighlight_ASC
@@ -3399,8 +3399,8 @@ type Testimonials implements Entry & _Node {
   linkedFrom(allowedLocales: [String]): TestimonialsLinkingCollections
   nextSlideLabel(locale: String): String
   prevSlideLabel(locale: String): String
-  quotesCollection(limit: Int = 100, locale: String, order: [TestimonialsQuotesCollectionOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialsQuotesCollection
   sys: Sys!
+  testimonialEntriesCollection(limit: Int = 100, locale: String, order: [TestimonialsTestimonialEntriesCollectionOrder], preview: Boolean, skip: Int = 0, where: TestimonialFilter): TestimonialsTestimonialEntriesCollection
   title(locale: String): String
 }
 
@@ -3429,9 +3429,9 @@ input TestimonialsFilter {
   prevSlideLabel_not: String
   prevSlideLabel_not_contains: String
   prevSlideLabel_not_in: [String]
-  quotes: cfTestimonialNestedFilter
-  quotesCollection_exists: Boolean
   sys: SysFilter
+  testimonialEntries: cfTestimonialNestedFilter
+  testimonialEntriesCollection_exists: Boolean
   title: String
   title_contains: String
   title_exists: Boolean
@@ -3462,14 +3462,14 @@ enum TestimonialsOrder {
   title_DESC
 }
 
-type TestimonialsQuotesCollection {
+type TestimonialsTestimonialEntriesCollection {
   items: [Testimonial]!
   limit: Int!
   skip: Int!
   total: Int!
 }
 
-enum TestimonialsQuotesCollectionOrder {
+enum TestimonialsTestimonialEntriesCollectionOrder {
   author_ASC
   author_DESC
   jobTitle_ASC
@@ -3614,8 +3614,8 @@ enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   gdprNoticeIntro_DESC
   gdprNoticeLinkText_ASC
   gdprNoticeLinkText_DESC
-  sendMessageLabel_ASC
-  sendMessageLabel_DESC
+  sendButtonLabel_ASC
+  sendButtonLabel_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC

@@ -1481,7 +1481,7 @@ export type Form = Entry & _Node & {
   gdprNoticeLinkText?: Maybe<Scalars['String']['output']>;
   labels?: Maybe<Label>;
   linkedFrom?: Maybe<FormLinkingCollections>;
-  sendMessageLabel?: Maybe<Scalars['String']['output']>;
+  sendButtonLabel?: Maybe<Scalars['String']['output']>;
   sys: Sys;
   validationMessages?: Maybe<ValidationMessages>;
 };
@@ -1604,7 +1604,7 @@ export type FormLinkedFromArgs = {
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/form) */
-export type FormSendMessageLabelArgs = {
+export type FormSendButtonLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1749,13 +1749,13 @@ export type FormFilter = {
   gdprNoticeLinkText_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   labels?: InputMaybe<CfLabelNestedFilter>;
   labels_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  sendMessageLabel?: InputMaybe<Scalars['String']['input']>;
-  sendMessageLabel_contains?: InputMaybe<Scalars['String']['input']>;
-  sendMessageLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  sendMessageLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  sendMessageLabel_not?: InputMaybe<Scalars['String']['input']>;
-  sendMessageLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
-  sendMessageLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sendButtonLabel?: InputMaybe<Scalars['String']['input']>;
+  sendButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  sendButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  sendButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  sendButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  sendButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  sendButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
   validationMessages?: InputMaybe<CfValidationMessagesNestedFilter>;
   validationMessages_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -1809,8 +1809,8 @@ export enum FormOrder {
   GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
   GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
   GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
-  SendMessageLabelAsc = 'sendMessageLabel_ASC',
-  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SendButtonLabelAsc = 'sendButtonLabel_ASC',
+  SendButtonLabelDesc = 'sendButtonLabel_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -2470,8 +2470,8 @@ export enum LabelLinkingCollectionsFormCollectionOrder {
   GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
   GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
   GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
-  SendMessageLabelAsc = 'sendMessageLabel_ASC',
-  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SendButtonLabelAsc = 'sendButtonLabel_ASC',
+  SendButtonLabelDesc = 'sendButtonLabel_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -3343,8 +3343,8 @@ export enum NavbarOrder {
 export type NotFound = Entry & _Node & {
   __typename?: 'NotFound';
   _id: Scalars['ID']['output'];
+  buttonLabel?: Maybe<Scalars['String']['output']>;
   contentfulMetadata: ContentfulMetadata;
-  ctaButtonLabel?: Maybe<Scalars['String']['output']>;
   description?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<NotFoundLinkingCollections>;
   subTitleHighlight?: Maybe<Scalars['String']['output']>;
@@ -3355,7 +3355,7 @@ export type NotFound = Entry & _Node & {
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
-export type NotFoundCtaButtonLabelArgs = {
+export type NotFoundButtonLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -3400,14 +3400,14 @@ export type NotFoundCollection = {
 export type NotFoundFilter = {
   AND?: InputMaybe<Array<InputMaybe<NotFoundFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<NotFoundFilter>>>;
+  buttonLabel?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  buttonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  buttonLabel_not?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  buttonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  ctaButtonLabel?: InputMaybe<Scalars['String']['input']>;
-  ctaButtonLabel_contains?: InputMaybe<Scalars['String']['input']>;
-  ctaButtonLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  ctaButtonLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  ctaButtonLabel_not?: InputMaybe<Scalars['String']['input']>;
-  ctaButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
-  ctaButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   description?: InputMaybe<Scalars['String']['input']>;
   description_contains?: InputMaybe<Scalars['String']['input']>;
   description_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3453,8 +3453,8 @@ export type NotFoundLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum NotFoundOrder {
-  CtaButtonLabelAsc = 'ctaButtonLabel_ASC',
-  CtaButtonLabelDesc = 'ctaButtonLabel_DESC',
+  ButtonLabelAsc = 'buttonLabel_ASC',
+  ButtonLabelDesc = 'buttonLabel_DESC',
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
   SubTitleHighlightAsc = 'subTitleHighlight_ASC',
@@ -5564,8 +5564,8 @@ export type Testimonials = Entry & _Node & {
   linkedFrom?: Maybe<TestimonialsLinkingCollections>;
   nextSlideLabel?: Maybe<Scalars['String']['output']>;
   prevSlideLabel?: Maybe<Scalars['String']['output']>;
-  quotesCollection?: Maybe<TestimonialsQuotesCollection>;
   sys: Sys;
+  testimonialEntriesCollection?: Maybe<TestimonialsTestimonialEntriesCollection>;
   title?: Maybe<Scalars['String']['output']>;
 };
 
@@ -5589,10 +5589,10 @@ export type TestimonialsPrevSlideLabelArgs = {
 
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/testimonials) */
-export type TestimonialsQuotesCollectionArgs = {
+export type TestimonialsTestimonialEntriesCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<TestimonialsQuotesCollectionOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<TestimonialsTestimonialEntriesCollectionOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<TestimonialFilter>;
@@ -5630,9 +5630,9 @@ export type TestimonialsFilter = {
   prevSlideLabel_not?: InputMaybe<Scalars['String']['input']>;
   prevSlideLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
   prevSlideLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  quotes?: InputMaybe<CfTestimonialNestedFilter>;
-  quotesCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   sys?: InputMaybe<SysFilter>;
+  testimonialEntries?: InputMaybe<CfTestimonialNestedFilter>;
+  testimonialEntriesCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   title_contains?: InputMaybe<Scalars['String']['input']>;
   title_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -5672,15 +5672,15 @@ export enum TestimonialsOrder {
   TitleDesc = 'title_DESC'
 }
 
-export type TestimonialsQuotesCollection = {
-  __typename?: 'TestimonialsQuotesCollection';
+export type TestimonialsTestimonialEntriesCollection = {
+  __typename?: 'TestimonialsTestimonialEntriesCollection';
   items: Array<Maybe<Testimonial>>;
   limit: Scalars['Int']['output'];
   skip: Scalars['Int']['output'];
   total: Scalars['Int']['output'];
 };
 
-export enum TestimonialsQuotesCollectionOrder {
+export enum TestimonialsTestimonialEntriesCollectionOrder {
   AuthorAsc = 'author_ASC',
   AuthorDesc = 'author_DESC',
   JobTitleAsc = 'jobTitle_ASC',
@@ -5897,8 +5897,8 @@ export enum ValidationMessagesLinkingCollectionsFormCollectionOrder {
   GdprNoticeIntroDesc = 'gdprNoticeIntro_DESC',
   GdprNoticeLinkTextAsc = 'gdprNoticeLinkText_ASC',
   GdprNoticeLinkTextDesc = 'gdprNoticeLinkText_DESC',
-  SendMessageLabelAsc = 'sendMessageLabel_ASC',
-  SendMessageLabelDesc = 'sendMessageLabel_DESC',
+  SendButtonLabelAsc = 'sendButtonLabel_ASC',
+  SendButtonLabelDesc = 'sendButtonLabel_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -6789,7 +6789,7 @@ export type ContactContentQueryVariables = Exact<{
 }>;
 
 
-export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendMessageLabel?: string | null, errorTitle?: string | null, errorIntro?: string | null, errorEditPrompt?: string | null, errorEditAriaLabel?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, emailEditPrompt?: string | null, emailEditAriaLabel?: string | null, attemptsLabel?: string | null, attemptLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, quotesCollection?: { __typename?: 'TestimonialsQuotesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
+export type ContactContentQuery = { __typename?: 'Query', contactCollection?: { __typename?: 'ContactCollection', items: Array<{ __typename?: 'Contact', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, avatarTitle?: string | null, avatarDescription?: string | null, avatarImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null, formCollection?: { __typename?: 'FormCollection', items: Array<{ __typename?: 'Form', gdprNoticeIntro?: string | null, gdprNoticeLinkText?: string | null, gdprNoticeDetails?: string | null, sendButtonLabel?: string | null, errorTitle?: string | null, errorIntro?: string | null, errorEditPrompt?: string | null, errorEditAriaLabel?: string | null, errorDescription?: string | null, errorContactEmail?: string | null, errorButtonLabel?: string | null, emailVerificationTitle?: string | null, emailVerificationDescription?: string | null, emailResendButtonLabel?: string | null, emailEditPrompt?: string | null, emailEditAriaLabel?: string | null, attemptsLabel?: string | null, attemptLabel?: string | null, labels?: { __typename?: 'Label', name?: string | null, email?: string | null, role?: string | null, message?: string | null } | null, validationMessages?: { __typename?: 'ValidationMessages', nameRequired?: string | null, nameMaxLength?: string | null, emailInvalid?: string | null, emailMaxLength?: string | null, roleMaxLength?: string | null, messageRequired?: string | null, messageMaxLength?: string | null, consentRequired?: string | null } | null } | null> } | null, testimonialsCollection?: { __typename?: 'TestimonialsCollection', items: Array<{ __typename?: 'Testimonials', title?: string | null, prevSlideLabel?: string | null, nextSlideLabel?: string | null, testimonialEntriesCollection?: { __typename?: 'TestimonialsTestimonialEntriesCollection', items: Array<{ __typename?: 'Testimonial', quote?: string | null, author?: string | null, jobTitle?: string | null, logoInvert?: boolean | null, logo?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null } | null> } | null };
 
 export type EmailContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6819,26 +6819,26 @@ export type LegalNoticeContentQueryVariables = Exact<{
 
 export type LegalNoticeContentQuery = { __typename?: 'Query', legalNoticeCollection?: { __typename?: 'LegalNoticeCollection', items: Array<{ __typename?: 'LegalNotice', title?: string | null, subTitleInformation?: string | null, addressName?: string | null, addressJobTitle?: string | null, addressStreet?: string | null, addressPostalCode?: string | null, addressCity?: string | null, subTitleContact?: string | null, contactEmailLabel?: string | null, contactEmail?: string | null, contactFormLabel?: string | null, subTitleVat?: string | null, vatLabel?: string | null, vatId?: string | null, subTitleDispute?: string | null, disputeLabel?: string | null, disputeStatement?: string | null } | null> } | null };
 
-export type MetadataMainContentQueryVariables = Exact<{
+export type MainMetadataContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataMainContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', mainTitle?: string | null, mainDescription?: string | null, mainKeywords?: Array<string | null> | null } | null> } | null };
+export type MainMetadataContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', mainTitle?: string | null, mainDescription?: string | null, mainKeywords?: Array<string | null> | null } | null> } | null };
 
-export type MetadataLegalContentQueryVariables = Exact<{
+export type LegalMetadataContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataLegalContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', legalTitle?: string | null, legalDescription?: string | null } | null> } | null };
+export type LegalMetadataContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', legalTitle?: string | null, legalDescription?: string | null } | null> } | null };
 
-export type MetadataPrivacyContentQueryVariables = Exact<{
+export type PrivacyMetadataContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
 
 
-export type MetadataPrivacyContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', privacyTitle?: string | null, privacyDescription?: string | null } | null> } | null };
+export type PrivacyMetadataContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', privacyTitle?: string | null, privacyDescription?: string | null } | null> } | null };
 
 export type NavbarContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6852,7 +6852,7 @@ export type NotFoundContentQueryVariables = Exact<{
 }>;
 
 
-export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, ctaButtonLabel?: string | null } | null> } | null };
+export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, buttonLabel?: string | null } | null> } | null };
 
 export type PrivacyPolicyContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -6952,7 +6952,7 @@ export const ContactContentDocument = gql`
       gdprNoticeIntro
       gdprNoticeLinkText
       gdprNoticeDetails
-      sendMessageLabel
+      sendButtonLabel
       errorTitle
       errorIntro
       errorEditPrompt
@@ -6974,7 +6974,7 @@ export const ContactContentDocument = gql`
       title
       prevSlideLabel
       nextSlideLabel
-      quotesCollection {
+      testimonialEntriesCollection {
         items {
           ... on Testimonial {
             quote
@@ -7080,8 +7080,8 @@ export const LegalNoticeContentDocument = gql`
   }
 }
     `;
-export const MetadataMainContentDocument = gql`
-    query metadataMainContent($locale: String) {
+export const MainMetadataContentDocument = gql`
+    query mainMetadataContent($locale: String) {
   metadataCollection(limit: 1, locale: $locale) {
     items {
       mainTitle
@@ -7091,8 +7091,8 @@ export const MetadataMainContentDocument = gql`
   }
 }
     `;
-export const MetadataLegalContentDocument = gql`
-    query metadataLegalContent($locale: String) {
+export const LegalMetadataContentDocument = gql`
+    query legalMetadataContent($locale: String) {
   metadataCollection(limit: 1, locale: $locale) {
     items {
       legalTitle
@@ -7101,8 +7101,8 @@ export const MetadataLegalContentDocument = gql`
   }
 }
     `;
-export const MetadataPrivacyContentDocument = gql`
-    query metadataPrivacyContent($locale: String) {
+export const PrivacyMetadataContentDocument = gql`
+    query privacyMetadataContent($locale: String) {
   metadataCollection(limit: 1, locale: $locale) {
     items {
       privacyTitle
@@ -7137,7 +7137,7 @@ export const NotFoundContentDocument = gql`
       subTitleMain
       subTitleHighlight
       description
-      ctaButtonLabel
+      buttonLabel
     }
   }
 }
@@ -7302,14 +7302,14 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     legalNoticeContent(variables?: LegalNoticeContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<LegalNoticeContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<LegalNoticeContentQuery>(LegalNoticeContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'legalNoticeContent', 'query', variables);
     },
-    metadataMainContent(variables?: MetadataMainContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataMainContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MetadataMainContentQuery>(MetadataMainContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataMainContent', 'query', variables);
+    mainMetadataContent(variables?: MainMetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MainMetadataContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<MainMetadataContentQuery>(MainMetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'mainMetadataContent', 'query', variables);
     },
-    metadataLegalContent(variables?: MetadataLegalContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataLegalContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MetadataLegalContentQuery>(MetadataLegalContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataLegalContent', 'query', variables);
+    legalMetadataContent(variables?: LegalMetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<LegalMetadataContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<LegalMetadataContentQuery>(LegalMetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'legalMetadataContent', 'query', variables);
     },
-    metadataPrivacyContent(variables?: MetadataPrivacyContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<MetadataPrivacyContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<MetadataPrivacyContentQuery>(MetadataPrivacyContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'metadataPrivacyContent', 'query', variables);
+    privacyMetadataContent(variables?: PrivacyMetadataContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PrivacyMetadataContentQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<PrivacyMetadataContentQuery>(PrivacyMetadataContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'privacyMetadataContent', 'query', variables);
     },
     navbarContent(variables?: NavbarContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<NavbarContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<NavbarContentQuery>(NavbarContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'navbarContent', 'query', variables);

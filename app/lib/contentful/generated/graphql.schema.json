@@ -11816,7 +11816,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel",
+            "name": "sendButtonLabel",
             "description": null,
             "args": [
               {
@@ -13642,7 +13642,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel",
+            "name": "sendButtonLabel",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -13654,7 +13654,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_contains",
+            "name": "sendButtonLabel_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -13666,7 +13666,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_exists",
+            "name": "sendButtonLabel_exists",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -13678,7 +13678,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_in",
+            "name": "sendButtonLabel_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -13694,7 +13694,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_not",
+            "name": "sendButtonLabel_not",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -13706,7 +13706,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_not_contains",
+            "name": "sendButtonLabel_not_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -13718,7 +13718,7 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_not_in",
+            "name": "sendButtonLabel_not_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -14061,13 +14061,13 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_ASC",
+            "name": "sendButtonLabel_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_DESC",
+            "name": "sendButtonLabel_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -18659,13 +18659,13 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_ASC",
+            "name": "sendButtonLabel_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_DESC",
+            "name": "sendButtonLabel_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -25342,23 +25342,7 @@
             "deprecationReason": null
           },
           {
-            "name": "contentfulMetadata",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "ContentfulMetadata",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "ctaButtonLabel",
+            "name": "buttonLabel",
             "description": null,
             "args": [
               {
@@ -25378,6 +25362,22 @@
               "kind": "SCALAR",
               "name": "String",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "ContentfulMetadata",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -25664,19 +25664,7 @@
             "deprecationReason": null
           },
           {
-            "name": "contentfulMetadata",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "ContentfulMetadataFilter",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "ctaButtonLabel",
+            "name": "buttonLabel",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -25688,7 +25676,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_contains",
+            "name": "buttonLabel_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -25700,7 +25688,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_exists",
+            "name": "buttonLabel_exists",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -25712,7 +25700,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_in",
+            "name": "buttonLabel_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -25728,7 +25716,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_not",
+            "name": "buttonLabel_not",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -25740,7 +25728,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_not_contains",
+            "name": "buttonLabel_not_contains",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -25752,7 +25740,7 @@
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_not_in",
+            "name": "buttonLabel_not_in",
             "description": null,
             "type": {
               "kind": "LIST",
@@ -25762,6 +25750,18 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "contentfulMetadata",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "ContentfulMetadataFilter",
+              "ofType": null
             },
             "defaultValue": null,
             "isDeprecated": false,
@@ -26235,13 +26235,13 @@
         "interfaces": null,
         "enumValues": [
           {
-            "name": "ctaButtonLabel_ASC",
+            "name": "buttonLabel_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "ctaButtonLabel_DESC",
+            "name": "buttonLabel_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -42420,7 +42420,23 @@
             "deprecationReason": null
           },
           {
-            "name": "quotesCollection",
+            "name": "sys",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Sys",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "testimonialEntriesCollection",
             "description": null,
             "args": [
               {
@@ -42455,7 +42471,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "ENUM",
-                    "name": "TestimonialsQuotesCollectionOrder",
+                    "name": "TestimonialsTestimonialEntriesCollectionOrder",
                     "ofType": null
                   }
                 },
@@ -42502,24 +42518,8 @@
             ],
             "type": {
               "kind": "OBJECT",
-              "name": "TestimonialsQuotesCollection",
+              "name": "TestimonialsTestimonialEntriesCollection",
               "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "sys",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Sys",
-                "ofType": null
-              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -42882,7 +42882,19 @@
             "deprecationReason": null
           },
           {
-            "name": "quotes",
+            "name": "sys",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "SysFilter",
+              "ofType": null
+            },
+            "defaultValue": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "testimonialEntries",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -42894,23 +42906,11 @@
             "deprecationReason": null
           },
           {
-            "name": "quotesCollection_exists",
+            "name": "testimonialEntriesCollection_exists",
             "description": null,
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
-              "ofType": null
-            },
-            "defaultValue": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "sys",
-            "description": null,
-            "type": {
-              "kind": "INPUT_OBJECT",
-              "name": "SysFilter",
               "ofType": null
             },
             "defaultValue": null,
@@ -43185,7 +43185,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "TestimonialsQuotesCollection",
+        "name": "TestimonialsTestimonialEntriesCollection",
         "description": null,
         "isOneOf": null,
         "fields": [
@@ -43265,7 +43265,7 @@
       },
       {
         "kind": "ENUM",
-        "name": "TestimonialsQuotesCollectionOrder",
+        "name": "TestimonialsTestimonialEntriesCollectionOrder",
         "description": null,
         "isOneOf": null,
         "fields": null,
@@ -44907,13 +44907,13 @@
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_ASC",
+            "name": "sendButtonLabel_ASC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
           },
           {
-            "name": "sendMessageLabel_DESC",
+            "name": "sendButtonLabel_DESC",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null

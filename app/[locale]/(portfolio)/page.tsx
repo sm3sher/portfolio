@@ -11,7 +11,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const query = await contentfulClient.metadataMainContent({ locale });
+  const query = await contentfulClient.mainMetadataContent({ locale });
   const metadata = query.metadataCollection?.items[0];
   return {
     title: metadata?.mainTitle,

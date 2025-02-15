@@ -36,7 +36,7 @@ query contactContent($locale: String) {
             gdprNoticeIntro
             gdprNoticeLinkText
             gdprNoticeDetails
-            sendMessageLabel
+            sendButtonLabel
             errorTitle
             errorIntro
             errorEditPrompt
@@ -58,7 +58,7 @@ query contactContent($locale: String) {
             title
             prevSlideLabel
             nextSlideLabel
-            quotesCollection {
+            testimonialEntriesCollection {
                 items {
                     ... on Testimonial {
                         quote

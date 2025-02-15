@@ -1,4 +1,4 @@
-query metadataMainContent($locale: String) {
+query mainMetadataContent($locale: String) {
     metadataCollection(limit: 1, locale: $locale) {
         items {
             mainTitle
@@ -8,7 +8,7 @@ query metadataMainContent($locale: String) {
     }
 }
 
-query metadataLegalContent($locale: String) {
+query legalMetadataContent($locale: String) {
     metadataCollection(limit: 1, locale: $locale) {
         items {
             legalTitle
@@ -17,7 +17,7 @@ query metadataLegalContent($locale: String) {
     }
 }
 
-query metadataPrivacyContent($locale: String) {
+query privacyMetadataContent($locale: String) {
     metadataCollection(limit: 1, locale: $locale) {
         items {
             privacyTitle

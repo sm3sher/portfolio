@@ -5,7 +5,7 @@ query notFoundContent($locale: String) {
             subTitleMain
             subTitleHighlight
             description
-            ctaButtonLabel
+            buttonLabel
         }
     }
 }
