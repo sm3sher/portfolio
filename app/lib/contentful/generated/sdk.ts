@@ -1828,6 +1828,7 @@ export type Home = Entry & _Node & {
   contentfulMetadata: ContentfulMetadata;
   ctaButtonLabel?: Maybe<Scalars['String']['output']>;
   greeting?: Maybe<Scalars['String']['output']>;
+  greetingDescription?: Maybe<Scalars['String']['output']>;
   image?: Maybe<Asset>;
   introDescription?: Maybe<Scalars['String']['output']>;
   introHeadingHighlight?: Maybe<Scalars['String']['output']>;
@@ -1846,6 +1847,12 @@ export type HomeCtaButtonLabelArgs = {
 
 /** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeGreetingArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeGreetingDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1906,6 +1913,13 @@ export type HomeFilter = {
   ctaButtonLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
   ctaButtonLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   greeting?: InputMaybe<Scalars['String']['input']>;
+  greetingDescription?: InputMaybe<Scalars['String']['input']>;
+  greetingDescription_contains?: InputMaybe<Scalars['String']['input']>;
+  greetingDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  greetingDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  greetingDescription_not?: InputMaybe<Scalars['String']['input']>;
+  greetingDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+  greetingDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   greeting_contains?: InputMaybe<Scalars['String']['input']>;
   greeting_exists?: InputMaybe<Scalars['Boolean']['input']>;
   greeting_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
@@ -1960,6 +1974,8 @@ export type HomeLinkingCollectionsEntryCollectionArgs = {
 export enum HomeOrder {
   CtaButtonLabelAsc = 'ctaButtonLabel_ASC',
   CtaButtonLabelDesc = 'ctaButtonLabel_DESC',
+  GreetingDescriptionAsc = 'greetingDescription_ASC',
+  GreetingDescriptionDesc = 'greetingDescription_DESC',
   GreetingAsc = 'greeting_ASC',
   GreetingDesc = 'greeting_DESC',
   IntroHeadingHighlightAsc = 'introHeadingHighlight_ASC',
@@ -6810,7 +6826,7 @@ export type HomeContentQueryVariables = Exact<{
 }>;
 
 
-export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null };
+export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, greetingDescription?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null };
 
 export type LegalNoticeContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7040,6 +7056,7 @@ export const HomeContentDocument = gql`
   homeCollection(limit: 1, locale: $locale) {
     items {
       greeting
+      greetingDescription
       introHeadingMain
       introHeadingHighlight
       introSubheading

@@ -2,6 +2,7 @@ query homeContent($locale: String) {
     homeCollection(limit: 1, locale: $locale) {
         items {
             greeting
+            greetingDescription
             introHeadingMain
             introHeadingHighlight
             introSubheading

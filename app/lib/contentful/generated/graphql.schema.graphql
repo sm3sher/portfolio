@@ -1165,6 +1165,7 @@ type Home implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   ctaButtonLabel(locale: String): String
   greeting(locale: String): String
+  greetingDescription(locale: String): String
   image(locale: String, preview: Boolean): Asset
   introDescription(locale: String): String
   introHeadingHighlight(locale: String): String
@@ -1193,6 +1194,13 @@ input HomeFilter {
   ctaButtonLabel_not_contains: String
   ctaButtonLabel_not_in: [String]
   greeting: String
+  greetingDescription: String
+  greetingDescription_contains: String
+  greetingDescription_exists: Boolean
+  greetingDescription_in: [String]
+  greetingDescription_not: String
+  greetingDescription_not_contains: String
+  greetingDescription_not_in: [String]
   greeting_contains: String
   greeting_exists: Boolean
   greeting_in: [String]
@@ -1238,6 +1246,8 @@ type HomeLinkingCollections {
 enum HomeOrder {
   ctaButtonLabel_ASC
   ctaButtonLabel_DESC
+  greetingDescription_ASC
+  greetingDescription_DESC
   greeting_ASC
   greeting_DESC
   introHeadingHighlight_ASC

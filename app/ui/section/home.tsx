@@ -44,7 +44,7 @@ export default async function Home({ locale }: Props) {
                 src="/waving-hand.svg"
                 width={30}
                 height={30}
-                alt="Waving Hand"
+                alt={content?.greetingDescription || ''}
               />
               <span>{content?.greeting}</span>
             </div>
