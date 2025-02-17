@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    testProxy: true,
+  },
 };
 
 export default withNextIntl(nextConfig);

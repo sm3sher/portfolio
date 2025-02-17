@@ -3,6 +3,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 export const endpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`;
 export const requestConfig = {
   headers: {
+    'Accept-Encoding': 'br', // testProxy in Next.js breaks gzip responses from Contentful, Brotli (br) works fine
     Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
   },
 };
