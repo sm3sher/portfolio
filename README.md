@@ -30,4 +30,5 @@ Run these commands to interact with the project:
 - 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_ and _TypeScript_
 - 🎨 `npm run format`: Format code with _Prettier_
 - 🧪 `npm test`: Run unit tests with _Vitest_
+- 🎯 `npm run test:e2e`: Run end-to-end tests with _Playwright_ and _MSW_
 - 🧬 `npm run types:generate`: Generate types for _GraphQL queries_ and _Supabase schema_
