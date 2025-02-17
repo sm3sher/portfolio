@@ -68,5 +68,8 @@
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.5"
+  },
+  "optionalDependencies": {
+    "@tailwindcss/oxide-linux-arm64-gnu": "^4.0.6"
   }
 }
