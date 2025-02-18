@@ -18,7 +18,7 @@ export default defineConfig({
     locale: 'en-US',
     colorScheme: 'dark',
   },
-  // Run local dev server before starting tests
+  // Start the local dev server with mocked data before running tests
   webServer: {
     command: 'npm run dev:mock',
     port: 3000,
