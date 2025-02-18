@@ -25,10 +25,11 @@ While the primary audience of the website is clients, this repository is meant f
 Run these commands to interact with the project:
 
 - 🖥️ `npm run dev`: Start the local development server
+- 🧩 `npm run dev:mock`: Start the local development server with mocked data using _MSW_
 - 📦 `npm run build`: Build the project for production, fetch initial _Contentful queries_
 - 🚀 `npm run start`: Run the production server
 - 🧑‍💻 `npm run lint`: Check for code issues using _ESLint_ and _TypeScript_
 - 🎨 `npm run format`: Format code with _Prettier_
 - 🧪 `npm test`: Run unit tests with _Vitest_
-- 🎯 `npm run test:e2e`: Run end-to-end tests with _Playwright_ and _MSW_
+- 🎭 `npm run test:e2e`: Run end-to-end tests with _Playwright_
 - 🧬 `npm run types:generate`: Generate types for _GraphQL queries_ and _Supabase schema_
