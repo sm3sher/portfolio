@@ -1,14 +1,7 @@
-import { test } from 'next/dist/experimental/testmode/playwright/msw.js';
-import server from '@/e2e/mock-server';
-
-const expect = test.expect;
-
-test.beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
-test.afterEach(() => server.resetHandlers());
-test.afterAll(() => server.close());
+import { expect, test } from '@playwright/test';
 
 test.describe('Navbar tests', () => {
-  test('should switch language via dropdown', async ({ page, browserName }) => {
+  test('should switch language via dropdown', async ({ page }) => {
     await page.goto('/');
 
     await expect(page).toHaveURL('/en');
@@ -30,10 +23,7 @@ test.describe('Navbar tests', () => {
       page.getByRole('heading', { name: 'Ich bin Roman Jumatov' }),
     ).toBeVisible();
 
-    // msw fails to intercept server requests after page reload in WebKit
-    if (browserName === 'webkit') return;
     await page.reload();
-
     await expect(page).toHaveURL('/de');
     await expect(
       page.getByRole('heading', { name: 'Ich bin Roman Jumatov' }),
@@ -52,10 +42,7 @@ test.describe('Navbar tests', () => {
     await expect(page.getByRole('heading', { name: 'About me' })).toBeVisible();
   });
 
-  test('should switch between light and dark mode', async ({
-    page,
-    browserName,
-  }) => {
+  test('should switch between light and dark mode', async ({ page }) => {
     await page.goto('/');
 
     const initialMode = await page.evaluate(() =>
@@ -70,10 +57,7 @@ test.describe('Navbar tests', () => {
     );
     expect(darkMode).toBe(false);
 
-    // msw fails to intercept server requests after page reload in WebKit
-    if (browserName === 'webkit') return;
     await page.reload();
-
     const persistentMode = await page.evaluate(() =>
       document.documentElement.classList.contains('dark'),
     );

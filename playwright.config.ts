@@ -1,8 +1,7 @@
-import { defineConfig } from 'next/experimental/testmode/playwright.js';
+import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './e2e',
-  testMatch: 'e2e/**/*.spec.ts',
   fullyParallel: true,
   // Fail build on CI if you accidentally left test.only in the source code
   forbidOnly: !!process.env.CI,
@@ -18,15 +17,11 @@ export default defineConfig({
     trace: 'on-first-retry',
     locale: 'en-US',
     colorScheme: 'dark',
-    // Loops fetch() calls via the fetch() of the current test's worker
-    nextOptions: {
-      fetchLoopback: true,
-    },
   },
   // Run local dev server before starting tests
   webServer: {
-    command: 'npm run dev',
-    url: 'http://127.0.0.1:3000',
+    command: 'npm run dev:mock',
+    port: 3000,
     reuseExistingServer: !process.env.CI,
   },
 });

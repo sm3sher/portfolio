@@ -1,5 +1,4 @@
 import { graphql, GraphQLHandler, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
 import {
   AboutContentDocument,
   ContactContentDocument,
@@ -12,7 +11,7 @@ import {
   ServicesContentDocument,
 } from '@/app/lib/contentful/generated/sdk';
 
-const handlers: GraphQLHandler[] = [
+export const handlers: GraphQLHandler[] = [
   graphql.query(MainMetadataContentDocument, () =>
     HttpResponse.json({
       data: {
@@ -113,5 +112,3 @@ const handlers: GraphQLHandler[] = [
     }),
   ),
 ];
-
-export default setupServer(...handlers);

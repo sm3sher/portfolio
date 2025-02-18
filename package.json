@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "dev:mock": "MOCKS_ENABLED=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint && tsc --noEmit",
