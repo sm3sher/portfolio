@@ -1,5 +1,5 @@
 import { Locale } from '@/i18n/routing';
-import LogoGithub from './logo-github';
+import LogoGithub from '@/app/ui/footer/logo-github';
 import LogoKofi from '@/app/ui/footer/logo-kofi';
 import contentfulClient from '@/app/lib/contentful/client';
 import Logo from '@/app/ui/footer/logo';

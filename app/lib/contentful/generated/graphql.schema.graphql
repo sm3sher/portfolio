@@ -1,7 +1,7 @@
 directive @contentSourceMaps on QUERY
 
 """
-About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about)
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about)
 """
 type About implements Entry & _Node {
   _id: ID!
@@ -1158,7 +1158,7 @@ enum FormOrder {
 scalar HexColor
 
 """
-Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home)
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home)
 """
 type Home implements Entry & _Node {
   _id: ID!
@@ -1172,6 +1172,7 @@ type Home implements Entry & _Node {
   introHeadingMain(locale: String): String
   introSubheading(locale: String): String
   linkedFrom(allowedLocales: [String]): HomeLinkingCollections
+  scrollDownLabel(locale: String): String
   sys: Sys!
 }
 
@@ -1236,6 +1237,13 @@ input HomeFilter {
   introSubheading_not: String
   introSubheading_not_contains: String
   introSubheading_not_in: [String]
+  scrollDownLabel: String
+  scrollDownLabel_contains: String
+  scrollDownLabel_exists: Boolean
+  scrollDownLabel_in: [String]
+  scrollDownLabel_not: String
+  scrollDownLabel_not_contains: String
+  scrollDownLabel_not_in: [String]
   sys: SysFilter
 }
 
@@ -1256,6 +1264,8 @@ enum HomeOrder {
   introHeadingMain_DESC
   introSubheading_ASC
   introSubheading_DESC
+  scrollDownLabel_ASC
+  scrollDownLabel_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC

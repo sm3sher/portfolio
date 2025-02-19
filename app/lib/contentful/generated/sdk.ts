@@ -21,7 +21,7 @@ export type Scalars = {
   Quality: { input: any; output: any; }
 };
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type About = Entry & _Node & {
   __typename?: 'About';
   _id: Scalars['ID']['output'];
@@ -40,31 +40,31 @@ export type About = Entry & _Node & {
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutAgeArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutAgeStatementPrefixArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutAgeStatementSuffixArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutExperienceMetricsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -75,32 +75,32 @@ export type AboutExperienceMetricsCollectionArgs = {
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutImageArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutLocationStatementArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutProfessionalTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** About content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/about) */
 export type AboutTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
@@ -1821,7 +1821,7 @@ export enum FormOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type Home = Entry & _Node & {
   __typename?: 'Home';
   _id: Scalars['ID']['output'];
@@ -1835,62 +1835,69 @@ export type Home = Entry & _Node & {
   introHeadingMain?: Maybe<Scalars['String']['output']>;
   introSubheading?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<HomeLinkingCollections>;
+  scrollDownLabel?: Maybe<Scalars['String']['output']>;
   sys: Sys;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeCtaButtonLabelArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeGreetingArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeGreetingDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeImageArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeIntroDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeIntroHeadingHighlightArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeIntroHeadingMainArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeIntroSubheadingArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** Home content [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
 export type HomeLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/home) */
+export type HomeScrollDownLabelArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type HomeCollection = {
@@ -1955,6 +1962,13 @@ export type HomeFilter = {
   introSubheading_not?: InputMaybe<Scalars['String']['input']>;
   introSubheading_not_contains?: InputMaybe<Scalars['String']['input']>;
   introSubheading_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  scrollDownLabel?: InputMaybe<Scalars['String']['input']>;
+  scrollDownLabel_contains?: InputMaybe<Scalars['String']['input']>;
+  scrollDownLabel_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  scrollDownLabel_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  scrollDownLabel_not?: InputMaybe<Scalars['String']['input']>;
+  scrollDownLabel_not_contains?: InputMaybe<Scalars['String']['input']>;
+  scrollDownLabel_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   sys?: InputMaybe<SysFilter>;
 };
 
@@ -1984,6 +1998,8 @@ export enum HomeOrder {
   IntroHeadingMainDesc = 'introHeadingMain_DESC',
   IntroSubheadingAsc = 'introSubheading_ASC',
   IntroSubheadingDesc = 'introSubheading_DESC',
+  ScrollDownLabelAsc = 'scrollDownLabel_ASC',
+  ScrollDownLabelDesc = 'scrollDownLabel_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
   SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
   SysIdAsc = 'sys_id_ASC',
@@ -6826,7 +6842,7 @@ export type HomeContentQueryVariables = Exact<{
 }>;
 
 
-export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, greetingDescription?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null };
+export type HomeContentQuery = { __typename?: 'Query', homeCollection?: { __typename?: 'HomeCollection', items: Array<{ __typename?: 'Home', greeting?: string | null, greetingDescription?: string | null, introHeadingMain?: string | null, introHeadingHighlight?: string | null, introSubheading?: string | null, introDescription?: string | null, ctaButtonLabel?: string | null, scrollDownLabel?: string | null, image?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null, description?: string | null } | null } | null> } | null };
 
 export type LegalNoticeContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7062,6 +7078,7 @@ export const HomeContentDocument = gql`
       introSubheading
       introDescription
       ctaButtonLabel
+      scrollDownLabel
       image {
         url
         width

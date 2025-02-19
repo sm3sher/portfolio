@@ -267,6 +267,7 @@ export const handlers = [
               introDescription:
                 'I will guide your project from the first idea to the finished product – with full-stack expertise, technical know-how, and an eye for detail.',
               ctaButtonLabel: 'Contact Me',
+              scrollDownLabel: 'Scroll down',
               image: {
                 url: MOCK_IMAGE_URL,
                 width: 1037,

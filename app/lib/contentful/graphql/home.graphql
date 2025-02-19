@@ -8,6 +8,7 @@ query homeContent($locale: String) {
             introSubheading
             introDescription
             ctaButtonLabel
+            scrollDownLabel
             image {
                 url
                 width

@@ -63,7 +63,11 @@ export default async function Home({ locale }: Props) {
             <Link href="#contact" tabIndex={-1}>
               <Button>{content?.ctaButtonLabel}</Button>
             </Link>
-            <Link href="#about" className="rounded-full bg-(--highlight) p-2">
+            <Link
+              href="#about"
+              className="rounded-full bg-(--highlight) p-2"
+              aria-label={content?.scrollDownLabel || ''}
+            >
               <ArrowDown01Icon
                 className="relative top-1.5 animate-bounce text-white"
                 size={34}
