@@ -6,7 +6,7 @@ test.describe('Navbar tests', () => {
 
     await expect(page).toHaveURL('/en');
     await expect(
-      page.getByRole('heading', { name: "I'm Roman Jumatov" }),
+      page.getByRole('heading', { name: 'Hello there!' }),
     ).toBeVisible();
 
     await page.getByRole('button', { name: 'Select language' }).hover();
@@ -19,15 +19,11 @@ test.describe('Navbar tests', () => {
     await page.getByRole('menuitem', { name: 'German' }).click();
 
     await expect(page).toHaveURL('/de');
-    await expect(
-      page.getByRole('heading', { name: 'Ich bin Roman Jumatov' }),
-    ).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Hallo!' })).toBeVisible();
 
     await page.reload();
     await expect(page).toHaveURL('/de');
-    await expect(
-      page.getByRole('heading', { name: 'Ich bin Roman Jumatov' }),
-    ).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Hallo!' })).toBeVisible();
   });
 
   test('should navigate to About section from header menu', async ({
