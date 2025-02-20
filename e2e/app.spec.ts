@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.describe('Navbar tests', () => {
+test.describe('Navbar', () => {
   test('should switch language via dropdown', async ({ page }) => {
     await page.goto('/');
 
