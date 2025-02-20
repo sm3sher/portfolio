@@ -2250,6 +2250,7 @@ type NotFound implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   description(locale: String): String
   linkedFrom(allowedLocales: [String]): NotFoundLinkingCollections
+  metadataTitle(locale: String): String
   subTitleHighlight(locale: String): String
   subTitleMain(locale: String): String
   sys: Sys!
@@ -2281,6 +2282,13 @@ input NotFoundFilter {
   description_not: String
   description_not_contains: String
   description_not_in: [String]
+  metadataTitle: String
+  metadataTitle_contains: String
+  metadataTitle_exists: Boolean
+  metadataTitle_in: [String]
+  metadataTitle_not: String
+  metadataTitle_not_contains: String
+  metadataTitle_not_in: [String]
   subTitleHighlight: String
   subTitleHighlight_contains: String
   subTitleHighlight_exists: Boolean
@@ -2314,6 +2322,8 @@ enum NotFoundOrder {
   buttonLabel_DESC
   description_ASC
   description_DESC
+  metadataTitle_ASC
+  metadataTitle_DESC
   subTitleHighlight_ASC
   subTitleHighlight_DESC
   subTitleMain_ASC

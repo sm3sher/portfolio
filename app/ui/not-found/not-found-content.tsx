@@ -13,6 +13,8 @@ export default async function NotFoundContent({ locale }: Props) {
 
   return (
     <>
+      {/* Title workaround for not-found page: https://github.com/vercel/next.js/issues/45620 */}
+      <title>{content?.metadataTitle}</title>
       <h1>{content?.title}</h1>
       <h2 className="mb-3">
         {content?.subTitleMain}{' '}

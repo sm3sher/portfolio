@@ -6,9 +6,10 @@ const sections = [
   { name: 'Services', id: '#services' },
   { name: 'Contact', id: '#contact' },
 ];
+const pages = ['/legal-notice', '/privacy-policy', '/not-found'];
 
 test.describe('Dark mode', () => {
-  test('should not have any automatically detectable WCAG A or AA violations', async ({
+  test('should not have any WCAG A or AA violations on main page navigation', async ({
     page,
     axeBuilder,
   }) => {
@@ -21,8 +22,24 @@ test.describe('Dark mode', () => {
     }
 
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.waitForTimeout(500);
 
     const scanResults = await axeBuilder().analyze();
     expect(scanResults.violations).toEqual([]);
   });
+
+  pages.forEach((path) =>
+    test(`should not have any WCAG A or AA violations on ${path}`, async ({
+      page,
+      axeBuilder,
+    }) => {
+      await page.goto(path);
+      await page.waitForTimeout(500);
+
+      await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+
+      const scanResults = await axeBuilder().analyze();
+      expect(scanResults.violations).toEqual([]);
+    }),
+  );
 });

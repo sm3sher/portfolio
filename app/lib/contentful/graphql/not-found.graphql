@@ -1,6 +1,7 @@
 query notFoundContent($locale: String) {
     notFoundCollection(limit: 1, locale: $locale) {
         items {
+            metadataTitle
             title
             subTitleMain
             subTitleHighlight

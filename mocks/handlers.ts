@@ -18,6 +18,8 @@ import {
 } from '@/app/lib/contentful/generated/sdk';
 
 const MOCK_IMAGE_URL = 'https://images.ctfassets.net/mock.png';
+const MOCK_URL = 'https://example.com';
+const MOCK_EMAIL = 'example@domain.com';
 
 export const handlers = [
   http.get(MOCK_IMAGE_URL, () =>
@@ -102,7 +104,7 @@ export const handlers = [
               errorEditAriaLabel: 'Return to form to edit your message',
               errorDescription:
                 'or try again using the button below. If the problem persists, feel free to reach out to me directly at',
-              errorContactEmail: 'contact@domain.com',
+              errorContactEmail: MOCK_EMAIL,
               errorButtonLabel: 'Try again',
               emailVerificationTitle: 'Check your email',
               emailVerificationDescription:
@@ -236,16 +238,15 @@ export const handlers = [
               description: 'Tailored Software Solutions',
               profileSection: 'Profiles',
               profileGitHub: 'GitHub',
-              profileGitHubHref: 'https://github.com/username',
+              profileGitHubHref: MOCK_URL,
               profileStackOverflow: 'Stack Overflow',
-              profileStackOverflowHref:
-                'https://stackoverflow.com/users/userId',
+              profileStackOverflowHref: MOCK_URL,
               legalSection: 'Legal',
               legalNotice: 'Legal Notice',
               legalPrivacyPolicy: 'Privacy Policy',
-              gitHubHref: 'https://github.com/username/repo',
+              gitHubHref: MOCK_URL,
               gitHubHrefLabel: 'View the source code on GitHub',
-              kofiHref: 'https://ko-fi.com/username',
+              kofiHref: MOCK_URL,
               kofiHrefLabel: 'Visit Ko-Fi profile',
             },
           ],
@@ -296,7 +297,7 @@ export const handlers = [
               addressCity: 'Rivertown',
               subTitleContact: 'Contact',
               contactEmailLabel: 'Email:',
-              contactEmail: 'contact@domain.com',
+              contactEmail: MOCK_EMAIL,
               contactFormLabel: 'Contact Form',
               subTitleDispute:
                 'Consumer Dispute Resolution / Universal Arbitration Body',
@@ -384,6 +385,7 @@ export const handlers = [
         notFoundCollection: {
           items: [
             {
+              metadataTitle: 'Page Not Found - Roman Jumatov',
               title: 'Houston,',
               subTitleMain: 'we have a',
               subTitleHighlight: 'problem',
@@ -405,6 +407,141 @@ export const handlers = [
               lastModified: 'Last updated: February 2025',
               introDescription:
                 'In this Privacy Policy, “we” refers to Roman Jumatov, the operator of this website.',
+              privacyOverview: {
+                title: '1. Data Privacy at a Glance',
+                generalInfoTitle: 'General Information',
+                generalInfoDescription:
+                  'Here you will find an overview of what happens to your personal data when you visit our website. Personal data is information that can be used to identify you personally. Detailed information on this can be found in this Privacy Policy.',
+                dataCollectionTitle: 'Data Collection on This Website',
+                responsiblePartyTitle: 'Who is responsible?',
+                responsiblePartyDescription:
+                  'The data processing on this website is carried out by the operator, Roman Jumatov. His contact details can be found in the section “Notice to the Responsible Party.”',
+                dataCaptureTitle: 'How do we collect your data?',
+                dataDirectCaptureText:
+                  'Some of the data is collected when you provide it directly to us, for example, by entering it into a contact form.',
+                dataAutomaticCaptureText:
+                  'Other data is collected automatically or with your consent when you visit the website through our IT systems, such as technical data like your browser, operating system, or the time of page access.',
+                dataPurposeTitle: 'What do we use your data for?',
+                dataPurposeDescription:
+                  'Some of the data is used to ensure the error-free provision of the website. Other data may be used to analyze user behavior. If you make inquiries or initiate contracts via the website, we use the transmitted data for processing.',
+                userRightsTitle: 'Your Rights',
+                userRightsIntroText: 'You have the right to:',
+                userRightsList: [
+                  'Obtain information about the stored data and its use.',
+                  'Request the correction or deletion of your data.',
+                  'Withdraw consent to data processing at any time.',
+                  'Request the restriction of data processing under certain circumstances.',
+                  'File a complaint with a data protection supervisory authority.',
+                ],
+                userRightsContactText:
+                  'For questions or concerns about data protection, you can contact us at any time.',
+                analysisToolsTitle: 'Analytic Tools and Third-Party Tools',
+                analysisToolsIntroText:
+                  'When visiting this website, your browsing behavior may be statistically evaluated. This is done primarily with analysis programs.',
+                analysisToolsDetailsText:
+                  'Detailed information on this can be found further down in this Privacy Policy.',
+              },
+              hosting: {
+                title: '2. Hosting',
+                netlifyTitle: 'Netlify',
+                netlifyHostingInfo:
+                  'Our website is hosted by Netlify. The provider is Netlify Inc., 2325 3rd Street, Suite 29, San Francisco, CA 94104, USA.',
+                netlifyDataProcessing:
+                  'Netlify processes personal data in the USA as well. The company is a participant in the EU-US Data Privacy Framework. This framework governs the secure and privacy-compliant transfer of data from the EU to the USA. Further information on this can be found at',
+                netlifyDataProcessingLink: MOCK_URL,
+                netlifyContractualClauses:
+                  'Additionally, Netlify uses standard contractual clauses in accordance with Art. 46(2) and (3) of the GDPR. These model contracts, provided by the EU Commission, ensure that your data meets European data protection standards even in third countries such as the USA. The relevant decision by the EU Commission can be found here',
+                netlifyContractualClausesLink: MOCK_URL,
+                netlifyDataProcessingAgreement:
+                  'Netlify offers a Data Processing Agreement in accordance with Art. 28 of the GDPR, based on the EU standard contractual clauses. Further information on this can be found at',
+                netlifyDataProcessingAgreementLink: MOCK_URL,
+                netlifyPrivacyPolicy:
+                  'Details regarding the processing of your data by Netlify can be found in Netlify’s Privacy Policy at',
+                netlifyPrivacyPolicyLink: MOCK_URL,
+              },
+              notesAndLegalInformation: {
+                title: '3. General Notes and Mandatory Information',
+                dataProtectionTitle: 'Data Protection',
+                dataProtectionIntro:
+                  'The protection of your personal data is important to us. We treat your personal data confidentially and in accordance with the legal data protection regulations as well as this Privacy Policy.',
+                dataProtectionDetails:
+                  'When you visit this website, various personal data will be collected. Personal data refers to information that can be used to identify you. This Privacy Policy explains what data we collect, how we use it, and for what purpose.',
+                dataProtectionNotice:
+                  'Please note that data transmission over the Internet (e.g., communication via email) may have security vulnerabilities. Complete protection of data from access by third parties is not possible.',
+                responsiblePartyTitle:
+                  'Information About the Responsible Party',
+                responsiblePartyIntro:
+                  'The responsible party for data processing on this website is:',
+                responsiblePartyName: 'Roman Jumatov',
+                responsiblePartyRole: 'Freelance Software Developer',
+                responsiblePartyStreet: 'Main Street 25',
+                responsiblePartyPostalCode: '12345',
+                responsiblePartyCity: 'River Town',
+                responsiblePartyEmailLabel: 'Email:',
+                responsiblePartyEmail: MOCK_EMAIL,
+                responsiblePartyInfo:
+                  'The responsible party is the individual or entity that determines the purposes and means of processing personal data, either alone or jointly with others.',
+                dataStorageDurationTitle: 'Storage Duration',
+                dataStorageDurationDetails:
+                  'Unless otherwise specified in this Privacy Policy, we store your personal data only as long as necessary to fulfill the purpose for which it was collected. Once the data is no longer required or you revoke your consent, we delete it, provided there are no statutory retention obligations to the contrary.',
+                legalBasisTitle: 'Legal Basis for Data Processing',
+                legalBasisIntro:
+                  'The processing of your personal data is based on the following legal grounds under the GDPR, depending on the context:',
+                legalBasisList: [
+                  'Art. 6 (1) (a) GDPR: Consent (e.g., for cookies).',
+                  'Art. 6 (1) (b) GDPR: Fulfillment of a contract or pre-contractual measures.',
+                  'Art. 6 (1) (c) GDPR: Compliance with a legal obligation.',
+                  'Art. 6 (1) (f) GDPR: Protection of legitimate interests.',
+                ],
+                legalBasisDetails:
+                  'Details about these legal bases can be found in the respective sections of this Privacy Policy.',
+                userRightsTitle: 'Your Rights',
+                userRightsIntro: 'You have the following rights at any time:',
+                userRightsList: [
+                  'Right to access (Art. 15 GDPR)',
+                  'Right to rectification (Art. 16 GDPR)',
+                  'Right to erasure (Art. 17 GDPR)',
+                  'Right to restrict processing (Art. 18 GDPR)',
+                  'Right to data portability (Art. 20 GDPR)',
+                  'Right to object (Art. 21 GDPR)',
+                ],
+                complaintRightTitle: 'Right to Lodge a Complaint',
+                complaintRightDetails:
+                  'If you believe that your data is being processed unlawfully, you have the right to file a complaint with a data protection authority. The competent authority is typically the one in your place of residence or workplace.',
+                sslTlsEncryptionTitle: 'SSL/TLS Encryption',
+                sslTlsEncryptionIntro:
+                  'This website uses SSL/TLS encryption to protect your data during transmission. You can recognize an encrypted connection by the “https://” in the browser’s address bar and the padlock icon.',
+                sslTlsEncryptionDetails:
+                  'When SSL or TLS encryption is activated, the data you transmit to us cannot be read by third parties.',
+              },
+              dataCollection: {
+                title: '4. Data Collection on This Website',
+                cloudflareTitle: 'Cloudflare Web Analytics',
+                cloudflareIntro:
+                  'We use the Cloudflare Web Analytics tool for our website. The service provider is Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA.',
+                cloudflareDetails:
+                  'Cloudflare processes data, including in the USA, and is a participant in the EU-US Data Privacy Framework, which regulates the secure and privacy-compliant transfer of personal data. Additionally, Standard Contractual Clauses in accordance with Art. 46 of the GDPR are used to ensure European data protection standards when processing data in third countries.',
+                cloudflarePrivacyPolicy:
+                  'For more information, please refer to Cloudflare’s Privacy Policy:',
+                cloudflarePrivacyPolicyLink: MOCK_URL,
+                contactFormTitle: 'Contact Form and Email Inquiries',
+                contactFormIntro:
+                  'Using the contact form and sending emails require the provision of personal data (e.g., name, email address, message). This data is only stored for the purpose of processing your inquiry and will not be shared without your consent.',
+                contactFormSupabase:
+                  'To process contact inquiries via the contact form, we use the database infrastructure of Supabase Inc., 970 Toa Payoh N, #07-04, Singapore. Data may be transferred to Singapore, and the data transfer to a third country (Singapore) is carried out based on the Standard Contractual Clauses of the EU in accordance with Art. 46 (2) (c) of the GDPR.',
+                contactFormSupabasePrivacyPolicy:
+                  'Detailed information about Supabase’s privacy practices can be found at:',
+                contactFormSupabasePrivacyPolicyLink: MOCK_URL,
+                legalBasisTitle: 'Legal Basis',
+                legalBasisList: [
+                  'Art. 6 (1) (b) GDPR: For the performance of a contract or pre-contractual measures.',
+                  'Art. 6 (1) (f) GDPR: Legitimate interest in efficient processing.',
+                  'Art. 6 (1) (a) GDPR: Based on your consent (which can be revoked).',
+                ],
+                storageDurationTitle: 'Storage Duration',
+                storageDurationDetails:
+                  'The data will be stored until the purpose is fulfilled or you request its deletion. Legal retention periods remain unaffected.',
+              },
             },
           ],
         },

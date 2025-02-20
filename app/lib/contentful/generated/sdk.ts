@@ -3379,6 +3379,7 @@ export type NotFound = Entry & _Node & {
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<NotFoundLinkingCollections>;
+  metadataTitle?: Maybe<Scalars['String']['output']>;
   subTitleHighlight?: Maybe<Scalars['String']['output']>;
   subTitleMain?: Maybe<Scalars['String']['output']>;
   sys: Sys;
@@ -3401,6 +3402,12 @@ export type NotFoundDescriptionArgs = {
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
 export type NotFoundLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/notFound) */
+export type NotFoundMetadataTitleArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -3447,6 +3454,13 @@ export type NotFoundFilter = {
   description_not?: InputMaybe<Scalars['String']['input']>;
   description_not_contains?: InputMaybe<Scalars['String']['input']>;
   description_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  metadataTitle?: InputMaybe<Scalars['String']['input']>;
+  metadataTitle_contains?: InputMaybe<Scalars['String']['input']>;
+  metadataTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  metadataTitle_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  metadataTitle_not?: InputMaybe<Scalars['String']['input']>;
+  metadataTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
+  metadataTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   subTitleHighlight?: InputMaybe<Scalars['String']['input']>;
   subTitleHighlight_contains?: InputMaybe<Scalars['String']['input']>;
   subTitleHighlight_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -3489,6 +3503,8 @@ export enum NotFoundOrder {
   ButtonLabelDesc = 'buttonLabel_DESC',
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
+  MetadataTitleAsc = 'metadataTitle_ASC',
+  MetadataTitleDesc = 'metadataTitle_DESC',
   SubTitleHighlightAsc = 'subTitleHighlight_ASC',
   SubTitleHighlightDesc = 'subTitleHighlight_DESC',
   SubTitleMainAsc = 'subTitleMain_ASC',
@@ -6884,7 +6900,7 @@ export type NotFoundContentQueryVariables = Exact<{
 }>;
 
 
-export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, buttonLabel?: string | null } | null> } | null };
+export type NotFoundContentQuery = { __typename?: 'Query', notFoundCollection?: { __typename?: 'NotFoundCollection', items: Array<{ __typename?: 'NotFound', metadataTitle?: string | null, title?: string | null, subTitleMain?: string | null, subTitleHighlight?: string | null, description?: string | null, buttonLabel?: string | null } | null> } | null };
 
 export type PrivacyPolicyContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7167,6 +7183,7 @@ export const NotFoundContentDocument = gql`
     query notFoundContent($locale: String) {
   notFoundCollection(limit: 1, locale: $locale) {
     items {
+      metadataTitle
       title
       subTitleMain
       subTitleHighlight

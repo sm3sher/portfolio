@@ -54,7 +54,7 @@ export default async function Contact({ locale }: Props) {
             <ContactForm content={query.formCollection?.items[0] as Form} />
           </ViewAnimation>
         </div>
-        <ViewAnimation className="pt-32" direction="fromRight" delay={0.6}>
+        <ViewAnimation className="pt-32" direction="fromRight">
           <TestimonialSlider
             content={query.testimonialsCollection?.items[0] as Testimonials}
           />
