@@ -41,7 +41,7 @@ export default async function About({ locale }: Props) {
             delay={0.4}
           >
             <div className="space-y-7">
-              <h6 className="tracking-wider text-(--highlight) uppercase">
+              <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
                 {content?.title}
               </h6>
               <h4>

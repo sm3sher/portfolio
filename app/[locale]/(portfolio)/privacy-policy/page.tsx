@@ -117,7 +117,7 @@ export default async function Page({ params }: Props) {
                 href={content?.hosting?.netlifyDataProcessingLink || ''}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.hosting?.netlifyDataProcessingLink}
               </a>
@@ -129,7 +129,7 @@ export default async function Page({ params }: Props) {
                 href={content?.hosting?.netlifyContractualClausesLink || ''}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.hosting?.netlifyContractualClausesLink}
               </a>
@@ -143,7 +143,7 @@ export default async function Page({ params }: Props) {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.hosting?.netlifyDataProcessingAgreementLink}
               </a>
@@ -155,7 +155,7 @@ export default async function Page({ params }: Props) {
                 href={content?.hosting?.netlifyPrivacyPolicyLink || ''}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.hosting?.netlifyPrivacyPolicyLink}
               </a>
@@ -204,7 +204,7 @@ export default async function Page({ params }: Props) {
               {content?.notesAndLegalInformation?.responsiblePartyEmailLabel}{' '}
               <a
                 href={`mailto:${content?.notesAndLegalInformation?.responsiblePartyEmail}`}
-                className="underline-effect text-(--highlight)"
+                className="underline-effect text-(--highlight-link)"
               >
                 {content?.notesAndLegalInformation?.responsiblePartyEmail}
               </a>
@@ -306,7 +306,7 @@ export default async function Page({ params }: Props) {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.dataCollection?.cloudflarePrivacyPolicyLink}
               </a>
@@ -333,7 +333,7 @@ export default async function Page({ params }: Props) {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight)"
+                className="underline-effect break-words text-(--highlight-link)"
               >
                 {content?.dataCollection?.contactFormSupabasePrivacyPolicyLink}
               </a>

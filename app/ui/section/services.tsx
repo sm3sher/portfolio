@@ -34,7 +34,7 @@ export default async function Services({ locale }: Props) {
           className="mb-10 space-y-7 md:mb-16"
           direction="fromBottom"
         >
-          <h6 className="tracking-wider text-(--highlight) uppercase">
+          <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
             {content?.title}
           </h6>
           <h3 className="uppercase">

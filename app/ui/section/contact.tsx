@@ -20,7 +20,7 @@ export default async function Contact({ locale }: Props) {
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col items-center gap-6 md:flex-row md:gap-10 lg:gap-16">
           <ViewAnimation className="space-y-7 md:w-1/2" direction="fromBottom">
-            <h6 className="tracking-wider text-(--highlight) uppercase">
+            <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
               {content?.title}
             </h6>
             <h3 className="uppercase">
