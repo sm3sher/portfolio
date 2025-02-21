@@ -72,6 +72,6 @@
     "vitest": "^3.0.6"
   },
   "optionalDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.7"
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.8"
   }
 }
