@@ -6,6 +6,7 @@ import { LanguageSkillIcon } from 'hugeicons-react';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { useLocale } from 'next-intl';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
+import useScrolled from '@/app/ui/hook/use-scrolled';
 
 type Props = {
   usFlagDescription?: string | null;
@@ -22,6 +23,7 @@ export default function LanguageDropdown({
   germanLabel,
   switchLanguageLabel,
 }: Props) {
+  const scrolled = useScrolled();
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale() as Locale;
@@ -85,22 +87,30 @@ export default function LanguageDropdown({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <button
-        id="dropdownLanguageButton"
-        onClick={() => setOpen((prevState) => !prevState)}
-        onKeyDown={handleKeyDown}
-        className="base-border hover-effect rounded-2xl p-2 backdrop-blur-sm"
-        aria-haspopup
-        aria-expanded={open}
-        aria-controls="dropdown"
-        aria-label={switchLanguageLabel || ''}
+      <div
+        className={`rounded-2xl backdrop-blur duration-1000 ${
+          scrolled && 'bg-(--overlay-color)'
+        }`}
       >
-        <LanguageSkillIcon size={22} />
-      </button>
+        <button
+          id="dropdownLanguageButton"
+          onClick={() => setOpen((prevState) => !prevState)}
+          onKeyDown={handleKeyDown}
+          className="base-border hover-effect rounded-2xl p-2"
+          aria-haspopup
+          aria-expanded={open}
+          aria-controls="dropdown"
+          aria-label={switchLanguageLabel || ''}
+        >
+          <LanguageSkillIcon size={22} />
+        </button>
+      </div>
       <PresenceAnimation
         id="dropdown"
         show={open}
-        className="base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur-sm"
+        className={`base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur duration-1000 ${
+          scrolled && 'bg-(--overlay-color)'
+        }`}
         duration={0.2}
       >
         <ul

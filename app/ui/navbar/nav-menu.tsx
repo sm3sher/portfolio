@@ -9,6 +9,7 @@ import {
 import { Link, usePathname } from '@/i18n/routing';
 import { useEffect, useState } from 'react';
 import Tooltip from '@/app/ui/tooltip/tooltip';
+import useScrolled from '@/app/ui/hook/use-scrolled';
 
 type Props = {
   homeLabel?: string | null;
@@ -25,6 +26,7 @@ export default function NavMenu({
 }: Props) {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>();
+  const scrolled = useScrolled();
 
   useEffect(() => {
     const sections = ['home', 'about', 'services', 'contact'];
@@ -74,7 +76,11 @@ export default function NavMenu({
   const basePath = pathname === '/' ? '' : '/';
 
   return (
-    <div className="base-border flex space-x-1 rounded-2xl p-1 backdrop-blur-sm">
+    <div
+      className={`base-border flex space-x-1 rounded-2xl p-1 backdrop-blur duration-1000 ${
+        scrolled && 'bg-(--overlay-color)'
+      }`}
+    >
       {navbarItems.map((item) => (
         <Tooltip key={item.id} content={item.label} marginTop="mt-2.5" hideAtSm>
           <Link
@@ -88,7 +94,9 @@ export default function NavMenu({
             aria-label={item.label || undefined}
           >
             <span className="px-3 py-1">{item.icon}</span>
-            <span className="hidden pr-3 leading-7 sm:block">{item.label}</span>
+            <span className="hidden pr-3 text-sm leading-7 sm:block">
+              {item.label}
+            </span>
           </Link>
         </Tooltip>
       ))}

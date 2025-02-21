@@ -24,6 +24,7 @@
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
   --surface-color: var(--color-white);
+  --overlay-color: --alpha(var(--color-white) / 80%);
   --border-color: --alpha(var(--color-black) / 20%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --error-color: var(--color-rose-600);
@@ -38,6 +39,7 @@ html.dark {
   --secondary: var(--color-neutral-300);
   --background-color: oklch(16.84% 0 0);
   --surface-color: var(--color-neutral-900);
+  --overlay-color: --alpha(var(--color-neutral-900) / 70%);
   --border-color: --alpha(var(--color-white) / 35%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
   --error-color: var(--color-rose-600);
