@@ -57,8 +57,8 @@ const content = {
   labels: {
     name: 'Name',
     email: 'Email',
-    role: 'Job title, company name (optional)',
-    message: 'Message',
+    role: 'Job Title & Company (Optional)',
+    message: 'Project Details',
   },
   emailVerificationTitle: 'Check your email',
   emailResendButtonLabel: 'Resend Email',

@@ -79,23 +79,23 @@ export const handlers = [
               projectStepsCollection: {
                 items: [
                   {
-                    title: 'Book a free 30-minute consultation',
+                    title: 'Arrange a free 30-minute consultation',
                     description: 'Let’s discuss your project and goals.',
                   },
                   {
                     title: 'Receive a tailored offer',
                     description:
-                      'For development work, you’ll get a fixed-price quote within 5 working days. For consulting and ongoing support, we’ll define a flexible engagement model.',
+                      'For development work, you’ll get a fixed-price quote within 5 working days. For consulting and ongoing support, we’ll define a flexible model.',
                   },
                   {
                     title: 'Work begins',
                     description:
-                      'I’ll begin development, perform a technical audit, or work with your team — keeping you updated throughout.',
+                      'I’ll start development, perform a technical audit, or collaborate with your team — keeping you updated throughout.',
                   },
                   {
                     title: 'Delivery & ongoing support',
                     description:
-                      'Once the work is completed, I’ll deliver the results and make adjustments if needed. For long-term projects, I provide continued support and optimizations.',
+                      'Once completed, I’ll deliver the results and make adjustments as needed. For long-term projects, I provide continued support and optimizations.',
                   },
                 ],
               },
