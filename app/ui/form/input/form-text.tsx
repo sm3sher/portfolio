@@ -1,11 +1,11 @@
+import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
+import type { ValidationMessageKey } from '@/app/lib/schemas';
 import type {
   FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
-import type { ValidationMessageKey } from '@/app/lib/schemas';
 
 type Props<T extends FieldValues> = {
   register: UseFormRegister<T>;

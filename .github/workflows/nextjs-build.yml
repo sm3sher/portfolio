@@ -23,11 +23,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Format Files
-        run: npm run format
-
-      - name: Lint Files
-        run: npm run lint
+      - name: Check Files
+        run: npm run check
 
       - name: Run Tests
         run: npm test

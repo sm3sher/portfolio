@@ -1,9 +1,9 @@
-import type { Metadata } from 'next';
 import contentfulClient from '@/app/lib/contentful/client';
-import type { Locale } from '@/i18n/routing';
-import dynamic from 'next/dynamic';
-import Home from '@/app/ui/section/home';
 import ServiceBanner from '@/app/ui/banner/service-banner';
+import Home from '@/app/ui/section/home';
+import type { Locale } from '@/i18n/routing';
+import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
 type Props = {
   params: Promise<{ locale: Locale }>;

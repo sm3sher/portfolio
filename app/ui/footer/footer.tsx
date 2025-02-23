@@ -1,9 +1,9 @@
-import type { Locale } from '@/i18n/routing';
+import contentfulClient from '@/app/lib/contentful/client';
+import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
+import Logo from '@/app/ui/footer/logo';
 import LogoGithub from '@/app/ui/footer/logo-github';
 import LogoKofi from '@/app/ui/footer/logo-kofi';
-import contentfulClient from '@/app/lib/contentful/client';
-import Logo from '@/app/ui/footer/logo';
-import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
+import type { Locale } from '@/i18n/routing';
 
 type Props = {
   locale: Locale;

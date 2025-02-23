@@ -1,11 +1,11 @@
-import type { ReactNode } from 'react';
-import { ThemeProvider } from 'next-themes';
-import { GeistSans } from 'geist/font/sans';
-import { GeistMono } from 'geist/font/mono';
 import { type Locale, routing } from '@/i18n/routing';
-import { setRequestLocale } from 'next-intl/server';
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
 import { NextIntlClientProvider } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
+import { ThemeProvider } from 'next-themes';
 import { notFound } from 'next/navigation';
+import type { ReactNode } from 'react';
 import '@/app/ui/globals.css';
 
 type Props = {

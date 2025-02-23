@@ -1,5 +1,5 @@
-import { getRequestConfig } from 'next-intl/server';
 import { type Locale, routing } from '@/i18n/routing';
+import { getRequestConfig } from 'next-intl/server';
 
 export default getRequestConfig(async ({ requestLocale }) => {
   // This typically corresponds to the `[locale]` segment

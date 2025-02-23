@@ -1,14 +1,14 @@
-import ViewAnimation from '@/app/ui/animation/view-animation';
-import ContactForm from '@/app/ui/form/contact-form';
-import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
-import type { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import type {
   Form,
   ProjectStep,
   Testimonials,
 } from '@/app/lib/contentful/generated/sdk';
+import ViewAnimation from '@/app/ui/animation/view-animation';
+import ContactForm from '@/app/ui/form/contact-form';
+import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
 import ProjectSteps from '@/app/ui/steps/project-steps';
+import type { Locale } from '@/i18n/routing';
 
 type Props = {
   locale: Locale;

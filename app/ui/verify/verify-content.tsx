@@ -1,12 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import type { Verify } from '@/app/lib/contentful/generated/sdk';
 import SpringAnimation from '@/app/ui/animation/spring-animation';
+import ViewAnimation from '@/app/ui/animation/view-animation';
 import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 import { CancelCircleIcon, CheckmarkCircle01Icon } from 'hugeicons-react';
-import ViewAnimation from '@/app/ui/animation/view-animation';
 import { useSearchParams } from 'next/navigation';
-import type { Verify } from '@/app/lib/contentful/generated/sdk';
+import { useEffect, useState } from 'react';
 
 type Props = {
   content?: Verify;

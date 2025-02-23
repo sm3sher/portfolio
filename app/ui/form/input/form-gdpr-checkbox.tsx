@@ -1,13 +1,13 @@
+import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
+import type { ValidationMessageKey } from '@/app/lib/schemas';
+import { Link } from '@/i18n/routing';
+import { Tick02Icon } from 'hugeicons-react';
 import type {
   FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import { Link } from '@/i18n/routing';
-import { Tick02Icon } from 'hugeicons-react';
-import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
-import type { ValidationMessageKey } from '@/app/lib/schemas';
 
 type Props<T extends FieldValues> = {
   content: {

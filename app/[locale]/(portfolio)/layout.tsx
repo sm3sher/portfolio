@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react';
-import type { Locale } from '@/i18n/routing';
-import Footer from '@/app/ui/footer/footer';
 import ScrollToTop from '@/app/ui/button/scroll-to-top';
+import Footer from '@/app/ui/footer/footer';
 import Navbar from '@/app/ui/navbar/navbar';
+import type { Locale } from '@/i18n/routing';
+import type { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;

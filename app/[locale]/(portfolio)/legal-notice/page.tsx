@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
-import { Link, type Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
+import { Link, type Locale } from '@/i18n/routing';
+import type { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
