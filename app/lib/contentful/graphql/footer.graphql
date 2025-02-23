@@ -1,20 +1,20 @@
 query footerContent($locale: String) {
-    footerCollection(limit: 1, locale: $locale) {
-        items {
-            title
-            description
-            profileSection
-            profileGitHub
-            profileGitHubHref
-            profileStackOverflow
-            profileStackOverflowHref
-            legalSection
-            legalNotice
-            legalPrivacyPolicy
-            gitHubHref
-            gitHubHrefLabel
-            kofiHref
-            kofiHrefLabel
-        }
+  footerCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      description
+      profileSection
+      profileGitHub
+      profileGitHubHref
+      profileStackOverflow
+      profileStackOverflowHref
+      legalSection
+      legalNotice
+      legalPrivacyPolicy
+      gitHubHref
+      gitHubHrefLabel
+      kofiHref
+      kofiHrefLabel
     }
+  }
 }

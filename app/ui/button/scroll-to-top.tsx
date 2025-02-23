@@ -1,10 +1,10 @@
 'use client';
 
-import { CSSProperties, useEffect, useState } from 'react';
+import type { Locale } from '@/i18n/routing';
 import { ArrowUp01Icon } from 'hugeicons-react';
 import { motion } from 'motion/react';
 import { useLocale } from 'next-intl';
-import { Locale } from '@/i18n/routing';
+import { type CSSProperties, useEffect, useState } from 'react';
 
 export default function ScrollToTop() {
   const locale = useLocale() as Locale;
@@ -43,10 +43,11 @@ export default function ScrollToTop() {
       className={`fixed right-4 bottom-4 rounded-full backdrop-blur-xs xl:right-10 xl:bottom-8 ${
         showScrollButton
           ? 'pointer-events-auto z-10'
-          : 'pointer-events-none -z-10'
+          : '-z-10 pointer-events-none'
       }`}
     >
       <button
+        type="button"
         onClick={scrollToTop}
         className="relative aspect-square rounded-full p-2.5"
         aria-label={locale === 'en' ? 'Scroll to top' : 'Nach oben scrollen'}

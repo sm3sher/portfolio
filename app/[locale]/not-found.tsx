@@ -2,7 +2,7 @@ import Stars from '@/app/ui/not-found/stars';
 import Astronaut from '@/app/ui/not-found/astronaut';
 import NotFoundContent from '@/app/ui/not-found/not-found-content';
 import { useLocale } from 'next-intl';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 
 export default function NotFound() {

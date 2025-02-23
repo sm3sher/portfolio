@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import LogoGithub from '@/app/ui/footer/logo-github';
 import LogoKofi from '@/app/ui/footer/logo-kofi';
 import contentfulClient from '@/app/lib/contentful/client';
@@ -70,7 +70,7 @@ export default async function Footer({ locale }: Props) {
         </div>
         <hr className="my-6 border-(--border-color) sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-(--secondary)">
+          <span className="text-(--secondary) text-sm">
             &copy; {year} {content?.title}
           </span>
           <div className="mt-4 flex gap-5 sm:mt-0 sm:justify-center">

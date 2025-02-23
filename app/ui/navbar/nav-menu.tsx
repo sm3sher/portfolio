@@ -1,15 +1,15 @@
 'use client';
 
+import useScrolled from '@/app/ui/hook/use-scrolled';
+import Tooltip from '@/app/ui/tooltip/tooltip';
+import { Link, usePathname } from '@/i18n/routing';
 import {
   ContractsIcon,
   GridViewIcon,
   Home09Icon,
   UserCircleIcon,
 } from 'hugeicons-react';
-import { Link, usePathname } from '@/i18n/routing';
 import { useEffect, useState } from 'react';
-import Tooltip from '@/app/ui/tooltip/tooltip';
-import useScrolled from '@/app/ui/hook/use-scrolled';
 
 type Props = {
   homeLabel?: string | null;
@@ -35,12 +35,12 @@ export default function NavMenu({
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       let currentSection = undefined;
 
-      sections.forEach((section) => {
+      for (const section of sections) {
         const element = document.getElementById(section);
         if (element && element.offsetTop <= scrollPosition) {
           currentSection = section;
         }
-      });
+      }
 
       setActiveSection(currentSection);
     };

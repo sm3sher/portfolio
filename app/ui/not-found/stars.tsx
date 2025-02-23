@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { useTheme } from 'next-themes';
+import { useEffect, useRef } from 'react';
 
 type Star = {
   x: number;
@@ -68,7 +68,7 @@ export default function Stars() {
     };
 
     const updateStars = (): void => {
-      stars.forEach((star) => {
+      for (const star of stars) {
         star.y -= star.speed; // All stars move upward
         star.opacity =
           star.baseOpacity + Math.sin(Date.now() * 0.001 * star.speed) * 0.3;
@@ -78,7 +78,7 @@ export default function Stars() {
           star.y = canvas.height;
           star.x = Math.random() * canvas.width;
         }
-      });
+      }
     };
 
     const drawStars = (): void => {
@@ -103,12 +103,12 @@ export default function Stars() {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw stars with parallax effect
-      stars.forEach((star) => {
+      for (const star of stars) {
         ctx.fillStyle = isDark
           ? `rgba(255, 255, 255, ${star.opacity})`
           : `rgba(0, 0, 0, ${star.opacity * 0.7})`;
         ctx.fillRect(star.x, star.y, star.size, star.size);
-      });
+      }
     };
 
     const createShootingStar = (): void => {
@@ -164,13 +164,13 @@ export default function Stars() {
           0,
           `rgba(255, 255, 255, ${shootingStar.opacity})`,
         );
-        gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
       } else {
         gradient.addColorStop(
           0,
           `rgba(0, 0, 0, ${shootingStar.opacity * 0.7})`,
         );
-        gradient.addColorStop(1, `rgba(0, 0, 0, 0)`);
+        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       }
       ctx.beginPath();
       ctx.strokeStyle = gradient;

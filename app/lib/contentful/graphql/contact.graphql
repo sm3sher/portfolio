@@ -1,78 +1,78 @@
 query contactContent($locale: String) {
-    contactCollection(limit: 1, locale: $locale) {
+  contactCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleMain
+      subTitleHighlight
+      projectStepsCollection {
         items {
+          ... on ProjectStep {
             title
-            subTitleMain
-            subTitleHighlight
-            projectStepsCollection {
-                items {
-                    ... on ProjectStep {
-                        title
-                        description
-                    }
-                }
-            }
+            description
+          }
         }
+      }
     }
-    formCollection(limit: 1, locale: $locale) {
+  }
+  formCollection(limit: 1, locale: $locale) {
+    items {
+      labels {
+        name
+        email
+        role
+        message
+      }
+      validationMessages {
+        nameRequired
+        nameMaxLength
+        emailInvalid
+        emailMaxLength
+        roleMaxLength
+        messageRequired
+        messageMaxLength
+        consentRequired
+      }
+      gdprNoticeIntro
+      gdprNoticeLinkText
+      gdprNoticeDetails
+      sendButtonLabel
+      errorTitle
+      errorIntro
+      errorEditPrompt
+      errorEditAriaLabel
+      errorDescription
+      errorContactEmail
+      errorButtonLabel
+      emailVerificationTitle
+      emailVerificationDescription
+      emailResendButtonLabel
+      emailEditPrompt
+      emailEditAriaLabel
+      attemptsLabel
+      attemptLabel
+    }
+  }
+  testimonialsCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      prevSlideLabel
+      nextSlideLabel
+      testimonialEntriesCollection {
         items {
-            labels {
-                name
-                email
-                role
-                message
+          ... on Testimonial {
+            quote
+            author
+            jobTitle
+            logo {
+              url
+              width
+              height
+              description
             }
-            validationMessages {
-                nameRequired
-                nameMaxLength
-                emailInvalid
-                emailMaxLength
-                roleMaxLength
-                messageRequired
-                messageMaxLength
-                consentRequired
-            }
-            gdprNoticeIntro
-            gdprNoticeLinkText
-            gdprNoticeDetails
-            sendButtonLabel
-            errorTitle
-            errorIntro
-            errorEditPrompt
-            errorEditAriaLabel
-            errorDescription
-            errorContactEmail
-            errorButtonLabel
-            emailVerificationTitle
-            emailVerificationDescription
-            emailResendButtonLabel
-            emailEditPrompt
-            emailEditAriaLabel
-            attemptsLabel
-            attemptLabel
+            logoInvert
+          }
         }
+      }
     }
-    testimonialsCollection(limit: 1, locale: $locale) {
-        items {
-            title
-            prevSlideLabel
-            nextSlideLabel
-            testimonialEntriesCollection {
-                items {
-                    ... on Testimonial {
-                        quote
-                        author
-                        jobTitle
-                        logo {
-                            url
-                            width
-                            height
-                            description
-                        }
-                        logoInvert
-                    }
-                }
-            }
-        }
-    }
+  }
 }

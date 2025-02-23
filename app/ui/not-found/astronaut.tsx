@@ -1,19 +1,19 @@
 export default function Astronaut() {
   return (
-    <div className="animate-spin-slow relative h-[340px]">
-      <div className="absolute top-1/2 left-1/2 h-[300px] w-[250px] -translate-x-1/2 -translate-y-1/2">
+    <div className="relative h-[340px] animate-spin-slow">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[300px] w-[250px]">
         {/* Oxygen tank */}
-        <div className="absolute top-1/2 left-1/2 h-[150px] w-[100px] -translate-x-1/2 -translate-y-1/2 rounded-t-full bg-amber-800" />
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[150px] w-[100px] rounded-t-full bg-amber-800" />
 
         {/* Head */}
-        <div className="absolute top-[34px] left-1/2 h-[80px] w-[97px] -translate-x-1/2 [border-radius:50%] bg-linear-to-r/oklch from-slate-300 to-slate-200 dark:from-slate-200 dark:to-slate-100">
-          <div className="absolute top-1/2 -left-1 h-[25px] w-[12px] -translate-y-1/2 rounded-xl bg-orange-700 shadow-[92px_0_0_var(--color-orange-600)]" />
-          <div className="absolute top-1/2 left-1/2 h-[50px] w-[60px] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-linear-to-b/oklch from-orange-400 to-amber-700" />
+        <div className="-translate-x-1/2 absolute top-[34px] left-1/2 h-[80px] w-[97px] bg-linear-to-r/oklch from-slate-300 to-slate-200 [border-radius:50%] dark:from-slate-200 dark:to-slate-100">
+          <div className="-left-1 -translate-y-1/2 absolute top-1/2 h-[25px] w-[12px] rounded-xl bg-orange-700 shadow-[92px_0_0_var(--color-orange-600)]" />
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[50px] w-[60px] rounded-xl bg-linear-to-b/oklch from-orange-400 to-amber-700" />
         </div>
 
         {/* Body */}
-        <div className="absolute top-[105px] left-1/2 z-10 h-[100px] w-[85px] -translate-x-1/2 [border-radius:40px/20px] bg-linear-to-r/oklch from-slate-300 to-slate-200 dark:from-slate-200 dark:to-slate-100">
-          <div className="absolute top-[20px] left-1/2 h-[40px] w-[60px] -translate-x-1/2 bg-linear-to-t/oklch from-orange-400 to-amber-700">
+        <div className="-translate-x-1/2 absolute top-[105px] left-1/2 z-10 h-[100px] w-[85px] bg-linear-to-r/oklch from-slate-300 to-slate-200 [border-radius:40px/20px] dark:from-slate-200 dark:to-slate-100">
+          <div className="-translate-x-1/2 absolute top-[20px] left-1/2 h-[40px] w-[60px] bg-linear-to-t/oklch from-orange-400 to-amber-700">
             <div className="absolute top-[9px] left-[7px] h-[5px] w-[30px] bg-slate-200 shadow-[0_9px_0_var(--color-slate-200),0_18px_0_var(--color-slate-200)] dark:bg-slate-100 dark:shadow-[0_9px_0_var(--color-slate-100),0_18px_0_var(--color-slate-100)]" />
             <div className="absolute top-[9px] right-[7px] h-[8px] w-[8px] rounded-full bg-slate-200 shadow-[0_14px_0_2px_var(--color-slate-200)] dark:bg-slate-100 dark:shadow-[0_14px_0_2px_var(--color-slate-100)]" />
           </div>
@@ -31,10 +31,10 @@ export default function Astronaut() {
 
         {/* Legs */}
         <div className="absolute bottom-[70px] left-[75px] h-[40px] w-[30px] rotate-[20deg] bg-slate-300 dark:bg-slate-200">
-          <div className="absolute bottom-[-24px] left-[-20px] h-[30px] w-[50px] rounded-tl-3xl border-b-[10px] border-orange-700 bg-slate-300 dark:bg-slate-200" />
+          <div className="absolute bottom-[-24px] left-[-20px] h-[30px] w-[50px] rounded-tl-3xl border-orange-700 border-b-[10px] bg-slate-300 dark:bg-slate-200" />
         </div>
         <div className="absolute right-[75px] bottom-[70px] h-[40px] w-[30px] rotate-[-20deg] bg-slate-200 dark:bg-slate-100">
-          <div className="absolute right-[-20px] bottom-[-24px] h-[30px] w-[50px] rounded-tr-3xl border-b-[10px] border-orange-600 bg-slate-200 dark:bg-slate-100" />
+          <div className="absolute right-[-20px] bottom-[-24px] h-[30px] w-[50px] rounded-tr-3xl border-orange-600 border-b-[10px] bg-slate-200 dark:bg-slate-100" />
         </div>
       </div>
     </div>

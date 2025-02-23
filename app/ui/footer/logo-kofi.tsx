@@ -1,4 +1,4 @@
-import { SVGProps } from 'react';
+import type { SVGProps } from 'react';
 
 type Props = SVGProps<SVGSVGElement> & { backgroundColor: string };
 
@@ -10,6 +10,7 @@ export default function LogoKofi({ backgroundColor, ...props }: Props) {
       fill="none"
       {...props}
     >
+      <title id="github-logo-title">Ko-fi Logo</title>
       <path
         fill="currentColor"
         d="M96.134 193.911c-35.003 0-63.474-15.655-80.162-44.082C1.198 124.912-.006 97.923-.006 67.766c0-17.878 5.379-33.445 15.547-45.02 9.345-10.63 22.586-17.517 37.29-19.392C70.287 1.143 91.986.959 114.546.959c36.714 0 47.085.45 61.53 1.894 19.215 1.907 35.383 9.079 46.749 20.743 11.544 11.847 17.645 27.666 17.645 45.767v3.636c0 30.886-20.648 56.734-49.423 63.76-2.148 5.068-4.809 10.112-7.957 15.078l-.083.127c-10.137 15.668-33.964 41.954-79.605 41.954h-7.273l.006-.007Z"

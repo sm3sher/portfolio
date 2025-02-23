@@ -1,7 +1,7 @@
 import LanguageDropdown from '@/app/ui/navbar/language-dropdown';
 import NavMenu from '@/app/ui/navbar/nav-menu';
 import ThemeToggle from '@/app/ui/navbar/theme-toggle';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 
 type Props = {

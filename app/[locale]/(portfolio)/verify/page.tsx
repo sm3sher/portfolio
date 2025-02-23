@@ -1,8 +1,8 @@
 import { Suspense } from 'react';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 import VerifyContent from '@/app/ui/verify/verify-content';
-import { Verify } from '@/app/lib/contentful/generated/sdk';
+import type { Verify } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
   params: Promise<{ locale: Locale }>;

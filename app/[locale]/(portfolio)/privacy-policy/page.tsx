@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
 import contentfulClient from '@/app/lib/contentful/client';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import { CircleArrowRight02Icon } from 'hugeicons-react';
+import type { Metadata } from 'next';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -82,8 +82,8 @@ export default async function Page({ params }: Props) {
               {content?.privacyOverview?.userRightsIntroText}
             </p>
             <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
-              {content?.privacyOverview?.userRightsList?.map((item, index) => (
-                <li key={index}>{item}</li>
+              {content?.privacyOverview?.userRightsList?.map((item) => (
+                <li key={item}>{item}</li>
               ))}
             </ul>
             <p className="mb-2 text-(--secondary)">
@@ -233,10 +233,10 @@ export default async function Page({ params }: Props) {
             <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
               {content?.notesAndLegalInformation?.legalBasisList
                 ?.filter((item) => item !== null)
-                .map((item, index) => {
+                .map((item) => {
                   const [boldText, normalText] = item.split(':', 2);
                   return (
-                    <li key={index}>
+                    <li key={item}>
                       <span className="font-bold">{boldText}:</span>{' '}
                       {normalText}
                     </li>
@@ -255,14 +255,12 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.userRightsIntro}
             </p>
-            {content?.notesAndLegalInformation?.userRightsList?.map(
-              (item, index) => (
-                <p key={index} className="mb-2 flex items-center gap-2">
-                  <CircleArrowRight02Icon className="text-(--highlight)" />
-                  {item}
-                </p>
-              ),
-            )}
+            {content?.notesAndLegalInformation?.userRightsList?.map((item) => (
+              <p key={item} className="mb-2 flex items-center gap-2">
+                <CircleArrowRight02Icon className="text-(--highlight)" />
+                {item}
+              </p>
+            ))}
           </section>
 
           <section className="mb-8">
@@ -346,10 +344,10 @@ export default async function Page({ params }: Props) {
             <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
               {content?.dataCollection?.legalBasisList
                 ?.filter((item) => item !== null)
-                .map((item, index) => {
+                .map((item) => {
                   const [boldText, normalText] = item.split(':', 2);
                   return (
-                    <li key={index}>
+                    <li key={item}>
                       <span className="font-bold">{boldText}:</span>{' '}
                       {normalText}
                     </li>

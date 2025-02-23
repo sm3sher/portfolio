@@ -1,5 +1,5 @@
-import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
+import type { Locale } from '@/i18n/routing';
 
 type Props = {
   locale: Locale;
@@ -12,16 +12,17 @@ export default async function ServiceBanner({ locale }: Props) {
   return (
     <div className="drop-shadow-sm">
       <div className="overflow-hidden bg-(--surface-color) py-4 [mask-image:linear-gradient(to_right,transparent,black_5rem,black_calc(100%-5rem),transparent)]">
-        <div className="animate-infinite-scroll flex w-max gap-12 pl-12">
+        <div className="flex w-max animate-infinite-scroll gap-12 pl-12">
           {content?.map((service, index) => (
-            <h2 key={index} className={index % 2 === 1 ? 'text-stroke' : ''}>
+            <h2 key={service} className={index % 2 === 1 ? 'text-stroke' : ''}>
               {service}
             </h2>
           ))}
           {content?.map((service, index) => (
+            // biome-ignore lint/a11y/useHeadingContent: hidden intentionally to avoid duplicate headings
             <h2
-              key={`hidden-${index}`}
-              aria-hidden="true"
+              key={`hidden-${service}`}
+              aria-hidden={true}
               className={index % 2 === 1 ? 'text-stroke' : ''}
             >
               {service}

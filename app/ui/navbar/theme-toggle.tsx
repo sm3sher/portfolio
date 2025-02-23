@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
-import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
-import Tooltip from '@/app/ui/tooltip/tooltip';
 import useScrolled from '@/app/ui/hook/use-scrolled';
+import Tooltip from '@/app/ui/tooltip/tooltip';
+import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 type Props = {
   switchThemeLabel?: string | null;
@@ -26,7 +26,7 @@ export default function ThemeToggle({ switchThemeLabel }: Props) {
   }, []);
 
   return !mounted ? (
-    <button className="base-border rounded-2xl p-2 backdrop-blur">
+    <button type="button" className="base-border rounded-2xl p-2 backdrop-blur">
       <Loading03Icon size={22} />
     </button>
   ) : (
@@ -37,6 +37,7 @@ export default function ThemeToggle({ switchThemeLabel }: Props) {
         }`}
       >
         <button
+          type="button"
           onClick={toggleTheme}
           className="hover-effect base-border rounded-2xl p-2"
           aria-label={switchThemeLabel || undefined}

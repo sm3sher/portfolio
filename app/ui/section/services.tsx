@@ -1,25 +1,11 @@
-import ServiceCard from '@/app/ui/card/service-card';
-import {
-  IdeaIcon,
-  MentoringIcon,
-  SoftwareLicenseIcon,
-  SystemUpdate01Icon,
-  WebDesign01Icon,
-} from 'hugeicons-react';
-import { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
+import type { Service } from '@/app/lib/contentful/generated/sdk';
 import ViewAnimation from '@/app/ui/animation/view-animation';
+import ServiceCard from '@/app/ui/card/service-card';
+import type { Locale } from '@/i18n/routing';
 
 type Props = {
   locale: Locale;
-};
-
-const iconMapping = {
-  WebDesign01Icon: <WebDesign01Icon size={36} />,
-  IdeaIcon: <IdeaIcon size={36} />,
-  MentoringIcon: <MentoringIcon size={36} />,
-  SoftwareLicenseIcon: <SoftwareLicenseIcon size={36} />,
-  SystemUpdate01Icon: <SystemUpdate01Icon size={36} />,
 };
 
 export default async function Services({ locale }: Props) {
@@ -28,13 +14,13 @@ export default async function Services({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top] from-(--radial-color) to-transparent to-65%" />
+      <div className="-z-10 absolute inset-0 bg-radial-[circle_at_top] from-(--radial-color) to-65% to-transparent" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation
           className="mb-10 space-y-7 lg:mb-16"
           direction="fromBottom"
         >
-          <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
+          <h6 className="font-bold text-(--highlight) uppercase tracking-wider">
             {content?.title}
           </h6>
           <h3 className="uppercase">
@@ -47,16 +33,11 @@ export default async function Services({ locale }: Props) {
             .filter((item) => item !== null)
             .map((item, index) => (
               <ViewAnimation
-                key={index}
+                key={item.title}
                 direction="fromBottom"
                 delay={index * 0.2}
               >
-                <ServiceCard
-                  icon={iconMapping[item.iconName as keyof typeof iconMapping]}
-                  title={item.title!}
-                  tags={item.tags as string[]}
-                  description={item.description!}
-                />
+                <ServiceCard content={item as Service} />
               </ViewAnimation>
             ))}
         </div>

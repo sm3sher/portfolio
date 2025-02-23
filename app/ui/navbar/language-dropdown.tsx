@@ -1,12 +1,12 @@
 'use client';
 
-import { KeyboardEvent, useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { LanguageSkillIcon } from 'hugeicons-react';
-import { Locale, usePathname, useRouter } from '@/i18n/routing';
-import { useLocale } from 'next-intl';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import useScrolled from '@/app/ui/hook/use-scrolled';
+import { type Locale, usePathname, useRouter } from '@/i18n/routing';
+import { LanguageSkillIcon } from 'hugeicons-react';
+import { useLocale } from 'next-intl';
+import Image from 'next/image';
+import { type KeyboardEvent, useEffect, useRef, useState } from 'react';
 
 type Props = {
   usFlagDescription?: string | null;
@@ -38,7 +38,7 @@ export default function LanguageDropdown({
   };
 
   const handleKeyDown = (
-    e: KeyboardEvent<HTMLButtonElement | HTMLLIElement>,
+    e: KeyboardEvent<HTMLButtonElement | HTMLDivElement>,
   ) => {
     if (e.key === 'Escape') {
       setOpen(false);
@@ -93,6 +93,7 @@ export default function LanguageDropdown({
         }`}
       >
         <button
+          type="button"
           id="dropdownLanguageButton"
           onClick={() => setOpen((prevState) => !prevState)}
           onKeyDown={handleKeyDown}
@@ -113,13 +114,12 @@ export default function LanguageDropdown({
         }`}
         duration={0.2}
       >
-        <ul
+        <div
           className="space-y-1 p-1 text-sm"
           role="menu"
-          tabIndex={-1}
           aria-labelledby="dropdownLanguageButton"
         >
-          <li
+          <div
             className={`flex items-center rounded-xl pl-3 ${locale === 'en' ? 'text-(--secondary)' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
@@ -138,9 +138,9 @@ export default function LanguageDropdown({
               height={30}
             />
             <span className="block px-3 py-2">{englishLabel}</span>
-          </li>
+          </div>
           <hr className="mx-2 border-(--border-color)" />
-          <li
+          <div
             className={`flex items-center rounded-xl pl-3 ${locale === 'de' ? 'text-(--secondary)' : 'hover-effect'}`}
             role="menuitem"
             tabIndex={0}
@@ -159,8 +159,8 @@ export default function LanguageDropdown({
               height={30}
             />
             <span className="block px-3 py-2">{germanLabel}</span>
-          </li>
-        </ul>
+          </div>
+        </div>
       </PresenceAnimation>
     </div>
   );

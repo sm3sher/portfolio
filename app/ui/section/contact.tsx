@@ -1,9 +1,9 @@
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ContactForm from '@/app/ui/form/contact-form';
 import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
-import {
+import type {
   Form,
   ProjectStep,
   Testimonials,
@@ -20,13 +20,13 @@ export default async function Contact({ locale }: Props) {
 
   return (
     <div className="relative py-24 md:py-32">
-      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-transparent to-50%" />
+      <div className="-z-10 absolute inset-0 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-50% to-transparent" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation
           className="mb-10 space-y-7 lg:mb-16"
           direction="fromBottom"
         >
-          <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
+          <h6 className="font-bold text-(--highlight) uppercase tracking-wider">
             {content?.title}
           </h6>
           <h3 className="uppercase">

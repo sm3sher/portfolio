@@ -1,7 +1,7 @@
 'use client';
 
 import { Link, usePathname } from '@/i18n/routing';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;

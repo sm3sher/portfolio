@@ -1,6 +1,6 @@
-import { MailOpenIcon } from 'hugeicons-react';
+import type { Form } from '@/app/lib/contentful/generated/sdk';
 import StatusCard from '@/app/ui/card/status-card';
-import { Form } from '@/app/lib/contentful/generated/sdk';
+import { MailOpenIcon } from 'hugeicons-react';
 
 type Props = {
   content?: Form;
@@ -36,6 +36,7 @@ export default function SubmittedStatusCard({
       <p className="text-center">{content?.emailVerificationDescription}</p>
       {email && (
         <button
+          type="button"
           onClick={handleReturn}
           className="flex w-full cursor-pointer justify-center font-medium text-(--secondary) underline hover:text-(--primary)"
           aria-label={content?.emailEditAriaLabel || ''}

@@ -1,11 +1,11 @@
-import {
+import type {
   FieldErrors,
   FieldValues,
   Path,
   UseFormRegister,
 } from 'react-hook-form';
-import { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
-import { ValidationMessageKey } from '@/app/lib/schemas';
+import type { ValidationMessages } from '@/app/lib/contentful/generated/sdk';
+import type { ValidationMessageKey } from '@/app/lib/schemas';
 
 type Props<T extends FieldValues> = {
   register: UseFormRegister<T>;
@@ -39,7 +39,7 @@ export default function FormTextarea<T extends FieldValues>({
           {...register(name)}
           id={name}
           rows={5}
-          className="peer w-full resize-none rounded-xl px-4 pt-5 pb-1 duration-300 outline-none hover:bg-(--hover-color)"
+          className="peer w-full resize-none rounded-xl px-4 pt-5 pb-1 outline-none duration-300 hover:bg-(--hover-color)"
           defaultValue={defaultValue}
           placeholder=" "
           aria-describedby={`${String(name)}-error`}
@@ -52,13 +52,13 @@ export default function FormTextarea<T extends FieldValues>({
           {label}
         </label>
         <div
-          className={`base-border absolute inset-0 -z-10 rounded-xl bg-(--surface-color) duration-300 ${errorMessage ? 'border-l-8 border-(--error-color)' : ''}`}
+          className={`base-border -z-10 absolute inset-0 rounded-xl bg-(--surface-color) duration-300 ${errorMessage ? 'border-(--error-color) border-l-8' : ''}`}
         />
       </div>
       <p
         id={`${String(name)}-error`}
         aria-live="polite"
-        className={`ml-0.5 pt-1 text-sm text-(--error-color) opacity-0 duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0 p-0!'}`}
+        className={`ml-0.5 pt-1 text-(--error-color) text-sm opacity-0 duration-500 ${errorMessage ? 'h-5 opacity-100' : 'h-0 p-0!'}`}
       >
         {message}
       </p>

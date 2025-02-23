@@ -1,22 +1,22 @@
 'use client';
 
-import { useActionState, useEffect, useState, useTransition } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import LoadingSpinner from '@/app/ui/loading/loading-spinner';
-import { ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import {
+  type SaveMessageStatus,
   saveMessage,
-  SaveMessageStatus,
   sendVerificationEmail,
 } from '@/app/lib/actions';
-import ContactFormFields from '@/app/ui/form/contact-form-fields';
+import type { Form } from '@/app/lib/contentful/generated/sdk';
+import { type ContactFormData, contactFormSchema } from '@/app/lib/schemas';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
-import { Form } from '@/app/lib/contentful/generated/sdk';
 import FormErrorCard from '@/app/ui/form/card/form-error-card';
 import SubmittedStatusCard from '@/app/ui/form/card/form-success-card';
+import ContactFormFields from '@/app/ui/form/contact-form-fields';
+import LoadingSpinner from '@/app/ui/loading/loading-spinner';
+import type { Locale } from '@/i18n/routing';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useLocale } from 'next-intl';
-import { Locale } from '@/i18n/routing';
+import { useActionState, useEffect, useState, useTransition } from 'react';
+import { useForm } from 'react-hook-form';
 
 type Props = {
   content?: Form;
@@ -47,14 +47,14 @@ export default function ContactForm({ content }: Props) {
       return;
     }
     if (!state.success && state.fieldErrors) {
-      Object.entries(state.fieldErrors).forEach(([key, errorMessages]) => {
+      for (const [key, errorMessages] of Object.entries(state.fieldErrors)) {
         if (errorMessages) {
           setError(key as keyof ContactFormData, {
             type: 'server',
             message: errorMessages.join(', '),
           });
         }
-      });
+      }
     }
     if (state.success) {
       setSubmitted(true);
@@ -68,21 +68,21 @@ export default function ContactForm({ content }: Props) {
   };
 
   const handleRetry = () => {
-    setRetryAttempts((prev) => --prev);
+    setResendAttempts((prev) => prev - 1);
     const formData = new FormData();
     formData.set('baseUrl', window.origin);
     formData.set('locale', locale);
     if (state?.rawData) {
-      Object.entries(state.rawData).forEach(([key, value]) => {
+      for (const [key, value] of Object.entries(state.rawData)) {
         formData.set(key, String(value));
-      });
+      }
     }
     startTransaction(() => formAction(formData));
   };
 
   const handleResend = () => {
     if (!state?.success) return;
-    setResendAttempts((prev) => --prev);
+    setResendAttempts((prev) => prev - 1);
     startTransaction(() =>
       sendVerificationEmail(
         window.origin,

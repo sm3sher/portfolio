@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -19,7 +19,7 @@ export default function Tooltip({
       <span
         id={content || undefined}
         role="tooltip"
-        className={`${marginTop} base-border pointer-events-none absolute top-full left-1/2 -translate-x-1/2 transform rounded-xl bg-(--surface-color) px-2 py-1 text-center text-xs font-medium text-(--secondary) opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
+        className={`${marginTop} base-border -translate-x-1/2 pointer-events-none absolute top-full left-1/2 transform rounded-xl bg-(--surface-color) px-2 py-1 text-center font-medium text-(--secondary) text-xs opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
           hideAtSm ? 'sm:group-hover:opacity-0' : ''
         }`}
       >

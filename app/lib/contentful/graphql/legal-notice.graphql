@@ -1,23 +1,23 @@
 query legalNoticeContent($locale: String) {
-    legalNoticeCollection(limit: 1, locale: $locale) {
-        items {
-            title
-            subTitleInformation
-            addressName
-            addressJobTitle
-            addressStreet
-            addressPostalCode
-            addressCity
-            subTitleContact
-            contactEmailLabel
-            contactEmail
-            contactFormLabel
-            subTitleVat
-            vatLabel
-            vatId
-            subTitleDispute
-            disputeLabel
-            disputeStatement
-        }
+  legalNoticeCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleInformation
+      addressName
+      addressJobTitle
+      addressStreet
+      addressPostalCode
+      addressCity
+      subTitleContact
+      contactEmailLabel
+      contactEmail
+      contactFormLabel
+      subTitleVat
+      vatLabel
+      vatId
+      subTitleDispute
+      disputeLabel
+      disputeStatement
     }
+  }
 }

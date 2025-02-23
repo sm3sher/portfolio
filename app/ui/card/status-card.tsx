@@ -1,5 +1,5 @@
 import Button from '@/app/ui/button/button';
-import { MouseEventHandler, ReactNode } from 'react';
+import type { MouseEventHandler, ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -42,7 +42,7 @@ export default function StatusCard({
           {button.label}
         </Button>
       </div>
-      <span className="mt-2 flex justify-center text-sm text-(--text-secondary)">
+      <span className="mt-2 flex justify-center text-(--text-secondary) text-sm">
         {attemptsLeft} {attemptsLeft === 1 ? attemptLabel : attemptsLabel}
       </span>
     </div>

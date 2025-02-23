@@ -1,10 +1,13 @@
 'use client';
 
-import { useCallback } from 'react';
+import type {
+  Testimonial,
+  Testimonials,
+} from '@/app/lib/contentful/generated/sdk';
 import QuoteCard from '@/app/ui/card/quote-card';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react';
-import { Testimonials } from '@/app/lib/contentful/generated/sdk';
+import { useCallback } from 'react';
 
 type Props = {
   content: Testimonials;
@@ -28,11 +31,12 @@ export default function TestimonialSlider({ content }: Props) {
   return (
     <>
       <div className="mb-7 flex items-center justify-between space-x-2">
-        <h6 className="tracking-wider text-(--highlight) uppercase">
+        <h6 className="text-(--highlight) uppercase tracking-wider">
           {content?.title}
         </h6>
         <div className="flex space-x-2">
           <button
+            type="button"
             onClick={scrollPrev}
             className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
             aria-label={content?.prevSlideLabel || undefined}
@@ -43,6 +47,7 @@ export default function TestimonialSlider({ content }: Props) {
             />
           </button>
           <button
+            type="button"
             onClick={scrollNext}
             className="hover-effect base-border rounded-full p-1.5 backdrop-blur-sm"
             aria-label={content?.nextSlideLabel || undefined}
@@ -63,18 +68,11 @@ export default function TestimonialSlider({ content }: Props) {
             .filter((item) => item !== null)
             .map((item, index) => (
               <div
-                key={index}
-                className="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab px-1 select-none active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
-                role="group"
+                key={item.author}
+                className="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
                 aria-label={`${index + 1} / ${content?.testimonialEntriesCollection?.items.length}`}
               >
-                <QuoteCard
-                  quote={item.quote!}
-                  author={item.author!}
-                  jobTitle={item.jobTitle!}
-                  logo={item.logo}
-                  invert={item.logoInvert || false}
-                />
+                <QuoteCard content={item as Testimonial} />
               </div>
             ))}
         </div>

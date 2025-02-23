@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Workaround with tailwind v4 https://github.com/tailwindlabs/tailwindcss/issues/15814 */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -104,9 +104,6 @@ body {
 
 @utility text-stroke {
   color: var(--surface-color);
-  text-shadow:
-    1px 1px 0 var(--primary),
-    -1px -1px 0 var(--primary),
-    1px -1px 0 var(--primary),
-    -1px 1px 0 var(--primary);
+  text-shadow: 1px 1px 0 var(--primary), -1px -1px 0 var(--primary), 1px -1px 0
+    var(--primary), -1px 1px 0 var(--primary);
 }

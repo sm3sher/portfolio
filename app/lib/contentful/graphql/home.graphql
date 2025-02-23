@@ -1,20 +1,20 @@
 query homeContent($locale: String) {
-    homeCollection(limit: 1, locale: $locale) {
-        items {
-            greeting
-            greetingDescription
-            introHeadingMain
-            introHeadingHighlight
-            introSubheading
-            introDescription
-            ctaButtonLabel
-            scrollDownLabel
-            image {
-                url
-                width
-                height
-                description
-            }
-        }
+  homeCollection(limit: 1, locale: $locale) {
+    items {
+      greeting
+      greetingDescription
+      introHeadingMain
+      introHeadingHighlight
+      introSubheading
+      introDescription
+      ctaButtonLabel
+      scrollDownLabel
+      image {
+        url
+        width
+        height
+        description
+      }
     }
+  }
 }

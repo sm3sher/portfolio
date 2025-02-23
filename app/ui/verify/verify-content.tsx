@@ -6,7 +6,7 @@ import LoadingSpinner from '@/app/ui/loading/loading-spinner';
 import { CancelCircleIcon, CheckmarkCircle01Icon } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import { useSearchParams } from 'next/navigation';
-import { Verify } from '@/app/lib/contentful/generated/sdk';
+import type { Verify } from '@/app/lib/contentful/generated/sdk';
 
 type Props = {
   content?: Verify;
@@ -49,7 +49,7 @@ export default function VerifyContent({ content }: Props) {
               <CheckmarkCircle01Icon className="mx-auto h-14 w-14 text-(--highlight) sm:h-16 sm:w-16" />
             </SpringAnimation>
             <ViewAnimation direction="fromRight" duration={0.5} delay={0.2}>
-              <h1 className="text-3xl font-bold">{content?.successTitle}</h1>
+              <h1 className="font-bold text-3xl">{content?.successTitle}</h1>
             </ViewAnimation>
             <ViewAnimation direction="fromLeft" duration={0.5} delay={0.2}>
               <p>{content?.successDescription}</p>
@@ -62,7 +62,7 @@ export default function VerifyContent({ content }: Props) {
               <CancelCircleIcon className="mx-auto h-14 w-14 text-(--highlight) sm:h-16 sm:w-16" />
             </SpringAnimation>
             <ViewAnimation direction="fromRight" duration={0.5} delay={0.2}>
-              <h1 className="text-3xl font-bold">{content?.errorTitle}</h1>
+              <h1 className="font-bold text-3xl">{content?.errorTitle}</h1>
             </ViewAnimation>
             <ViewAnimation direction="fromLeft" duration={0.5} delay={0.2}>
               <p>{content?.errorDescription}</p>

@@ -1,9 +1,9 @@
-import Image from 'next/image';
-import { Link, Locale } from '@/i18n/routing';
-import Button from '@/app/ui/button/button';
 import contentfulClient from '@/app/lib/contentful/client';
-import { ArrowDown01Icon } from 'hugeicons-react';
 import ViewAnimation from '@/app/ui/animation/view-animation';
+import Button from '@/app/ui/button/button';
+import { Link, type Locale } from '@/i18n/routing';
+import { ArrowDown01Icon } from 'hugeicons-react';
+import Image from 'next/image';
 
 type Props = {
   locale: Locale;
@@ -15,19 +15,18 @@ export default async function Home({ locale }: Props) {
 
   return (
     <div className="relative pt-40 sm:pt-48">
-      <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top_left] from-(--radial-color) to-transparent to-50%" />
-      {content?.image &&
-        content.image.url &&
+      <div className="-z-10 absolute inset-0 bg-radial-[circle_at_top_left] from-(--radial-color) to-50% to-transparent" />
+      {content?.image?.url &&
         content.image.width &&
         content.image.height &&
         content.image.description && (
           <ViewAnimation
-            className="absolute inset-0 -z-20 xl:mx-auto xl:max-w-(--breakpoint-xl)"
+            className="-z-20 absolute inset-0 xl:mx-auto xl:max-w-(--breakpoint-xl)"
             direction="fromRight"
             duration={0.5}
           >
             <Image
-              className="absolute -right-32 bottom-0 max-h-[90%] w-auto object-contain opacity-95 brightness-110 contrast-[1.1] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)] saturate-[1.25] sm:-right-20 md:-right-12 lg:right-0 dark:opacity-100 dark:brightness-95 dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]"
+              className="-right-32 sm:-right-20 md:-right-12 absolute bottom-0 max-h-[90%] w-auto object-contain opacity-95 brightness-110 contrast-[1.1] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)] saturate-[1.25] lg:right-0 dark:opacity-100 dark:brightness-95 dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]"
               src={content.image.url}
               width={content.image.width}
               height={content.image.height}

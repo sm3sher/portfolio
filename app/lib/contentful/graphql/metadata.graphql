@@ -1,27 +1,27 @@
 query mainMetadataContent($locale: String) {
-    metadataCollection(limit: 1, locale: $locale) {
-        items {
-            mainTitle
-            mainDescription
-            mainKeywords
-        }
+  metadataCollection(limit: 1, locale: $locale) {
+    items {
+      mainTitle
+      mainDescription
+      mainKeywords
     }
+  }
 }
 
 query legalMetadataContent($locale: String) {
-    metadataCollection(limit: 1, locale: $locale) {
-        items {
-            legalTitle
-            legalDescription
-        }
+  metadataCollection(limit: 1, locale: $locale) {
+    items {
+      legalTitle
+      legalDescription
     }
+  }
 }
 
 query privacyMetadataContent($locale: String) {
-    metadataCollection(limit: 1, locale: $locale) {
-        items {
-            privacyTitle
-            privacyDescription
-        }
+  metadataCollection(limit: 1, locale: $locale) {
+    items {
+      privacyTitle
+      privacyDescription
     }
+  }
 }

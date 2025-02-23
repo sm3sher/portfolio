@@ -13,7 +13,7 @@ import {
   Text,
 } from '@react-email/components';
 import contentfulClient from '@/app/lib/contentful/client';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 
 type Props = {
   locale: Locale;
@@ -61,7 +61,7 @@ export default async function VerifyTemplate({
               <Text>{content?.description}</Text>
               <Button
                 href={verifyUrl}
-                className="bg-highlight rounded-full px-6 py-3 leading-4 font-medium text-white"
+                className="rounded-full bg-highlight px-6 py-3 font-medium text-white leading-4"
               >
                 {content?.buttonLabel}
               </Button>

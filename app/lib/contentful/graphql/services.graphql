@@ -1,19 +1,19 @@
 query servicesContent($locale: String) {
-    servicesCollection(limit: 1, locale: $locale) {
+  servicesCollection(limit: 1, locale: $locale) {
+    items {
+      title
+      subTitleMain
+      subTitleHighlight
+      serviceEntriesCollection {
         items {
+          ... on Service {
+            iconName
             title
-            subTitleMain
-            subTitleHighlight
-            serviceEntriesCollection {
-                items {
-                    ... on Service {
-                        iconName
-                        title
-                        tags
-                        description
-                    }
-                }
-            }
+            tags
+            description
+          }
         }
+      }
     }
+  }
 }

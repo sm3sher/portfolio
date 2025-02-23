@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import contentfulClient from '@/app/lib/contentful/client';
-import { Locale } from '@/i18n/routing';
+import type { Locale } from '@/i18n/routing';
 import dynamic from 'next/dynamic';
 import Home from '@/app/ui/section/home';
 import ServiceBanner from '@/app/ui/banner/service-banner';

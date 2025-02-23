@@ -1,16 +1,16 @@
 query navbarContent($locale: String) {
-    navbarCollection(limit: 1, locale: $locale) {
-        items {
-            usFlagDescription
-            deFlagDescription
-            englishLabel
-            germanLabel
-            switchLanguageLabel
-            homeLabel
-            aboutLabel
-            servicesLabel
-            contactLabel
-            switchThemeLabel
-        }
+  navbarCollection(limit: 1, locale: $locale) {
+    items {
+      usFlagDescription
+      deFlagDescription
+      englishLabel
+      germanLabel
+      switchLanguageLabel
+      homeLabel
+      aboutLabel
+      servicesLabel
+      contactLabel
+      switchThemeLabel
     }
+  }
 }

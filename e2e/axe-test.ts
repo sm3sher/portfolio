@@ -1,5 +1,5 @@
-import { test as base } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
+import { test as base } from '@playwright/test';
 
 type AxeFixture = {
   axeBuilder: () => AxeBuilder;
@@ -7,7 +7,6 @@ type AxeFixture = {
 
 export const test = base.extend<AxeFixture>({
   axeBuilder: async ({ page }, use) => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     await use(() =>
       new AxeBuilder({ page }).withTags([
         'wcag2a',

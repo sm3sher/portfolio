@@ -1,6 +1,6 @@
-import { CancelCircleIcon } from 'hugeicons-react';
+import type { Form } from '@/app/lib/contentful/generated/sdk';
 import StatusCard from '@/app/ui/card/status-card';
-import { Form } from '@/app/lib/contentful/generated/sdk';
+import { CancelCircleIcon } from 'hugeicons-react';
 
 type Props = {
   content?: Form;
@@ -31,6 +31,7 @@ export default function FormErrorCard({
       <p className="text-center">
         {content?.errorIntro}{' '}
         <button
+          type="button"
           onClick={handleReturn}
           className="cursor-pointer font-medium text-(--secondary) underline hover:text-(--primary)"
           aria-label={content?.errorEditAriaLabel || ''}

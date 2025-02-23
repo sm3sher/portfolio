@@ -1,12 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
-import userEvent, { UserEvent } from '@testing-library/user-event';
-import { ContactFormData, ValidationMessages } from '@/app/lib/schemas';
+import userEvent, { type UserEvent } from '@testing-library/user-event';
+import { type ContactFormData, ValidationMessages } from '@/app/lib/schemas';
 import supabaseClient from '@/app/lib/supabase/client';
 import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import ContactForm from '@/app/ui/form/contact-form';
-import { Form } from '@/app/lib/contentful/generated/sdk';
+import type { Form } from '@/app/lib/contentful/generated/sdk';
 import nodemailerClient from '@/app/lib/nodemailer/client';
 
 const FAIL_EMAIL = 'fail@test.com';

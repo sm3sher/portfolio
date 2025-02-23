@@ -13,7 +13,7 @@ export default function Logo({ title, description }: Props) {
       </div>
       <div className="flex flex-col">
         <h5 className="text-">{title}</h5>
-        <span className="text-xs font-semibold tracking-wide text-(--secondary) sm:text-sm">
+        <span className="font-semibold text-(--secondary) text-xs tracking-wide sm:text-sm">
           {description}
         </span>
       </div>

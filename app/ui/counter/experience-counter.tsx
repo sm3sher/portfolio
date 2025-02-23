@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import type { Metric } from '@/app/lib/contentful/generated/sdk';
+import { getYearsSince } from '@/app/lib/date-utils';
 import {
   animate,
   motion,
@@ -8,19 +9,13 @@ import {
   useMotionValue,
   useTransform,
 } from 'motion/react';
-import { getYearsSince } from '@/app/lib/date-utils';
+import { useEffect, useRef } from 'react';
 
 type Props = {
-  startYear: number;
-  labelPrefix: string;
-  labelSuffix: string;
+  content?: Metric;
 };
 
-export default function ExperienceCounter({
-  startYear,
-  labelPrefix,
-  labelSuffix,
-}: Props) {
+export default function ExperienceCounter({ content }: Props) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -28,14 +23,14 @@ export default function ExperienceCounter({
   const rounded = useTransform(count, (value) => `${Math.round(value)}+`);
 
   useEffect(() => {
-    if (isInView) {
-      const controls = animate(count, getYearsSince(startYear), {
-        duration: 1.5,
+    if (isInView && content?.startYear) {
+      const controls = animate(count, getYearsSince(content.startYear), {
+        duration: 1,
         delay: 0.5,
       });
       return controls.stop;
     }
-  }, [isInView, count, startYear]);
+  }, [isInView, count, content?.startYear]);
 
   return (
     <div
@@ -43,9 +38,9 @@ export default function ExperienceCounter({
       className="base-border w-full border-r-0 border-b-0 border-l-0 pt-7 pl-0.5"
     >
       <motion.h3 className="mb-1 font-light">{rounded}</motion.h3>
-      <h6 className="text-base tracking-wide text-(--secondary) uppercase">
-        <span className="whitespace-nowrap">{labelPrefix}</span>{' '}
-        <span className="whitespace-nowrap">{labelSuffix}</span>
+      <h6 className="text-(--secondary) text-base uppercase tracking-wide">
+        <span className="whitespace-nowrap">{content?.labelPrefix}</span>{' '}
+        <span className="whitespace-nowrap">{content?.labelSuffix}</span>
       </h6>
     </div>
   );

@@ -9,11 +9,11 @@ const sections = [
 const pages = ['/legal-notice', '/privacy-policy', '/not-found'];
 const colorSchemes = ['dark', 'light'] as const;
 
-colorSchemes.forEach((colorScheme) => {
+for (const colorScheme of colorSchemes) {
   test.describe(`${colorScheme.charAt(0).toUpperCase()}${colorScheme.slice(1)} mode`, () => {
     test.use({ colorScheme });
 
-    test(`should not have any WCAG A or AA violations on main page navigation`, async ({
+    test('should not have any WCAG A or AA violations on main page navigation', async ({
       page,
       axeBuilder,
     }) => {
@@ -32,7 +32,7 @@ colorSchemes.forEach((colorScheme) => {
       expect(scanResults.violations).toEqual([]);
     });
 
-    pages.forEach((path) =>
+    for (const path of pages) {
       test(`should not have any WCAG A or AA violations on ${path}`, async ({
         page,
         axeBuilder,
@@ -46,7 +46,7 @@ colorSchemes.forEach((colorScheme) => {
 
         const scanResults = await axeBuilder().analyze();
         expect(scanResults.violations).toEqual([]);
-      }),
-    );
+      });
+    }
   });
-});
+}

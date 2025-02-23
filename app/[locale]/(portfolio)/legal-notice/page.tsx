@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Link, Locale } from '@/i18n/routing';
+import { Link, type Locale } from '@/i18n/routing';
 import contentfulClient from '@/app/lib/contentful/client';
 
 type Props = {
@@ -71,7 +71,7 @@ export default async function Page({ params }: Props) {
         )}
 
         <section>
-          <h4 className="mb-4 break-words hyphens-auto">
+          <h4 className="mb-4 hyphens-auto break-words">
             {content?.subTitleDispute}
           </h4>
           <p className="text-(--secondary)">{content?.disputeLabel}</p>

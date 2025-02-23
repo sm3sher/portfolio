@@ -1,6 +1,0 @@
-app/lib/contentful/generated
-app/lib/supabase/generated
-node_modules
-coverage
-.next
-.husky
