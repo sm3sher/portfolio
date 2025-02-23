@@ -31,7 +31,7 @@ export default async function Services({ locale }: Props) {
       <div className="absolute inset-0 -z-10 bg-radial-[circle_at_top] from-(--radial-color) to-transparent to-65%" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <ViewAnimation
-          className="mb-10 space-y-7 md:mb-16"
+          className="mb-10 space-y-7 lg:mb-16"
           direction="fromBottom"
         >
           <h6 className="font-bold tracking-wider text-(--highlight) uppercase">
@@ -46,7 +46,11 @@ export default async function Services({ locale }: Props) {
           {content?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
-              <ViewAnimation key={index} direction="fromLeft" delay={0.4}>
+              <ViewAnimation
+                key={index}
+                direction="fromBottom"
+                delay={index * 0.2}
+              >
                 <ServiceCard
                   icon={iconMapping[item.iconName as keyof typeof iconMapping]}
                   title={item.title!}
