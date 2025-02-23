@@ -76,15 +76,28 @@ export const handlers = [
               title: 'Get in Touch!',
               subTitleMain: 'Send a',
               subTitleHighlight: 'Message.',
-              description:
-                'Do you have a project or an idea you’d like to bring to life? Share your goals and requirements with me, so I can assess how I might assist you best. I’ll respond promptly to discuss further steps.',
-              avatarTitle: 'Roman Jumatov',
-              avatarDescription: 'Freelance Software Developer',
-              avatarImage: {
-                url: MOCK_IMAGE_URL,
-                width: 1100,
-                height: 1100,
-                description: 'Avatar placeholder',
+              projectStepsCollection: {
+                items: [
+                  {
+                    title: 'Book a free 30-minute consultation',
+                    description: 'Let’s discuss your project and goals.',
+                  },
+                  {
+                    title: 'Receive a tailored offer',
+                    description:
+                      'For development work, you’ll get a fixed-price quote within 5 working days. For consulting and ongoing support, we’ll define a flexible engagement model.',
+                  },
+                  {
+                    title: 'Work begins',
+                    description:
+                      'I’ll begin development, perform a technical audit, or work with your team — keeping you updated throughout.',
+                  },
+                  {
+                    title: 'Delivery & ongoing support',
+                    description:
+                      'Once the work is completed, I’ll deliver the results and make adjustments if needed. For long-term projects, I provide continued support and optimizations.',
+                  },
+                ],
               },
             },
           ],
@@ -117,8 +130,8 @@ export const handlers = [
               labels: {
                 name: 'Name',
                 email: 'Email',
-                role: 'Job title, company name (optional)',
-                message: 'Message',
+                role: 'Job Title & Company (Optional)',
+                message: 'Project Details',
               },
               validationMessages: {
                 nameRequired: 'Please enter your name',

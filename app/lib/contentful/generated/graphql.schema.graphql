@@ -231,7 +231,6 @@ input AssetFilter {
 
 type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
-  contactCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ContactCollection
   emailCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EmailCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
   homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
@@ -266,12 +265,9 @@ enum AssetOrder {
 """
 type Contact implements Entry & _Node {
   _id: ID!
-  avatarDescription(locale: String): String
-  avatarImage(locale: String, preview: Boolean): Asset
-  avatarTitle(locale: String): String
   contentfulMetadata: ContentfulMetadata!
-  description(locale: String): String
   linkedFrom(allowedLocales: [String]): ContactLinkingCollections
+  projectStepsCollection(limit: Int = 100, locale: String, order: [ContactProjectStepsCollectionOrder], preview: Boolean, skip: Int = 0, where: ProjectStepFilter): ContactProjectStepsCollection
   subTitleHighlight(locale: String): String
   subTitleMain(locale: String): String
   sys: Sys!
@@ -288,29 +284,9 @@ type ContactCollection {
 input ContactFilter {
   AND: [ContactFilter]
   OR: [ContactFilter]
-  avatarDescription: String
-  avatarDescription_contains: String
-  avatarDescription_exists: Boolean
-  avatarDescription_in: [String]
-  avatarDescription_not: String
-  avatarDescription_not_contains: String
-  avatarDescription_not_in: [String]
-  avatarImage_exists: Boolean
-  avatarTitle: String
-  avatarTitle_contains: String
-  avatarTitle_exists: Boolean
-  avatarTitle_in: [String]
-  avatarTitle_not: String
-  avatarTitle_not_contains: String
-  avatarTitle_not_in: [String]
   contentfulMetadata: ContentfulMetadataFilter
-  description: String
-  description_contains: String
-  description_exists: Boolean
-  description_in: [String]
-  description_not: String
-  description_not_contains: String
-  description_not_in: [String]
+  projectSteps: cfProjectStepNestedFilter
+  projectStepsCollection_exists: Boolean
   subTitleHighlight: String
   subTitleHighlight_contains: String
   subTitleHighlight_exists: Boolean
@@ -340,14 +316,32 @@ type ContactLinkingCollections {
 }
 
 enum ContactOrder {
-  avatarDescription_ASC
-  avatarDescription_DESC
-  avatarTitle_ASC
-  avatarTitle_DESC
   subTitleHighlight_ASC
   subTitleHighlight_DESC
   subTitleMain_ASC
   subTitleMain_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+type ContactProjectStepsCollection {
+  items: [ProjectStep]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+enum ContactProjectStepsCollectionOrder {
+  description_ASC
+  description_DESC
   sys_firstPublishedAt_ASC
   sys_firstPublishedAt_DESC
   sys_id_ASC
@@ -2979,6 +2973,83 @@ enum PrivacyPolicyOrder {
 }
 
 """
+[See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/projectStep)
+"""
+type ProjectStep implements Entry & _Node {
+  _id: ID!
+  contentfulMetadata: ContentfulMetadata!
+  description(locale: String): String
+  linkedFrom(allowedLocales: [String]): ProjectStepLinkingCollections
+  sys: Sys!
+  title(locale: String): String
+}
+
+type ProjectStepCollection {
+  items: [ProjectStep]!
+  limit: Int!
+  skip: Int!
+  total: Int!
+}
+
+input ProjectStepFilter {
+  AND: [ProjectStepFilter]
+  OR: [ProjectStepFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
+}
+
+type ProjectStepLinkingCollections {
+  contactCollection(limit: Int = 100, locale: String, order: [ProjectStepLinkingCollectionsContactCollectionOrder], preview: Boolean, skip: Int = 0): ContactCollection
+  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+}
+
+enum ProjectStepLinkingCollectionsContactCollectionOrder {
+  subTitleHighlight_ASC
+  subTitleHighlight_DESC
+  subTitleMain_ASC
+  subTitleMain_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+enum ProjectStepOrder {
+  description_ASC
+  description_DESC
+  sys_firstPublishedAt_ASC
+  sys_firstPublishedAt_DESC
+  sys_id_ASC
+  sys_id_DESC
+  sys_publishedAt_ASC
+  sys_publishedAt_DESC
+  sys_publishedVersion_ASC
+  sys_publishedVersion_DESC
+  title_ASC
+  title_DESC
+}
+
+"""
 The 'Quality' type represents quality as whole numeric values between `1` and `100`.
 """
 scalar Quality
@@ -3022,6 +3093,8 @@ type Query {
   privacyOverviewCollection(limit: Int = 100, locale: String, order: [PrivacyOverviewOrder], preview: Boolean, skip: Int = 0, where: PrivacyOverviewFilter): PrivacyOverviewCollection
   privacyPolicy(id: String!, locale: String, preview: Boolean): PrivacyPolicy
   privacyPolicyCollection(limit: Int = 100, locale: String, order: [PrivacyPolicyOrder], preview: Boolean, skip: Int = 0, where: PrivacyPolicyFilter): PrivacyPolicyCollection
+  projectStep(id: String!, locale: String, preview: Boolean): ProjectStep
+  projectStepCollection(limit: Int = 100, locale: String, order: [ProjectStepOrder], preview: Boolean, skip: Int = 0, where: ProjectStepFilter): ProjectStepCollection
   service(id: String!, locale: String, preview: Boolean): Service
   serviceBanner(id: String!, locale: String, preview: Boolean): ServiceBanner
   serviceBannerCollection(limit: Int = 100, locale: String, order: [ServiceBannerOrder], preview: Boolean, skip: Int = 0, where: ServiceBannerFilter): ServiceBannerCollection
@@ -4356,6 +4429,27 @@ input cfPrivacyOverviewNestedFilter {
   userRightsTitle_not: String
   userRightsTitle_not_contains: String
   userRightsTitle_not_in: [String]
+}
+
+input cfProjectStepNestedFilter {
+  AND: [cfProjectStepNestedFilter]
+  OR: [cfProjectStepNestedFilter]
+  contentfulMetadata: ContentfulMetadataFilter
+  description: String
+  description_contains: String
+  description_exists: Boolean
+  description_in: [String]
+  description_not: String
+  description_not_contains: String
+  description_not_in: [String]
+  sys: SysFilter
+  title: String
+  title_contains: String
+  title_exists: Boolean
+  title_in: [String]
+  title_not: String
+  title_not_contains: String
+  title_not_in: [String]
 }
 
 input cfServiceNestedFilter {
