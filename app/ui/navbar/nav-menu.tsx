@@ -46,7 +46,7 @@ export default function NavMenu({
     };
 
     updateActiveSection();
-    window.addEventListener('scroll', updateActiveSection);
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
     return () => window.removeEventListener('scroll', updateActiveSection);
   }, []);
 
@@ -82,7 +82,7 @@ export default function NavMenu({
       }`}
     >
       {navbarItems.map((item) => (
-        <Tooltip key={item.id} content={item.label} marginTop="mt-2.5" hideAtSm>
+        <Tooltip key={item.id} content={item.label} hideAtSm>
           <Link
             href={`${basePath}#${item.id}`} // Adjust href to include "/" if not on main page
             className={`flex items-center rounded-xl border border-transparent font-medium transition duration-300 ${
