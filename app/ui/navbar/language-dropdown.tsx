@@ -1,7 +1,7 @@
 'use client';
 
+import useScrolled from '@/app/lib/hooks/use-scrolled';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
-import useScrolled from '@/app/ui/hook/use-scrolled';
 import { type Locale, usePathname, useRouter } from '@/i18n/routing';
 import { LanguageSkillIcon } from 'hugeicons-react';
 import { useLocale } from 'next-intl';

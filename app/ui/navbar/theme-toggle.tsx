@@ -1,6 +1,6 @@
 'use client';
 
-import useScrolled from '@/app/ui/hook/use-scrolled';
+import useScrolled from '@/app/lib/hooks/use-scrolled';
 import Tooltip from '@/app/ui/tooltip/tooltip';
 import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
 import { useTheme } from 'next-themes';

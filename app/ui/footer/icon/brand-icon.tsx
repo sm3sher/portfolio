@@ -5,7 +5,7 @@ type Props = {
   description?: string | null;
 };
 
-export default function Logo({ title, description }: Props) {
+export default function BrandIcon({ title, description }: Props) {
   return (
     <div className="flex items-center gap-3 sm:gap-4">
       <div className="rounded-[1.15rem] bg-radial-[circle_at_top_left] from-(--highlight) to-black text-white md:rounded-[1.25rem] lg:rounded-[1.45rem]">

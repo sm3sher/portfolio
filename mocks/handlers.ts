@@ -233,7 +233,7 @@ export const handlers = [
                 'If you didn’t request this, you can ignore this email.',
               logo: {
                 url: MOCK_IMAGE_URL,
-                description: 'Logo placeholder',
+                description: 'BrandIcon placeholder',
               },
             },
           ],

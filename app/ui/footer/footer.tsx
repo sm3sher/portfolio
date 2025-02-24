@@ -1,8 +1,8 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
-import Logo from '@/app/ui/footer/logo';
-import LogoGithub from '@/app/ui/footer/logo-github';
-import LogoKofi from '@/app/ui/footer/logo-kofi';
+import BrandIcon from '@/app/ui/footer/icon/brand-icon';
+import GithubIcon from '@/app/ui/footer/icon/github-icon';
+import KofiIcon from '@/app/ui/footer/icon/kofi-icon';
 import type { Locale } from '@/i18n/routing';
 
 type Props = {
@@ -19,7 +19,10 @@ export default async function Footer({ locale }: Props) {
       <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-8 sm:pt-10 sm:pb-16">
         <div className="gap-2 md:flex md:justify-between">
           <div className="mb-6 space-y-3 md:mb-0">
-            <Logo title={content?.title} description={content?.description} />
+            <BrandIcon
+              title={content?.title}
+              description={content?.description}
+            />
           </div>
           <div className="grid grid-cols-2 gap-8 whitespace-nowrap sm:gap-16">
             <div>
@@ -81,7 +84,7 @@ export default async function Footer({ locale }: Props) {
               className="text-(--secondary) hover:text-(--primary)"
               aria-label={content?.gitHubHrefLabel || ''}
             >
-              <LogoGithub className="h-4 w-4" />
+              <GithubIcon className="h-4 w-4" />
             </a>
             <a
               href={content?.kofiHref || ''}
@@ -90,7 +93,7 @@ export default async function Footer({ locale }: Props) {
               className="text-(--secondary) hover:text-(--primary)"
               aria-label={content?.kofiHrefLabel || ''}
             >
-              <LogoKofi
+              <KofiIcon
                 className="h-4 w-auto"
                 backgroundColor="var(--surface-color)"
               />

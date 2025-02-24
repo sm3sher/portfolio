@@ -6,8 +6,8 @@ import type {
 } from '@/app/lib/contentful/generated/sdk';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ContactForm from '@/app/ui/form/contact-form';
+import ProjectSteps from '@/app/ui/process/project-steps';
 import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
-import ProjectSteps from '@/app/ui/steps/project-steps';
 import type { Locale } from '@/i18n/routing';
 
 type Props = {
