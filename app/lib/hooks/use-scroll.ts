@@ -1,26 +1,45 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 
-export default function useScroll(threshold = 10) {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > threshold);
+// Add a single scroll listener
+const subscribe = (callback: () => void) => {
+  if (listeners.size === 0) {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  }
 
-      const scrollTop = window.scrollY;
+  listeners.add(callback);
 
-      const scrollHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress((scrollTop / scrollHeight) * 100);
-    };
+  return () => {
+    listeners.delete(callback);
+    if (listeners.size === 0) {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  };
+};
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [threshold]);
+const handleScroll = () => {
+  // Notify all subscribers that a scroll event occurred
+  for (const callback of listeners) {
+    callback();
+  }
+};
 
-  return { scrolled, scrollProgress };
-}
+export const useScrolled = (threshold = 10) =>
+  useSyncExternalStore(
+    subscribe,
+    () => window.scrollY > threshold,
+    () => false,
+  );
+
+export const useScrollProgress = () =>
+  useSyncExternalStore(
+    subscribe,
+    () =>
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100,
+    () => 0,
+  );

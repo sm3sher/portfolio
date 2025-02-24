@@ -1,6 +1,6 @@
 'use client';
 
-import useScroll from '@/app/lib/hooks/use-scroll';
+import { useScrollProgress, useScrolled } from '@/app/lib/hooks/use-scroll';
 import type { Locale } from '@/i18n/routing';
 import { ArrowUp01Icon } from 'hugeicons-react';
 import { motion } from 'motion/react';
@@ -9,7 +9,8 @@ import type { CSSProperties } from 'react';
 
 export default function ScrollToTop() {
   const locale = useLocale() as Locale;
-  const { scrolled, scrollProgress } = useScroll(150);
+  const scrolled = useScrolled(150);
+  const scrollProgress = useScrollProgress();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0 });

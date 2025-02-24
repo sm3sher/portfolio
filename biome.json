@@ -5,7 +5,8 @@
     "ignore": [
       ".next/**",
       "app/lib/contentful/generated/**",
-      "app/lib/supabase/generated/**"
+      "app/lib/supabase/generated/**",
+      "test-results/**"
     ]
   },
   "formatter": {
