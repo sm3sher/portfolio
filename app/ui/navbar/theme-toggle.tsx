@@ -1,7 +1,6 @@
 'use client';
 
 import { useScrolled } from '@/app/lib/hooks/use-scroll';
-import Tooltip from '@/app/ui/tooltip/tooltip';
 import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -30,21 +29,19 @@ export default function ThemeToggle({ switchThemeLabel }: Props) {
       <Loading03Icon size={22} />
     </button>
   ) : (
-    <Tooltip content={switchThemeLabel}>
-      <div
-        className={`rounded-2xl backdrop-blur duration-1000 ${
-          scrolled && 'bg-(--overlay-color)'
-        }`}
+    <div
+      className={`rounded-2xl backdrop-blur duration-1000 ${
+        scrolled && 'bg-(--overlay-color)'
+      }`}
+    >
+      <button
+        type="button"
+        onClick={toggleTheme}
+        className="hover-effect base-border rounded-2xl p-2"
+        aria-label={switchThemeLabel || undefined}
       >
-        <button
-          type="button"
-          onClick={toggleTheme}
-          className="hover-effect base-border rounded-2xl p-2"
-          aria-label={switchThemeLabel || undefined}
-        >
-          {isDark ? <Sun03Icon size={22} /> : <Moon02Icon size={22} />}
-        </button>
-      </div>
-    </Tooltip>
+        {isDark ? <Sun03Icon size={22} /> : <Moon02Icon size={22} />}
+      </button>
+    </div>
   );
 }
