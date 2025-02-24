@@ -1,6 +1,6 @@
 'use client';
 
-import useScrolled from '@/app/lib/hooks/use-scrolled';
+import useScroll from '@/app/lib/hooks/use-scroll';
 import Tooltip from '@/app/ui/tooltip/tooltip';
 import { Link, usePathname } from '@/i18n/routing';
 import {
@@ -26,7 +26,7 @@ export default function NavMenu({
 }: Props) {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState<string>();
-  const scrolled = useScrolled();
+  const { scrolled } = useScroll();
 
   useEffect(() => {
     const sections = ['home', 'about', 'services', 'contact'];

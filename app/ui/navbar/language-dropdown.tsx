@@ -1,6 +1,6 @@
 'use client';
 
-import useScrolled from '@/app/lib/hooks/use-scrolled';
+import useScroll from '@/app/lib/hooks/use-scroll';
 import PresenceAnimation from '@/app/ui/animation/presence-animation';
 import { type Locale, usePathname, useRouter } from '@/i18n/routing';
 import { LanguageSkillIcon } from 'hugeicons-react';
@@ -23,7 +23,7 @@ export default function LanguageDropdown({
   germanLabel,
   switchLanguageLabel,
 }: Props) {
-  const scrolled = useScrolled();
+  const { scrolled } = useScroll();
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale() as Locale;

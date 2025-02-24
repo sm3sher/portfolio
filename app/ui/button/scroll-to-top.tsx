@@ -1,30 +1,15 @@
 'use client';
 
+import useScroll from '@/app/lib/hooks/use-scroll';
 import type { Locale } from '@/i18n/routing';
 import { ArrowUp01Icon } from 'hugeicons-react';
 import { motion } from 'motion/react';
 import { useLocale } from 'next-intl';
-import { type CSSProperties, useEffect, useState } from 'react';
+import type { CSSProperties } from 'react';
 
 export default function ScrollToTop() {
   const locale = useLocale() as Locale;
-  const [showScrollButton, setShowScrollButton] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setShowScrollButton(scrollTop > 150);
-
-      const scrollHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      setScrollProgress((scrollTop / scrollHeight) * 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { scrolled, scrollProgress } = useScroll(150);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0 });
@@ -38,12 +23,10 @@ export default function ScrollToTop() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
-      animate={showScrollButton ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
+      animate={scrolled ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
       transition={{ duration: 0.5 }}
       className={`fixed right-4 bottom-4 rounded-full backdrop-blur-xs xl:right-10 xl:bottom-8 ${
-        showScrollButton
-          ? 'pointer-events-auto z-10'
-          : '-z-10 pointer-events-none'
+        scrolled ? 'pointer-events-auto z-10' : '-z-10 pointer-events-none'
       }`}
     >
       <button

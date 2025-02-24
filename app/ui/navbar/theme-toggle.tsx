@@ -1,6 +1,6 @@
 'use client';
 
-import useScrolled from '@/app/lib/hooks/use-scrolled';
+import useScroll from '@/app/lib/hooks/use-scroll';
 import Tooltip from '@/app/ui/tooltip/tooltip';
 import { Loading03Icon, Moon02Icon, Sun03Icon } from 'hugeicons-react';
 import { useTheme } from 'next-themes';
@@ -12,7 +12,7 @@ type Props = {
 
 export default function ThemeToggle({ switchThemeLabel }: Props) {
   const [mounted, setMounted] = useState(false);
-  const scrolled = useScrolled();
+  const { scrolled } = useScroll();
   const { theme, systemTheme, setTheme } = useTheme();
   const isDark =
     theme === 'dark' || (theme === 'system' && systemTheme === 'dark');
