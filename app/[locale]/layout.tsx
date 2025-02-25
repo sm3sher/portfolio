@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: Props) {
   return (
     <html lang={locale} suppressHydrationWarning className="scroll-smooth">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-[family-name:var(--font-geist-sans)] antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} font-(family-name:--font-geist-sans) antialiased`}
       >
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
