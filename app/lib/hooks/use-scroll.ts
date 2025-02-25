@@ -43,3 +43,20 @@ export const useScrollProgress = () =>
       100,
     () => 0,
   );
+
+export const useActiveSection = (elements: HTMLElement[]) =>
+  useSyncExternalStore(
+    subscribe,
+    () => {
+      let activeSection: string | undefined = undefined;
+
+      for (const element of elements) {
+        if (element.offsetTop <= window.scrollY + window.innerHeight / 2) {
+          activeSection = element.id;
+        }
+      }
+
+      return activeSection;
+    },
+    () => undefined,
+  );

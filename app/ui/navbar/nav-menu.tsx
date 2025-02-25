@@ -1,6 +1,6 @@
 'use client';
 
-import { useScrolled } from '@/app/lib/hooks/use-scroll';
+import { useActiveSection, useScrolled } from '@/app/lib/hooks/use-scroll';
 import Tooltip from '@/app/ui/tooltip/tooltip';
 import { Link, usePathname } from '@/i18n/routing';
 import {
@@ -25,30 +25,18 @@ export default function NavMenu({
   contactLabel,
 }: Props) {
   const pathname = usePathname();
-  const [activeSection, setActiveSection] = useState<string>();
+  const [elements, setElements] = useState<HTMLElement[]>([]);
   const scrolled = useScrolled();
+  const activeSection = useActiveSection(elements);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: intentional dependency on pathname to reset activeSection when switching pages
   useEffect(() => {
-    const sections = ['home', 'about', 'services', 'contact'];
-
-    const updateActiveSection = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2;
-      let currentSection = undefined;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition) {
-          currentSection = section;
-        }
-      }
-
-      setActiveSection(currentSection);
-    };
-
-    updateActiveSection();
-    window.addEventListener('scroll', updateActiveSection, { passive: true });
-    return () => window.removeEventListener('scroll', updateActiveSection);
-  }, []);
+    setElements(
+      navbarItems
+        .map((item) => document.getElementById(item.id))
+        .filter((element) => !!element),
+    );
+  }, [pathname]);
 
   const navbarItems = [
     {
