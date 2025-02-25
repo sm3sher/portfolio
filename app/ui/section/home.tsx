@@ -26,7 +26,7 @@ export default async function Home({ locale }: Props) {
             duration={0.5}
           >
             <Image
-              className="-right-32 sm:-right-20 md:-right-12 absolute bottom-0 max-h-[90%] w-auto object-contain opacity-95 brightness-110 contrast-[1.1] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)] saturate-[1.25] lg:right-0 dark:opacity-100 dark:brightness-95 dark:drop-shadow-[0_0_5px_rgba(255,255,255,0.3)]"
+              className="-right-32 sm:-right-20 md:-right-12 absolute bottom-0 max-h-[90%] w-auto object-contain opacity-95 brightness-110 contrast-[1.1] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)] saturate-[1.25] lg:right-0 dark:opacity-100 dark:brightness-95 dark:drop-shadow-[0_0_3px_rgba(255,255,255,0.2)]"
               src={content.image.url}
               width={content.image.width}
               height={content.image.height}
