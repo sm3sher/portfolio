@@ -129,9 +129,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'en'}
           >
             <Image
-              className={`drop-shadow-md dark:drop-shadow-[0_0_2px_rgba(255,255,255,0.5)] ${
-                locale === 'en' && 'grayscale-75'
-              }`}
+              className={`glow-effect ${locale === 'en' && 'grayscale-75'}`}
               src="/flag-us.svg"
               alt={usFlagDescription || ''}
               width={30}
@@ -150,9 +148,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'de'}
           >
             <Image
-              className={`drop-shadow-md dark:drop-shadow-[0_0_2px_rgba(255,255,255,0.5)] ${
-                locale === 'de' && 'grayscale-75'
-              }`}
+              className={`glow-effect ${locale === 'de' && 'grayscale-75'}`}
               src="/flag-de.svg"
               alt={deFlagDescription || ''}
               width={30}
