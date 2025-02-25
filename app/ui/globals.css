@@ -102,6 +102,14 @@ body {
   @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-0 after:bg-current after:duration-300 hover:after:w-full;
 }
 
+@utility shadow-effect {
+  @apply shadow-[0_4px_6px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_6px_rgba(255,255,255,0.1)];
+}
+
+@utility glow-effect {
+  @apply drop-shadow-[0_0_1px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_1px_rgba(255,255,255,0.3)];
+}
+
 @utility text-stroke {
   color: var(--surface-color);
   text-shadow: 1px 1px 0 var(--primary), -1px -1px 0 var(--primary), 1px -1px 0

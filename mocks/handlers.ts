@@ -159,7 +159,7 @@ export const handlers = [
                     quote:
                       'Their work style is focused and efficient. This individual demonstrates exceptional commitment and delivers strong performance in both qualitative and quantitative terms. Through their work, they achieve outstanding results.',
                     author: 'John D.',
-                    jobTitle: 'Executive at Leading Insurance Company',
+                    jobTitle: 'Executive',
                     logoInvert: null,
                     logo: {
                       url: MOCK_IMAGE_URL,
@@ -172,7 +172,7 @@ export const handlers = [
                     quote:
                       'This professional possesses highly comprehensive and excellent expertise… They quickly familiarize themselves with assigned tasks and pursue agreed goals consistently and with the highest level of success.',
                     author: 'Jane S.',
-                    jobTitle: 'CTO at Tech Solutions Inc.',
+                    jobTitle: 'CTO',
                     logoInvert: null,
                     logo: {
                       url: MOCK_IMAGE_URL,
@@ -185,7 +185,7 @@ export const handlers = [
                     quote:
                       'Due to their excellent comprehension skills, they quickly adapt to every task. This individual is consistently highly resilient and acts with composure even in stressful situations.',
                     author: 'Michael T.',
-                    jobTitle: 'Managing Director at Software Corp.',
+                    jobTitle: 'Managing Director',
                     logoInvert: null,
                     logo: {
                       url: MOCK_IMAGE_URL,
@@ -198,7 +198,7 @@ export const handlers = [
                     quote:
                       'Their outstanding academic performance reflects their technical expertise. Furthermore, they demonstrate a high level of self-learning ability and motivation…',
                     author: 'Alex R.',
-                    jobTitle: 'Team Lead at StartupX',
+                    jobTitle: 'Team Lead',
                     logoInvert: true,
                     logo: {
                       url: MOCK_IMAGE_URL,
