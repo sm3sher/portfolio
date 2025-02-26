@@ -44,11 +44,11 @@ export default async function Contact({ locale }: Props) {
             />
           </ViewAnimation>
         </div>
-        <ViewAnimation className="pt-32" direction="fromRight">
+        <div className="pt-32">
           <TestimonialSlider
             content={query.testimonialsCollection?.items[0] as Testimonials}
           />
-        </ViewAnimation>
+        </div>
       </div>
     </div>
   );

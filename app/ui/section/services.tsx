@@ -1,5 +1,6 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import type { Service } from '@/app/lib/contentful/generated/sdk';
+import StaggerAnimation from '@/app/ui/animation/stagger-animation';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ServiceCard from '@/app/ui/card/service-card';
 import type { Locale } from '@/i18n/routing';
@@ -28,19 +29,13 @@ export default async function Services({ locale }: Props) {
             <span className="font-light">{content?.subTitleHighlight}</span>
           </h3>
         </ViewAnimation>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <StaggerAnimation className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {content?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
-            .map((item, index) => (
-              <ViewAnimation
-                key={item.title}
-                direction="fromBottom"
-                delay={index * 0.2}
-              >
-                <ServiceCard content={item as Service} />
-              </ViewAnimation>
+            .map((item) => (
+              <ServiceCard key={item.title} content={item as Service} />
             ))}
-        </div>
+        </StaggerAnimation>
       </div>
     </div>
   );

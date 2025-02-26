@@ -4,6 +4,7 @@ import type {
   Testimonial,
   Testimonials,
 } from '@/app/lib/contentful/generated/sdk';
+import StaggerAnimation from '@/app/ui/animation/stagger-animation';
 import QuoteCard from '@/app/ui/card/quote-card';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ArrowLeft01Icon, ArrowRight01Icon } from 'hugeicons-react';
@@ -63,19 +64,22 @@ export default function TestimonialSlider({ content }: Props) {
         className="overflow-hidden md:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
         ref={emblaRef}
       >
-        <div className="flex" aria-live="polite">
+        <StaggerAnimation
+          className="flex"
+          itemClassName="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+          aria-live="polite"
+        >
           {content?.testimonialEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
               <div
                 key={item.author}
-                className="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
                 aria-label={`${index + 1} / ${content?.testimonialEntriesCollection?.items.length}`}
               >
                 <QuoteCard content={item as Testimonial} />
               </div>
             ))}
-        </div>
+        </StaggerAnimation>
       </div>
     </>
   );
