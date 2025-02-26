@@ -25,8 +25,8 @@ export default function ExperienceCounter({ content }: Props) {
   useEffect(() => {
     if (isInView && content?.startYear) {
       const controls = animate(count, getYearsSince(content.startYear), {
-        duration: 1,
-        delay: 0.5,
+        duration: 1.2,
+        delay: 0.8,
       });
       return controls.stop;
     }

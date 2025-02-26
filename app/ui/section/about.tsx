@@ -1,6 +1,7 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import type { Metric } from '@/app/lib/contentful/generated/sdk';
 import { calculateAge } from '@/app/lib/date-utils';
+import TypingAnimation from '@/app/ui/animation/typing-animation';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ExperienceCounter from '@/app/ui/counter/experience-counter';
 import type { Locale } from '@/i18n/routing';
@@ -22,10 +23,7 @@ export default async function About({ locale }: Props) {
             content.image.width &&
             content.image.height &&
             content.image.description && (
-              <ViewAnimation
-                className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12"
-                direction="fromLeft"
-              >
+              <div className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
                 <Image
                   className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
                   src={content.image.url}
@@ -33,36 +31,47 @@ export default async function About({ locale }: Props) {
                   height={content.image.height}
                   alt={content.image.description}
                 />
-              </ViewAnimation>
+              </div>
             )}
-          <ViewAnimation
-            className="flex w-full items-center md:w-2/3 lg:w-7/12"
-            direction="fromBottom"
-            delay={0.4}
-          >
+          <div className="flex w-full items-center md:w-2/3 lg:w-7/12">
             <div className="space-y-7">
               <h6 className="font-bold text-(--highlight) uppercase tracking-wider">
                 {content?.title}
               </h6>
               <h4>
-                {content?.ageStatementPrefix} {calculateAge(content?.age)}
-                {content?.ageStatementSuffix}{' '}
-                <span className="font-light">{content?.professionalTitle}</span>{' '}
-                {content?.locationStatement}
+                <TypingAnimation>
+                  {content?.ageStatementPrefix}
+                  {`${calculateAge(content?.age)}${content?.ageStatementSuffix}`}
+                  <span className="font-light">
+                    {content?.professionalTitle}
+                  </span>
+                  {content?.locationStatement}
+                </TypingAnimation>
               </h4>
-              <p>{content?.description}</p>
+              <ViewAnimation
+                translation={10}
+                delay={0.5}
+                duration={0.6}
+                direction="fromBottom"
+              >
+                <p>{content?.description}</p>
+              </ViewAnimation>
               <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
                 {content?.experienceMetricsCollection?.items
                   .filter((item) => item !== null)
-                  .map((item) => (
-                    <ExperienceCounter
+                  .map((item, index) => (
+                    <ViewAnimation
                       key={`${item.labelPrefix}${item.labelSuffix}`}
-                      content={item as Metric}
-                    />
+                      translation={30}
+                      delay={0.8}
+                      direction={index === 0 ? 'fromLeft' : 'fromRight'}
+                    >
+                      <ExperienceCounter content={item as Metric} />
+                    </ViewAnimation>
                   ))}
               </div>
             </div>
-          </ViewAnimation>
+          </div>
         </div>
       </div>
     </div>

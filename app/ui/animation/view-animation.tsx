@@ -7,6 +7,7 @@ type Props = {
   children: ReactNode;
   className?: string;
   direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
+  translation?: number;
   duration?: number;
   delay?: number;
 };
@@ -15,14 +16,15 @@ export default function ViewAnimation({
   children,
   className,
   direction,
-  duration = 0.8,
+  translation = 20,
+  duration = 0.3,
   delay,
 }: Props) {
   const initialValues = {
-    fromRight: { opacity: 0, x: 50 },
-    fromLeft: { opacity: 0, x: -50 },
-    fromTop: { opacity: 0, y: -50 },
-    fromBottom: { opacity: 0, y: 50 },
+    fromRight: { opacity: 0, x: translation },
+    fromLeft: { opacity: 0, x: -translation },
+    fromTop: { opacity: 0, y: -translation },
+    fromBottom: { opacity: 0, y: translation },
   };
 
   return (
