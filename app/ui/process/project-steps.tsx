@@ -1,28 +1,49 @@
+'use client';
+
 import type { ProjectStep } from '@/app/lib/contentful/generated/sdk';
+import StepItem from '@/app/ui/process/step-item';
+import { motion } from 'motion/react';
 
 interface Props {
   content?: ProjectStep[];
 }
 
 export default function ProjectSteps({ content }: Props) {
+  if (!content || content.length === 0) return null;
+
+  const steps = content.slice(0, -1);
+  const lastStep = content[content.length - 1];
+
   return (
-    <ul className="space-y-2 sm:space-y-4 md:space-y-6">
-      {content?.map(({ title, description }, index) => (
-        <li
-          key={title}
-          className="relative flex items-start gap-4 before:absolute before:top-7 before:left-3.5 before:h-full before:w-px before:bg-(--highlight) last:before:hidden sm:gap-6 sm:before:top-8 sm:before:left-4"
-        >
-          <span className="flex min-h-7 min-w-7 items-center justify-center rounded-lg border border-(--highlight) font-semibold backdrop-blur sm:min-h-8 sm:min-w-8 sm:text-lg">
-            {index + 1}
-          </span>
-          <span>
-            <p className="font-semibold sm:text-lg">{title}</p>
-            <span className="text-(--secondary) text-sm sm:text-base">
-              {description}
-            </span>
-          </span>
-        </li>
-      ))}
+    <ul>
+      <div className="relative space-y-2 sm:space-y-4 md:space-y-6">
+        <motion.div
+          className="absolute top-6 left-3.5 w-px bg-(--highlight) sm:top-7 sm:left-4"
+          initial={{ height: 0 }}
+          whileInView={{ height: '100%' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+        />
+        {steps.map(({ title, description }, index) => (
+          <StepItem
+            key={title}
+            index={index}
+            title={title}
+            description={description}
+            delay={index * 0.15}
+          />
+        ))}
+      </div>
+      {lastStep && (
+        <div className="mt-4">
+          <StepItem
+            index={steps.length}
+            title={lastStep.title}
+            description={lastStep.description}
+            delay={steps.length * 0.15}
+          />
+        </div>
+      )}
     </ul>
   );
 }
