@@ -72,12 +72,11 @@ export default function TestimonialSlider({ content }: Props) {
           {content?.testimonialEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item, index) => (
-              <div
+              <QuoteCard
                 key={item.author}
+                content={item as Testimonial}
                 aria-label={`${index + 1} / ${content?.testimonialEntriesCollection?.items.length}`}
-              >
-                <QuoteCard content={item as Testimonial} />
-              </div>
+              />
             ))}
         </StaggerAnimation>
       </div>
