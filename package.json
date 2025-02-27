@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "dev:mock": "MOCKS_ENABLED=true next dev",
+    "dev": "next dev --turbopack",
+    "dev:mock": "MOCKS_ENABLED=true next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "check": "biome check .",
