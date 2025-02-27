@@ -39,7 +39,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
       : errorMessage;
 
   return (
-    <div>
+    <>
       <div className="group flex">
         <label
           className="relative flex cursor-pointer items-center"
@@ -80,6 +80,6 @@ export default function FormGdprCheckbox<T extends FieldValues>({
       >
         {message}
       </p>
-    </div>
+    </>
   );
 }

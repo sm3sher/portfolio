@@ -29,7 +29,10 @@ export default async function Services({ locale }: Props) {
             <span className="font-light">{content?.subTitleHighlight}</span>
           </h3>
         </ViewAnimation>
-        <StaggerAnimation className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <StaggerAnimation
+          className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
+          direction="fromBottom"
+        >
           {content?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
             .map((item) => (

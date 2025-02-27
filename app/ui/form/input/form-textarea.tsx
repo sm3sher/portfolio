@@ -33,7 +33,7 @@ export default function FormTextarea<T extends FieldValues>({
       : errorMessage;
 
   return (
-    <div>
+    <>
       <div className="relative max-h-36">
         <textarea
           {...register(name)}
@@ -62,6 +62,6 @@ export default function FormTextarea<T extends FieldValues>({
       >
         {message}
       </p>
-    </div>
+    </>
   );
 }

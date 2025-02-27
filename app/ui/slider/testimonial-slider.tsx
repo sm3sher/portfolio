@@ -67,6 +67,7 @@ export default function TestimonialSlider({ content }: Props) {
         <StaggerAnimation
           className="flex"
           itemClassName="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+          direction="fromBottom"
           aria-live="polite"
         >
           {content?.testimonialEntriesCollection?.items

@@ -6,6 +6,7 @@ type Props = {
   children?: ReactElement | ReactElement[];
   className?: string;
   itemClassName?: string;
+  direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
 };
 
 const staggerContainer = {
@@ -17,16 +18,28 @@ const staggerContainer = {
   },
 };
 
-const staggerItem = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
-};
-
 export default function StaggerAnimation({
   children,
   className,
   itemClassName,
+  direction,
 }: Props) {
+  const initialValues = {
+    fromRight: { opacity: 0, x: 20 },
+    fromLeft: { opacity: 0, x: -20 },
+    fromTop: { opacity: 0, y: -20 },
+    fromBottom: { opacity: 0, y: 20 },
+  };
+
+  const staggerItem = {
+    hidden: initialValues[direction],
+    show: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: { duration: 0.4, ease: 'easeOut' },
+    },
+  };
   return (
     <motion.div
       className={className}

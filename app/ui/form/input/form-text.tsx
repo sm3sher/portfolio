@@ -33,7 +33,7 @@ export default function FormText<T extends FieldValues>({
       : errorMessage;
 
   return (
-    <div>
+    <>
       <div className="relative">
         <input
           {...register(name)}
@@ -61,6 +61,6 @@ export default function FormText<T extends FieldValues>({
       >
         {message}
       </p>
-    </div>
+    </>
   );
 }

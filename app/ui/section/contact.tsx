@@ -35,14 +35,14 @@ export default async function Contact({ locale }: Props) {
           </h3>
         </ViewAnimation>
         <div className="flex flex-col gap-10 md:flex-row md:gap-6 lg:gap-16">
-          <ViewAnimation className="md:w-1/2" direction="fromLeft" delay={0.2}>
+          <div className="md:w-1/2">
             <ContactForm content={query.formCollection?.items[0] as Form} />
-          </ViewAnimation>
-          <ViewAnimation className="md:w-1/2" direction="fromRight" delay={0.2}>
+          </div>
+          <div className="md:w-1/2">
             <ProjectSteps
               content={content?.projectStepsCollection?.items as ProjectStep[]}
             />
-          </ViewAnimation>
+          </div>
         </div>
         <div className="pt-32">
           <TestimonialSlider
