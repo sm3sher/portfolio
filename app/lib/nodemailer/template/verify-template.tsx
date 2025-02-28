@@ -35,7 +35,7 @@ export default async function VerifyTemplate({
         theme: {
           extend: {
             colors: {
-              highlight: '#FF5C18',
+              highlight: '#FE5100',
             },
           },
         },
@@ -61,7 +61,7 @@ export default async function VerifyTemplate({
               <Text>{content?.description}</Text>
               <Button
                 href={verifyUrl}
-                className="rounded-full bg-highlight px-6 py-3 font-medium text-white leading-4"
+                className="rounded-full bg-highlight px-6 py-3 font-medium text-white leading-4 tracking-wide"
               >
                 {content?.buttonLabel}
               </Button>
