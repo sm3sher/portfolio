@@ -121,7 +121,7 @@ export const handlers = [
               errorButtonLabel: 'Try again',
               emailVerificationTitle: 'Check your email',
               emailVerificationDescription:
-                'I’ve just sent you a verification link. Please check your inbox and click the link to confirm your email. If you don’t see the email within a few minutes, check your spam folder.',
+                'I have sent you a confirmation link. Please check your inbox and click the link to verify your email. If you don’t see the email, check your spam folder.',
               emailResendButtonLabel: 'Resend Email',
               emailEditPrompt: 'is not your email?',
               emailEditAriaLabel: 'Return to form to edit email',
