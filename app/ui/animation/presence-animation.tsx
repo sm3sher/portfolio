@@ -26,7 +26,7 @@ export default function PresenceAnimation({
         <motion.div
           id={id}
           className={className}
-          initial={{ opacity: 0, x: withTranslation ? 50 : 0 }}
+          initial={{ opacity: 0, x: withTranslation ? -50 : 0 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, y: withTranslation ? 30 : 0 }}
           transition={{ duration }}
