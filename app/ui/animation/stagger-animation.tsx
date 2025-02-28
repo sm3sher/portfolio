@@ -1,5 +1,5 @@
 'use client';
-import { motion } from 'motion/react';
+import { type Variants, motion } from 'motion/react';
 import type { ReactElement } from 'react';
 
 type Props = {
@@ -7,15 +7,15 @@ type Props = {
   className?: string;
   itemClassName?: string;
   direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
+  amount?: number;
+  delay?: number;
 };
 
-const staggerContainer = {
-  hidden: { opacity: 1 },
-  show: {
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
+const initialValues = {
+  fromRight: { opacity: 0, x: 20 },
+  fromLeft: { opacity: 0, x: -20 },
+  fromTop: { opacity: 0, y: -20 },
+  fromBottom: { opacity: 0, y: 20 },
 };
 
 export default function StaggerAnimation({
@@ -23,15 +23,20 @@ export default function StaggerAnimation({
   className,
   itemClassName,
   direction,
+  amount = 0.4,
+  delay = 0,
 }: Props) {
-  const initialValues = {
-    fromRight: { opacity: 0, x: 20 },
-    fromLeft: { opacity: 0, x: -20 },
-    fromTop: { opacity: 0, y: -20 },
-    fromBottom: { opacity: 0, y: 20 },
+  const staggerContainer: Variants = {
+    hidden: { opacity: 1 },
+    show: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: delay,
+      },
+    },
   };
 
-  const staggerItem = {
+  const staggerItem: Variants = {
     hidden: initialValues[direction],
     show: {
       opacity: 1,
@@ -46,7 +51,7 @@ export default function StaggerAnimation({
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.4 }}
+      viewport={{ once: true, amount }}
     >
       {(Array.isArray(children) ? children : [children]).map((child) => (
         <motion.div

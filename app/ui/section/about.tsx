@@ -63,7 +63,7 @@ export default async function About({ locale }: Props) {
                     <ViewAnimation
                       key={`${item.labelPrefix}${item.labelSuffix}`}
                       translation={30}
-                      delay={0.8}
+                      delay={0.6}
                       direction={index === 0 ? 'fromLeft' : 'fromRight'}
                     >
                       <ExperienceCounter content={item as Metric} />

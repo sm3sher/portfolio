@@ -17,13 +17,10 @@ export default async function Services({ locale }: Props) {
     <div className="relative py-24 md:py-32">
       <div className="-z-10 absolute inset-0 bg-radial-[circle_at_top] from-(--radial-color) to-65% to-transparent" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <ViewAnimation
-          className="mb-10 space-y-7 lg:mb-16"
-          direction="fromBottom"
-        >
-          <h6 className="font-bold text-(--highlight) uppercase tracking-wider">
-            {content?.title}
-          </h6>
+        <h6 className="mb-7 font-bold text-(--highlight) uppercase tracking-wider">
+          {content?.title}
+        </h6>
+        <ViewAnimation className="mb-10 lg:mb-16" direction="fromBottom">
           <h3 className="uppercase">
             {content?.subTitleMain}{' '}
             <span className="font-light">{content?.subTitleHighlight}</span>
@@ -32,6 +29,8 @@ export default async function Services({ locale }: Props) {
         <StaggerAnimation
           className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5"
           direction="fromBottom"
+          amount={0.1}
+          delay={0.2}
         >
           {content?.serviceEntriesCollection?.items
             .filter((item) => item !== null)
