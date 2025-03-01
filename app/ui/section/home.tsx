@@ -1,6 +1,6 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
-import Button from '@/app/ui/button/button';
+import ShiningButton from '@/app/ui/button/shining-button';
 import { Link, type Locale } from '@/i18n/routing';
 import { ArrowDown01Icon } from 'hugeicons-react';
 import Image from 'next/image';
@@ -55,7 +55,7 @@ export default async function Home({ locale }: Props) {
         </p>
         <div className="flex items-center space-x-4 pt-16 pb-16 lg:pb-56">
           <Link href="#contact" tabIndex={-1}>
-            <Button>{content?.ctaButtonLabel}</Button>
+            <ShiningButton>{content?.ctaButtonLabel}</ShiningButton>
           </Link>
           <Link
             href="#about"
