@@ -4,6 +4,7 @@ import BrandIcon from '@/app/ui/footer/icon/brand-icon';
 import GithubIcon from '@/app/ui/footer/icon/github-icon';
 import KofiIcon from '@/app/ui/footer/icon/kofi-icon';
 import type { Locale } from '@/i18n/routing';
+import { LinkSquare02Icon } from 'hugeicons-react';
 
 type Props = {
   locale: Locale;
@@ -18,7 +19,7 @@ export default async function Footer({ locale }: Props) {
     <footer className="bg-(--surface-color) drop-shadow-sm">
       <div className="mx-auto max-w-(--breakpoint-xl) px-6 py-8 sm:pt-10 sm:pb-16">
         <div className="gap-2 md:flex md:justify-between">
-          <div className="mb-6 space-y-3 md:mb-0">
+          <div className="mb-8 md:mb-0">
             <BrandIcon
               title={content?.title}
               description={content?.description}
@@ -26,18 +27,19 @@ export default async function Footer({ locale }: Props) {
           </div>
           <div className="grid grid-cols-2 gap-8 whitespace-nowrap sm:gap-16">
             <div>
-              <h6 className="mb-4 text-sm uppercase">
+              <h6 className="mb-5 text-sm uppercase">
                 {content?.profileSection}
               </h6>
               <ul className="font-medium text-(--secondary)">
-                <li className="mb-4">
+                <li className="mb-4 flex">
                   <a
                     href={content?.profileGitHubHref || ''}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline-effect"
+                    className="underline-effect flex items-center gap-1"
                   >
                     {content?.profileGitHub}
+                    <LinkSquare02Icon size={16} />
                   </a>
                 </li>
                 <li>
@@ -45,15 +47,16 @@ export default async function Footer({ locale }: Props) {
                     href={content?.profileStackOverflowHref || ''}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline-effect"
+                    className="underline-effect flex items-center gap-1"
                   >
                     {content?.profileStackOverflow}
+                    <LinkSquare02Icon size={16} />
                   </a>
                 </li>
               </ul>
             </div>
             <div>
-              <h6 className="mb-4 text-sm uppercase">
+              <h6 className="mb-5 text-sm uppercase">
                 {content?.legalSection}
               </h6>
               <ul className="font-medium text-(--secondary)">
@@ -71,7 +74,7 @@ export default async function Footer({ locale }: Props) {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-(--border-color) sm:mx-auto lg:my-8" />
+        <hr className="my-7 border-(--border-color) sm:mx-auto md:my-9" />
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-(--secondary) text-sm">
             &copy; {year} {content?.title}
@@ -81,7 +84,7 @@ export default async function Footer({ locale }: Props) {
               href={content?.gitHubHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-(--secondary) hover:text-(--primary)"
+              className="hover:-translate-y-1 text-(--secondary) duration-200 hover:text-(--primary)"
               aria-label={content?.gitHubHrefLabel || ''}
             >
               <GithubIcon className="h-4 w-4" />
@@ -90,7 +93,7 @@ export default async function Footer({ locale }: Props) {
               href={content?.kofiHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-(--secondary) hover:text-(--primary)"
+              className="hover:-translate-y-1 text-(--secondary) duration-200 hover:text-(--primary)"
               aria-label={content?.kofiHrefLabel || ''}
             >
               <KofiIcon
