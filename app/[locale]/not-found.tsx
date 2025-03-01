@@ -1,4 +1,4 @@
-import ViewAnimation from '@/app/ui/animation/view-animation';
+import RevealAnimation from '@/app/ui/animation/reveal-animation';
 import Astronaut from '@/app/ui/not-found/astronaut';
 import NotFoundContent from '@/app/ui/not-found/not-found-content';
 import Stars from '@/app/ui/not-found/stars';
@@ -12,13 +12,9 @@ export default function NotFound() {
     <div className="overflow-hidden py-4 md:py-12">
       <Stars />
       <Astronaut />
-      <ViewAnimation
-        className="relative flex flex-col content-center text-center"
-        direction="fromBottom"
-        duration={0.5}
-      >
+      <RevealAnimation className="relative flex flex-col content-center text-center">
         <NotFoundContent locale={locale} />
-      </ViewAnimation>
+      </RevealAnimation>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import contentfulClient from '@/app/lib/contentful/client';
+import RevealAnimation from '@/app/ui/animation/reveal-animation';
 import type { Locale } from '@/i18n/routing';
 import { CircleArrowRight02Icon } from 'hugeicons-react';
 import type { Metadata } from 'next';
@@ -25,7 +26,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="py-24 md:py-32">
-      <div className="mx-auto max-w-(--breakpoint-xl) px-6">
+      <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3>{content?.title}</h3>
         <p className="mb-8 text-(--secondary) italic">
           {content?.lastModified}
@@ -364,7 +365,7 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
         </article>
-      </div>
+      </RevealAnimation>
     </div>
   );
 }

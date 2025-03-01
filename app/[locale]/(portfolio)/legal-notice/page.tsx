@@ -1,4 +1,5 @@
 import contentfulClient from '@/app/lib/contentful/client';
+import RevealAnimation from '@/app/ui/animation/reveal-animation';
 import { Link, type Locale } from '@/i18n/routing';
 import type { Metadata } from 'next';
 
@@ -24,7 +25,7 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="py-24 md:py-32">
-      <div className="mx-auto max-w-(--breakpoint-xl) px-6">
+      <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h3 className="mb-8 font-bold">{content?.title}</h3>
 
         <section className="mb-12">
@@ -77,7 +78,7 @@ export default async function Page({ params }: Props) {
           <p className="text-(--secondary)">{content?.disputeLabel}</p>
           <p className="text-(--secondary)">{content?.disputeStatement}</p>
         </section>
-      </div>
+      </RevealAnimation>
     </div>
   );
 }
