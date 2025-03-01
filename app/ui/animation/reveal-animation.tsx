@@ -21,6 +21,7 @@ export default function RevealAnimation({ children, className }: Props) {
         opacity: 1,
         filter: 'blur(0)',
         maskPosition: '0% 0%',
+        transitionEnd: { maskImage: 'none', filter: 'initial' },
       }}
       transition={{
         duration: 1,
