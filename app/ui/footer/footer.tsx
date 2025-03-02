@@ -2,9 +2,9 @@ import contentfulClient from '@/app/lib/contentful/client';
 import BrandIcon from '@/app/ui/footer/icon/brand-icon';
 import GithubIcon from '@/app/ui/footer/icon/github-icon';
 import KofiIcon from '@/app/ui/footer/icon/kofi-icon';
-import ActiveStyledLink from '@/app/ui/footer/link/active-styled-link';
-import ExternalIconLink from '@/app/ui/footer/link/external-icon-link';
-import ExternalLink from '@/app/ui/footer/link/external-link';
+import ActiveStyledLink from '@/app/ui/link/active-styled-link';
+import ExternalIconLink from '@/app/ui/link/external-icon-link';
+import ExternalLink from '@/app/ui/link/external-link';
 import type { Locale } from '@/i18n/routing';
 
 type Props = {
@@ -32,13 +32,13 @@ export default async function Footer({ locale }: Props) {
                 {content?.profileSection}
               </h6>
               <ul className="space-y-4 font-medium text-(--secondary)">
-                <li className="flex">
-                  <ExternalLink href={content?.profileGitHubHref}>
+                <li>
+                  <ExternalLink href={content?.profileGitHubHref} icon>
                     {content?.profileGitHub}
                   </ExternalLink>
                 </li>
-                <li className="flex">
-                  <ExternalLink href={content?.profileStackOverflowHref}>
+                <li>
+                  <ExternalLink href={content?.profileStackOverflowHref} icon>
                     {content?.profileStackOverflow}
                   </ExternalLink>
                 </li>
