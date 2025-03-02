@@ -1,6 +1,7 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
 import MailLink from '@/app/ui/link/mail-link';
+import TitledSection from '@/app/ui/section/titled-section';
 import { Link, type Locale } from '@/i18n/routing';
 import type { Metadata } from 'next';
 
@@ -31,10 +32,7 @@ export default async function Page({ params }: Props) {
           {content?.title}
         </h3>
 
-        <section className="mb-12 border-(--border-color) border-t pt-6">
-          <h4 className="mb-4 font-semibold text-lg">
-            {content?.subTitleInformation}
-          </h4>
+        <TitledSection title={content?.subTitleInformation}>
           <address className="text-(--secondary) not-italic">
             <p className="font-medium text-(--highlight-link)">
               {content?.addressName}
@@ -45,12 +43,9 @@ export default async function Page({ params }: Props) {
               {content?.addressPostalCode} {content?.addressCity}
             </p>
           </address>
-        </section>
+        </TitledSection>
 
-        <section className="mb-12 border-(--border-color) border-t pt-6">
-          <h4 className="mb-4 font-semibold text-lg">
-            {content?.subTitleContact}
-          </h4>
+        <TitledSection title={content?.subTitleContact}>
           <div className="text-(--secondary)">
             <p>
               {content?.contactEmailLabel}{' '}
@@ -65,25 +60,19 @@ export default async function Page({ params }: Props) {
               </Link>
             </p>
           </div>
-        </section>
+        </TitledSection>
 
         {content?.vatId && (
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.subTitleVat}
-            </h4>
+          <TitledSection title={content?.subTitleVat}>
             <p className="text-(--secondary)">{content?.vatLabel}</p>
             <p className="font-medium text-(--highlight)">{content?.vatId}</p>
-          </section>
+          </TitledSection>
         )}
 
-        <section className="border-(--border-color) border-t pt-6">
-          <h4 className="mb-4 font-semibold text-lg">
-            {content?.subTitleDispute}
-          </h4>
+        <TitledSection title={content?.subTitleDispute}>
           <p className="text-(--secondary)">{content?.disputeLabel}</p>
           <p className="text-(--secondary)">{content?.disputeStatement}</p>
-        </section>
+        </TitledSection>
       </RevealAnimation>
     </div>
   );

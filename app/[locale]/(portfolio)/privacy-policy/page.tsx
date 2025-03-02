@@ -2,6 +2,7 @@ import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
 import ExternalLink from '@/app/ui/link/external-link';
 import MailLink from '@/app/ui/link/mail-link';
+import TitledSection from '@/app/ui/section/titled-section';
 import type { Locale } from '@/i18n/routing';
 import { CircleArrowRight02Icon } from 'hugeicons-react';
 import type { Metadata } from 'next';
@@ -43,19 +44,13 @@ export default async function Page({ params }: Props) {
         <article className="mb-12">
           <h4 className="mb-8">{content?.privacyOverview?.title}</h4>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.privacyOverview?.generalInfoTitle}
-            </h4>
+          <TitledSection title={content?.privacyOverview?.generalInfoTitle}>
             <p className="text-(--secondary)">
               {content?.privacyOverview?.generalInfoDescription}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.privacyOverview?.dataCollectionTitle}
-            </h4>
+          <TitledSection title={content?.privacyOverview?.dataCollectionTitle}>
             <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
               {arrowIcon}
               {content?.privacyOverview?.responsiblePartyTitle}
@@ -109,16 +104,13 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.analysisToolsDetailsText}
             </p>
-          </section>
+          </TitledSection>
         </article>
 
         <article className="mb-12">
           <h4 className="mb-8">{content?.hosting?.title}</h4>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.hosting?.netlifyTitle}
-            </h4>
+          <TitledSection title={content?.hosting?.netlifyTitle}>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyHostingInfo}
             </p>
@@ -154,16 +146,15 @@ export default async function Page({ params }: Props) {
               />
               .
             </p>
-          </section>
+          </TitledSection>
         </article>
 
         <article className="mb-12">
           <h4 className="mb-8">{content?.notesAndLegalInformation?.title}</h4>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.dataProtectionTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.dataProtectionTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.dataProtectionIntro}
             </p>
@@ -173,12 +164,11 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.dataProtectionNotice}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.responsiblePartyTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.responsiblePartyTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.responsiblePartyIntro}
             </p>
@@ -202,21 +192,19 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.responsiblePartyInfo}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.dataStorageDurationTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.dataStorageDurationTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.dataStorageDurationDetails}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.legalBasisTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.legalBasisTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.legalBasisIntro}
             </p>
@@ -236,12 +224,11 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.legalBasisDetails}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.userRightsTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.userRightsTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.userRightsIntro}
             </p>
@@ -251,37 +238,32 @@ export default async function Page({ params }: Props) {
                 {item}
               </p>
             ))}
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.complaintRightTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.complaintRightTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.complaintRightDetails}
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.notesAndLegalInformation?.sslTlsEncryptionTitle}
-            </h4>
+          <TitledSection
+            title={content?.notesAndLegalInformation?.sslTlsEncryptionTitle}
+          >
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.sslTlsEncryptionIntro}
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.sslTlsEncryptionDetails}
             </p>
-          </section>
+          </TitledSection>
         </article>
 
-        <article className="mb-12">
+        <article>
           <h4 className="mb-8">{content?.dataCollection?.title}</h4>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.dataCollection?.cloudflareTitle}
-            </h4>
+          <TitledSection title={content?.dataCollection?.cloudflareTitle}>
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.cloudflareIntro}
             </p>
@@ -296,12 +278,9 @@ export default async function Page({ params }: Props) {
               />
               .
             </p>
-          </section>
+          </TitledSection>
 
-          <section className="mb-12 border-(--border-color) border-t pt-6">
-            <h4 className="mb-4 font-semibold text-lg">
-              {content?.dataCollection?.contactFormTitle}
-            </h4>
+          <TitledSection title={content?.dataCollection?.contactFormTitle}>
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.contactFormIntro}
             </p>
@@ -343,7 +322,7 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.storageDurationDetails}
             </p>
-          </section>
+          </TitledSection>
         </article>
       </RevealAnimation>
     </div>
