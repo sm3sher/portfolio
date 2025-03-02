@@ -1,9 +1,8 @@
 import contentfulClient from '@/app/lib/contentful/client';
-import ServiceBanner from '@/app/ui/banner/service-banner';
-import About from '@/app/ui/section/about';
-import Contact from '@/app/ui/section/contact';
-import Home from '@/app/ui/section/home';
-import Services from '@/app/ui/section/services';
+import AboutSection from '@/app/ui/section/about-section';
+import ContactSection from '@/app/ui/section/contact-section';
+import HomeSection from '@/app/ui/section/home-section';
+import ServicesSection from '@/app/ui/section/services-section';
 import type { Locale } from '@/i18n/routing';
 import type { Metadata } from 'next';
 
@@ -27,19 +26,10 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="overflow-hidden">
-      <section id="home">
-        <Home locale={locale} />
-        <ServiceBanner locale={locale} />
-      </section>
-      <section id="about">
-        <About locale={locale} />
-      </section>
-      <section id="services">
-        <Services locale={locale} />
-      </section>
-      <section id="contact">
-        <Contact locale={locale} />
-      </section>
+      <HomeSection locale={locale} />
+      <AboutSection locale={locale} />
+      <ServicesSection locale={locale} />
+      <ContactSection locale={locale} />
     </div>
   );
 }

@@ -9,12 +9,12 @@ type Props = {
   locale: Locale;
 };
 
-export default async function Services({ locale }: Props) {
+export default async function ServicesSection({ locale }: Props) {
   const query = await contentfulClient.servicesContent({ locale });
   const content = query.servicesCollection?.items[0];
 
   return (
-    <div className="relative py-24 md:py-32">
+    <section id="services" className="relative py-24 md:py-32">
       <div className="-z-10 absolute inset-0 bg-radial-[circle_at_top] from-(--radial-color) to-65% to-transparent" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h6 className="mb-7 font-bold text-(--highlight) uppercase tracking-wider">
@@ -39,6 +39,6 @@ export default async function Services({ locale }: Props) {
             ))}
         </StaggerAnimation>
       </div>
-    </div>
+    </section>
   );
 }

@@ -14,12 +14,12 @@ type Props = {
   locale: Locale;
 };
 
-export default async function Contact({ locale }: Props) {
+export default async function ContactSection({ locale }: Props) {
   const query = await contentfulClient.contactContent({ locale });
   const content = query.contactCollection?.items[0];
 
   return (
-    <div className="relative py-24 md:py-32">
+    <section id="contact" className="relative py-24 md:py-32">
       <div className="-z-10 absolute inset-0 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-50% to-transparent" />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h6 className="mb-7 font-bold text-(--highlight) uppercase tracking-wider">
@@ -47,6 +47,6 @@ export default async function Contact({ locale }: Props) {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -11,12 +11,12 @@ type Props = {
   locale: Locale;
 };
 
-export default async function About({ locale }: Props) {
+export default async function AboutSection({ locale }: Props) {
   const query = await contentfulClient.aboutContent({ locale });
   const content = query.aboutCollection?.items[0];
 
   return (
-    <div className="relative py-24 md:py-48">
+    <section id="about" className="relative py-24 md:py-48">
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <div className="flex flex-col gap-8 md:flex-row md:gap-0">
           {content?.image?.url &&
@@ -73,6 +73,6 @@ export default async function About({ locale }: Props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
