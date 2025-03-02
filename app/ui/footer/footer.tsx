@@ -84,18 +84,20 @@ export default async function Footer({ locale }: Props) {
               href={content?.gitHubHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:-translate-y-1 text-(--secondary) duration-200 hover:text-(--primary)"
+              className="hover:-translate-y-1 relative text-(--secondary) duration-200 hover:text-(--primary)"
               aria-label={content?.gitHubHrefLabel || ''}
             >
+              <span className="-inset-1.5 absolute" />
               <GithubIcon className="h-4 w-4" />
             </a>
             <a
               href={content?.kofiHref || ''}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:-translate-y-1 text-(--secondary) duration-200 hover:text-(--primary)"
+              className="hover:-translate-y-1 relative text-(--secondary) duration-200 hover:text-(--primary)"
               aria-label={content?.kofiHrefLabel || ''}
             >
+              <span className="-inset-1.5 absolute" />
               <KofiIcon
                 className="h-4 w-auto"
                 backgroundColor="var(--surface-color)"
