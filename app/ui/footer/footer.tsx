@@ -1,10 +1,11 @@
 import contentfulClient from '@/app/lib/contentful/client';
-import ActiveStyledLink from '@/app/ui/footer/active-styled-link';
 import BrandIcon from '@/app/ui/footer/icon/brand-icon';
 import GithubIcon from '@/app/ui/footer/icon/github-icon';
 import KofiIcon from '@/app/ui/footer/icon/kofi-icon';
+import ActiveStyledLink from '@/app/ui/footer/link/active-styled-link';
+import ExternalIconLink from '@/app/ui/footer/link/external-icon-link';
+import ExternalLink from '@/app/ui/footer/link/external-link';
 import type { Locale } from '@/i18n/routing';
-import { LinkSquare02Icon } from 'hugeicons-react';
 
 type Props = {
   locale: Locale;
@@ -30,28 +31,16 @@ export default async function Footer({ locale }: Props) {
               <h6 className="mb-5 text-sm uppercase">
                 {content?.profileSection}
               </h6>
-              <ul className="font-medium text-(--secondary)">
-                <li className="mb-4 flex">
-                  <a
-                    href={content?.profileGitHubHref || ''}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline-effect flex items-center gap-1"
-                  >
+              <ul className="space-y-4 font-medium text-(--secondary)">
+                <li className="flex">
+                  <ExternalLink href={content?.profileGitHubHref}>
                     {content?.profileGitHub}
-                    <LinkSquare02Icon size={16} />
-                  </a>
+                  </ExternalLink>
                 </li>
-                <li>
-                  <a
-                    href={content?.profileStackOverflowHref || ''}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline-effect flex items-center gap-1"
-                  >
+                <li className="flex">
+                  <ExternalLink href={content?.profileStackOverflowHref}>
                     {content?.profileStackOverflow}
-                    <LinkSquare02Icon size={16} />
-                  </a>
+                  </ExternalLink>
                 </li>
               </ul>
             </div>
@@ -59,8 +48,8 @@ export default async function Footer({ locale }: Props) {
               <h6 className="mb-5 text-sm uppercase">
                 {content?.legalSection}
               </h6>
-              <ul className="font-medium text-(--secondary)">
-                <li className="mb-4">
+              <ul className="space-y-4 font-medium text-(--secondary)">
+                <li>
                   <ActiveStyledLink href="/legal-notice">
                     {content?.legalNotice}
                   </ActiveStyledLink>
@@ -80,29 +69,21 @@ export default async function Footer({ locale }: Props) {
             &copy; {year} {content?.title}
           </span>
           <div className="mt-4 flex gap-5 sm:mt-0 sm:justify-center">
-            <a
-              href={content?.gitHubHref || ''}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:-translate-y-1 relative text-(--secondary) duration-200 hover:text-(--primary)"
-              aria-label={content?.gitHubHrefLabel || ''}
+            <ExternalIconLink
+              href={content?.gitHubHref}
+              hrefLabel={content?.gitHubHrefLabel}
             >
-              <span className="-inset-1.5 absolute" />
               <GithubIcon className="h-4 w-4" />
-            </a>
-            <a
-              href={content?.kofiHref || ''}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:-translate-y-1 relative text-(--secondary) duration-200 hover:text-(--primary)"
-              aria-label={content?.kofiHrefLabel || ''}
+            </ExternalIconLink>
+            <ExternalIconLink
+              href={content?.kofiHref}
+              hrefLabel={content?.kofiHrefLabel}
             >
-              <span className="-inset-1.5 absolute" />
               <KofiIcon
                 className="h-4 w-auto"
                 backgroundColor="var(--surface-color)"
               />
-            </a>
+            </ExternalIconLink>
           </div>
         </div>
       </div>
