@@ -4,9 +4,9 @@ import type { ProjectStep } from '@/app/lib/contentful/generated/sdk';
 import StepItem from '@/app/ui/steps/step-item';
 import { motion } from 'motion/react';
 
-interface Props {
+type Props = {
   content?: ProjectStep[];
-}
+};
 
 export default function ProjectSteps({ content }: Props) {
   if (!content || content.length === 0) return null;

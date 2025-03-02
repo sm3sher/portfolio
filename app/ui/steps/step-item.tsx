@@ -2,12 +2,12 @@
 
 import { motion } from 'motion/react';
 
-interface Props {
+type Props = {
   index: number;
   title?: string | null;
   description?: string | null;
   delay: number;
-}
+};
 
 export default function StepItem({ index, title, description, delay }: Props) {
   return (
