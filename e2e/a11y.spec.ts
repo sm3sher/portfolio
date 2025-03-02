@@ -1,4 +1,4 @@
-import { expect, test } from './axe-test';
+import { expect, test } from '@/e2e/axe-test';
 
 const sections = [
   { name: 'Home', id: '#home' },
