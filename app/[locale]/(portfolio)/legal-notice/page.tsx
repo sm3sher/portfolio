@@ -1,5 +1,6 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
+import MailLink from '@/app/ui/link/mail-link';
 import { Link, type Locale } from '@/i18n/routing';
 import type { Metadata } from 'next';
 
@@ -53,12 +54,7 @@ export default async function Page({ params }: Props) {
           <div className="text-(--secondary)">
             <p>
               {content?.contactEmailLabel}{' '}
-              <a
-                href={`mailto:${content?.contactEmail}`}
-                className="underline-effect text-(--highlight-link)"
-              >
-                {content?.contactEmail}
-              </a>
+              <MailLink mail={content?.contactEmail} />
             </p>
             <p>
               <Link

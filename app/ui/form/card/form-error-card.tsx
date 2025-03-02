@@ -1,5 +1,6 @@
 import type { Form } from '@/app/lib/contentful/generated/sdk';
 import StatusCard from '@/app/ui/card/status-card';
+import MailLink from '@/app/ui/link/mail-link';
 import { CancelCircleIcon } from 'hugeicons-react';
 
 type Props = {
@@ -39,13 +40,7 @@ export default function FormErrorCard({
           {content?.errorEditPrompt}
         </button>{' '}
         {content?.errorDescription}{' '}
-        <a
-          href={`mailto:${content?.errorContactEmail}`}
-          className="underline-effect text-(--highlight)"
-        >
-          {content?.errorContactEmail}
-        </a>
-        .
+        <MailLink mail={content?.errorContactEmail} />.
       </p>
     </StatusCard>
   );

@@ -1,5 +1,7 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
+import ExternalLink from '@/app/ui/link/external-link';
+import MailLink from '@/app/ui/link/mail-link';
 import type { Locale } from '@/i18n/routing';
 import { CircleArrowRight02Icon } from 'hugeicons-react';
 import type { Metadata } from 'next';
@@ -114,52 +116,34 @@ export default async function Page({ params }: Props) {
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyDataProcessing}{' '}
-              <a
-                href={content?.hosting?.netlifyDataProcessingLink || ''}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.hosting?.netlifyDataProcessingLink}
-              </a>
+              <ExternalLink
+                href={content?.hosting?.netlifyDataProcessingLink}
+                highlight
+              />
               .
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyContractualClauses}{' '}
-              <a
-                href={content?.hosting?.netlifyContractualClausesLink || ''}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.hosting?.netlifyContractualClausesLink}
-              </a>
+              <ExternalLink
+                href={content?.hosting?.netlifyContractualClausesLink}
+                highlight
+              />
               .
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyDataProcessingAgreement}{' '}
-              <a
-                href={
-                  content?.hosting?.netlifyDataProcessingAgreementLink || ''
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.hosting?.netlifyDataProcessingAgreementLink}
-              </a>
+              <ExternalLink
+                href={content?.hosting?.netlifyDataProcessingAgreementLink}
+                highlight
+              />
               .
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyPrivacyPolicy}{' '}
-              <a
-                href={content?.hosting?.netlifyPrivacyPolicyLink || ''}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.hosting?.netlifyPrivacyPolicyLink}
-              </a>
+              <ExternalLink
+                href={content?.hosting?.netlifyPrivacyPolicyLink}
+                highlight
+              />
               .
             </p>
           </section>
@@ -203,12 +187,9 @@ export default async function Page({ params }: Props) {
             </address>
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.responsiblePartyEmailLabel}{' '}
-              <a
-                href={`mailto:${content?.notesAndLegalInformation?.responsiblePartyEmail}`}
-                className="underline-effect text-(--highlight-link)"
-              >
-                {content?.notesAndLegalInformation?.responsiblePartyEmail}
-              </a>
+              <MailLink
+                mail={content?.notesAndLegalInformation?.responsiblePartyEmail}
+              />
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.responsiblePartyInfo}
@@ -299,16 +280,10 @@ export default async function Page({ params }: Props) {
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.cloudflarePrivacyPolicy}{' '}
-              <a
-                href={
-                  content?.dataCollection?.cloudflarePrivacyPolicyLink || ''
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.dataCollection?.cloudflarePrivacyPolicyLink}
-              </a>
+              <ExternalLink
+                href={content?.dataCollection?.cloudflarePrivacyPolicyLink}
+                highlight
+              />
               .
             </p>
           </section>
@@ -325,17 +300,12 @@ export default async function Page({ params }: Props) {
             </p>
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.contactFormSupabasePrivacyPolicy}{' '}
-              <a
+              <ExternalLink
                 href={
-                  content?.dataCollection
-                    ?.contactFormSupabasePrivacyPolicyLink || ''
+                  content?.dataCollection?.contactFormSupabasePrivacyPolicyLink
                 }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline-effect break-words text-(--highlight-link)"
-              >
-                {content?.dataCollection?.contactFormSupabasePrivacyPolicyLink}
-              </a>
+                highlight
+              />
               .
             </p>
             <h5 className="mt-4 mb-2 flex items-center gap-2">
