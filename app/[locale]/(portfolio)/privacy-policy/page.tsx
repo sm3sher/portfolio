@@ -26,19 +26,25 @@ export default async function Page({ params }: Props) {
   const query = await contentfulClient.privacyPolicyContent({ locale });
   const content = query.privacyPolicyCollection?.items[0];
 
+  const arrowIcon = (
+    <CircleArrowRight02Icon size={22} className="text-(--highlight)" />
+  );
+
   return (
     <div className="py-24 md:py-32">
       <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <h3>{content?.title}</h3>
+        <h3 className="mb-2 font-bold text-(--highlight) uppercase tracking-wide">
+          {content?.title}
+        </h3>
         <p className="mb-8 text-(--secondary) italic">
           {content?.lastModified}
         </p>
-        <p className="mb-8 text-(--secondary)">{content?.introDescription}</p>
+        <p className="mb-12 text-(--secondary)">{content?.introDescription}</p>
         <article className="mb-12">
           <h4 className="mb-8">{content?.privacyOverview?.title}</h4>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.privacyOverview?.generalInfoTitle}
             </h4>
             <p className="text-(--secondary)">
@@ -46,20 +52,20 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.privacyOverview?.dataCollectionTitle}
             </h4>
-            <h5 className="mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.privacyOverview?.responsiblePartyTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.responsiblePartyDescription}
             </p>
 
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.privacyOverview?.dataCaptureTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
@@ -69,16 +75,16 @@ export default async function Page({ params }: Props) {
               {content?.privacyOverview?.dataAutomaticCaptureText}
             </p>
 
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.privacyOverview?.dataPurposeTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.dataPurposeDescription}
             </p>
 
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.privacyOverview?.userRightsTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
@@ -93,8 +99,8 @@ export default async function Page({ params }: Props) {
               {content?.privacyOverview?.userRightsContactText}
             </p>
 
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.privacyOverview?.analysisToolsTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
@@ -109,8 +115,10 @@ export default async function Page({ params }: Props) {
         <article className="mb-12">
           <h4 className="mb-8">{content?.hosting?.title}</h4>
 
-          <section className="mb-8">
-            <h4 className="mb-4">{content?.hosting?.netlifyTitle}</h4>
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
+              {content?.hosting?.netlifyTitle}
+            </h4>
             <p className="mb-2 text-(--secondary)">
               {content?.hosting?.netlifyHostingInfo}
             </p>
@@ -152,8 +160,8 @@ export default async function Page({ params }: Props) {
         <article className="mb-12">
           <h4 className="mb-8">{content?.notesAndLegalInformation?.title}</h4>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.dataProtectionTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -167,8 +175,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.responsiblePartyTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -196,8 +204,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.dataStorageDurationTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -205,8 +213,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.legalBasisTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -230,8 +238,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.userRightsTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -239,14 +247,14 @@ export default async function Page({ params }: Props) {
             </p>
             {content?.notesAndLegalInformation?.userRightsList?.map((item) => (
               <p key={item} className="mb-2 flex items-center gap-2">
-                <CircleArrowRight02Icon className="text-(--highlight)" />
+                {arrowIcon}
                 {item}
               </p>
             ))}
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.complaintRightTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -254,8 +262,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.notesAndLegalInformation?.sslTlsEncryptionTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -270,8 +278,10 @@ export default async function Page({ params }: Props) {
         <article className="mb-12">
           <h4 className="mb-8">{content?.dataCollection?.title}</h4>
 
-          <section className="mb-8">
-            <h4 className="mb-4">{content?.dataCollection?.cloudflareTitle}</h4>
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
+              {content?.dataCollection?.cloudflareTitle}
+            </h4>
             <p className="mb-2 text-(--secondary)">
               {content?.dataCollection?.cloudflareIntro}
             </p>
@@ -288,8 +298,8 @@ export default async function Page({ params }: Props) {
             </p>
           </section>
 
-          <section className="mb-8">
-            <h4 className="mb-4">
+          <section className="mb-12 border-(--border-color) border-t pt-6">
+            <h4 className="mb-4 font-semibold text-lg">
               {content?.dataCollection?.contactFormTitle}
             </h4>
             <p className="mb-2 text-(--secondary)">
@@ -308,8 +318,8 @@ export default async function Page({ params }: Props) {
               />
               .
             </p>
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.dataCollection?.legalBasisTitle}
             </h5>
             <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
@@ -326,8 +336,8 @@ export default async function Page({ params }: Props) {
                 })}
             </ul>
 
-            <h5 className="mt-4 mb-2 flex items-center gap-2">
-              <CircleArrowRight02Icon className="text-(--highlight)" />
+            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
+              {arrowIcon}
               {content?.dataCollection?.storageDurationTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
