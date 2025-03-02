@@ -1,9 +1,11 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import ServiceBanner from '@/app/ui/banner/service-banner';
+import About from '@/app/ui/section/about';
+import Contact from '@/app/ui/section/contact';
 import Home from '@/app/ui/section/home';
+import Services from '@/app/ui/section/services';
 import type { Locale } from '@/i18n/routing';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -22,10 +24,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { locale } = await params;
-
-  const About = dynamic(() => import('@/app/ui/section/about'));
-  const Services = dynamic(() => import('@/app/ui/section/services'));
-  const Contact = dynamic(() => import('@/app/ui/section/contact'));
 
   return (
     <div className="overflow-hidden">
