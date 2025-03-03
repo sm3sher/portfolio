@@ -1,6 +1,6 @@
 import contentfulClient from '@/app/lib/contentful/client';
+import RadialAnimation from '@/app/ui/animation/radial-animation';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
-import RadialBackground from '@/app/ui/background/radial-background';
 import ServiceBanner from '@/app/ui/banner/service-banner';
 import ShiningButton from '@/app/ui/button/shining-button';
 import { Link, type Locale } from '@/i18n/routing';
@@ -18,7 +18,7 @@ export default async function HomeSection({ locale }: Props) {
   return (
     <section id="home">
       <div className="relative pt-40 sm:pt-48">
-        <RadialBackground top={0} left={0} radius={50} />
+        <RadialAnimation top={0} left={0} radius={50} />
         {content?.image?.url &&
           content.image.width &&
           content.image.height &&
