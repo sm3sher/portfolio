@@ -51,7 +51,6 @@ export default async function AboutSection({ locale }: Props) {
               <ViewAnimation
                 translation={10}
                 delay={0.5}
-                duration={0.6}
                 direction="fromBottom"
               >
                 <p>{content?.description}</p>
@@ -62,8 +61,10 @@ export default async function AboutSection({ locale }: Props) {
                   .map((item) => (
                     <ViewAnimation
                       key={`${item.labelPrefix}${item.labelSuffix}`}
-                      delay={0.5}
-                      direction="fromTop"
+                      delay={0.6}
+                      duration={1}
+                      translation={0}
+                      direction="fromBottom"
                     >
                       <ExperienceCounter content={item as Metric} />
                     </ViewAnimation>
