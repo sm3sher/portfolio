@@ -2,6 +2,7 @@ import contentfulClient from '@/app/lib/contentful/client';
 import type { Service } from '@/app/lib/contentful/generated/sdk';
 import StaggerAnimation from '@/app/ui/animation/stagger-animation';
 import ViewAnimation from '@/app/ui/animation/view-animation';
+import RadialBackground from '@/app/ui/background/radial-background';
 import ServiceCard from '@/app/ui/card/service-card';
 import type { Locale } from '@/i18n/routing';
 
@@ -15,7 +16,7 @@ export default async function ServicesSection({ locale }: Props) {
 
   return (
     <section id="services" className="relative py-24 md:py-32">
-      <div className="-z-10 absolute inset-0 bg-radial-[circle_at_top] from-(--radial-color) to-65% to-transparent" />
+      <RadialBackground top="50%" left={0} radius={65} />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h6 className="mb-7 font-bold text-(--highlight) uppercase tracking-wider">
           {content?.title}

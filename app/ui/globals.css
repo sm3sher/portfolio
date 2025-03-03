@@ -38,8 +38,7 @@
 :root {
   --highlight: var(--color-orange-600);
   --highlight-link: oklch(58% 0.2 34);
-  --radial-color: oklch(75% 0.4 33 / 10%);
-  --dot-color: --alpha(var(--color-neutral-500) / 15%);
+  --radial-color: oklch(75% 0.4 33 / 20%);
   --primary: var(--color-black);
   --secondary: var(--color-neutral-700);
   --background-color: var(--color-neutral-50);
@@ -53,11 +52,10 @@
 html.dark {
   --highlight: oklch(67% 0.22 38);
   --highlight-link: oklch(64% 0.22 38);
-  --radial-color: oklch(36% 0.25 33 / 50%);
-  --dot-color: --alpha(var(--color-neutral-500) / 20%);
+  --radial-color: oklch(36% 0.25 33 / 60%);
   --primary: var(--color-white);
   --secondary: var(--color-neutral-300);
-  --background-color: oklch(16.84% 0 0);
+  --background-color: var(--color-neutral-950);
   --surface-color: var(--color-neutral-900);
   --overlay-color: --alpha(var(--color-neutral-900) / 70%);
   --border-color: --alpha(var(--color-white) / 35%);
@@ -76,8 +74,6 @@ html.dark {
 body {
   color: var(--primary);
   background-color: var(--background-color);
-  background-image: radial-gradient(var(--dot-color) 10%, transparent 10%);
-  background-size: 1.5rem 1.5rem;
 }
 
 @layer base {

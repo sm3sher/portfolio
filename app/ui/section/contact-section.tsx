@@ -5,6 +5,7 @@ import type {
   Testimonials,
 } from '@/app/lib/contentful/generated/sdk';
 import ViewAnimation from '@/app/ui/animation/view-animation';
+import RadialBackground from '@/app/ui/background/radial-background';
 import ContactForm from '@/app/ui/form/contact-form';
 import TestimonialSlider from '@/app/ui/slider/testimonial-slider';
 import ProjectSteps from '@/app/ui/steps/project-steps';
@@ -20,7 +21,7 @@ export default async function ContactSection({ locale }: Props) {
 
   return (
     <section id="contact" className="relative py-24 md:py-32">
-      <div className="-z-10 absolute inset-0 bg-radial-[circle_at_bottom_left] from-(--radial-color) to-50% to-transparent" />
+      <RadialBackground top={0} left="100%" radius={50} />
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h6 className="mb-7 font-bold text-(--highlight) uppercase tracking-wider">
           {content?.title}
