@@ -277,7 +277,7 @@ export const handlers = [
               greetingDescription: 'Waving Hand',
               introHeadingMain: "I'm Roman",
               introHeadingHighlight: 'Jumatov',
-              introSubheading: 'Freelance full-stack developer',
+              introSubheading: 'Freelance developer',
               introDescription:
                 'I will guide your project from the first idea to the finished product – with full-stack expertise, technical know-how, and an eye for detail.',
               ctaButtonLabel: 'Contact Me',
@@ -418,13 +418,11 @@ export const handlers = [
             {
               title: 'Privacy Policy',
               lastModified: 'Last updated: February 2025',
-              introDescription:
-                'In this Privacy Policy, “we” refers to Roman Jumatov, the operator of this website.',
               privacyOverview: {
                 title: '1. Data Privacy at a Glance',
                 generalInfoTitle: 'General Information',
                 generalInfoDescription:
-                  'Here you will find an overview of what happens to your personal data when you visit our website. Personal data is information that can be used to identify you personally. Detailed information on this can be found in this Privacy Policy.',
+                  'In this Privacy Policy, ‘we’ refers to Roman Jumatov, the operator of this website. Here, you will find an overview of how your personal data is handled when you visit our website. Personal data includes any information that can be used to identify you personally. For more details, please refer to the sections below.',
                 dataCollectionTitle: 'Data Collection on This Website',
                 responsiblePartyTitle: 'Who is responsible?',
                 responsiblePartyDescription:

@@ -40,7 +40,6 @@ export default async function Page({ params }: Props) {
         <p className="mb-8 text-(--secondary) italic">
           {content?.lastModified}
         </p>
-        <p className="mb-12 text-(--secondary)">{content?.introDescription}</p>
         <article className="mb-12">
           <h4 className="mb-8">{content?.privacyOverview?.title}</h4>
 

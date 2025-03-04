@@ -3,7 +3,6 @@ query privacyPolicyContent($locale: String) {
     items {
       title
       lastModified
-      introDescription
       privacyOverview {
         title
         generalInfoTitle

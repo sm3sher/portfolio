@@ -897,8 +897,6 @@ export type DataCollectionLinkingCollectionsPrivacyPolicyCollectionArgs = {
 };
 
 export enum DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder {
-  IntroDescriptionAsc = 'introDescription_ASC',
-  IntroDescriptionDesc = 'introDescription_DESC',
   LastModifiedAsc = 'lastModified_ASC',
   LastModifiedDesc = 'lastModified_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -2191,8 +2189,6 @@ export type HostingLinkingCollectionsPrivacyPolicyCollectionArgs = {
 };
 
 export enum HostingLinkingCollectionsPrivacyPolicyCollectionOrder {
-  IntroDescriptionAsc = 'introDescription_ASC',
-  IntroDescriptionDesc = 'introDescription_DESC',
   LastModifiedAsc = 'lastModified_ASC',
   LastModifiedDesc = 'lastModified_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -3948,8 +3944,6 @@ export type NotesAndLegalInformationLinkingCollectionsPrivacyPolicyCollectionArg
 };
 
 export enum NotesAndLegalInformationLinkingCollectionsPrivacyPolicyCollectionOrder {
-  IntroDescriptionAsc = 'introDescription_ASC',
-  IntroDescriptionDesc = 'introDescription_DESC',
   LastModifiedAsc = 'lastModified_ASC',
   LastModifiedDesc = 'lastModified_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -4324,8 +4318,6 @@ export type PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionArgs = {
 };
 
 export enum PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder {
-  IntroDescriptionAsc = 'introDescription_ASC',
-  IntroDescriptionDesc = 'introDescription_DESC',
   LastModifiedAsc = 'lastModified_ASC',
   LastModifiedDesc = 'lastModified_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -4388,7 +4380,6 @@ export type PrivacyPolicy = Entry & _Node & {
   contentfulMetadata: ContentfulMetadata;
   dataCollection?: Maybe<DataCollection>;
   hosting?: Maybe<Hosting>;
-  introDescription?: Maybe<Scalars['String']['output']>;
   lastModified?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<PrivacyPolicyLinkingCollections>;
   notesAndLegalInformation?: Maybe<NotesAndLegalInformation>;
@@ -4411,12 +4402,6 @@ export type PrivacyPolicyHostingArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
   where?: InputMaybe<HostingFilter>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/privacyPolicy) */
-export type PrivacyPolicyIntroDescriptionArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
 };
 
 
@@ -4469,13 +4454,6 @@ export type PrivacyPolicyFilter = {
   dataCollection_exists?: InputMaybe<Scalars['Boolean']['input']>;
   hosting?: InputMaybe<CfHostingNestedFilter>;
   hosting_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  introDescription?: InputMaybe<Scalars['String']['input']>;
-  introDescription_contains?: InputMaybe<Scalars['String']['input']>;
-  introDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  introDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  introDescription_not?: InputMaybe<Scalars['String']['input']>;
-  introDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
-  introDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   lastModified?: InputMaybe<Scalars['String']['input']>;
   lastModified_contains?: InputMaybe<Scalars['String']['input']>;
   lastModified_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -4511,8 +4489,6 @@ export type PrivacyPolicyLinkingCollectionsEntryCollectionArgs = {
 };
 
 export enum PrivacyPolicyOrder {
-  IntroDescriptionAsc = 'introDescription_ASC',
-  IntroDescriptionDesc = 'introDescription_DESC',
   LastModifiedAsc = 'lastModified_ASC',
   LastModifiedDesc = 'lastModified_DESC',
   SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
@@ -7033,7 +7009,7 @@ export type PrivacyPolicyContentQueryVariables = Exact<{
 }>;
 
 
-export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, introDescription?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null, hosting?: { __typename?: 'Hosting', title?: string | null, netlifyTitle?: string | null, netlifyHostingInfo?: string | null, netlifyDataProcessing?: string | null, netlifyDataProcessingLink?: string | null, netlifyContractualClauses?: string | null, netlifyContractualClausesLink?: string | null, netlifyDataProcessingAgreement?: string | null, netlifyDataProcessingAgreementLink?: string | null, netlifyPrivacyPolicy?: string | null, netlifyPrivacyPolicyLink?: string | null } | null, notesAndLegalInformation?: { __typename?: 'NotesAndLegalInformation', title?: string | null, dataProtectionTitle?: string | null, dataProtectionIntro?: string | null, dataProtectionDetails?: string | null, dataProtectionNotice?: string | null, responsiblePartyTitle?: string | null, responsiblePartyIntro?: string | null, responsiblePartyName?: string | null, responsiblePartyRole?: string | null, responsiblePartyStreet?: string | null, responsiblePartyPostalCode?: string | null, responsiblePartyCity?: string | null, responsiblePartyEmailLabel?: string | null, responsiblePartyEmail?: string | null, responsiblePartyInfo?: string | null, dataStorageDurationTitle?: string | null, dataStorageDurationDetails?: string | null, legalBasisTitle?: string | null, legalBasisIntro?: string | null, legalBasisList?: Array<string | null> | null, legalBasisDetails?: string | null, userRightsTitle?: string | null, userRightsIntro?: string | null, userRightsList?: Array<string | null> | null, complaintRightTitle?: string | null, complaintRightDetails?: string | null, sslTlsEncryptionTitle?: string | null, sslTlsEncryptionIntro?: string | null, sslTlsEncryptionDetails?: string | null } | null, dataCollection?: { __typename?: 'DataCollection', title?: string | null, cloudflareTitle?: string | null, cloudflareIntro?: string | null, cloudflareDetails?: string | null, cloudflarePrivacyPolicy?: string | null, cloudflarePrivacyPolicyLink?: string | null, contactFormTitle?: string | null, contactFormIntro?: string | null, contactFormSupabase?: string | null, contactFormSupabasePrivacyPolicy?: string | null, contactFormSupabasePrivacyPolicyLink?: string | null, legalBasisTitle?: string | null, legalBasisList?: Array<string | null> | null, storageDurationTitle?: string | null, storageDurationDetails?: string | null } | null } | null> } | null };
+export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null, hosting?: { __typename?: 'Hosting', title?: string | null, netlifyTitle?: string | null, netlifyHostingInfo?: string | null, netlifyDataProcessing?: string | null, netlifyDataProcessingLink?: string | null, netlifyContractualClauses?: string | null, netlifyContractualClausesLink?: string | null, netlifyDataProcessingAgreement?: string | null, netlifyDataProcessingAgreementLink?: string | null, netlifyPrivacyPolicy?: string | null, netlifyPrivacyPolicyLink?: string | null } | null, notesAndLegalInformation?: { __typename?: 'NotesAndLegalInformation', title?: string | null, dataProtectionTitle?: string | null, dataProtectionIntro?: string | null, dataProtectionDetails?: string | null, dataProtectionNotice?: string | null, responsiblePartyTitle?: string | null, responsiblePartyIntro?: string | null, responsiblePartyName?: string | null, responsiblePartyRole?: string | null, responsiblePartyStreet?: string | null, responsiblePartyPostalCode?: string | null, responsiblePartyCity?: string | null, responsiblePartyEmailLabel?: string | null, responsiblePartyEmail?: string | null, responsiblePartyInfo?: string | null, dataStorageDurationTitle?: string | null, dataStorageDurationDetails?: string | null, legalBasisTitle?: string | null, legalBasisIntro?: string | null, legalBasisList?: Array<string | null> | null, legalBasisDetails?: string | null, userRightsTitle?: string | null, userRightsIntro?: string | null, userRightsList?: Array<string | null> | null, complaintRightTitle?: string | null, complaintRightDetails?: string | null, sslTlsEncryptionTitle?: string | null, sslTlsEncryptionIntro?: string | null, sslTlsEncryptionDetails?: string | null } | null, dataCollection?: { __typename?: 'DataCollection', title?: string | null, cloudflareTitle?: string | null, cloudflareIntro?: string | null, cloudflareDetails?: string | null, cloudflarePrivacyPolicy?: string | null, cloudflarePrivacyPolicyLink?: string | null, contactFormTitle?: string | null, contactFormIntro?: string | null, contactFormSupabase?: string | null, contactFormSupabasePrivacyPolicy?: string | null, contactFormSupabasePrivacyPolicyLink?: string | null, legalBasisTitle?: string | null, legalBasisList?: Array<string | null> | null, storageDurationTitle?: string | null, storageDurationDetails?: string | null } | null } | null> } | null };
 
 export type ServiceBannerContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7324,7 +7300,6 @@ export const PrivacyPolicyContentDocument = gql`
     items {
       title
       lastModified
-      introDescription
       privacyOverview {
         title
         generalInfoTitle

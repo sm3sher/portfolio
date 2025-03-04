@@ -541,8 +541,6 @@ type DataCollectionLinkingCollections {
 }
 
 enum DataCollectionLinkingCollectionsPrivacyPolicyCollectionOrder {
-  introDescription_ASC
-  introDescription_DESC
   lastModified_ASC
   lastModified_DESC
   sys_firstPublishedAt_ASC
@@ -1388,8 +1386,6 @@ type HostingLinkingCollections {
 }
 
 enum HostingLinkingCollectionsPrivacyPolicyCollectionOrder {
-  introDescription_ASC
-  introDescription_DESC
   lastModified_ASC
   lastModified_DESC
   sys_firstPublishedAt_ASC
@@ -2590,8 +2586,6 @@ type NotesAndLegalInformationLinkingCollections {
 }
 
 enum NotesAndLegalInformationLinkingCollectionsPrivacyPolicyCollectionOrder {
-  introDescription_ASC
-  introDescription_DESC
   lastModified_ASC
   lastModified_DESC
   sys_firstPublishedAt_ASC
@@ -2834,8 +2828,6 @@ type PrivacyOverviewLinkingCollections {
 }
 
 enum PrivacyOverviewLinkingCollectionsPrivacyPolicyCollectionOrder {
-  introDescription_ASC
-  introDescription_DESC
   lastModified_ASC
   lastModified_DESC
   sys_firstPublishedAt_ASC
@@ -2899,7 +2891,6 @@ type PrivacyPolicy implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   dataCollection(locale: String, preview: Boolean, where: DataCollectionFilter): DataCollection
   hosting(locale: String, preview: Boolean, where: HostingFilter): Hosting
-  introDescription(locale: String): String
   lastModified(locale: String): String
   linkedFrom(allowedLocales: [String]): PrivacyPolicyLinkingCollections
   notesAndLegalInformation(locale: String, preview: Boolean, where: NotesAndLegalInformationFilter): NotesAndLegalInformation
@@ -2923,13 +2914,6 @@ input PrivacyPolicyFilter {
   dataCollection_exists: Boolean
   hosting: cfHostingNestedFilter
   hosting_exists: Boolean
-  introDescription: String
-  introDescription_contains: String
-  introDescription_exists: Boolean
-  introDescription_in: [String]
-  introDescription_not: String
-  introDescription_not_contains: String
-  introDescription_not_in: [String]
   lastModified: String
   lastModified_contains: String
   lastModified_exists: Boolean
@@ -2956,8 +2940,6 @@ type PrivacyPolicyLinkingCollections {
 }
 
 enum PrivacyPolicyOrder {
-  introDescription_ASC
-  introDescription_DESC
   lastModified_ASC
   lastModified_DESC
   sys_firstPublishedAt_ASC
