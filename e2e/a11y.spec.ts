@@ -43,6 +43,7 @@ for (const colorScheme of colorSchemes) {
         await page.evaluate(() =>
           window.scrollTo(0, document.body.scrollHeight),
         );
+        await page.waitForTimeout(1000);
 
         const scanResults = await axeBuilder().analyze();
         expect(scanResults.violations).toEqual([]);
