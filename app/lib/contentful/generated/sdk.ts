@@ -4659,8 +4659,6 @@ export type Query = {
   projectStep?: Maybe<ProjectStep>;
   projectStepCollection?: Maybe<ProjectStepCollection>;
   service?: Maybe<Service>;
-  serviceBanner?: Maybe<ServiceBanner>;
-  serviceBannerCollection?: Maybe<ServiceBannerCollection>;
   serviceCollection?: Maybe<ServiceCollection>;
   services?: Maybe<Services>;
   servicesCollection?: Maybe<ServicesCollection>;
@@ -5022,23 +5020,6 @@ export type QueryServiceArgs = {
 };
 
 
-export type QueryServiceBannerArgs = {
-  id: Scalars['String']['input'];
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type QueryServiceBannerCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  order?: InputMaybe<Array<InputMaybe<ServiceBannerOrder>>>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-  where?: InputMaybe<ServiceBannerFilter>;
-};
-
-
 export type QueryServiceCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -5175,71 +5156,6 @@ export type ServiceTagsArgs = {
 export type ServiceTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/serviceBanner) */
-export type ServiceBanner = Entry & _Node & {
-  __typename?: 'ServiceBanner';
-  _id: Scalars['ID']['output'];
-  contentfulMetadata: ContentfulMetadata;
-  linkedFrom?: Maybe<ServiceBannerLinkingCollections>;
-  services?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  sys: Sys;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/serviceBanner) */
-export type ServiceBannerLinkedFromArgs = {
-  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-
-/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/serviceBanner) */
-export type ServiceBannerServicesArgs = {
-  locale?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type ServiceBannerCollection = {
-  __typename?: 'ServiceBannerCollection';
-  items: Array<Maybe<ServiceBanner>>;
-  limit: Scalars['Int']['output'];
-  skip: Scalars['Int']['output'];
-  total: Scalars['Int']['output'];
-};
-
-export type ServiceBannerFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ServiceBannerFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ServiceBannerFilter>>>;
-  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
-  services_contains_all?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  services_contains_none?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  services_contains_some?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  services_exists?: InputMaybe<Scalars['Boolean']['input']>;
-  sys?: InputMaybe<SysFilter>;
-};
-
-export type ServiceBannerLinkingCollections = {
-  __typename?: 'ServiceBannerLinkingCollections';
-  entryCollection?: Maybe<EntryCollection>;
-};
-
-
-export type ServiceBannerLinkingCollectionsEntryCollectionArgs = {
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  locale?: InputMaybe<Scalars['String']['input']>;
-  preview?: InputMaybe<Scalars['Boolean']['input']>;
-  skip?: InputMaybe<Scalars['Int']['input']>;
-};
-
-export enum ServiceBannerOrder {
-  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
-  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
-  SysIdAsc = 'sys_id_ASC',
-  SysIdDesc = 'sys_id_DESC',
-  SysPublishedAtAsc = 'sys_publishedAt_ASC',
-  SysPublishedAtDesc = 'sys_publishedAt_DESC',
-  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
-}
 
 export type ServiceCollection = {
   __typename?: 'ServiceCollection';
@@ -7011,13 +6927,6 @@ export type PrivacyPolicyContentQueryVariables = Exact<{
 
 export type PrivacyPolicyContentQuery = { __typename?: 'Query', privacyPolicyCollection?: { __typename?: 'PrivacyPolicyCollection', items: Array<{ __typename?: 'PrivacyPolicy', title?: string | null, lastModified?: string | null, privacyOverview?: { __typename?: 'PrivacyOverview', title?: string | null, generalInfoTitle?: string | null, generalInfoDescription?: string | null, dataCollectionTitle?: string | null, responsiblePartyTitle?: string | null, responsiblePartyDescription?: string | null, dataCaptureTitle?: string | null, dataDirectCaptureText?: string | null, dataAutomaticCaptureText?: string | null, dataPurposeTitle?: string | null, dataPurposeDescription?: string | null, userRightsTitle?: string | null, userRightsIntroText?: string | null, userRightsList?: Array<string | null> | null, userRightsContactText?: string | null, analysisToolsTitle?: string | null, analysisToolsIntroText?: string | null, analysisToolsDetailsText?: string | null } | null, hosting?: { __typename?: 'Hosting', title?: string | null, netlifyTitle?: string | null, netlifyHostingInfo?: string | null, netlifyDataProcessing?: string | null, netlifyDataProcessingLink?: string | null, netlifyContractualClauses?: string | null, netlifyContractualClausesLink?: string | null, netlifyDataProcessingAgreement?: string | null, netlifyDataProcessingAgreementLink?: string | null, netlifyPrivacyPolicy?: string | null, netlifyPrivacyPolicyLink?: string | null } | null, notesAndLegalInformation?: { __typename?: 'NotesAndLegalInformation', title?: string | null, dataProtectionTitle?: string | null, dataProtectionIntro?: string | null, dataProtectionDetails?: string | null, dataProtectionNotice?: string | null, responsiblePartyTitle?: string | null, responsiblePartyIntro?: string | null, responsiblePartyName?: string | null, responsiblePartyRole?: string | null, responsiblePartyStreet?: string | null, responsiblePartyPostalCode?: string | null, responsiblePartyCity?: string | null, responsiblePartyEmailLabel?: string | null, responsiblePartyEmail?: string | null, responsiblePartyInfo?: string | null, dataStorageDurationTitle?: string | null, dataStorageDurationDetails?: string | null, legalBasisTitle?: string | null, legalBasisIntro?: string | null, legalBasisList?: Array<string | null> | null, legalBasisDetails?: string | null, userRightsTitle?: string | null, userRightsIntro?: string | null, userRightsList?: Array<string | null> | null, complaintRightTitle?: string | null, complaintRightDetails?: string | null, sslTlsEncryptionTitle?: string | null, sslTlsEncryptionIntro?: string | null, sslTlsEncryptionDetails?: string | null } | null, dataCollection?: { __typename?: 'DataCollection', title?: string | null, cloudflareTitle?: string | null, cloudflareIntro?: string | null, cloudflareDetails?: string | null, cloudflarePrivacyPolicy?: string | null, cloudflarePrivacyPolicyLink?: string | null, contactFormTitle?: string | null, contactFormIntro?: string | null, contactFormSupabase?: string | null, contactFormSupabasePrivacyPolicy?: string | null, contactFormSupabasePrivacyPolicyLink?: string | null, legalBasisTitle?: string | null, legalBasisList?: Array<string | null> | null, storageDurationTitle?: string | null, storageDurationDetails?: string | null } | null } | null> } | null };
 
-export type ServiceBannerContentQueryVariables = Exact<{
-  locale?: InputMaybe<Scalars['String']['input']>;
-}>;
-
-
-export type ServiceBannerContentQuery = { __typename?: 'Query', serviceBannerCollection?: { __typename?: 'ServiceBannerCollection', items: Array<{ __typename?: 'ServiceBanner', services?: Array<string | null> | null } | null> } | null };
-
 export type ServicesContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
 }>;
@@ -7385,15 +7294,6 @@ export const PrivacyPolicyContentDocument = gql`
   }
 }
     `;
-export const ServiceBannerContentDocument = gql`
-    query serviceBannerContent($locale: String) {
-  serviceBannerCollection(limit: 1, locale: $locale) {
-    items {
-      services
-    }
-  }
-}
-    `;
 export const ServicesContentDocument = gql`
     query servicesContent($locale: String) {
   servicesCollection(limit: 1, locale: $locale) {
@@ -7470,9 +7370,6 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
     },
     privacyPolicyContent(variables?: PrivacyPolicyContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<PrivacyPolicyContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<PrivacyPolicyContentQuery>(PrivacyPolicyContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'privacyPolicyContent', 'query', variables);
-    },
-    serviceBannerContent(variables?: ServiceBannerContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ServiceBannerContentQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<ServiceBannerContentQuery>(ServiceBannerContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'serviceBannerContent', 'query', variables);
     },
     servicesContent(variables?: ServicesContentQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<ServicesContentQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<ServicesContentQuery>(ServicesContentDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'servicesContent', 'query', variables);

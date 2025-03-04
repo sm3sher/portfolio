@@ -5,14 +5,7 @@
 
 @theme {
   --animate-spin-slow: spin 8s linear infinite;
-  --animate-infinite-scroll: scroll 50s linear infinite;
   --animate-shine: shine 9s ease-in-out infinite;
-
-  @keyframes scroll {
-    to {
-      transform: translateX(-50%);
-    }
-  }
 
   @keyframes shine {
     0% {
@@ -115,7 +108,7 @@ body {
 }
 
 @utility underline-effect {
-  @apply relative inline-block after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-current after:duration-300 hover:after:w-full;
+  @apply relative inline-block after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-current after:duration-300 hover:after:w-full;
 }
 
 @utility shadow-effect {
@@ -124,10 +117,4 @@ body {
 
 @utility glow-effect {
   @apply drop-shadow-[0_0_1px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_1px_rgba(255,255,255,0.3)];
-}
-
-@utility text-stroke {
-  color: var(--surface-color);
-  text-shadow: 1px 1px 0 var(--primary), -1px -1px 0 var(--primary), 1px -1px 0
-    var(--primary), -1px 1px 0 var(--primary);
 }

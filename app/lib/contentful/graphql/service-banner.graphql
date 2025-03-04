@@ -1,7 +1,0 @@
-query serviceBannerContent($locale: String) {
-  serviceBannerCollection(limit: 1, locale: $locale) {
-    items {
-      services
-    }
-  }
-}

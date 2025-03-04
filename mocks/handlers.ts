@@ -11,7 +11,6 @@ import {
   NotFoundContentDocument,
   PrivacyMetadataContentDocument,
   PrivacyPolicyContentDocument,
-  ServiceBannerContentDocument,
   ServicesContentDocument,
   VerifyContentDocument,
 } from '@/app/lib/contentful/generated/sdk';
@@ -553,28 +552,6 @@ export const handlers = [
                 storageDurationDetails:
                   'The data will be stored until the purpose is fulfilled or you request its deletion. Legal retention periods remain unaffected.',
               },
-            },
-          ],
-        },
-      },
-    }),
-  ),
-  graphql.query(ServiceBannerContentDocument, () =>
-    HttpResponse.json({
-      data: {
-        serviceBannerCollection: {
-          items: [
-            {
-              services: [
-                'Web Development',
-                'MVP Creation',
-                'Consulting',
-                'Code Review',
-                'Feature Development',
-                'Responsive Design',
-                'Migration',
-                'Maintenance',
-              ],
             },
           ],
         },
