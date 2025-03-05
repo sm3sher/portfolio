@@ -19,7 +19,7 @@ export default function ExternalLink({
       href={href || ''}
       target="_blank"
       rel="noopener noreferrer"
-      className={`underline-effect inline-flex items-center gap-1 ${highlight && 'text-(--highlight-link)'}`}
+      className={`underline-effect inline-flex items-center gap-1 break-all ${highlight && 'text-(--highlight-link)'}`}
     >
       {children || href}
       {icon && <LinkSquare02Icon size={16} />}

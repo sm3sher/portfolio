@@ -34,7 +34,7 @@ export default async function Page({ params }: Props) {
   return (
     <div className="py-24 md:py-32">
       <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <h3 className="mb-2 font-bold text-(--highlight) uppercase tracking-wide">
+        <h3 className="mb-2 hyphens-auto font-bold text-(--highlight) uppercase tracking-wide">
           {content?.title}
         </h3>
         <p className="mb-8 text-(--secondary) italic">
