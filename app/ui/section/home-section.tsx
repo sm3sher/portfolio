@@ -17,7 +17,10 @@ export default async function HomeSection({ locale }: Props) {
   const content = query.homeCollection?.items[0];
 
   return (
-    <section id="home" className="relative py-40 sm:py-56">
+    <section
+      id="home"
+      className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center"
+    >
       <RadialAnimation top={0} left={0} radius={50} />
       <ViewAnimation
         direction="fromBottom"
