@@ -1,6 +1,8 @@
 import contentfulClient from '@/app/lib/contentful/client';
+import HeroAnimation from '@/app/ui/animation/hero/hero-animation';
 import RadialAnimation from '@/app/ui/animation/radial-animation';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
+import ViewAnimation from '@/app/ui/animation/view-animation';
 import ShiningButton from '@/app/ui/button/shining-button';
 import { Link, type Locale } from '@/i18n/routing';
 import { ArrowDown01Icon } from 'hugeicons-react';
@@ -15,23 +17,17 @@ export default async function HomeSection({ locale }: Props) {
   const content = query.homeCollection?.items[0];
 
   return (
-    <section id="home" className="relative pt-40 sm:pt-48">
+    <section id="home" className="relative py-40 sm:py-56">
       <RadialAnimation top={0} left={0} radius={50} />
-      {content?.image?.url &&
-        content.image.width &&
-        content.image.height &&
-        content.image.description && (
-          <RevealAnimation className="-z-20 absolute inset-0 xl:mx-auto xl:max-w-(--breakpoint-xl)">
-            <Image
-              className="-right-32 sm:-right-20 md:-right-12 absolute bottom-0 max-h-[90%] w-auto object-contain brightness-110 contrast-[1.1] drop-shadow-[0_0_10px_rgba(0,0,0,0.7)] saturate-[1.25] lg:right-0 dark:brightness-100 dark:drop-shadow-[0_0_3px_rgba(255,255,255,0.2)]"
-              src={content.image.url}
-              width={content.image.width}
-              height={content.image.height}
-              alt={content.image.description}
-              priority
-            />
-          </RevealAnimation>
-        )}
+      <ViewAnimation
+        direction="fromBottom"
+        delay={0.4}
+        className="absolute inset-0 xl:mx-auto xl:max-w-(--breakpoint-xl)"
+      >
+        <div className="-bottom-2/12 pointer-events-none absolute left-2/12 max-h-3/4 opacity-50 sm:pointer-events-auto sm:left-1/3 sm:opacity-100 md:left-1/2 dark:opacity-40 dark:sm:opacity-100">
+          <HeroAnimation floatingLabel={content?.floatingLabel} />
+        </div>
+      </ViewAnimation>
       <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
         <h6 className="mb-5">
           <div className="flex space-x-2">
@@ -51,16 +47,16 @@ export default async function HomeSection({ locale }: Props) {
           </span>
         </h1>
         <h3>{content?.introSubheading}</h3>
-        <p className="mt-6 drop-shadow-[0_0_6px_white] md:w-2/3 lg:w-5/12 dark:drop-shadow-[0_0_6px_black]">
+        <p className="mt-6 drop-shadow-[0_0_6px_white] sm:w-2/3 lg:w-5/12 dark:drop-shadow-[0_0_6px_black]">
           {content?.introDescription}
         </p>
-        <div className="flex items-center space-x-4 pt-16 pb-16 lg:pb-56">
+        <div className="flex items-center space-x-4 pt-16">
           <Link href="#contact" tabIndex={-1}>
             <ShiningButton>{content?.ctaButtonLabel}</ShiningButton>
           </Link>
           <Link
             href="#about"
-            className="rounded-full bg-(--highlight) p-2"
+            className="z-0 rounded-full bg-(--highlight) p-2"
             aria-label={content?.scrollDownLabel || ''}
           >
             <ArrowDown01Icon

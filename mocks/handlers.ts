@@ -82,9 +82,9 @@ export const handlers = [
                     description: 'Let’s discuss your project and goals.',
                   },
                   {
-                    title: 'Receive a tailored offer',
+                    title: 'Receive an offer',
                     description:
-                      'For development work, you’ll get a fixed-price quote within 5 working days. For consulting and ongoing support, we’ll define a flexible model.',
+                      'Based on the consultation, I’ll share my standard hourly or day rate. For specific projects, I’ll provide an estimate of the total cost, helping you decide if my services align with your budget.',
                   },
                   {
                     title: 'Work begins',
@@ -278,15 +278,10 @@ export const handlers = [
               introHeadingHighlight: 'Jumatov',
               introSubheading: 'Freelance developer',
               introDescription:
-                'I will guide your project from the first idea to the finished product – with full-stack expertise, technical know-how, and an eye for detail.',
+                'I’ll guide your project from the first idea to the finished product – with full-stack expertise, tailored web solutions, and a clear focus on quality and scalability.',
               ctaButtonLabel: 'Contact Me',
               scrollDownLabel: 'Scroll down',
-              image: {
-                url: MOCK_IMAGE_URL,
-                width: 1037,
-                height: 1629,
-                description: 'Portrait placeholder',
-              },
+              floatingLabel: 'System ready',
             },
           ],
         },

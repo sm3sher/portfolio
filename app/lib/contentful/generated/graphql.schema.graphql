@@ -233,7 +233,6 @@ type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
   emailCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EmailCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  homeCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): HomeCollection
   testimonialCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TestimonialCollection
 }
 
@@ -1156,9 +1155,9 @@ type Home implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
   ctaButtonLabel(locale: String): String
+  floatingLabel(locale: String): String
   greeting(locale: String): String
   greetingDescription(locale: String): String
-  image(locale: String, preview: Boolean): Asset
   introDescription(locale: String): String
   introHeadingHighlight(locale: String): String
   introHeadingMain(locale: String): String
@@ -1186,6 +1185,13 @@ input HomeFilter {
   ctaButtonLabel_not: String
   ctaButtonLabel_not_contains: String
   ctaButtonLabel_not_in: [String]
+  floatingLabel: String
+  floatingLabel_contains: String
+  floatingLabel_exists: Boolean
+  floatingLabel_in: [String]
+  floatingLabel_not: String
+  floatingLabel_not_contains: String
+  floatingLabel_not_in: [String]
   greeting: String
   greetingDescription: String
   greetingDescription_contains: String
@@ -1200,7 +1206,6 @@ input HomeFilter {
   greeting_not: String
   greeting_not_contains: String
   greeting_not_in: [String]
-  image_exists: Boolean
   introDescription: String
   introDescription_contains: String
   introDescription_exists: Boolean
@@ -1246,6 +1251,8 @@ type HomeLinkingCollections {
 enum HomeOrder {
   ctaButtonLabel_ASC
   ctaButtonLabel_DESC
+  floatingLabel_ASC
+  floatingLabel_DESC
   greetingDescription_ASC
   greetingDescription_DESC
   greeting_ASC

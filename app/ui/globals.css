@@ -6,6 +6,7 @@
 @theme {
   --animate-spin-slow: spin 8s linear infinite;
   --animate-shine: shine 9s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
 
   @keyframes shine {
     0% {
@@ -26,6 +27,16 @@
       left: -100%;
     }
   }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+    50% {
+      transform: translateX(.75rem) translateY(.75rem);
+    }
+  }
 }
 
 :root {
@@ -38,6 +49,8 @@
   --surface-color: var(--color-white);
   --overlay-color: --alpha(var(--color-white) / 80%);
   --border-color: --alpha(var(--color-black) / 20%);
+  --subtle-border-color: var(--color-neutral-300);
+  --grid-color: --alpha(var(--color-neutral-300) / 70%);
   --hover-color: --alpha(var(--color-neutral-700) / 10%);
   --error-color: var(--color-rose-600);
 }
@@ -52,6 +65,8 @@ html.dark {
   --surface-color: var(--color-neutral-900);
   --overlay-color: --alpha(var(--color-neutral-900) / 70%);
   --border-color: --alpha(var(--color-white) / 35%);
+  --subtle-border-color: var(--color-neutral-700);
+  --grid-color: --alpha(var(--color-neutral-700) / 40%);
   --hover-color: --alpha(var(--color-neutral-200) / 20%);
   --error-color: var(--color-rose-600);
 }
@@ -71,7 +86,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-4xl leading-tight font-bold md:text-5xl lg:text-7xl;
+    @apply text-3xl leading-tight font-bold md:text-5xl lg:text-7xl;
   }
 
   h2 {
@@ -103,6 +118,10 @@ body {
   @apply border border-(--border-color);
 }
 
+@utility subtle-border {
+  @apply border border-(--subtle-border-color);
+}
+
 @utility hover-effect {
   @apply cursor-pointer transition-colors duration-300 hover:bg-(--hover-color) disabled:cursor-default disabled:bg-(--transparent) disabled:opacity-60;
 }
@@ -117,4 +136,8 @@ body {
 
 @utility glow-effect {
   @apply drop-shadow-[0_0_1px_rgba(0,0,0,0.3)] dark:drop-shadow-[0_0_1px_rgba(255,255,255,0.3)];
+}
+
+@utility glass-effect {
+  @apply -translate-x-1/2 -translate-y-1/2 subtle-border absolute isolate select-none shadow-[inset_0_0_15px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_15px_rgba(255,255,255,0.18)];
 }

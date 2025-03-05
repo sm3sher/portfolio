@@ -9,12 +9,7 @@ query homeContent($locale: String) {
       introDescription
       ctaButtonLabel
       scrollDownLabel
-      image {
-        url
-        width
-        height
-        description
-      }
+      floatingLabel
     }
   }
 }
