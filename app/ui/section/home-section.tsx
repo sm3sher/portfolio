@@ -19,54 +19,56 @@ export default async function HomeSection({ locale }: Props) {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center"
+      className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center py-12 md:py-36"
     >
       <RadialAnimation top={0} left={0} radius={50} />
       <ViewAnimation
         direction="fromBottom"
         delay={0.4}
-        className="absolute inset-0 xl:mx-auto xl:max-w-(--breakpoint-xl)"
+        className="absolute inset-0"
       >
         <div className="-bottom-2/12 pointer-events-none absolute left-2/12 max-h-3/4 opacity-50 sm:pointer-events-auto sm:left-1/3 sm:opacity-100 md:left-1/2 dark:opacity-40 dark:sm:opacity-100">
           <HeroAnimation floatingLabel={content?.floatingLabel} />
         </div>
       </ViewAnimation>
-      <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <h6 className="mb-5">
-          <div className="flex space-x-2">
-            <Image
-              src="/waving-hand.svg"
-              width={30}
-              height={30}
-              alt={content?.greetingDescription || ''}
-            />
-            <span>{content?.greeting}</span>
+      <RevealAnimation>
+        <div className="mx-auto max-w-(--breakpoint-xl) px-6">
+          <h6 className="mb-5">
+            <div className="flex space-x-2">
+              <Image
+                src="/waving-hand.svg"
+                width={30}
+                height={30}
+                alt={content?.greetingDescription || ''}
+              />
+              <span>{content?.greeting}</span>
+            </div>
+          </h6>
+          <h1 className="mb-3">
+            {content?.introHeadingMain}{' '}
+            <span className="text-(--highlight)">
+              {content?.introHeadingHighlight}
+            </span>
+          </h1>
+          <h3>{content?.introSubheading}</h3>
+          <p className="mt-6 drop-shadow-[0_0_6px_white] sm:w-2/3 lg:w-5/12 dark:drop-shadow-[0_0_6px_black]">
+            {content?.introDescription}
+          </p>
+          <div className="flex items-center space-x-4 pt-16">
+            <Link href="#contact" tabIndex={-1}>
+              <ShiningButton>{content?.ctaButtonLabel}</ShiningButton>
+            </Link>
+            <Link
+              href="#about"
+              className="z-0 rounded-full bg-(--highlight) p-2"
+              aria-label={content?.scrollDownLabel || ''}
+            >
+              <ArrowDown01Icon
+                className="relative top-1.5 animate-bounce text-white"
+                size={34}
+              />
+            </Link>
           </div>
-        </h6>
-        <h1 className="mb-3">
-          {content?.introHeadingMain}{' '}
-          <span className="text-(--highlight)">
-            {content?.introHeadingHighlight}
-          </span>
-        </h1>
-        <h3>{content?.introSubheading}</h3>
-        <p className="mt-6 drop-shadow-[0_0_6px_white] sm:w-2/3 lg:w-5/12 dark:drop-shadow-[0_0_6px_black]">
-          {content?.introDescription}
-        </p>
-        <div className="flex items-center space-x-4 pt-16">
-          <Link href="#contact" tabIndex={-1}>
-            <ShiningButton>{content?.ctaButtonLabel}</ShiningButton>
-          </Link>
-          <Link
-            href="#about"
-            className="z-0 rounded-full bg-(--highlight) p-2"
-            aria-label={content?.scrollDownLabel || ''}
-          >
-            <ArrowDown01Icon
-              className="relative top-1.5 animate-bounce text-white"
-              size={34}
-            />
-          </Link>
         </div>
       </RevealAnimation>
     </section>
