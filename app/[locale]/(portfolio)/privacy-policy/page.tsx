@@ -1,10 +1,10 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import RevealAnimation from '@/app/ui/animation/reveal-animation';
+import ArrowItem from '@/app/ui/footer/arrow-item';
 import ExternalLink from '@/app/ui/link/external-link';
 import MailLink from '@/app/ui/link/mail-link';
 import TitledSection from '@/app/ui/section/titled-section';
 import type { Locale } from '@/i18n/routing';
-import { CircleArrowRight02Icon } from 'hugeicons-react';
 import type { Metadata } from 'next';
 
 type Props = {
@@ -27,10 +27,6 @@ export default async function Page({ params }: Props) {
   const query = await contentfulClient.privacyPolicyContent({ locale });
   const content = query.privacyPolicyCollection?.items[0];
 
-  const arrowIcon = (
-    <CircleArrowRight02Icon size={22} className="text-(--highlight)" />
-  );
-
   return (
     <div className="py-24 md:py-32">
       <RevealAnimation className="mx-auto max-w-(--breakpoint-xl) px-6">
@@ -50,16 +46,14 @@ export default async function Page({ params }: Props) {
           </TitledSection>
 
           <TitledSection title={content?.privacyOverview?.dataCollectionTitle}>
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.privacyOverview?.responsiblePartyTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.responsiblePartyDescription}
             </p>
 
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.privacyOverview?.dataCaptureTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
@@ -69,32 +63,29 @@ export default async function Page({ params }: Props) {
               {content?.privacyOverview?.dataAutomaticCaptureText}
             </p>
 
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.privacyOverview?.dataPurposeTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.dataPurposeDescription}
             </p>
 
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.privacyOverview?.userRightsTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.userRightsIntroText}
             </p>
-            <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
+            <ul className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.userRightsList?.map((item) => (
-                <li key={item}>{item}</li>
+                <ArrowItem key={item}>{item}</ArrowItem>
               ))}
             </ul>
             <p className="mb-2 text-(--secondary)">
               {content?.privacyOverview?.userRightsContactText}
             </p>
 
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.privacyOverview?.analysisToolsTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
@@ -207,16 +198,18 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.legalBasisIntro}
             </p>
-            <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
+            <ul className="text-(--secondary)">
               {content?.notesAndLegalInformation?.legalBasisList
                 ?.filter((item) => item !== null)
                 .map((item) => {
                   const [boldText, normalText] = item.split(':', 2);
                   return (
-                    <li key={item}>
-                      <span className="font-bold">{boldText}:</span>{' '}
-                      {normalText}
-                    </li>
+                    <ArrowItem key={item}>
+                      <div>
+                        <span className="font-bold">{boldText}:</span>{' '}
+                        {normalText}
+                      </div>
+                    </ArrowItem>
                   );
                 })}
             </ul>
@@ -231,12 +224,13 @@ export default async function Page({ params }: Props) {
             <p className="mb-2 text-(--secondary)">
               {content?.notesAndLegalInformation?.userRightsIntro}
             </p>
-            {content?.notesAndLegalInformation?.userRightsList?.map((item) => (
-              <p key={item} className="mb-2 flex items-center gap-2">
-                {arrowIcon}
-                {item}
-              </p>
-            ))}
+            <ul>
+              {content?.notesAndLegalInformation?.userRightsList?.map(
+                (item) => (
+                  <ArrowItem key={item}>{item}</ArrowItem>
+                ),
+              )}
+            </ul>
           </TitledSection>
 
           <TitledSection
@@ -296,26 +290,26 @@ export default async function Page({ params }: Props) {
               />
               .
             </p>
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.dataCollection?.legalBasisTitle}
             </h5>
-            <ul className="mb-2 ml-4 list-disc space-y-1 text-(--secondary)">
+            <ul className="text-(--secondary)">
               {content?.dataCollection?.legalBasisList
                 ?.filter((item) => item !== null)
                 .map((item) => {
                   const [boldText, normalText] = item.split(':', 2);
                   return (
-                    <li key={item}>
-                      <span className="font-bold">{boldText}:</span>{' '}
-                      {normalText}
-                    </li>
+                    <ArrowItem key={item}>
+                      <div>
+                        <span className="font-bold">{boldText}:</span>{' '}
+                        {normalText}
+                      </div>
+                    </ArrowItem>
                   );
                 })}
             </ul>
 
-            <h5 className="mb-2 flex items-center gap-2 font-semibold text-lg">
-              {arrowIcon}
+            <h5 className="mb-2 font-semibold text-lg">
               {content?.dataCollection?.storageDurationTitle}
             </h5>
             <p className="mb-2 text-(--secondary)">
