@@ -388,6 +388,7 @@ export type AssetLinkingCollections = {
   aboutCollection?: Maybe<AboutCollection>;
   emailCollection?: Maybe<EmailCollection>;
   entryCollection?: Maybe<EntryCollection>;
+  metadataCollection?: Maybe<MetadataCollection>;
   testimonialCollection?: Maybe<TestimonialCollection>;
 };
 
@@ -409,6 +410,14 @@ export type AssetLinkingCollectionsEmailCollectionArgs = {
 
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+
+export type AssetLinkingCollectionsMetadataCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale?: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2837,6 +2846,7 @@ export type Metadata = Entry & _Node & {
   mainDescription?: Maybe<Scalars['String']['output']>;
   mainKeywords?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   mainTitle?: Maybe<Scalars['String']['output']>;
+  openGraphImage?: Maybe<Asset>;
   privacyDescription?: Maybe<Scalars['String']['output']>;
   privacyTitle?: Maybe<Scalars['String']['output']>;
   sys: Sys;
@@ -2876,6 +2886,13 @@ export type MetadataMainKeywordsArgs = {
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
 export type MetadataMainTitleArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/metadata) */
+export type MetadataOpenGraphImageArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -2934,6 +2951,7 @@ export type MetadataFilter = {
   mainTitle_not?: InputMaybe<Scalars['String']['input']>;
   mainTitle_not_contains?: InputMaybe<Scalars['String']['input']>;
   mainTitle_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  openGraphImage_exists?: InputMaybe<Scalars['Boolean']['input']>;
   privacyDescription?: InputMaybe<Scalars['String']['input']>;
   privacyDescription_contains?: InputMaybe<Scalars['String']['input']>;
   privacyDescription_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6888,7 +6906,7 @@ export type MainMetadataContentQueryVariables = Exact<{
 }>;
 
 
-export type MainMetadataContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', mainTitle?: string | null, mainDescription?: string | null, mainKeywords?: Array<string | null> | null } | null> } | null };
+export type MainMetadataContentQuery = { __typename?: 'Query', metadataCollection?: { __typename?: 'MetadataCollection', items: Array<{ __typename?: 'Metadata', mainTitle?: string | null, mainDescription?: string | null, mainKeywords?: Array<string | null> | null, openGraphImage?: { __typename?: 'Asset', url?: string | null, width?: number | null, height?: number | null } | null } | null> } | null };
 
 export type LegalMetadataContentQueryVariables = Exact<{
   locale?: InputMaybe<Scalars['String']['input']>;
@@ -7140,6 +7158,11 @@ export const MainMetadataContentDocument = gql`
       mainTitle
       mainDescription
       mainKeywords
+      openGraphImage {
+        url
+        width
+        height
+      }
     }
   }
 }

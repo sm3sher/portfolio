@@ -18,6 +18,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: metadata?.mainTitle,
     description: metadata?.mainDescription,
     keywords: metadata?.mainKeywords?.filter((keyword) => keyword !== null),
+    openGraph: metadata?.openGraphImage?.url
+      ? {
+          title: metadata?.mainTitle || undefined,
+          description: metadata?.mainDescription || undefined,
+          images: {
+            url: metadata?.openGraphImage?.url,
+            width: metadata?.openGraphImage?.width || undefined,
+            height: metadata?.openGraphImage?.height || undefined,
+          },
+        }
+      : undefined,
   };
 }
 

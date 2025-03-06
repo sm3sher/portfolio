@@ -19,7 +19,7 @@ export default async function HomeSection({ locale }: Props) {
   return (
     <section
       id="home"
-      className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center py-12 md:py-36"
+      className="relative flex min-h-[calc(100vh-80px)] flex-col justify-center py-24 md:py-36"
     >
       <RadialAnimation top={0} left={0} radius={50} />
       <ViewAnimation

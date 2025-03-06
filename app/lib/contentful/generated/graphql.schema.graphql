@@ -233,6 +233,7 @@ type AssetLinkingCollections {
   aboutCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AboutCollection
   emailCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EmailCollection
   entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  metadataCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): MetadataCollection
   testimonialCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): TestimonialCollection
 }
 
@@ -1912,6 +1913,7 @@ type Metadata implements Entry & _Node {
   mainDescription(locale: String): String
   mainKeywords(locale: String): [String]
   mainTitle(locale: String): String
+  openGraphImage(locale: String, preview: Boolean): Asset
   privacyDescription(locale: String): String
   privacyTitle(locale: String): String
   sys: Sys!
@@ -1960,6 +1962,7 @@ input MetadataFilter {
   mainTitle_not: String
   mainTitle_not_contains: String
   mainTitle_not_in: [String]
+  openGraphImage_exists: Boolean
   privacyDescription: String
   privacyDescription_contains: String
   privacyDescription_exists: Boolean

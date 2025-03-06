@@ -328,6 +328,11 @@ export const handlers = [
               mainDescription:
                 'Explore my portfolio: I build scalable, user-friendly web applications and provide custom solutions for frontend, backend, and MVPs.',
               mainKeywords: ['Freelance Developer'],
+              openGraphImage: {
+                url: MOCK_IMAGE_URL,
+                width: 1200,
+                height: 630,
+              },
             },
           ],
         },
