@@ -1,7 +1,6 @@
 import contentfulClient from '@/app/lib/contentful/client';
 import type { Metric } from '@/app/lib/contentful/generated/sdk';
 import { calculateAge } from '@/app/lib/date-utils';
-import TypingAnimation from '@/app/ui/animation/typing-animation';
 import ViewAnimation from '@/app/ui/animation/view-animation';
 import ExperienceCounter from '@/app/ui/counter/experience-counter';
 import type { Locale } from '@/i18n/routing';
@@ -16,44 +15,48 @@ export default async function AboutSection({ locale }: Props) {
   const content = query.aboutCollection?.items[0];
 
   return (
-    <section id="about" className="relative py-24 md:py-48">
+    <section id="about" className="relative py-24 md:py-52 lg:py-60">
       <div className="mx-auto max-w-(--breakpoint-xl) px-6">
-        <div className="flex flex-col gap-8 md:flex-row md:gap-0">
+        <div className="flex flex-col gap-8 md:flex-row lg:gap-10">
           {content?.image?.url &&
             content.image.width &&
             content.image.height &&
             content.image.description && (
-              <div className="flex w-full items-center justify-center md:w-1/3 md:justify-start lg:w-5/12">
+              <ViewAnimation
+                translation={0}
+                duration={1}
+                className="flex items-center justify-center brightness-110 md:w-1/3 lg:w-5/12 dark:brightness-100"
+              >
                 <Image
-                  className="w-2/3 rounded-2xl sm:w-1/2 md:w-10/12"
+                  className="w-2/3 rounded-2xl duration-500 hover:scale-[1.02] sm:w-1/2 md:w-full lg:w-10/12"
                   src={content.image.url}
                   width={content.image.width}
                   height={content.image.height}
                   alt={content.image.description}
                 />
-              </div>
+              </ViewAnimation>
             )}
           <div className="flex w-full items-center md:w-2/3 lg:w-7/12">
             <div className="space-y-7">
               <h6 className="font-bold text-(--highlight) uppercase tracking-wider">
                 {content?.title}
               </h6>
-              <h4>
-                <TypingAnimation>
-                  {content?.ageStatementPrefix}
-                  {`${calculateAge(content?.age)}${content?.ageStatementSuffix}`}
-                  <span className="font-light">
-                    {content?.professionalTitle}
-                  </span>
-                  {content?.locationStatement}
-                </TypingAnimation>
-              </h4>
               <ViewAnimation
                 translation={10}
-                delay={0.5}
+                delay={0.3}
+                duration={0.5}
                 direction="fromBottom"
+                className="space-y-7"
               >
-                <p>{content?.description}</p>
+                <h4>
+                  {content?.ageStatementPrefix} {calculateAge(content?.age)}
+                  {content?.ageStatementSuffix}{' '}
+                  <span className="font-light">
+                    {content?.professionalTitle}
+                  </span>{' '}
+                  {content?.locationStatement}
+                </h4>
+                <p className="text-(--secondary)">{content?.description}</p>
               </ViewAnimation>
               <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
                 {content?.experienceMetricsCollection?.items
@@ -64,7 +67,6 @@ export default async function AboutSection({ locale }: Props) {
                       delay={0.6}
                       duration={1}
                       translation={0}
-                      direction="fromBottom"
                     >
                       <ExperienceCounter content={item as Metric} />
                     </ViewAnimation>

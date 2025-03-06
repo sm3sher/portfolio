@@ -39,7 +39,7 @@ export const handlers = [
               professionalTitle: 'freelance software developer',
               locationStatement: 'based in Germany.',
               description:
-                'After earning my Bachelor’s degree in Computer Science from Heinrich Heine University Düsseldorf in 2020, I have continuously developed my skills as a developer. Over the past few years, I have worked in various roles and with a wide range of technologies to create digital, reliable solutions. Whether frontend or backend – with Java, Spring Boot, JavaScript, TypeScript, React, and Next.js, I drive projects forward and craft innovative applications that leave a lasting impression.',
+                'After earning my Bachelor’s degree in Computer Science from Heinrich Heine University Düsseldorf in 2020, I have continuously developed my skills as a developer. Over the past few years, I have worked in various roles and with a wide range of technologies to build robust digital solutions. Whether frontend or backend – with Java, Spring Boot, JavaScript, TypeScript, React, and Next.js, I create reliable, scalable applications that drive business results.',
               experienceMetricsCollection: {
                 items: [
                   {
@@ -56,8 +56,8 @@ export const handlers = [
               },
               image: {
                 url: MOCK_IMAGE_URL,
-                width: 1395,
-                height: 1473,
+                width: 1538,
+                height: 1798,
                 description: 'Portrait placeholder',
               },
             },

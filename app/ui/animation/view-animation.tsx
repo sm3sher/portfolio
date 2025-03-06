@@ -6,7 +6,7 @@ import type { ReactNode } from 'react';
 type Props = {
   children: ReactNode;
   className?: string;
-  direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
+  direction?: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
   translation?: number;
   duration?: number;
   delay?: number;
@@ -30,7 +30,7 @@ export default function ViewAnimation({
   return (
     <motion.div
       className={className}
-      initial={initialValues[direction]}
+      initial={direction ? initialValues[direction] : { opacity: 0 }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration, ease: 'easeOut', delay }}

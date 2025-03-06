@@ -33,11 +33,11 @@ export default function ExperienceCounter({ content }: Props) {
   }, [isInView, count, content?.startYear]);
 
   return (
-    <div
-      ref={ref}
-      className="base-border w-full border-r-0 border-b-0 border-l-0 pt-7 pl-0.5"
-    >
-      <motion.h3 className="mb-1 font-light">{rounded}</motion.h3>
+    <div ref={ref} className="relative w-full pt-6 pb-2 pl-0.5 md:py-7 lg:py-7">
+      <div className="absolute top-0 left-0 w-full border-(--highlight) border-t [mask-image:linear-gradient(to_right,black,black_calc(100%-5rem),transparent)]" />
+      <motion.h3 className="flex justify-between font-medium lg:mb-1">
+        {rounded}
+      </motion.h3>
       <h6 className="text-(--secondary) text-base uppercase tracking-wide">
         <span className="whitespace-nowrap">{content?.labelPrefix}</span>{' '}
         <span className="whitespace-nowrap">{content?.labelSuffix}</span>
