@@ -276,7 +276,7 @@ export const handlers = [
               greetingDescription: 'Waving Hand',
               introHeadingMain: "I'm Roman",
               introHeadingHighlight: 'Jumatov',
-              introSubheading: 'Freelance developer',
+              introSubheading: 'Freelance Developer',
               introDescription:
                 'I’ll guide your project from the first idea to the finished product – with full-stack expertise, tailored web solutions, and a clear focus on quality and scalability.',
               ctaButtonLabel: 'Contact Me',
