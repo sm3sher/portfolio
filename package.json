@@ -41,7 +41,7 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@graphql-codegen/cli": "^5.0.5",
-    "@graphql-codegen/client-preset": "^4.6.4",
+    "@graphql-codegen/client-preset": "^4.7.0",
     "@graphql-codegen/introspection": "^4.0.3",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@playwright/test": "^1.50.1",
