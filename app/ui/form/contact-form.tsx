@@ -128,7 +128,7 @@ export default function ContactForm({ content }: Props) {
       </PresenceAnimation>
       <PresenceAnimation
         show={!state?.success && !!state?.serverError && !pending}
-        className="absolute inset-0"
+        className="absolute inset-0 flex items-center md:items-start"
         withTranslation
       >
         <FormErrorCard
@@ -140,7 +140,7 @@ export default function ContactForm({ content }: Props) {
       </PresenceAnimation>
       <PresenceAnimation
         show={submitted}
-        className="absolute inset-0"
+        className="absolute inset-0 flex items-center md:items-start"
         withTranslation
       >
         <SubmittedStatusCard
