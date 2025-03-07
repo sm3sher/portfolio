@@ -66,7 +66,7 @@ export default function NavMenu({
   return (
     <div
       className={`base-border flex space-x-1 rounded-2xl p-1 backdrop-blur duration-1000 ${
-        scrolled && 'bg-(--overlay-color)'
+        scrolled ? 'bg-(--overlay-color)' : ''
       }`}
     >
       {navbarItems.map((item) => (

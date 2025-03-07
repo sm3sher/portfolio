@@ -31,7 +31,7 @@ export default function ThemeToggle({ switchThemeLabel }: Props) {
   ) : (
     <div
       className={`rounded-2xl backdrop-blur duration-1000 ${
-        scrolled && 'bg-(--overlay-color)'
+        scrolled ? 'bg-(--overlay-color)' : ''
       }`}
     >
       <button

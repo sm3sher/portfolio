@@ -52,7 +52,7 @@ export default function FormTextarea<T extends FieldValues>({
           {label}
         </label>
         <div
-          className={`base-border -z-10 absolute inset-0 rounded-xl bg-(--surface-color) duration-300 ${errorMessage && 'border-(--error-color) border-l-[6px]'}`}
+          className={`base-border -z-10 absolute inset-0 rounded-xl bg-(--surface-color) duration-300 ${errorMessage ? 'border-(--error-color) border-l-[6px]' : ''}`}
         />
       </div>
       <p

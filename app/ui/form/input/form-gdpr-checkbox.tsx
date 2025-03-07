@@ -48,7 +48,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           <input
             {...register(name)}
             type="checkbox"
-            className={`base-border ${errorMessage && 'border-(--error-color)'} peer before:-inset-[1px] after:-translate-x-1/2 after:-translate-y-1/2 relative h-6 w-6 appearance-none rounded-md bg-(--surface-color) before:absolute before:rounded-md before:bg-(--hover-color) before:opacity-0 before:duration-200 after:absolute after:top-1/2 after:left-1/2 after:h-10 after:w-10 after:scale-0 after:cursor-pointer after:rounded-full after:bg-(--hover-color) after:duration-300 checked:after:scale-0 checked:before:opacity-100 group-hover:after:scale-100`}
+            className={`base-border ${errorMessage ? 'border-(--error-color)' : ''} peer before:-inset-[1px] after:-translate-x-1/2 after:-translate-y-1/2 relative h-6 w-6 appearance-none rounded-md bg-(--surface-color) before:absolute before:rounded-md before:bg-(--hover-color) before:opacity-0 before:duration-200 after:absolute after:top-1/2 after:left-1/2 after:h-10 after:w-10 after:scale-0 after:cursor-pointer after:rounded-full after:bg-(--hover-color) after:duration-300 checked:after:scale-0 checked:before:opacity-100 group-hover:after:scale-100`}
             defaultChecked={defaultChecked}
             id="check-with-link"
             aria-describedby={`${String(name)}-error`}
@@ -58,7 +58,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
           </span>
         </label>
         <label
-          className={`ml-3 cursor-pointer select-none text-(--secondary) text-sm ${errorMessage && 'text-(--error-color)'}`}
+          className={`ml-3 cursor-pointer select-none text-(--secondary) text-sm ${errorMessage ? 'text-(--error-color)' : ''}`}
           htmlFor="check-with-link"
         >
           <p className="text-sm">

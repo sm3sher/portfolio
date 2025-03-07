@@ -29,7 +29,7 @@ export default function QuoteCard({ content }: Props) {
         </div>
         {logo?.url && logo.width && logo.height && logo.description && (
           <Image
-            className={`h-12 w-auto sm:h-14 dark:brightness-125 ${content?.logoInvert && 'dark:invert'}`}
+            className={`h-12 w-auto sm:h-14 dark:brightness-125 ${content?.logoInvert ? 'dark:invert' : ''}`}
             src={logo.url}
             alt={logo.description}
             width={logo.width}

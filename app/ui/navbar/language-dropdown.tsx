@@ -89,7 +89,7 @@ export default function LanguageDropdown({
     >
       <div
         className={`rounded-2xl backdrop-blur duration-1000 ${
-          scrolled && 'bg-(--overlay-color)'
+          scrolled ? 'bg-(--overlay-color)' : ''
         }`}
       >
         <button
@@ -110,7 +110,7 @@ export default function LanguageDropdown({
         id="dropdown"
         show={open}
         className={`base-border absolute z-10 mt-2 w-32 rounded-2xl p-0 font-medium backdrop-blur duration-1000 ${
-          scrolled && 'bg-(--overlay-color)'
+          scrolled ? 'bg-(--overlay-color)' : ''
         }`}
         duration={0.2}
       >
@@ -129,7 +129,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'en'}
           >
             <Image
-              className={`glow-effect ${locale === 'en' && 'grayscale-75'}`}
+              className={`glow-effect ${locale === 'en' ? 'grayscale-75' : ''}`}
               src="/flag-us.svg"
               alt={usFlagDescription || ''}
               width={30}
@@ -148,7 +148,7 @@ export default function LanguageDropdown({
             aria-current={locale === 'de'}
           >
             <Image
-              className={`glow-effect ${locale === 'de' && 'grayscale-75'}`}
+              className={`glow-effect ${locale === 'de' ? 'grayscale-75' : ''}`}
               src="/flag-de.svg"
               alt={deFlagDescription || ''}
               width={30}
