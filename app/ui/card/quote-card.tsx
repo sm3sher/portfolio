@@ -9,7 +9,7 @@ type Props = {
 export default function QuoteCard({ content }: Props) {
   const logo = content?.logo;
   return (
-    <div className="group hover:-translate-y-1 hover:glow-effect flex h-full flex-col justify-between rounded-3xl bg-(--surface-color) px-8 py-6 shadow-effect duration-300">
+    <div className="group hover:-translate-y-1 subtle-border flex h-full flex-col justify-between rounded-3xl bg-(--overlay-color) px-8 py-6 duration-300 hover:shadow-effect">
       <div>
         <div className="flex justify-center">
           <QuoteDownIcon className="mb-4 h-10 w-10 text-(--highlight) duration-200 group-hover:scale-110 sm:h-12 sm:w-12" />

@@ -61,12 +61,12 @@ export default function TestimonialSlider({ content }: Props) {
         </div>
       </div>
       <div
-        className="overflow-hidden md:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
+        className="overflow-hidden sm:[mask-image:linear-gradient(to_right,transparent,black_0,black_calc(100%-5rem),transparent)]"
         ref={emblaRef}
       >
         <StaggerAnimation
           className="flex"
-          itemClassName="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing md:basis-2/3 lg:basis-5/12"
+          itemClassName="my-2 mr-4 min-w-0 flex-none basis-full cursor-grab select-none px-1 active:cursor-grabbing sm:basis-10/12 md:basis-2/3 lg:basis-5/12"
           direction="fromBottom"
           aria-live="polite"
         >
