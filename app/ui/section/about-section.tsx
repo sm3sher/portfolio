@@ -61,11 +61,13 @@ export default async function AboutSection({ locale }: Props) {
               <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
                 {content?.experienceMetricsCollection?.items
                   .filter((item) => item !== null)
-                  .map((item) => (
+                  .map((item, index) => (
                     <ViewAnimation
                       key={`${item.labelPrefix}${item.labelSuffix}`}
-                      delay={0.6}
-                      duration={1}
+                      delay={0.5}
+                      duration={0.4}
+                      translation={30}
+                      direction={index === 0 ? 'fromRight' : 'fromLeft'}
                     >
                       <ExperienceCounter content={item as Metric} />
                     </ViewAnimation>
