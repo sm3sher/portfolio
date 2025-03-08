@@ -25,7 +25,11 @@ export default function ContactFormFields({
 }: Props) {
   return (
     <form action={handleFormAction}>
-      <StaggerAnimation className="space-y-4" direction="fromLeft">
+      <StaggerAnimation
+        className="space-y-4"
+        direction="fromLeft"
+        translation={10}
+      >
         <FormText
           key="name"
           register={register}

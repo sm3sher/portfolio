@@ -30,6 +30,7 @@ export default async function ServicesSection({ locale }: Props) {
         <StaggerAnimation
           className="grid gap-4 md:grid-cols-2 lg:gap-5 xl:grid-cols-3"
           direction="fromBottom"
+          translation={50}
           amount={0.1}
           delay={0.2}
         >

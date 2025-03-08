@@ -7,15 +7,9 @@ type Props = {
   className?: string;
   itemClassName?: string;
   direction: 'fromRight' | 'fromLeft' | 'fromTop' | 'fromBottom';
+  translation?: number;
   amount?: number;
   delay?: number;
-};
-
-const initialValues = {
-  fromRight: { opacity: 0, x: 20 },
-  fromLeft: { opacity: 0, x: -20 },
-  fromTop: { opacity: 0, y: -20 },
-  fromBottom: { opacity: 0, y: 20 },
 };
 
 export default function StaggerAnimation({
@@ -23,9 +17,17 @@ export default function StaggerAnimation({
   className,
   itemClassName,
   direction,
+  translation = 20,
   amount = 0.4,
   delay = 0,
 }: Props) {
+  const initialValues = {
+    fromRight: { opacity: 0, x: translation },
+    fromLeft: { opacity: 0, x: -translation },
+    fromTop: { opacity: 0, y: -translation },
+    fromBottom: { opacity: 0, y: translation },
+  };
+
   const staggerContainer: Variants = {
     hidden: { opacity: 1 },
     show: {
