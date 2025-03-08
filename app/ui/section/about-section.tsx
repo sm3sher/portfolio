@@ -23,7 +23,6 @@ export default async function AboutSection({ locale }: Props) {
             content.image.height &&
             content.image.description && (
               <ViewAnimation
-                translation={0}
                 duration={1}
                 className="flex items-center justify-center brightness-110 md:w-1/3 lg:w-5/12 dark:brightness-100"
               >
@@ -42,11 +41,10 @@ export default async function AboutSection({ locale }: Props) {
                 {content?.title}
               </h6>
               <ViewAnimation
-                translation={10}
-                delay={0.3}
-                duration={0.5}
+                delay={0.2}
+                duration={0.4}
                 direction="fromBottom"
-                className="space-y-7"
+                className="mb-7"
               >
                 <h4>
                   {content?.ageStatementPrefix} {calculateAge(content?.age)}
@@ -56,6 +54,8 @@ export default async function AboutSection({ locale }: Props) {
                   </span>{' '}
                   {content?.locationStatement}
                 </h4>
+              </ViewAnimation>
+              <ViewAnimation delay={0.3} duration={0.3} direction="fromBottom">
                 <p className="text-(--secondary)">{content?.description}</p>
               </ViewAnimation>
               <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
@@ -66,7 +66,6 @@ export default async function AboutSection({ locale }: Props) {
                       key={`${item.labelPrefix}${item.labelSuffix}`}
                       delay={0.6}
                       duration={1}
-                      translation={0}
                     >
                       <ExperienceCounter content={item as Metric} />
                     </ViewAnimation>
