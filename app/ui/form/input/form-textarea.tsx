@@ -34,12 +34,14 @@ export default function FormTextarea<T extends FieldValues>({
 
   return (
     <>
-      <div className="relative max-h-36">
+      <div
+        className={`base-border relative max-h-36 rounded-xl duration-300 hover:bg-(--hover-color) ${errorMessage ? 'border-(--error-color)' : ''}`}
+      >
         <textarea
           {...register(name)}
           id={name}
           rows={5}
-          className="peer w-full resize-none rounded-xl px-4 pt-5 pb-1 outline-none duration-300 hover:bg-(--hover-color)"
+          className="peer mt-5 w-full resize-none px-4 outline-none"
           defaultValue={defaultValue}
           placeholder=" "
           aria-describedby={`${String(name)}-error`}
@@ -52,7 +54,7 @@ export default function FormTextarea<T extends FieldValues>({
           {label}
         </label>
         <div
-          className={`base-border -z-10 absolute inset-0 rounded-xl bg-(--surface-color) duration-300 ${errorMessage ? 'border-(--error-color) border-l-[6px]' : ''}`}
+          className={`-inset-[1px] -z-10 absolute rounded-xl border-(--border-color) bg-(--surface-color) duration-300 ${errorMessage ? 'border-(--error-color) border-l-[6px]' : ''}`}
         />
       </div>
       <p
