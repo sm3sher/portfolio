@@ -586,7 +586,7 @@ export const handlers = [
                   {
                     iconName: 'MentoringIcon',
                     title: 'Technical Consulting',
-                    tags: ['Mentoring', 'Code Reviews', 'Workshop'],
+                    tags: ['Mentoring', 'Code Review', 'Workshop'],
                     description:
                       'I provide expert consulting to optimize your software systems and conduct code audits with your team. Together, we’ll review your JavaScript application in 2-3 days and establish best practices.',
                   },
