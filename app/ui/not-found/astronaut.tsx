@@ -30,10 +30,10 @@ export default function Astronaut() {
         </div>
 
         {/* Legs */}
-        <div className="absolute bottom-[70px] left-[75px] h-[40px] w-[30px] rotate-[20deg] bg-slate-300 dark:bg-slate-200">
+        <div className="absolute bottom-[70px] left-[75px] h-[40px] w-[30px] rotate-20 bg-slate-300 dark:bg-slate-200">
           <div className="absolute bottom-[-24px] left-[-20px] h-[30px] w-[50px] rounded-tl-3xl border-orange-700 border-b-[10px] bg-slate-300 dark:bg-slate-200" />
         </div>
-        <div className="absolute right-[75px] bottom-[70px] h-[40px] w-[30px] rotate-[-20deg] bg-slate-200 dark:bg-slate-100">
+        <div className="-rotate-20 absolute right-[75px] bottom-[70px] h-[40px] w-[30px] bg-slate-200 dark:bg-slate-100">
           <div className="absolute right-[-20px] bottom-[-24px] h-[30px] w-[50px] rounded-tr-3xl border-orange-600 border-b-[10px] bg-slate-200 dark:bg-slate-100" />
         </div>
       </div>
