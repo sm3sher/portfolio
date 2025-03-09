@@ -1,14 +1,14 @@
 export default function Astronaut() {
   return (
     <div className="relative h-[340px] animate-spin-slow">
-      <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[300px] w-[250px]">
+      <div className="-translate-1/2 absolute top-1/2 left-1/2 h-[300px] w-[250px]">
         {/* Oxygen tank */}
-        <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[150px] w-[100px] rounded-t-full bg-amber-800" />
+        <div className="-translate-1/2 absolute top-1/2 left-1/2 h-[150px] w-[100px] rounded-t-full bg-amber-800" />
 
         {/* Head */}
         <div className="-translate-x-1/2 absolute top-[34px] left-1/2 h-[80px] w-[97px] bg-linear-to-r/oklch from-slate-300 to-slate-200 [border-radius:50%] dark:from-slate-200 dark:to-slate-100">
           <div className="-left-1 -translate-y-1/2 absolute top-1/2 h-[25px] w-[12px] rounded-xl bg-orange-700 shadow-[92px_0_0_var(--color-orange-600)]" />
-          <div className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 h-[50px] w-[60px] rounded-xl bg-linear-to-b/oklch from-orange-400 to-amber-700" />
+          <div className="-translate-1/2 absolute top-1/2 left-1/2 h-[50px] w-[60px] rounded-xl bg-linear-to-b/oklch from-orange-400 to-amber-700" />
         </div>
 
         {/* Body */}

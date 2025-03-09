@@ -53,7 +53,7 @@ export default function FormGdprCheckbox<T extends FieldValues>({
             id="check-with-link"
             aria-describedby={`${String(name)}-error`}
           />
-          <span className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 opacity-0 peer-checked:opacity-100">
+          <span className="-translate-1/2 absolute top-1/2 left-1/2 opacity-0 peer-checked:opacity-100">
             <Tick02Icon size={16} strokeWidth={3} />
           </span>
         </label>

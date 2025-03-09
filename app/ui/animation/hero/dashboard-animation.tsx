@@ -3,7 +3,7 @@ export default function DashboardAnimation() {
     <div className="group subtle-border relative size-72 shrink-0 rounded-xl bg-(--overlay-color)">
       <div className="group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 -inset-[1px] subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-[400ms] ease-in-out">
         <svg
-          className="-translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 rounded-xl"
+          className="-translate-1/2 absolute top-1/2 left-1/2 rounded-xl"
           fill="none"
           height="280"
           viewBox="0 0 280 280"

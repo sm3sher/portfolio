@@ -29,7 +29,7 @@ export default function Button({
         {children}
       </span>
       <span
-        className={`-translate-x-1/2 -translate-y-1/2 absolute top-1/2 opacity-0 duration-500 ${isLoading ? 'opacity-100' : ''}`}
+        className={`-translate-1/2 absolute top-1/2 opacity-0 duration-500 ${isLoading ? 'opacity-100' : ''}`}
       >
         <LoadingSpinner size={24} />
       </span>
