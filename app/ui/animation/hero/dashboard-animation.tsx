@@ -1,7 +1,7 @@
 export default function DashboardAnimation() {
   return (
     <div className="group subtle-border relative size-72 shrink-0 rounded-xl bg-(--overlay-color)">
-      <div className="group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 -inset-[1px] subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-[400ms] ease-in-out">
+      <div className="group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 -inset-[1px] subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-400 ease-in-out">
         <svg
           className="-translate-1/2 absolute top-1/2 left-1/2 rounded-xl"
           fill="none"
@@ -118,7 +118,7 @@ export default function DashboardAnimation() {
               />
             </g>
             <path
-              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-[400ms] ease-in-out group-hover:delay-200 group-hover:[stroke-dashoffset:0]"
+              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-400 ease-in-out group-hover:delay-200 group-hover:[stroke-dashoffset:0]"
               d="M58 101.856L104 101.856"
               strokeDasharray="54"
               strokeDashoffset="54"
@@ -126,7 +126,7 @@ export default function DashboardAnimation() {
               strokeWidth="2"
             />
             <path
-              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-[400ms] ease-in-out group-hover:delay-[400ms] group-hover:[stroke-dashoffset:0]"
+              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-400 ease-in-out group-hover:delay-400 group-hover:[stroke-dashoffset:0]"
               d="M52 149.256H98"
               strokeDasharray="54"
               strokeDashoffset="54"
@@ -136,7 +136,7 @@ export default function DashboardAnimation() {
           </g>
         </svg>
         <div className="absolute inset-0">
-          <div className="glass-effect top-[55.2%] left-[59.2%] size-12 scale-50 rounded-2xl border-(--highlight) opacity-0 duration-300 group-hover:scale-100 group-hover:opacity-90 group-hover:delay-[600ms]" />
+          <div className="glass-effect top-[55.2%] left-[59.2%] size-12 scale-50 rounded-2xl border-(--highlight) opacity-0 duration-300 group-hover:scale-100 group-hover:opacity-90 group-hover:delay-600" />
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ type Props = {
 export default function DiagramAnimation({ floatingLabel }: Props) {
   return (
     <div className="group subtle-border relative size-72 shrink-0 rounded-xl bg-(--overlay-color)">
-      <div className="-inset-[1px] group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-[400ms] ease-in-out">
+      <div className="-inset-[1px] group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-400 ease-in-out">
         <svg
           className="absolute inset-0 rounded-xl"
           fill="none"
@@ -171,14 +171,14 @@ export default function DiagramAnimation({ floatingLabel }: Props) {
               y="0"
             />
             <path
-              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-500 ease-in-out group-hover:delay-[600ms] group-hover:[stroke-dashoffset:40]"
+              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-500 ease-in-out group-hover:delay-600 group-hover:[stroke-dashoffset:40]"
               d="M114.5 200V183.191C114.333 181.024 113 176.062 109.5 173C105.37 169.386 102.5 169 98 169C94.4 169 87.5 169 84.5 169"
               strokeDasharray="100"
               strokeDashoffset="100"
               strokeOpacity="0.8"
             />
             <path
-              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-[800ms] group-hover:delay-200 group-hover:[stroke-dashoffset:0]"
+              className="stroke-(--highlight) transition-[stroke-dashoffset] duration-800 group-hover:delay-200 group-hover:[stroke-dashoffset:0]"
               d="M84.5 167H208C210.5 167.167 215.5 167 220 164C224.5 161 226 155.5 226 149.5C226 145.9 226 105.667 226 86"
               strokeDasharray="300"
               strokeDashoffset="-220"
@@ -214,7 +214,7 @@ export default function DiagramAnimation({ floatingLabel }: Props) {
         </div>
         <div className="absolute inset-0">
           <div className="glass-effect top-[21%] left-[78.6%] size-12 scale-105 rounded-2xl border-none" />
-          <div className="glass-effect top-[59.5%] left-[21%] size-12 scale-105 rounded-2xl duration-300 group-hover:border-(--highlight) group-hover:delay-[800ms]" />
+          <div className="glass-effect top-[59.5%] left-[21%] size-12 scale-105 rounded-2xl duration-300 group-hover:border-(--highlight) group-hover:delay-800" />
           <div className="glass-effect top-[78.5%] left-[40%] size-12 scale-105 rounded-2xl border-none" />
         </div>
       </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function WormholeAnimation() {
   return (
     <div className="group subtle-border relative size-72 shrink-0 rounded-xl bg-(--overlay-color)">
-      <div className="-inset-[1px] group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-[400ms] ease-in-out">
+      <div className="-inset-[1px] group-hover:-translate-x-3.5 group-hover:-translate-y-3.5 subtle-border pointer-events-none absolute rounded-xl bg-(--background-color) duration-400 ease-in-out">
         <svg
           className="absolute inset-0 rounded-xl"
           fill="none"
