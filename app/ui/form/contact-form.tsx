@@ -104,7 +104,7 @@ export default function ContactForm({ content }: Props) {
   };
 
   return (
-    <div className="relative">
+    <div className="relative max-w-2xl">
       <div
         className={`transition-opacity duration-500 ${
           pending || submitted || (!state?.success && state?.serverError)

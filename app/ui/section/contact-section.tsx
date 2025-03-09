@@ -32,11 +32,11 @@ export default async function ContactSection({ locale }: Props) {
             <span className="font-light">{content?.subTitleHighlight}</span>
           </h3>
         </ViewAnimation>
-        <div className="flex flex-col gap-10 md:flex-row md:gap-6 lg:gap-16">
-          <div className="md:w-1/2">
+        <div className="flex flex-col gap-10 lg:flex-row xl:gap-12">
+          <div className="lg:w-1/2">
             <ContactForm content={query.formCollection?.items[0] as Form} />
           </div>
-          <div className="md:w-1/2">
+          <div className="lg:w-1/2">
             <ProjectSteps
               content={content?.projectStepsCollection?.items as ProjectStep[]}
             />
