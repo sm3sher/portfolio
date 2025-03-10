@@ -3709,6 +3709,7 @@ type Verify implements Entry & _Node {
   _id: ID!
   contentfulMetadata: ContentfulMetadata!
   errorDescription(locale: String): String
+  errorEmail(locale: String): String
   errorTitle(locale: String): String
   linkedFrom(allowedLocales: [String]): VerifyLinkingCollections
   successDescription(locale: String): String
@@ -3734,6 +3735,13 @@ input VerifyFilter {
   errorDescription_not: String
   errorDescription_not_contains: String
   errorDescription_not_in: [String]
+  errorEmail: String
+  errorEmail_contains: String
+  errorEmail_exists: Boolean
+  errorEmail_in: [String]
+  errorEmail_not: String
+  errorEmail_not_contains: String
+  errorEmail_not_in: [String]
   errorTitle: String
   errorTitle_contains: String
   errorTitle_exists: Boolean
@@ -3765,6 +3773,8 @@ type VerifyLinkingCollections {
 enum VerifyOrder {
   errorDescription_ASC
   errorDescription_DESC
+  errorEmail_ASC
+  errorEmail_DESC
   errorTitle_ASC
   errorTitle_DESC
   successDescription_ASC

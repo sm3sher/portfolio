@@ -5,6 +5,7 @@ query verifyContent($locale: String) {
       successDescription
       errorTitle
       errorDescription
+      errorEmail
     }
   }
 }

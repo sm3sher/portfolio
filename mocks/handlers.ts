@@ -622,7 +622,9 @@ export const handlers = [
               successDescription:
                 'I’ll review your message and typically respond within 24 hours. Looking forward to connecting!',
               errorTitle: 'Verification failed.',
-              errorDescription: 'Your token is either invalid or expired.',
+              errorDescription:
+                'Your token is either invalid or expired. If the problem persists, please contact me directly under',
+              errorEmail: MOCK_EMAIL,
             },
           ],
         },

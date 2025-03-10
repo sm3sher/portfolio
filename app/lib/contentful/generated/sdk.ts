@@ -6003,6 +6003,7 @@ export type Verify = Entry & _Node & {
   _id: Scalars['ID']['output'];
   contentfulMetadata: ContentfulMetadata;
   errorDescription?: Maybe<Scalars['String']['output']>;
+  errorEmail?: Maybe<Scalars['String']['output']>;
   errorTitle?: Maybe<Scalars['String']['output']>;
   linkedFrom?: Maybe<VerifyLinkingCollections>;
   successDescription?: Maybe<Scalars['String']['output']>;
@@ -6013,6 +6014,12 @@ export type Verify = Entry & _Node & {
 
 /** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
 export type VerifyErrorDescriptionArgs = {
+  locale?: InputMaybe<Scalars['String']['input']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/zb28mfcpbphv/content_types/verify) */
+export type VerifyErrorEmailArgs = {
   locale?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -6059,6 +6066,13 @@ export type VerifyFilter = {
   errorDescription_not?: InputMaybe<Scalars['String']['input']>;
   errorDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
   errorDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEmail?: InputMaybe<Scalars['String']['input']>;
+  errorEmail_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEmail_exists?: InputMaybe<Scalars['Boolean']['input']>;
+  errorEmail_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  errorEmail_not?: InputMaybe<Scalars['String']['input']>;
+  errorEmail_not_contains?: InputMaybe<Scalars['String']['input']>;
+  errorEmail_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   errorTitle?: InputMaybe<Scalars['String']['input']>;
   errorTitle_contains?: InputMaybe<Scalars['String']['input']>;
   errorTitle_exists?: InputMaybe<Scalars['Boolean']['input']>;
@@ -6099,6 +6113,8 @@ export type VerifyLinkingCollectionsEntryCollectionArgs = {
 export enum VerifyOrder {
   ErrorDescriptionAsc = 'errorDescription_ASC',
   ErrorDescriptionDesc = 'errorDescription_DESC',
+  ErrorEmailAsc = 'errorEmail_ASC',
+  ErrorEmailDesc = 'errorEmail_DESC',
   ErrorTitleAsc = 'errorTitle_ASC',
   ErrorTitleDesc = 'errorTitle_DESC',
   SuccessDescriptionAsc = 'successDescription_ASC',
@@ -6955,7 +6971,7 @@ export type VerifyContentQueryVariables = Exact<{
 }>;
 
 
-export type VerifyContentQuery = { __typename?: 'Query', verifyCollection?: { __typename?: 'VerifyCollection', items: Array<{ __typename?: 'Verify', successTitle?: string | null, successDescription?: string | null, errorTitle?: string | null, errorDescription?: string | null } | null> } | null };
+export type VerifyContentQuery = { __typename?: 'Query', verifyCollection?: { __typename?: 'VerifyCollection', items: Array<{ __typename?: 'Verify', successTitle?: string | null, successDescription?: string | null, errorTitle?: string | null, errorDescription?: string | null, errorEmail?: string | null } | null> } | null };
 
 
 export const AboutContentDocument = gql`
@@ -7339,6 +7355,7 @@ export const VerifyContentDocument = gql`
       successDescription
       errorTitle
       errorDescription
+      errorEmail
     }
   }
 }
