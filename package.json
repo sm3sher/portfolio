@@ -44,7 +44,7 @@
     "@graphql-codegen/introspection": "^4.0.3",
     "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@playwright/test": "^1.51.0",
-    "@tailwindcss/postcss": "^4.0.12",
+    "@tailwindcss/postcss": "^4.0.13",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
@@ -58,13 +58,13 @@
     "happy-dom": "^17.4.3",
     "husky": "^9.1.7",
     "msw": "^2.7.3",
-    "supabase": "^2.15.8",
-    "tailwindcss": "^4.0.12",
+    "supabase": "^2.19.5",
+    "tailwindcss": "^4.0.13",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.8"
   },
   "optionalDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.12"
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.13"
   }
 }
