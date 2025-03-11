@@ -12,7 +12,7 @@ export default function BrandIcon({ title, description }: Props) {
         <SourceCodeIcon className="size-11 stroke-2 p-0.5 md:size-12 lg:size-14" />
       </div>
       <div className="flex flex-col">
-        <h5 className="text-">{title}</h5>
+        <h5>{title}</h5>
         <span className="font-semibold text-(--secondary) text-xs tracking-wide sm:text-sm">
           {description}
         </span>
