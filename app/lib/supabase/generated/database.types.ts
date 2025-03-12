@@ -18,8 +18,8 @@ export type Database = {
           name: string
           project_details: string
           role: string | null
+          status: Database["public"]["Enums"]["status"]
           verification_token: string | null
-          verified: boolean
         }
         Insert: {
           consent?: boolean
@@ -29,8 +29,8 @@ export type Database = {
           name: string
           project_details: string
           role?: string | null
+          status?: Database["public"]["Enums"]["status"]
           verification_token?: string | null
-          verified?: boolean
         }
         Update: {
           consent?: boolean
@@ -40,8 +40,8 @@ export type Database = {
           name?: string
           project_details?: string
           role?: string | null
+          status?: Database["public"]["Enums"]["status"]
           verification_token?: string | null
-          verified?: boolean
         }
         Relationships: []
       }
@@ -53,7 +53,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      status:
+        | "PENDING_VERIFICATION"
+        | "PENDING_RESPONSE"
+        | "SCHEDULING_CALL"
+        | "DECLINED"
+        | "IN_PROGRESS"
+        | "ON_HOLD"
+        | "COMPLETED"
     }
     CompositeTypes: {
       [_ in never]: never

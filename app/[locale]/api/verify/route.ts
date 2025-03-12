@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
 
   const { data, error } = await supabaseClient()
     .from('contacts')
-    .update({ verified: true, verification_token: null })
+    .update({ verification_token: null, status: 'PENDING_RESPONSE' })
     .match({ verification_token: token })
     .select()
     .single();
