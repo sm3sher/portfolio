@@ -58,11 +58,11 @@ export default function ContactFormFields({
           validationMessages={content?.validationMessages}
         />
         <FormTextarea
-          key="message"
+          key="projectDetails"
           register={register}
-          name="message"
-          label={content?.labels?.message || ''}
-          defaultValue={state?.rawData?.message}
+          name="projectDetails"
+          label={content?.labels?.projectDetails || ''}
+          defaultValue={state?.rawData?.projectDetails}
           errors={errors}
           validationMessages={content?.validationMessages}
         />

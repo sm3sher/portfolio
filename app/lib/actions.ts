@@ -32,7 +32,7 @@ export const saveMessage = async (
     name: formData.get('name'),
     email: formData.get('email'),
     role: formData.get('role'),
-    message: formData.get('message'),
+    projectDetails: formData.get('projectDetails'),
     consent: !!formData.get('consent'),
   } as ContactFormData;
 
@@ -45,9 +45,10 @@ export const saveMessage = async (
     };
   }
 
+  const { projectDetails, ...rest } = validatedFields.data;
   const { data, error } = await supabaseClient()
     .from('contacts')
-    .insert(validatedFields.data)
+    .insert({ ...rest, project_details: projectDetails })
     .select('verification_token')
     .single();
 

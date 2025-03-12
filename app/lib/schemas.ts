@@ -6,8 +6,8 @@ export enum ValidationMessages {
   emailInvalid = 'emailInvalid',
   emailMaxLength = 'emailMaxLength',
   roleMaxLength = 'roleMaxLength',
-  messageRequired = 'messageRequired',
-  messageMaxLength = 'messageMaxLength',
+  projectDetailsRequired = 'projectDetailsRequired',
+  projectDetailsMaxLength = 'projectDetailsMaxLength',
   consentRequired = 'consentRequired',
 }
 
@@ -23,10 +23,10 @@ export const contactFormSchema = z.object({
     .email(ValidationMessages.emailInvalid)
     .max(100, ValidationMessages.emailMaxLength),
   role: z.string().max(150, ValidationMessages.roleMaxLength).optional(),
-  message: z
+  projectDetails: z
     .string()
-    .min(1, ValidationMessages.messageRequired)
-    .max(1000, ValidationMessages.messageMaxLength),
+    .min(1, ValidationMessages.projectDetailsRequired)
+    .max(1000, ValidationMessages.projectDetailsMaxLength),
   consent: z.boolean().refine((val) => val, {
     message: ValidationMessages.consentRequired,
   }),

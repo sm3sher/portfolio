@@ -20,7 +20,7 @@ query contactContent($locale: String) {
         name
         email
         role
-        message
+        projectDetails
       }
       validationMessages {
         nameRequired
@@ -28,8 +28,8 @@ query contactContent($locale: String) {
         emailInvalid
         emailMaxLength
         roleMaxLength
-        messageRequired
-        messageMaxLength
+        projectDetailsRequired
+        projectDetailsMaxLength
         consentRequired
       }
       gdprNoticeIntro

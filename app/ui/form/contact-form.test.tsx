@@ -58,7 +58,7 @@ const content = {
     name: 'Name',
     email: 'Email',
     role: 'Job Title & Company (Optional)',
-    message: 'Project Details',
+    projectDetails: 'Project Details',
   },
   emailVerificationTitle: 'Check your email',
   emailResendButtonLabel: 'Resend Email',
@@ -70,8 +70,15 @@ const validFormData = {
   name: 'Roman Jumatov',
   email: 'roman@jumatov.com',
   role: 'Freelance Software Developer',
-  message: 'Hey there, I have something in mind.',
+  projectDetails: 'Hey there, I have something in mind.',
   consent: true,
+};
+
+const { projectDetails, ...rest } = validFormData;
+
+const supabaseData = {
+  ...rest,
+  project_details: projectDetails,
 };
 
 describe('ContactForm', () => {
@@ -96,7 +103,7 @@ describe('ContactForm', () => {
 
     screen.getByText(ValidationMessages.nameRequired);
     screen.getByText(ValidationMessages.emailInvalid);
-    screen.getByText(ValidationMessages.messageRequired);
+    screen.getByText(ValidationMessages.projectDetailsRequired);
     screen.getByText(ValidationMessages.consentRequired);
   });
 
@@ -106,7 +113,7 @@ describe('ContactForm', () => {
 
     screen.getByText(ValidationMessages.nameRequired);
     screen.getByText(ValidationMessages.emailInvalid);
-    screen.getByText(ValidationMessages.messageRequired);
+    screen.getByText(ValidationMessages.projectDetailsRequired);
     screen.getByText(ValidationMessages.consentRequired);
   });
 
@@ -115,7 +122,7 @@ describe('ContactForm', () => {
       name: 'a'.repeat(101),
       email: 'a'.repeat(92).concat('@test.com'),
       role: 'A'.repeat(151),
-      message: 'A'.repeat(1001),
+      projectDetails: 'A'.repeat(1001),
       consent: false,
     };
     await fillForm(formData);
@@ -124,7 +131,7 @@ describe('ContactForm', () => {
     screen.getByText(ValidationMessages.nameMaxLength);
     screen.getByText(ValidationMessages.emailMaxLength);
     screen.getByText(ValidationMessages.roleMaxLength);
-    screen.getByText(ValidationMessages.messageMaxLength);
+    screen.getByText(ValidationMessages.projectDetailsMaxLength);
   });
 
   it('calls supabase client insert with form data when valid', async () => {
@@ -133,7 +140,7 @@ describe('ContactForm', () => {
 
     const mockClient = supabaseClient();
     const mockInsert = mockClient.from('contacts').insert;
-    expect(mockInsert).toHaveBeenNthCalledWith(1, validFormData);
+    expect(mockInsert).toHaveBeenNthCalledWith(1, supabaseData);
   });
 
   it('shows email verification card on valid form submission', async () => {
@@ -175,13 +182,16 @@ describe('ContactForm', () => {
   });
 
   const fillForm = async (formData: ContactFormData) => {
-    const { name, email, role, message, consent } = formData;
+    const { name, email, role, projectDetails, consent } = formData;
     await user.type(screen.getByLabelText(content.labels.name), name);
     await user.type(screen.getByLabelText(content.labels.email), email);
     if (role) {
       await user.type(screen.getByLabelText(content.labels.role), role);
     }
-    await user.type(screen.getByLabelText(content.labels.message), message);
+    await user.type(
+      screen.getByLabelText(content.labels.projectDetails),
+      projectDetails,
+    );
     if (consent) {
       await user.click(screen.getByRole('checkbox'));
     }
@@ -191,7 +201,7 @@ describe('ContactForm', () => {
     await user.clear(screen.getByLabelText(content.labels.name));
     await user.clear(screen.getByLabelText(content.labels.email));
     await user.clear(screen.getByLabelText(content.labels.role));
-    await user.clear(screen.getByLabelText(content.labels.message));
+    await user.clear(screen.getByLabelText(content.labels.projectDetails));
     await user.click(screen.getByRole('checkbox', { checked: true }));
   };
 });

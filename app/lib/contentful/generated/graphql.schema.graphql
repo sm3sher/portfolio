@@ -1573,8 +1573,8 @@ type Label implements Entry & _Node {
   contentfulMetadata: ContentfulMetadata!
   email(locale: String): String
   linkedFrom(allowedLocales: [String]): LabelLinkingCollections
-  message(locale: String): String
   name(locale: String): String
+  projectDetails(locale: String): String
   role(locale: String): String
   sys: Sys!
 }
@@ -1597,13 +1597,6 @@ input LabelFilter {
   email_not: String
   email_not_contains: String
   email_not_in: [String]
-  message: String
-  message_contains: String
-  message_exists: Boolean
-  message_in: [String]
-  message_not: String
-  message_not_contains: String
-  message_not_in: [String]
   name: String
   name_contains: String
   name_exists: Boolean
@@ -1611,6 +1604,13 @@ input LabelFilter {
   name_not: String
   name_not_contains: String
   name_not_in: [String]
+  projectDetails: String
+  projectDetails_contains: String
+  projectDetails_exists: Boolean
+  projectDetails_in: [String]
+  projectDetails_not: String
+  projectDetails_not_contains: String
+  projectDetails_not_in: [String]
   role: String
   role_contains: String
   role_exists: Boolean
@@ -1676,10 +1676,10 @@ enum LabelLinkingCollectionsFormCollectionOrder {
 enum LabelOrder {
   email_ASC
   email_DESC
-  message_ASC
-  message_DESC
   name_ASC
   name_DESC
+  projectDetails_ASC
+  projectDetails_DESC
   role_ASC
   role_DESC
   sys_firstPublishedAt_ASC
@@ -3545,10 +3545,10 @@ type ValidationMessages implements Entry & _Node {
   emailInvalid(locale: String): String
   emailMaxLength(locale: String): String
   linkedFrom(allowedLocales: [String]): ValidationMessagesLinkingCollections
-  messageMaxLength(locale: String): String
-  messageRequired(locale: String): String
   nameMaxLength(locale: String): String
   nameRequired(locale: String): String
+  projectDetailsMaxLength(locale: String): String
+  projectDetailsRequired(locale: String): String
   roleMaxLength(locale: String): String
   sys: Sys!
 }
@@ -3585,20 +3585,6 @@ input ValidationMessagesFilter {
   emailMaxLength_not: String
   emailMaxLength_not_contains: String
   emailMaxLength_not_in: [String]
-  messageMaxLength: String
-  messageMaxLength_contains: String
-  messageMaxLength_exists: Boolean
-  messageMaxLength_in: [String]
-  messageMaxLength_not: String
-  messageMaxLength_not_contains: String
-  messageMaxLength_not_in: [String]
-  messageRequired: String
-  messageRequired_contains: String
-  messageRequired_exists: Boolean
-  messageRequired_in: [String]
-  messageRequired_not: String
-  messageRequired_not_contains: String
-  messageRequired_not_in: [String]
   nameMaxLength: String
   nameMaxLength_contains: String
   nameMaxLength_exists: Boolean
@@ -3613,6 +3599,20 @@ input ValidationMessagesFilter {
   nameRequired_not: String
   nameRequired_not_contains: String
   nameRequired_not_in: [String]
+  projectDetailsMaxLength: String
+  projectDetailsMaxLength_contains: String
+  projectDetailsMaxLength_exists: Boolean
+  projectDetailsMaxLength_in: [String]
+  projectDetailsMaxLength_not: String
+  projectDetailsMaxLength_not_contains: String
+  projectDetailsMaxLength_not_in: [String]
+  projectDetailsRequired: String
+  projectDetailsRequired_contains: String
+  projectDetailsRequired_exists: Boolean
+  projectDetailsRequired_in: [String]
+  projectDetailsRequired_not: String
+  projectDetailsRequired_not_contains: String
+  projectDetailsRequired_not_in: [String]
   roleMaxLength: String
   roleMaxLength_contains: String
   roleMaxLength_exists: Boolean
@@ -3682,14 +3682,14 @@ enum ValidationMessagesOrder {
   emailInvalid_DESC
   emailMaxLength_ASC
   emailMaxLength_DESC
-  messageMaxLength_ASC
-  messageMaxLength_DESC
-  messageRequired_ASC
-  messageRequired_DESC
   nameMaxLength_ASC
   nameMaxLength_DESC
   nameRequired_ASC
   nameRequired_DESC
+  projectDetailsMaxLength_ASC
+  projectDetailsMaxLength_DESC
+  projectDetailsRequired_ASC
+  projectDetailsRequired_DESC
   roleMaxLength_ASC
   roleMaxLength_DESC
   sys_firstPublishedAt_ASC
@@ -3999,13 +3999,6 @@ input cfLabelNestedFilter {
   email_not: String
   email_not_contains: String
   email_not_in: [String]
-  message: String
-  message_contains: String
-  message_exists: Boolean
-  message_in: [String]
-  message_not: String
-  message_not_contains: String
-  message_not_in: [String]
   name: String
   name_contains: String
   name_exists: Boolean
@@ -4013,6 +4006,13 @@ input cfLabelNestedFilter {
   name_not: String
   name_not_contains: String
   name_not_in: [String]
+  projectDetails: String
+  projectDetails_contains: String
+  projectDetails_exists: Boolean
+  projectDetails_in: [String]
+  projectDetails_not: String
+  projectDetails_not_contains: String
+  projectDetails_not_in: [String]
   role: String
   role_contains: String
   role_exists: Boolean
@@ -4497,20 +4497,6 @@ input cfValidationMessagesNestedFilter {
   emailMaxLength_not: String
   emailMaxLength_not_contains: String
   emailMaxLength_not_in: [String]
-  messageMaxLength: String
-  messageMaxLength_contains: String
-  messageMaxLength_exists: Boolean
-  messageMaxLength_in: [String]
-  messageMaxLength_not: String
-  messageMaxLength_not_contains: String
-  messageMaxLength_not_in: [String]
-  messageRequired: String
-  messageRequired_contains: String
-  messageRequired_exists: Boolean
-  messageRequired_in: [String]
-  messageRequired_not: String
-  messageRequired_not_contains: String
-  messageRequired_not_in: [String]
   nameMaxLength: String
   nameMaxLength_contains: String
   nameMaxLength_exists: Boolean
@@ -4525,6 +4511,20 @@ input cfValidationMessagesNestedFilter {
   nameRequired_not: String
   nameRequired_not_contains: String
   nameRequired_not_in: [String]
+  projectDetailsMaxLength: String
+  projectDetailsMaxLength_contains: String
+  projectDetailsMaxLength_exists: Boolean
+  projectDetailsMaxLength_in: [String]
+  projectDetailsMaxLength_not: String
+  projectDetailsMaxLength_not_contains: String
+  projectDetailsMaxLength_not_in: [String]
+  projectDetailsRequired: String
+  projectDetailsRequired_contains: String
+  projectDetailsRequired_exists: Boolean
+  projectDetailsRequired_in: [String]
+  projectDetailsRequired_not: String
+  projectDetailsRequired_not_contains: String
+  projectDetailsRequired_not_in: [String]
   roleMaxLength: String
   roleMaxLength_contains: String
   roleMaxLength_exists: Boolean

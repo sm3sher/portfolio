@@ -15,8 +15,8 @@ export type Database = {
           created_at: string
           email: string
           id: number
-          message: string
           name: string
+          project_details: string
           role: string | null
           verification_token: string | null
           verified: boolean
@@ -26,8 +26,8 @@ export type Database = {
           created_at?: string
           email: string
           id?: number
-          message: string
           name: string
+          project_details: string
           role?: string | null
           verification_token?: string | null
           verified?: boolean
@@ -37,8 +37,8 @@ export type Database = {
           created_at?: string
           email?: string
           id?: number
-          message?: string
           name?: string
+          project_details?: string
           role?: string | null
           verification_token?: string | null
           verified?: boolean

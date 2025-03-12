@@ -130,7 +130,7 @@ export const handlers = [
                 name: 'Name',
                 email: 'Email',
                 role: 'Job Title & Company (Optional)',
-                message: 'Project Details',
+                projectDetails: 'Project Details',
               },
               validationMessages: {
                 nameRequired: 'Please enter your name',
@@ -139,8 +139,9 @@ export const handlers = [
                 emailMaxLength: 'Email cannot exceed 100 characters',
                 roleMaxLength:
                   'Job title and company name cannot exceed 150 characters',
-                messageRequired: 'Please enter your message',
-                messageMaxLength: 'Message cannot exceed 1000 characters',
+                projectDetailsRequired: 'Please enter your project details',
+                projectDetailsMaxLength:
+                  'Project details cannot exceed 1000 characters',
                 consentRequired: 'You must agree to proceed',
               },
             },
