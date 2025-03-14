@@ -33,9 +33,9 @@ export default async function ContactSection({ locale }: Props) {
           </h3>
         </ViewAnimation>
         <div className="flex flex-col gap-10 lg:flex-row xl:gap-12">
-          <div className="lg:w-1/2">
+          <ViewAnimation className="lg:w-1/2" duration={0.5} delay={0.1}>
             <ContactForm content={query.formCollection?.items[0] as Form} />
-          </div>
+          </ViewAnimation>
           <div className="lg:w-1/2">
             <ProjectSteps
               content={content?.projectStepsCollection?.items as ProjectStep[]}

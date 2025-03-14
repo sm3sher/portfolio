@@ -42,7 +42,7 @@ export default async function AboutSection({ locale }: Props) {
               </h6>
               <ViewAnimation
                 delay={0.2}
-                duration={0.4}
+                duration={0.5}
                 direction="fromBottom"
                 className="mb-7"
               >
@@ -55,19 +55,19 @@ export default async function AboutSection({ locale }: Props) {
                   {content?.locationStatement}
                 </h4>
               </ViewAnimation>
-              <ViewAnimation delay={0.3} duration={0.3} direction="fromBottom">
+              <ViewAnimation delay={0.3} direction="fromBottom">
                 <p className="text-(--secondary)">{content?.description}</p>
               </ViewAnimation>
               <div className="flex flex-col justify-between space-y-4 sm:flex-row sm:space-x-16 sm:space-y-0 lg:space-x-32">
                 {content?.experienceMetricsCollection?.items
                   .filter((item) => item !== null)
-                  .map((item, index) => (
+                  .map((item) => (
                     <ViewAnimation
                       key={`${item.labelPrefix}${item.labelSuffix}`}
                       delay={0.5}
                       duration={0.4}
                       translation={30}
-                      direction={index === 0 ? 'fromRight' : 'fromLeft'}
+                      direction="fromLeft"
                     >
                       <ExperienceCounter content={item as Metric} />
                     </ViewAnimation>
