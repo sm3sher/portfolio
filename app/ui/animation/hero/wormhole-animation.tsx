@@ -182,32 +182,32 @@ export default function WormholeAnimation() {
         </svg>
         <div className="absolute inset-0 transition-transform duration-700 [transition-timing-function:ease-in-out] group-hover:translate-x-[12%] group-hover:translate-y-[12%] group-hover:rotate-180 group-hover:scale-[60%] group-hover:delay-200">
           <div className="-rotate-16 glass-effect top-[50%] left-[70%] flex size-14 items-center justify-center rounded-[1.25rem] backdrop-blur-xs">
-            <div className="size-1/2 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-1/2 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/nextjs.svg" fill alt="Nextjs logo" />
             </div>
           </div>
           <div className="glass-effect -rotate-16 top-[65%] left-[45%] flex size-14 items-center justify-center rounded-[1.25rem] backdrop-blur-xs">
-            <div className="size-5/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-5/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/typescript.svg" fill alt="Typescript logo" />
             </div>
           </div>
           <div className="glass-effect top-[36%] left-[46%] flex size-14 rotate-16 items-center justify-center rounded-[1.25rem] backdrop-blur-xs">
-            <div className="size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/react.svg" fill alt="React logo" />
             </div>
           </div>
           <div className="glass-effect -rotate-33 top-[48%] left-[29%] flex size-7 items-center justify-center rounded-xl backdrop-blur-xs">
-            <div className="size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/tailwindcss.svg" fill alt="Tailwindcss logo" />
             </div>
           </div>
           <div className="glass-effect top-[68%] left-[64%] flex size-7 rotate-20 items-center justify-center rounded-xl backdrop-blur-xs">
-            <div className="size-1/2 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-1/2 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/kotlin.svg" fill alt="Kotlin logo" />
             </div>
           </div>
           <div className="glass-effect -rotate-21 top-[28%] left-[68%] flex size-7 items-center justify-center rounded-xl backdrop-blur-xs">
-            <div className="size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
+            <div className="relative size-7/12 opacity-70 invert-0 dark:opacity-90 dark:invert">
               <Image src="/spring.svg" fill alt="Spring logo" />
             </div>
           </div>
