@@ -78,8 +78,9 @@ export const handlers = [
               projectStepsCollection: {
                 items: [
                   {
-                    title: 'Arrange a free 30-minute consultation',
-                    description: 'Let’s discuss your project and goals.',
+                    title: 'Submit your project details',
+                    description:
+                      'Tell me about your project, your goals, and what you’re looking for. If I’m a good fit, I’ll invite you to schedule a free 30-minute consultation.',
                   },
                   {
                     title: 'Receive an offer',
