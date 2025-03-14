@@ -22,7 +22,7 @@ export default function ProjectSteps({ content }: Props) {
           initial={{ height: 0 }}
           whileInView={{ height: '100%' }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          transition={{ duration: 1.4, ease: 'easeInOut' }}
         />
         <ul className="space-y-2 sm:space-y-4 md:space-y-6">
           {steps.map(({ title, description }, index) => (
@@ -31,7 +31,7 @@ export default function ProjectSteps({ content }: Props) {
               index={index}
               title={title}
               description={description}
-              delay={index * 0.15}
+              delay={index * 0.3}
             />
           ))}
         </ul>
@@ -42,7 +42,7 @@ export default function ProjectSteps({ content }: Props) {
             index={steps.length}
             title={lastStep.title}
             description={lastStep.description}
-            delay={steps.length * 0.15}
+            delay={steps.length * 0.3}
           />
         </ul>
       )}

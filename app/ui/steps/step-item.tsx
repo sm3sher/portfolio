@@ -18,7 +18,7 @@ export default function StepItem({ index, title, description, delay }: Props) {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{
-          duration: 0.3,
+          duration: 0.4,
           delay,
           ease: 'easeOut',
         }}
@@ -26,11 +26,11 @@ export default function StepItem({ index, title, description, delay }: Props) {
         {index + 1}
       </motion.span>
       <motion.span
-        initial={{ opacity: 0, x: 20 }}
+        initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{
-          duration: 0.4,
+          duration: 0.5,
           delay,
           ease: 'easeOut',
         }}
